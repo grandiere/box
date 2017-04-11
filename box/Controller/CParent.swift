@@ -34,8 +34,8 @@ class CParent:UIViewController
     {
         super.viewDidLoad()
         
-        let controllerSearch:CSearch = CSearch()
-        mainController(controller:controllerSearch)
+        let controllerLanding:CLanding = CLanding()
+        mainController(controller:controllerLanding)
         
         MSession.sharedInstance.loadSession()
     }

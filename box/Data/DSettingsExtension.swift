@@ -1,6 +1,6 @@
 import Foundation
 import CoreData
-/*
+
 extension DSettings
 {
     //MARK: public
@@ -11,4 +11,3 @@ extension DSettings
         DManager.sharedInstance?.save()
     }
 }
-*/
