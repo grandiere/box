@@ -40,9 +40,8 @@ class MScannerMotion
                 let accelerationX:Double = acceleration.x
                 let accelerationY:Double = acceleration.y
                 
-                let rotation:Double = atan2(accelerationX, accelerationY) - Double.pi
-                let rotationFloat:Float = Float(rotation)
-                self?.controller.modelRender?.mines.motionRotate(radians:rotationFloat)
+                let rawRotation:Double = atan2(accelerationX, accelerationY)
+                self?.controller.modelRender?.mines.motionRotate(rawRotation:rawRotation)
             }
         }
     }

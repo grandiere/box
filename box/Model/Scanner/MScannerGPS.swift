@@ -110,7 +110,7 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
             normalHeading = magneticHeading
         }
         
-        print(normalHeading)
+        controller.modelRender?.mines.userHeading = normalHeading
     }
     
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations:[CLLocation])
