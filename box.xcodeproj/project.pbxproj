@@ -34,6 +34,7 @@
 		DA134AAC1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A9B1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift */; };
 		DA134AAD1E9D549E002BE57D /* MetalShaderFragmentSimple.metal in Sources */ = {isa = PBXBuildFile; fileRef = DA134A9C1E9D549E002BE57D /* MetalShaderFragmentSimple.metal */; };
 		DA134AAE1E9D549E002BE57D /* MetalVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A9D1E9D549E002BE57D /* MetalVertex.swift */; };
+		DA134AB01E9D5D69002BE57D /* texture.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA134AAF1E9D5D69002BE57D /* texture.xcassets */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -98,6 +99,7 @@
 		DA134A9B1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialShapeSquarePositive.swift; sourceTree = "<group>"; };
 		DA134A9C1E9D549E002BE57D /* MetalShaderFragmentSimple.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MetalShaderFragmentSimple.metal; sourceTree = "<group>"; };
 		DA134A9D1E9D549E002BE57D /* MetalVertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVertex.swift; sourceTree = "<group>"; };
+		DA134AAF1E9D5D69002BE57D /* texture.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = texture.xcassets; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */,
+				DA134AAF1E9D5D69002BE57D /* texture.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			files = (
 				DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */,
 				DAF15D651E9D32BB0000E6B9 /* Localizable.strings in Resources */,
+				DA134AB01E9D5D69002BE57D /* texture.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
