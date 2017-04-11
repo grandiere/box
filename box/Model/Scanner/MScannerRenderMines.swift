@@ -64,10 +64,7 @@ class MScannerRenderMines:MetalRenderableProtocol
     {
         let rotationBuffer:MTLBuffer = renderEncoder.device.generateBuffer(
             bufferable:rotation)
-        
-        let heading:Double = normalizedCompensation - userHeading
-        
-        print(heading)
+        let heading:Double = userHeading + normalizedCompensation
         
         for item:MScannerRenderMinesItem in items
         {
