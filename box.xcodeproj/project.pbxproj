@@ -10,6 +10,7 @@
 		DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A771E9D48ED002BE57D /* MetalConstants.swift */; };
 		DA134A7B1E9D4A24002BE57D /* MScannerCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */; };
 		DA134A7D1E9D4EAC002BE57D /* MScannerMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */; };
+		DA134A7F1E9D4EE9002BE57D /* MScannerRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7E1E9D4EE9002BE57D /* MScannerRender.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -49,6 +50,7 @@
 		DA134A771E9D48ED002BE57D /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerCamera.swift; sourceTree = "<group>"; };
 		DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerMotion.swift; sourceTree = "<group>"; };
+		DA134A7E1E9D4EE9002BE57D /* MScannerRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerRender.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */,
 				DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */,
+				DA134A7E1E9D4EE9002BE57D /* MScannerRender.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				DA134A7B1E9D4A24002BE57D /* MScannerCamera.swift in Sources */,
 				DAF15D6C1E9D32BB0000E6B9 /* VParentPushBackground.swift in Sources */,
 				DAF15D5F1E9D32BB0000E6B9 /* ExtensionString.swift in Sources */,
+				DA134A7F1E9D4EE9002BE57D /* MScannerRender.swift in Sources */,
 				DAF15D791E9D40A20000E6B9 /* CScanner.swift in Sources */,
 				DAF15D591E9D32BB0000E6B9 /* DManager.swift in Sources */,
 				DAF15D741E9D34FF0000E6B9 /* CLanding.swift in Sources */,
