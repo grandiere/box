@@ -43,7 +43,7 @@ class MScannerMotion
                 
                 let rotation:Double = atan2(accelerationX, accelerationY) - Double.pi
                 let rotationFloat:Float = Float(rotation)
-                self?.controller.modelRender?.menu?.motionRotate(radians:rotationFloat)
+                self?.controller.modelRender?.book?.motionRotate(radians:rotationFloat)
             }
         }
     }

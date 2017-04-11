@@ -77,7 +77,7 @@ class VScannerMetal:MTKView
     
     required init(coder:NSCoder)
     {
-        super.init(coder:coder)
+        fatalError()
     }
     
     override func draw()

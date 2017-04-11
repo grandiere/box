@@ -1,4 +1,5 @@
 "VLanding_buttonScanner"="Scanner";
+"VScanner_errorMetal"="Metal not available";
 
 "MScannerCamera_errorNoAuth"="Unable to use the camera";
 "MScannerCamera_errorNoCaptureDevice"="No capture device found";
