@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A771E9D48ED002BE57D /* MetalConstants.swift */; };
 		DA134A7B1E9D4A24002BE57D /* MScannerCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */; };
+		DA134A7D1E9D4EAC002BE57D /* MScannerMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		DA134A771E9D48ED002BE57D /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerCamera.swift; sourceTree = "<group>"; };
+		DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerMotion.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */,
+				DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				DAF15D581E9D32BB0000E6B9 /* CParent.swift in Sources */,
 				DAF15D7E1E9D47A40000E6B9 /* VScannerMetal.swift in Sources */,
 				DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */,
+				DA134A7D1E9D4EAC002BE57D /* MScannerMotion.swift in Sources */,
 				DAF15D5A1E9D32BB0000E6B9 /* DSettingsExtension.swift in Sources */,
 				DAF15D721E9D34810000E6B9 /* DBox.xcdatamodeld in Sources */,
 				DAF15D691E9D32BB0000E6B9 /* VCollection.swift in Sources */,
