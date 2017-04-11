@@ -3,24 +3,11 @@ import MetalKit
 
 class CScanner:CController
 {
-    let modelMines:MScannerMines
     private(set) var modelRender:MScannerRender?
     private(set) var modelCamera:MScannerCamera?
     private(set) var modelMotion:MScannerMotion?
     private(set) var modelGPS:MScannerGPS?
     private(set) weak var viewScanner:VScanner!
-    
-    override init()
-    {
-        modelMines = MScannerMines()
-        
-        super.init()
-    }
-    
-    required init?(coder:NSCoder)
-    {
-        return nil
-    }
     
     deinit
     {

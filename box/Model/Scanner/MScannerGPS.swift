@@ -98,8 +98,19 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
     
     func locationManager(_ manager:CLLocationManager, didUpdateHeading newHeading:CLHeading)
     {
-//        print("new heading")
-//        print(newHeading.magneticHeading)
+        let magneticHeading:CLLocationDirection = newHeading.magneticHeading
+        let normalHeading:CLLocationDirection
+        
+        if magneticHeading >= 180
+        {
+            normalHeading = magneticHeading - 360
+        }
+        else
+        {
+            normalHeading = magneticHeading
+        }
+        
+        print(normalHeading)
     }
     
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations:[CLLocation])
@@ -113,11 +124,11 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
             return
         }
         
-        for mine:MScannerMinesItem in controller.modelMines.items
-        {
+//        for mine:MScannerMinesItem in controller.modelMines.items
+//        {
 //            print("distance")
 //            print(currentLocation.distance(from:mine.location))
-        }
+//        }
         
 //        print(currentLocation.coordinate)
     }

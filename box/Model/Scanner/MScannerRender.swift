@@ -5,21 +5,15 @@ import CoreLocation
 
 class MScannerRender:MetalRenderableProtocol
 {
-    let camera:MScannerRenderBackground
-    private weak var controller:CScanner!
+    let background:MScannerRenderBackground
+    let mines:MScannerRenderMines
     private let cIContext:CIContext
     private let textureLoader:MTKTextureLoader
     private let projection:MetalProjection
     
-    init(
-        controller:CScanner,
-        device:MTLDevice)
+    init?(device:MTLDevice)
     {
-        self.controller = controller
-        cIContext = CIContext(mtlDevice:device)
         textureLoader = MTKTextureLoader(device:device)
-        camera = MScannerRenderBackground(device:device)
-        projection = MetalProjection(device:device)
         
         guard
             
@@ -28,18 +22,15 @@ class MScannerRender:MetalRenderableProtocol
             
         else
         {
-            return
+            return nil
         }
-        
-        let defaultLocation:CLLocation = CLLocation(
-            latitude:19.410595057002922,
-            longitude:-99.175156495306979)
-        let defaultMine:MScannerMinesItem = MScannerMinesItem(
+
+        cIContext = CIContext(mtlDevice:device)
+        background = MScannerRenderBackground(device:device)
+        projection = MetalProjection(device:device)
+        mines = MScannerRenderMines(
             device:device,
-            location:defaultLocation,
             texture:textureMenuBase)
-        
-        controller.modelMines.addItem(mine:defaultMine)
     }
     
     //MARK: public
@@ -59,7 +50,7 @@ class MScannerRender:MetalRenderableProtocol
             return
         }
         
-        camera.texture = textureLoader.loadCGImage(cGImage:cGImage)
+        background.texture = textureLoader.loadCGImage(cGImage:cGImage)
     }
     
     //MARK: renderable Protocol
@@ -69,8 +60,7 @@ class MScannerRender:MetalRenderableProtocol
         renderEncoder.projectionMatrix(
             projection:projection.projectionBuffer)
         
-        camera.render(renderEncoder:renderEncoder)
-        
-        
+        background.render(renderEncoder:renderEncoder)
+        mines.render(renderEncoder:renderEncoder)
     }
 }

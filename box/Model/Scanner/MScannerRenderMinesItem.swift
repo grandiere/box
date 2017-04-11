@@ -5,14 +5,20 @@ import CoreLocation
 class MScannerRenderMinesItem
 {
     let location:CLLocation
-    let positionBuffer:MTLBuffer
+    let position:MetalPosition
     
-    init(
-        device:MTLDevice,
-        location:CLLocation)
+    init(location:CLLocation)
     {
         self.location = location
-        let position:MetalPosition = MetalPosition.zero()
-        positionBuffer = device.generateBuffer(bufferable:position)
+        position = MetalPosition.zero()
+    }
+    
+    //MARK: public
+    
+    func positionBuffer(device:MTLDevice) -> MTLBuffer
+    {
+        let positionBuffer:MTLBuffer = device.generateBuffer(bufferable:position)
+        
+        return positionBuffer
     }
 }
