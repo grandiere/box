@@ -21,6 +21,7 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
     
     deinit
     {
+        locationManager?.stopUpdatingHeading()
         locationManager?.stopUpdatingLocation()
     }
     
@@ -63,6 +64,7 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
     private func authGranted()
     {
         locationManager?.startUpdatingLocation()
+        locationManager?.startUpdatingHeading()
     }
     
     //MARK: location delegate
@@ -94,6 +96,12 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
     {
     }
     
+    func locationManager(_ manager:CLLocationManager, didUpdateHeading newHeading:CLHeading)
+    {
+//        print("new heading")
+//        print(newHeading.magneticHeading)
+    }
+    
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations:[CLLocation])
     {
         guard
@@ -107,10 +115,10 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
         
         for mine:MScannerMinesItem in controller.modelMines.items
         {
-            print("distance")
-            print(currentLocation.distance(from:mine.location))
+//            print("distance")
+//            print(currentLocation.distance(from:mine.location))
         }
         
-        print(currentLocation.coordinate)
+//        print(currentLocation.coordinate)
     }
 }

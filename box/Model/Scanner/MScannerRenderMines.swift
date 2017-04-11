@@ -1,12 +1,12 @@
-import UIKit
+import Foundation
 import MetalKit
 
-class MScannerRenderBook:MetalRenderableProtocol
+class MScannerRenderMines:MetalRenderableProtocol
 {
-    let texture:MTLTexture
+    private(set) var items:[MScannerRenderMinesItem]
     private var rotation:MetalRotation
+    private let texture:MTLTexture
     private let spatialSquare:MetalSpatialShapeSquarePositive
-    private let positionBuffer:MTLBuffer
     private let kWidth:Float = 100
     private let kHeight:Float = 100
     
@@ -15,16 +15,20 @@ class MScannerRenderBook:MetalRenderableProtocol
         texture:MTLTexture)
     {
         self.texture = texture
-        let position:MetalPosition = MetalPosition.zero()
-        rotation = MetalRotation.none()
-        positionBuffer = device.generateBuffer(bufferable:position)
         spatialSquare = MetalSpatialShapeSquarePositive(
             device:device,
             width:kWidth,
             height:kHeight)
+        rotation = MetalRotation.none()
+        items = []
     }
     
     //MARK: public
+    
+    func addItem(mine:MScannerMinesItem)
+    {
+        items.append(mine)
+    }
     
     func motionRotate(radians:Float)
     {
@@ -38,10 +42,13 @@ class MScannerRenderBook:MetalRenderableProtocol
         let rotationBuffer:MTLBuffer = renderEncoder.device.generateBuffer(
             bufferable:rotation)
         
-        renderEncoder.render(
-            vertex:spatialSquare.vertexBuffer,
-            position:positionBuffer,
-            rotation:rotationBuffer,
-            texture:texture)
+        for item:MScannerMinesItem in items
+        {
+            renderEncoder.render(
+                vertex:spatialSquare.vertexBuffer,
+                position:item.positionBuffer,
+                rotation:rotationBuffer,
+                texture:texture)
+        }
     }
 }
