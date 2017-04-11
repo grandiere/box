@@ -37,6 +37,8 @@
 		DAF15D721E9D34810000E6B9 /* DBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D701E9D34810000E6B9 /* DBox.xcdatamodeld */; };
 		DAF15D741E9D34FF0000E6B9 /* CLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D731E9D34FF0000E6B9 /* CLanding.swift */; };
 		DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D761E9D35CF0000E6B9 /* VLanding.swift */; };
+		DAF15D791E9D40A20000E6B9 /* CScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D781E9D40A20000E6B9 /* CScanner.swift */; };
+		DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		DAF15D711E9D34810000E6B9 /* DBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DBox.xcdatamodel; sourceTree = "<group>"; };
 		DAF15D731E9D34FF0000E6B9 /* CLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLanding.swift; sourceTree = "<group>"; };
 		DAF15D761E9D35CF0000E6B9 /* VLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLanding.swift; sourceTree = "<group>"; };
+		DAF15D781E9D40A20000E6B9 /* CScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CScanner.swift; sourceTree = "<group>"; };
+		DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VScanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 				DAF15D341E9D32BB0000E6B9 /* CController.swift */,
 				DAF15D351E9D32BB0000E6B9 /* CParent.swift */,
 				DAF15D731E9D34FF0000E6B9 /* CLanding.swift */,
+				DAF15D781E9D40A20000E6B9 /* CScanner.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 		DAF15D491E9D32BB0000E6B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DAF15D7A1E9D40B40000E6B9 /* Scanner */,
 				DAF15D751E9D35C50000E6B9 /* Landing */,
 				DAF15D4A1E9D32BB0000E6B9 /* Main */,
 			);
@@ -217,6 +223,14 @@
 				DAF15D761E9D35CF0000E6B9 /* VLanding.swift */,
 			);
 			path = Landing;
+			sourceTree = "<group>";
+		};
+		DAF15D7A1E9D40B40000E6B9 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */,
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +306,7 @@
 			files = (
 				DAF15D6C1E9D32BB0000E6B9 /* VParentPushBackground.swift in Sources */,
 				DAF15D5F1E9D32BB0000E6B9 /* ExtensionString.swift in Sources */,
+				DAF15D791E9D40A20000E6B9 /* CScanner.swift in Sources */,
 				DAF15D591E9D32BB0000E6B9 /* DManager.swift in Sources */,
 				DAF15D741E9D34FF0000E6B9 /* CLanding.swift in Sources */,
 				DAF15D5E1E9D32BB0000E6B9 /* ExtensionNSManagedObject.swift in Sources */,
@@ -318,6 +333,7 @@
 				DAF15D5D1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift in Sources */,
 				DAF15D641E9D32BB0000E6B9 /* MSession.swift in Sources */,
 				DAF15D631E9D32BB0000E6B9 /* ExtensionURL.swift in Sources */,
+				DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
