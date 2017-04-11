@@ -2,7 +2,7 @@ import UIKit
 
 extension UIColor
 {
-    open class var hyperBlue:UIColor //#597EAB
+    open class var boxBlue:UIColor //#597EAB
     {
         get
         {
@@ -14,7 +14,7 @@ extension UIColor
         }
     }
     
-    open class var hyperOrange:UIColor //#FE6F55
+    open class var boxRed:UIColor //#FE6F55
     {
         get
         {
@@ -26,7 +26,7 @@ extension UIColor
         }
     }
     
-    open class var hyperGreen:UIColor //#5DBF83
+    open class var boxGreen:UIColor //#5DBF83
     {
         get
         {

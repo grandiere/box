@@ -10,4 +10,14 @@ class CLanding:CController
         self.viewLanding = viewLanding
         view = viewLanding
     }
+    
+    //MARK: public
+    
+    func openScanner()
+    {
+        let controllerScanner:CScanner = CScanner()
+        parentController.push(
+            controller:controllerScanner,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }
