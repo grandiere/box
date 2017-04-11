@@ -11,8 +11,8 @@ class MScannerRenderMines:MetalRenderableProtocol
     private let device:MTLDevice
     private let texture:MTLTexture
     private let spatialSquare:MetalSpatialShapeSquarePositive
-    private let kWidth:Float = 100
-    private let kHeight:Float = 100
+    private let kWidth:Float = 200
+    private let kHeight:Float = 200
     
     init(
         device:MTLDevice,
