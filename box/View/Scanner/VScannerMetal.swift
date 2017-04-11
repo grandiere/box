@@ -77,7 +77,7 @@ class VScannerMetal:MTKView
     
     required init(coder:NSCoder)
     {
-        fatalError()
+        super.init(coder:coder)
     }
     
     override func draw()
@@ -89,7 +89,7 @@ class VScannerMetal:MTKView
             let drawable:CAMetalDrawable = currentDrawable,
             let passDescriptor:MTLRenderPassDescriptor = currentRenderPassDescriptor
             
-            else
+        else
         {
             return
         }

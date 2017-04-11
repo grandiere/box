@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A771E9D48ED002BE57D /* MetalConstants.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA134A771E9D48ED002BE57D /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA134A761E9D48E1002BE57D /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				DA134A771E9D48ED002BE57D /* MetalConstants.swift */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
 		DAC336211E9D20EE0022D7ED = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +120,7 @@
 		DAC3362C1E9D20EE0022D7ED /* box */ = {
 			isa = PBXGroup;
 			children = (
+				DA134A761E9D48E1002BE57D /* Metal */,
 				DAF15D301E9D32BB0000E6B9 /* Assets */,
 				DAF15D321E9D32BB0000E6B9 /* Controller */,
 				DAF15D361E9D32BB0000E6B9 /* Data */,
@@ -338,6 +349,7 @@
 				DAF15D641E9D32BB0000E6B9 /* MSession.swift in Sources */,
 				DAF15D631E9D32BB0000E6B9 /* ExtensionURL.swift in Sources */,
 				DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */,
+				DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
