@@ -7,7 +7,7 @@ class MScannerRenderBook:MetalRenderableProtocol
     private var rotation:MetalRotation
     private let spatialSquare:MetalSpatialShapeSquarePositive
     private let positionBuffer:MTLBuffer
-    private let kWidth:Float = 150
+    private let kWidth:Float = 100
     private let kHeight:Float = 100
     
     init(

@@ -20,7 +20,7 @@ class MScannerRender:MetalRenderableProtocol
         guard
             
             let textureMenuBase:MTLTexture = textureLoader.loadImage(
-                image:#imageLiteral(resourceName: "assetTextureBook1"))
+                image:#imageLiteral(resourceName: "assetTextureTriangle"))
             
         else
         {
