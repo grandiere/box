@@ -6,7 +6,9 @@ class MScannerMines
     
     init()
     {
+        let defaultMine:MScannerMinesItem = MScannerMinesItem()
+        
         items = [
-        ]
+            defaultMine]
     }
 }

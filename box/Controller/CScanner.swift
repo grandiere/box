@@ -7,6 +7,7 @@ class CScanner:CController
     private(set) var modelCamera:MScannerCamera?
     private(set) var modelMotion:MScannerMotion?
     private(set) var modelGPS:MScannerGPS?
+    private(set) var modelMines:MScannerMines?
     private(set) weak var viewScanner:VScanner!
     
     deinit
