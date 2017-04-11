@@ -5,7 +5,7 @@ import ImageIO
 class MScannerRender:MetalRenderableProtocol
 {
     let camera:MScannerRenderBackground
-    var menu:MScannerRenderMenu?
+    var book:MScannerRenderBook?
     private let cIContext:CIContext
     private let textureLoader:MTKTextureLoader
     private let projection:MetalProjection
@@ -27,7 +27,7 @@ class MScannerRender:MetalRenderableProtocol
             return
         }
         
-        menu = MScannerRenderMenu(
+        book = MScannerRenderBook(
             device:device,
             texture:textureMenuBase)
     }
@@ -60,6 +60,6 @@ class MScannerRender:MetalRenderableProtocol
             projection:projection.projectionBuffer)
         
         camera.render(renderEncoder:renderEncoder)
-        menu?.render(renderEncoder:renderEncoder)
+        book?.render(renderEncoder:renderEncoder)
     }
 }
