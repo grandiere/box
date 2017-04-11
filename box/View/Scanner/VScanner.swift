@@ -1,9 +1,17 @@
-//
-//  VScanner.swift
-//  box
-//
-//  Created by zero on 4/11/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class VScanner:VView
+{
+    private weak var controller:CScanner!
+    
+    override init(controller:CController)
+    {
+        super.init(controller:controller)
+        self.controller = controller as? CScanner
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
+}

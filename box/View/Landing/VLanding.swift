@@ -16,6 +16,9 @@ class VLanding:VView
         buttonScanner.setTitle(
             NSLocalizedString("VLanding_buttonScanner", comment:""),
             for:UIControlState.normal)
+        buttonScanner.setTitleColor(
+            UIColor.black,
+            for:UIControlState.normal)
         buttonScanner.addTarget(
             self,
             action:#selector(actionScanner(sender:)),
