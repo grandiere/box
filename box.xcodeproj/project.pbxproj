@@ -39,6 +39,7 @@
 		DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D761E9D35CF0000E6B9 /* VLanding.swift */; };
 		DAF15D791E9D40A20000E6B9 /* CScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D781E9D40A20000E6B9 /* CScanner.swift */; };
 		DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */; };
+		DAF15D7E1E9D47A40000E6B9 /* VScannerMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D7D1E9D47A40000E6B9 /* VScannerMetal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		DAF15D761E9D35CF0000E6B9 /* VLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLanding.swift; sourceTree = "<group>"; };
 		DAF15D781E9D40A20000E6B9 /* CScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CScanner.swift; sourceTree = "<group>"; };
 		DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VScanner.swift; sourceTree = "<group>"; };
+		DAF15D7D1E9D47A40000E6B9 /* VScannerMetal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VScannerMetal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */,
+				DAF15D7D1E9D47A40000E6B9 /* VScannerMetal.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				DAF15D6F1E9D32BB0000E6B9 /* VView.swift in Sources */,
 				DAF15D601E9D32BB0000E6B9 /* ExtensionUICollectionReusableView.swift in Sources */,
 				DAF15D581E9D32BB0000E6B9 /* CParent.swift in Sources */,
+				DAF15D7E1E9D47A40000E6B9 /* VScannerMetal.swift in Sources */,
 				DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */,
 				DAF15D5A1E9D32BB0000E6B9 /* DSettingsExtension.swift in Sources */,
 				DAF15D721E9D34810000E6B9 /* DBox.xcdatamodeld in Sources */,
