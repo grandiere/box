@@ -3,12 +3,12 @@ import CoreLocation
 
 class MScannerMinesItem
 {
-    let location:CLLocationCoordinate2D
+    let location:CLLocation
     
     init()
     {
-        location = CLLocationCoordinate2D(
+        location = CLLocation(
             latitude:19.410595057002922,
-            longitude:-99.175075131207947)
+            longitude:-99.175156495306979)
     }
 }

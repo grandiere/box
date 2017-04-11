@@ -98,13 +98,19 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
     {
         guard
         
-            let coordinate:CLLocationCoordinate2D = locations.last?.coordinate
+            let currentLocation:CLLocation = locations.last
         
         else
         {
             return
         }
         
-        print(coordinate)
+        for mine:MScannerMinesItem in controller.modelMines.items
+        {
+            print("distance")
+            print(currentLocation.distance(from:mine.location))
+        }
+        
+        print(currentLocation.coordinate)
     }
 }
