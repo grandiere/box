@@ -36,6 +36,7 @@
 		DAF15D6F1E9D32BB0000E6B9 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D541E9D32BB0000E6B9 /* VView.swift */; };
 		DAF15D721E9D34810000E6B9 /* DBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D701E9D34810000E6B9 /* DBox.xcdatamodeld */; };
 		DAF15D741E9D34FF0000E6B9 /* CLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D731E9D34FF0000E6B9 /* CLanding.swift */; };
+		DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D761E9D35CF0000E6B9 /* VLanding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		DAF15D541E9D32BB0000E6B9 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
 		DAF15D711E9D34810000E6B9 /* DBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DBox.xcdatamodel; sourceTree = "<group>"; };
 		DAF15D731E9D34FF0000E6B9 /* CLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLanding.swift; sourceTree = "<group>"; };
+		DAF15D761E9D35CF0000E6B9 /* VLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLanding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		DAF15D491E9D32BB0000E6B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DAF15D751E9D35C50000E6B9 /* Landing */,
 				DAF15D4A1E9D32BB0000E6B9 /* Main */,
 			);
 			path = View;
@@ -206,6 +209,14 @@
 				DAF15D541E9D32BB0000E6B9 /* VView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		DAF15D751E9D35C50000E6B9 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D761E9D35CF0000E6B9 /* VLanding.swift */,
+			);
+			path = Landing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +310,7 @@
 				DAF15D6F1E9D32BB0000E6B9 /* VView.swift in Sources */,
 				DAF15D601E9D32BB0000E6B9 /* ExtensionUICollectionReusableView.swift in Sources */,
 				DAF15D581E9D32BB0000E6B9 /* CParent.swift in Sources */,
+				DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */,
 				DAF15D5A1E9D32BB0000E6B9 /* DSettingsExtension.swift in Sources */,
 				DAF15D721E9D34810000E6B9 /* DBox.xcdatamodeld in Sources */,
 				DAF15D691E9D32BB0000E6B9 /* VCollection.swift in Sources */,
