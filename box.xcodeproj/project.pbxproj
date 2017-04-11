@@ -11,6 +11,8 @@
 		DA134A7B1E9D4A24002BE57D /* MScannerCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */; };
 		DA134A7D1E9D4EAC002BE57D /* MScannerMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */; };
 		DA134A7F1E9D4EE9002BE57D /* MScannerRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7E1E9D4EE9002BE57D /* MScannerRender.swift */; };
+		DA134A811E9D4FC1002BE57D /* MScannerRenderBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A801E9D4FC1002BE57D /* MScannerRenderBackground.swift */; };
+		DA134A831E9D5028002BE57D /* MScannerRenderBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A821E9D5028002BE57D /* MScannerRenderBook.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -51,6 +53,8 @@
 		DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerCamera.swift; sourceTree = "<group>"; };
 		DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerMotion.swift; sourceTree = "<group>"; };
 		DA134A7E1E9D4EE9002BE57D /* MScannerRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerRender.swift; sourceTree = "<group>"; };
+		DA134A801E9D4FC1002BE57D /* MScannerRenderBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerRenderBackground.swift; sourceTree = "<group>"; };
+		DA134A821E9D5028002BE57D /* MScannerRenderBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerRenderBook.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */,
 				DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */,
 				DA134A7E1E9D4EE9002BE57D /* MScannerRender.swift */,
+				DA134A801E9D4FC1002BE57D /* MScannerRenderBackground.swift */,
+				DA134A821E9D5028002BE57D /* MScannerRenderBook.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -335,10 +341,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA134A811E9D4FC1002BE57D /* MScannerRenderBackground.swift in Sources */,
 				DA134A7B1E9D4A24002BE57D /* MScannerCamera.swift in Sources */,
 				DAF15D6C1E9D32BB0000E6B9 /* VParentPushBackground.swift in Sources */,
 				DAF15D5F1E9D32BB0000E6B9 /* ExtensionString.swift in Sources */,
 				DA134A7F1E9D4EE9002BE57D /* MScannerRender.swift in Sources */,
+				DA134A831E9D5028002BE57D /* MScannerRenderBook.swift in Sources */,
 				DAF15D791E9D40A20000E6B9 /* CScanner.swift in Sources */,
 				DAF15D591E9D32BB0000E6B9 /* DManager.swift in Sources */,
 				DAF15D741E9D34FF0000E6B9 /* CLanding.swift in Sources */,
