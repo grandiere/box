@@ -36,6 +36,8 @@
 		DA134AAE1E9D549E002BE57D /* MetalVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A9D1E9D549E002BE57D /* MetalVertex.swift */; };
 		DA134AB01E9D5D69002BE57D /* texture.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA134AAF1E9D5D69002BE57D /* texture.xcassets */; };
 		DA134AB21E9D6DB5002BE57D /* MScannerGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB11E9D6DB5002BE57D /* MScannerGPS.swift */; };
+		DA134AB41E9D779B002BE57D /* MScannerMines.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB31E9D779B002BE57D /* MScannerMines.swift */; };
+		DA134AB61E9D77C6002BE57D /* MScannerMinesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB51E9D77C6002BE57D /* MScannerMinesItem.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -102,6 +104,8 @@
 		DA134A9D1E9D549E002BE57D /* MetalVertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVertex.swift; sourceTree = "<group>"; };
 		DA134AAF1E9D5D69002BE57D /* texture.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = texture.xcassets; sourceTree = "<group>"; };
 		DA134AB11E9D6DB5002BE57D /* MScannerGPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerGPS.swift; sourceTree = "<group>"; };
+		DA134AB31E9D779B002BE57D /* MScannerMines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerMines.swift; sourceTree = "<group>"; };
+		DA134AB51E9D77C6002BE57D /* MScannerMinesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerMinesItem.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				DA134A801E9D4FC1002BE57D /* MScannerRenderBackground.swift */,
 				DA134A821E9D5028002BE57D /* MScannerRenderBook.swift */,
 				DA134AB11E9D6DB5002BE57D /* MScannerGPS.swift */,
+				DA134AB31E9D779B002BE57D /* MScannerMines.swift */,
+				DA134AB51E9D77C6002BE57D /* MScannerMinesItem.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -446,6 +452,7 @@
 				DAF15D621E9D32BB0000E6B9 /* ExtensionUIFont.swift in Sources */,
 				DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */,
 				DAF15D6B1E9D32BB0000E6B9 /* VParent.swift in Sources */,
+				DA134AB41E9D779B002BE57D /* MScannerMines.swift in Sources */,
 				DA134AA31E9D549E002BE57D /* MetalVertexTextured.swift in Sources */,
 				DAF15D671E9D32BB0000E6B9 /* VBlur.swift in Sources */,
 				DAF15D6A1E9D32BB0000E6B9 /* VCollectionFlow.swift in Sources */,
@@ -468,6 +475,7 @@
 				DA134AA01E9D549E002BE57D /* MetalPosition.swift in Sources */,
 				DAF15D641E9D32BB0000E6B9 /* MSession.swift in Sources */,
 				DA134A891E9D5076002BE57D /* ExtensionMTLDevice.swift in Sources */,
+				DA134AB61E9D77C6002BE57D /* MScannerMinesItem.swift in Sources */,
 				DAF15D631E9D32BB0000E6B9 /* ExtensionURL.swift in Sources */,
 				DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */,
 				DA134AAC1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift in Sources */,

@@ -6,6 +6,7 @@ class CScanner:CController
     private(set) var modelRender:MScannerRender?
     private(set) var modelCamera:MScannerCamera?
     private(set) var modelMotion:MScannerMotion?
+    private(set) var modelGPS:MScannerGPS?
     private(set) weak var viewScanner:VScanner!
     
     deinit
@@ -51,6 +52,11 @@ class CScanner:CController
         if modelMotion == nil
         {
             modelMotion = MScannerMotion(controller:self)
+        }
+        
+        if modelGPS == nil
+        {
+            modelGPS = MScannerGPS(controller:self)
         }
     }
     
