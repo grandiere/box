@@ -6,9 +6,66 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
+		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
+		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
+		DAF15D581E9D32BB0000E6B9 /* CParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D351E9D32BB0000E6B9 /* CParent.swift */; };
+		DAF15D591E9D32BB0000E6B9 /* DManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D371E9D32BB0000E6B9 /* DManager.swift */; };
+		DAF15D5A1E9D32BB0000E6B9 /* DSettingsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D381E9D32BB0000E6B9 /* DSettingsExtension.swift */; };
+		DAF15D5B1E9D32BB0000E6B9 /* ExtensionFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D3A1E9D32BB0000E6B9 /* ExtensionFileManager.swift */; };
+		DAF15D5C1E9D32BB0000E6B9 /* ExtensionNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D3B1E9D32BB0000E6B9 /* ExtensionNotification.swift */; };
+		DAF15D5D1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D3C1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift */; };
+		DAF15D5E1E9D32BB0000E6B9 /* ExtensionNSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D3D1E9D32BB0000E6B9 /* ExtensionNSManagedObject.swift */; };
+		DAF15D5F1E9D32BB0000E6B9 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D3E1E9D32BB0000E6B9 /* ExtensionString.swift */; };
+		DAF15D601E9D32BB0000E6B9 /* ExtensionUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D3F1E9D32BB0000E6B9 /* ExtensionUICollectionReusableView.swift */; };
+		DAF15D611E9D32BB0000E6B9 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D401E9D32BB0000E6B9 /* ExtensionUIColor.swift */; };
+		DAF15D621E9D32BB0000E6B9 /* ExtensionUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D411E9D32BB0000E6B9 /* ExtensionUIFont.swift */; };
+		DAF15D631E9D32BB0000E6B9 /* ExtensionURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D421E9D32BB0000E6B9 /* ExtensionURL.swift */; };
+		DAF15D641E9D32BB0000E6B9 /* MSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D451E9D32BB0000E6B9 /* MSession.swift */; };
+		DAF15D651E9D32BB0000E6B9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D471E9D32BB0000E6B9 /* Localizable.strings */; };
+		DAF15D661E9D32BB0000E6B9 /* VAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D4B1E9D32BB0000E6B9 /* VAlert.swift */; };
+		DAF15D671E9D32BB0000E6B9 /* VBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D4C1E9D32BB0000E6B9 /* VBlur.swift */; };
+		DAF15D681E9D32BB0000E6B9 /* VBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D4D1E9D32BB0000E6B9 /* VBorder.swift */; };
+		DAF15D691E9D32BB0000E6B9 /* VCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D4E1E9D32BB0000E6B9 /* VCollection.swift */; };
+		DAF15D6A1E9D32BB0000E6B9 /* VCollectionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D4F1E9D32BB0000E6B9 /* VCollectionFlow.swift */; };
+		DAF15D6B1E9D32BB0000E6B9 /* VParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D501E9D32BB0000E6B9 /* VParent.swift */; };
+		DAF15D6C1E9D32BB0000E6B9 /* VParentPushBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D511E9D32BB0000E6B9 /* VParentPushBackground.swift */; };
+		DAF15D6D1E9D32BB0000E6B9 /* VSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D521E9D32BB0000E6B9 /* VSpinner.swift */; };
+		DAF15D6E1E9D32BB0000E6B9 /* VToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D531E9D32BB0000E6B9 /* VToast.swift */; };
+		DAF15D6F1E9D32BB0000E6B9 /* VView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D541E9D32BB0000E6B9 /* VView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
+		DAF15D341E9D32BB0000E6B9 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
+		DAF15D351E9D32BB0000E6B9 /* CParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CParent.swift; sourceTree = "<group>"; };
+		DAF15D371E9D32BB0000E6B9 /* DManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DManager.swift; sourceTree = "<group>"; };
+		DAF15D381E9D32BB0000E6B9 /* DSettingsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSettingsExtension.swift; sourceTree = "<group>"; };
+		DAF15D3A1E9D32BB0000E6B9 /* ExtensionFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionFileManager.swift; sourceTree = "<group>"; };
+		DAF15D3B1E9D32BB0000E6B9 /* ExtensionNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNotification.swift; sourceTree = "<group>"; };
+		DAF15D3C1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNSLayoutConstraint.swift; sourceTree = "<group>"; };
+		DAF15D3D1E9D32BB0000E6B9 /* ExtensionNSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNSManagedObject.swift; sourceTree = "<group>"; };
+		DAF15D3E1E9D32BB0000E6B9 /* ExtensionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
+		DAF15D3F1E9D32BB0000E6B9 /* ExtensionUICollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUICollectionReusableView.swift; sourceTree = "<group>"; };
+		DAF15D401E9D32BB0000E6B9 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		DAF15D411E9D32BB0000E6B9 /* ExtensionUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIFont.swift; sourceTree = "<group>"; };
+		DAF15D421E9D32BB0000E6B9 /* ExtensionURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionURL.swift; sourceTree = "<group>"; };
+		DAF15D451E9D32BB0000E6B9 /* MSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSession.swift; sourceTree = "<group>"; };
+		DAF15D481E9D32BB0000E6B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DAF15D4B1E9D32BB0000E6B9 /* VAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAlert.swift; sourceTree = "<group>"; };
+		DAF15D4C1E9D32BB0000E6B9 /* VBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBlur.swift; sourceTree = "<group>"; };
+		DAF15D4D1E9D32BB0000E6B9 /* VBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBorder.swift; sourceTree = "<group>"; };
+		DAF15D4E1E9D32BB0000E6B9 /* VCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCollection.swift; sourceTree = "<group>"; };
+		DAF15D4F1E9D32BB0000E6B9 /* VCollectionFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCollectionFlow.swift; sourceTree = "<group>"; };
+		DAF15D501E9D32BB0000E6B9 /* VParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParent.swift; sourceTree = "<group>"; };
+		DAF15D511E9D32BB0000E6B9 /* VParentPushBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VParentPushBackground.swift; sourceTree = "<group>"; };
+		DAF15D521E9D32BB0000E6B9 /* VSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSpinner.swift; sourceTree = "<group>"; };
+		DAF15D531E9D32BB0000E6B9 /* VToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VToast.swift; sourceTree = "<group>"; };
+		DAF15D541E9D32BB0000E6B9 /* VView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,9 +98,108 @@
 		DAC3362C1E9D20EE0022D7ED /* box */ = {
 			isa = PBXGroup;
 			children = (
+				DAF15D301E9D32BB0000E6B9 /* Assets */,
+				DAF15D321E9D32BB0000E6B9 /* Controller */,
+				DAF15D361E9D32BB0000E6B9 /* Data */,
+				DAF15D391E9D32BB0000E6B9 /* Extensions */,
+				DAF15D431E9D32BB0000E6B9 /* Model */,
+				DAF15D461E9D32BB0000E6B9 /* Resource */,
+				DAF15D491E9D32BB0000E6B9 /* View */,
 				DAC336391E9D20EE0022D7ED /* Info.plist */,
 			);
 			path = box;
+			sourceTree = "<group>";
+		};
+		DAF15D301E9D32BB0000E6B9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		DAF15D321E9D32BB0000E6B9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */,
+				DAF15D341E9D32BB0000E6B9 /* CController.swift */,
+				DAF15D351E9D32BB0000E6B9 /* CParent.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DAF15D361E9D32BB0000E6B9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D371E9D32BB0000E6B9 /* DManager.swift */,
+				DAF15D381E9D32BB0000E6B9 /* DSettingsExtension.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DAF15D391E9D32BB0000E6B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D3A1E9D32BB0000E6B9 /* ExtensionFileManager.swift */,
+				DAF15D3B1E9D32BB0000E6B9 /* ExtensionNotification.swift */,
+				DAF15D3C1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift */,
+				DAF15D3D1E9D32BB0000E6B9 /* ExtensionNSManagedObject.swift */,
+				DAF15D3E1E9D32BB0000E6B9 /* ExtensionString.swift */,
+				DAF15D3F1E9D32BB0000E6B9 /* ExtensionUICollectionReusableView.swift */,
+				DAF15D401E9D32BB0000E6B9 /* ExtensionUIColor.swift */,
+				DAF15D411E9D32BB0000E6B9 /* ExtensionUIFont.swift */,
+				DAF15D421E9D32BB0000E6B9 /* ExtensionURL.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DAF15D431E9D32BB0000E6B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D441E9D32BB0000E6B9 /* Main */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAF15D441E9D32BB0000E6B9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D451E9D32BB0000E6B9 /* MSession.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DAF15D461E9D32BB0000E6B9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D471E9D32BB0000E6B9 /* Localizable.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DAF15D491E9D32BB0000E6B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D4A1E9D32BB0000E6B9 /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAF15D4A1E9D32BB0000E6B9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DAF15D4B1E9D32BB0000E6B9 /* VAlert.swift */,
+				DAF15D4C1E9D32BB0000E6B9 /* VBlur.swift */,
+				DAF15D4D1E9D32BB0000E6B9 /* VBorder.swift */,
+				DAF15D4E1E9D32BB0000E6B9 /* VCollection.swift */,
+				DAF15D4F1E9D32BB0000E6B9 /* VCollectionFlow.swift */,
+				DAF15D501E9D32BB0000E6B9 /* VParent.swift */,
+				DAF15D511E9D32BB0000E6B9 /* VParentPushBackground.swift */,
+				DAF15D521E9D32BB0000E6B9 /* VSpinner.swift */,
+				DAF15D531E9D32BB0000E6B9 /* VToast.swift */,
+				DAF15D541E9D32BB0000E6B9 /* VView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +261,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */,
+				DAF15D651E9D32BB0000E6B9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,10 +273,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF15D6C1E9D32BB0000E6B9 /* VParentPushBackground.swift in Sources */,
+				DAF15D5F1E9D32BB0000E6B9 /* ExtensionString.swift in Sources */,
+				DAF15D591E9D32BB0000E6B9 /* DManager.swift in Sources */,
+				DAF15D5E1E9D32BB0000E6B9 /* ExtensionNSManagedObject.swift in Sources */,
+				DAF15D5B1E9D32BB0000E6B9 /* ExtensionFileManager.swift in Sources */,
+				DAF15D5C1E9D32BB0000E6B9 /* ExtensionNotification.swift in Sources */,
+				DAF15D661E9D32BB0000E6B9 /* VAlert.swift in Sources */,
+				DAF15D681E9D32BB0000E6B9 /* VBorder.swift in Sources */,
+				DAF15D6E1E9D32BB0000E6B9 /* VToast.swift in Sources */,
+				DAF15D621E9D32BB0000E6B9 /* ExtensionUIFont.swift in Sources */,
+				DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */,
+				DAF15D6B1E9D32BB0000E6B9 /* VParent.swift in Sources */,
+				DAF15D671E9D32BB0000E6B9 /* VBlur.swift in Sources */,
+				DAF15D6A1E9D32BB0000E6B9 /* VCollectionFlow.swift in Sources */,
+				DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */,
+				DAF15D611E9D32BB0000E6B9 /* ExtensionUIColor.swift in Sources */,
+				DAF15D6F1E9D32BB0000E6B9 /* VView.swift in Sources */,
+				DAF15D601E9D32BB0000E6B9 /* ExtensionUICollectionReusableView.swift in Sources */,
+				DAF15D581E9D32BB0000E6B9 /* CParent.swift in Sources */,
+				DAF15D5A1E9D32BB0000E6B9 /* DSettingsExtension.swift in Sources */,
+				DAF15D691E9D32BB0000E6B9 /* VCollection.swift in Sources */,
+				DAF15D6D1E9D32BB0000E6B9 /* VSpinner.swift in Sources */,
+				DAF15D5D1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift in Sources */,
+				DAF15D641E9D32BB0000E6B9 /* MSession.swift in Sources */,
+				DAF15D631E9D32BB0000E6B9 /* ExtensionURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DAF15D471E9D32BB0000E6B9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAF15D481E9D32BB0000E6B9 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DAC3363A1E9D20EE0022D7ED /* Debug */ = {
