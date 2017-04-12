@@ -16,8 +16,8 @@ class MScannerMotion
         
         if manager.isDeviceMotionAvailable
         {
-            manager.deviceMotionUpdateInterval = kUpdatesInterval
             manager.startDeviceMotionUpdates(
+                using:CMAttitudeReferenceFrame.xTrueNorthZVertical,
                 to:OperationQueue.main)
             { (data:CMDeviceMotion?, error:Error?) in
                 
@@ -25,7 +25,7 @@ class MScannerMotion
                 {
                     guard
                         
-                        let acceleration:CMAcceleration = data?.gravity
+                        let dataMotion:CMDeviceMotion = data
                         
                     else
                     {
@@ -35,7 +35,17 @@ class MScannerMotion
                     DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
                     { [weak self] in
                         
+                        let acceleration:CMAcceleration = dataMotion.gravity
+                        let attitude:CMAttitude = dataMotion.attitude
+                        let rotation:CMRotationMatrix = attitude.rotationMatrix
                         self?.gravityCompute(acceleration:acceleration)
+                        
+//                        print((attitude.yaw + (Double.pi / 2)) * -180.0 / Double.pi)
+                        
+                        let heading = Double.pi + atan2(rotation.m22, rotation.m12)
+                        let headingDegrees = heading * 180.0 / Double.pi
+                        
+                        print(headingDegrees)
                     }
                 }
             }
