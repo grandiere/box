@@ -5,13 +5,14 @@ class MScannerMotion
 {
     private weak var controller:CScanner!
     private let manager:CMMotionManager!
-    private let kUpdatesInterval:TimeInterval = 0.1
+    private let kUpdatesInterval:TimeInterval = 0.5
     
     init(controller:CScanner)
     {
         self.controller = controller
         
         let manager:CMMotionManager = CMMotionManager()
+        manager.deviceMotionUpdateInterval = kUpdatesInterval
         self.manager = manager
         
         if manager.isDeviceMotionAvailable
@@ -32,21 +33,20 @@ class MScannerMotion
                         return
                     }
                     
-                    DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-                    { [weak self] in
-                        
-                        let acceleration:CMAcceleration = dataMotion.gravity
-                        let attitude:CMAttitude = dataMotion.attitude
-                        let rotation:CMRotationMatrix = attitude.rotationMatrix
-                        self?.gravityCompute(acceleration:acceleration)
-                        
-//                        print((attitude.yaw + (Double.pi / 2)) * -180.0 / Double.pi)
-                        
-                        let heading = Double.pi + atan2(rotation.m22, rotation.m12)
-                        let headingDegrees = heading * 180.0 / Double.pi
-                        
-                        print(headingDegrees)
-                    }
+                    let acceleration:CMAcceleration = dataMotion.gravity
+                    let attitude:CMAttitude = dataMotion.attitude
+                    let rotation:CMRotationMatrix = attitude.rotationMatrix
+                    let quaternion:CMQuaternion = attitude.quaternion
+                    self.gravityCompute(acceleration:acceleration)
+                    
+                    //                        print((attitude.yaw + (Double.pi / 2)) * -180.0 / Double.pi)
+                    
+                    //let heading = Double.atan2(rotation.m22, rotation.m12)
+                    
+                    let heading = quaternion.z * Double.pi
+                    let headingDegrees = heading * 180.0 / Double.pi
+                    
+                    print("\(headingDegrees)")
                 }
             }
         }
