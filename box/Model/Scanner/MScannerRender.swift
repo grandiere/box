@@ -7,6 +7,7 @@ class MScannerRender:MetalRenderableProtocol
 {
     let background:MScannerRenderBackground
     let mines:MScannerRenderMines
+    var shouldRenderMines:Bool
     private let cIContext:CIContext
     private let textureLoader:MTKTextureLoader
     private let projection:MetalProjection
@@ -31,6 +32,7 @@ class MScannerRender:MetalRenderableProtocol
         mines = MScannerRenderMines(
             device:device,
             texture:textureMenuBase)
+        shouldRenderMines = true
     }
     
     //MARK: public
@@ -61,6 +63,10 @@ class MScannerRender:MetalRenderableProtocol
             projection:projection.projectionBuffer)
         
         background.render(renderEncoder:renderEncoder)
-        mines.render(renderEncoder:renderEncoder)
+        
+        if shouldRenderMines
+        {
+            mines.render(renderEncoder:renderEncoder)
+        }
     }
 }
