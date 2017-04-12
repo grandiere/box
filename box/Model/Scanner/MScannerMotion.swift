@@ -49,12 +49,13 @@ class MScannerMotion
     {
         let accelerationX:Double = acceleration.x
         let accelerationY:Double = acceleration.y
+        let accelerationZ:Double = acceleration.z
         let rawRotation:Double = atan2(accelerationX, accelerationY)
         let minesThreshold:Double = abs(accelerationY)
         let renderMines:Bool = minesThreshold > kThresholdMines
         
-        let rawOther:Double = acos(accelerationX) * asin(accelerationY)
-        print(rawOther)
+        let rawOther:Double = atan2(accelerationZ, accelerationY)
+        print(rawOther * 180.0 / Double.pi)
         
         controller.modelRender?.mines.motionRotate(rawRotation:rawRotation)
         controller.modelRender?.shouldRenderMines = renderMines
