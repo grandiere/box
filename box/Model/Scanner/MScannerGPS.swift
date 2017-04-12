@@ -64,7 +64,7 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
     private func authGranted()
     {
         locationManager?.startUpdatingLocation()
-        locationManager?.startUpdatingHeading()
+//        locationManager?.startUpdatingHeading()
     }
     
     //MARK: location delegate
@@ -99,18 +99,31 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
     func locationManager(_ manager:CLLocationManager, didUpdateHeading newHeading:CLHeading)
     {
         let magneticHeading:CLLocationDirection = newHeading.magneticHeading
+        
+        guard
+            
+            let inversedHeading:Float = controller.modelRender?.mines.inverseHeading
+        
+        else
+        {
+            return
+        }
+        
+        let compensedHeading:CLLocationDirection = CLLocationDirection(inversedHeading) + magneticHeading
         let normalHeading:CLLocationDirection
         
         if magneticHeading >= 180
         {
-            normalHeading = magneticHeading - 360
+            normalHeading = compensedHeading - 360
         }
         else
         {
-            normalHeading = magneticHeading
+            normalHeading = compensedHeading
         }
         
         controller.modelRender?.mines.userHeading = normalHeading
+        
+        print(inversedHeading)
     }
     
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations:[CLLocation])

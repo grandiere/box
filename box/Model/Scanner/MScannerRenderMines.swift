@@ -6,6 +6,7 @@ class MScannerRenderMines:MetalRenderableProtocol
 {
     var userHeading:Double
     private(set) var items:[MScannerRenderMinesItem]
+    private(set) var inverseHeading:Float
     private var rotation:MetalRotation
     private var normalizedCompensation:Double
     private var zRotation:Float
@@ -26,6 +27,7 @@ class MScannerRenderMines:MetalRenderableProtocol
             width:kWidth,
             height:kHeight)
         rotation = MetalRotation.none()
+        inverseHeading = 0
         zRotation = 0
         userHeading = 0
         normalizedCompensation = 0
@@ -59,6 +61,7 @@ class MScannerRenderMines:MetalRenderableProtocol
             normalizedCompensation = -(-180 - compensateRotation)
         }
         
+        inverseHeading = xRotation * 180.0 / Float.pi
         rotation = MetalRotation(radians:xRotation)
     }
     
