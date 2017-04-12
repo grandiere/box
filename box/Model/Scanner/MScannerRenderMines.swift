@@ -8,6 +8,7 @@ class MScannerRenderMines:MetalRenderableProtocol
     private(set) var items:[MScannerRenderMinesItem]
     private var rotation:MetalRotation
     private var normalizedCompensation:Double
+    private var zRotation:Float
     private let device:MTLDevice
     private let texture:MTLTexture
     private let spatialSquare:MetalSpatialShapeSquarePositive
@@ -25,6 +26,7 @@ class MScannerRenderMines:MetalRenderableProtocol
             width:kWidth,
             height:kHeight)
         rotation = MetalRotation.none()
+        zRotation = 0
         userHeading = 0
         normalizedCompensation = 0
         items = []
@@ -40,8 +42,12 @@ class MScannerRenderMines:MetalRenderableProtocol
     
     //MARK: public
     
-    func motionRotate(rawRotation:Double)
+    func motionRotate(
+        rawRotation:Double,
+        xRotation:Float,
+        zRotation:Float)
     {
+        self.zRotation = zRotation
         let compensateRotation:Double = ((rawRotation * 180.0) / Double.pi)
         
         if compensateRotation >= 0
@@ -53,9 +59,7 @@ class MScannerRenderMines:MetalRenderableProtocol
             normalizedCompensation = -(-180 - compensateRotation)
         }
         
-        let rotationInversed:Double = rawRotation - Double.pi
-        let rotationFloat:Float = Float(rotationInversed)
-        rotation = MetalRotation(radians:rotationFloat)
+        rotation = MetalRotation(radians:xRotation)
     }
     
     //MARK: renderable Protocol
@@ -64,13 +68,14 @@ class MScannerRenderMines:MetalRenderableProtocol
     {
         let rotationBuffer:MTLBuffer = renderEncoder.device.generateBuffer(
             bufferable:rotation)
-        let heading:Double = userHeading// + normalizedCompensation
+        let heading:Float = Float(userHeading)
         
         for item:MScannerRenderMinesItem in items
         {
             let itemPosition:MTLBuffer = item.positionBuffer(
                 device:device,
-                heading:heading)
+                heading:heading,
+                verticalAlign:zRotation)
             
             renderEncoder.render(
                 vertex:spatialSquare.vertexBuffer,

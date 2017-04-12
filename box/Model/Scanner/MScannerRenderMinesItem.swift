@@ -4,10 +4,10 @@ import CoreLocation
 
 class MScannerRenderMinesItem
 {
-    let originalHeading:Double
+    let originalHeading:Float
     let location:CLLocation
     let position:MetalPosition
-    private let kHeadingMultiplier:Float = 6
+    private let kMultiplier:Float = 10
     
     init(location:CLLocation)
     {
@@ -20,9 +20,14 @@ class MScannerRenderMinesItem
     
     func positionBuffer(
         device:MTLDevice,
-        heading:Double) -> MTLBuffer
+        heading:Float,
+        verticalAlign:Float) -> MTLBuffer
     {
-        position.positionX = Float(originalHeading - heading) * kHeadingMultiplier
+        position.positionX = (originalHeading - heading) * kMultiplier
+        position.positionY = verticalAlign * kMultiplier
+        
+        print("\(verticalAlign)")
+        
         let positionBuffer:MTLBuffer = device.generateBuffer(bufferable:position)
         
         return positionBuffer

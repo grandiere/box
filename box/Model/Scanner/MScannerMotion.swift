@@ -52,8 +52,25 @@ class MScannerMotion
         let rawRotation:Double = atan2(accelerationX, accelerationY)
         
         let rawOther:Double = atan2(accelerationZ, accelerationY)
-        print(rawOther * 180.0 / Double.pi)
+        let zRotation:Double = rawOther * 180.0 / Double.pi
         
-        controller.modelRender?.mines.motionRotate(rawRotation:rawRotation)
+        let rotationInversed:Double = rawRotation - Double.pi
+        let rotationFloat:Float = Float(rotationInversed)
+        let zRotationFloat:Float = Float(zRotation)
+        let normalizedZRotation:Float
+        
+        if zRotationFloat >= 0
+        {
+            normalizedZRotation = -(180 - zRotationFloat)
+        }
+        else
+        {
+            normalizedZRotation = 180 + zRotationFloat
+        }
+        
+        controller.modelRender?.mines.motionRotate(
+            rawRotation:rawRotation,
+            xRotation:rotationFloat,
+            zRotation:normalizedZRotation)
     }
 }
