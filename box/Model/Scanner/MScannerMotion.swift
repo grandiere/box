@@ -13,7 +13,6 @@ class MScannerMotion
         self.controller = controller
         
         let manager:CMMotionManager = CMMotionManager()
-        let renderMinesMinVal:Double = kThresholdMines
         self.manager = manager
         
         if manager.isDeviceMotionAvailable
@@ -39,18 +38,25 @@ class MScannerMotion
                     return
                 }
                 
-                let accelerationX:Double = acceleration.x
-                let accelerationY:Double = acceleration.y
-                let rawRotation:Double = atan2(accelerationX, accelerationY)
-                let minesThreshold:Double = abs(accelerationY)
-                let renderMines:Bool = minesThreshold > renderMinesMinVal
-                
-                let rawOther:Double = acos(accelerationX) * asin(accelerationY)
-                print(rawOther)
-                
-                self?.controller.modelRender?.mines.motionRotate(rawRotation:rawRotation)
-                self?.controller.modelRender?.shouldRenderMines = renderMines
+                self?.gravityCompute(acceleration:acceleration)
             }
         }
+    }
+    
+    //MARK: private
+    
+    private func gravityCompute(acceleration:CMAcceleration)
+    {
+        let accelerationX:Double = acceleration.x
+        let accelerationY:Double = acceleration.y
+        let rawRotation:Double = atan2(accelerationX, accelerationY)
+        let minesThreshold:Double = abs(accelerationY)
+        let renderMines:Bool = minesThreshold > kThresholdMines
+        
+        let rawOther:Double = acos(accelerationX) * asin(accelerationY)
+        print(rawOther)
+        
+        controller.modelRender?.mines.motionRotate(rawRotation:rawRotation)
+        controller.modelRender?.shouldRenderMines = renderMines
     }
 }
