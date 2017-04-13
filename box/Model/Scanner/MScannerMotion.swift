@@ -5,7 +5,7 @@ class MScannerMotion
 {
     private weak var controller:CScanner!
     private let manager:CMMotionManager!
-    private let kUpdatesInterval:TimeInterval = 0.5
+    private let kUpdatesInterval:TimeInterval = 0.09
     
     init(controller:CScanner)
     {
@@ -43,10 +43,12 @@ class MScannerMotion
                     
                     //let heading = Double.atan2(rotation.m22, rotation.m12)
                     
-                    let heading = quaternion.z * Double.pi
+                    let heading = (quaternion.z + ((quaternion.x/2) + (quaternion.y))) * Double.pi
                     let headingDegrees = heading * 180.0 / Double.pi
                     
-                    print("\(headingDegrees)")
+                    controller.modelRender?.mines.userHeading = -headingDegrees
+                    
+                    print("\(quaternion.x) : \(quaternion.y) : \(quaternion.z)")
                 }
             }
         }
