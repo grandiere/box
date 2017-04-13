@@ -11,7 +11,9 @@ class MScannerRender:MetalRenderableProtocol
     private let textureLoader:MTKTextureLoader
     private let projection:MetalProjection
     
-    init?(device:MTLDevice)
+    init?(
+        controller:CScanner,
+        device:MTLDevice)
     {
         textureLoader = MTKTextureLoader(device:device)
         
@@ -29,6 +31,7 @@ class MScannerRender:MetalRenderableProtocol
         background = MScannerRenderBackground(device:device)
         projection = MetalProjection(device:device)
         mines = MScannerRenderMines(
+            controller:controller,
             device:device,
             texture:textureMenuBase)
     }

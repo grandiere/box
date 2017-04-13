@@ -3,11 +3,23 @@ import MetalKit
 
 class CScanner:CController
 {
+    var orientation:MScannerMotion.Orientation
     private(set) var modelRender:MScannerRender?
     private(set) var modelCamera:MScannerCamera?
     private(set) var modelMotion:MScannerMotion?
     private(set) var modelGPS:MScannerGPS?
     private(set) weak var viewScanner:VScanner!
+    
+    override init()
+    {
+        orientation = MScannerMotion.Orientation.portrait
+        super.init()
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
     
     deinit
     {
@@ -41,7 +53,9 @@ class CScanner:CController
         
         if modelRender == nil
         {
-            modelRender = MScannerRender(device:device)
+            modelRender = MScannerRender(
+                controller:self,
+                device:device)
         }
         
         if modelCamera == nil

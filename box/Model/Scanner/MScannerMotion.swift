@@ -3,7 +3,7 @@ import CoreMotion
 
 class MScannerMotion
 {
-    private enum MotionOrientation
+    enum Orientation
     {
         case portrait
         case landscapeRight
@@ -11,17 +11,14 @@ class MScannerMotion
     }
     
     private weak var controller:CScanner!
-    private var motionOrientation:MotionOrientation
     private let manager:CMMotionManager!
-    private let kRotationThreshold:Double = 2.7
+    private let kRotationThreshold:Double = 1.9
     private let k180Deg:Double = 180
     private let kUpdatesInterval:TimeInterval = 0.07
     
     init(controller:CScanner)
     {
         self.controller = controller
-        motionOrientation = MotionOrientation.portrait
-        
         let manager:CMMotionManager = CMMotionManager()
         manager.deviceMotionUpdateInterval = kUpdatesInterval
         self.manager = manager
@@ -57,26 +54,17 @@ class MScannerMotion
     
     private func orientationPortrait()
     {
-        if motionOrientation != MotionOrientation.portrait
-        {
-            motionOrientation = MotionOrientation.portrait
-        }
+        controller.orientation = Orientation.portrait
     }
     
     private func orientationLandscapeLeft()
     {
-        if motionOrientation != MotionOrientation.landscapeLeft
-        {
-            motionOrientation = MotionOrientation.landscapeLeft
-        }
+        controller.orientation = Orientation.landscapeLeft
     }
     
     private func orientationLandscapeRight()
     {
-        if motionOrientation != MotionOrientation.landscapeRight
-        {
-            motionOrientation = MotionOrientation.landscapeRight
-        }
+        controller.orientation = Orientation.landscapeRight
     }
     
     private func gravityCompute(acceleration:CMAcceleration)
