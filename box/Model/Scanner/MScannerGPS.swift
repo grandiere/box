@@ -3,6 +3,7 @@ import CoreLocation
 
 class MScannerGPS:NSObject, CLLocationManagerDelegate
 {
+    var compensateHeading:CLLocationDirection
     private weak var controller:CScanner!
     private var locationManager:CLLocationManager?
     private let kLocationDistanceFilter:CLLocationDistance = 10
@@ -10,6 +11,7 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
     init(controller:CScanner)
     {
         self.controller = controller
+        compensateHeading = 0
         super.init()
         
         DispatchQueue.main.async
@@ -67,24 +69,42 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
         locationManager?.startUpdatingHeading()
     }
     
+    private func asyncMagneticHeading(magneticHeading:CLLocationDirection)
+    {
+        let normalHeading:CLLocationDirection
+        
+        if magneticHeading >= 180
+        {
+            normalHeading = magneticHeading - 360
+        }
+        else
+        {
+            normalHeading = magneticHeading
+        }
+        
+        let finalHeading:CLLocationDirection = normalHeading - compensateHeading
+        let finalHeadingFloat:Float = Float(finalHeading)
+        controller.modelRender?.mines.userHeading = finalHeadingFloat
+    }
+    
     //MARK: public
     
     func changeOrientationPortrait()
     {
         print("portrait")
-//        locationManager?.headingOrientation = CLDeviceOrientation.portrait
+        locationManager?.headingOrientation = CLDeviceOrientation.portrait
     }
     
     func changeOrientationLandscapeLeft()
     {
         print("landspace left")
-//        locationManager?.headingOrientation = CLDeviceOrientation.landscapeLeft
+        locationManager?.headingOrientation = CLDeviceOrientation.landscapeLeft
     }
     
     func changeOrientationLandscapeRight()
     {
         print("landscape right")
-//        locationManager?.headingOrientation = CLDeviceOrientation.landscapeRight
+        locationManager?.headingOrientation = CLDeviceOrientation.landscapeRight
     }
     
     //MARK: location delegate
@@ -120,28 +140,11 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
     {
         let magneticHeading:CLLocationDirection = newHeading.magneticHeading
         
-        guard
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
             
-            let inversedHeading:Float = controller.modelRender?.mines.inverseHeading
-        
-        else
-        {
-            return
+            self?.asyncMagneticHeading(magneticHeading:magneticHeading)
         }
-        
-        let compensedHeading:CLLocationDirection = CLLocationDirection(inversedHeading) + magneticHeading
-        let normalHeading:CLLocationDirection
-        
-        if magneticHeading >= 180
-        {
-            normalHeading = compensedHeading - 360
-        }
-        else
-        {
-            normalHeading = compensedHeading
-        }
-        print(normalHeading)
-        controller.modelRender?.mines.userHeading = normalHeading
     }
     
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations:[CLLocation])

@@ -4,11 +4,10 @@ import MetalKit
 
 class MScannerRenderMines:MetalRenderableProtocol
 {
-    var userHeading:Double
+    var userHeading:Float
     private(set) var items:[MScannerRenderMinesItem]
-    private(set) var inverseHeading:Float
     private var rotation:MetalRotation
-    private var zRotation:Float
+    private var moveVertical:Float
     private let device:MTLDevice
     private let texture:MTLTexture
     private let spatialSquare:MetalSpatialShapeSquarePositive
@@ -26,8 +25,7 @@ class MScannerRenderMines:MetalRenderableProtocol
             width:kWidth,
             height:kHeight)
         rotation = MetalRotation.none()
-        inverseHeading = 0
-        zRotation = 0
+        moveVertical = 0
         userHeading = 0
         items = []
         
@@ -43,13 +41,11 @@ class MScannerRenderMines:MetalRenderableProtocol
     //MARK: public
     
     func motionRotate(
-        xRotation:Float,
-        zRotation:Float,
-        inverseHeading:Float)
+        moveHorizontal:Float,
+        moveVertical:Float)
     {
 //        self.zRotation = zRotation
-        self.inverseHeading = inverseHeading
-        rotation = MetalRotation(radians:xRotation)
+        rotation = MetalRotation(radians:moveHorizontal)
     }
     
     //MARK: renderable Protocol
@@ -58,14 +54,13 @@ class MScannerRenderMines:MetalRenderableProtocol
     {
         let rotationBuffer:MTLBuffer = renderEncoder.device.generateBuffer(
             bufferable:rotation)
-        let heading:Float = Float(userHeading)
         
         for item:MScannerRenderMinesItem in items
         {
             let itemPosition:MTLBuffer = item.positionBuffer(
                 device:device,
-                heading:heading,
-                verticalAlign:zRotation)
+                heading:userHeading,
+                verticalAlign:moveVertical)
             
             renderEncoder.render(
                 vertex:spatialSquare.vertexBuffer,
