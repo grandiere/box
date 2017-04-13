@@ -14,7 +14,7 @@ class MScannerMotion
     private var motionOrientation:MotionOrientation
     private let manager:CMMotionManager!
     private let kRotationThreshold:Double = 2.7
-    private let k180Deg:Float = 180
+    private let k180Deg:Double = 180
     private let kUpdatesInterval:TimeInterval = 0.07
     
     init(controller:CScanner)
@@ -87,28 +87,29 @@ class MScannerMotion
         let accelerationX:Double = acceleration.x
         let accelerationY:Double = acceleration.y
         let accelerationZ:Double = acceleration.z
-        let rawRotation:Double = atan2(accelerationX, accelerationY)
         
-        let rawOther:Double = atan2(accelerationZ, accelerationY)
-        let zRotation:Double = rawOther * 180.0 / Double.pi
+        let rotationHorizontal:Double = atan2(accelerationX, accelerationY)
+        let rotationHorizontalInversed:Double = rotationHorizontal - Double.pi
+        let moveHorizontal:Float = Float(rotationHorizontalInversed)
         
-        let rotationInversed:Double = rawRotation - Double.pi
-        let rotationFloat:Float = Float(rotationInversed)
-        let zRotationFloat:Float = Float(zRotation)
-        let normalizedZRotation:Float
+        let rotationVertical:Double = atan2(accelerationZ, accelerationY)
+        let rotationVerticalDeg:Double = rotationVertical * k180Deg / Double.pi
+        let normalRotationVertical:Double
         
-        if zRotationFloat >= 0
+        if rotationVerticalDeg >= 0
         {
-            normalizedZRotation = -(k180Deg - zRotationFloat)
+            normalRotationVertical = -(k180Deg - rotationVerticalDeg)
         }
         else
         {
-            normalizedZRotation = k180Deg + zRotationFloat
+            normalRotationVertical = k180Deg + rotationVerticalDeg
         }
         
-        if rawRotation >= 0
+        let moveVertical:Float = Float(normalRotationVertical)
+        
+        if rotationHorizontal >= 0
         {
-            if rawRotation < kRotationThreshold
+            if rotationHorizontal < kRotationThreshold
             {
                 orientationLandscapeRight()
             }
@@ -119,7 +120,7 @@ class MScannerMotion
         }
         else
         {
-            if rawRotation > -kRotationThreshold
+            if rotationHorizontal > -kRotationThreshold
             {
                 orientationLandscapeLeft()
             }
@@ -129,10 +130,13 @@ class MScannerMotion
             }
         }
         
+        print(180 - (rawRotation * 180 / Double.pi))
         
-//        controller.modelRender?.mines.motionRotate(
-//            rawRotation:rawRotation,
-//            xRotation:rotationFloat,
-//            zRotation:normalizedZRotation)
+        let inverseHeading:Float = xRotation * 180.0 / Float.pi
+        
+        controller.modelRender?.mines.motionRotate(
+            xRotation:xRotation,
+            zRotation:normalizedZRotation,
+            inverseHeading:inverseHeading)
     }
 }

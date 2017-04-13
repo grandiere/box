@@ -25,7 +25,6 @@ class MScannerRenderMinesItem
     {
         position.positionX = (originalHeading - heading) * kMultiplier
         position.positionY = verticalAlign * kMultiplier
-        
         let positionBuffer:MTLBuffer = device.generateBuffer(bufferable:position)
         
         return positionBuffer

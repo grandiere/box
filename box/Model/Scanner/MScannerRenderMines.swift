@@ -8,7 +8,6 @@ class MScannerRenderMines:MetalRenderableProtocol
     private(set) var items:[MScannerRenderMinesItem]
     private(set) var inverseHeading:Float
     private var rotation:MetalRotation
-    private var normalizedCompensation:Double
     private var zRotation:Float
     private let device:MTLDevice
     private let texture:MTLTexture
@@ -30,7 +29,6 @@ class MScannerRenderMines:MetalRenderableProtocol
         inverseHeading = 0
         zRotation = 0
         userHeading = 0
-        normalizedCompensation = 0
         items = []
         
         let defaultLocation:CLLocation = CLLocation(
@@ -45,23 +43,12 @@ class MScannerRenderMines:MetalRenderableProtocol
     //MARK: public
     
     func motionRotate(
-        rawRotation:Double,
         xRotation:Float,
-        zRotation:Float)
+        zRotation:Float,
+        inverseHeading:Float)
     {
-        self.zRotation = zRotation
-        let compensateRotation:Double = ((rawRotation * 180.0) / Double.pi)
-        
-        if compensateRotation >= 0
-        {
-            normalizedCompensation = -(180 - compensateRotation)
-        }
-        else
-        {
-            normalizedCompensation = -(-180 - compensateRotation)
-        }
-        
-        inverseHeading = xRotation * 180.0 / Float.pi
+//        self.zRotation = zRotation
+        self.inverseHeading = inverseHeading
         rotation = MetalRotation(radians:xRotation)
     }
     
