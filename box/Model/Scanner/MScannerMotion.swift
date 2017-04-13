@@ -3,13 +3,24 @@ import CoreMotion
 
 class MScannerMotion
 {
+    private enum MotionOrientation
+    {
+        case portrait
+        case landscapeRight
+        case landscapeLeft
+    }
+    
     private weak var controller:CScanner!
+    private var motionOrientation:MotionOrientation
     private let manager:CMMotionManager!
-    private let kUpdatesInterval:TimeInterval = 0.09
+    private let kRotationThreshold:Double = 2.7
+    private let k180Deg:Float = 180
+    private let kUpdatesInterval:TimeInterval = 0.07
     
     init(controller:CScanner)
     {
         self.controller = controller
+        motionOrientation = MotionOrientation.portrait
         
         let manager:CMMotionManager = CMMotionManager()
         manager.deviceMotionUpdateInterval = kUpdatesInterval
@@ -18,45 +29,58 @@ class MScannerMotion
         if manager.isDeviceMotionAvailable
         {
             manager.startDeviceMotionUpdates(
-                using:CMAttitudeReferenceFrame.xTrueNorthZVertical,
-                to:OperationQueue.main)
+                using:CMAttitudeReferenceFrame.xArbitraryZVertical,
+                to:OperationQueue())
             { (data:CMDeviceMotion?, error:Error?) in
                 
-                if error == nil
+                guard
+                    
+                    let dataMotion:CMDeviceMotion = data
+                    
+                else
                 {
-                    guard
-                        
-                        let dataMotion:CMDeviceMotion = data
-                        
-                    else
-                    {
-                        return
-                    }
+                    return
+                }
+                
+                let acceleration:CMAcceleration = dataMotion.gravity
+                
+                DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+                { [weak self] in
                     
-                    let acceleration:CMAcceleration = dataMotion.gravity
-                    let attitude:CMAttitude = dataMotion.attitude
-                    let rotation:CMRotationMatrix = attitude.rotationMatrix
-                    let quaternion:CMQuaternion = attitude.quaternion
-                    
-                    self.gravityCompute(acceleration:acceleration)
-                    
-                    //                        print((attitude.yaw + (Double.pi / 2)) * -180.0 / Double.pi)
-                    
-                    //let heading = Double.atan2(rotation.m22, rotation.m12)
-                    let xy = atan2(quaternion.x, quaternion.y)
-                    let heading = atan2(quaternion.z, xy)
-                    //let heading = (quaternion.z + ((quaternion.x/2) + (quaternion.y))) * Double.pi
-                    let headingDegrees = heading * 180.0 / Double.pi
-                    
-                    //controller.modelRender?.mines.userHeading = -headingDegrees
-                    
-                    //print("\(quaternion.x) : \(quaternion.y) : \(quaternion.z)")
+                    self?.gravityCompute(acceleration:acceleration)
                 }
             }
         }
     }
     
     //MARK: private
+    
+    private func orientationPortrait()
+    {
+        if motionOrientation != MotionOrientation.portrait
+        {
+            motionOrientation = MotionOrientation.portrait
+            controller.modelGPS?.changeOrientationPortrait()
+        }
+    }
+    
+    private func orientationLandscapeLeft()
+    {
+        if motionOrientation != MotionOrientation.landscapeLeft
+        {
+            motionOrientation = MotionOrientation.landscapeLeft
+            controller.modelGPS?.changeOrientationLandscapeLeft()
+        }
+    }
+    
+    private func orientationLandscapeRight()
+    {
+        if motionOrientation != MotionOrientation.landscapeRight
+        {
+            motionOrientation = MotionOrientation.landscapeRight
+            controller.modelGPS?.changeOrientationLandscapeRight()
+        }
+    }
     
     private func gravityCompute(acceleration:CMAcceleration)
     {
@@ -75,33 +99,33 @@ class MScannerMotion
         
         if zRotationFloat >= 0
         {
-            normalizedZRotation = -(180 - zRotationFloat)
+            normalizedZRotation = -(k180Deg - zRotationFloat)
         }
         else
         {
-            normalizedZRotation = 180 + zRotationFloat
+            normalizedZRotation = k180Deg + zRotationFloat
         }
         
         if rawRotation >= 0
         {
-            if rawRotation < 2.7
+            if rawRotation < kRotationThreshold
             {
-                controller.modelGPS?.changeOrientationLandscapeRight()
+                orientationLandscapeRight()
             }
             else
             {
-                controller.modelGPS?.changeOrientationPortrait()
+                orientationPortrait()
             }
         }
         else
         {
-            if rawRotation > -2.7
+            if rawRotation > -kRotationThreshold
             {
-                controller.modelGPS?.changeOrientationLandscapeLeft()
+                orientationLandscapeLeft()
             }
             else
             {
-                controller.modelGPS?.changeOrientationPortrait()
+                orientationPortrait()
             }
         }
         
