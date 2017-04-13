@@ -87,26 +87,6 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
         controller.modelRender?.mines.userHeading = finalHeadingFloat
     }
     
-    //MARK: public
-    
-    func changeOrientationPortrait()
-    {
-        print("portrait")
-        locationManager?.headingOrientation = CLDeviceOrientation.portrait
-    }
-    
-    func changeOrientationLandscapeLeft()
-    {
-        print("landspace left")
-        locationManager?.headingOrientation = CLDeviceOrientation.landscapeLeft
-    }
-    
-    func changeOrientationLandscapeRight()
-    {
-        print("landscape right")
-        locationManager?.headingOrientation = CLDeviceOrientation.landscapeRight
-    }
-    
     //MARK: location delegate
     
     func locationManager(_ manager:CLLocationManager, didChangeAuthorization status:CLAuthorizationStatus)

@@ -60,7 +60,6 @@ class MScannerMotion
         if motionOrientation != MotionOrientation.portrait
         {
             motionOrientation = MotionOrientation.portrait
-            controller.modelGPS?.changeOrientationPortrait()
         }
     }
     
@@ -69,7 +68,6 @@ class MScannerMotion
         if motionOrientation != MotionOrientation.landscapeLeft
         {
             motionOrientation = MotionOrientation.landscapeLeft
-            controller.modelGPS?.changeOrientationLandscapeLeft()
         }
     }
     
@@ -78,7 +76,6 @@ class MScannerMotion
         if motionOrientation != MotionOrientation.landscapeRight
         {
             motionOrientation = MotionOrientation.landscapeRight
-            controller.modelGPS?.changeOrientationLandscapeRight()
         }
     }
     
