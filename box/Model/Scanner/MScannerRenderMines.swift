@@ -37,14 +37,31 @@ class MScannerRenderMines:MetalRenderableProtocol
         let defaultLocation:CLLocation = CLLocation(
             latitude:19.410595057002922,
             longitude:-99.175156495306979)
+        let headings:[Float] = [
+//            -180,
+            -90,
+//            0,
+//            45,
+//            135
+        ]
         
-        let defaultHeading:Float = -180
-        let defaultHeadingMultiplied:Float = defaultHeading * kHorizontalMultiplier
-        
-        let itemDefault:MScannerRenderMinesItem = MScannerRenderMinesItem(
-            location:defaultLocation,
-            mineHeading:defaultHeadingMultiplied)
-        items.append(itemDefault)
+        for heading:Float in headings
+        {
+            addMine(
+                location:defaultLocation,
+                heading:heading)
+        }
+    }
+    
+    //MARK: private
+    
+    private func addMine(location:CLLocation, heading:Float)
+    {
+        let multipliedHeading:Float = heading * kHorizontalMultiplier
+        let item:MScannerRenderMinesItem = MScannerRenderMinesItem(
+            location:location,
+            mineHeading:multipliedHeading)
+        items.append(item)
     }
     
     //MARK: public
@@ -87,20 +104,40 @@ class MScannerRenderMines:MetalRenderableProtocol
                 
                 positionY = verticalMultiplied
                 
-                print(positionX)
+                
                 
                 break
                 
             case MScannerMotion.Orientation.landscapeRight:
                 
-                positionY = mineHeading - headingMultiplied
+                if userHeading >= 0
+                {
+                    positionY = -(headingMultiplied + mineHeading)
+                }
+                else
+                {
+                    positionY = mineHeading - headingMultiplied
+                }
+                
+                
                 positionX = 0
                 
                 break
                 
             case MScannerMotion.Orientation.landscapeLeft:
                 
-                positionY = -(mineHeading - headingMultiplied)
+                if userHeading >= 0
+                {
+                    //here
+                    positionY = -(((360 - userHeading)*kHorizontalMultiplier) + mineHeading)
+                }
+                else
+                {
+                    positionY = -(mineHeading - headingMultiplied)
+                }
+                
+                print(positionY)
+                
                 positionX = 0
                 
                 break
