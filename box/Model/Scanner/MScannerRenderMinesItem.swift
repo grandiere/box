@@ -7,7 +7,8 @@ class MScannerRenderMinesItem
     let originalHeading:Float
     let location:CLLocation
     let position:MetalPosition
-    private let kMultiplier:Float = 10
+    private let kVerticalMultiplier:Float = 5
+    private let kHorizontalMultiplier:Float = 10
     
     init(location:CLLocation)
     {
@@ -23,8 +24,8 @@ class MScannerRenderMinesItem
         userHeading:Float,
         verticalAlign:Float) -> MTLBuffer
     {
-        position.positionX = originalHeading - (userHeading * kMultiplier)
-        position.positionY = verticalAlign * kMultiplier
+        position.positionX = originalHeading - (userHeading * kHorizontalMultiplier)
+        position.positionY = verticalAlign * kVerticalMultiplier
         let positionBuffer:MTLBuffer = device.generateBuffer(bufferable:position)
         
         return positionBuffer
