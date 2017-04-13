@@ -84,6 +84,9 @@ class MScannerGPS:NSObject, CLLocationManagerDelegate
         
         let finalHeading:CLLocationDirection = normalHeading - compensateHeading
         let finalHeadingFloat:Float = Float(finalHeading)
+        
+        print(finalHeadingFloat)
+        
         controller.modelRender?.mines.userHeading = finalHeadingFloat
     }
     

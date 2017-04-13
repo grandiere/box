@@ -44,7 +44,7 @@ class MScannerRenderMines:MetalRenderableProtocol
         moveHorizontal:Float,
         moveVertical:Float)
     {
-//        self.zRotation = zRotation
+        self.moveVertical = moveVertical
         rotation = MetalRotation(radians:moveHorizontal)
     }
     
@@ -59,7 +59,7 @@ class MScannerRenderMines:MetalRenderableProtocol
         {
             let itemPosition:MTLBuffer = item.positionBuffer(
                 device:device,
-                heading:userHeading,
+                userHeading:userHeading,
                 verticalAlign:moveVertical)
             
             renderEncoder.render(
