@@ -43,7 +43,8 @@ class MScannerMotion
                     
                     //let heading = Double.atan2(rotation.m22, rotation.m12)
                     
-                    let heading = (quaternion.z + ((quaternion.x/2) + (quaternion.y))) * Double.pi
+                    let heading = atan2(quaternion.z, quaternion.x)
+                    //let heading = (quaternion.z + ((quaternion.x/2) + (quaternion.y))) * Double.pi
                     let headingDegrees = heading * 180.0 / Double.pi
                     
                     controller.modelRender?.mines.userHeading = -headingDegrees
