@@ -37,13 +37,13 @@ class MScannerMotion
                     let attitude:CMAttitude = dataMotion.attitude
                     let rotation:CMRotationMatrix = attitude.rotationMatrix
                     let quaternion:CMQuaternion = attitude.quaternion
-                    self.gravityCompute(acceleration:acceleration)
+//                    self.gravityCompute(acceleration:acceleration)
                     
                     //                        print((attitude.yaw + (Double.pi / 2)) * -180.0 / Double.pi)
                     
                     //let heading = Double.atan2(rotation.m22, rotation.m12)
-                    
-                    let heading = atan2(quaternion.z, quaternion.x)
+                    let xy = atan2(quaternion.x, quaternion.y)
+                    let heading = atan2(quaternion.z, xy)
                     //let heading = (quaternion.z + ((quaternion.x/2) + (quaternion.y))) * Double.pi
                     let headingDegrees = heading * 180.0 / Double.pi
                     
