@@ -38,7 +38,7 @@ class MScannerRenderMines:MetalRenderableProtocol
             latitude:19.410595057002922,
             longitude:-99.175156495306979)
         
-        let defaultHeading:Float = -90
+        let defaultHeading:Float = -180
         let defaultHeadingMultiplied:Float = defaultHeading * kHorizontalMultiplier
         
         let itemDefault:MScannerRenderMinesItem = MScannerRenderMinesItem(
@@ -76,22 +76,32 @@ class MScannerRenderMines:MetalRenderableProtocol
             {
             case MScannerMotion.Orientation.portrait:
                 
-                positionX = mineHeading - headingMultiplied
+                if userHeading >= 0
+                {
+                    positionX = -(headingMultiplied + mineHeading)
+                }
+                else
+                {
+                    positionX = mineHeading - headingMultiplied
+                }
+                
                 positionY = verticalMultiplied
+                
+                print(positionX)
                 
                 break
                 
             case MScannerMotion.Orientation.landscapeRight:
                 
-                positionX = mineHeading - headingMultiplied
-                positionY = verticalMultiplied
+                positionY = mineHeading - headingMultiplied
+                positionX = 0
                 
                 break
                 
             case MScannerMotion.Orientation.landscapeLeft:
                 
-                positionX = mineHeading - headingMultiplied
-                positionY = verticalMultiplied
+                positionY = -(mineHeading - headingMultiplied)
+                positionX = 0
                 
                 break
             }
