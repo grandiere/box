@@ -81,7 +81,31 @@ class MScannerMotion
         {
             normalizedZRotation = 180 + zRotationFloat
         }
-        print(rawRotation)
+        
+        if rawRotation >= 0
+        {
+            if rawRotation < 2.7
+            {
+                controller.modelGPS?.changeOrientationLandscapeRight()
+            }
+            else
+            {
+                controller.modelGPS?.changeOrientationPortrait()
+            }
+        }
+        else
+        {
+            if rawRotation > -2.7
+            {
+                controller.modelGPS?.changeOrientationLandscapeLeft()
+            }
+            else
+            {
+                controller.modelGPS?.changeOrientationPortrait()
+            }
+        }
+        
+        
 //        controller.modelRender?.mines.motionRotate(
 //            rawRotation:rawRotation,
 //            xRotation:rotationFloat,
