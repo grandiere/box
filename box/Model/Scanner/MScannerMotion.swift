@@ -37,7 +37,8 @@ class MScannerMotion
                     let attitude:CMAttitude = dataMotion.attitude
                     let rotation:CMRotationMatrix = attitude.rotationMatrix
                     let quaternion:CMQuaternion = attitude.quaternion
-//                    self.gravityCompute(acceleration:acceleration)
+                    
+                    self.gravityCompute(acceleration:acceleration)
                     
                     //                        print((attitude.yaw + (Double.pi / 2)) * -180.0 / Double.pi)
                     
@@ -47,9 +48,9 @@ class MScannerMotion
                     //let heading = (quaternion.z + ((quaternion.x/2) + (quaternion.y))) * Double.pi
                     let headingDegrees = heading * 180.0 / Double.pi
                     
-                    controller.modelRender?.mines.userHeading = -headingDegrees
+                    //controller.modelRender?.mines.userHeading = -headingDegrees
                     
-                    print("\(quaternion.x) : \(quaternion.y) : \(quaternion.z)")
+                    //print("\(quaternion.x) : \(quaternion.y) : \(quaternion.z)")
                 }
             }
         }
@@ -80,10 +81,10 @@ class MScannerMotion
         {
             normalizedZRotation = 180 + zRotationFloat
         }
-        
-        controller.modelRender?.mines.motionRotate(
-            rawRotation:rawRotation,
-            xRotation:rotationFloat,
-            zRotation:normalizedZRotation)
+        print(rawRotation)
+//        controller.modelRender?.mines.motionRotate(
+//            rawRotation:rawRotation,
+//            xRotation:rotationFloat,
+//            zRotation:normalizedZRotation)
     }
 }
