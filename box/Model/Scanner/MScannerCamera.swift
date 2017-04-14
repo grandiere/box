@@ -42,6 +42,11 @@ class MScannerCamera:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate
         askAuthorization()
     }
     
+    deinit
+    {
+        cleanSession()
+    }
+    
     //MARK: private
     
     private func askAuthorization()

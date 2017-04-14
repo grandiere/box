@@ -8,7 +8,7 @@ class CGridVisor:CController
     private(set) var modelCamera:MScannerCamera?
     private(set) var modelMotion:MScannerMotion?
     private(set) var modelGPS:MScannerGPS?
-    private(set) weak var viewScanner:VScanner!
+    private(set) weak var viewGridVisor:VGridVisor!
     
     override init()
     {
@@ -33,18 +33,19 @@ class CGridVisor:CController
     
     override func loadView()
     {
-        let viewScanner:VScanner = VScanner(controller:self)
-        self.viewScanner = viewScanner
-        view = viewScanner
+        let viewGridVisor:VGridVisor = VGridVisor(controller:self)
+        self.viewGridVisor = viewGridVisor
+        view = viewGridVisor
     }
     
     override func viewDidAppear(_ animated:Bool)
     {
         super.viewDidAppear(animated)
+        parentController.viewParent.panRecognizer.isEnabled = false
         
         guard
             
-            let device:MTLDevice = viewScanner.viewMetal?.device
+            let device:MTLDevice = viewGridVisor.viewMetal?.device
             
         else
         {
