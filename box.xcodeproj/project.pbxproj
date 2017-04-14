@@ -38,6 +38,9 @@
 		DA134AB81E9D89C3002BE57D /* MScannerRenderMines.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB71E9D89C3002BE57D /* MScannerRenderMines.swift */; };
 		DA134ABA1E9D89CC002BE57D /* MScannerRenderMinesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB91E9D89CC002BE57D /* MScannerRenderMinesItem.swift */; };
 		DA4DC4581EA12E1C0024D28E /* MScannerOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC4571EA12E1C0024D28E /* MScannerOrientation.swift */; };
+		DA4DC45A1EA12F4E0024D28E /* MScannerOrientationPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC4591EA12F4E0024D28E /* MScannerOrientationPortrait.swift */; };
+		DA4DC45C1EA12F5A0024D28E /* MScannerOrientationLandscapeLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC45B1EA12F5A0024D28E /* MScannerOrientationLandscapeLeft.swift */; };
+		DA4DC45E1EA12F690024D28E /* MScannerOrientationLandscapeRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC45D1EA12F690024D28E /* MScannerOrientationLandscapeRight.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -106,6 +109,9 @@
 		DA134AB71E9D89C3002BE57D /* MScannerRenderMines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerRenderMines.swift; sourceTree = "<group>"; };
 		DA134AB91E9D89CC002BE57D /* MScannerRenderMinesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerRenderMinesItem.swift; sourceTree = "<group>"; };
 		DA4DC4571EA12E1C0024D28E /* MScannerOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerOrientation.swift; sourceTree = "<group>"; };
+		DA4DC4591EA12F4E0024D28E /* MScannerOrientationPortrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerOrientationPortrait.swift; sourceTree = "<group>"; };
+		DA4DC45B1EA12F5A0024D28E /* MScannerOrientationLandscapeLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerOrientationLandscapeLeft.swift; sourceTree = "<group>"; };
+		DA4DC45D1EA12F690024D28E /* MScannerOrientationLandscapeRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerOrientationLandscapeRight.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -185,6 +191,9 @@
 			children = (
 				DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */,
 				DA4DC4571EA12E1C0024D28E /* MScannerOrientation.swift */,
+				DA4DC4591EA12F4E0024D28E /* MScannerOrientationPortrait.swift */,
+				DA4DC45B1EA12F5A0024D28E /* MScannerOrientationLandscapeLeft.swift */,
+				DA4DC45D1EA12F690024D28E /* MScannerOrientationLandscapeRight.swift */,
 				DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */,
 				DA134A7E1E9D4EE9002BE57D /* MScannerRender.swift */,
 				DA134A801E9D4FC1002BE57D /* MScannerRenderBackground.swift */,
@@ -463,6 +472,9 @@
 				DAF15D601E9D32BB0000E6B9 /* ExtensionUICollectionReusableView.swift in Sources */,
 				DAF15D581E9D32BB0000E6B9 /* CParent.swift in Sources */,
 				DA134A8A1E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift in Sources */,
+				DA4DC45C1EA12F5A0024D28E /* MScannerOrientationLandscapeLeft.swift in Sources */,
+				DA4DC45A1EA12F4E0024D28E /* MScannerOrientationPortrait.swift in Sources */,
+				DA4DC45E1EA12F690024D28E /* MScannerOrientationLandscapeRight.swift in Sources */,
 				DA134AAA1E9D549E002BE57D /* MetalSpatialShapeSquare.swift in Sources */,
 				DAF15D7E1E9D47A40000E6B9 /* VScannerMetal.swift in Sources */,
 				DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */,
