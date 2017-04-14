@@ -14,8 +14,6 @@ class MScannerRenderMines:MetalRenderableProtocol
     private let spatialSquare:MetalSpatialShapeSquarePositive
     private let kWidth:Float = 110
     private let kHeight:Float = 110
-    private let kVerticalMultiplier:Float = 5
-    private let kHorizontalMultiplier:Float = 10
     
     init(
         controller:CScanner,
