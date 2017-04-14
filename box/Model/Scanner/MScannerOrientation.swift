@@ -9,6 +9,7 @@ class MScannerOrientation
     let kMinThreshold:Float = -29
     let kItemMinThreshold:Float = 3500
     let kItemMaxThreshold:Float = 100
+    let kVerticalDivider:Float = 2
     
     //MARK: public
     
