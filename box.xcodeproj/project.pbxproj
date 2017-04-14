@@ -37,6 +37,7 @@
 		DA134AB21E9D6DB5002BE57D /* MScannerGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB11E9D6DB5002BE57D /* MScannerGPS.swift */; };
 		DA134AB81E9D89C3002BE57D /* MScannerRenderMines.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB71E9D89C3002BE57D /* MScannerRenderMines.swift */; };
 		DA134ABA1E9D89CC002BE57D /* MScannerRenderMinesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB91E9D89CC002BE57D /* MScannerRenderMinesItem.swift */; };
+		DA4DC4581EA12E1C0024D28E /* MScannerOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC4571EA12E1C0024D28E /* MScannerOrientation.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -104,6 +105,7 @@
 		DA134AB11E9D6DB5002BE57D /* MScannerGPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerGPS.swift; sourceTree = "<group>"; };
 		DA134AB71E9D89C3002BE57D /* MScannerRenderMines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerRenderMines.swift; sourceTree = "<group>"; };
 		DA134AB91E9D89CC002BE57D /* MScannerRenderMinesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerRenderMinesItem.swift; sourceTree = "<group>"; };
+		DA4DC4571EA12E1C0024D28E /* MScannerOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerOrientation.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */,
+				DA4DC4571EA12E1C0024D28E /* MScannerOrientation.swift */,
 				DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */,
 				DA134A7E1E9D4EE9002BE57D /* MScannerRender.swift */,
 				DA134A801E9D4FC1002BE57D /* MScannerRenderBackground.swift */,
@@ -472,6 +475,7 @@
 				DA134AA01E9D549E002BE57D /* MetalPosition.swift in Sources */,
 				DAF15D641E9D32BB0000E6B9 /* MSession.swift in Sources */,
 				DA134A891E9D5076002BE57D /* ExtensionMTLDevice.swift in Sources */,
+				DA4DC4581EA12E1C0024D28E /* MScannerOrientation.swift in Sources */,
 				DAF15D631E9D32BB0000E6B9 /* ExtensionURL.swift in Sources */,
 				DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */,
 				DA134AAC1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift in Sources */,
