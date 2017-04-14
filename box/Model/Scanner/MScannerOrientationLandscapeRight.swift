@@ -10,30 +10,23 @@ class MScannerOrientationLandscapeRight:MScannerOrientation
         let positionX:Float
         let positionY:Float
         
-        positionY = 0
-        positionX = 0
+        if userHeading >= 0
+        {
+            let headingMultiplied:Float = userHeading * MScannerOrientation.kHorizontalMultiplier
+            positionY = -(headingMultiplied + itemHeading)
+        }
+        else
+        {
+            let headingMultiplied:Float = userHeading * MScannerOrientation.kHorizontalMultiplier
+            positionY = itemHeading - headingMultiplied
+        }
         
-        /*
- 
- 
-         if userHeading >= 0
-         {
-         positionY = -(headingMultiplied + mineHeading)
-         }
-         else
-         {
-         positionY = mineHeading - headingMultiplied
-         }
-         
-         
-         positionX = 0
-         
- */
+        positionX = -moveVertical
         
         let position:MetalPosition = MetalPosition(
             positionX:positionX,
             positionY:positionY)
-        
+
         return position
     }
 }
