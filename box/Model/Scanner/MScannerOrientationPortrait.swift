@@ -1,13 +1,11 @@
 import Foundation
-import MetalKit
 
 class MScannerOrientationPortrait:MScannerOrientation
 {
-    override func positionBuffer(
-        device:MTLDevice,
+    override func itemPosition(
         userHeading:Float,
         moveVertical:Float,
-        itemHeading:Float) -> MTLBuffer?
+        itemHeading:Float) -> MetalPosition?
     {
         let headingMultiplied:Float = userHeading * MScannerOrientation.kHorizontalMultiplier
         let verticalMultiplied:Float = moveVertical * MScannerOrientation.kVerticalMultiplier
@@ -28,9 +26,7 @@ class MScannerOrientationPortrait:MScannerOrientation
         let position:MetalPosition = MetalPosition(
             positionX:positionX,
             positionY:positionY)
-        let buffer:MTLBuffer = device.generateBuffer(
-            bufferable:position)
         
-        return buffer
+        return position
     }
 }
