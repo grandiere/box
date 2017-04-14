@@ -55,7 +55,7 @@ class MScannerRenderMines:MetalRenderableProtocol
     
     private func addMine(location:CLLocation, heading:Float)
     {
-        let multipliedHeading:Float = heading * kHorizontalMultiplier
+        let multipliedHeading:Float = heading * MScannerOrientation.kHorizontalMultiplier
         let item:MScannerRenderMinesItem = MScannerRenderMinesItem(
             location:location,
             mineHeading:multipliedHeading)
@@ -78,72 +78,23 @@ class MScannerRenderMines:MetalRenderableProtocol
     {
         let rotationBuffer:MTLBuffer = renderEncoder.device.generateBuffer(
             bufferable:rotation)
-        let headingMultiplied:Float = userHeading * kHorizontalMultiplier
-        let verticalMultiplied:Float = moveVertical * kVerticalMultiplier
         
         for item:MScannerRenderMinesItem in items
         {
-            let mineHeading:Float = item.mineHeading
-            let positionX:Float
-            let positionY:Float
+            let itemHeading:Float = item.mineHeading
             
-            switch controller.orientation
+            guard
+                
+                let position:MetalPosition = controller.orientation?.itemPosition(
+                    userHeading:userHeading,
+                    moveVertical:moveVertical,
+                    itemHeading:itemHeading)
+            
+            else
             {
-            case MScannerMotion.Orientation.portrait:
-                
-                if userHeading >= 0
-                {
-                    positionX = -(headingMultiplied + mineHeading)
-                }
-                else
-                {
-                    positionX = mineHeading - headingMultiplied
-                }
-                
-                positionY = verticalMultiplied
-                
-                
-                
-                break
-                
-            case MScannerMotion.Orientation.landscapeRight:
-                
-                if userHeading >= 0
-                {
-                    positionY = -(headingMultiplied + mineHeading)
-                }
-                else
-                {
-                    positionY = mineHeading - headingMultiplied
-                }
-                
-                
-                positionX = 0
-                
-                break
-                
-            case MScannerMotion.Orientation.landscapeLeft:
-                
-                if userHeading >= 0
-                {
-                    //here
-                    positionY = -(((360 - userHeading)*kHorizontalMultiplier) + mineHeading)
-                }
-                else
-                {
-                    positionY = -(mineHeading - headingMultiplied)
-                }
-                
-                print(positionY)
-                
-                positionX = 0
-                
-                break
+                continue
             }
             
-            let position:MetalPosition = MetalPosition(
-                positionX:positionX,
-                positionY:positionY)
             let positionBuffer:MTLBuffer = device.generateBuffer(
                 bufferable:position)
             
