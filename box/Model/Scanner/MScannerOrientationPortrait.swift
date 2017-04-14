@@ -20,7 +20,7 @@ class MScannerOrientationPortrait:MScannerOrientation
             }
             else
             {
-                positionX = -(headingMultiplied + itemHeading)
+                positionX = -(headingMultiplied - itemHeading)
             }
         }
         else
