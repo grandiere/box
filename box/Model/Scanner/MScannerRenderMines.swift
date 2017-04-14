@@ -36,11 +36,11 @@ class MScannerRenderMines:MetalRenderableProtocol
             latitude:19.410595057002922,
             longitude:-99.175156495306979)
         let headings:[Float] = [
-            -180,
-            -90,
+//            -180,
+//            -90,
             0,
-            45,
-            135
+//            45,
+//            135
         ]
         
         for heading:Float in headings

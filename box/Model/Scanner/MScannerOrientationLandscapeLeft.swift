@@ -12,7 +12,17 @@ class MScannerOrientationLandscapeLeft:MScannerOrientation
         
         if userHeading >= 0
         {
-            let inversedHeading:Float = k360Deg - userHeading
+            let inversedHeading:Float
+            
+            if userHeading >= k180Deg
+            {
+                inversedHeading = k360Deg - userHeading
+            }
+            else
+            {
+                inversedHeading = -userHeading
+            }
+            
             let headingMultiplied:Float  = inversedHeading * MScannerOrientation.kHorizontalMultiplier
             positionY = -(headingMultiplied + itemHeading)
         }
