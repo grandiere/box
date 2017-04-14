@@ -14,7 +14,14 @@ class MScannerOrientationPortrait:MScannerOrientation
         
         if userHeading >= 0
         {
-            positionX = -(headingMultiplied + itemHeading)
+            if itemHeading >= 0
+            {
+                positionX = -(headingMultiplied - itemHeading)
+            }
+            else
+            {
+                positionX = -(headingMultiplied + itemHeading)
+            }
         }
         else
         {
