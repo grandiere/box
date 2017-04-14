@@ -55,7 +55,16 @@ class MScannerRenderMines:MetalRenderableProtocol
     
     private func addMine(location:CLLocation, heading:Float)
     {
-        let multipliedHeading:Float = heading * MScannerOrientation.kHorizontalMultiplier
+        guard
+            
+            let multipliedHeading:Float = controller.orientation?.normalHeading(
+                rawHeading:heading)
+        
+        else
+        {
+            return
+        }
+        
         let item:MScannerRenderMinesItem = MScannerRenderMinesItem(
             location:location,
             mineHeading:multipliedHeading)

@@ -2,8 +2,8 @@ import Foundation
 
 class MScannerOrientation
 {
-    static let kVerticalMultiplier:Float = 5
-    static let kHorizontalMultiplier:Float = 10
+    let kVerticalMultiplier:Float = 5
+    let kHorizontalMultiplier:Float = 10
     let k360Deg:Float = 360
     let k180Deg:Float = 180
     
@@ -11,12 +11,20 @@ class MScannerOrientation
     
     final func normalHeading(rawHeading:Float) -> Float
     {
+        let normal:Float
+        
         if rawHeading >= 0
         {
-            return rawHeading
+            normal = rawHeading
+        }
+        else
+        {
+            normal = k360Deg + rawHeading
         }
         
-        return k360Deg - rawHeading
+        let normalMultiplied:Float = normal * kHorizontalMultiplier
+        
+        return normalMultiplied
     }
     
     func itemPosition(

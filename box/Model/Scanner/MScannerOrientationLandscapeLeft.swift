@@ -23,12 +23,12 @@ class MScannerOrientationLandscapeLeft:MScannerOrientation
                 inversedHeading = -userHeading
             }
             
-            let headingMultiplied:Float  = inversedHeading * MScannerOrientation.kHorizontalMultiplier
+            let headingMultiplied:Float  = inversedHeading * kHorizontalMultiplier
             positionY = -(headingMultiplied + itemHeading)
         }
         else
         {
-            let headingMultiplied:Float = userHeading * MScannerOrientation.kHorizontalMultiplier
+            let headingMultiplied:Float = userHeading * kHorizontalMultiplier
             positionY = -(itemHeading - headingMultiplied)
         }
         

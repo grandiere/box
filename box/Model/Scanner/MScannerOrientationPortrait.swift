@@ -7,29 +7,11 @@ class MScannerOrientationPortrait:MScannerOrientation
         moveVertical:Float,
         itemHeading:Float) -> MetalPosition?
     {
-        let headingMultiplied:Float = userHeading * MScannerOrientation.kHorizontalMultiplier
-        let verticalMultiplied:Float = moveVertical * MScannerOrientation.kVerticalMultiplier
-        let positionX:Float
-        let positionY:Float
+        let normalUserHeading:Float = normalHeading(rawHeading:userHeading)
+        let verticalMultiplied:Float = moveVertical * kVerticalMultiplier
+        let positionX:Float = itemHeading - normalUserHeading
+        let positionY:Float = verticalMultiplied
         
-        if userHeading >= 0
-        {
-            if itemHeading >= 0
-            {
-                positionX = -(headingMultiplied - itemHeading)
-            }
-            else
-            {
-                positionX = -(headingMultiplied - itemHeading)
-            }
-        }
-        else
-        {
-            positionX = itemHeading - headingMultiplied
-        }
-        
-        positionY = verticalMultiplied
-       
         let position:MetalPosition = MetalPosition(
             positionX:positionX,
             positionY:positionY)
