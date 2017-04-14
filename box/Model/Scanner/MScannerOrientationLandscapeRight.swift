@@ -7,26 +7,24 @@ class MScannerOrientationLandscapeRight:MScannerOrientation
         moveVertical:Float,
         itemHeading:Float) -> MetalPosition?
     {
-        let positionX:Float
-        let positionY:Float
+        let normalUserHeading:Float
         
-        if userHeading >= 0
+        if (itemHeading < kItemMaxThreshold) && (userHeading < 0 && userHeading > kMinThreshold)
         {
-            let headingMultiplied:Float = userHeading * kHorizontalMultiplier
-            positionY = -(headingMultiplied + itemHeading)
+            normalUserHeading = userHeading * kHorizontalMultiplier
         }
         else
         {
-            let headingMultiplied:Float = userHeading * kHorizontalMultiplier
-            positionY = itemHeading - headingMultiplied
+            normalUserHeading = normalHeading(rawHeading:userHeading)
         }
         
-        positionX = -moveVertical
+        let positionY:Float = itemHeading - normalUserHeading
+        let positionX:Float = moveVertical / -kVerticalDivider
         
         let position:MetalPosition = MetalPosition(
             positionX:positionX,
             positionY:positionY)
-
+        
         return position
     }
 }
