@@ -6,6 +6,9 @@ class MScannerOrientation
     let kHorizontalMultiplier:Float = 10
     let k360Deg:Float = 360
     let k180Deg:Float = 180
+    let kMinThreshold:Float = -29
+    let kItemMinThreshold:Float = 3500
+    let kItemMaxThreshold:Float = 100
     
     //MARK: public
     
