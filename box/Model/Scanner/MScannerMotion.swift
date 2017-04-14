@@ -3,13 +3,6 @@ import CoreMotion
 
 class MScannerMotion
 {
-    enum Orientation
-    {
-        case portrait
-        case landscapeRight
-        case landscapeLeft
-    }
-    
     private weak var controller:CScanner!
     private let manager:CMMotionManager!
     private let kRotationThreshold:Double = 1.9
@@ -54,17 +47,44 @@ class MScannerMotion
     
     private func orientationPortrait()
     {
-        controller.orientation = Orientation.portrait
+        guard
+            
+            let _:MScannerOrientationPortrait = controller.orientation as? MScannerOrientationPortrait
+        
+        else
+        {
+            controller.orientation = MScannerOrientationPortrait()
+            
+            return
+        }
     }
     
     private func orientationLandscapeLeft()
     {
-        controller.orientation = Orientation.landscapeLeft
+        guard
+            
+            let _:MScannerOrientationLandscapeLeft = controller.orientation as? MScannerOrientationLandscapeLeft
+            
+        else
+        {
+            controller.orientation = MScannerOrientationLandscapeLeft()
+            
+            return
+        }
     }
     
     private func orientationLandscapeRight()
     {
-        controller.orientation = Orientation.landscapeRight
+        guard
+            
+            let _:MScannerOrientationLandscapeRight = controller.orientation as? MScannerOrientationLandscapeRight
+            
+        else
+        {
+            controller.orientation = MScannerOrientationLandscapeRight()
+            
+            return
+        }
     }
     
     private func gravityCompute(acceleration:CMAcceleration)

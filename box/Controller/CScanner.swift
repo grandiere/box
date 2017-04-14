@@ -3,7 +3,7 @@ import MetalKit
 
 class CScanner:CController
 {
-    var orientation:MScannerMotion.Orientation
+    var orientation:MScannerOrientation?
     private(set) var modelRender:MScannerRender?
     private(set) var modelCamera:MScannerCamera?
     private(set) var modelMotion:MScannerMotion?
@@ -12,7 +12,7 @@ class CScanner:CController
     
     override init()
     {
-        orientation = MScannerMotion.Orientation.portrait
+        orientation = MScannerOrientationPortrait()
         super.init()
     }
     
