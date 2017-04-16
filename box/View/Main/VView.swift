@@ -13,7 +13,7 @@ class VView:UIView
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.black
     }
     
     required init?(coder:NSCoder)

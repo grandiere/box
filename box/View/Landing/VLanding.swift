@@ -14,10 +14,10 @@ class VLanding:VView
         let buttonScanner:UIButton = UIButton()
         buttonScanner.translatesAutoresizingMaskIntoConstraints = false
         buttonScanner.setTitle(
-            NSLocalizedString("VLanding_buttonScanner", comment:""),
+            NSLocalizedString("VLanding_buttonGrid", comment:""),
             for:UIControlState.normal)
         buttonScanner.setTitleColor(
-            UIColor.black,
+            UIColor.white,
             for:UIControlState.normal)
         buttonScanner.addTarget(
             self,

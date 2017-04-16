@@ -15,9 +15,9 @@ class CLanding:CController
     
     func openScanner()
     {
-        let controllerScanner:CScanner = CScanner()
+        let controllerGrid:CGrid = CGrid()
         parentController.push(
-            controller:controllerScanner,
+            controller:controllerGrid,
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
 }
