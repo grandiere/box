@@ -4,7 +4,7 @@ class VGrid:VView
 {
     private weak var controller:CGrid!
     private weak var spinner:VSpinner!
-    private let kBarHeight:CGFloat = 70
+    private let kBarHeight:CGFloat = 60
     
     override init(controller:CController)
     {

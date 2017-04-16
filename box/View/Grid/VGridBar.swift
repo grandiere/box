@@ -15,7 +15,17 @@ class VGridBar:UIView
         
         let border:VBorder = VBorder(color:UIColor.gridBlue)
         
+        let labelTitle:UILabel = UILabel()
+        labelTitle.isUserInteractionEnabled = false
+        labelTitle.translatesAutoresizingMaskIntoConstraints = false
+        labelTitle.textAlignment = NSTextAlignment.center
+        labelTitle.backgroundColor = UIColor.clear
+        labelTitle.font = UIFont.bolder(size:17)
+        labelTitle.text = NSLocalizedString("VGridBar_labelTitle", comment:"")
+        labelTitle.textColor = UIColor.gridBlue
+        
         addSubview(border)
+        addSubview(labelTitle)
         
         NSLayoutConstraint.bottomToBottom(
             view:border,
@@ -25,6 +35,10 @@ class VGridBar:UIView
             constant:kBorderHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:border,
+            toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:labelTitle,
             toView:self)
     }
     

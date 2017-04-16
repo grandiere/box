@@ -1,5 +1,6 @@
 "VLanding_buttonGrid"="Grid";
 "VGridVisor_errorMetal"="Metal not available";
+"VGridBar_labelTitle"="The Grid";
 
 "MScannerCamera_errorNoAuth"="Unable to use the camera";
 "MScannerCamera_errorNoCaptureDevice"="No capture device found";
