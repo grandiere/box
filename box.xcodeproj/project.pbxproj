@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A771E9D48ED002BE57D /* MetalConstants.swift */; };
 		DA134A7B1E9D4A24002BE57D /* MScannerCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */; };
 		DA134A7D1E9D4EAC002BE57D /* MScannerMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */; };
@@ -89,6 +90,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA134A771E9D48ED002BE57D /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerCamera.swift; sourceTree = "<group>"; };
 		DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerMotion.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */,
 				DA134AAF1E9D5D69002BE57D /* texture.xcassets */,
 				DA22F3D41EA3085A00F6ED91 /* brand.xcassets */,
+				DA0BDA051EA414F900282D73 /* spinner.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				DA22F3D51EA3085A00F6ED91 /* brand.xcassets in Resources */,
 				DAF15D651E9D32BB0000E6B9 /* Localizable.strings in Resources */,
 				DA134AB01E9D5D69002BE57D /* texture.xcassets in Resources */,
+				DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
