@@ -10,4 +10,11 @@ class CGrid:CController
         self.viewGrid = viewGrid
         view = viewGrid
     }
+    
+    //MARK: public
+    
+    func back()
+    {
+        parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }
