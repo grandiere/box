@@ -51,7 +51,7 @@ class CGridVisor:CController
         {
             return
         }
-        
+        /*
         if modelRender == nil
         {
             modelRender = MScannerRender(
@@ -72,7 +72,7 @@ class CGridVisor:CController
         if modelGPS == nil
         {
             modelGPS = MScannerGPS(controller:self)
-        }
+        }*/
     }
     
     //MARK: private
