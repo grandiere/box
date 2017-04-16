@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
+		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A771E9D48ED002BE57D /* MetalConstants.swift */; };
 		DA134A7B1E9D4A24002BE57D /* MScannerCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */; };
 		DA134A7D1E9D4EAC002BE57D /* MScannerMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */; };
@@ -91,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
+		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA134A771E9D48ED002BE57D /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DA134A7A1E9D4A24002BE57D /* MScannerCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerCamera.swift; sourceTree = "<group>"; };
 		DA134A7C1E9D4EAC002BE57D /* MScannerMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerMotion.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				DA22F3D21EA2F30800F6ED91 /* VGrid.swift */,
+				DA0BDA071EA418E500282D73 /* VGridBar.swift */,
 			);
 			path = Grid;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */,
 				DA134AAC1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift in Sources */,
 				DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */,
+				DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */,
 				DA22F3D31EA2F30800F6ED91 /* VGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

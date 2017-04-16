@@ -2,38 +2,26 @@ import UIKit
 
 extension UIColor
 {
-    open class var boxBlue:UIColor //#597EAB
+    open class var gridBlue:UIColor //#008CC8
     {
         get
         {
             return UIColor(
-                red:0.349019607843137,
-                green:0.494117647058824,
-                blue:0.670588235294118,
+                red:0,
+                green:0.549019607843137,
+                blue:0.784313725490196,
                 alpha:1)
         }
     }
     
-    open class var boxRed:UIColor //#FE6F55
+    open class var gridOrange:UIColor //#FFB400
     {
         get
         {
             return UIColor(
-                red:0.996078431372549,
-                green:0.435294117647059,
-                blue:0.333333333333333,
-                alpha:1)
-        }
-    }
-    
-    open class var boxGreen:UIColor //#5DBF83
-    {
-        get
-        {
-            return UIColor(
-                red:0.364705882352941,
-                green:0.749019607843137,
-                blue:0.513725490196078,
+                red:1,
+                green:0.705882352941176,
+                blue:0,
                 alpha:1)
         }
     }
