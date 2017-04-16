@@ -37,6 +37,7 @@
 		DA134AB21E9D6DB5002BE57D /* MScannerGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB11E9D6DB5002BE57D /* MScannerGPS.swift */; };
 		DA134AB81E9D89C3002BE57D /* MScannerRenderMines.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB71E9D89C3002BE57D /* MScannerRenderMines.swift */; };
 		DA134ABA1E9D89CC002BE57D /* MScannerRenderMinesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134AB91E9D89CC002BE57D /* MScannerRenderMinesItem.swift */; };
+		DA22F3D01EA2F2DB00F6ED91 /* CGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F3CF1EA2F2DB00F6ED91 /* CGrid.swift */; };
 		DA4DC4581EA12E1C0024D28E /* MScannerOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC4571EA12E1C0024D28E /* MScannerOrientation.swift */; };
 		DA4DC45A1EA12F4E0024D28E /* MScannerOrientationPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC4591EA12F4E0024D28E /* MScannerOrientationPortrait.swift */; };
 		DA4DC45C1EA12F5A0024D28E /* MScannerOrientationLandscapeLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC45B1EA12F5A0024D28E /* MScannerOrientationLandscapeLeft.swift */; };
@@ -117,6 +118,7 @@
 		DA134AB11E9D6DB5002BE57D /* MScannerGPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerGPS.swift; sourceTree = "<group>"; };
 		DA134AB71E9D89C3002BE57D /* MScannerRenderMines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerRenderMines.swift; sourceTree = "<group>"; };
 		DA134AB91E9D89CC002BE57D /* MScannerRenderMinesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerRenderMinesItem.swift; sourceTree = "<group>"; };
+		DA22F3CF1EA2F2DB00F6ED91 /* CGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGrid.swift; sourceTree = "<group>"; };
 		DA4DC4571EA12E1C0024D28E /* MScannerOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerOrientation.swift; sourceTree = "<group>"; };
 		DA4DC4591EA12F4E0024D28E /* MScannerOrientationPortrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerOrientationPortrait.swift; sourceTree = "<group>"; };
 		DA4DC45B1EA12F5A0024D28E /* MScannerOrientationLandscapeLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MScannerOrientationLandscapeLeft.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				DAF15D731E9D34FF0000E6B9 /* CLanding.swift */,
 				DAF15D781E9D40A20000E6B9 /* CScanner.swift */,
 				DA4DC45F1EA1893B0024D28E /* CGridVisor.swift */,
+				DA22F3CF1EA2F2DB00F6ED91 /* CGrid.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				DAF15D621E9D32BB0000E6B9 /* ExtensionUIFont.swift in Sources */,
 				DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */,
 				DA134AB81E9D89C3002BE57D /* MScannerRenderMines.swift in Sources */,
+				DA22F3D01EA2F2DB00F6ED91 /* CGrid.swift in Sources */,
 				DAF15D6B1E9D32BB0000E6B9 /* VParent.swift in Sources */,
 				DA134AA31E9D549E002BE57D /* MetalVertexTextured.swift in Sources */,
 				DAF15D671E9D32BB0000E6B9 /* VBlur.swift in Sources */,
