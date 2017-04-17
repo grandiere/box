@@ -2,7 +2,22 @@ import UIKit
 
 class CGrid:CController
 {
+    let model:MGrid
+    let modelAlgo:MGridAlgo
     private weak var viewGrid:VGrid!
+    
+    override init()
+    {
+        model = MGrid()
+        modelAlgo = MGridAlgo()
+        
+        super.init()
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
     
     override func loadView()
     {
