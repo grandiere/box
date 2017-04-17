@@ -5,3 +5,8 @@
 "MScannerCamera_errorNoAuth"="Unable to use the camera";
 "MScannerCamera_errorNoCaptureDevice"="No capture device found";
 "MScannerCamera_errorNoOutput"="Unable to connect output";
+
+"MGridItemMap_title"="Grid Map";
+"MGridItemMap_subtitle"="Want to know where to go?";
+"MGridItemVisor_title"="Grid Visor";
+"MGridItemVisor_subtitle"="Interact with your surrondings";
