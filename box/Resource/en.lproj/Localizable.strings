@@ -7,6 +7,6 @@
 "MScannerCamera_errorNoOutput"="Unable to connect output";
 
 "MGridItemMap_title"="Grid Map";
-"MGridItemMap_subtitle"="Want to know where to go?";
+"MGridItemMap_subtitle"="\nWant to know where to go?";
 "MGridItemVisor_title"="Grid Visor";
-"MGridItemVisor_subtitle"="Interact with your surrondings";
+"MGridItemVisor_subtitle"="\nInteract with your surrondings";
