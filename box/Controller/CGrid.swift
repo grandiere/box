@@ -26,6 +26,33 @@ class CGrid:CController
         view = viewGrid
     }
     
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.loadAlgos()
+        }
+    }
+    
+    //MARK: private
+    
+    private func loadAlgos()
+    {
+        
+    }
+    
+    private func algosLoaded()
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.viewGrid.refresh()
+        }
+    }
+    
     //MARK: public
     
     func back()

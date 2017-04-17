@@ -58,6 +58,13 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         return item
     }
     
+    //MARK: public
+    
+    func refresh()
+    {
+        collectionView.reloadData()
+    }
+    
     //MARK: collectionView delegate
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
