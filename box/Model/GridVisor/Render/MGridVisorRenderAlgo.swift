@@ -5,50 +5,26 @@ import MetalKit
 class MGridVisorRenderAlgo:MetalRenderableProtocol
 {
     var userHeading:Float
-    private weak var controller:CScanner!
+    private weak var textureLoader:MTKTextureLoader?
+    private weak var controller:CGridVisor!
+    private weak var device:MTLDevice!
     private(set) var items:[MGridVisorRenderAlgoItem]
     private var rotation:MetalRotation
     private var moveVertical:Float
-    private let device:MTLDevice
-    private let texture:MTLTexture
     private let spatialSquare:MetalSpatialShapeSquarePositive
-    private let kWidth:Float = 110
-    private let kHeight:Float = 110
     
     init(
-        controller:CScanner,
+        controller:CGridVisor,
         device:MTLDevice,
-        texture:MTLTexture)
+        textureLoader:MTKTextureLoader)
     {
         self.controller = controller
         self.device = device
-        self.texture = texture
-        spatialSquare = MetalSpatialShapeSquarePositive(
-            device:device,
-            width:kWidth,
-            height:kHeight)
+        self.textureLoader = textureLoader
         rotation = MetalRotation.none()
         moveVertical = 0
         userHeading = 0
         items = []
-        
-        let defaultLocation:CLLocation = CLLocation(
-            latitude:19.410595057002922,
-            longitude:-99.175156495306979)
-        let headings:[Float] = [
-            -180,
-            -90,
-            0,
-            45,
-            135
-        ]
-        
-        for heading:Float in headings
-        {
-            addMine(
-                location:defaultLocation,
-                heading:heading)
-        }
     }
     
     //MARK: private
@@ -72,6 +48,11 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     }
     
     //MARK: public
+    
+    func addAlgo(nearItems:[MGridAlgoItem])
+    {
+        
+    }
     
     func motionRotate(
         moveHorizontal:Float,

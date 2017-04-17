@@ -1,5 +1,4 @@
 import Foundation
-import CoreLocation
 
 class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
 {
@@ -13,6 +12,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
         posterId:String)
     {
         self.posterId = posterId
+        
         super.init(
             latitude:latitude,
             longitude:longitude,

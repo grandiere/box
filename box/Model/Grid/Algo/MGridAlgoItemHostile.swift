@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 class MGridAlgoItemHostile:MGridAlgoItem
 {
@@ -8,11 +8,16 @@ class MGridAlgoItemHostile:MGridAlgoItem
     init(
         latitude:Double,
         longitude:Double,
+        image:UIImage,
         difficulty:Int,
         created:TimeInterval)
     {
         self.difficulty = difficulty
         self.created = created
-        super.init(latitude:latitude, longitude:longitude)
+        
+        super.init(
+            latitude:latitude,
+            longitude:longitude,
+            image:image)
     }
 }

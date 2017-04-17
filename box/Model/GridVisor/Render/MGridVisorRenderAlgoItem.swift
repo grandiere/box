@@ -1,20 +1,33 @@
-import Foundation
-import CoreLocation
+import UIKit
 import MetalKit
 
 class MGridVisorRenderAlgoItem
 {
-    let mineHeading:Float
-    let location:CLLocation
     let texture:MTLTexture
+    let spatialSquare:MetalSpatialShapeSquarePositive
+    private(set) weak var model:MGridAlgoItem!
     
-    init(
-        location:CLLocation,
-        mineHeading:Float,
-        texture:MTLTexture)
+    init?(
+        device:MTLDevice,
+        textureLoader:MTKTextureLoader,
+        model:MGridAlgoItem)
     {
-        self.location = location
-        self.mineHeading = mineHeading
+        self.model = model
+        
+        guard
+            
+            let texture:MTLTexture = textureLoader.loadImage(
+            image:image)
+            
+        else
+        {
+            return nil
+        }
+        
         self.texture = texture
+        spatialSquare = MetalSpatialShapeSquarePositive(
+            device:device,
+            width:width,
+            height:height)
     }
 }

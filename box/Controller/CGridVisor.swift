@@ -6,7 +6,7 @@ class CGridVisor:CController
 {
     var orientation:MScannerOrientation?
     private(set) weak var modelAlgo:MGridAlgo!
-    private(set) var modelRender:MScannerRender?
+    private(set) var modelRender:MGridVisorRender?
     private(set) var modelCamera:MGridVisorCamera?
     private(set) var modelMotion:MGridVisorMotion?
     private(set) var modelGPS:MGridVisorGPS?
@@ -91,7 +91,7 @@ class CGridVisor:CController
         
         if modelRender == nil
         {
-            modelRender = MScannerRender(
+            modelRender = MGridVisorRender(
                 controller:self,
                 device:device)
         }

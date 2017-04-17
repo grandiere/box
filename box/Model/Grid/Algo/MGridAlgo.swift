@@ -19,7 +19,7 @@ class MGridAlgo
         nearItems = nil
     }
     
-    func loadAlgos()
+    func loadAlgo()
     {
         let itemDefault:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
             latitude:19.410595057002922,

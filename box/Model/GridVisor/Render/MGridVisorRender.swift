@@ -5,36 +5,26 @@ import CoreLocation
 
 class MGridVisorRender:MetalRenderableProtocol
 {
-    let background:MScannerRenderBackground
+    let background:MGridVisorRenderBackground
     let algo:MGridVisorRenderAlgo
-    let mines:MScannerRenderMines
     private let cIContext:CIContext
     private let textureLoader:MTKTextureLoader
     private let projection:MetalProjection
     
-    init?(
-        controller:CScanner,
+    init(
+        controller:CGridVisor,
         device:MTLDevice)
     {
         textureLoader = MTKTextureLoader(device:device)
         
-        guard
-            
-            let textureMenuBase:MTLTexture = textureLoader.loadImage(
-                image:#imageLiteral(resourceName: "assetTextureTriangle"))
-            
-        else
-        {
-            return nil
-        }
-        
         cIContext = CIContext(mtlDevice:device)
-        background = MScannerRenderBackground(device:device)
+        background = MGridVisorRenderBackground(device:device)
         projection = MetalProjection(device:device)
-        mines = MScannerRenderMines(
+        
+        algo = MGridVisorRenderAlgo(
             controller:controller,
             device:device,
-            texture:textureMenuBase)
+            textureLoader:textureLoader)
     }
     
     //MARK: public
@@ -65,6 +55,6 @@ class MGridVisorRender:MetalRenderableProtocol
             projection:projection.projectionBuffer)
         
         background.render(renderEncoder:renderEncoder)
-        mines.render(renderEncoder:renderEncoder)
+        algo.render(renderEncoder:renderEncoder)
     }
 }
