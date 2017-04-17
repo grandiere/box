@@ -58,6 +58,7 @@
 		DA4DC47E1EA192CC0024D28E /* MGridAlgoItemHostileVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC47D1EA192CC0024D28E /* MGridAlgoItemHostileVirus.swift */; };
 		DA771F361EA5338E00CAA820 /* VGridVisorBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F351EA5338E00CAA820 /* VGridVisorBar.swift */; };
 		DA771F381EA5495400CAA820 /* VGridVisorBarEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F371EA5495400CAA820 /* VGridVisorBarEnergy.swift */; };
+		DA771F3A1EA551F000CAA820 /* MGridVisorGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F391EA551F000CAA820 /* MGridVisorGPS.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -153,6 +154,7 @@
 		DA4DC47D1EA192CC0024D28E /* MGridAlgoItemHostileVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoItemHostileVirus.swift; sourceTree = "<group>"; };
 		DA771F351EA5338E00CAA820 /* VGridVisorBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorBar.swift; sourceTree = "<group>"; };
 		DA771F371EA5495400CAA820 /* VGridVisorBarEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorBarEnergy.swift; sourceTree = "<group>"; };
+		DA771F391EA551F000CAA820 /* MGridVisorGPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorGPS.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 		DA4DC4691EA18EE80024D28E /* GPS */ = {
 			isa = PBXGroup;
 			children = (
+				DA771F391EA551F000CAA820 /* MGridVisorGPS.swift */,
 			);
 			path = GPS;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				DAF15D5B1E9D32BB0000E6B9 /* ExtensionFileManager.swift in Sources */,
 				DA134AB21E9D6DB5002BE57D /* MScannerGPS.swift in Sources */,
 				DA134AA91E9D549E002BE57D /* MetalShaderVertexTextured.metal in Sources */,
+				DA771F3A1EA551F000CAA820 /* MGridVisorGPS.swift in Sources */,
 				DA134AAD1E9D549E002BE57D /* MetalShaderFragmentSimple.metal in Sources */,
 				DAFDEF981EA5090D0016746F /* MGridItemVisor.swift in Sources */,
 				DAF15D5C1E9D32BB0000E6B9 /* ExtensionNotification.swift in Sources */,

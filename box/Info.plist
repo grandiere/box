@@ -27,7 +27,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Scanner</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your location</string>
+	<string>Location in the Grid</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

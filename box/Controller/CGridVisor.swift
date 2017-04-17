@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 import MetalKit
 
 class CGridVisor:CController
@@ -8,7 +9,7 @@ class CGridVisor:CController
     private(set) var modelRender:MScannerRender?
     private(set) var modelCamera:MScannerCamera?
     private(set) var modelMotion:MScannerMotion?
-    private(set) var modelGPS:MScannerGPS?
+    private(set) var modelGPS:MGridVisorGPS?
     private(set) weak var viewGridVisor:VGridVisor!
     
     init(modelAlgo:MGridAlgo)
@@ -53,6 +54,12 @@ class CGridVisor:CController
         {
             return
         }
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.turnOnGPS()
+        }
         /*
         if modelRender == nil
         {
@@ -84,11 +91,24 @@ class CGridVisor:CController
         modelCamera?.cleanSession()
     }
     
+    private func turnOnGPS()
+    {
+        if modelGPS == nil
+        {
+            modelGPS = MGridVisorGPS(controller:self)
+        }
+    }
+    
     //MARK: public
     
     func back()
     {
         cleanSession()
         parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
+    func locationFound(currentLocation:CLLocation)
+    {
+        
     }
 }

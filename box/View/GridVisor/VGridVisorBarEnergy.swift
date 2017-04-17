@@ -19,6 +19,7 @@ class VGridVisorBarEnergy:UIView
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
         image.contentMode = UIViewContentMode.center
+        image.image = #imageLiteral(resourceName: "assetGenericEnergy100")
         self.image = image
         
         addSubview(image)
