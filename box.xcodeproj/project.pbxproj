@@ -89,6 +89,7 @@
 		DAF15D791E9D40A20000E6B9 /* CScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D781E9D40A20000E6B9 /* CScanner.swift */; };
 		DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */; };
 		DAF15D7E1E9D47A40000E6B9 /* VScannerMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D7D1E9D47A40000E6B9 /* VScannerMetal.swift */; };
+		DAFDEF8F1EA5061C0016746F /* VGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF8E1EA5061C0016746F /* VGridCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,6 +178,7 @@
 		DAF15D781E9D40A20000E6B9 /* CScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CScanner.swift; sourceTree = "<group>"; };
 		DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VScanner.swift; sourceTree = "<group>"; };
 		DAF15D7D1E9D47A40000E6B9 /* VScannerMetal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VScannerMetal.swift; sourceTree = "<group>"; };
+		DAFDEF8E1EA5061C0016746F /* VGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 			children = (
 				DA22F3D21EA2F30800F6ED91 /* VGrid.swift */,
 				DA0BDA071EA418E500282D73 /* VGridBar.swift */,
+				DAFDEF8E1EA5061C0016746F /* VGridCell.swift */,
 			);
 			path = Grid;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				DA134AAB1E9D549E002BE57D /* MetalRotation.swift in Sources */,
 				DAF15D791E9D40A20000E6B9 /* CScanner.swift in Sources */,
 				DA134A9E1E9D549E002BE57D /* MetalBufferableProtocol.swift in Sources */,
+				DAFDEF8F1EA5061C0016746F /* VGridCell.swift in Sources */,
 				DA134AA61E9D549E002BE57D /* MetalProjectionMatrix.swift in Sources */,
 				DA134AA71E9D549E002BE57D /* MetalRenderableProtocol.swift in Sources */,
 				DAF15D591E9D32BB0000E6B9 /* DManager.swift in Sources */,
