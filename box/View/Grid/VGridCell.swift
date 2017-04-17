@@ -6,16 +6,18 @@ class VGridCell:UICollectionViewCell
     private weak var label:UILabel!
     private let attributesTitle:[String:AnyObject]
     private let attributesSubtitle:[String:AnyObject]
-    private let kImageWidth:CGFloat = 120
-    private let kLabelRight:CGFloat = 10
+    private let kImageWidth:CGFloat = 130
+    private let kLabelRight:CGFloat = 15
+    private let kAlphaNotSelected:CGFloat = 1
+    private let kAlphaSelected:CGFloat = 0.2
     
     override init(frame:CGRect)
     {
         attributesTitle = [
-            NSFontAttributeName:UIFont.bolder(size:20),
+            NSFontAttributeName:UIFont.bolder(size:24),
             NSForegroundColorAttributeName:UIColor.white]
         attributesSubtitle = [
-            NSFontAttributeName:UIFont.bold(size:16),
+            NSFontAttributeName:UIFont.bold(size:17),
             NSForegroundColorAttributeName:UIColor(white:1, alpha:0.7)]
         
         super.init(frame:frame)
@@ -66,6 +68,36 @@ class VGridCell:UICollectionViewCell
         return nil
     }
     
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if isSelected || isHighlighted
+        {
+            alpha = kAlphaSelected
+        }
+        else
+        {
+            alpha = kAlphaNotSelected
+        }
+    }
+    
     //MARK: public
     
     func config(model:MGridItem)
@@ -82,5 +114,7 @@ class VGridCell:UICollectionViewCell
         
         imageView.image = model.image
         label.attributedText = mutableString
+        
+        hover()
     }
 }

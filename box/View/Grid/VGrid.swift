@@ -6,7 +6,7 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     private weak var spinner:VSpinner!
     private weak var collectionView:VCollection!
     private let kBarHeight:CGFloat = 60
-    private let kCellHeight:CGFloat = 120
+    private let kCellHeight:CGFloat = 170
     
     override init(controller:CController)
     {
@@ -27,6 +27,7 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         self.collectionView = collectionView
         
         addSubview(viewBar)
+        addSubview(collectionView)
         addSubview(spinner)
         
         NSLayoutConstraint.equals(
@@ -41,6 +42,16 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             constant:kBarHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:viewBar,
+            toView:self)
+        
+        NSLayoutConstraint.topToBottom(
+            view:collectionView,
+            toView:viewBar)
+        NSLayoutConstraint.bottomToBottom(
+            view:collectionView,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
+            view:collectionView,
             toView:self)
     }
     
@@ -62,6 +73,7 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     func refresh()
     {
+        spinner.stopAnimating()
         collectionView.reloadData()
     }
     

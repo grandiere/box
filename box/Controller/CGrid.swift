@@ -26,14 +26,17 @@ class CGrid:CController
         view = viewGrid
     }
     
-    override func viewDidLoad()
+    override func viewDidAppear(_ animated:Bool)
     {
-        super.viewDidLoad()
+        super.viewDidAppear(animated)
         
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        { [weak self] in
-            
-            self?.loadAlgos()
+        if modelAlgo.items.count < 1
+        {
+            DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+            { [weak self] in
+                
+                self?.loadAlgos()
+            }
         }
     }
     
@@ -41,7 +44,8 @@ class CGrid:CController
     
     private func loadAlgos()
     {
-        
+        modelAlgo.loadAlgos()
+        algosLoaded()
     }
     
     private func algosLoaded()
