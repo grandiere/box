@@ -6,6 +6,7 @@ class VGridVisor:VView
     private weak var spinner:VSpinner?
     private weak var controller:CGridVisor!
     private weak var previewLayer:CALayer?
+    private let kBarHeight:CGFloat = 60
     
     override init(controller:CController)
     {
@@ -31,8 +32,12 @@ class VGridVisor:VView
         let spinner:VSpinner = VSpinner()
         self.spinner = spinner
         
+        let viewBar:VGridVisorBar = VGridVisorBar(
+            controller:self.controller)
+        
         addSubview(viewMetal)
         addSubview(spinner)
+        addSubview(viewBar)
         
         NSLayoutConstraint.equals(
             view:viewMetal,
@@ -40,6 +45,16 @@ class VGridVisor:VView
         
         NSLayoutConstraint.equals(
             view:spinner,
+            toView:self)
+        
+        NSLayoutConstraint.topToTop(
+            view:viewBar,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:viewBar,
+            constant:kBarHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewBar,
             toView:self)
     }
     
