@@ -2,9 +2,11 @@ import UIKit
 
 class VGridVisorBar:UIView
 {
+    private(set) weak var viewEnergy:VGridVisorBarEnergy!
     private weak var controller:CGridVisor!
     private let kBorderHeight:CGFloat = 1
     private let kButtonWidth:CGFloat = 60
+    private let kEnergyWidth:CGFloat = 140
     
     init(controller:CGridVisor)
     {
@@ -34,9 +36,14 @@ class VGridVisorBar:UIView
             action:#selector(actionBack(sender:)),
             for:UIControlEvents.touchUpInside)
         
+        let viewEnergy:VGridVisorBarEnergy = VGridVisorBarEnergy(
+            controller:controller)
+        self.viewEnergy = viewEnergy
+        
         addSubview(blur)
         addSubview(border)
         addSubview(backButton)
+        addSubview(viewEnergy)
         
         NSLayoutConstraint.equals(
             view:blur,
@@ -61,6 +68,16 @@ class VGridVisorBar:UIView
         NSLayoutConstraint.width(
             view:backButton,
             constant:kButtonWidth)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:viewEnergy,
+            toView:self)
+        NSLayoutConstraint.rightToRight(
+            view:viewEnergy,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:viewEnergy,
+            constant:kEnergyWidth)
     }
     
     required init?(coder:NSCoder)

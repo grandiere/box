@@ -3,6 +3,7 @@ import UIKit
 class VGridVisor:VView
 {
     private(set) weak var viewMetal:VGridVisorMetal?
+    private(set) weak var viewBar:VGridVisorBar!
     private weak var spinner:VSpinner?
     private weak var controller:CGridVisor!
     private weak var previewLayer:CALayer?
@@ -34,6 +35,7 @@ class VGridVisor:VView
         
         let viewBar:VGridVisorBar = VGridVisorBar(
             controller:self.controller)
+        self.viewBar = viewBar
         
         addSubview(viewMetal)
         addSubview(spinner)
