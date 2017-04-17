@@ -43,7 +43,13 @@ class VGridVisor:VView
             view:viewMetal,
             toView:self)
         
-        NSLayoutConstraint.equals(
+        NSLayoutConstraint.topToBottom(
+            view:spinner,
+            toView:viewBar)
+        NSLayoutConstraint.bottomToBottom(
+            view:spinner,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
             view:spinner,
             toView:self)
         
