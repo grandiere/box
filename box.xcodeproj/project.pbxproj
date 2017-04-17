@@ -90,6 +90,10 @@
 		DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */; };
 		DAF15D7E1E9D47A40000E6B9 /* VScannerMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D7D1E9D47A40000E6B9 /* VScannerMetal.swift */; };
 		DAFDEF8F1EA5061C0016746F /* VGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF8E1EA5061C0016746F /* VGridCell.swift */; };
+		DAFDEF921EA508D10016746F /* MGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF911EA508D10016746F /* MGrid.swift */; };
+		DAFDEF941EA508E10016746F /* MGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF931EA508E10016746F /* MGridItem.swift */; };
+		DAFDEF961EA509060016746F /* MGridItemMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF951EA509060016746F /* MGridItemMap.swift */; };
+		DAFDEF981EA5090D0016746F /* MGridItemVisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF971EA5090D0016746F /* MGridItemVisor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -179,6 +183,10 @@
 		DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VScanner.swift; sourceTree = "<group>"; };
 		DAF15D7D1E9D47A40000E6B9 /* VScannerMetal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VScannerMetal.swift; sourceTree = "<group>"; };
 		DAFDEF8E1EA5061C0016746F /* VGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridCell.swift; sourceTree = "<group>"; };
+		DAFDEF911EA508D10016746F /* MGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGrid.swift; sourceTree = "<group>"; };
+		DAFDEF931EA508E10016746F /* MGridItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridItem.swift; sourceTree = "<group>"; };
+		DAFDEF951EA509060016746F /* MGridItemMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridItemMap.swift; sourceTree = "<group>"; };
+		DAFDEF971EA5090D0016746F /* MGridItemVisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridItemVisor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +266,7 @@
 		DA4DC4661EA18EE80024D28E /* Grid */ = {
 			isa = PBXGroup;
 			children = (
+				DAFDEF901EA508C40016746F /* Main */,
 				DA4DC46E1EA1911B0024D28E /* Algo */,
 			);
 			path = Grid;
@@ -484,6 +493,17 @@
 			path = Scanner;
 			sourceTree = "<group>";
 		};
+		DAFDEF901EA508C40016746F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DAFDEF911EA508D10016746F /* MGrid.swift */,
+				DAFDEF931EA508E10016746F /* MGridItem.swift */,
+				DAFDEF951EA509060016746F /* MGridItemMap.swift */,
+				DAFDEF971EA5090D0016746F /* MGridItemVisor.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -584,9 +604,12 @@
 				DA134AB21E9D6DB5002BE57D /* MScannerGPS.swift in Sources */,
 				DA134AA91E9D549E002BE57D /* MetalShaderVertexTextured.metal in Sources */,
 				DA134AAD1E9D549E002BE57D /* MetalShaderFragmentSimple.metal in Sources */,
+				DAFDEF981EA5090D0016746F /* MGridItemVisor.swift in Sources */,
 				DAF15D5C1E9D32BB0000E6B9 /* ExtensionNotification.swift in Sources */,
 				DA134AA81E9D549E002BE57D /* MetalSpatialDirectionNegative.swift in Sources */,
+				DAFDEF921EA508D10016746F /* MGrid.swift in Sources */,
 				DA134AA51E9D549E002BE57D /* MetalSpatialDirection.swift in Sources */,
+				DAFDEF961EA509060016746F /* MGridItemMap.swift in Sources */,
 				DA134A9F1E9D549E002BE57D /* MetalSpatialDirectionPositive.swift in Sources */,
 				DAF15D661E9D32BB0000E6B9 /* VAlert.swift in Sources */,
 				DAF15D681E9D32BB0000E6B9 /* VBorder.swift in Sources */,
@@ -612,6 +635,7 @@
 				DA4DC45C1EA12F5A0024D28E /* MScannerOrientationLandscapeLeft.swift in Sources */,
 				DA4DC45A1EA12F4E0024D28E /* MScannerOrientationPortrait.swift in Sources */,
 				DA4DC4701EA191270024D28E /* MGridAlgo.swift in Sources */,
+				DAFDEF941EA508E10016746F /* MGridItem.swift in Sources */,
 				DA4DC45E1EA12F690024D28E /* MScannerOrientationLandscapeRight.swift in Sources */,
 				DA134AAA1E9D549E002BE57D /* MetalSpatialShapeSquare.swift in Sources */,
 				DA4DC47C1EA192BD0024D28E /* MGridAlgoItemHostileBug.swift in Sources */,

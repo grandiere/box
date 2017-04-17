@@ -1,9 +1,10 @@
 import UIKit
 
-class VGrid:VView
+class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private weak var controller:CGrid!
     private weak var spinner:VSpinner!
+    private weak var collectionView:VCollection!
     private let kBarHeight:CGFloat = 60
     
     override init(controller:CController)
