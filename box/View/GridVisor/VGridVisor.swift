@@ -3,6 +3,7 @@ import UIKit
 class VGridVisor:VView
 {
     private(set) weak var viewMetal:VGridVisorMetal?
+    private weak var spinner:VSpinner?
     private weak var controller:CGridVisor!
     private weak var previewLayer:CALayer?
     
@@ -24,12 +25,21 @@ class VGridVisor:VView
             return
         }
         
+        viewMetal.isHidden = true
         self.viewMetal = viewMetal
         
+        let spinner:VSpinner = VSpinner()
+        self.spinner = spinner
+        
         addSubview(viewMetal)
+        addSubview(spinner)
         
         NSLayoutConstraint.equals(
             view:viewMetal,
+            toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:spinner,
             toView:self)
     }
     
@@ -46,6 +56,12 @@ class VGridVisor:VView
     }
     
     //MARK: public
+    
+    func showMetal()
+    {
+        spinner?.stopAnimating()
+        spinner?.removeFromSuperview()
+    }
     
     func addPreviewLayer(previewLayer:CALayer)
     {
