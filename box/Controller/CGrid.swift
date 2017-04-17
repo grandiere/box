@@ -63,4 +63,17 @@ class CGrid:CController
     {
         parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
     }
+    
+    func openMap()
+    {
+        
+    }
+    
+    func openVisor()
+    {
+        let controllerVisor:CGridVisor = CGridVisor(modelAlgo:modelAlgo)
+        parentController.push(
+            controller:controllerVisor,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }

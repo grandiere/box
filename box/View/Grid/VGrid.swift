@@ -7,6 +7,7 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     private weak var collectionView:VCollection!
     private let kBarHeight:CGFloat = 60
     private let kCellHeight:CGFloat = 170
+    private let kAfterSelect:TimeInterval = 0.2
     
     override init(controller:CController)
     {
@@ -120,5 +121,24 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         cell.config(model:item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
+    {
+        collectionView.isUserInteractionEnabled = false
+        
+        let item:MGridItem = modelAtIndex(index:indexPath)
+        item.selected(controller:controller)
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kAfterSelect)
+        { [weak collectionView] in
+            
+            collectionView?.selectItem(
+                at:nil,
+                animated:true,
+                scrollPosition:UICollectionViewScrollPosition())
+            collectionView?.isUserInteractionEnabled = true
+        }
     }
 }

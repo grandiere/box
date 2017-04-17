@@ -4,14 +4,16 @@ import MetalKit
 class CGridVisor:CController
 {
     var orientation:MScannerOrientation?
+    private(set) weak var modelAlgo:MGridAlgo!
     private(set) var modelRender:MScannerRender?
     private(set) var modelCamera:MScannerCamera?
     private(set) var modelMotion:MScannerMotion?
     private(set) var modelGPS:MScannerGPS?
     private(set) weak var viewGridVisor:VGridVisor!
     
-    override init()
+    init(modelAlgo:MGridAlgo)
     {
+        self.modelAlgo = modelAlgo
         orientation = MScannerOrientationPortrait()
         super.init()
     }

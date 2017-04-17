@@ -6,18 +6,18 @@ class VGridCell:UICollectionViewCell
     private weak var label:UILabel!
     private let attributesTitle:[String:AnyObject]
     private let attributesSubtitle:[String:AnyObject]
-    private let kImageWidth:CGFloat = 130
-    private let kLabelRight:CGFloat = 15
+    private let kImageWidth:CGFloat = 100
+    private let kLabelRight:CGFloat = 10
     private let kAlphaNotSelected:CGFloat = 1
     private let kAlphaSelected:CGFloat = 0.2
     
     override init(frame:CGRect)
     {
         attributesTitle = [
-            NSFontAttributeName:UIFont.bolder(size:24),
+            NSFontAttributeName:UIFont.bolder(size:20),
             NSForegroundColorAttributeName:UIColor.white]
         attributesSubtitle = [
-            NSFontAttributeName:UIFont.bold(size:17),
+            NSFontAttributeName:UIFont.bold(size:16),
             NSForegroundColorAttributeName:UIColor(white:1, alpha:0.7)]
         
         super.init(frame:frame)

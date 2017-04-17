@@ -13,4 +13,9 @@ class MGridItemMap:MGridItem
             title:title,
             subtitle:subtitle)
     }
+    
+    override func selected(controller:CGrid)
+    {
+        controller.openMap()
+    }
 }

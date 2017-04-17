@@ -12,4 +12,11 @@ class MGridItem
         self.title = title
         self.subtitle = subtitle
     }
+    
+    //MARK: public
+    
+    func selected(controller:CGrid)
+    {
+        
+    }
 }
