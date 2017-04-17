@@ -95,8 +95,6 @@ class CGridVisor:CController
                 controller:self,
                 device:device)
         }
-        
-        
     }
     
     //MARK: public
