@@ -2,10 +2,9 @@
 "VGridVisor_errorMetal"="Metal not available";
 "VGridBar_labelTitle"="The Grid";
 
-"MScannerCamera_errorNoAuth"="Unable to use the camera";
-"MScannerCamera_errorNoCaptureDevice"="No capture device found";
-"MScannerCamera_errorNoOutput"="Unable to connect output";
-
+"MGridVisorCamera_errorNoAuth"="Unable to use the camera";
+"MGridVisorCamera_errorNoCaptureDevice"="No capture device found";
+"MGridVisorCamera_errorNoOutput"="Unable to connect camera output";
 "MGridVisorGPS_errorAuth"="Can't access your location";
 "MGridItemMap_title"="Grid Map";
 "MGridItemMap_subtitle"="\nWant to know where to go?";

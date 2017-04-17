@@ -46,42 +46,11 @@ class CGridVisor:CController
         super.viewDidAppear(animated)
         parentController.viewParent.panRecognizer.isEnabled = false
         
-        guard
-            
-            let device:MTLDevice = viewGridVisor.viewMetal?.device
-            
-        else
-        {
-            return
-        }
-        
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
             self?.turnOnGPS()
         }
-        /*
-        if modelRender == nil
-        {
-            modelRender = MScannerRender(
-                controller:self,
-                device:device)
-        }
-        
-        if modelCamera == nil
-        {
-            modelCamera = MScannerCamera(controller:self)
-        }
-        
-        if modelMotion == nil
-        {
-            modelMotion = MScannerMotion(controller:self)
-        }
-        
-        if modelGPS == nil
-        {
-            modelGPS = MScannerGPS(controller:self)
-        }*/
     }
     
     //MARK: private
@@ -99,6 +68,35 @@ class CGridVisor:CController
         }
     }
     
+    private func itemsFiltered()
+    {
+        guard
+            
+            let device:MTLDevice = viewGridVisor.viewMetal?.device
+            
+        else
+        {
+            return
+        }
+        
+        if modelCamera == nil
+        {
+            modelCamera = MScannerCamera(controller:self)
+        }
+        
+        if modelRender == nil
+        {
+            modelRender = MScannerRender(
+                controller:self,
+                device:device)
+        }
+        
+        if modelMotion == nil
+        {
+            modelMotion = MScannerMotion(controller:self)
+        }
+    }
+    
     //MARK: public
     
     func back()
@@ -109,6 +107,12 @@ class CGridVisor:CController
     
     func locationFound(currentLocation:CLLocation)
     {
+        modelAlgo.filterNearItems(userLocation:currentLocation)
         
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.itemsFiltered()
+        }
     }
 }

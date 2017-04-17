@@ -38,6 +38,10 @@ class CGrid:CController
                 self?.loadAlgos()
             }
         }
+        else
+        {
+            modelAlgo.clearNearItems()
+        }
     }
     
     //MARK: private
