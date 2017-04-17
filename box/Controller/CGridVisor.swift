@@ -7,8 +7,8 @@ class CGridVisor:CController
     var orientation:MScannerOrientation?
     private(set) weak var modelAlgo:MGridAlgo!
     private(set) var modelRender:MScannerRender?
-    private(set) var modelCamera:MScannerCamera?
-    private(set) var modelMotion:MScannerMotion?
+    private(set) var modelCamera:MGridVisorCamera?
+    private(set) var modelMotion:MGridVisorMotion?
     private(set) var modelGPS:MGridVisorGPS?
     private(set) weak var viewGridVisor:VGridVisor!
     
@@ -79,9 +79,14 @@ class CGridVisor:CController
             return
         }
         
+        if modelMotion == nil
+        {
+            modelMotion = MGridVisorMotion(controller:self)
+        }
+        
         if modelCamera == nil
         {
-            modelCamera = MScannerCamera(controller:self)
+            modelCamera = MGridVisorCamera(controller:self)
         }
         
         if modelRender == nil
@@ -91,10 +96,7 @@ class CGridVisor:CController
                 device:device)
         }
         
-        if modelMotion == nil
-        {
-            modelMotion = MScannerMotion(controller:self)
-        }
+        
     }
     
     //MARK: public

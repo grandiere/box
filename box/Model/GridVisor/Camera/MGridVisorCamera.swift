@@ -5,7 +5,7 @@ import ImageIO
 class MGridVisorCamera:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate
 {
     private var captureSession:AVCaptureSession?
-    private weak var controller:CScanner!
+    private weak var controller:CGridVisor!
     private weak var videoDataOutput:AVCaptureVideoDataOutput?
     private weak var captureDeviceInput:AVCaptureDeviceInput?
     private let queueCamera:DispatchQueue
@@ -19,7 +19,7 @@ class MGridVisorCamera:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate
     private let kQueueOutputLabel:String = "visorOutputQueue"
     private let kImageOrientationUp:Int32 = 6
     
-    init(controller:CScanner)
+    init(controller:CGridVisor)
     {
         self.controller = controller
         

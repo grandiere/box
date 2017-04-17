@@ -60,6 +60,7 @@
 		DA771F381EA5495400CAA820 /* VGridVisorBarEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F371EA5495400CAA820 /* VGridVisorBarEnergy.swift */; };
 		DA771F3A1EA551F000CAA820 /* MGridVisorGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F391EA551F000CAA820 /* MGridVisorGPS.swift */; };
 		DA771F3C1EA5602A00CAA820 /* MGridVisorCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F3B1EA5602A00CAA820 /* MGridVisorCamera.swift */; };
+		DA771F3E1EA563C700CAA820 /* MGridVisorMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F3D1EA563C700CAA820 /* MGridVisorMotion.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -157,6 +158,7 @@
 		DA771F371EA5495400CAA820 /* VGridVisorBarEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorBarEnergy.swift; sourceTree = "<group>"; };
 		DA771F391EA551F000CAA820 /* MGridVisorGPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorGPS.swift; sourceTree = "<group>"; };
 		DA771F3B1EA5602A00CAA820 /* MGridVisorCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorCamera.swift; sourceTree = "<group>"; };
+		DA771F3D1EA563C700CAA820 /* MGridVisorMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorMotion.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		DA4DC46A1EA18EE80024D28E /* Motion */ = {
 			isa = PBXGroup;
 			children = (
+				DA771F3D1EA563C700CAA820 /* MGridVisorMotion.swift */,
 			);
 			path = Motion;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				DA4DC4721EA191310024D28E /* MGridAlgoItem.swift in Sources */,
 				DA134AA01E9D549E002BE57D /* MetalPosition.swift in Sources */,
 				DAF15D641E9D32BB0000E6B9 /* MSession.swift in Sources */,
+				DA771F3E1EA563C700CAA820 /* MGridVisorMotion.swift in Sources */,
 				DA134A891E9D5076002BE57D /* ExtensionMTLDevice.swift in Sources */,
 				DA4DC47E1EA192CC0024D28E /* MGridAlgoItemHostileVirus.swift in Sources */,
 				DA4DC4581EA12E1C0024D28E /* MScannerOrientation.swift in Sources */,
