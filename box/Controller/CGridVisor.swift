@@ -71,15 +71,6 @@ class CGridVisor:CController
     
     private func itemsFiltered()
     {
-        guard
-            
-            let device:MTLDevice = viewGridVisor.viewMetal?.device
-            
-        else
-        {
-            return
-        }
-        
         viewGridVisor.showMetal()
         
         if modelMotion == nil
@@ -92,12 +83,41 @@ class CGridVisor:CController
             modelCamera = MGridVisorCamera(controller:self)
         }
         
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.startRenders()
+        }
+    }
+    
+    private func startRenders()
+    {
+        guard
+            
+            let device:MTLDevice = viewGridVisor.viewMetal?.device
+            
+        else
+        {
+            return
+        }
+        
         if modelRender == nil
         {
             modelRender = MGridVisorRender(
                 controller:self,
                 device:device)
         }
+        
+        guard
+            
+            let algoList:[MGridAlgoItem] = modelAlgo.nearItems
+            
+        else
+        {
+            return
+        }
+        
+        modelRender?.algo.renderAlgoList(nearItems:algoList)
     }
     
     //MARK: public
