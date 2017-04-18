@@ -84,6 +84,7 @@ class VGridVisor:VView
     {
         spinner?.stopAnimating()
         spinner?.removeFromSuperview()
+        viewMetal?.isHidden = false
     }
     
     func addPreviewLayer(previewLayer:CALayer)

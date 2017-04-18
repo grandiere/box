@@ -79,6 +79,8 @@ class CGridVisor:CController
             return
         }
         
+        viewGridVisor.showMetal()
+        
         if modelMotion == nil
         {
             modelMotion = MGridVisorMotion(controller:self)
