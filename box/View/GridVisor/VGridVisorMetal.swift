@@ -83,6 +83,7 @@ class VGridVisorMetal:MTKView
     override func draw()
     {
         super.draw()
+        controller.viewGridVisor.viewTarget.update()
         
         guard
             

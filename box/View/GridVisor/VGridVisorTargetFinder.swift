@@ -3,11 +3,21 @@ import UIKit
 class VGridVisorTargetFinder:UIView
 {
     private weak var controller:CGridVisor!
-    private let kRadius:CGFloat = 60
-    private let kLineWidth:CGFloat = 20
+    private var initialRadius:CGFloat
+    private var lineTotal:CGFloat
+    private let kPi2:CGFloat
+    private let kRadius:CGFloat = 100
+    private let kLineWidth:CGFloat = 7
+    private let kLineRadius:CGFloat = 0.07
+    private let kLineSeparation:CGFloat = 0.1
+    private let kRadiusDelta:CGFloat = 0.005
     
     init(controller:CGridVisor)
     {
+        initialRadius = 0
+        lineTotal = kLineRadius + kLineSeparation
+        kPi2 = CGFloat.pi + CGFloat.pi
+        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
@@ -23,7 +33,7 @@ class VGridVisorTargetFinder:UIView
     
     override func draw(_ rect:CGRect)
     {
-        if let _:MGridAlgoItem = controller.targeting
+        if true
         {
             guard
             
@@ -42,14 +52,32 @@ class VGridVisorTargetFinder:UIView
             
             context.setLineCap(CGLineCap.round)
             context.setLineWidth(kLineWidth)
-            context.setFillColor(UIColor.red.cgColor)
-            context.addArc(
-                center:center,
-                radius:kRadius,
-                startAngle:0,
-                endAngle:CGFloat.pi,
-                clockwise:true)
-            context.drawPath(using:CGPathDrawingMode.stroke)
+            context.setStrokeColor(UIColor.gridBlue.cgColor)
+            
+            var currentRadius:CGFloat = initialRadius
+            let maximumRadius:CGFloat = currentRadius + kPi2
+            
+            while currentRadius < maximumRadius
+            {
+                context.addArc(
+                    center:center,
+                    radius:kRadius,
+                    startAngle:currentRadius,
+                    endAngle:currentRadius + kLineRadius,
+                    clockwise:false)
+                context.drawPath(using:CGPathDrawingMode.stroke)
+                
+                currentRadius += lineTotal
+            }
+            
+            if initialRadius >= lineTotal
+            {
+                initialRadius = 0
+            }
+            else
+            {
+                initialRadius += kRadiusDelta
+            }
         }
     }
 }

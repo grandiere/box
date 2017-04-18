@@ -11,7 +11,7 @@ class VGridVisor:VView
     private weak var controller:CGridVisor!
     private weak var previewLayer:CALayer?
     private let kBarHeight:CGFloat = 50
-    private let kTargetSize:CGFloat = 200
+    private let kTargetSize:CGFloat = 210
     
     override init(controller:CController)
     {

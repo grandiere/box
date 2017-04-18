@@ -172,6 +172,12 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
                 renderEncoder:renderEncoder,
                 rotationBuffer:rotationBuffer,
                 positioned:targeted)
+            
+            controller.targeting = targeted.item.model
+        }
+        else
+        {
+            controller.targeting = nil
         }
     }
 }
