@@ -89,8 +89,6 @@
 		DAF15D721E9D34810000E6B9 /* DBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D701E9D34810000E6B9 /* DBox.xcdatamodeld */; };
 		DAF15D741E9D34FF0000E6B9 /* CLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D731E9D34FF0000E6B9 /* CLanding.swift */; };
 		DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D761E9D35CF0000E6B9 /* VLanding.swift */; };
-		DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */; };
-		DAF15D7E1E9D47A40000E6B9 /* VScannerMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D7D1E9D47A40000E6B9 /* VScannerMetal.swift */; };
 		DAFDEF8F1EA5061C0016746F /* VGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF8E1EA5061C0016746F /* VGridCell.swift */; };
 		DAFDEF921EA508D10016746F /* MGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF911EA508D10016746F /* MGrid.swift */; };
 		DAFDEF941EA508E10016746F /* MGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF931EA508E10016746F /* MGridItem.swift */; };
@@ -186,8 +184,6 @@
 		DAF15D711E9D34810000E6B9 /* DBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DBox.xcdatamodel; sourceTree = "<group>"; };
 		DAF15D731E9D34FF0000E6B9 /* CLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLanding.swift; sourceTree = "<group>"; };
 		DAF15D761E9D35CF0000E6B9 /* VLanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLanding.swift; sourceTree = "<group>"; };
-		DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VScanner.swift; sourceTree = "<group>"; };
-		DAF15D7D1E9D47A40000E6B9 /* VScannerMetal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VScannerMetal.swift; sourceTree = "<group>"; };
 		DAFDEF8E1EA5061C0016746F /* VGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridCell.swift; sourceTree = "<group>"; };
 		DAFDEF911EA508D10016746F /* MGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGrid.swift; sourceTree = "<group>"; };
 		DAFDEF931EA508E10016746F /* MGridItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridItem.swift; sourceTree = "<group>"; };
@@ -456,7 +452,6 @@
 			children = (
 				DA22F3D11EA2F2FE00F6ED91 /* Grid */,
 				DA4DC4611EA18A3D0024D28E /* GridVisor */,
-				DAF15D7A1E9D40B40000E6B9 /* Scanner */,
 				DAF15D751E9D35C50000E6B9 /* Landing */,
 				DAF15D4A1E9D32BB0000E6B9 /* Main */,
 			);
@@ -486,15 +481,6 @@
 				DAF15D761E9D35CF0000E6B9 /* VLanding.swift */,
 			);
 			path = Landing;
-			sourceTree = "<group>";
-		};
-		DAF15D7A1E9D40B40000E6B9 /* Scanner */ = {
-			isa = PBXGroup;
-			children = (
-				DAF15D7B1E9D40BC0000E6B9 /* VScanner.swift */,
-				DAF15D7D1E9D47A40000E6B9 /* VScannerMetal.swift */,
-			);
-			path = Scanner;
 			sourceTree = "<group>";
 		};
 		DAFDEF901EA508C40016746F /* Main */ = {
@@ -642,7 +628,6 @@
 				DAFDEF941EA508E10016746F /* MGridItem.swift in Sources */,
 				DA134AAA1E9D549E002BE57D /* MetalSpatialShapeSquare.swift in Sources */,
 				DA4DC47C1EA192BD0024D28E /* MGridAlgoItemHostileBug.swift in Sources */,
-				DAF15D7E1E9D47A40000E6B9 /* VScannerMetal.swift in Sources */,
 				DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */,
 				DAF15D5A1E9D32BB0000E6B9 /* DSettingsExtension.swift in Sources */,
 				DAF15D721E9D34810000E6B9 /* DBox.xcdatamodeld in Sources */,
@@ -662,7 +647,6 @@
 				DA7084491EA6683100B222FE /* MGridVisorOrientationLandscapeLeft.swift in Sources */,
 				DA4DC47E1EA192CC0024D28E /* MGridAlgoItemHostileVirus.swift in Sources */,
 				DAF15D631E9D32BB0000E6B9 /* ExtensionURL.swift in Sources */,
-				DAF15D7C1E9D40BC0000E6B9 /* VScanner.swift in Sources */,
 				DAFE877C1EA51D4900350434 /* MGridAlgoItemHostileVirusFoe.swift in Sources */,
 				DA134AAC1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift in Sources */,
 				DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */,

@@ -54,11 +54,11 @@ class MGridVisorMotion
     {
         guard
             
-            let _:MScannerOrientationPortrait = controller.orientation as? MScannerOrientationPortrait
+            let _:MGridVisorOrientationPortrait = controller.orientation as? MGridVisorOrientationPortrait
             
         else
         {
-            controller.orientation = MScannerOrientationPortrait()
+            controller.orientation = MGridVisorOrientationPortrait()
             
             return
         }
@@ -68,11 +68,11 @@ class MGridVisorMotion
     {
         guard
             
-            let _:MScannerOrientationLandscapeLeft = controller.orientation as? MScannerOrientationLandscapeLeft
+            let _:MGridVisorOrientationLandscapeLeft = controller.orientation as? MGridVisorOrientationLandscapeLeft
             
         else
         {
-            controller.orientation = MScannerOrientationLandscapeLeft()
+            controller.orientation = MGridVisorOrientationLandscapeLeft()
             
             return
         }
@@ -82,11 +82,11 @@ class MGridVisorMotion
     {
         guard
             
-            let _:MScannerOrientationLandscapeRight = controller.orientation as? MScannerOrientationLandscapeRight
+            let _:MGridVisorOrientationLandscapeRight = controller.orientation as? MGridVisorOrientationLandscapeRight
             
         else
         {
-            controller.orientation = MScannerOrientationLandscapeRight()
+            controller.orientation = MGridVisorOrientationLandscapeRight()
             
             return
         }
