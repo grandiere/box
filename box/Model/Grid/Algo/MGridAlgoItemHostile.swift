@@ -9,6 +9,8 @@ class MGridAlgoItemHostile:MGridAlgoItem
         latitude:Double,
         longitude:Double,
         image:UIImage,
+        width:Float,
+        height:Float,
         difficulty:Int,
         created:TimeInterval)
     {
@@ -18,6 +20,8 @@ class MGridAlgoItemHostile:MGridAlgoItem
         super.init(
             latitude:latitude,
             longitude:longitude,
-            image:image)
+            image:image,
+            width:width,
+            height:height)
     }
 }

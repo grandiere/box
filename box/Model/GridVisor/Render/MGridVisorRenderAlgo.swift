@@ -5,13 +5,12 @@ import MetalKit
 class MGridVisorRenderAlgo:MetalRenderableProtocol
 {
     var userHeading:Float
-    private weak var textureLoader:MTKTextureLoader?
+    private weak var textureLoader:MTKTextureLoader!
     private weak var controller:CGridVisor!
     private weak var device:MTLDevice!
     private(set) var items:[MGridVisorRenderAlgoItem]
     private var rotation:MetalRotation
     private var moveVertical:Float
-    private let spatialSquare:MetalSpatialShapeSquarePositive
     
     init(
         controller:CGridVisor,
@@ -27,31 +26,33 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         items = []
     }
     
-    //MARK: private
-    
-    private func addMine(location:CLLocation, heading:Float)
-    {
-        guard
-            
-            let multipliedHeading:Float = controller.orientation?.normalHeading(
-                rawHeading:heading)
-            
-            else
-        {
-            return
-        }
-        
-        let item:MScannerRenderMinesItem = MScannerRenderMinesItem(
-            location:location,
-            mineHeading:multipliedHeading)
-        items.append(item)
-    }
-    
     //MARK: public
     
-    func addAlgo(nearItems:[MGridAlgoItem])
+    func renderAlgoList(nearItems:[MGridAlgoItem])
     {
+        var items:[MGridVisorRenderAlgoItem] = []
         
+        for nearItem:MGridAlgoItem in nearItems
+        {
+            guard
+                
+                let multipliedHeading:Float = controller.orientation?.normalHeading(
+                    rawHeading:nearItem.heading),
+                let item:MGridVisorRenderAlgoItem = MGridVisorRenderAlgoItem(
+                    device:device,
+                    textureLoader:textureLoader,
+                    model:nearItem)
+            
+            else
+            {
+                continue
+            }
+            
+            nearItem.multipliedHeading = multipliedHeading
+            items.append(item)
+        }
+        
+        self.items = items
     }
     
     func motionRotate(
@@ -69,9 +70,9 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         let rotationBuffer:MTLBuffer = renderEncoder.device.generateBuffer(
             bufferable:rotation)
         
-        for item:MScannerRenderMinesItem in items
+        for item:MGridVisorRenderAlgoItem in items
         {
-            let itemHeading:Float = item.mineHeading
+            let itemHeading:Float = item.model.heading
             
             guard
                 
@@ -80,7 +81,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
                     moveVertical:moveVertical,
                     itemHeading:itemHeading)
                 
-                else
+            else
             {
                 continue
             }
@@ -89,10 +90,10 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
                 bufferable:position)
             
             renderEncoder.render(
-                vertex:spatialSquare.vertexBuffer,
+                vertex:item.spatialSquare.vertexBuffer,
                 position:positionBuffer,
                 rotation:rotationBuffer,
-                texture:texture)
+                texture:item.texture)
         }
     }
 }

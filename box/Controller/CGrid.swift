@@ -35,7 +35,7 @@ class CGrid:CController
             DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
             { [weak self] in
                 
-                self?.loadAlgos()
+                self?.loadAlgo()
             }
         }
         else
@@ -46,9 +46,9 @@ class CGrid:CController
     
     //MARK: private
     
-    private func loadAlgos()
+    private func loadAlgo()
     {
-        modelAlgo.loadAlgos()
+        modelAlgo.loadAlgo()
         algosLoaded()
     }
     

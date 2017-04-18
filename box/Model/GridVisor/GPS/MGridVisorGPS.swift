@@ -88,8 +88,7 @@ class MGridVisorGPS:NSObject, CLLocationManagerDelegate
         
         let finalHeading:CLLocationDirection = normalHeading - compensateHeading
         let finalHeadingFloat:Float = Float(finalHeading)
-        
-        controller.modelRender?.mines.userHeading = finalHeadingFloat
+        controller.modelRender?.algo.userHeading = finalHeadingFloat
     }
     
     //MARK: location delegate

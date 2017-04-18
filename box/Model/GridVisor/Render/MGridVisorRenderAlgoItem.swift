@@ -17,7 +17,7 @@ class MGridVisorRenderAlgoItem
         guard
             
             let texture:MTLTexture = textureLoader.loadImage(
-            image:image)
+                image:model.image)
             
         else
         {
@@ -27,7 +27,7 @@ class MGridVisorRenderAlgoItem
         self.texture = texture
         spatialSquare = MetalSpatialShapeSquarePositive(
             device:device,
-            width:width,
-            height:height)
+            width:model.width,
+            height:model.height)
     }
 }
