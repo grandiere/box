@@ -4,6 +4,8 @@ import MetalKit
 
 class MGridVisorRenderAlgo:MetalRenderableProtocol
 {
+    static let kMaxTarget:Float = 99
+    
     var userHeading:Float
     private weak var textureLoader:MTKTextureLoader!
     private weak var controller:CGridVisor!
@@ -109,6 +111,8 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         
         for item:MGridVisorRenderAlgoItem in items
         {
+            item.modeStandBy()
+            
             guard
                 
                 let positioned:MGridVisorRenderAlgoItemPositioned = MGridVisorRenderAlgoItemPositioned(
@@ -162,6 +166,8 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         
         if let targeted:MGridVisorRenderAlgoItemPositioned = targeted
         {
+            targeted.item.modeTargeted()
+            
             renderPositionedItem(
                 renderEncoder:renderEncoder,
                 rotationBuffer:rotationBuffer,

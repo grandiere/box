@@ -48,6 +48,8 @@ class MGridVisorRenderAlgoItem
             device:device,
             width:targetedWidth,
             height:targetedHeight)
+        
+        modeStandBy()
     }
     
     //MARK: public
@@ -55,10 +57,12 @@ class MGridVisorRenderAlgoItem
     func modeStandBy()
     {
         currentTexture = textureStandby
+        currentVertex = vertexStandby
     }
     
     func modeTargeted()
     {
         currentTexture = textureTargeted
+        currentVertex = vertexTargeted
     }
 }

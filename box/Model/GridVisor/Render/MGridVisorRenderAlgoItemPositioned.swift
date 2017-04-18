@@ -5,7 +5,6 @@ class MGridVisorRenderAlgoItemPositioned
     weak var item:MGridVisorRenderAlgoItem!
     let position:MetalPosition
     let deltaPosition:Float?
-    static let kMaxPositionTarget:Float = 70
     
     init?(
         orientation:MGridVisorOrientation,
@@ -33,7 +32,7 @@ class MGridVisorRenderAlgoItemPositioned
         let absoluteX:Float = abs(position.positionX)
         let absoluteY:Float = abs(position.positionY)
         
-        if absoluteX < MGridVisorRenderAlgoItemPositioned.kMaxPositionTarget && absoluteY < MGridVisorRenderAlgoItemPositioned.kMaxPositionTarget
+        if absoluteX < MGridVisorRenderAlgo.kMaxTarget && absoluteY < MGridVisorRenderAlgo.kMaxTarget
         {
             deltaPosition = absoluteX
         }
