@@ -58,6 +58,7 @@ class CGridVisor:CController
     private func cleanSession()
     {
         modelCamera?.cleanSession()
+        modelMotion?.cleanSession()
     }
     
     private func turnOnGPS()

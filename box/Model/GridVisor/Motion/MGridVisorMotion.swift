@@ -43,6 +43,11 @@ class MGridVisorMotion
         }
     }
     
+    deinit
+    {
+        cleanSession()
+    }
+    
     //MARK: private
     
     private func orientationPortrait()
@@ -150,5 +155,12 @@ class MGridVisorMotion
             moveHorizontal:moveHorizontal,
             moveVertical:moveVertical)
         controller.modelGPS?.compensateHeading = compensateHeading
+    }
+    
+    //MARK: public
+    
+    func cleanSession()
+    {
+        manager.stopDeviceMotionUpdates()
     }
 }

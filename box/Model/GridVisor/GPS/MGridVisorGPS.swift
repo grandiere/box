@@ -14,7 +14,7 @@ class MGridVisorGPS:NSObject, CLLocationManagerDelegate
     {
         self.controller = controller
         compensateHeading = 0
-        needsLocation = false
+        needsLocation = true
         
         super.init()
         
