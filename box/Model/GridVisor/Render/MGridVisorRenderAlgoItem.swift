@@ -3,9 +3,10 @@ import MetalKit
 
 class MGridVisorRenderAlgoItem
 {
-    let spatialSquare:MetalSpatialShapeSquarePositive
-    private let textureStandBy:MTLTexture
+    private let textureStandby:MTLTexture
     private let textureTargeted:MTLTexture
+    private let vertexStandby:MetalSpatialShapeSquare
+    private let vertexTargeted:MetalSpatialShapeSquare
     private(set) weak var currentTexture:MTLTexture?
     private(set) weak var currentVertex:MetalSpatialBase?
     private(set) weak var model:MGridAlgoItem!
@@ -19,26 +20,41 @@ class MGridVisorRenderAlgoItem
         
         guard
             
-            let texture:MTLTexture = textureLoader.loadImage(
-                image:model.image)
+            let imageStandby:UIImage = model.imageStandby(),
+            let imageTargeted:UIImage = model.imageTargeted(),
+            let textureStandby:MTLTexture = textureLoader.loadImage(
+                image:imageStandby),
+            let textureTargeted:MTLTexture = textureLoader.loadImage(
+                image:imageTargeted)
             
         else
         {
             return nil
         }
         
-        self.texture = texture
-        spatialSquare = MetalSpatialShapeSquarePositive(
+        self.textureStandby = textureStandby
+        self.textureTargeted = textureTargeted
+        
+        let standbyWidth:Float = Float(imageStandby.size.width)
+        let standbyHeight:Float = Float(imageStandby.size.height)
+        let targetedWidth:Float = Float(imageTargeted.size.width)
+        let targetedHeight:Float = Float(imageTargeted.size.height)
+        
+        vertexStandby = MetalSpatialShapeSquarePositive(
             device:device,
-            width:model.width,
-            height:model.height)
+            width:standbyWidth,
+            height:standbyHeight)
+        vertexTargeted = MetalSpatialShapeSquarePositive(
+            device:device,
+            width:targetedWidth,
+            height:targetedHeight)
     }
     
     //MARK: public
     
     func modeStandBy()
     {
-        currentTexture = textureStandBy
+        currentTexture = textureStandby
     }
     
     func modeTargeted()

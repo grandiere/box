@@ -33,14 +33,24 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         rotationBuffer:MTLBuffer,
         positioned:MGridVisorRenderAlgoItemPositioned)
     {
+        guard
+            
+            let texture:MTLTexture = positioned.item.currentTexture,
+            let vertex:MTLBuffer = positioned.item.currentVertex?.vertexBuffer
+        
+        else
+        {
+            return
+        }
+        
         let positionBuffer:MTLBuffer = device.generateBuffer(
             bufferable:positioned.position)
         
         renderEncoder.render(
-            vertex:positioned.item.spatialSquare.vertexBuffer,
+            vertex:vertex,
             position:positionBuffer,
             rotation:rotationBuffer,
-            texture:positioned.item.texture)
+            texture:texture)
     }
     
     //MARK: public
