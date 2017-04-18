@@ -5,6 +5,7 @@ import MetalKit
 class CGridVisor:CController
 {
     var orientation:MGridVisorOrientation?
+    weak var targeting:MGridAlgoItem?
     private(set) weak var modelAlgo:MGridAlgo!
     private(set) var modelRender:MGridVisorRender?
     private(set) var modelCamera:MGridVisorCamera?
