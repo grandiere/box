@@ -26,6 +26,23 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         items = []
     }
     
+    //MARK: private
+    
+    private func renderPositionedItem(
+        renderEncoder:MTLRenderCommandEncoder,
+        rotationBuffer:MTLBuffer,
+        positioned:MGridVisorRenderAlgoItemPositioned)
+    {
+        let positionBuffer:MTLBuffer = device.generateBuffer(
+            bufferable:positioned.position)
+        
+        renderEncoder.render(
+            vertex:positioned.item.spatialSquare.vertexBuffer,
+            position:positionBuffer,
+            rotation:rotationBuffer,
+            texture:positioned.item.texture)
+    }
+    
     //MARK: public
     
     func renderAlgoList(nearItems:[MGridAlgoItem])
@@ -67,33 +84,78 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     
     func render(renderEncoder:MTLRenderCommandEncoder)
     {
+        guard
+            
+            let orientation:MGridVisorOrientation = controller.orientation
+        
+        else
+        {
+            return
+        }
+        
         let rotationBuffer:MTLBuffer = renderEncoder.device.generateBuffer(
             bufferable:rotation)
+        var targeted:MGridVisorRenderAlgoItemPositioned?
         
         for item:MGridVisorRenderAlgoItem in items
         {
-            let itemHeading:Float = item.model.heading
-            
             guard
                 
-                let position:MetalPosition = controller.orientation?.itemPosition(
+                let positioned:MGridVisorRenderAlgoItemPositioned = MGridVisorRenderAlgoItemPositioned(
+                    orientation:orientation,
+                    item:item,
                     userHeading:userHeading,
-                    moveVertical:moveVertical,
-                    itemHeading:itemHeading)
-                
+                    moveVertical:moveVertical)
+            
             else
             {
-                continue
+                return
             }
             
-            let positionBuffer:MTLBuffer = device.generateBuffer(
-                bufferable:position)
-            
-            renderEncoder.render(
-                vertex:item.spatialSquare.vertexBuffer,
-                position:positionBuffer,
-                rotation:rotationBuffer,
-                texture:item.texture)
+            if let deltaPosition:Float = positioned.deltaPosition
+            {
+                if let currentTargeted:MGridVisorRenderAlgoItemPositioned = targeted
+                {
+                    if let currentDelta:Float = currentTargeted.deltaPosition
+                    {
+                        if deltaPosition < currentDelta
+                        {
+                            renderPositionedItem(
+                                renderEncoder:renderEncoder,
+                                rotationBuffer:rotationBuffer,
+                                positioned:currentTargeted)
+                            
+                            targeted = positioned
+                        }
+                        else
+                        {
+                            renderPositionedItem(
+                                renderEncoder:renderEncoder,
+                                rotationBuffer:rotationBuffer,
+                                positioned:positioned)
+                        }
+                    }
+                }
+                else
+                {
+                    targeted = positioned
+                }
+            }
+            else
+            {
+                renderPositionedItem(
+                    renderEncoder:renderEncoder,
+                    rotationBuffer:rotationBuffer,
+                    positioned:positioned)
+            }
+        }
+        
+        if let targeted:MGridVisorRenderAlgoItemPositioned = targeted
+        {
+            renderPositionedItem(
+                renderEncoder:renderEncoder,
+                rotationBuffer:rotationBuffer,
+                positioned:targeted)
         }
     }
 }

@@ -4,23 +4,14 @@ import CoreLocation
 class MGridAlgoItem
 {
     let location:CLLocation
-    let image:UIImage
-    let width:Float
-    let height:Float
     private(set) var distance:CLLocationDistance?
     private(set) var heading:Float
     var multipliedHeading:Float
     
     init(
         latitude:Double,
-        longitude:Double,
-        image:UIImage,
-        width:Float,
-        height:Float)
+        longitude:Double)
     {
-        self.image = image
-        self.width = width
-        self.height = height
         location = CLLocation(latitude:latitude, longitude:longitude)
         heading = 0
         multipliedHeading = 0
@@ -31,5 +22,15 @@ class MGridAlgoItem
     final func distanceUser(userLocation:CLLocation)
     {
         distance = location.distance(from:userLocation)
+    }
+    
+    func imageStandby() -> UIImage?
+    {
+        return nil
+    }
+    
+    func imageTargeted() -> UIImage?
+    {
+        return nil
     }
 }

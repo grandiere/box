@@ -3,8 +3,11 @@ import MetalKit
 
 class MGridVisorRenderAlgoItem
 {
-    let texture:MTLTexture
     let spatialSquare:MetalSpatialShapeSquarePositive
+    private let textureStandBy:MTLTexture
+    private let textureTargeted:MTLTexture
+    private(set) weak var currentTexture:MTLTexture?
+    private(set) weak var currentVertex:MetalSpatialBase?
     private(set) weak var model:MGridAlgoItem!
     
     init?(
@@ -29,5 +32,17 @@ class MGridVisorRenderAlgoItem
             device:device,
             width:model.width,
             height:model.height)
+    }
+    
+    //MARK: public
+    
+    func modeStandBy()
+    {
+        currentTexture = textureStandBy
+    }
+    
+    func modeTargeted()
+    {
+        currentTexture = textureTargeted
     }
 }
