@@ -4,10 +4,14 @@ class VGridVisor:VView
 {
     private(set) weak var viewMetal:VGridVisorMetal?
     private(set) weak var viewBar:VGridVisorBar!
+    private(set) weak var viewTarget:VGridVisorTarget!
+    private weak var layoutTargetTop:NSLayoutConstraint!
+    private weak var layoutTargetLeft:NSLayoutConstraint!
     private weak var spinner:VSpinner?
     private weak var controller:CGridVisor!
     private weak var previewLayer:CALayer?
     private let kBarHeight:CGFloat = 50
+    private let kTargetSize:CGFloat = 250
     
     override init(controller:CController)
     {
@@ -37,9 +41,14 @@ class VGridVisor:VView
             controller:self.controller)
         self.viewBar = viewBar
         
+        let viewTarget:VGridVisorTarget = VGridVisorTarget(
+            controller:self.controller)
+        self.viewTarget = viewTarget
+        
         addSubview(viewMetal)
         addSubview(spinner)
         addSubview(viewBar)
+        addSubview(viewTarget)
         
         NSLayoutConstraint.equals(
             view:viewMetal,
@@ -64,6 +73,16 @@ class VGridVisor:VView
         NSLayoutConstraint.equalsHorizontal(
             view:viewBar,
             toView:self)
+        
+        layoutTargetTop = NSLayoutConstraint.topToTop(
+            view:viewTarget,
+            toView:self)
+        layoutTargetLeft = NSLayoutConstraint.leftToLeft(
+            view:viewTarget,
+            toView:self)
+        NSLayoutConstraint.size(
+            view:viewTarget,
+            constant:kTargetSize)
     }
     
     required init?(coder:NSCoder)
@@ -74,6 +93,15 @@ class VGridVisor:VView
     override func layoutSubviews()
     {
         previewLayer?.frame = bounds
+        
+        let width:CGFloat = bounds.maxX
+        let height:CGFloat = bounds.maxY
+        let remainWidth:CGFloat = width - kTargetSize
+        let remainHeight:CGFloat = height - kTargetSize
+        let marginLeft:CGFloat = remainWidth / 2.0
+        let marginTop:CGFloat = remainHeight / 2.0
+        layoutTargetTop.constant = marginTop
+        layoutTargetLeft.constant = marginLeft
         
         super.layoutSubviews()
     }
