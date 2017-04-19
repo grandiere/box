@@ -1,8 +1,9 @@
 import UIKit
 
-class VGridVisorDetail:VView
+class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private weak var controller:CGridVisorDetail!
+    private weak var collectionView:VCollection!
     private let kBarHeight:CGFloat = 60
     
     override init(controller:CController)
@@ -37,5 +38,12 @@ class VGridVisorDetail:VView
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: collectionView delegate
+    
+    func numberOfSections(in collectionView:UICollectionView) -> Int
+    {
+        return 1
     }
 }
