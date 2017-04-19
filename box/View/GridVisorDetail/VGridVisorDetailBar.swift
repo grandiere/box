@@ -97,6 +97,6 @@ class VGridVisorDetailBar:UIView
     
     func actionShare(sender button:UIButton)
     {
-        
+        controller.share()
     }
 }

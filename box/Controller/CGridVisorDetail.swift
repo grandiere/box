@@ -29,4 +29,9 @@ class CGridVisorDetail:CController
     {
         parentController.dismissAnimateOver(completion:nil)
     }
+    
+    func share()
+    {
+        
+    }
 }
