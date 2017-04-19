@@ -11,4 +11,11 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
     {
         return #imageLiteral(resourceName: "assetTextureBugTargeted")
     }
+    
+    override func detail() -> MGridVisorDetail
+    {
+        let model:MGridVisorDetail = MGridVisorDetail.detailBug(model:self)
+        
+        return model
+    }
 }
