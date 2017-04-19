@@ -13,12 +13,24 @@ class VGridVisorDetail:VView
         
         let blur:VBlur = VBlur.extraLight()
         
-        let viewBar:v
+        let viewBar:VGridVisorDetailBar = VGridVisorDetailBar(
+            controller:self.controller)
         
         addSubview(blur)
+        addSubview(viewBar)
         
         NSLayoutConstraint.equals(
             view:blur,
+            toView:self)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:viewBar,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:viewBar,
+            constant:kBarHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewBar,
             toView:self)
     }
     
