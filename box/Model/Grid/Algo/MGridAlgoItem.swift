@@ -7,6 +7,7 @@ class MGridAlgoItem
     private(set) var distance:CLLocationDistance?
     private(set) var heading:Float
     var multipliedHeading:Float
+    private let kDistanceDivider:Double = 1000
     
     init(
         latitude:Double,
@@ -21,7 +22,7 @@ class MGridAlgoItem
     
     final func distanceUser(userLocation:CLLocation)
     {
-        distance = location.distance(from:userLocation)
+        distance = location.distance(from:userLocation) / kDistanceDivider
     }
     
     func imageStandby() -> UIImage?

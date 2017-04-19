@@ -5,11 +5,12 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
     private weak var labelKm:UILabel!
     private weak var labelScore:UILabel!
     private let numberFormatter:NumberFormatter
-    private let kSuffix:String = "Km"
-    private let kMaxDecimals:Int = 2
+    private let kSuffix:String = " Km"
+    private let kMaxDecimals:Int = 3
     private let kMinIntegers:Int = 1
     private let kTitleLeft:CGFloat = 10
     private let kTitleWidth:CGFloat = 200
+    private let kAccuracyWidth:CGFloat = 80
     
     override init(frame:CGRect)
     {
