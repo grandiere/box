@@ -8,8 +8,12 @@ class MGridVisorDetail
     {
         let itemHeader:MGridVisorDetailItemHeaderBug = MGridVisorDetailItemHeaderBug(
             model:model)
+        let itemDistance:MGridVisorDetailItemDistance = MGridVisorDetailItemDistance(
+            model:model)
+        
         let items:[MGridVisorDetailItem] = [
-            itemHeader]
+            itemHeader,
+            itemDistance]
         
         let detail:MGridVisorDetail = MGridVisorDetail(items:items)
         

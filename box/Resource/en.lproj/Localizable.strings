@@ -1,6 +1,7 @@
 "VLanding_buttonGrid"="Grid";
 "VGridVisor_errorMetal"="Metal not available";
 "VGridBar_labelTitle"="The Grid";
+"VGridVisorDetailCellDistance_labelTitle"="Distance";
 
 "MGridVisorCamera_errorNoAuth"="Unable to use the camera";
 "MGridVisorCamera_errorNoCaptureDevice"="No capture device found";

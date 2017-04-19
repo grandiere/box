@@ -3,7 +3,8 @@ import UIKit
 class VGridVisorDetailCellHeader:VGridVisorDetailCell
 {
     private weak var imageView:UIImageView!
-    private let kImageWidth:CGFloat = 160
+    private weak var labelTitle:UILabel!
+    private let kImageWidth:CGFloat = 110
     
     override init(frame:CGRect)
     {
@@ -17,7 +18,16 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         imageView.isUserInteractionEnabled = false
         self.imageView = imageView
         
+        let labelTitle:UILabel = UILabel()
+        labelTitle.isUserInteractionEnabled = false
+        labelTitle.translatesAutoresizingMaskIntoConstraints = false
+        labelTitle.backgroundColor = UIColor.clear
+        labelTitle.font = UIFont.bolder(size:22)
+        labelTitle.textColor = UIColor.black
+        self.labelTitle = labelTitle
+        
         addSubview(imageView)
+        addSubview(labelTitle)
         
         NSLayoutConstraint.equalsVertical(
             view:imageView,
@@ -28,6 +38,16 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         NSLayoutConstraint.width(
             view:imageView,
             constant:kImageWidth)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:labelTitle,
+            toView:self)
+        NSLayoutConstraint.leftToRight(
+            view:labelTitle,
+            toView:imageView)
+        NSLayoutConstraint.rightToRight(
+            view:labelTitle,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
@@ -47,5 +67,6 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         }
         
         imageView.image = modelHeader.image
+        labelTitle.text = modelHeader.title
     }
 }
