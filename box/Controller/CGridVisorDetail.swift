@@ -2,12 +2,15 @@ import UIKit
 
 class CGridVisorDetail:CController
 {
+    let modelDetail:MGridVisorDetail
     private weak var viewDetail:VGridVisorDetail!
     private weak var model:MGridAlgoItem!
     
     init(model:MGridAlgoItem)
     {
         self.model = model
+        modelDetail = model.detail()
+        
         super.init()
     }
     

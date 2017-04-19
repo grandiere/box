@@ -33,4 +33,11 @@ class MGridAlgoItem
     {
         return nil
     }
+    
+    func detail() -> MGridVisorDetail
+    {
+        let model:MGridVisorDetail = MGridVisorDetail()
+        
+        return model
+    }
 }

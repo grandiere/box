@@ -17,7 +17,16 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         let viewBar:VGridVisorDetailBar = VGridVisorDetailBar(
             controller:self.controller)
         
+        let collectionView:VCollection = VCollection()
+        collectionView.isScrollEnabled = false
+        collectionView.bounces = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerCell(cell:VGridVisorDetailCellHeader.self)
+        self.collectionView = collectionView
+        
         addSubview(blur)
+        addSubview(collectionView)
         addSubview(viewBar)
         
         NSLayoutConstraint.equals(
@@ -33,6 +42,10 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         NSLayoutConstraint.equalsHorizontal(
             view:viewBar,
             toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:collectionView,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
@@ -40,10 +53,48 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         return nil
     }
     
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> MGridVisorDetailItem
+    {
+        let item:MGridVisorDetailItem = controller.modelDetail.items[index.item]
+        
+        return item
+    }
+    
     //MARK: collectionView delegate
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let item:MGridVisorDetailItem = modelAtIndex(index:indexPath)
+        let width:CGFloat = collectionView.bounds.maxX
+        let size:CGSize = CGSize(
+            width:width,
+            height:item.cellHeight)
+        
+        return size
+    }
     
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         return 1
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    {
+        let count:Int = controller.modelDetail.items.count
+        
+        return count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let item:MGridVisorDetailItem = modelAtIndex(index:indexPath)
+        let cell:VGridVisorDetailCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:item.reusableIdentifier,
+            for:indexPath) as! VGridVisorDetailCell
+        cell.config(model:item)
+        
+        return cell
     }
 }

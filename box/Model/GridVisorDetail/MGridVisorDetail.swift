@@ -4,10 +4,8 @@ class MGridVisorDetail
 {
     let items:[MGridVisorDetailItem]
     
-    init()
+    init(items:[MGridVisorDetailItem] = [])
     {
-        
-        
-        items = []
+        self.items = items
     }
 }
