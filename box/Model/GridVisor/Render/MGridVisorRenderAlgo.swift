@@ -4,7 +4,7 @@ import MetalKit
 
 class MGridVisorRenderAlgo:MetalRenderableProtocol
 {
-    static let kMaxTarget:Float = 99
+    static let kMaxTarget:Float = 85
     
     var userHeading:Float
     private weak var textureLoader:MTKTextureLoader!

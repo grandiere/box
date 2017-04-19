@@ -84,11 +84,7 @@ class CGridVisor:CController
             modelCamera = MGridVisorCamera(controller:self)
         }
         
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        { [weak self] in
-            
-            self?.startRenders()
-        }
+        startRenders()
     }
     
     private func startRenders()

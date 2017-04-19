@@ -9,11 +9,10 @@ class VGridVisorTargetFinder:UIView
     private var innerLineTotal:CGFloat
     private let kPi2:CGFloat
     private let kRadius:CGFloat = 100
-    private let kInnerRadius:CGFloat = 88
-    private let kLineWidth:CGFloat = 6
-    private let kInnerLineWidth:CGFloat = 3
+    private let kInnerRadius:CGFloat = 94
+    private let kLineWidth:CGFloat = 5
     private let kLineRadius:CGFloat = 0.03
-    private let kInnerLineRadius:CGFloat = 0.1
+    private let kInnerLineRadius:CGFloat = 0.49
     private let kLineSeparation:CGFloat = 0.1352
     private let kRadiusDelta:CGFloat = 0.009
     
@@ -40,8 +39,7 @@ class VGridVisorTargetFinder:UIView
     
     override func draw(_ rect:CGRect)
     {
-        //if let _:MGridAlgoItem = controller.targeting
-        if true
+        if let _:MGridAlgoItem = controller.targeting
         {
             guard
             
