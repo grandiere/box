@@ -138,6 +138,7 @@ class CGridVisor:CController
     
     func showAlgoDetail(item:MGridAlgoItem)
     {
-        
+        let controllerDetail:CGridVisorDetail = CGridVisorDetail()
+        parentController.animateOver(controller:controllerDetail)
     }
 }
