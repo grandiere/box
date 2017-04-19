@@ -4,21 +4,25 @@ class VGridVisorTargetFinder:UIView
 {
     private weak var controller:CGridVisor!
     private var initialRadius:CGFloat
+    private var innerInitialRadius:CGFloat
     private var lineTotal:CGFloat
+    private var innerLineTotal:CGFloat
     private let kPi2:CGFloat
-    private let kCircleRadius:CGFloat = 91
     private let kRadius:CGFloat = 100
-    private let kEndAngle:CGFloat = 0.0001
-    private let kLineWidth:CGFloat = 10
-    private let kCircleLine:CGFloat = 3
+    private let kInnerRadius:CGFloat = 88
+    private let kLineWidth:CGFloat = 6
+    private let kInnerLineWidth:CGFloat = 3
     private let kLineRadius:CGFloat = 0.03
+    private let kInnerLineRadius:CGFloat = 0.1
     private let kLineSeparation:CGFloat = 0.1352
     private let kRadiusDelta:CGFloat = 0.009
     
     init(controller:CGridVisor)
     {
         initialRadius = 0
+        innerInitialRadius = 0
         lineTotal = kLineRadius + kLineSeparation
+        innerLineTotal = kInnerLineRadius + kLineSeparation
         kPi2 = CGFloat.pi + CGFloat.pi
         
         super.init(frame:CGRect.zero)
@@ -36,6 +40,7 @@ class VGridVisorTargetFinder:UIView
     
     override func draw(_ rect:CGRect)
     {
+        //if let _:MGridAlgoItem = controller.targeting
         if true
         {
             guard
@@ -55,16 +60,6 @@ class VGridVisorTargetFinder:UIView
                 x:width_2,
                 y:height_2)
             
-            context.setLineWidth(kCircleLine)
-            context.setStrokeColor(UIColor.gridBlue.cgColor)
-            context.addArc(
-                center:center,
-                radius:kCircleRadius,
-                startAngle:0,
-                endAngle:kEndAngle,
-                clockwise:true)
-            context.drawPath(using:CGPathDrawingMode.stroke)
-            
             context.setLineWidth(kLineWidth)
             context.setStrokeColor(UIColor.gridBlue.cgColor)
             
@@ -80,8 +75,22 @@ class VGridVisorTargetFinder:UIView
                     endAngle:currentRadius + kLineRadius,
                     clockwise:false)
                 context.drawPath(using:CGPathDrawingMode.stroke)
-                
                 currentRadius += lineTotal
+            }
+            
+            currentRadius = innerInitialRadius
+            let minimumRadius:CGFloat = currentRadius - kPi2
+            
+            while currentRadius > minimumRadius
+            {
+                context.addArc(
+                    center:center,
+                    radius:kInnerRadius,
+                    startAngle:currentRadius,
+                    endAngle:currentRadius - kInnerLineRadius,
+                    clockwise:true)
+                context.drawPath(using:CGPathDrawingMode.stroke)
+                currentRadius -= innerLineTotal
             }
             
             if initialRadius >= lineTotal
@@ -91,6 +100,15 @@ class VGridVisorTargetFinder:UIView
             else
             {
                 initialRadius += kRadiusDelta
+            }
+            
+            if innerInitialRadius < -innerLineTotal
+            {
+                innerInitialRadius = 0
+            }
+            else
+            {
+                innerInitialRadius -= kRadiusDelta
             }
         }
     }
