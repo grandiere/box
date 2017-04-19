@@ -23,6 +23,7 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerCell(cell:VGridVisorDetailCellHeader.self)
+        collectionView.registerCell(cell:VGridVisorDetailCellDistance.self)
         self.collectionView = collectionView
         
         addSubview(blur)
