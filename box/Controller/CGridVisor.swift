@@ -103,18 +103,18 @@ class CGridVisor:CController
             modelRender = MGridVisorRender(
                 controller:self,
                 device:device)
-        }
-        
-        guard
             
-            let algoList:[MGridAlgoItem] = modelAlgo.nearItems
+            guard
+                
+                let algoList:[MGridAlgoItem] = modelAlgo.nearItems
+                
+            else
+            {
+                return
+            }
             
-        else
-        {
-            return
+            modelRender?.algo.renderAlgoList(nearItems:algoList)
         }
-        
-        modelRender?.algo.renderAlgoList(nearItems:algoList)
     }
     
     //MARK: public
@@ -134,5 +134,10 @@ class CGridVisor:CController
             
             self?.itemsFiltered()
         }
+    }
+    
+    func showAlgoDetail(item:MGridAlgoItem)
+    {
+        
     }
 }

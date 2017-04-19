@@ -47,7 +47,16 @@ class VGridVisorTarget:UIView
     
     func actionButton(sender button:UIButton)
     {
+        guard
         
+            let model:MGridAlgoItem = controller.targeting
+        
+        else
+        {
+            return
+        }
+        
+        controller.showAlgoDetail(item:model)
     }
     
     //MARK: public
