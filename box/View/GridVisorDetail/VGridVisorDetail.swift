@@ -3,6 +3,7 @@ import UIKit
 class VGridVisorDetail:VView
 {
     private weak var controller:CGridVisorDetail!
+    private let kBarHeight:CGFloat = 50
     
     override init(controller:CController)
     {
@@ -11,6 +12,8 @@ class VGridVisorDetail:VView
         self.controller = controller as? CGridVisorDetail
         
         let blur:VBlur = VBlur.extraLight()
+        
+        let viewBar:v
         
         addSubview(blur)
         
