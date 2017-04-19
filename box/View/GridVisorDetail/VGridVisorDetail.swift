@@ -3,7 +3,7 @@ import UIKit
 class VGridVisorDetail:VView
 {
     private weak var controller:CGridVisorDetail!
-    private let kBarHeight:CGFloat = 50
+    private let kBarHeight:CGFloat = 60
     
     override init(controller:CController)
     {
