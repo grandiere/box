@@ -3,7 +3,7 @@ import UIKit
 class MGridVisorDetailItemDebug:MGridVisorDetailItem
 {
     let credits:Int
-    private let kCellHeight:CGFloat = 240
+    private let kCellHeight:CGFloat = 280
     
     init(model:MGridAlgoItemHostile)
     {

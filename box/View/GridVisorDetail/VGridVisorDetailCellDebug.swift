@@ -8,13 +8,12 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
     private let stringEnergyTitle:NSAttributedString
     private let attributesEnergy:[String:AnyObject]
     private let kTitleHeight:CGFloat = 50
-    private let kEnergyLeft:CGFloat = 10
-    private let kEnergyHeight:CGFloat = 40
+    private let kEnergyHeight:CGFloat = 80
     private let kEnergyWidth:CGFloat = 200
     private let kImageHeight:CGFloat = 160
-    private let kButtonDebugWidth:CGFloat = 120
+    private let kButtonDebugWidth:CGFloat = 80
     private let kAlphaActive:CGFloat = 1
-    private let kAlphaInactive:CGFloat = 0.3
+    private let kAlphaInactive:CGFloat = 0.2
     
     override init(frame:CGRect)
     {
@@ -45,6 +44,7 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         labelEnergy.translatesAutoresizingMaskIntoConstraints = false
         labelEnergy.backgroundColor = UIColor.clear
         labelEnergy.isUserInteractionEnabled = false
+        labelEnergy.textAlignment = NSTextAlignment.right
         self.labelEnergy = labelEnergy
         
         let imageView:UIImageView = UIImageView()
@@ -60,11 +60,10 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
             #imageLiteral(resourceName: "assetGenericEnter").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
         buttonDebug.setImage(
-            #imageLiteral(resourceName: "assetGenericEnter").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            #imageLiteral(resourceName: "assetGenericEnterOver").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.highlighted)
         buttonDebug.imageView!.clipsToBounds = true
         buttonDebug.imageView!.contentMode = UIViewContentMode.center
-        buttonDebug.imageView!.tintColor = UIColor(white:0, alpha:0.2)
         self.buttonDebug = buttonDebug
         
         addSubview(labelTitle)
@@ -98,10 +97,9 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         NSLayoutConstraint.height(
             view:labelEnergy,
             constant:kEnergyHeight)
-        NSLayoutConstraint.leftToLeft(
+        NSLayoutConstraint.rightToLeft(
             view:labelEnergy,
-            toView:self,
-            constant:kEnergyLeft)
+            toView:buttonDebug)
         NSLayoutConstraint.width(
             view:labelEnergy,
             constant:kEnergyWidth)
