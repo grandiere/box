@@ -3,6 +3,7 @@ import UIKit
 class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
 {
     let posterId:String
+    private let kCreditsMultiplier:Int = 5
     
     init(
         latitude:Double,
@@ -17,6 +18,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
             latitude:latitude,
             longitude:longitude,
             level:level,
-            created:created)
+            created:created,
+            creditsMultiplier:kCreditsMultiplier)
     }
 }
