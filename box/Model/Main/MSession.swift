@@ -49,9 +49,32 @@ class MSession
                 return
             }
             
-            self.settings = settings
-            DManager.sharedInstance?.save()
+            DManager.sharedInstance?.createData(
+                entityName:DEnergy.entityName)
+            { (data) in
+                
+                guard
+                
+                    let energy:DEnergy = data as? DEnergy
+                
+                else
+                {
+                    return
+                }
+                
+                energy.defaultValues()
+                settings.energy = energy
+                self.settings = settings
+                
+                DManager.sharedInstance?.save()
+                self.sessionLoaded()
+            }
         }
+    }
+    
+    private func sessionLoaded()
+    {
+        
     }
     
     //MARK: public
