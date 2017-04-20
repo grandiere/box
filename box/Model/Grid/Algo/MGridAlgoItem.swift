@@ -7,7 +7,6 @@ class MGridAlgoItem
     private(set) var distance:CLLocationDistance?
     private(set) var heading:Float
     var multipliedHeading:Float
-    private let kDistanceDivider:Double = 1000
     private let k180:Double = 180
     
     init(
@@ -64,7 +63,7 @@ class MGridAlgoItem
     
     final func distanceUser(userLocation:CLLocation)
     {
-        distance = location.distance(from:userLocation) / kDistanceDivider
+        distance = location.distance(from:userLocation)
         heading = headingFrom(reference:userLocation.coordinate)
     }
     

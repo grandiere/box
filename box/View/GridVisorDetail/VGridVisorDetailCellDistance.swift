@@ -5,8 +5,8 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
     private weak var labelKm:UILabel!
     private weak var viewAccuracy:VGridVisorDetailCellDistanceAccuracy?
     private let numberFormatter:NumberFormatter
-    private let kSuffix:String = "km"
-    private let kMaxDecimals:Int = 3
+    private let kSuffix:String = "m"
+    private let kMaxDecimals:Int = 1
     private let kMinIntegers:Int = 1
     private let kTitleLeft:CGFloat = 10
     private let kTitleWidth:CGFloat = 240

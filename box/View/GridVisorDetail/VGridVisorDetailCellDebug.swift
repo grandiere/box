@@ -1,6 +1,6 @@
 import UIKit
 
-class VGridVisorDetailCellLevel:VGridVisorDetailCell
+class VGridVisorDetailCellDebug:VGridVisorDetailCell
 {
     private weak var labelLevel:UILabel!
     private let kTitleLeft:CGFloat = 10
@@ -80,14 +80,12 @@ class VGridVisorDetailCellLevel:VGridVisorDetailCell
     override func config(model:MGridVisorDetailItem)
     {
         guard
-        
+            
             let modelLevel:MGridVisorDetailItemLevel = model as? MGridVisorDetailItemLevel
-        
+            
         else
         {
             return
         }
-        
-        labelLevel.text = "\(modelLevel.level)"
     }
 }
