@@ -77,8 +77,10 @@ class VGridVisorDetailCellLevel:VGridVisorDetailCell
         return nil
     }
     
-    override func config(model:MGridVisorDetailItem)
+    override func config(controller:CGridVisorDetail, model:MGridVisorDetailItem)
     {
+        super.config(controller:controller, model:model)
+        
         guard
         
             let modelLevel:MGridVisorDetailItemLevel = model as? MGridVisorDetailItemLevel

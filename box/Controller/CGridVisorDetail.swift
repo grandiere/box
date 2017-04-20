@@ -37,4 +37,9 @@ class CGridVisorDetail:CController
     {
         
     }
+    
+    func enterDebug(modelDebug:MGridVisorDetailItemDebug)
+    {
+        
+    }
 }

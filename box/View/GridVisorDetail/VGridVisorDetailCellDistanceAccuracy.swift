@@ -38,7 +38,7 @@ class VGridVisorDetailCellDistanceAccuracy:UIView
     }
     
     override func draw(_ rect:CGRect)
-    {
+    {   
         guard
         
             let context:CGContext = UIGraphicsGetCurrentContext()

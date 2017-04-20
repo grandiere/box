@@ -73,8 +73,9 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
         return nil
     }
     
-    override func config(model:MGridVisorDetailItem)
+    override func config(controller:CGridVisorDetail, model:MGridVisorDetailItem)
     {
+        super.config(controller:controller, model:model)
         self.viewAccuracy?.removeFromSuperview()
         
         guard

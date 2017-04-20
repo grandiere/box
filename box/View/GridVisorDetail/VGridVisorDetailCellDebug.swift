@@ -3,6 +3,8 @@ import UIKit
 class VGridVisorDetailCellDebug:VGridVisorDetailCell
 {
     private weak var labelEnergy:UILabel!
+    private weak var buttonDebug:UIButton!
+    private weak var modelDebug:MGridVisorDetailItemDebug?
     private let stringEnergyTitle:NSAttributedString
     private let attributesEnergy:[String:AnyObject]
     private let kTitleHeight:CGFloat = 50
@@ -10,6 +12,9 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
     private let kEnergyHeight:CGFloat = 40
     private let kEnergyWidth:CGFloat = 200
     private let kImageHeight:CGFloat = 160
+    private let kButtonDebugWidth:CGFloat = 120
+    private let kAlphaActive:CGFloat = 1
+    private let kAlphaInactive:CGFloat = 0.3
     
     override init(frame:CGRect)
     {
@@ -49,9 +54,23 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         imageView.contentMode = UIViewContentMode.center
         imageView.image = #imageLiteral(resourceName: "assetGenericDebug")
         
+        let buttonDebug:UIButton = UIButton()
+        buttonDebug.translatesAutoresizingMaskIntoConstraints = false
+        buttonDebug.setImage(
+            #imageLiteral(resourceName: "assetGenericEnter").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            for:UIControlState.normal)
+        buttonDebug.setImage(
+            #imageLiteral(resourceName: "assetGenericEnter").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            for:UIControlState.highlighted)
+        buttonDebug.imageView!.clipsToBounds = true
+        buttonDebug.imageView!.contentMode = UIViewContentMode.center
+        buttonDebug.imageView!.tintColor = UIColor(white:0, alpha:0.2)
+        self.buttonDebug = buttonDebug
+        
         addSubview(labelTitle)
         addSubview(labelEnergy)
         addSubview(imageView)
+        addSubview(buttonDebug)
         
         NSLayoutConstraint.topToTop(
             view:labelTitle,
@@ -86,6 +105,19 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         NSLayoutConstraint.width(
             view:labelEnergy,
             constant:kEnergyWidth)
+        
+        NSLayoutConstraint.topToBottom(
+            view:buttonDebug,
+            toView:imageView)
+        NSLayoutConstraint.height(
+            view:buttonDebug,
+            constant:kEnergyHeight)
+        NSLayoutConstraint.rightToRight(
+            view:buttonDebug,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:buttonDebug,
+            constant:kButtonDebugWidth)
     }
     
     required init?(coder:NSCoder)
@@ -93,8 +125,10 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         return nil
     }
     
-    override func config(model:MGridVisorDetailItem)
+    override func config(controller:CGridVisorDetail, model:MGridVisorDetailItem)
     {
+        super.config(controller:controller, model:model)
+        
         guard
             
             let modelDebug:MGridVisorDetailItemDebug = model as? MGridVisorDetailItemDebug
@@ -104,7 +138,9 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
             return
         }
         
-        let rawString:String = "\(modelDebug.credits)"
+        self.modelDebug = modelDebug
+        let credits:Int = modelDebug.credits
+        let rawString:String = "\(credits)"
         let stringCredits:NSAttributedString = NSAttributedString(
             string:rawString,
             attributes:attributesEnergy)
@@ -113,5 +149,41 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         mutableString.append(stringCredits)
         
         labelEnergy.attributedText = mutableString
+        
+        guard
+            
+            let energy:Int = MSession.sharedInstance.settings?.energy?.percentEnergy()
+            
+        else
+        {
+            return
+        }
+        
+        if credits > energy
+        {
+            buttonDebug.isUserInteractionEnabled = false
+            buttonDebug.alpha = kAlphaInactive
+        }
+        else
+        {
+            buttonDebug.isUserInteractionEnabled = true
+            buttonDebug.alpha = kAlphaActive
+        }
+    }
+    
+    //MARK: actions
+    
+    func actionEnter(sender button:UIButton)
+    {
+        guard
+            
+            let modelDebug:MGridVisorDetailItemDebug = self.modelDebug
+        
+        else
+        {
+            return
+        }
+        
+        controller?.enterDebug(modelDebug:modelDebug)
     }
 }

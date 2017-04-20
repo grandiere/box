@@ -2,6 +2,8 @@ import UIKit
 
 class VGridVisorDetailCell:UICollectionViewCell
 {
+    private(set) weak var controller:CGridVisorDetail?
+    
     override init(frame:CGRect)
     {
         super.init(frame:frame)
@@ -16,8 +18,8 @@ class VGridVisorDetailCell:UICollectionViewCell
     
     //MARK: public
     
-    func config(model:MGridVisorDetailItem)
+    func config(controller:CGridVisorDetail, model:MGridVisorDetailItem)
     {
-        
+        self.controller = controller
     }
 }
