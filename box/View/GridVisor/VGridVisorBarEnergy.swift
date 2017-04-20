@@ -4,10 +4,27 @@ class VGridVisorBarEnergy:UIView
 {
     private weak var controller:CGridVisor!
     private weak var labelEnergy:UILabel!
-    private let kLabelRight:CGFloat = 10
+    private let stringTitle:NSAttributedString
+    private let stringPercent:NSAttributedString
+    private let attributesAmount:[String:AnyObject]
+    private let kLabelRight:CGFloat = -10
     
     init(controller:CGridVisor)
     {
+        let attributesTitle:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:13),
+            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.8)]
+        attributesAmount = [
+            NSFontAttributeName:UIFont.bolder(size:17),
+            NSForegroundColorAttributeName:UIColor.white]
+        
+        stringTitle = NSAttributedString(
+            string:NSLocalizedString("VGridVisorBarEnergy_title", comment:""),
+            attributes:attributesTitle)
+        stringPercent = NSAttributedString(
+            string:NSLocalizedString("VGridVisorBarEnergy_percent", comment:""),
+            attributes:attributesTitle)
+        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
@@ -20,9 +37,9 @@ class VGridVisorBarEnergy:UIView
         labelEnergy.backgroundColor = UIColor.clear
         labelEnergy.isUserInteractionEnabled = false
         labelEnergy.textAlignment = NSTextAlignment.right
-        labelEnergy.font = UIFont.numeric(size:25)
-        labelEnergy.textColor = UIColor.white
         self.labelEnergy = labelEnergy
+        
+        addSubview(labelEnergy)
         
         NSLayoutConstraint.equalsVertical(
             view:labelEnergy,
@@ -63,7 +80,17 @@ class VGridVisorBarEnergy:UIView
     
     private func updateEnergy(energy:Int)
     {
-        labelEnergy.text = "\(energy) %"
+        let rawAmount:String = "\(energy)"
+        let stringAmount:NSAttributedString = NSAttributedString(
+            string:rawAmount,
+            attributes:attributesAmount)
+        
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        mutableString.append(stringTitle)
+        mutableString.append(stringAmount)
+        mutableString.append(stringPercent)
+        
+        labelEnergy.attributedText = mutableString
     }
     
     //MARK: public

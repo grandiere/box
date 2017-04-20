@@ -46,6 +46,7 @@ class CGridVisor:CController
     {
         super.viewDidAppear(animated)
         parentController.viewParent.panRecognizer.isEnabled = false
+        viewGridVisor.viewBar.viewEnergy.refresh()
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in

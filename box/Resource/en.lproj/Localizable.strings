@@ -4,6 +4,8 @@
 "VGridVisorDetailCellDistance_labelTitle"="Distance";
 "VGridVisorDetailCellLevel_labelTitle"="Level";
 "VGridVisorDetailCellDebug_labelTitle"="Debug";
+"VGridVisorBarEnergy_title"="Energy  ";
+"VGridVisorBarEnergy_percent"="%";
 
 "MGridVisorCamera_errorNoAuth"="Unable to use the camera";
 "MGridVisorCamera_errorNoCaptureDevice"="No capture device found";
