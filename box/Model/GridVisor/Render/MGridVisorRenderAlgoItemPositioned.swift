@@ -12,7 +12,7 @@ class MGridVisorRenderAlgoItemPositioned
         userHeading:Float,
         moveVertical:Float)
     {
-        let itemHeading:Float = item.model.heading
+        let itemHeading:Float = item.model.multipliedHeading
         
         guard
             

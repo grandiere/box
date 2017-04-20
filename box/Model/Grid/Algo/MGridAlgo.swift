@@ -3,7 +3,7 @@ import CoreLocation
 
 class MGridAlgo
 {
-    static let kMaxDistance:CLLocationDistance = 0.5
+    static let kMaxDistance:CLLocationDistance = 5
     private(set) var items:[MGridAlgoItem]
     private(set) var nearItems:[MGridAlgoItem]?
     
@@ -36,10 +36,16 @@ class MGridAlgo
             longitude:-99.173356,
             difficulty:3,
             created:3)
+        let amatlan:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
+            latitude:19.410172,
+            longitude:-99.176893,
+            difficulty:4,
+            created:4)
         
         items.append(itemDefault)
         items.append(parkSpain)
         items.append(mexicali)
+        items.append(amatlan)
     }
     
     func filterNearItems(userLocation:CLLocation)
