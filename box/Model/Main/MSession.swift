@@ -74,7 +74,6 @@ class MSession
     
     private func sessionLoaded()
     {
-        
     }
     
     //MARK: public
