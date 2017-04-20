@@ -7,7 +7,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     init(
         latitude:Double,
         longitude:Double,
-        difficulty:Int,
+        level:Int,
         created:TimeInterval,
         posterId:String)
     {
@@ -16,7 +16,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
         super.init(
             latitude:latitude,
             longitude:longitude,
-            difficulty:difficulty,
+            level:level,
             created:created)
     }
 }
