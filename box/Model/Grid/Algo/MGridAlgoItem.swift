@@ -61,7 +61,7 @@ class MGridAlgoItem
     
     //MARK: public
     
-    final func distanceUser(userLocation:CLLocation)
+    func distanceUser(userLocation:CLLocation)
     {
         distance = location.distance(from:userLocation)
         heading = headingFrom(reference:userLocation.coordinate)

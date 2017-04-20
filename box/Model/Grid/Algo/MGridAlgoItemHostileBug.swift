@@ -4,16 +4,6 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
 {
     private let kCreditsMultiplier:Int = 3
     
-    init(latitude:Double, longitude:Double, level:Int, created:TimeInterval)
-    {
-        super.init(
-            latitude:latitude,
-            longitude:longitude,
-            level:level,
-            created:created,
-            creditsMultiplier:kCreditsMultiplier)
-    }
-    
     override func imageStandby() -> UIImage?
     {
         return #imageLiteral(resourceName: "assetTextureBugStandBy")
@@ -34,5 +24,10 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
         let model:MGridVisorDetail = MGridVisorDetail.detailBug(model:self)
         
         return model
+    }
+    
+    override func creditsMultiplier() -> Int
+    {
+        return kCreditsMultiplier
     }
 }

@@ -6,6 +6,7 @@
 "VGridVisorDetailCellDebug_labelTitle"="Debug";
 "VGridVisorBarEnergy_title"="Energy  ";
 "VGridVisorBarEnergy_percent"="%";
+"VGridVisorDetailCellDebug_energyTitle"="Energy required   ";
 
 "MGridVisorCamera_errorNoAuth"="Unable to use the camera";
 "MGridVisorCamera_errorNoCaptureDevice"="No capture device found";

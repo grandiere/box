@@ -18,7 +18,11 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
             latitude:latitude,
             longitude:longitude,
             level:level,
-            created:created,
-            creditsMultiplier:kCreditsMultiplier)
+            created:created)
+    }
+    
+    override func creditsMultiplier() -> Int
+    {
+        return kCreditsMultiplier
     }
 }

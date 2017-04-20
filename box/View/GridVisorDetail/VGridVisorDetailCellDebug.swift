@@ -6,18 +6,19 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
     private let stringEnergyTitle:NSAttributedString
     private let attributesEnergy:[String:AnyObject]
     private let kTitleHeight:CGFloat = 50
-    private let kEnergyRight:CGFloat = 10
+    private let kEnergyLeft:CGFloat = 10
     private let kEnergyHeight:CGFloat = 40
+    private let kEnergyWidth:CGFloat = 200
     private let kImageHeight:CGFloat = 160
     
     override init(frame:CGRect)
     {
         let attributesEnergyTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bold(size:15),
-            NSForegroundColorAttributeName:UIColor.black]
+            NSFontAttributeName:UIFont.bold(size:13),
+            NSForegroundColorAttributeName:UIColor(white:0, alpha:0.7)]
         attributesEnergy = [
-            NSFontAttributeName:UIFont.numeric(size:15),
-            NSForegroundColorAttributeName:UIColor.gridOrange]
+            NSFontAttributeName:UIFont.numeric(size:24),
+            NSForegroundColorAttributeName:UIColor.black]
         
         stringEnergyTitle = NSAttributedString(
             string:NSLocalizedString("VGridVisorDetailCellDebug_energyTitle", comment:""),
@@ -78,6 +79,13 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         NSLayoutConstraint.height(
             view:labelEnergy,
             constant:kEnergyHeight)
+        NSLayoutConstraint.leftToLeft(
+            view:labelEnergy,
+            toView:self,
+            constant:kEnergyLeft)
+        NSLayoutConstraint.width(
+            view:labelEnergy,
+            constant:kEnergyWidth)
     }
     
     required init?(coder:NSCoder)
@@ -89,13 +97,21 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
     {
         guard
             
-            let modelLevel:MGridVisorDetailItemLevel = model as? MGridVisorDetailItemLevel
+            let modelDebug:MGridVisorDetailItemDebug = model as? MGridVisorDetailItemDebug
             
         else
         {
             return
         }
         
+        let rawString:String = "\(modelDebug.credits)"
+        let stringCredits:NSAttributedString = NSAttributedString(
+            string:rawString,
+            attributes:attributesEnergy)
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        mutableString.append(stringEnergyTitle)
+        mutableString.append(stringCredits)
         
+        labelEnergy.attributedText = mutableString
     }
 }

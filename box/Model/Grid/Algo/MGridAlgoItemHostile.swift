@@ -1,30 +1,57 @@
 import UIKit
+import CoreLocation
 
 class MGridAlgoItemHostile:MGridAlgoItem
 {
     let level:Int
-    let credits:Int
+    private(set) var credits:Int
     let created:TimeInterval
-    private let kTimeDivisor:TimeInterval = 3600
+    private let kTimeDivisor:TimeInterval = 36000
+    private let kDistanceDivisor:CLLocationDistance = 10
     
     init(
         latitude:Double,
         longitude:Double,
         level:Int,
-        created:TimeInterval,
-        creditsMultiplier:Int)
+        created:TimeInterval)
     {
         self.level = level
         self.created = created
+        credits = 0
         
-        var credits:Int = 0
+        super.init(
+            latitude:latitude,
+            longitude:longitude)
+    }
+    
+    override func distanceUser(userLocation:CLLocation)
+    {
+        super.distanceUser(userLocation:userLocation)
+        updateCredits()
+    }
+    
+    //MARK: private
+    
+    private func updateCredits()
+    {
+        guard
+            
+            let distance:CLLocationDistance = self.distance
+        
+        else
+        {
+            return
+        }
+        
+        var credits:Int = level
         let timestamp:TimeInterval = Date().timeIntervalSince1970
         let deltaTime:TimeInterval = timestamp - created
         let timeDivided:TimeInterval = deltaTime / kTimeDivisor
-        let levelMultiplied:Int = level + creditsMultiplier
+        let distanceDivided:CLLocationDistance = distance / kDistanceDivisor
         let maxCredits:Int = Int(DEnergy.kMaxEnergy)
         credits += Int(timeDivided)
-        credits += levelMultiplied
+        credits += Int(distanceDivided)
+        credits *= creditsMultiplier()
         
         if credits > maxCredits
         {
@@ -32,9 +59,12 @@ class MGridAlgoItemHostile:MGridAlgoItem
         }
         
         self.credits = credits
-        
-        super.init(
-            latitude:latitude,
-            longitude:longitude)
+    }
+    
+    //MARK: public
+    
+    func creditsMultiplier() -> Int
+    {
+        return 0
     }
 }

@@ -25,22 +25,22 @@ class MGridAlgo
             latitude:19.410595057002922,
             longitude:-99.175156495306979,
             level:1,
-            created:1)
+            created:1492719557.41663)
         let parkSpain:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
             latitude:19.414791,
             longitude:-99.171507,
             level:2,
-            created:2)
+            created:1492719557.41663)
         let mexicali:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
             latitude:19.408238,
             longitude:-99.173356,
             level:3,
-            created:3)
+            created:1492719557.41663)
         let amatlan:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
             latitude:19.410172,
             longitude:-99.176893,
             level:4,
-            created:4)
+            created:1492719557.41663)
         
         items.append(itemDefault)
         items.append(parkSpain)
