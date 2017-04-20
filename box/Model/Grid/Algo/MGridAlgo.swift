@@ -3,7 +3,7 @@ import CoreLocation
 
 class MGridAlgo
 {
-    static let kMaxDistance:CLLocationDistance = 5
+    static let kMaxDistance:CLLocationDistance = 1
     private(set) var items:[MGridAlgoItem]
     private(set) var nearItems:[MGridAlgoItem]?
     

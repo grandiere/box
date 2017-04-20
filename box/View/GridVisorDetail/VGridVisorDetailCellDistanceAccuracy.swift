@@ -21,7 +21,8 @@ class VGridVisorDetailCellDistanceAccuracy:UIView
             endingPercentage = 1
         }
         
-        let endingRadians:CGFloat = endingPercentage * pi2
+        let inversedPercentage:CGFloat = 1 - endingPercentage
+        let endingRadians:CGFloat = inversedPercentage * pi2
         endingRadius = endingRadians + initialRadius
         
         super.init(frame:CGRect.zero)

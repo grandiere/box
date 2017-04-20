@@ -66,8 +66,6 @@ class MGridAlgoItem
     {
         distance = location.distance(from:userLocation) / kDistanceDivider
         heading = headingFrom(reference:userLocation.coordinate)
-        
-        print("heading \(heading)")
     }
     
     func imageStandby() -> UIImage?

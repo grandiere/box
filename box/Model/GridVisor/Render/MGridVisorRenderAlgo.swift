@@ -65,7 +65,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         {
             guard
                 
-                let multipliedHeading:Float = controller.orientation?. .(
+                let multipliedHeading:Float = controller.orientation?.normalHeading(
                     rawHeading:nearItem.heading),
                 let item:MGridVisorRenderAlgoItem = MGridVisorRenderAlgoItem(
                     device:device,
@@ -77,7 +77,6 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
                 continue
             }
             
-            print("normal \(multipliedHeading)")
             nearItem.multipliedHeading = multipliedHeading
             items.append(item)
         }

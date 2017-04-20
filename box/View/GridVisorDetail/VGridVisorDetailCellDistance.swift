@@ -22,24 +22,6 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
         numberFormatter.maximumFractionDigits = kMaxDecimals
         numberFormatter.positiveSuffix = kSuffix
         
-        let attributesTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bold(size:14),
-            NSForegroundColorAttributeName:UIColor.black]
-        let attributesSubtitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:12),
-            NSForegroundColorAttributeName:UIColor.black]
-        
-        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
-        let stringTitle:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("VGridVisorDetailCellDistance_labelTitle", comment:""),
-            attributes:attributesTitle)
-        let stringSubtitle:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("VGridVisorDetailCellDistance_labelSubtitle", comment:""),
-            attributes:attributesSubtitle)
-        
-        mutableString.append(stringTitle)
-        mutableString.append(stringSubtitle)
-        
         super.init(frame:frame)
         isUserInteractionEnabled = false
         
@@ -47,14 +29,15 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
         labelTitle.isUserInteractionEnabled = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.numberOfLines = 0
-        labelTitle.attributedText = mutableString
+        labelTitle.textColor = UIColor.black
+        labelTitle.font = UIFont.bold(size:16)
+        labelTitle.text = NSLocalizedString("VGridVisorDetailCellDistance_labelTitle", comment:"")
         
         let labelKm:UILabel = UILabel()
         labelKm.translatesAutoresizingMaskIntoConstraints = false
         labelKm.isUserInteractionEnabled = false
         labelKm.backgroundColor = UIColor.clear
-        labelKm.font = UIFont.numeric(size:15)
+        labelKm.font = UIFont.numeric(size:16)
         labelKm.textColor = UIColor.black
         labelKm.textAlignment = NSTextAlignment.right
         self.labelKm = labelKm
