@@ -26,8 +26,20 @@ class MGridAlgo
             longitude:-99.175156495306979,
             difficulty:1,
             created:1)
+        let parkSpain:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
+            latitude:19.414791,
+            longitude:-99.171507,
+            difficulty:2,
+            created:2)
+        let mexicali:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
+            latitude:19.408238,
+            longitude:-99.173356,
+            difficulty:3,
+            created:3)
         
         items.append(itemDefault)
+        items.append(parkSpain)
+        items.append(mexicali)
     }
     
     func filterNearItems(userLocation:CLLocation)
