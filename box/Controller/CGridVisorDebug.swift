@@ -4,14 +4,41 @@ class CGridVisorDebug:CController
 {
     private weak var viewDebug:VGridVisorDebug!
     private weak var model:MGridAlgoItemHostileBug!
-    private var firstTime:Bool
     private weak var timer:Timer?
-    private let kTimeInterval:TimeInterval = 0.1
+    private var firstTime:Bool
+    private var timesTried:Int
+    private let tryTimes:Int
+    private let difficulty:UInt32
+    private let kDifficultyDivisor:CGFloat = 30
+    private let kAddDifficulty:CGFloat = 1
+    private let kTimeInterval:TimeInterval = 3
+    private let kMinTryTimes:Int = 1
     
     init(model:MGridAlgoItemHostileBug)
     {
         self.model = model
         firstTime = true
+        timesTried = 0
+        
+        var tryTimes:Int = model.level
+        
+        if let userLevel:Int16 = MSession.sharedInstance.settings?.level
+        {
+            tryTimes -= Int(userLevel)
+        }
+        
+        if tryTimes < kMinTryTimes
+        {
+            tryTimes = kMinTryTimes
+        }
+        
+        self.tryTimes = tryTimes
+        
+        let rawDifficulty:CGFloat = ceil(CGFloat(model.credits) / kDifficultyDivisor)
+        let totalDifficulty:CGFloat = rawDifficulty + kAddDifficulty
+        difficulty = UInt32(totalDifficulty)
+        
+        print("dif \(difficulty) trytimes \(tryTimes)")
         
         super.init()
     }
@@ -65,6 +92,71 @@ class CGridVisorDebug:CController
     
     func actionTimer(sender timer:Timer)
     {
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            guard
+            
+                let timesTried:Int = self?.timesTried,
+                let tryTimes:Int = self?.tryTimes
+            
+            else
+            {
+                return
+            }
+            
+            if timesTried < tryTimes
+            {
+                self?.timesTried += 1
+                self?.rollDices()
+            }
+            else
+            {
+                self?.success()
+            }
+        }
+    }
+    
+    //MARK: private
+    
+    private func rollDices()
+    {
+        print("roll dices")
         
+        let diceResult:UInt32 = arc4random_uniform(difficulty)
+        
+        if diceResult > 0
+        {
+            failed()
+        }
+    }
+    
+    private func failed()
+    {
+        timer?.invalidate()
+        print("failed")
+        
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.finishDebug()
+        }
+    }
+    
+    private func success()
+    {
+        timer?.invalidate()
+        print("success")
+        
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.finishDebug()
+        }
+    }
+    
+    private func finishDebug()
+    {
+        parentController.dismissAnimateOver(completion:nil)
     }
 }

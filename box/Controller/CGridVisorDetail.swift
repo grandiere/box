@@ -38,8 +38,18 @@ class CGridVisorDetail:CController
         
     }
     
-    func enterDebug(modelDebug:MGridVisorDetailItemDebug)
+    func enterDebug()
     {
+        guard
+            
+            let model:MGridAlgoItemHostileBug = self.model as? MGridAlgoItemHostileBug
         
+        else
+        {
+            return
+        }
+        
+        let controllerDebug:CGridVisorDebug = CGridVisorDebug(model:model)
+        parentController.animateOver(controller:controllerDebug)
     }
 }

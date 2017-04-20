@@ -64,6 +64,10 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
             for:UIControlState.highlighted)
         buttonDebug.imageView!.clipsToBounds = true
         buttonDebug.imageView!.contentMode = UIViewContentMode.center
+        buttonDebug.addTarget(
+            self,
+            action:#selector(actionEnter(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.buttonDebug = buttonDebug
         
         addSubview(labelTitle)
@@ -173,15 +177,6 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
     
     func actionEnter(sender button:UIButton)
     {
-        guard
-            
-            let modelDebug:MGridVisorDetailItemDebug = self.modelDebug
-        
-        else
-        {
-            return
-        }
-        
-        controller?.enterDebug(modelDebug:modelDebug)
+        controller?.enterDebug()
     }
 }

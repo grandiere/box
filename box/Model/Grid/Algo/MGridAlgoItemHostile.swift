@@ -7,7 +7,7 @@ class MGridAlgoItemHostile:MGridAlgoItem
     private(set) var credits:Int
     let created:TimeInterval
     private let kTimeDivisor:TimeInterval = 36000
-    private let kDistanceDivisor:CLLocationDistance = 10
+    private let kDistanceDivisor:CLLocationDistance = 20
     
     init(
         latitude:Double,
