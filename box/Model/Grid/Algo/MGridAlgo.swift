@@ -3,9 +3,9 @@ import CoreLocation
 
 class MGridAlgo
 {
+    static let kMaxDistance:CLLocationDistance = 0.15
     private(set) var items:[MGridAlgoItem]
     private(set) var nearItems:[MGridAlgoItem]?
-    private let kMaxDistance:CLLocationDistance = 300
     
     init()
     {
@@ -47,7 +47,7 @@ class MGridAlgo
                 continue
             }
             
-            if itemDistance < kMaxDistance
+            if itemDistance < MGridAlgo.kMaxDistance
             {
                 nearItems.append(item)
             }

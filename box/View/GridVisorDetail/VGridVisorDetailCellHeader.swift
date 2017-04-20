@@ -4,7 +4,7 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
 {
     private weak var imageView:UIImageView!
     private weak var labelTitle:UILabel!
-    private let kImageWidth:CGFloat = 110
+    private let kImageWidth:CGFloat = 100
     
     override init(frame:CGRect)
     {

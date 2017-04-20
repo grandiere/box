@@ -2,6 +2,7 @@
 "VGridVisor_errorMetal"="Metal not available";
 "VGridBar_labelTitle"="The Grid";
 "VGridVisorDetailCellDistance_labelTitle"="Distance";
+"VGridVisorDetailCellDistance_labelSubtitle"="\nbetter accuracy when closer";
 
 "MGridVisorCamera_errorNoAuth"="Unable to use the camera";
 "MGridVisorCamera_errorNoCaptureDevice"="No capture device found";
