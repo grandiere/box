@@ -4,7 +4,7 @@ class VGridVisorDetailCellLevel:VGridVisorDetailCell
 {
     private let kTitleLeft:CGFloat = 10
     private let kTitleWidth:CGFloat = 240
-    private let kHexagonWidth:CGFloat = 60
+    private let kHexagonWidth:CGFloat = 70
     
     override init(frame:CGRect)
     {

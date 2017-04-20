@@ -5,6 +5,7 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
     private weak var controller:CGridVisorDetail!
     private weak var collectionView:VCollection!
     private let kBarHeight:CGFloat = 60
+    private let kInterItems:CGFloat = 2
     
     override init(controller:CController)
     {
@@ -24,7 +25,14 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.dataSource = self
         collectionView.registerCell(cell:VGridVisorDetailCellHeader.self)
         collectionView.registerCell(cell:VGridVisorDetailCellDistance.self)
+        collectionView.registerCell(cell:VGridVisorDetailCellLevel.self)
         self.collectionView = collectionView
+        
+        if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
+        {
+            flow.minimumInteritemSpacing = kInterItems
+            flow.minimumLineSpacing = kInterItems
+        }
         
         addSubview(blur)
         addSubview(collectionView)
