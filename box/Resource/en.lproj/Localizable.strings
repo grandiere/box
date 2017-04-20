@@ -3,6 +3,7 @@
 "VGridBar_labelTitle"="The Grid";
 "VGridVisorDetailCellDistance_labelTitle"="Distance";
 "VGridVisorDetailCellLevel_labelTitle"="Level";
+"VGridVisorDetailCellDebug_labelTitle"="Debug";
 
 "MGridVisorCamera_errorNoAuth"="Unable to use the camera";
 "MGridVisorCamera_errorNoCaptureDevice"="No capture device found";

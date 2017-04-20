@@ -12,11 +12,14 @@ class MGridVisorDetail
             model:model)
         let itemLevel:MGridVisorDetailItemLevel = MGridVisorDetailItemLevel(
             model:model)
+        let itemDebug:MGridVisorDetailItemDebug = MGridVisorDetailItemDebug(
+            model:model)
         
         let items:[MGridVisorDetailItem] = [
             itemHeader,
             itemDistance,
-            itemLevel]
+            itemLevel,
+            itemDebug]
         
         let detail:MGridVisorDetail = MGridVisorDetail(items:items)
         

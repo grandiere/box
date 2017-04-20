@@ -2,15 +2,11 @@ import UIKit
 
 class VGridVisorDetailCellDebug:VGridVisorDetailCell
 {
-    private weak var labelLevel:UILabel!
-    private let kTitleLeft:CGFloat = 10
-    private let kTitleWidth:CGFloat = 240
-    private let kHexagonWidth:CGFloat = 66
+    private let kTitleHeight:CGFloat = 40
     
     override init(frame:CGRect)
     {
         super.init(frame:frame)
-        isUserInteractionEnabled = false
         
         let labelTitle:UILabel = UILabel()
         labelTitle.isUserInteractionEnabled = false
@@ -18,58 +14,27 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         labelTitle.backgroundColor = UIColor.clear
         labelTitle.font = UIFont.bold(size:16)
         labelTitle.textColor = UIColor.black
-        labelTitle.text = NSLocalizedString("VGridVisorDetailCellLevel_labelTitle", comment:"")
+        labelTitle.textAlignment = NSTextAlignment.center
+        labelTitle.text = NSLocalizedString("VGridVisorDetailCellDebug_labelTitle", comment:"")
         
         let imageView:UIImageView = UIImageView()
         imageView.isUserInteractionEnabled = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.contentMode = UIViewContentMode.center
-        imageView.image = #imageLiteral(resourceName: "assetGenericHexagon")
-        
-        let labelLevel:UILabel = UILabel()
-        labelLevel.translatesAutoresizingMaskIntoConstraints = false
-        labelLevel.isUserInteractionEnabled = false
-        labelLevel.backgroundColor = UIColor.clear
-        labelLevel.textAlignment = NSTextAlignment.center
-        labelLevel.font = UIFont.numeric(size:16)
-        labelLevel.textColor = UIColor.white
-        self.labelLevel = labelLevel
         
         addSubview(labelTitle)
         addSubview(imageView)
-        addSubview(labelLevel)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.topToTop(
             view:labelTitle,
             toView:self)
-        NSLayoutConstraint.leftToLeft(
+        NSLayoutConstraint.height(
             view:labelTitle,
-            toView:self,
-            constant:kTitleLeft)
-        NSLayoutConstraint.width(
+            constant:kTitleHeight)
+        NSLayoutConstraint.equalsHorizontal(
             view:labelTitle,
-            constant:kTitleWidth)
-        
-        NSLayoutConstraint.equalsVertical(
-            view:imageView,
             toView:self)
-        NSLayoutConstraint.rightToRight(
-            view:imageView,
-            toView:self)
-        NSLayoutConstraint.width(
-            view:imageView,
-            constant:kHexagonWidth)
-        
-        NSLayoutConstraint.equalsVertical(
-            view:labelLevel,
-            toView:self)
-        NSLayoutConstraint.rightToRight(
-            view:labelLevel,
-            toView:self)
-        NSLayoutConstraint.width(
-            view:labelLevel,
-            constant:kHexagonWidth)
     }
     
     required init?(coder:NSCoder)
