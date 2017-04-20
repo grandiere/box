@@ -3,7 +3,7 @@ import UIKit
 class MGridVisorDetailItemDistance:MGridVisorDetailItem
 {
     let distance:Double?
-    private let kCellHeight:CGFloat = 80
+    private let kCellHeight:CGFloat = 55
     
     init(model:MGridAlgoItem)
     {

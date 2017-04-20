@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DEnergy" representedClassName="DEnergy" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastAmount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastDate" attributeType="Date" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="settings" maxCount="1" deletionRule="Nullify" destinationEntity="DSettings" inverseName="energy" inverseEntity="DSettings" syncable="YES"/>
+    </entity>
     <entity name="DSettings" representedClassName="DSettings" syncable="YES" codeGenerationType="class">
         <attribute name="ttl" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="energy" maxCount="1" deletionRule="Nullify" destinationEntity="DEnergy" inverseName="settings" inverseEntity="DEnergy" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="DEnergy" positionX="-63" positionY="0" width="128" height="105"/>
     </elements>
 </model>

@@ -2,7 +2,7 @@ import UIKit
 
 class VGridVisorDetailCellDebug:VGridVisorDetailCell
 {
-    private let kTitleHeight:CGFloat = 40
+    private let kTitleHeight:CGFloat = 50
     
     override init(frame:CGRect)
     {
@@ -12,7 +12,7 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         labelTitle.isUserInteractionEnabled = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.bold(size:16)
+        labelTitle.font = UIFont.bold(size:13)
         labelTitle.textColor = UIColor.black
         labelTitle.textAlignment = NSTextAlignment.center
         labelTitle.text = NSLocalizedString("VGridVisorDetailCellDebug_labelTitle", comment:"")
