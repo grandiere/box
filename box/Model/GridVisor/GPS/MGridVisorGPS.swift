@@ -61,7 +61,7 @@ class MGridVisorGPS:NSObject, CLLocationManagerDelegate
         default:
             
             let error:String = NSLocalizedString("MGridVisorGPS_errorAuth", comment:"")
-            VAlert.message(message:error)
+            VAlert.messageOrange(message:error)
             
             break
         }
@@ -110,7 +110,7 @@ class MGridVisorGPS:NSObject, CLLocationManagerDelegate
         default:
             
             let error:String = NSLocalizedString("MGridVisorGPS_errorAuth", comment:"")
-            VAlert.message(message:error)
+            VAlert.messageOrange(message:error)
             
             break
         }

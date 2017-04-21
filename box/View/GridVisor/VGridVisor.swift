@@ -26,7 +26,7 @@ class VGridVisor:VView
         else
         {
             let error:String = NSLocalizedString("VGridVisor_errorMetal", comment:"")
-            VAlert.message(message:error)
+            VAlert.messageOrange(message:error)
             
             return
         }

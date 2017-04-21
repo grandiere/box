@@ -65,7 +65,7 @@ class MGridVisorCamera:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate
             else
             {
                 let error:String = NSLocalizedString("MGridVisorCamera_errorNoAuth", comment:"")
-                VAlert.message(message:error)
+                VAlert.messageOrange(message:error)
             }
         }
     }
@@ -117,7 +117,7 @@ class MGridVisorCamera:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate
         else
         {
             let error:String = NSLocalizedString("MGridVisorCamera_errorNoCaptureDevice", comment:"")
-            VAlert.message(message:error)
+            VAlert.messageOrange(message:error)
             
             return
         }
@@ -154,7 +154,7 @@ class MGridVisorCamera:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate
         else
         {
             let error:String = NSLocalizedString("MGridVisorCamera_errorNoOutput", comment:"")
-            VAlert.message(message:error)
+            VAlert.messageOrange(message:error)
         }
     }
     

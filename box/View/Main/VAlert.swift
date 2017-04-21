@@ -5,10 +5,9 @@ class VAlert:UIView
     private static let kHeight:CGFloat = 70
     private weak var layoutTop:NSLayoutConstraint!
     private weak var timer:Timer?
-    private let kMarginTop:CGFloat = 20
     private let kAnimationDuration:TimeInterval = 0.2
-    private let kTimeOut:TimeInterval = 4
-    private let kFontSize:CGFloat = 15
+    private let kTimeOut:TimeInterval = 5
+    private let kFontSize:CGFloat = 16
     private let kLabelMargin:CGFloat = 12
     
     class func messageOrange(message:String)
@@ -116,7 +115,7 @@ class VAlert:UIView
     {
         if open
         {
-            layoutTop.constant = kMarginTop
+            layoutTop.constant = 0
         }
         else
         {

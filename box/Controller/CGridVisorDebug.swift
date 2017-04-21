@@ -121,8 +121,6 @@ class CGridVisorDebug:CController
     
     private func rollDices()
     {
-        print("roll dices")
-        
         let diceResult:UInt32 = arc4random_uniform(difficulty)
         
         if diceResult > 0
@@ -134,29 +132,29 @@ class CGridVisorDebug:CController
     private func failed()
     {
         timer?.invalidate()
-        print("failed")
         
-        DispatchQueue.main.async
-        { [weak self] in
-            
-            self?.finishDebug()
-        }
+        VAlert.messageOrange(
+            message:NSLocalizedString("CGridVisorDebug_failed", comment:""))
+        
+        finishDebug()
     }
     
     private func success()
     {
         timer?.invalidate()
-        print("success")
         
-        DispatchQueue.main.async
-        { [weak self] in
-            
-            self?.finishDebug()
-        }
+        VAlert.messageBlue(
+            message:NSLocalizedString("CGridVisorDebug_success", comment:""))
+        
+        finishDebug()
     }
     
     private func finishDebug()
     {
-        parentController.dismissAnimateOver(completion:nil)
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.parentController.dismissAnimateOver(completion:nil)
+        }
     }
 }

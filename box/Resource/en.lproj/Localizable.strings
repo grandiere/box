@@ -18,3 +18,6 @@
 "MGridItemVisor_title"="Grid Visor";
 "MGridItemVisor_subtitle"="\nInteract with your surrondings";
 "MGridVisorDetailItemHeaderBug_title"="Bug";
+
+"CGridVisorDebug_failed"="Debugging Failed!";
+"CGridVisorDebug_success"="Debugging Success!";
