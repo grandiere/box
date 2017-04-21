@@ -6,6 +6,9 @@ class MLanding
     
     init()
     {
-        items = []
+        let itemTheGrid:MLandingItemTheGrid = MLandingItemTheGrid()
+        
+        items = [
+            itemTheGrid]
     }
 }

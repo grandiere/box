@@ -35,7 +35,7 @@ class VLandingCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            backgroundColor = UIColor(white:1, alpha:0.3)
+            backgroundColor = UIColor(white:1, alpha:0.15)
         }
         else
         {

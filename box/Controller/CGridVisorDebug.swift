@@ -22,7 +22,7 @@ class CGridVisorDebug:CController
         
         var tryTimes:Int = model.level
         
-        if let userLevel:Int16 = MSession.sharedInstance.settings?.level
+        if let userLevel:Int16 = MSession.sharedInstance.settings?.user?.level
         {
             tryTimes -= Int(userLevel)
         }

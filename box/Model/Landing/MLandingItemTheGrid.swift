@@ -2,12 +2,19 @@ import UIKit
 
 class MLandingItemTheGrid:MLandingItem
 {
-    private let kCellHeight:CGFloat = 100
+    private let kCellHeight:CGFloat = 110
     
     init()
     {
-        let reusableIdentifier:String = VLandingCell.reusableIdentifier
+        let reusableIdentifier:String = VLandingCellTheGrid.reusableIdentifier
         
-        super.init(reusableIdentifier: <#T##String#>, cellHeight: <#T##CGFloat#>)
+        super.init(
+            reusableIdentifier:reusableIdentifier,
+            cellHeight:kCellHeight)
+    }
+    
+    override func selected(controller:CLanding)
+    {
+        controller.enterTheGrid()
     }
 }

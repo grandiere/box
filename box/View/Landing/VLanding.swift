@@ -40,10 +40,10 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
             flow.minimumLineSpacing = kInterItem
             flow.minimumInteritemSpacing = kInterItem
             flow.sectionInset = UIEdgeInsets(
-                top:0,
+                top:kBarHeight,
                 left:0,
-                bottom:0,
-                right:kCollectionBottom)
+                bottom:kCollectionBottom,
+                right:0)
         }
         
         addSubview(collectionView)
@@ -63,6 +63,10 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
         NSLayoutConstraint.equalsHorizontal(
             view:viewBar,
             toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:collectionView,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
@@ -73,13 +77,6 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
     deinit
     {
         spinner?.stopAnimating()
-    }
-    
-    //MARK: actions
-    
-    func actionScanner(sender button:UIButton)
-    {
-        controller.openScanner()
     }
     
     //MARK: private
@@ -153,7 +150,7 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
                 at:nil,
                 animated:true,
                 scrollPosition:UICollectionViewScrollPosition())
-            collectionView?.isUserInteractionEnabled = false
+            collectionView?.isUserInteractionEnabled = true
         }
     }
 }

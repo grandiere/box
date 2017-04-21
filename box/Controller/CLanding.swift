@@ -51,13 +51,13 @@ class CLanding:CController
         DispatchQueue.main.async
         { [weak self] in
             
-            
+            self?.viewLanding.sessionLoaded()
         }
     }
     
     //MARK: public
     
-    func openScanner()
+    func enterTheGrid()
     {
         let controllerGrid:CGrid = CGrid()
         parentController.push(
