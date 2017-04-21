@@ -31,6 +31,7 @@ class MSession
             
             settings.addTtl()
             self.settings = settings
+            self.sessionLoaded()
         }
     }
     
@@ -69,6 +70,7 @@ class MSession
                 return
             }
             
+            user.defaultValues()
             self.settings?.user = user
             self.createEnergy()
         }
@@ -117,12 +119,18 @@ class MSession
     
     private func connectFirebase()
     {
-        DManager.sharedInstance?.save()
-        self.sessionLoaded()
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            DManager.sharedInstance?.save()
+            self.sessionLoaded()
+        }
     }
     
     private func sessionLoaded()
     {
+        NotificationCenter.default.post(
+            name:Notification.sessionLoaded,
+            object:nil)
     }
     
     //MARK: public
