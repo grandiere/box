@@ -16,7 +16,7 @@ class VLandingCell:UICollectionViewCell
     
     //MARK: public
     
-    func config()
+    func config(model:MLandingItem)
     {
         
     }

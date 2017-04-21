@@ -2,5 +2,10 @@ import Foundation
 
 class MLanding
 {
-    let items:
+    let items:[MLandingItem]
+    
+    init()
+    {
+        items = []
+    }
 }

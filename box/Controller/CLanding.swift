@@ -2,7 +2,20 @@ import UIKit
 
 class CLanding:CController
 {
+    let model:MLanding
     private weak var viewLanding:VLanding!
+    
+    override init()
+    {
+        model = MLanding()
+        
+        super.init()
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
     
     deinit
     {

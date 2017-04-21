@@ -10,4 +10,10 @@ class MLandingItem
         self.reusableIdentifier = reusableIdentifier
         self.cellHeight = cellHeight
     }
+    
+    //MARK: public
+    
+    func selected(controller:CLanding)
+    {
+    }
 }
