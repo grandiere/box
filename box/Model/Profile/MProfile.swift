@@ -8,9 +8,15 @@ class MProfile
     {
         let itemLevel:MProfileItemLevel = MProfileItemLevel()
         let itemSkill:MProfileItemSkill = MProfileItemSkill()
+        let itemMemory:MProfileItemMemory = MProfileItemMemory()
+        let itemNetwork:MProfileItemNetwork = MProfileItemNetwork()
+        let itemProcessor:MProfileItemProcessor = MProfileItemProcessor()
         
         items = [
             itemLevel,
-            itemSkill]
+            itemSkill,
+            itemMemory,
+            itemNetwork,
+            itemProcessor]
     }
 }
