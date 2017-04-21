@@ -7,8 +7,14 @@ class MLanding
     init()
     {
         let itemTheGrid:MLandingItemTheGrid = MLandingItemTheGrid()
+        let itemProfile:MLandingItemTheProfile = MLandingItemTheProfile()
+        let itemStats:MLandingItemTheStats = MLandingItemTheStats()
+        let itemBoards:MLandingItemTheBoards = MLandingItemTheBoards()
         
         items = [
-            itemTheGrid]
+            itemTheGrid,
+            itemProfile,
+            itemStats,
+            itemBoards]
     }
 }

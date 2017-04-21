@@ -1,9 +1,18 @@
-//
-//  MLandingItemBoards.swift
-//  box
-//
-//  Created by zero on 4/21/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class MLandingItemTheBoards:MLandingItem
+{
+    init()
+    {
+        let title:String = NSLocalizedString("MLandingItemTheBoards_title", comment:"")
+        
+        super.init(
+            icon:#imageLiteral(resourceName: "assetGenericTheGrid"),
+            title:title)
+    }
+    
+    override func selected(controller:CLanding)
+    {
+        controller.enterTheGrid()
+    }
+}

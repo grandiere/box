@@ -1,9 +1,18 @@
-//
-//  MLandingItemProfile.swift
-//  box
-//
-//  Created by zero on 4/21/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class MLandingItemTheProfile:MLandingItem
+{
+    init()
+    {
+        let title:String = NSLocalizedString("MLandingItemTheProfile_title", comment:"")
+        
+        super.init(
+            icon:#imageLiteral(resourceName: "assetGenericTheGrid"),
+            title:title)
+    }
+    
+    override func selected(controller:CLanding)
+    {
+        controller.enterTheGrid()
+    }
+}
