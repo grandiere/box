@@ -49,27 +49,76 @@ class MSession
                 return
             }
             
-            DManager.sharedInstance?.createData(
-                entityName:DEnergy.entityName)
-            { (data) in
-                
-                guard
-                
-                    let energy:DEnergy = data as? DEnergy
-                
-                else
-                {
-                    return
-                }
-                
-                energy.defaultValues()
-                settings.energy = energy
-                self.settings = settings
-                
-                DManager.sharedInstance?.save()
-                self.sessionLoaded()
-            }
+            self.settings = settings
+            self.createUser()
         }
+    }
+    
+    private func createUser()
+    {
+        DManager.sharedInstance?.createData(
+            entityName:DUser.entityName)
+        { (data) in
+            
+            guard
+            
+                let user:DUser = data as? DUser
+            
+            else
+            {
+                return
+            }
+            
+            self.settings?.user = user
+            self.createEnergy()
+        }
+    }
+    
+    private func createEnergy()
+    {
+        DManager.sharedInstance?.createData(
+            entityName:DEnergy.entityName)
+        { (data) in
+            
+            guard
+                
+                let energy:DEnergy = data as? DEnergy
+                
+            else
+            {
+                return
+            }
+            
+            energy.defaultValues()
+            self.settings?.energy = energy
+            self.createStats()
+        }
+    }
+    
+    private func createStats()
+    {
+        DManager.sharedInstance?.createData(
+            entityName:DStats.entityName)
+        { (data) in
+            
+            guard
+            
+                let stats:DStats = data as? DStats
+            
+            else
+            {
+                return
+            }
+            
+            self.settings?.stats = stats
+            self.connectFirebase()
+        }
+    }
+    
+    private func connectFirebase()
+    {
+        DManager.sharedInstance?.save()
+        self.sessionLoaded()
     }
     
     private func sessionLoaded()
