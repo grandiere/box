@@ -14,6 +14,9 @@
 "MLandingItemTheBoards_title"="Boards";
 "MProfileItemLevel_title"="Level";
 "MProfileItemSkill_title"="Skill";
+"MProfileItemMemory_title"="Memory";
+"MProfileItemNetwork_title"="Network";
+"MProfileItemProcessor_title"="Processor";
 "MGridVisorCamera_errorNoAuth"="Unable to use the camera";
 "MGridVisorCamera_errorNoCaptureDevice"="No capture device found";
 "MGridVisorCamera_errorNoOutput"="Unable to connect camera output";

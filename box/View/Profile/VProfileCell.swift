@@ -7,7 +7,7 @@ class VProfileCell:UICollectionViewCell, UICollectionViewDelegate, UICollectionV
     private weak var collectionView:VCollection!
     private let kLabelLeft:CGFloat = 10
     private let kCircleWidth:CGFloat = 18
-    private let kLabelWidth:CGFloat = 90
+    private let kLabelWidth:CGFloat = 110
     
     override init(frame:CGRect)
     {

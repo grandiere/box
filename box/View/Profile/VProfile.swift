@@ -4,8 +4,8 @@ class VProfile:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
 {
     private weak var controller:CProfile!
     private weak var collectionView:VCollection!
-    private let kBarHeight:CGFloat = 200
-    private let kCellHeight:CGFloat = 30
+    private let kBarHeight:CGFloat = 220
+    private let kCellHeight:CGFloat = 36
     
     override init(controller:CController)
     {
