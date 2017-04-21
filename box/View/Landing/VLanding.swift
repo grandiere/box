@@ -3,38 +3,20 @@ import UIKit
 class VLanding:VView
 {
     private weak var controller:CLanding!
-    private let kButtonTop:CGFloat = 100
-    private let kButtonHeight:CGFloat = 50
+    private weak var spinner:VSpinner?
     
     override init(controller:CController)
     {
         super.init(controller:controller)
         self.controller = controller as? CLanding
         
-        let buttonScanner:UIButton = UIButton()
-        buttonScanner.translatesAutoresizingMaskIntoConstraints = false
-        buttonScanner.setTitle(
-            NSLocalizedString("VLanding_buttonGrid", comment:""),
-            for:UIControlState.normal)
-        buttonScanner.setTitleColor(
-            UIColor.white,
-            for:UIControlState.normal)
-        buttonScanner.addTarget(
-            self,
-            action:#selector(actionScanner(sender:)),
-            for:UIControlEvents.touchUpInside)
+        let spinner:VSpinner = VSpinner()
+        self.spinner = spinner
         
-        addSubview(buttonScanner)
+        addSubview(spinner)
         
-        NSLayoutConstraint.topToTop(
-            view:buttonScanner,
-            toView:self,
-            constant:kButtonTop)
-        NSLayoutConstraint.height(
-            view:buttonScanner,
-            constant:kButtonHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:buttonScanner,
+        NSLayoutConstraint.equals(
+            view:spinner,
             toView:self)
     }
     
@@ -43,10 +25,23 @@ class VLanding:VView
         return nil
     }
     
+    deinit
+    {
+        spinner?.stopAnimating()
+    }
+    
     //MARK: actions
     
     func actionScanner(sender button:UIButton)
     {
         controller.openScanner()
+    }
+    
+    //MARK: public
+    
+    func sessionLoaded()
+    {
+        spinner?.stopAnimating()
+        spinner?.removeFromSuperview()
     }
 }

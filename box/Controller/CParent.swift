@@ -36,8 +36,6 @@ class CParent:UIViewController
         
         let controllerLanding:CLanding = CLanding()
         mainController(controller:controllerLanding)
-        
-        MSession.sharedInstance.loadSession()
     }
     
     override func loadView()
