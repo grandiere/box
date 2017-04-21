@@ -7,7 +7,7 @@ class MLandingItemTheProfile:MLandingItem
         let title:String = NSLocalizedString("MLandingItemTheProfile_title", comment:"")
         
         super.init(
-            icon:#imageLiteral(resourceName: "assetGenericTheGrid"),
+            icon:#imageLiteral(resourceName: "assetGenericProfile"),
             title:title)
     }
     
