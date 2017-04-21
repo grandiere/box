@@ -1,9 +1,13 @@
-//
-//  MProfileItem.swift
-//  box
-//
-//  Created by zero on 4/21/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
-
 import Foundation
+
+class MProfileItem
+{
+    let title:String
+    let value:Int
+    
+    init(title:String, value:Int)
+    {
+        self.title = title
+        self.value = value
+    }
+}
