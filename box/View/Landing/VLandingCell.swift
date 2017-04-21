@@ -24,7 +24,7 @@ class VLandingCell:UICollectionViewCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(size:14)
-        label.textColor = UIColor(white:1, alpha:0.85)
+        label.textColor = UIColor(white:1, alpha:0.7)
         self.label = label
         
         addSubview(icon)

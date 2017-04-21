@@ -17,7 +17,7 @@ class VProfileCell:UICollectionViewCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(size:15)
-        label.textColor = UIColor.white
+        label.textColor = UIColor(white:1, alpha:0.8)
         self.label = label
         
         addSubview(label)
