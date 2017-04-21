@@ -1,6 +1,6 @@
 import UIKit
 
-class VProfile:VView
+class VProfile:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private weak var controller:CProfile!
     private let kBarHeight:CGFloat = 100
@@ -28,5 +28,17 @@ class VProfile:VView
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: collectionView delegate
+    
+    func numberOfSections(in collectionView:UICollectionView) -> Int
+    {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        
     }
 }
