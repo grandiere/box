@@ -10,4 +10,11 @@ class CProfile:CController
         self.viewProfile = viewProfile
         view = viewProfile
     }
+    
+    //MARK: public
+    
+    func back()
+    {
+        parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }
