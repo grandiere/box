@@ -3,7 +3,7 @@ import UIKit
 class VProfile:VView
 {
     private weak var controller:CProfile!
-    private let kBarHeight:CGFloat = 60
+    private let kBarHeight:CGFloat = 100
     
     override init(controller:CController)
     {
