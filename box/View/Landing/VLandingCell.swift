@@ -6,7 +6,6 @@ class VLandingCell:UICollectionViewCell
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clear
     }
     
     required init?(coder:NSCoder)
@@ -14,10 +13,40 @@ class VLandingCell:UICollectionViewCell
         return nil
     }
     
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    //MARK: private
+    
+    private func hover()
+    {
+        if isSelected || isHighlighted
+        {
+            backgroundColor = UIColor(white:1, alpha:0.3)
+        }
+        else
+        {
+            backgroundColor = UIColor.clear
+        }
+    }
+    
     //MARK: public
     
     func config(model:MLandingItem)
     {
-        
+        hover()
     }
 }
