@@ -6,7 +6,8 @@ class VGridVisorDebug:VView
     private weak var spinner:VSpinner!
     private let kLabelTop:CGFloat = 20
     private let kLabelHeight:CGFloat = 26
-    private let kImageHeight:CGFloat = 120
+    private let kImageHeight:CGFloat = 160
+    private let kSpinnerHeight:CGFloat = 150
     
     override init(controller:CController)
     {
@@ -58,9 +59,9 @@ class VGridVisorDebug:VView
         NSLayoutConstraint.topToBottom(
             view:spinner,
             toView:imageView)
-        NSLayoutConstraint.bottomToBottom(
+        NSLayoutConstraint.height(
             view:spinner,
-            toView:self)
+            constant:kSpinnerHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:spinner,
             toView:self)

@@ -2,24 +2,32 @@ import UIKit
 
 class VAlert:UIView
 {
-    static let kMarginHorizontal:CGFloat = 5
-    static let kHeight:CGFloat = 70
+    private static let kHeight:CGFloat = 70
     private weak var layoutTop:NSLayoutConstraint!
     private weak var timer:Timer?
     private let kMarginTop:CGFloat = 20
     private let kAnimationDuration:TimeInterval = 0.2
     private let kTimeOut:TimeInterval = 4
     private let kFontSize:CGFloat = 15
-    private let kLabelMargin:CGFloat = 10
-    private let kCornerRadius:CGFloat = 12
-    private let kBorderWidth:CGFloat = 0.5
+    private let kLabelMargin:CGFloat = 12
     
-    class func message(message:String)
+    class func messageOrange(message:String)
+    {
+        VAlert.message(message:message, color:UIColor.gridOrange)
+    }
+    
+    class func messageBlue(message:String)
+    {
+        VAlert.message(message:message, color:UIColor.gridBlue)
+    }
+    
+    private class func message(message:String, color:UIColor)
     {
         DispatchQueue.main.async
         {
             let alert:VAlert = VAlert(
-                message:message)
+                message:message,
+                color:color)
             
             let rootView:UIView = UIApplication.shared.keyWindow!.rootViewController!.view
             rootView.addSubview(alert)
@@ -30,8 +38,7 @@ class VAlert:UIView
                 constant:-kHeight)
             NSLayoutConstraint.equalsHorizontal(
                 view:alert,
-                toView:rootView,
-                margin:kMarginHorizontal)
+                toView:rootView)
             NSLayoutConstraint.height(
                 view:alert,
                 constant:kHeight)
@@ -41,23 +48,18 @@ class VAlert:UIView
         }
     }
     
-    private convenience init(message:String)
+    private convenience init(message:String, color:UIColor)
     {
         self.init()
         clipsToBounds = true
-        backgroundColor = UIColor.clear
+        backgroundColor = color
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = kCornerRadius
-        layer.borderWidth = kBorderWidth
-        layer.borderColor = UIColor(white:0, alpha:0.5).cgColor
-        
-        let blur:VBlur = VBlur.extraLight()
         
         let label:UILabel = UILabel()
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.bold(size:kFontSize)
-        label.textColor = UIColor.black
+        label.textColor = UIColor.white
         label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
         label.backgroundColor = UIColor.clear
@@ -71,16 +73,9 @@ class VAlert:UIView
             action:#selector(actionButton(sender:)),
             for:UIControlEvents.touchUpInside)
         
-        addSubview(blur)
         addSubview(label)
         addSubview(button)
         
-        NSLayoutConstraint.equals(
-            view:blur,
-            toView:self)
-        NSLayoutConstraint.equals(
-            view:blur,
-            toView:self)
         NSLayoutConstraint.equalsVertical(
             view:label,
             toView:self)
