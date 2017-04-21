@@ -14,7 +14,7 @@ class VGridCell:UICollectionViewCell
     override init(frame:CGRect)
     {
         attributesTitle = [
-            NSFontAttributeName:UIFont.bolder(size:20),
+            NSFontAttributeName:UIFont.bold(size:20),
             NSForegroundColorAttributeName:UIColor.white]
         attributesSubtitle = [
             NSFontAttributeName:UIFont.bold(size:16),

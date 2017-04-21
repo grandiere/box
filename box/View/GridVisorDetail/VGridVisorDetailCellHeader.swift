@@ -22,7 +22,7 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         labelTitle.isUserInteractionEnabled = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.bolder(size:22)
+        labelTitle.font = UIFont.bold(size:22)
         labelTitle.textColor = UIColor.black
         self.labelTitle = labelTitle
         

@@ -21,7 +21,7 @@ class VGridBar:UIView
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.textAlignment = NSTextAlignment.center
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.bolder(size:17)
+        labelTitle.font = UIFont.bold(size:17)
         labelTitle.text = NSLocalizedString("VGridBar_labelTitle", comment:"")
         labelTitle.textColor = UIColor.gridBlue
         

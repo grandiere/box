@@ -4,7 +4,7 @@ class VProfileCell:UICollectionViewCell
 {
     private weak var label:UILabel!
     private let kLabelLeft:CGFloat = 10
-    private let kLabelWidth:CGFloat = 150
+    private let kLabelWidth:CGFloat = 100
     
     override init(frame:CGRect)
     {
@@ -16,7 +16,7 @@ class VProfileCell:UICollectionViewCell
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
-        label.font = UIFont.bold(size:14)
+        label.font = UIFont.bold(size:15)
         label.textColor = UIColor.white
         self.label = label
         
@@ -27,7 +27,8 @@ class VProfileCell:UICollectionViewCell
             toView:self)
         NSLayoutConstraint.leftToLeft(
             view:label,
-            toView:self)
+            toView:self,
+            constant:kLabelLeft)
         NSLayoutConstraint.width(
             view:label,
             constant:kLabelWidth)

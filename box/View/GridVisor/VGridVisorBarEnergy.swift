@@ -15,7 +15,7 @@ class VGridVisorBarEnergy:UIView
             NSFontAttributeName:UIFont.regular(size:13),
             NSForegroundColorAttributeName:UIColor(white:1, alpha:0.8)]
         attributesAmount = [
-            NSFontAttributeName:UIFont.bolder(size:17),
+            NSFontAttributeName:UIFont.bold(size:17),
             NSForegroundColorAttributeName:UIColor.white]
         
         stringTitle = NSAttributedString(

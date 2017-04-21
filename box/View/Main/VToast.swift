@@ -33,7 +33,7 @@ class VToast:UIView
         alpha = 0
         
         let attributes:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.medium(size:kFontSize)]
+            NSFontAttributeName:UIFont.regular(size:kFontSize)]
         let string:NSAttributedString = NSAttributedString(
             string:message,
             attributes:attributes)

@@ -9,26 +9,11 @@ extension UIFont
     
     class func regular(size:CGFloat) -> UIFont
     {
-        return UIFont(name:"Avenir-Light", size:size)!
-    }
-    
-    class func italic(size:CGFloat) -> UIFont
-    {
-        return UIFont(name:"AvenirNext-Italic", size:size)!
-    }
-    
-    class func medium(size:CGFloat) -> UIFont
-    {
-        return UIFont(name:"AvenirNext-Regular", size:size)!
+        return UIFont(name:"ArialMT", size:size)!
     }
     
     class func bold(size:CGFloat) -> UIFont
     {
-        return UIFont(name:"AvenirNext-Medium", size:size)!
-    }
-    
-    class func bolder(size:CGFloat) -> UIFont
-    {
-        return UIFont(name:"AvenirNext-Bold", size:size)!
+        return UIFont(name:"Arial-BoldMT", size:size)!
     }
 }
