@@ -1,9 +1,25 @@
-//
-//  MStatsItemBugs.swift
-//  box
-//
-//  Created by zero on 4/21/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class MStatsItemBugs:MStatsItem
+{
+    init()
+    {
+        let image:UIImage = #imageLiteral(resourceName: "assetTextureBugDetail")
+        let title:String = NSLocalizedString("MStatsItemBugs_title", comment:"")
+        let count:Int
+        
+        if let bugs:Int16 = MSession.sharedInstance.settings?.stats?.bugs
+        {
+            count = Int(bugs)
+        }
+        else
+        {
+            count = 0
+        }
+        
+        super.init(
+            image:image,
+            title:title,
+            count:count)
+    }
+}

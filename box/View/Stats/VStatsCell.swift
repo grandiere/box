@@ -60,7 +60,10 @@ class VStatsCell:UICollectionViewCell
     
     //MARK: public
     
-    func config()
+    func config(model:MStatsItem)
     {
+        imageView.image = model.image
+        labelTitle.text = model.title
+        labelCount.text = model.countString
     }
 }
