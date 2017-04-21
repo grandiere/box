@@ -7,9 +7,9 @@ class MProfileItemMemory:MProfileItem
         let title:String = NSLocalizedString("MProfileItemMemory_title", comment:"")
         let value:Int
         
-        if let skill:Int16 = MSession.sharedInstance.settings?.user?.memory
+        if let memory:Int16 = MSession.sharedInstance.settings?.user?.memory
         {
-            value = Int(skill)
+            value = Int(memory)
         }
         else
         {

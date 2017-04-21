@@ -65,6 +65,7 @@
 		DA29FEF91EAAB60A00CD8FBC /* MStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29FEF81EAAB60A00CD8FBC /* MStats.swift */; };
 		DA29FEFB1EAAB61300CD8FBC /* MStatsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29FEFA1EAAB61300CD8FBC /* MStatsItem.swift */; };
 		DA29FEFD1EAAB66400CD8FBC /* MStatsItemBugs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29FEFC1EAAB66400CD8FBC /* MStatsItemBugs.swift */; };
+		DA29FEFF1EAAB9E400CD8FBC /* MStatsItemVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29FEFE1EAAB9E400CD8FBC /* MStatsItemVirus.swift */; };
 		DA31C10B1EA66DBB002FE157 /* MGridVisorRenderAlgoItemPositioned.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31C10A1EA66DBB002FE157 /* MGridVisorRenderAlgoItemPositioned.swift */; };
 		DA31C10D1EA6919D002FE157 /* VGridVisorTargetFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31C10C1EA6919D002FE157 /* VGridVisorTargetFinder.swift */; };
 		DA4DC4601EA1893B0024D28E /* CGridVisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC45F1EA1893B0024D28E /* CGridVisor.swift */; };
@@ -208,6 +209,7 @@
 		DA29FEF81EAAB60A00CD8FBC /* MStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStats.swift; sourceTree = "<group>"; };
 		DA29FEFA1EAAB61300CD8FBC /* MStatsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStatsItem.swift; sourceTree = "<group>"; };
 		DA29FEFC1EAAB66400CD8FBC /* MStatsItemBugs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStatsItemBugs.swift; sourceTree = "<group>"; };
+		DA29FEFE1EAAB9E400CD8FBC /* MStatsItemVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStatsItemVirus.swift; sourceTree = "<group>"; };
 		DA31C10A1EA66DBB002FE157 /* MGridVisorRenderAlgoItemPositioned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderAlgoItemPositioned.swift; sourceTree = "<group>"; };
 		DA31C10C1EA6919D002FE157 /* VGridVisorTargetFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorTargetFinder.swift; sourceTree = "<group>"; };
 		DA4DC45F1EA1893B0024D28E /* CGridVisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVisor.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				DA29FEF81EAAB60A00CD8FBC /* MStats.swift */,
 				DA29FEFA1EAAB61300CD8FBC /* MStatsItem.swift */,
 				DA29FEFC1EAAB66400CD8FBC /* MStatsItemBugs.swift */,
+				DA29FEFE1EAAB9E400CD8FBC /* MStatsItemVirus.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -915,6 +918,7 @@
 				DA134AAC1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift in Sources */,
 				DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */,
 				DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */,
+				DA29FEFF1EAAB9E400CD8FBC /* MStatsItemVirus.swift in Sources */,
 				DA22F3D31EA2F30800F6ED91 /* VGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

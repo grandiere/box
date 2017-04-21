@@ -7,9 +7,9 @@ class MProfileItemNetwork:MProfileItem
         let title:String = NSLocalizedString("MProfileItemNetwork_title", comment:"")
         let value:Int
         
-        if let skill:Int16 = MSession.sharedInstance.settings?.user?.network
+        if let network:Int16 = MSession.sharedInstance.settings?.user?.network
         {
-            value = Int(skill)
+            value = Int(network)
         }
         else
         {

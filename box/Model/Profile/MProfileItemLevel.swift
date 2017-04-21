@@ -7,9 +7,9 @@ class MProfileItemLevel:MProfileItem
         let title:String = NSLocalizedString("MProfileItemLevel_title", comment:"")
         let value:Int
         
-        if let skill:Int16 = MSession.sharedInstance.settings?.user?.level
+        if let level:Int16 = MSession.sharedInstance.settings?.user?.level
         {
-            value = Int(skill)
+            value = Int(level)
         }
         else
         {

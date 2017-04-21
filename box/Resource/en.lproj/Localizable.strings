@@ -27,6 +27,7 @@
 "MGridItemVisor_subtitle"="\nInteract with your surrondings";
 "MGridVisorDetailItemHeaderBug_title"="Bug";
 "MStatsItemBugs_title"="Bugs";
+"MStatsItemVirus_title"="Virus";
 
 "CGridVisorDebug_failed"="Debugging Failed!";
 "CGridVisorDebug_success"="Debugging Success!";
