@@ -7,18 +7,20 @@
         <relationship name="settings" maxCount="1" deletionRule="Nullify" destinationEntity="DSettings" inverseName="energy" inverseEntity="DSettings" syncable="YES"/>
     </entity>
     <entity name="DSettings" representedClassName="DSettings" syncable="YES" codeGenerationType="class">
-        <attribute name="ttl" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="firebaseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ttl" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="energy" maxCount="1" deletionRule="Nullify" destinationEntity="DEnergy" inverseName="settings" inverseEntity="DEnergy" syncable="YES"/>
         <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="DUser" inverseName="settings" inverseEntity="DUser" syncable="YES"/>
     </entity>
     <entity name="DUser" representedClassName="DUser" syncable="YES" codeGenerationType="class">
         <attribute name="level" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="score" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="score" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="skill" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="settings" maxCount="1" deletionRule="Nullify" destinationEntity="DSettings" inverseName="user" inverseEntity="DSettings" syncable="YES"/>
     </entity>
     <elements>
         <element name="DEnergy" positionX="-63" positionY="0" width="128" height="105"/>
-        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="DUser" positionX="-54" positionY="27" width="128" height="90"/>
+        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="DUser" positionX="-54" positionY="27" width="128" height="105"/>
     </elements>
 </model>
