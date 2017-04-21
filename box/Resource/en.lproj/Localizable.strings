@@ -7,8 +7,8 @@
 "VGridVisorBarEnergy_percent"="%";
 "VGridVisorDetailCellDebug_energyTitle"="Energy required   ";
 "VGridVisorDebug_labelTitle"="Debug";
-"VLandingCellTheGrid_title"="Enter The Grid";
 
+"MLandingItemTheGrid_title"="Enter The Grid";
 "MGridVisorCamera_errorNoAuth"="Unable to use the camera";
 "MGridVisorCamera_errorNoCaptureDevice"="No capture device found";
 "MGridVisorCamera_errorNoOutput"="Unable to connect camera output";

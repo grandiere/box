@@ -2,15 +2,13 @@ import UIKit
 
 class MLandingItemTheGrid:MLandingItem
 {
-    private let kCellHeight:CGFloat = 110
-    
     init()
     {
-        let reusableIdentifier:String = VLandingCellTheGrid.reusableIdentifier
+        let title:String = NSLocalizedString("MLandingItemTheGrid_title", comment:"")
         
         super.init(
-            reusableIdentifier:reusableIdentifier,
-            cellHeight:kCellHeight)
+            icon:#imageLiteral(resourceName: "assetGenericTheGrid"),
+            title:title)
     }
     
     override func selected(controller:CLanding)

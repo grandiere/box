@@ -43,10 +43,6 @@
 		DA1D49B41EAA49A500C2392C /* MLandingItemProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49B31EAA49A500C2392C /* MLandingItemProfile.swift */; };
 		DA1D49B61EAA49B000C2392C /* MLandingItemStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49B51EAA49B000C2392C /* MLandingItemStats.swift */; };
 		DA1D49B81EAA49C200C2392C /* MLandingItemBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49B71EAA49C200C2392C /* MLandingItemBoards.swift */; };
-		DA1D49BA1EAA4A4C00C2392C /* VLandingCellTheGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49B91EAA4A4C00C2392C /* VLandingCellTheGrid.swift */; };
-		DA1D49BC1EAA4A6700C2392C /* VLandingCellProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49BB1EAA4A6700C2392C /* VLandingCellProfile.swift */; };
-		DA1D49BE1EAA4A7500C2392C /* VLandingCellStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49BD1EAA4A7500C2392C /* VLandingCellStats.swift */; };
-		DA1D49C01EAA4A8500C2392C /* VLandingCellBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49BF1EAA4A8500C2392C /* VLandingCellBoards.swift */; };
 		DA22F3D01EA2F2DB00F6ED91 /* CGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F3CF1EA2F2DB00F6ED91 /* CGrid.swift */; };
 		DA22F3D31EA2F30800F6ED91 /* VGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F3D21EA2F30800F6ED91 /* VGrid.swift */; };
 		DA22F3D51EA3085A00F6ED91 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA22F3D41EA3085A00F6ED91 /* brand.xcassets */; };
@@ -171,10 +167,6 @@
 		DA1D49B31EAA49A500C2392C /* MLandingItemProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLandingItemProfile.swift; sourceTree = "<group>"; };
 		DA1D49B51EAA49B000C2392C /* MLandingItemStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLandingItemStats.swift; sourceTree = "<group>"; };
 		DA1D49B71EAA49C200C2392C /* MLandingItemBoards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLandingItemBoards.swift; sourceTree = "<group>"; };
-		DA1D49B91EAA4A4C00C2392C /* VLandingCellTheGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLandingCellTheGrid.swift; sourceTree = "<group>"; };
-		DA1D49BB1EAA4A6700C2392C /* VLandingCellProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLandingCellProfile.swift; sourceTree = "<group>"; };
-		DA1D49BD1EAA4A7500C2392C /* VLandingCellStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLandingCellStats.swift; sourceTree = "<group>"; };
-		DA1D49BF1EAA4A8500C2392C /* VLandingCellBoards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLandingCellBoards.swift; sourceTree = "<group>"; };
 		DA22F3CF1EA2F2DB00F6ED91 /* CGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGrid.swift; sourceTree = "<group>"; };
 		DA22F3D21EA2F30800F6ED91 /* VGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGrid.swift; sourceTree = "<group>"; };
 		DA22F3D41EA3085A00F6ED91 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
@@ -604,10 +596,6 @@
 				DAF15D761E9D35CF0000E6B9 /* VLanding.swift */,
 				DA1D49AA1EAA47AD00C2392C /* VLandingBar.swift */,
 				DA1D49A81EAA472D00C2392C /* VLandingCell.swift */,
-				DA1D49B91EAA4A4C00C2392C /* VLandingCellTheGrid.swift */,
-				DA1D49BB1EAA4A6700C2392C /* VLandingCellProfile.swift */,
-				DA1D49BD1EAA4A7500C2392C /* VLandingCellStats.swift */,
-				DA1D49BF1EAA4A8500C2392C /* VLandingCellBoards.swift */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -718,7 +706,6 @@
 				DA134AAB1E9D549E002BE57D /* MetalRotation.swift in Sources */,
 				DA134A9E1E9D549E002BE57D /* MetalBufferableProtocol.swift in Sources */,
 				DAAA0EBC1EA81C9300756A17 /* VGridVisorDetailCellDistance.swift in Sources */,
-				DA1D49BA1EAA4A4C00C2392C /* VLandingCellTheGrid.swift in Sources */,
 				DAFA6A491EA96745001BA4B4 /* CGridVisorDebug.swift in Sources */,
 				DAFDEF8F1EA5061C0016746F /* VGridCell.swift in Sources */,
 				DA771F481EA5662F00CAA820 /* MGridVisorRenderAlgo.swift in Sources */,
@@ -735,7 +722,6 @@
 				DA1D49B81EAA49C200C2392C /* MLandingItemBoards.swift in Sources */,
 				DA771F401EA565A600CAA820 /* MGridVisorRender.swift in Sources */,
 				DA4DC4741EA191B40024D28E /* MGridAlgoItemAid.swift in Sources */,
-				DA1D49BE1EAA4A7500C2392C /* VLandingCellStats.swift in Sources */,
 				DAF15D5E1E9D32BB0000E6B9 /* ExtensionNSManagedObject.swift in Sources */,
 				DAAA0EB21EA80D1000756A17 /* MGridVisorDetail.swift in Sources */,
 				DAF15D5B1E9D32BB0000E6B9 /* ExtensionFileManager.swift in Sources */,
@@ -775,7 +761,6 @@
 				DAAA0EB61EA80DCE00756A17 /* MGridVisorDetailItemHeader.swift in Sources */,
 				DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */,
 				DAF15D611E9D32BB0000E6B9 /* ExtensionUIColor.swift in Sources */,
-				DA1D49BC1EAA4A6700C2392C /* VLandingCellProfile.swift in Sources */,
 				DA1D49AE1EAA496E00C2392C /* MLanding.swift in Sources */,
 				DA1D49AB1EAA47AD00C2392C /* VLandingBar.swift in Sources */,
 				DAFA6A471EA91975001BA4B4 /* DEnergyExtension.swift in Sources */,
@@ -803,7 +788,6 @@
 				DAF15D691E9D32BB0000E6B9 /* VCollection.swift in Sources */,
 				DA1D49A71EAA443C00C2392C /* DStatsExtension.swift in Sources */,
 				DAAA0EBA1EA8119E00756A17 /* VGridVisorDetailCellHeader.swift in Sources */,
-				DA1D49C01EAA4A8500C2392C /* VLandingCellBoards.swift in Sources */,
 				DAF15D6D1E9D32BB0000E6B9 /* VSpinner.swift in Sources */,
 				DAF15D5D1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift in Sources */,
 				DA1D49B41EAA49A500C2392C /* MLandingItemProfile.swift in Sources */,

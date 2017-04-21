@@ -7,7 +7,7 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
     private weak var collectionView:VCollection!
     private weak var spinner:VSpinner?
     private let kBarHeight:CGFloat = 60
-    private let kInterItem:CGFloat = 1
+    private let kCellHeight:CGFloat = 110
     private let kCollectionBottom:CGFloat = 20
     private let kDeselectTime:TimeInterval = 0.2
     
@@ -29,16 +29,11 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
         collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerCell(cell:VLandingCellTheGrid.self)
-        collectionView.registerCell(cell:VLandingCellProfile.self)
-        collectionView.registerCell(cell:VLandingCellStats.self)
-        collectionView.registerCell(cell:VLandingCellBoards.self)
+        collectionView.registerCell(cell:VLandingCell.self)
         self.collectionView = collectionView
         
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
-            flow.minimumLineSpacing = kInterItem
-            flow.minimumInteritemSpacing = kInterItem
             flow.sectionInset = UIEdgeInsets(
                 top:kBarHeight,
                 left:0,
@@ -102,11 +97,10 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
-        let item:MLandingItem = modelAtIndex(index:indexPath)
         let width:CGFloat = collectionView.bounds.size.width
         let size:CGSize = CGSize(
             width:width,
-            height:item.cellHeight)
+            height:kCellHeight)
         
         return size
     }
@@ -128,7 +122,7 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
         let item:MLandingItem = modelAtIndex(index:indexPath)
         let cell:VLandingCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
-            item.reusableIdentifier,
+            VLandingCell.reusableIdentifier,
             for:indexPath) as! VLandingCell
         cell.config(model:item)
         

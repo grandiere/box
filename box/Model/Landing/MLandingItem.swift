@@ -2,13 +2,13 @@ import UIKit
 
 class MLandingItem
 {
-    let reusableIdentifier:String
-    let cellHeight:CGFloat
+    let icon:UIImage
+    let title:String
     
-    init(reusableIdentifier:String, cellHeight:CGFloat)
+    init(icon:UIImage, title:String)
     {
-        self.reusableIdentifier = reusableIdentifier
-        self.cellHeight = cellHeight
+        self.icon = icon
+        self.title = title
     }
     
     //MARK: public
