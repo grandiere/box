@@ -64,4 +64,12 @@ class CLanding:CController
             controller:controllerGrid,
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
+    
+    func enterProfile()
+    {
+        let controllerProfile:CProfile = CProfile()
+        parentController.push(
+            controller:controllerProfile,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }
