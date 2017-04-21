@@ -7,8 +7,10 @@ class MStats
     init()
     {
         let itemBugs:MStatsItemBugs = MStatsItemBugs()
+        let itemVirus:MStatsItemVirus = MStatsItemVirus()
         
         items = [
-            itemBugs]
+            itemBugs,
+            itemVirus]
     }
 }
