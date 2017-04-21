@@ -6,8 +6,8 @@ class VProfileCell:UICollectionViewCell, UICollectionViewDelegate, UICollectionV
     private weak var label:UILabel!
     private weak var collectionView:VCollection!
     private let kLabelLeft:CGFloat = 10
-    private let kCircleWidth:CGFloat = 22
-    private let kLabelWidth:CGFloat = 100
+    private let kCircleWidth:CGFloat = 18
+    private let kLabelWidth:CGFloat = 90
     
     override init(frame:CGRect)
     {
@@ -102,7 +102,7 @@ class VProfileCell:UICollectionViewCell, UICollectionViewDelegate, UICollectionV
             return 0
         }
         
-        return 4
+        return count
     }
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
