@@ -14,6 +14,7 @@ class VProfileCellCircle:UICollectionViewCell
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = UIViewContentMode.center
         imageView.clipsToBounds = true
+        imageView.image = #imageLiteral(resourceName: "assetGenericCircle")
         
         addSubview(imageView)
         

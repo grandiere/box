@@ -6,7 +6,7 @@ class VProfileCell:UICollectionViewCell, UICollectionViewDelegate, UICollectionV
     private weak var label:UILabel!
     private weak var collectionView:VCollection!
     private let kLabelLeft:CGFloat = 10
-    private let kCircleWidth:CGFloat = 30
+    private let kCircleWidth:CGFloat = 22
     private let kLabelWidth:CGFloat = 100
     
     override init(frame:CGRect)
@@ -23,7 +23,26 @@ class VProfileCell:UICollectionViewCell, UICollectionViewDelegate, UICollectionV
         label.textColor = UIColor(white:1, alpha:0.8)
         self.label = label
         
+        let collectionView:VCollection = VCollection()
+        collectionView.isUserInteractionEnabled = false
+        collectionView.isScrollEnabled = false
+        collectionView.bounces = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerCell(cell:VProfileCellCircle.self)
+        self.collectionView = collectionView
+        
+        if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
+        {
+            flow.sectionInset = UIEdgeInsets(
+                top:0,
+                left:kLabelWidth,
+                bottom:0,
+                right:0)
+        }
+        
         addSubview(label)
+        addSubview(collectionView)
         
         NSLayoutConstraint.equalsVertical(
             view:label,
@@ -35,6 +54,10 @@ class VProfileCell:UICollectionViewCell, UICollectionViewDelegate, UICollectionV
         NSLayoutConstraint.width(
             view:label,
             constant:kLabelWidth)
+        
+        NSLayoutConstraint.equals(
+            view:collectionView,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
@@ -53,7 +76,17 @@ class VProfileCell:UICollectionViewCell, UICollectionViewDelegate, UICollectionV
     
     //MARK: collectionView delegate
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let height:CGFloat = collectionView.bounds.maxY
+        let size:CGSize = CGSize(
+            width:kCircleWidth,
+            height:height)
+        
+        return size
+    }
+    
+    func numberOfSections(in collectionView:UICollectionView) -> Int
     {
         return 1
     }
@@ -69,16 +102,26 @@ class VProfileCell:UICollectionViewCell, UICollectionViewDelegate, UICollectionV
             return 0
         }
         
-        return count
+        return 4
     }
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
+        let cell:VProfileCellCircle = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            VProfileCellCircle.reusableIdentifier,
+            for:indexPath) as! VProfileCellCircle
         
+        return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+    func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
     {
-        let cell:VProfileCellCircle
+        return false
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
     }
 }
