@@ -6,6 +6,9 @@ class MProfile
     
     init()
     {
-        items = []
+        let itemSkill:MProfileItemSkill = MProfileItemSkill()
+        
+        items = [
+            itemSkill]
     }
 }

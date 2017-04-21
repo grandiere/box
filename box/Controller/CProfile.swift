@@ -2,7 +2,19 @@ import UIKit
 
 class CProfile:CController
 {
+    let model:MProfile
     private weak var viewProfile:VProfile!
+    
+    override init()
+    {
+        model = MProfile()
+        super.init()
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
     
     override func loadView()
     {
