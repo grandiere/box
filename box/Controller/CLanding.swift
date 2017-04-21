@@ -72,4 +72,12 @@ class CLanding:CController
             controller:controllerProfile,
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
+    
+    func enterStats()
+    {
+        let controllerStats:CStats = CStats()
+        parentController.push(
+            controller:controllerStats,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }

@@ -6,6 +6,7 @@ class VStatsCell:UICollectionViewCell
     private weak var labelTitle:UILabel!
     private weak var labelCount:UILabel!
     private let kImageWidth:CGFloat = 100
+    private let kTitleHeight:CGFloat = 25
     
     override init(frame:CGRect)
     {
@@ -27,6 +28,7 @@ class VStatsCell:UICollectionViewCell
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.font = UIFont.regular(size:12)
         labelTitle.textColor = UIColor.white
+        labelTitle.textAlignment = NSTextAlignment.center
         self.labelTitle = labelTitle
         
         let labelCount:UILabel = UILabel()
@@ -50,6 +52,19 @@ class VStatsCell:UICollectionViewCell
             toView:self)
         NSLayoutConstraint.width(
             view:imageView,
+            constant:kImageWidth)
+        
+        NSLayoutConstraint.height(
+            view:labelTitle,
+            constant:kTitleHeight)
+        NSLayoutConstraint.bottomToBottom(
+            view:labelTitle,
+            toView:self)
+        NSLayoutConstraint.leftToLeft(
+            view:labelTitle,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:labelTitle,
             constant:kImageWidth)
     }
     

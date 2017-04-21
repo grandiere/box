@@ -13,6 +13,6 @@ class MLandingItemTheStats:MLandingItem
     
     override func selected(controller:CLanding)
     {
-        controller.enterTheGrid()
+        controller.enterStats()
     }
 }

@@ -15,6 +15,24 @@ class VStats:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         let viewBar:VStatsBar = VStatsBar(
             controller:self.controller)
         
+        let collectionView:VCollection = VCollection()
+        collectionView.isScrollEnabled = false
+        collectionView.bounces = false
+        collectionView.registerCell(cell:VStatsCell.self)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        self.collectionView = collectionView
+        
+        if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
+        {
+            flow.sectionInset = UIEdgeInsets(
+                top:kBarHeight,
+                left:0,
+                bottom:0,
+                right:0)
+        }
+        
+        addSubview(collectionView)
         addSubview(viewBar)
         
         NSLayoutConstraint.topToTop(
@@ -26,11 +44,24 @@ class VStats:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         NSLayoutConstraint.equalsHorizontal(
             view:viewBar,
             toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:collectionView,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> MStatsItem
+    {
+        let item:MStatsItem = controller.model.items[index.item]
+        
+        return item
     }
     
     //MARK: collectionView delegate
@@ -59,10 +90,12 @@ class VStats:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
+        let item:MStatsItem = modelAtIndex(index:indexPath)
         let cell:VStatsCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
             VStatsCell.reusableIdentifier,
             for:indexPath) as! VStatsCell
+        cell.config(model:item)
         
         return cell
     }

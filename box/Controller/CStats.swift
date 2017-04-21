@@ -23,4 +23,11 @@ class CStats:CController
         self.viewStats = viewStats
         view = viewStats
     }
+    
+    //MARK: public
+    
+    func back()
+    {
+        parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }
