@@ -4,7 +4,7 @@ class VLandingBar:UIView
 {
     private weak var controller:CLanding!
     private let kBorderHeight:CGFloat = 1
-    private let kBlurAlpha:CGFloat = 0.97
+    private let kBlurAlpha:CGFloat = 0.99
     
     init(controller:CLanding)
     {

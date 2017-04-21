@@ -7,7 +7,7 @@ class MLandingItemTheBoards:MLandingItem
         let title:String = NSLocalizedString("MLandingItemTheBoards_title", comment:"")
         
         super.init(
-            icon:#imageLiteral(resourceName: "assetGenericTheGrid"),
+            icon:#imageLiteral(resourceName: "assetGenericBoards"),
             title:title)
     }
     
