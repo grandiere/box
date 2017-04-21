@@ -11,8 +11,13 @@
         <attribute name="ttl" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="energy" maxCount="1" deletionRule="Nullify" destinationEntity="DEnergy" inverseName="settings" inverseEntity="DEnergy" syncable="YES"/>
     </entity>
+    <entity name="DUser" representedClassName="DUser" syncable="YES" codeGenerationType="class">
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="DEnergy" positionX="-63" positionY="0" width="128" height="105"/>
+        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="DUser" positionX="-54" positionY="27" width="128" height="75"/>
     </elements>
 </model>
