@@ -7,6 +7,8 @@ class VStatsBar:UIView
     
     init(controller:CStats)
     {
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
