@@ -8,9 +8,11 @@ class MStats
     {
         let itemBugs:MStatsItemBugs = MStatsItemBugs()
         let itemVirus:MStatsItemVirus = MStatsItemVirus()
+        let itemVirusReleased:MStatsItemVirusReleased = MStatsItemVirusReleased()
         
         items = [
             itemBugs,
-            itemVirus]
+            itemVirus,
+            itemVirusReleased]
     }
 }

@@ -36,6 +36,9 @@ class VStatsBar:UIView
             action:#selector(actionBack(sender:)),
             for:UIControlEvents.touchUpInside)
         
+        let labelScore:UILabel = UILabel()
+        
+        
         addSubview(imageView)
         addSubview(backButton)
         
