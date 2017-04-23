@@ -6,6 +6,7 @@ class VStatsCell:UICollectionViewCell
     private weak var labelTitle:UILabel!
     private weak var labelCount:UILabel!
     private let kImageWidth:CGFloat = 100
+    private let kImageMarginVertical:CGFloat = 20
     private let kTitleHeight:CGFloat = 25
     
     override init(frame:CGRect)
@@ -17,7 +18,7 @@ class VStatsCell:UICollectionViewCell
         
         let imageView:UIImageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.contentMode = UIViewContentMode.center
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
         imageView.isUserInteractionEnabled = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         self.imageView = imageView
@@ -46,7 +47,8 @@ class VStatsCell:UICollectionViewCell
         
         NSLayoutConstraint.equalsVertical(
             view:imageView,
-            toView:self)
+            toView:self,
+            margin:kImageMarginVertical)
         NSLayoutConstraint.leftToLeft(
             view:imageView,
             toView:self)
