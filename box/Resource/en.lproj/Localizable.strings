@@ -28,6 +28,7 @@
 "MGridVisorDetailItemHeaderBug_title"="Bug";
 "MStatsItemBugs_title"="Bugs";
 "MStatsItemVirus_title"="Virus";
+"MStatsItemVirusReleased_title"="Virus released";
 
 "CGridVisorDebug_failed"="Debugging Failed!";
 "CGridVisorDebug_success"="Debugging Success!";
