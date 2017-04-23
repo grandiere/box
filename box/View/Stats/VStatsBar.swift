@@ -4,6 +4,7 @@ class VStatsBar:UIView
 {
     private weak var controller:CStats!
     private let kButtonSize:CGFloat = 60
+    private let kLabelScoreHeight:CGFloat = 60
     
     init(controller:CStats)
     {
@@ -69,8 +70,14 @@ class VStatsBar:UIView
             for:UIControlEvents.touchUpInside)
         
         let labelScore:UILabel = UILabel()
+        labelScore.translatesAutoresizingMaskIntoConstraints = false
+        labelScore.isUserInteractionEnabled = false
+        labelScore.backgroundColor = UIColor.clear
+        labelScore.numberOfLines = 0
+        labelScore.textAlignment = NSTextAlignment.center
+        labelScore.attributedText = mutableString
         
-        
+        addSubview(labelScore)
         addSubview(imageView)
         addSubview(backButton)
         
@@ -87,6 +94,16 @@ class VStatsBar:UIView
         NSLayoutConstraint.size(
             view:backButton,
             constant:kButtonSize)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:labelScore,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:labelScore,
+            constant:kLabelScoreHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:labelScore,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
