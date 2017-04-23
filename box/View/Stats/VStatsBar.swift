@@ -7,7 +7,37 @@ class VStatsBar:UIView
     
     init(controller:CStats)
     {
+        let attributesTitle:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:14),
+            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.5)]
+        
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        
+        let stringTitle:NSAttributedString = NSAttributedString(
+            string:NSLocalizedString("VStatsBar_scoreTitle", comment:""),
+            attributes:attributesTitle)
+        mutableString.append(stringTitle)
+        
+        if let score:Int32 = MSession.sharedInstance.settings?.stats?.score
+        {
+            let numberFormatter:NumberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = NumberFormatter.Style.decimal
+            
+            let numberScore:NSNumber = score as NSNumber
+            
+            if let stringScore:String = numberFormatter.string(from:numberScore)
+            {
+                let attributesScore:[String:AnyObject] = [
+                    NSFontAttributeName:UIFont.numeric(size:18),
+                    NSForegroundColorAttributeName:UIColor.white]
+                
+                let stringAttributedScore:NSAttributedString = NSAttributedString(
+                    string:stringScore,
+                    attributes:attributesScore)
+                
+                mutableString.append(stringAttributedScore)
+            }
+        }
         
         super.init(frame:CGRect.zero)
         clipsToBounds = true
