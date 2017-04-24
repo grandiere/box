@@ -82,6 +82,11 @@ class MGridAlgoItem
         return nil
     }
     
+    func annotationImage() -> UIImage?
+    {
+        return nil
+    }
+    
     func detail() -> MGridVisorDetail
     {
         let model:MGridVisorDetail = MGridVisorDetail()

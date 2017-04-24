@@ -6,14 +6,22 @@ class VGridMapRenderPin:MKAnnotationView
     init(annotation:MGridMapAnnotation)
     {
         let reuseIdentifier:String = VGridMapRenderPin.reusableIdentifier
-        let offsetY:CGFloat = annotation.image.size.height / -2.0
         
         super.init(annotation:annotation, reuseIdentifier:reuseIdentifier)
-        canShowCallout = true
-        image = UIImage(named:"mapAnnotation")
-        centerOffset = CGPoint(x: 0, y: offsetY)
-        leftCalloutAccessoryView = leftCallOut
-        rightCalloutAccessoryView = rightCallOut
+
+        guard
+        
+            let image:UIImage = annotation.algo.annotationImage()
+        
+        else
+        {
+            return
+        }
+        
+        self.image = image
+        
+        let offsetY:CGFloat = image.size.height / -2.0
+        centerOffset = CGPoint(x: 0, y:offsetY)
     }
     
     required init?(coder:NSCoder)
