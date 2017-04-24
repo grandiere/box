@@ -3,7 +3,7 @@ import UIKit
 class VGridBar:UIView
 {
     private weak var controller:CGrid!
-    private let kButtonWidth:CGFloat = 60
+    private let kButtonSize:CGFloat = 60
     
     init(controller:CGrid)
     {
@@ -39,15 +39,15 @@ class VGridBar:UIView
         addSubview(imageView)
         addSubview(backButton)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.topToTop(
             view:backButton,
             toView:self)
         NSLayoutConstraint.leftToLeft(
             view:backButton,
             toView:self)
-        NSLayoutConstraint.width(
+        NSLayoutConstraint.size(
             view:backButton,
-            constant:kButtonWidth)
+            constant:kButtonSize)
         
         NSLayoutConstraint.equals(
             view:imageView,

@@ -4,8 +4,8 @@ import CoreLocation
 class MGridAlgoItemHostile:MGridAlgoItem
 {
     let level:Int
-    private(set) var credits:Int
     let created:TimeInterval
+    private(set) var credits:Int
     private let kTimeDivisor:TimeInterval = 36000
     private let kDistanceDivisor:CLLocationDistance = 20
     
@@ -66,5 +66,25 @@ class MGridAlgoItemHostile:MGridAlgoItem
     func creditsMultiplier() -> Int
     {
         return 0
+    }
+    
+    func imageMath() -> UIImage?
+    {
+        return nil
+    }
+    
+    func titleMatch() -> String?
+    {
+        return nil
+    }
+    
+    func titleSuccess() -> String?
+    {
+        return nil
+    }
+    
+    func titleFailed() -> String?
+    {
+        return nil
     }
 }

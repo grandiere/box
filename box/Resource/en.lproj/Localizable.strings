@@ -5,7 +5,6 @@
 "VGridVisorBarEnergy_title"="Energy  ";
 "VGridVisorBarEnergy_percent"="%";
 "VGridVisorDetailCellDebug_energyTitle"="Energy required   ";
-"VGridVisorDebug_labelTitle"="Debug";
 "VStatsBar_scoreTitle"="Score\n";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
@@ -21,14 +20,11 @@
 "MGridVisorCamera_errorNoCaptureDevice"="No capture device found";
 "MGridVisorCamera_errorNoOutput"="Unable to connect camera output";
 "MGridVisorGPS_errorAuth"="Can't access your location";
-"MGridItemMap_title"="Grid Map";
-"MGridItemMap_subtitle"="\nWant to know where to go?";
-"MGridItemVisor_title"="Grid Visor";
-"MGridItemVisor_subtitle"="\nInteract with your surrondings";
+"MGridItemMap_title"="Map";
+"MGridItemMap_subtitle"="\nLong distance view";
+"MGridItemVisor_title"="Visor";
+"MGridItemVisor_subtitle"="\nAugmented Reality";
 "MGridVisorDetailItemHeaderBug_title"="Bug";
 "MStatsItemBugs_title"="Bugs";
 "MStatsItemVirus_title"="Virus";
 "MStatsItemVirusReleased_title"="Virus released";
-
-"CGridVisorDebug_failed"="Debugging Failed!";
-"CGridVisorDebug_success"="Debugging Success!";
