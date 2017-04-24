@@ -99,6 +99,8 @@
 		DA8852611EAE3E44008CB62C /* VGridVisorMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8852601EAE3E44008CB62C /* VGridVisorMatch.swift */; };
 		DA8852631EAE6D6C008CB62C /* MGridItemReleaseVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8852621EAE6D6C008CB62C /* MGridItemReleaseVirus.swift */; };
 		DA8852661EAE9C64008CB62C /* VGridMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8852651EAE9C64008CB62C /* VGridMap.swift */; };
+		DA8852681EAE9D20008CB62C /* CGridMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8852671EAE9D20008CB62C /* CGridMap.swift */; };
+		DA88526A1EAE9F45008CB62C /* VGridMapBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8852691EAE9F45008CB62C /* VGridMapBar.swift */; };
 		DAAA0EB21EA80D1000756A17 /* MGridVisorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA0EB11EA80D1000756A17 /* MGridVisorDetail.swift */; };
 		DAAA0EB41EA80D6000756A17 /* MGridVisorDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA0EB31EA80D6000756A17 /* MGridVisorDetailItem.swift */; };
 		DAAA0EB61EA80DCE00756A17 /* MGridVisorDetailItemHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA0EB51EA80DCE00756A17 /* MGridVisorDetailItemHeader.swift */; };
@@ -246,6 +248,8 @@
 		DA8852601EAE3E44008CB62C /* VGridVisorMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorMatch.swift; sourceTree = "<group>"; };
 		DA8852621EAE6D6C008CB62C /* MGridItemReleaseVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridItemReleaseVirus.swift; sourceTree = "<group>"; };
 		DA8852651EAE9C64008CB62C /* VGridMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridMap.swift; sourceTree = "<group>"; };
+		DA8852671EAE9D20008CB62C /* CGridMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridMap.swift; sourceTree = "<group>"; };
+		DA8852691EAE9F45008CB62C /* VGridMapBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridMapBar.swift; sourceTree = "<group>"; };
 		DAAA0EB11EA80D1000756A17 /* MGridVisorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetail.swift; sourceTree = "<group>"; };
 		DAAA0EB31EA80D6000756A17 /* MGridVisorDetailItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItem.swift; sourceTree = "<group>"; };
 		DAAA0EB51EA80DCE00756A17 /* MGridVisorDetailItemHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemHeader.swift; sourceTree = "<group>"; };
@@ -531,6 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				DA8852651EAE9C64008CB62C /* VGridMap.swift */,
+				DA8852691EAE9F45008CB62C /* VGridMapBar.swift */,
 			);
 			path = GridMap;
 			sourceTree = "<group>";
@@ -606,6 +611,7 @@
 				DA22F3CF1EA2F2DB00F6ED91 /* CGrid.swift */,
 				DA1D49C11EAA643700C2392C /* CProfile.swift */,
 				DA29FEEE1EAAA9F500CD8FBC /* CStats.swift */,
+				DA8852671EAE9D20008CB62C /* CGridMap.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -818,6 +824,7 @@
 				DA134A9E1E9D549E002BE57D /* MetalBufferableProtocol.swift in Sources */,
 				DAAA0EBC1EA81C9300756A17 /* VGridVisorDetailCellDistance.swift in Sources */,
 				DA1D49C51EAA648900C2392C /* VProfile.swift in Sources */,
+				DA88526A1EAE9F45008CB62C /* VGridMapBar.swift in Sources */,
 				DA29FEFD1EAAB66400CD8FBC /* MStatsItemBugs.swift in Sources */,
 				DAFDEF8F1EA5061C0016746F /* VGridCell.swift in Sources */,
 				DA771F481EA5662F00CAA820 /* MGridVisorRenderAlgo.swift in Sources */,
@@ -939,6 +946,7 @@
 				DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */,
 				DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */,
 				DA29FEFF1EAAB9E400CD8FBC /* MStatsItemVirus.swift in Sources */,
+				DA8852681EAE9D20008CB62C /* CGridMap.swift in Sources */,
 				DA22F3D31EA2F30800F6ED91 /* VGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

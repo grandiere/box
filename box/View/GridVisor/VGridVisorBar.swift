@@ -18,7 +18,7 @@ class VGridVisorBar:UIView
         
         let blur:VBlur = VBlur.dark()
         
-        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.2))
+        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.1))
         
         let backButton:UIButton = UIButton()
         backButton.translatesAutoresizingMaskIntoConstraints = false
