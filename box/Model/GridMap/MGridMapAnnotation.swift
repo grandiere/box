@@ -3,26 +3,19 @@ import MapKit
 
 class MGridMapAnnotation:NSObject, MKAnnotation
 {
-    var coordinate:CLLocationCoordinate2D
-    let reusableIdentifier:String
+    private(set) weak var algo:MGridAlgoItem!
+    private(set) var coordinate:CLLocationCoordinate2D
     let image:UIImage
+    private let kEmpty:String = ""
     
-    init(coordinate:CLLocationCoordinate2D)
+    init(
+        algo:MGridAlgoItem,
+        image:UIImage)
     {
-        reusableIdentifier = VCreateMapPin.reusableIdentifier
-        self.coordinate = coordinate
-        index = 0
-        title = " "
+        self.algo = algo
+        self.coordinate = algo.location.coordinate
+        self.image = image
         
         super.init()
-    }
-    
-    //MARK: public
-    
-    func view() -> MKAnnotationView
-    {
-        let view:MKAnnotationView = VCreateMapPin(annotation:self)
-        
-        return view
     }
 }
