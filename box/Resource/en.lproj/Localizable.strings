@@ -24,6 +24,8 @@
 "MGridItemMap_subtitle"="\nLong distance view";
 "MGridItemVisor_title"="Visor";
 "MGridItemVisor_subtitle"="\nAugmented Reality";
+"MGridItemReleaseVirus_title"="Release virus";
+"MGridItemReleaseVirus_subtitle"="\nDeploy a virus here";
 "MGridVisorDetailItemHeaderBug_title"="Bug";
 "MStatsItemBugs_title"="Bugs";
 "MStatsItemVirus_title"="Virus";

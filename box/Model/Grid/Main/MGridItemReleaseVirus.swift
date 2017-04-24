@@ -4,7 +4,7 @@ class MGridItemReleaseVirus:MGridItem
 {
     init()
     {
-        let image:UIImage = #imageLiteral(resourceName: "assetGenericVisor")
+        let image:UIImage = #imageLiteral(resourceName: "assetGenericReleaseVirus")
         let title:String = NSLocalizedString("MGridItemReleaseVirus_title", comment:"")
         let subtitle:String = NSLocalizedString("MGridItemReleaseVirus_subtitle", comment:"")
         

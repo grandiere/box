@@ -5,9 +5,9 @@ class VGridVisorMatch:VView
     private weak var controller:CGridVisorMatch!
     private weak var spinner:VSpinner!
     private let kLabelTop:CGFloat = 20
-    private let kLabelHeight:CGFloat = 26
-    private let kImageHeight:CGFloat = 160
-    private let kSpinnerHeight:CGFloat = 150
+    private let kLabelHeight:CGFloat = 35
+    private let kImageHeight:CGFloat = 200
+    private let kSpinnerHeight:CGFloat = 200
     
     override init(controller:CController)
     {
