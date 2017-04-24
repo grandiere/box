@@ -41,4 +41,47 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
         let region:MKCoordinateRegion = MKCoordinateRegionMake(locationCoordinate, span)
         setRegion(region, animated:true)
     }
+    
+    //MARK: map delegate
+    
+    func mapView(_ mapView:MKMapView, viewFor annotation:MKAnnotation) -> MKAnnotationView?
+    {
+        let modelAnnotation:MCreateAnnotation = annotation as! MCreateAnnotation
+        let reusableIdentifier:String = modelAnnotation.reusableIdentifier
+        var view:MKAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: reusableIdentifier)
+        
+        if view == nil
+        {
+            view = modelAnnotation.view()
+        }
+        else
+        {
+            view!.annotation = modelAnnotation
+        }
+        
+        return view
+    }
+    
+    func mapView(_ mapView:MKMapView, didSelect view:MKAnnotationView)
+    {
+        controller.viewCreate.showingCallout()
+        
+        guard
+            
+            let annotation:MCreateAnnotation = view.annotation as? MCreateAnnotation
+            
+            else
+        {
+            return
+        }
+        
+        controller.viewCreate.history.selectLocation(item:annotation)
+    }
+    
+    func mapView(_ mapView:MKMapView, didDeselect view:MKAnnotationView)
+    {
+        controller.cancelMove()
+        controller.viewCreate.notShowingCallout()
+        controller.viewCreate.history.clearSelection()
+    }
 }
