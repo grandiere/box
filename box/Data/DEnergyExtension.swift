@@ -4,7 +4,7 @@ import CoreData
 extension DEnergy
 {
     static let kMaxEnergy:Int16 = 100
-    private static let kEnergyUpdateRate:Int = 1000
+    private static let kEnergyUpdateRate:Int = 300
     
     //MARK: private
     
@@ -25,7 +25,6 @@ extension DEnergy
             }
             
             amount = newEnergy
-            
             DManager.sharedInstance?.save()
         }
     }
