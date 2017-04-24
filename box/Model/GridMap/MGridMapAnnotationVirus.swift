@@ -1,9 +1,13 @@
-//
-//  MGridMapAnnotationVirus.swift
-//  box
-//
-//  Created by zero on 4/24/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class MGridMapAnnotationVirus:MGridMapAnnotation
+{
+    init(algo:MGridAlgoItem)
+    {
+        let image:UIImage = #imageLiteral(resourceName: "assetGenericMap")
+        
+        super.init(
+            algo:algo,
+            image:image)
+    }
+}
