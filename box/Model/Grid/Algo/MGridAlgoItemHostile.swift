@@ -68,11 +68,6 @@ class MGridAlgoItemHostile:MGridAlgoItem
         return 0
     }
     
-    func imageMath() -> UIImage?
-    {
-        return nil
-    }
-    
     func titleMatch() -> String?
     {
         return nil

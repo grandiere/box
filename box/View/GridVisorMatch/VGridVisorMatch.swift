@@ -5,9 +5,9 @@ class VGridVisorMatch:VView
     private weak var controller:CGridVisorMatch!
     private weak var spinner:VSpinner!
     private let kLabelTop:CGFloat = 20
-    private let kLabelHeight:CGFloat = 35
-    private let kImageHeight:CGFloat = 200
-    private let kSpinnerHeight:CGFloat = 200
+    private let kLabelHeight:CGFloat = 22
+    private let kImageHeight:CGFloat = 90
+    private let kSpinnerHeight:CGFloat = 400
     
     override init(controller:CController)
     {
@@ -22,7 +22,7 @@ class VGridVisorMatch:VView
         self.spinner = spinner
         
         let label:UILabel = UILabel()
-        label.font = UIFont.bold(size:20)
+        label.font = UIFont.bold(size:17)
         label.textAlignment = NSTextAlignment.center
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +35,7 @@ class VGridVisorMatch:VView
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.contentMode = UIViewContentMode.center
-        imageView.image = self.controller.model.imageMath()
+        imageView.image = #imageLiteral(resourceName: "assetGenericMatch")
         
         addSubview(blur)
         addSubview(spinner)

@@ -30,3 +30,4 @@
 "MStatsItemBugs_title"="Bugs";
 "MStatsItemVirus_title"="Virus";
 "MStatsItemVirusReleased_title"="Virus released";
+"MGridAlgoItemHostileBug_titleMatch"="Debug";

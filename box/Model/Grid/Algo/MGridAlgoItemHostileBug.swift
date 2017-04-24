@@ -30,4 +30,11 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
     {
         return kCreditsMultiplier
     }
+    
+    override func titleMatch() -> String?
+    {
+        let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleMatch", comment:"")
+        
+        return title
+    }
 }

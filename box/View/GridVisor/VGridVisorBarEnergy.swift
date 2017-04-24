@@ -12,10 +12,13 @@ class VGridVisorBarEnergy:UIView
     init(controller:CGridVisor)
     {
         let attributesTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:13),
+            NSFontAttributeName:UIFont.regular(size:12),
             NSForegroundColorAttributeName:UIColor(white:1, alpha:0.8)]
+        let attributesPercent:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:16),
+            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.6)]
         attributesAmount = [
-            NSFontAttributeName:UIFont.bold(size:17),
+            NSFontAttributeName:UIFont.bold(size:19),
             NSForegroundColorAttributeName:UIColor.white]
         
         stringTitle = NSAttributedString(
@@ -23,7 +26,7 @@ class VGridVisorBarEnergy:UIView
             attributes:attributesTitle)
         stringPercent = NSAttributedString(
             string:NSLocalizedString("VGridVisorBarEnergy_percent", comment:""),
-            attributes:attributesTitle)
+            attributes:attributesPercent)
         
         super.init(frame:CGRect.zero)
         clipsToBounds = true
