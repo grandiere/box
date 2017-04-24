@@ -22,4 +22,11 @@ class CGridMap:CController
         self.viewMap = viewMap
         view = viewMap
     }
+    
+    //MARK: public
+    
+    func back()
+    {
+        parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }

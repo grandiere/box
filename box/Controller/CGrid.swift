@@ -70,7 +70,10 @@ class CGrid:CController
     
     func openMap()
     {
-        
+        let controllerMap:CGridMap = CGridMap(modelAlgo:modelAlgo)
+        parentController.push(
+            controller:controllerMap,
+            horizontal:CParent.TransitionHorizontal.fromRight)
     }
     
     func openVisor()
