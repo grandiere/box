@@ -39,7 +39,7 @@ extension DEnergy
     
     func percentEnergy() -> Int
     {
-        if amount < DEnergy.kMaxEnergy
+        if amount >= DEnergy.kMaxEnergy
         {
             return 100
         }
