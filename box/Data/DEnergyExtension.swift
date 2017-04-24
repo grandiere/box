@@ -54,4 +54,19 @@ extension DEnergy
         
         return intPercent
     }
+    
+    func spendEnergy(hostile:MGridAlgoItemHostile)
+    {
+        amount -= Int16(hostile.credits)
+        
+        if amount < 0
+        {
+            amount = 0
+        }
+        
+        lastAmount = amount
+        lastDate = NSDate().timeIntervalSince1970
+        
+        DManager.sharedInstance?.save()
+    }
 }

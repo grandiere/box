@@ -65,6 +65,12 @@ class CGridVisorMatch:CController
         timer?.invalidate()
     }
     
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        MSession.sharedInstance.settings?.energy?.spendEnergy(hostile:model)
+    }
+    
     override func viewDidAppear(_ animated:Bool)
     {
         super.viewDidAppear(animated)
