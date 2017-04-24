@@ -5,25 +5,31 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
     private weak var labelEnergy:UILabel!
     private weak var buttonDebug:UIButton!
     private weak var modelDebug:MGridVisorDetailItemDebug?
+    private let stringDebugTitle:NSAttributedString
     private let stringEnergyTitle:NSAttributedString
     private let attributesEnergy:[String:AnyObject]
-    private let kTitleHeight:CGFloat = 50
-    private let kEnergyHeight:CGFloat = 80
-    private let kEnergyWidth:CGFloat = 200
-    private let kImageHeight:CGFloat = 160
-    private let kButtonDebugWidth:CGFloat = 80
+    private let kButtonTop:CGFloat = 10
+    private let kButtonHeight:CGFloat = 90
+    private let kButtonWidth:CGFloat = 80
+    private let kLabelWidth:CGFloat = 200
     private let kAlphaActive:CGFloat = 1
     private let kAlphaInactive:CGFloat = 0.2
     
     override init(frame:CGRect)
     {
+        let attributesDebugTitle:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.bold(size:15),
+            NSForegroundColorAttributeName:UIColor.black]
         let attributesEnergyTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bold(size:13),
-            NSForegroundColorAttributeName:UIColor(white:0, alpha:0.7)]
+            NSFontAttributeName:UIFont.regular(size:13),
+            NSForegroundColorAttributeName:UIColor(white:0, alpha:0.8)]
         attributesEnergy = [
-            NSFontAttributeName:UIFont.numeric(size:24),
+            NSFontAttributeName:UIFont.numeric(size:30),
             NSForegroundColorAttributeName:UIColor.black]
         
+        stringDebugTitle = NSAttributedString(
+            string:NSLocalizedString("VGridVisorDetailCellDebug_labelTitle", comment:""),
+            attributes:attributesDebugTitle)
         stringEnergyTitle = NSAttributedString(
             string:NSLocalizedString("VGridVisorDetailCellDebug_energyTitle", comment:""),
             attributes:attributesEnergyTitle)
@@ -31,36 +37,21 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         super.init(frame:frame)
         backgroundColor = UIColor.clear
         
-        let labelTitle:UILabel = UILabel()
-        labelTitle.isUserInteractionEnabled = false
-        labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.bold(size:13)
-        labelTitle.textColor = UIColor.black
-        labelTitle.textAlignment = NSTextAlignment.center
-        labelTitle.text = NSLocalizedString("VGridVisorDetailCellDebug_labelTitle", comment:"")
-        
         let labelEnergy:UILabel = UILabel()
         labelEnergy.translatesAutoresizingMaskIntoConstraints = false
         labelEnergy.backgroundColor = UIColor.clear
         labelEnergy.isUserInteractionEnabled = false
         labelEnergy.textAlignment = NSTextAlignment.right
+        labelEnergy.numberOfLines = 0
         self.labelEnergy = labelEnergy
-        
-        let imageView:UIImageView = UIImageView()
-        imageView.isUserInteractionEnabled = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.contentMode = UIViewContentMode.center
-        imageView.image = #imageLiteral(resourceName: "assetGenericDebug")
         
         let buttonDebug:UIButton = UIButton()
         buttonDebug.translatesAutoresizingMaskIntoConstraints = false
         buttonDebug.setImage(
-            #imageLiteral(resourceName: "assetGenericEnter").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            #imageLiteral(resourceName: "assetGenericMatch").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
         buttonDebug.setImage(
-            #imageLiteral(resourceName: "assetGenericEnterOver").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            #imageLiteral(resourceName: "assetGenericMatchOver").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.highlighted)
         buttonDebug.imageView!.clipsToBounds = true
         buttonDebug.imageView!.contentMode = UIViewContentMode.center
@@ -70,56 +61,36 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
             for:UIControlEvents.touchUpInside)
         self.buttonDebug = buttonDebug
         
-        addSubview(labelTitle)
         addSubview(labelEnergy)
-        addSubview(imageView)
         addSubview(buttonDebug)
         
         NSLayoutConstraint.topToTop(
-            view:labelTitle,
-            toView:self)
-        NSLayoutConstraint.height(
-            view:labelTitle,
-            constant:kTitleHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:labelTitle,
-            toView:self)
-        
-        NSLayoutConstraint.topToTop(
-            view:imageView,
-            toView:self)
-        NSLayoutConstraint.height(
-            view:imageView,
-            constant:kImageHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:imageView,
-            toView:self)
-        
-        NSLayoutConstraint.topToBottom(
             view:labelEnergy,
-            toView:imageView)
+            toView:self,
+            constant:kButtonTop)
         NSLayoutConstraint.height(
             view:labelEnergy,
-            constant:kEnergyHeight)
+            constant:kButtonHeight)
         NSLayoutConstraint.rightToLeft(
             view:labelEnergy,
             toView:buttonDebug)
         NSLayoutConstraint.width(
             view:labelEnergy,
-            constant:kEnergyWidth)
+            constant:kLabelWidth)
         
-        NSLayoutConstraint.topToBottom(
+        NSLayoutConstraint.topToTop(
             view:buttonDebug,
-            toView:imageView)
+            toView:self,
+            constant:kButtonTop)
         NSLayoutConstraint.height(
             view:buttonDebug,
-            constant:kEnergyHeight)
+            constant:kButtonHeight)
         NSLayoutConstraint.rightToRight(
             view:buttonDebug,
             toView:self)
         NSLayoutConstraint.width(
             view:buttonDebug,
-            constant:kButtonDebugWidth)
+            constant:kButtonWidth)
     }
     
     required init?(coder:NSCoder)
@@ -147,6 +118,7 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
             string:rawString,
             attributes:attributesEnergy)
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        mutableString.append(stringDebugTitle)
         mutableString.append(stringEnergyTitle)
         mutableString.append(stringCredits)
         

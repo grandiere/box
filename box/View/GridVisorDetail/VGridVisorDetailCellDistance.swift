@@ -10,7 +10,7 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
     private let kMinIntegers:Int = 1
     private let kTitleLeft:CGFloat = 10
     private let kTitleWidth:CGFloat = 240
-    private let kAccuracyWidth:CGFloat = 65
+    private let kAccuracyWidth:CGFloat = 80
     private let kKmWidth:CGFloat = 160
     private let kKmRight:CGFloat = 5
     

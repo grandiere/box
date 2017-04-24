@@ -4,7 +4,7 @@
 "VGridVisorDetailCellDebug_labelTitle"="Debug";
 "VGridVisorBarEnergy_title"="Energy  ";
 "VGridVisorBarEnergy_percent"="%";
-"VGridVisorDetailCellDebug_energyTitle"="Energy required   ";
+"VGridVisorDetailCellDebug_energyTitle"="\nEnergy required   ";
 "VStatsBar_scoreTitle"="Score\n";
 
 "MLandingItemTheGrid_title"="Enter The Grid";

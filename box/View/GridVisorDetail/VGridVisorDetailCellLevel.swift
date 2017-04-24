@@ -5,7 +5,7 @@ class VGridVisorDetailCellLevel:VGridVisorDetailCell
     private weak var labelLevel:UILabel!
     private let kTitleLeft:CGFloat = 10
     private let kTitleWidth:CGFloat = 240
-    private let kHexagonWidth:CGFloat = 66
+    private let kHexagonWidth:CGFloat = 80
     
     override init(frame:CGRect)
     {
