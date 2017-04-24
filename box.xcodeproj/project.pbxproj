@@ -96,6 +96,7 @@
 		DA771F481EA5662F00CAA820 /* MGridVisorRenderAlgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F471EA5662F00CAA820 /* MGridVisorRenderAlgo.swift */; };
 		DA771F4A1EA5664000CAA820 /* MGridVisorRenderAlgoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F491EA5664000CAA820 /* MGridVisorRenderAlgoItem.swift */; };
 		DA88525E1EAE3B7D008CB62C /* CGridVisorMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA88525D1EAE3B7D008CB62C /* CGridVisorMatch.swift */; };
+		DA8852611EAE3E44008CB62C /* VGridVisorMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8852601EAE3E44008CB62C /* VGridVisorMatch.swift */; };
 		DAAA0EB21EA80D1000756A17 /* MGridVisorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA0EB11EA80D1000756A17 /* MGridVisorDetail.swift */; };
 		DAAA0EB41EA80D6000756A17 /* MGridVisorDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA0EB31EA80D6000756A17 /* MGridVisorDetailItem.swift */; };
 		DAAA0EB61EA80DCE00756A17 /* MGridVisorDetailItemHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA0EB51EA80DCE00756A17 /* MGridVisorDetailItemHeader.swift */; };
@@ -242,6 +243,7 @@
 		DA771F471EA5662F00CAA820 /* MGridVisorRenderAlgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderAlgo.swift; sourceTree = "<group>"; };
 		DA771F491EA5664000CAA820 /* MGridVisorRenderAlgoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderAlgoItem.swift; sourceTree = "<group>"; };
 		DA88525D1EAE3B7D008CB62C /* CGridVisorMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVisorMatch.swift; sourceTree = "<group>"; };
+		DA8852601EAE3E44008CB62C /* VGridVisorMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorMatch.swift; sourceTree = "<group>"; };
 		DAAA0EB11EA80D1000756A17 /* MGridVisorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetail.swift; sourceTree = "<group>"; };
 		DAAA0EB31EA80D6000756A17 /* MGridVisorDetailItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItem.swift; sourceTree = "<group>"; };
 		DAAA0EB51EA80DCE00756A17 /* MGridVisorDetailItemHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemHeader.swift; sourceTree = "<group>"; };
@@ -517,6 +519,14 @@
 			path = GridVisorDetail;
 			sourceTree = "<group>";
 		};
+		DA88525F1EAE3E09008CB62C /* GridVisorMatch */ = {
+			isa = PBXGroup;
+			children = (
+				DA8852601EAE3E44008CB62C /* VGridVisorMatch.swift */,
+			);
+			path = GridVisorMatch;
+			sourceTree = "<group>";
+		};
 		DAAA0EB01EA80CEC00756A17 /* GridVisorDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +669,7 @@
 		DAF15D491E9D32BB0000E6B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA88525F1EAE3E09008CB62C /* GridVisorMatch */,
 				DA29FEF01EAAAA2000CD8FBC /* Stats */,
 				DA1D49C31EAA648200C2392C /* Profile */,
 				DAFA6A4A1EA96776001BA4B4 /* GridVisorDebug */,
@@ -831,6 +842,7 @@
 				DAF15D5B1E9D32BB0000E6B9 /* ExtensionFileManager.swift in Sources */,
 				DA134AA91E9D549E002BE57D /* MetalShaderVertexTextured.metal in Sources */,
 				DA31C10D1EA6919D002FE157 /* VGridVisorTargetFinder.swift in Sources */,
+				DA8852611EAE3E44008CB62C /* VGridVisorMatch.swift in Sources */,
 				DA1D49B61EAA49B000C2392C /* MLandingItemStats.swift in Sources */,
 				DA771F3A1EA551F000CAA820 /* MGridVisorGPS.swift in Sources */,
 				DA771F4A1EA5664000CAA820 /* MGridVisorRenderAlgoItem.swift in Sources */,
