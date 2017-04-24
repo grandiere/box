@@ -4,14 +4,14 @@ import CoreData
 extension DEnergy
 {
     static let kMaxEnergy:Int16 = 100
-    private static let kEnergyUpdateRate:Int = 10000
+    private static let kEnergyUpdateRate:Int = 1000
     
     //MARK: private
     
     private func updateEnergy()
     {
         let timestamp:TimeInterval = Date().timeIntervalSince1970
-        let deltaTimestamp:Int = Int(lastDate - timestamp)
+        let deltaTimestamp:Int = Int(timestamp - lastDate)
         let energyRecovered:Int = deltaTimestamp / DEnergy.kEnergyUpdateRate
         
         if energyRecovered > 0
@@ -25,6 +25,8 @@ extension DEnergy
             }
             
             amount = newEnergy
+            
+            DManager.sharedInstance?.save()
         }
     }
     
