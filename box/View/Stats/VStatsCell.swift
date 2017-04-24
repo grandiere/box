@@ -5,7 +5,7 @@ class VStatsCell:UICollectionViewCell
     private weak var imageView:UIImageView!
     private weak var labelTitle:UILabel!
     private weak var labelCount:UILabel!
-    private let kImageWidth:CGFloat = 100
+    private let kImageWidth:CGFloat = 110
     private let kImageMarginVertical:CGFloat = 20
     private let kTitleHeight:CGFloat = 25
     private let kCountLeft:CGFloat = -60
@@ -30,7 +30,7 @@ class VStatsCell:UICollectionViewCell
         labelTitle.backgroundColor = UIColor.clear
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.font = UIFont.regular(size:12)
-        labelTitle.textColor = UIColor.white
+        labelTitle.textColor = UIColor(white:1, alpha:0.8)
         labelTitle.textAlignment = NSTextAlignment.center
         self.labelTitle = labelTitle
         
@@ -38,7 +38,7 @@ class VStatsCell:UICollectionViewCell
         labelCount.backgroundColor = UIColor.clear
         labelCount.translatesAutoresizingMaskIntoConstraints = false
         labelCount.isUserInteractionEnabled = false
-        labelCount.font = UIFont.numeric(size:25)
+        labelCount.font = UIFont.numeric(size:20)
         labelCount.textAlignment = NSTextAlignment.right
         labelCount.textColor = UIColor.white
         self.labelCount = labelCount

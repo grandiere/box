@@ -5,7 +5,7 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     private weak var controller:CGrid!
     private weak var spinner:VSpinner!
     private weak var collectionView:VCollection!
-    private let kBarHeight:CGFloat = 60
+    private let kBarHeight:CGFloat = 220
     private let kCellHeight:CGFloat = 170
     private let kAfterSelect:TimeInterval = 0.2
     

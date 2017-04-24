@@ -3,7 +3,6 @@ import UIKit
 class VGridBar:UIView
 {
     private weak var controller:CGrid!
-    private let kBorderHeight:CGFloat = 1
     private let kButtonWidth:CGFloat = 60
     
     init(controller:CGrid)
@@ -13,17 +12,6 @@ class VGridBar:UIView
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
-        
-        let border:VBorder = VBorder(color:UIColor.gridBlue)
-        
-        let labelTitle:UILabel = UILabel()
-        labelTitle.isUserInteractionEnabled = false
-        labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.textAlignment = NSTextAlignment.center
-        labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.bold(size:17)
-        labelTitle.text = NSLocalizedString("VGridBar_labelTitle", comment:"")
-        labelTitle.textColor = UIColor.gridBlue
         
         let backButton:UIButton = UIButton()
         backButton.translatesAutoresizingMaskIntoConstraints = false
@@ -41,23 +29,15 @@ class VGridBar:UIView
             action:#selector(actionBack(sender:)),
             for:UIControlEvents.touchUpInside)
         
-        addSubview(border)
-        addSubview(labelTitle)
+        let imageView:UIImageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = UIViewContentMode.center
+        imageView.clipsToBounds = true
+        imageView.image = #imageLiteral(resourceName: "assetGenericTheGrid")
+        
+        addSubview(imageView)
         addSubview(backButton)
-        
-        NSLayoutConstraint.bottomToBottom(
-            view:border,
-            toView:self)
-        NSLayoutConstraint.height(
-            view:border,
-            constant:kBorderHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:border,
-            toView:self)
-        
-        NSLayoutConstraint.equals(
-            view:labelTitle,
-            toView:self)
         
         NSLayoutConstraint.equalsVertical(
             view:backButton,
@@ -68,6 +48,10 @@ class VGridBar:UIView
         NSLayoutConstraint.width(
             view:backButton,
             constant:kButtonWidth)
+        
+        NSLayoutConstraint.equals(
+            view:imageView,
+            toView:self)
     }
     
     required init?(coder:NSCoder)

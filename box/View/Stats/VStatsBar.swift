@@ -4,13 +4,13 @@ class VStatsBar:UIView
 {
     private weak var controller:CStats!
     private let kButtonSize:CGFloat = 60
-    private let kLabelScoreHeight:CGFloat = 60
+    private let kLabelScoreHeight:CGFloat = 80
     
     init(controller:CStats)
     {
         let attributesTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:14),
-            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.5)]
+            NSFontAttributeName:UIFont.regular(size:12),
+            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.8)]
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
@@ -29,7 +29,7 @@ class VStatsBar:UIView
             if let stringScore:String = numberFormatter.string(from:numberScore)
             {
                 let attributesScore:[String:AnyObject] = [
-                    NSFontAttributeName:UIFont.numeric(size:18),
+                    NSFontAttributeName:UIFont.numeric(size:20),
                     NSForegroundColorAttributeName:UIColor.white]
                 
                 let stringAttributedScore:NSAttributedString = NSAttributedString(
