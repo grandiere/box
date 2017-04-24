@@ -13,7 +13,6 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
         span = MKCoordinateSpan(latitudeDelta:kSpanSize, longitudeDelta:kSpanSize)
         
         super.init(frame:CGRect.zero)
-        self.controller = controller
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         isRotateEnabled = false
@@ -24,9 +23,11 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
         showsBuildings = true
         showsPointsOfInterest = true
         showsCompass = true
-        showsScale = true
+        showsScale = false
         showsTraffic = false
         delegate = self
+        showsUserLocation = true
+        self.controller = controller
     }
     
     required init?(coder:NSCoder)
@@ -46,13 +47,21 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
     
     func mapView(_ mapView:MKMapView, viewFor annotation:MKAnnotation) -> MKAnnotationView?
     {
-        let modelAnnotation:MCreateAnnotation = annotation as! MCreateAnnotation
-        let reusableIdentifier:String = modelAnnotation.reusableIdentifier
-        var view:MKAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: reusableIdentifier)
+        guard
+            
+            let modelAnnotation:MGridMapAnnotation = annotation as? MGridMapAnnotation
+        
+        else
+        {
+            return nil
+        }
+        
+        var view:MKAnnotationView? = mapView.dequeueReusableAnnotationView(
+            withIdentifier:VGridMapRenderPin.reusableIdentifier)
         
         if view == nil
         {
-            view = modelAnnotation.view()
+            view = VGridMapRenderPin(annotation:modelAnnotation)
         }
         else
         {
@@ -64,24 +73,9 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
     
     func mapView(_ mapView:MKMapView, didSelect view:MKAnnotationView)
     {
-        controller.viewCreate.showingCallout()
-        
-        guard
-            
-            let annotation:MCreateAnnotation = view.annotation as? MCreateAnnotation
-            
-            else
-        {
-            return
-        }
-        
-        controller.viewCreate.history.selectLocation(item:annotation)
     }
     
     func mapView(_ mapView:MKMapView, didDeselect view:MKAnnotationView)
     {
-        controller.cancelMove()
-        controller.viewCreate.notShowingCallout()
-        controller.viewCreate.history.clearSelection()
     }
 }

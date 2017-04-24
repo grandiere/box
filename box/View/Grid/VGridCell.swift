@@ -9,7 +9,7 @@ class VGridCell:UICollectionViewCell
     private let kImageWidth:CGFloat = 100
     private let kLabelRight:CGFloat = 10
     private let kAlphaNotSelected:CGFloat = 1
-    private let kAlphaSelected:CGFloat = 0.3
+    private let kAlphaSelected:CGFloat = 0.4
     
     override init(frame:CGRect)
     {
@@ -18,7 +18,7 @@ class VGridCell:UICollectionViewCell
             NSForegroundColorAttributeName:UIColor.white]
         attributesSubtitle = [
             NSFontAttributeName:UIFont.bold(size:12),
-            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.75)]
+            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.7)]
         
         super.init(frame:frame)
         clipsToBounds = true

@@ -1,6 +1,7 @@
 import UIKit
+import CoreLocation
 
-class CGridMap:CController
+class CGridMap:CController, CLLocationManagerDelegate
 {
     private(set) weak var modelAlgo:MGridAlgo!
     private weak var viewMap:VGridMap!
@@ -31,8 +32,15 @@ class CGridMap:CController
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-//            self?.turnOnGPS()
+            self?.askLocation()
         }
+    }
+    
+    //MARK: private
+    
+    private func askLocation()
+    {
+        
     }
     
     //MARK: public
