@@ -177,6 +177,6 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
     
     func actionEnter(sender button:UIButton)
     {
-        controller?.enterDebug()
+        controller?.enterMach()
     }
 }

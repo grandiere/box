@@ -3,7 +3,7 @@ import UIKit
 class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
 {
     let posterId:String
-    private let kCreditsMultiplier:Int = 5
+    private let kCreditsMultiplier:CGFloat = 2
     
     init(
         latitude:Double,
@@ -21,7 +21,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
             created:created)
     }
     
-    override func creditsMultiplier() -> Int
+    override func creditsMultiplier() -> CGFloat
     {
         return kCreditsMultiplier
     }

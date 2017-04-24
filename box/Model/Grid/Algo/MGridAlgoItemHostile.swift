@@ -43,14 +43,14 @@ class MGridAlgoItemHostile:MGridAlgoItem
             return
         }
         
-        var credits:Int = level
+        var credits:CGFloat = CGFloat(level)
         let timestamp:TimeInterval = Date().timeIntervalSince1970
         let deltaTime:TimeInterval = timestamp - created
         let timeDivided:TimeInterval = deltaTime / kTimeDivisor
         let distanceDivided:CLLocationDistance = distance / kDistanceDivisor
-        let maxCredits:Int = Int(DEnergy.kMaxEnergy)
-        credits += Int(timeDivided)
-        credits += Int(distanceDivided)
+        let maxCredits:CGFloat = CGFloat(DEnergy.kMaxEnergy)
+        credits += CGFloat(timeDivided)
+        credits += CGFloat(distanceDivided)
         credits *= creditsMultiplier()
         
         if credits > maxCredits
@@ -58,12 +58,12 @@ class MGridAlgoItemHostile:MGridAlgoItem
             credits = maxCredits
         }
         
-        self.credits = credits
+        self.credits = Int(credits)
     }
     
     //MARK: public
     
-    func creditsMultiplier() -> Int
+    func creditsMultiplier() -> CGFloat
     {
         return 0
     }

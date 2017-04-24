@@ -9,7 +9,8 @@ class CGridVisorMatch:CController
     private var timesTried:Int
     private let tryTimes:Int
     private let difficulty:UInt32
-    private let kDifficultyDivisor:CGFloat = 30
+    private let minDice:UInt32
+    private let kDifficultyDivisor:CGFloat = 3
     private let kAddDifficulty:CGFloat = 1
     private let kTimeInterval:TimeInterval = 3
     private let kMinTryTimes:Int = 1
@@ -37,6 +38,19 @@ class CGridVisorMatch:CController
         let rawDifficulty:CGFloat = ceil(CGFloat(model.credits) / kDifficultyDivisor)
         let totalDifficulty:CGFloat = rawDifficulty + kAddDifficulty
         difficulty = UInt32(totalDifficulty)
+     
+        var minDice:Int = 0
+        
+        if let user:DUser = MSession.sharedInstance.settings?.user
+        {
+            minDice += Int(user.level)
+            minDice += Int(user.skill)
+            minDice += Int(user.memory)
+            minDice += Int(user.network)
+            minDice += Int(user.processor)
+        }
+        
+        self.minDice = UInt32(minDice)
         
         super.init()
     }
@@ -123,7 +137,7 @@ class CGridVisorMatch:CController
     {
         let diceResult:UInt32 = arc4random_uniform(difficulty)
         
-        if diceResult > 0
+        if diceResult > minDice
         {
             failed()
         }

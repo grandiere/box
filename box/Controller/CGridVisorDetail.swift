@@ -38,18 +38,18 @@ class CGridVisorDetail:CController
         
     }
     
-    func enterDebug()
+    func enterMach()
     {
         guard
             
-            let model:MGridAlgoItemHostileBug = self.model as? MGridAlgoItemHostileBug
+            let model:MGridAlgoItemHostile = self.model as? MGridAlgoItemHostile
         
         else
         {
             return
         }
         
-        let controllerDebug:CGridVisorDebug = CGridVisorDebug(model:model)
-        parentController.animateOver(controller:controllerDebug)
+        let controllerMatch:CGridVisorMatch = CGridVisorMatch(model:model)
+        parentController.animateOver(controller:controllerMatch)
     }
 }

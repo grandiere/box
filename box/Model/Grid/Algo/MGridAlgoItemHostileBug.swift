@@ -2,7 +2,7 @@ import UIKit
 
 class MGridAlgoItemHostileBug:MGridAlgoItemHostile
 {
-    private let kCreditsMultiplier:Int = 3
+    private let kCreditsMultiplier:CGFloat = 1.5
     
     override func imageStandby() -> UIImage?
     {
@@ -26,7 +26,7 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
         return model
     }
     
-    override func creditsMultiplier() -> Int
+    override func creditsMultiplier() -> CGFloat
     {
         return kCreditsMultiplier
     }
