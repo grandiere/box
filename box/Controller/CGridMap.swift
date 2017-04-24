@@ -23,6 +23,18 @@ class CGridMap:CController
         view = viewMap
     }
     
+    override func viewDidAppear(_ animated:Bool)
+    {
+        super.viewDidAppear(animated)
+        parentController.viewParent.panRecognizer.isEnabled = false
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+//            self?.turnOnGPS()
+        }
+    }
+    
     //MARK: public
     
     func back()
