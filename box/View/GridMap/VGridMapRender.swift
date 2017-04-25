@@ -37,12 +37,20 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
         return nil
     }
     
-    //MARK: public
+    //MARK: private
     
-    func centerLocation(locationCoordinate:CLLocationCoordinate2D)
+    private func centerLocation(locationCoordinate:CLLocationCoordinate2D)
     {
         let region:MKCoordinateRegion = MKCoordinateRegionMake(locationCoordinate, span)
         setRegion(region, animated:true)
+    }
+    
+    //MARK: public
+    
+    func centerOnUser()
+    {
+        let userCoordinated:CLLocationCoordinate2D = userLocation.coordinate
+        centerLocation(locationCoordinate:userCoordinated)
     }
     
     //MARK: map delegate
