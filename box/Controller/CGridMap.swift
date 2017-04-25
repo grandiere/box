@@ -5,6 +5,7 @@ class CGridMap:CController
 {
     private(set) weak var modelAlgo:MGridAlgo!
     private(set) weak var viewMap:VGridMap!
+    private(set) var modelMap:MGridMap?
     private var locationAsked:Bool
     private let kDistanceFilter:CLLocationDistance = 10
     private let kDistanceAccuracy:CLLocationDistance = 100
@@ -61,6 +62,37 @@ class CGridMap:CController
             
             locationManager.requestWhenInUseAuthorization()
         }
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.loadModelMap()
+        }
+    }
+    
+    private func loadModelMap()
+    {
+        modelMap = MGridMap(modelAlgo:modelAlgo)
+        
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.modelMapLoaded()
+        }
+    }
+    
+    private func modelMapLoaded()
+    {
+        guard
+            
+            let annotations:[MGridMapAnnotation] = modelMap?.annotations
+        
+        else
+        {
+            return
+        }
+        
+        viewMap.viewRender.addAnnotations(annotations)
     }
     
     //MARK: public

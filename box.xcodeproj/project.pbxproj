@@ -629,10 +629,10 @@
 				DA4DC45F1EA1893B0024D28E /* CGridVisor.swift */,
 				DA599B4C1EA7AAE90070E5AF /* CGridVisorDetail.swift */,
 				DA88525D1EAE3B7D008CB62C /* CGridVisorMatch.swift */,
+				DA8852671EAE9D20008CB62C /* CGridMap.swift */,
 				DA22F3CF1EA2F2DB00F6ED91 /* CGrid.swift */,
 				DA1D49C11EAA643700C2392C /* CProfile.swift */,
 				DA29FEEE1EAAA9F500CD8FBC /* CStats.swift */,
-				DA8852671EAE9D20008CB62C /* CGridMap.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
