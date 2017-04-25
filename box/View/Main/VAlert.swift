@@ -2,17 +2,17 @@ import UIKit
 
 class VAlert:UIView
 {
-    private static let kHeight:CGFloat = 70
+    private static let kHeight:CGFloat = 50
     private weak var layoutTop:NSLayoutConstraint!
     private weak var timer:Timer?
-    private let kAnimationDuration:TimeInterval = 0.2
-    private let kTimeOut:TimeInterval = 5
-    private let kFontSize:CGFloat = 16
-    private let kLabelMargin:CGFloat = 12
+    private let kAnimationDuration:TimeInterval = 0.3
+    private let kTimeOut:TimeInterval = 6
+    private let kFontSize:CGFloat = 15
+    private let kLabelMargin:CGFloat = 9
     
     class func messageOrange(message:String)
     {
-        VAlert.message(message:message, color:UIColor.gridOrangeDark)
+        VAlert.message(message:message, color:UIColor.gridOrange)
     }
     
     class func messageBlue(message:String)
