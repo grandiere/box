@@ -80,4 +80,12 @@ class CLanding:CController
             controller:controllerStats,
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
+    
+    func enterBoards()
+    {
+        let controllerBoards:CBoards = CBoards()
+        parentController.push(
+            controller:controllerBoards,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }

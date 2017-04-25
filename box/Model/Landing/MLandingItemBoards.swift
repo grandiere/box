@@ -13,6 +13,6 @@ class MLandingItemTheBoards:MLandingItem
     
     override func selected(controller:CLanding)
     {
-        controller.enterTheGrid()
+        controller.enterBoards()
     }
 }
