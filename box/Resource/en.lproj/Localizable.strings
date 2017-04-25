@@ -32,3 +32,4 @@
 "MStatsItemVirusReleased_title"="Virus released";
 "MGridAlgoItemHostileBug_titleMatch"="Debug";
 "MGridAlgoItemHostileBug_titleAnnotaiton"="Bug";
+"MGridMapDetailItemLevel_stringTitle"="Level  ";

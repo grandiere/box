@@ -17,6 +17,11 @@ class MGridMapDetail
             items.append(itemTitle)
         }
         
+        if let itemLevel:MGridMapDetailItemLevel = MGridMapDetailItemLevel(annotation:annotation)
+        {
+            items.append(itemLevel)
+        }
+        
         self.items = items
         image = annotation.algo.imageDetail()
     }

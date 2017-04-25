@@ -4,7 +4,6 @@ import CoreLocation
 class MGridAlgoItemHostile:MGridAlgoItem
 {
     let level:Int
-    let created:TimeInterval
     private(set) var credits:Int
     private let kTimeDivisor:TimeInterval = 36000
     private let kDistanceDivisor:CLLocationDistance = 20
@@ -16,12 +15,12 @@ class MGridAlgoItemHostile:MGridAlgoItem
         created:TimeInterval)
     {
         self.level = level
-        self.created = created
         credits = 0
         
         super.init(
             latitude:latitude,
-            longitude:longitude)
+            longitude:longitude,
+            created:created)
     }
     
     override func distanceUser(userLocation:CLLocation)

@@ -4,6 +4,7 @@ import CoreLocation
 class MGridAlgoItem
 {
     let location:CLLocation
+    let created:TimeInterval
     private(set) var distance:CLLocationDistance?
     private(set) var heading:Float
     var multipliedHeading:Float
@@ -11,11 +12,13 @@ class MGridAlgoItem
     
     init(
         latitude:Double,
-        longitude:Double)
+        longitude:Double,
+        created:TimeInterval)
     {
         location = CLLocation(latitude:latitude, longitude:longitude)
         heading = 0
         multipliedHeading = 0
+        self.created = created
     }
     
     //MARK: private
