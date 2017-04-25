@@ -98,4 +98,9 @@ class MGridAlgoItem
         
         return model
     }
+    
+    func titleAnnotation() -> String?
+    {
+        return nil
+    }
 }

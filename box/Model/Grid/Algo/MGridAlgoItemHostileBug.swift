@@ -47,4 +47,11 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
     {
         return #imageLiteral(resourceName: "assetTextureBugAnnotationOff")
     }
+    
+    override func titleAnnotation() -> String?
+    {
+        let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleAnnotaiton", comment:"")
+        
+        return title
+    }
 }

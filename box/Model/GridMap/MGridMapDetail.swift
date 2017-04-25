@@ -1,10 +1,13 @@
 import Foundation
+import CoreLocation
 
 class MGridMapDetail
 {
     let items:[MGridMapDetailItem]
     
-    init(annotation:MGridMapAnnotation)
+    init(
+        userLocation:CLLocationCoordinate2D,
+        annotation:MGridMapAnnotation)
     {
         items = [
         ]
