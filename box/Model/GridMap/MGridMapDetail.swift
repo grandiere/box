@@ -1,9 +1,10 @@
-import Foundation
+import UIKit
 import CoreLocation
 
 class MGridMapDetail
 {
     let items:[MGridMapDetailItem]
+    let image:UIImage?
     
     init(
         userLocation:CLLocationCoordinate2D,
@@ -17,5 +18,6 @@ class MGridMapDetail
         }
         
         self.items = items
+        image = annotation.algo.imageDetail()
     }
 }

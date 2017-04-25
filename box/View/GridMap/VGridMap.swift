@@ -7,11 +7,10 @@ class VGridMap:VView
     private weak var controller:CGridMap!
     private weak var layoutDetailBottom:NSLayoutConstraint!
     private let kBarHeight:CGFloat = 50
-    private let kDetailMarginHorizontal:CGFloat = 5
+    private let kDetailMarginHorizontal:CGFloat = 6
     private let kDetailHeight:CGFloat = 320
     private let kDetailMinBottom:CGFloat = 25
-    private let kAnimationDurationClose:TimeInterval = 0.2
-    private let kAnimationDurationOpen:TimeInterval = 0.3
+    private let kAnimationDuration:TimeInterval = 0.3
     
     override init(controller:CController)
     {
@@ -71,7 +70,7 @@ class VGridMap:VView
     {
         layoutDetailBottom.constant = kDetailMinBottom
         
-        UIView.animate(withDuration:kAnimationDurationOpen)
+        UIView.animate(withDuration:kAnimationDuration)
         { [weak self] in
             
             self?.layoutIfNeeded()
@@ -84,7 +83,7 @@ class VGridMap:VView
     {
         layoutDetailBottom.constant = kDetailHeight
         
-        UIView.animate(withDuration:kAnimationDurationClose)
+        UIView.animate(withDuration:kAnimationDuration)
         { [weak self] in
             
             self?.layoutIfNeeded()

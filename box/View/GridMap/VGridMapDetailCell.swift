@@ -10,6 +10,7 @@ class VGridMapDetailCell:UICollectionViewCell
         super.init(frame:frame)
         clipsToBounds = true
         backgroundColor = UIColor.clear
+        isUserInteractionEnabled = false
         
         let label:UILabel = UILabel()
         label.isUserInteractionEnabled = false

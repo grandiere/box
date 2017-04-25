@@ -6,10 +6,10 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private var model:MGridMapDetail?
     private weak var controller:CGridMap!
     private weak var collectionView:VCollection!
-    private let kCornerRadius:CGFloat = 10
+    private let kCornerRadius:CGFloat = 6
     private let kBorderWidth:CGFloat = 1
-    private let kHeaderHeight:CGFloat = 100
-    private let kCellHeight:CGFloat = 30
+    private let kHeaderHeight:CGFloat = 95
+    private let kCellHeight:CGFloat = 35
     
     init(controller:CGridMap)
     {
@@ -20,6 +20,7 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         layer.cornerRadius = kCornerRadius
         layer.borderWidth = kBorderWidth
         layer.borderColor = UIColor(white:0, alpha:0.3).cgColor
+        self.controller = controller
         
         let blur:VBlur = VBlur.light()
         
@@ -30,6 +31,7 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         collectionView.dataSource = self
         collectionView.registerHeader(header:VGridMapDetailHeader.self)
         collectionView.registerCell(cell:VGridMapDetailCell.self)
+        self.collectionView = collectionView
         
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
@@ -37,9 +39,14 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         }
         
         addSubview(blur)
+        addSubview(collectionView)
         
         NSLayoutConstraint.equals(
             view:blur,
+            toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:collectionView,
             toView:self)
     }
     
@@ -100,19 +107,17 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
+        if model == nil
+        {
+            return 0
+        }
+        
         return 1
     }
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        guard
-        
-            let count:Int = model?.items.count
-        
-        else
-        {
-            return 0
-        }
+        let count:Int = model!.items.count
         
         return count
     }

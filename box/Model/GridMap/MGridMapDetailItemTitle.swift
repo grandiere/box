@@ -13,9 +13,13 @@ class MGridMapDetailItemTitle:MGridMapDetailItem
             return nil
         }
         
+        let paragraphStyle:NSMutableParagraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.center
+        
         let attributesTitle:[String:AnyObject] = [
             NSFontAttributeName:UIFont.bold(size:20),
-            NSForegroundColorAttributeName:UIColor.black]
+            NSForegroundColorAttributeName:UIColor.black,
+            NSParagraphStyleAttributeName:paragraphStyle]
         
         let stringTitle:NSAttributedString = NSAttributedString(
             string:rawTitle,
