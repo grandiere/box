@@ -1,20 +1,30 @@
 import UIKit
 import CoreLocation
 
-class CGridMap:CController, CLLocationManagerDelegate
+class CGridMap:CController
 {
     private(set) weak var modelAlgo:MGridAlgo!
     private weak var viewMap:VGridMap!
+    private var locationAsked:Bool
+    private let kDistanceFilter:CLLocationDistance = 10
+    private let kDistanceAccuracy:CLLocationDistance = 100
+    private var locationManager:CLLocationManager?
     
     init(modelAlgo:MGridAlgo)
     {
         self.modelAlgo = modelAlgo
+        locationAsked = false
         super.init()
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    deinit
+    {
+        locationManager = nil
     }
     
     override func loadView()
@@ -29,10 +39,10 @@ class CGridMap:CController, CLLocationManagerDelegate
         super.viewDidAppear(animated)
         parentController.viewParent.panRecognizer.isEnabled = false
         
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        { [weak self] in
-            
-            self?.askLocation()
+        if !locationAsked
+        {
+            locationAsked = true
+            askLocation()
         }
     }
     
@@ -40,7 +50,17 @@ class CGridMap:CController, CLLocationManagerDelegate
     
     private func askLocation()
     {
+        let status:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
         
+        if status == CLAuthorizationStatus.notDetermined
+        {
+            let locationManager:CLLocationManager = CLLocationManager()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            locationManager.distanceFilter = kDistanceFilter
+            self.locationManager = locationManager
+            
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
     
     //MARK: public

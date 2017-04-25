@@ -15,10 +15,10 @@ class VGridVisorBarEnergy:UIView
             NSFontAttributeName:UIFont.regular(size:12),
             NSForegroundColorAttributeName:UIColor(white:1, alpha:0.8)]
         let attributesPercent:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:16),
-            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.6)]
+            NSFontAttributeName:UIFont.bold(size:16),
+            NSForegroundColorAttributeName:UIColor.gridBlue]
         attributesAmount = [
-            NSFontAttributeName:UIFont.bold(size:19),
+            NSFontAttributeName:UIFont.bold(size:20),
             NSForegroundColorAttributeName:UIColor.white]
         
         stringTitle = NSAttributedString(
