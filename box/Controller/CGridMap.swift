@@ -4,7 +4,7 @@ import CoreLocation
 class CGridMap:CController
 {
     private(set) weak var modelAlgo:MGridAlgo!
-    private weak var viewMap:VGridMap!
+    private(set) weak var viewMap:VGridMap!
     private var locationAsked:Bool
     private let kDistanceFilter:CLLocationDistance = 10
     private let kDistanceAccuracy:CLLocationDistance = 100

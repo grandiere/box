@@ -34,9 +34,26 @@ class VGridMapBar:UIView
             action:#selector(actionBack(sender:)),
             for:UIControlEvents.touchUpInside)
         
+        let buttonUser:UIButton = UIButton()
+        buttonUser.translatesAutoresizingMaskIntoConstraints = false
+        buttonUser.setImage(
+            #imageLiteral(resourceName: "assetGenericMapUser").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            for:UIControlState.normal)
+        buttonUser.setImage(
+            #imageLiteral(resourceName: "assetGenericMapUser").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            for:UIControlState.highlighted)
+        buttonUser.imageView!.contentMode = UIViewContentMode.center
+        buttonUser.imageView!.clipsToBounds = true
+        buttonUser.imageView!.tintColor = UIColor(white:0, alpha:0.2)
+        buttonUser.addTarget(
+            self,
+            action:#selector(actionUser(sender:)),
+            for:UIControlEvents.touchUpInside)
+        
         addSubview(blur)
         addSubview(border)
         addSubview(backButton)
+        addSubview(buttonUser)
         
         NSLayoutConstraint.equals(
             view:blur,
@@ -61,6 +78,16 @@ class VGridMapBar:UIView
         NSLayoutConstraint.width(
             view:backButton,
             constant:kButtonWidth)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:buttonUser,
+            toView:self)
+        NSLayoutConstraint.rightToRight(
+            view:buttonUser,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:buttonUser,
+            constant:kButtonWidth)
     }
     
     required init?(coder:NSCoder)
@@ -73,5 +100,10 @@ class VGridMapBar:UIView
     func actionBack(sender button:UIButton)
     {
         controller.back()
+    }
+    
+    func actionUser(sender button:UIButton)
+    {
+        controller.viewMap.viewRender.centerOnUser()
     }
 }
