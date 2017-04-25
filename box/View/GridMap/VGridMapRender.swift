@@ -85,18 +85,21 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
     {
         guard
         
-            let coordinates:CLLocationCoordinate2D = view.annotation?.coordinate
+            let annotation:MGridMapAnnotation = view.annotation as? MGridMapAnnotation
         
         else
         {
             return
         }
         
+        let coordinates:CLLocationCoordinate2D = annotation.coordinate
         centerLocation(locationCoordinate:coordinates)
+        controller.viewMap.showDetail(annotation:annotation)
     }
     
     func mapView(_ mapView:MKMapView, didDeselect view:MKAnnotationView)
     {
+        controller.viewMap.hideDetail()
     }
     
     func mapView(_ mapView:MKMapView, didUpdate userLocation:MKUserLocation)

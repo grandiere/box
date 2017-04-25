@@ -14,9 +14,9 @@ class VGridMapDetail:UIView
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = kCornerRadius
         layer.borderWidth = kBorderWidth
-        layer.borderColor = UIColor.black.cgColor
+        layer.borderColor = UIColor(white:0, alpha:0.3).cgColor
         
-        let blur:VBlur = VBlur.extraLight()
+        let blur:VBlur = VBlur.light()
         
         addSubview(blur)
         

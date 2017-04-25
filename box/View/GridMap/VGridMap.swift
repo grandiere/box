@@ -2,9 +2,16 @@ import UIKit
 
 class VGridMap:VView
 {
-    private weak var controller:CGridMap!
     private(set) weak var viewRender:VGridMapRender!
+    private weak var viewDetail:VGridMapDetail!
+    private weak var controller:CGridMap!
+    private weak var layoutDetailBottom:NSLayoutConstraint!
     private let kBarHeight:CGFloat = 50
+    private let kDetailMarginHorizontal:CGFloat = 5
+    private let kDetailHeight:CGFloat = 320
+    private let kDetailMinBottom:CGFloat = 25
+    private let kAnimationDurationClose:TimeInterval = 0.2
+    private let kAnimationDurationOpen:TimeInterval = 0.3
     
     override init(controller:CController)
     {
@@ -18,8 +25,13 @@ class VGridMap:VView
         let viewBar:VGridMapBar = VGridMapBar(
             controller:self.controller)
         
+        let viewDetail:VGridMapDetail = VGridMapDetail(
+            controller:self.controller)
+        self.viewDetail = viewDetail
+        
         addSubview(viewRender)
         addSubview(viewBar)
+        addSubview(viewDetail)
         
         NSLayoutConstraint.topToTop(
             view:viewBar,
@@ -34,10 +46,46 @@ class VGridMap:VView
         NSLayoutConstraint.equals(
             view:viewRender,
             toView:self)
+        
+        layoutDetailBottom = NSLayoutConstraint.bottomToBottom(
+            view:viewDetail,
+            toView:self,
+            constant:kDetailHeight)
+        NSLayoutConstraint.height(
+            view:viewDetail,
+            constant:kDetailHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewDetail,
+            toView:self,
+            margin:kDetailMarginHorizontal)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: public
+    
+    func showDetail(annotation:MGridMapAnnotation)
+    {
+        layoutDetailBottom.constant = kDetailMinBottom
+        
+        UIView.animate(withDuration:kAnimationDurationOpen)
+        { [weak self] in
+            
+            self?.layoutIfNeeded()
+        }
+    }
+    
+    func hideDetail()
+    {
+        layoutDetailBottom.constant = kDetailHeight
+        
+        UIView.animate(withDuration:kAnimationDurationClose)
+        { [weak self] in
+            
+            self?.layoutIfNeeded()
+        }
     }
 }
