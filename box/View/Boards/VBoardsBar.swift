@@ -4,6 +4,8 @@ class VBoardsBar:UIView
 {
     private weak var controller:CBoards!
     private let kButtonWidth:CGFloat = 60
+    private let kImageMarginVertical:CGFloat = 1
+    private let kBorderHeight:CGFloat = 1
     
     init(controller:CBoards)
     {
@@ -29,6 +31,17 @@ class VBoardsBar:UIView
             action:#selector(actionBack(sender:)),
             for:UIControlEvents.touchUpInside)
         
+        let imageView:UIImageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = #imageLiteral(resourceName: "assetGenericBoards")
+        imageView.isUserInteractionEnabled = false
+        
+        let border:VBorder = VBorder(color:UIColor.gridBlue)
+        
+        addSubview(border)
+        addSubview(imageView)
         addSubview(backButton)
         
         NSLayoutConstraint.equalsVertical(
@@ -40,6 +53,24 @@ class VBoardsBar:UIView
         NSLayoutConstraint.width(
             view:backButton,
             constant:kButtonWidth)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:imageView,
+            toView:self,
+            margin:kImageMarginVertical)
+        NSLayoutConstraint.equalsHorizontal(
+            view:imageView,
+            toView:self)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:border,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:border,
+            constant:kBorderHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:border,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
