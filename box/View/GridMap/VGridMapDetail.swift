@@ -8,8 +8,8 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private weak var collectionView:VCollection!
     private let kCornerRadius:CGFloat = 6
     private let kBorderWidth:CGFloat = 1
-    private let kHeaderHeight:CGFloat = 95
-    private let kCellHeight:CGFloat = 30
+    private let kHeaderHeight:CGFloat = 90
+    private let kCellHeight:CGFloat = 22
     
     init(controller:CGridMap)
     {
@@ -19,7 +19,7 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = kCornerRadius
         layer.borderWidth = kBorderWidth
-        layer.borderColor = UIColor(white:0, alpha:0.3).cgColor
+        layer.borderColor = UIColor(white:0, alpha:0.1).cgColor
         self.controller = controller
         
         let blur:VBlur = VBlur.light()
@@ -66,7 +66,15 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     private func updateModel(annotation:MGridMapAnnotation)
     {
-        let userLocation:CLLocationCoordinate2D = controller.viewMap.viewRender.userLocation.coordinate
+        guard
+            
+            let userLocation:CLLocation = controller.viewMap.viewRender.userLocation.location
+        
+        else
+        {
+            return
+        }
+        
         let model:MGridMapDetail = MGridMapDetail(
             userLocation:userLocation,
             annotation:annotation)

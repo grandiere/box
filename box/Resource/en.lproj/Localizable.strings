@@ -36,3 +36,5 @@
 "MGridMapDetailItemAge_stringTitle"="Created  ";
 "MGridMapDetailItemAge_justNow"="Just now";
 "MGridMapDetailItemAge_hoursAgo"="%@ hours ago";
+"MGridMapDetailItemDistance_stringTitle"="Distance  ";
+"MGridMapDetailItemDistance_stringDistance"="%@ meters";

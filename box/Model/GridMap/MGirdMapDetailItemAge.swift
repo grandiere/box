@@ -2,7 +2,7 @@ import UIKit
 
 class MGridMapDetailItemAge:MGridMapDetailItem
 {
-    private let kHour:TimeInterval = 7200
+    private let kHour:TimeInterval = 3600
     
     init?(annotation:MGridMapAnnotation)
     {
@@ -10,8 +10,9 @@ class MGridMapDetailItemAge:MGridMapDetailItem
         let timestamp:TimeInterval = Date().timeIntervalSince1970
         let deltaTime:TimeInterval = timestamp - created
         let rawStringTime:String
+        let twoHours:TimeInterval = kHour + kHour
         
-        if deltaTime < kHour
+        if deltaTime < twoHours
         {
             rawStringTime = NSLocalizedString("MGridMapDetailItemAge_justNow", comment:"")
         }

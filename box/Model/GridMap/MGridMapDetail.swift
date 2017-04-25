@@ -7,7 +7,7 @@ class MGridMapDetail
     let image:UIImage?
     
     init(
-        userLocation:CLLocationCoordinate2D,
+        userLocation:CLLocation,
         annotation:MGridMapAnnotation)
     {
         var items:[MGridMapDetailItem] = []
@@ -20,6 +20,13 @@ class MGridMapDetail
         if let itemLevel:MGridMapDetailItemLevel = MGridMapDetailItemLevel(annotation:annotation)
         {
             items.append(itemLevel)
+        }
+        
+        if let itemDistance:MGridMapDetailItemDistance = MGridMapDetailItemDistance(
+            userLocation:userLocation,
+            annotation:annotation)
+        {
+            items.append(itemDistance)
         }
         
         if let itemAge:MGridMapDetailItemAge = MGridMapDetailItemAge(annotation:annotation)

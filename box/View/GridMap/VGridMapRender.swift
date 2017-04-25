@@ -49,7 +49,15 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
     
     func centerOnUser()
     {
-        let userCoordinated:CLLocationCoordinate2D = userLocation.coordinate
+        guard
+            
+            let userCoordinated:CLLocationCoordinate2D = userLocation.location?.coordinate
+        
+        else
+        {
+            return
+        }
+        
         centerLocation(locationCoordinate:userCoordinated)
     }
     

@@ -17,7 +17,7 @@ class MGridMapDetailItemTitle:MGridMapDetailItem
         paragraphStyle.alignment = NSTextAlignment.center
         
         let attributesTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bold(size:20),
+            NSFontAttributeName:UIFont.bold(size:18),
             NSForegroundColorAttributeName:UIColor.black,
             NSParagraphStyleAttributeName:paragraphStyle]
         

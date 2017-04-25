@@ -3,7 +3,7 @@ import UIKit
 class VGridMapDetailHeader:UICollectionReusableView
 {
     private weak var imageView:UIImageView!
-    private let kImageTop:CGFloat = 15
+    private let kImageTop:CGFloat = 10
     
     override init(frame:CGRect)
     {
