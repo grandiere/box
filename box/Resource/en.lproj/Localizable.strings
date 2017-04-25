@@ -33,3 +33,6 @@
 "MGridAlgoItemHostileBug_titleMatch"="Debug";
 "MGridAlgoItemHostileBug_titleAnnotaiton"="Bug";
 "MGridMapDetailItemLevel_stringTitle"="Level  ";
+"MGridMapDetailItemAge_stringTitle"="Created  ";
+"MGridMapDetailItemAge_justNow"="Just now";
+"MGridMapDetailItemAge_hoursAgo"="%@ hours ago";

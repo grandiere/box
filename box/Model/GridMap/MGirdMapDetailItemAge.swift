@@ -2,23 +2,27 @@ import UIKit
 
 class MGridMapDetailItemAge:MGridMapDetailItem
 {
+    private let kHour:TimeInterval = 7200
+    
     init?(annotation:MGridMapAnnotation)
     {
-        return nil
-        /*
-        let created:TimeInterval = annotation.algo.
+        let created:TimeInterval = annotation.algo.created
+        let timestamp:TimeInterval = Date().timeIntervalSince1970
+        let deltaTime:TimeInterval = timestamp - created
+        let rawStringTime:String
         
-        let level:NSNumber = algoHostile.level as NSNumber
-        let numberFormatter:NumberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = NumberFormatter.Style.decimal
-        
-        guard
-            
-            let rawStringLevel:String = numberFormatter.string(from:level)
-            
-            else
+        if deltaTime < kHour
         {
-            return nil
+            rawStringTime = NSLocalizedString("MGridMapDetailItemAge_justNow", comment:"")
+        }
+        else
+        {
+            let hoursSince:Int = Int(deltaTime / kHour)
+            let hoursSinceNumber:NSNumber = hoursSince as NSNumber
+            
+            rawStringTime = String(
+                format:NSLocalizedString("MGridMapDetailItemAge_hoursAgo", comment:""),
+                hoursSinceNumber)
         }
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
@@ -31,15 +35,15 @@ class MGridMapDetailItemAge:MGridMapDetailItem
             NSForegroundColorAttributeName:UIColor.black]
         
         let stringTitle:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("MGridMapDetailItemLevel_stringTitle", comment:""),
+            string:NSLocalizedString("MGridMapDetailItemAge_stringTitle", comment:""),
             attributes:attributesTitle)
-        let stringLevel:NSAttributedString = NSAttributedString(
-            string:rawStringLevel,
+        let stringTime:NSAttributedString = NSAttributedString(
+            string:rawStringTime,
             attributes:attributesSubtitle)
         
         mutableString.append(stringTitle)
-        mutableString.append(stringLevel)
+        mutableString.append(stringTime)
         
-        super.init(attributedString:mutableString)*/
+        super.init(attributedString:mutableString)
     }
 }

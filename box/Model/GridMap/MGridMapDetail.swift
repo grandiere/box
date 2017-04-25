@@ -22,6 +22,11 @@ class MGridMapDetail
             items.append(itemLevel)
         }
         
+        if let itemAge:MGridMapDetailItemAge = MGridMapDetailItemAge(annotation:annotation)
+        {
+            items.append(itemAge)
+        }
+        
         self.items = items
         image = annotation.algo.imageDetail()
     }
