@@ -82,7 +82,12 @@ class MGridAlgoItem
         return nil
     }
     
-    func annotationImage() -> UIImage?
+    func annotationImageOn() -> UIImage?
+    {
+        return nil
+    }
+    
+    func annotationImageOff() -> UIImage?
     {
         return nil
     }

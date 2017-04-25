@@ -38,8 +38,13 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
         return title
     }
     
-    override func annotationImage() -> UIImage?
+    override func annotationImageOn() -> UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureBugAnnotation")
+        return #imageLiteral(resourceName: "assetTextureBugAnnotationOn")
+    }
+    
+    override func annotationImageOff() -> UIImage?
+    {
+        return #imageLiteral(resourceName: "assetTextureBugAnnotationOff")
     }
 }

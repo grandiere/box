@@ -3,28 +3,12 @@ import MapKit
 
 class VGridMapRenderPin:MKAnnotationView
 {
-    private let kAlphaSelected:CGFloat = 1
-    private let kAlphaNotSelected:CGFloat = 0.4
-    
     init(annotation:MGridMapAnnotation)
     {
         let reuseIdentifier:String = VGridMapRenderPin.reusableIdentifier
         
         super.init(annotation:annotation, reuseIdentifier:reuseIdentifier)
-
-        guard
-        
-            let image:UIImage = annotation.algo.annotationImage()
-        
-        else
-        {
-            return
-        }
-        
-        self.image = image
-        
-        let offsetY:CGFloat = image.size.height / -2.0
-        centerOffset = CGPoint(x: 0, y:offsetY)
+        hover()
     }
     
     required init?(coder:NSCoder)
@@ -52,13 +36,47 @@ class VGridMapRenderPin:MKAnnotationView
     
     private func hover()
     {
+        guard
+            
+            let annotation:MGridMapAnnotation = self.annotation as? MGridMapAnnotation
+            
+        else
+        {
+            return
+        }
+        
+        let imageAnnotation:UIImage
+        
         if isSelected || isHighlighted
         {
-            alpha = kAlphaSelected
+            guard
+            
+                let image:UIImage = annotation.algo.annotationImageOn()
+            
+            else
+            {
+                return
+            }
+            
+            imageAnnotation = image
         }
         else
         {
-            alpha = kAlphaNotSelected
+            guard
+            
+                let image:UIImage = annotation.algo.annotationImageOff()
+            
+            else
+            {
+                return
+            }
+            
+            imageAnnotation = image
         }
+        
+        self.image = imageAnnotation
+        
+        let offsetY:CGFloat = imageAnnotation.size.height / -2.0
+        centerOffset = CGPoint(x: 0, y:offsetY)
     }
 }

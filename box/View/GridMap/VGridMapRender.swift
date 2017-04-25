@@ -7,7 +7,7 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
     private let span:MKCoordinateSpan
     private var userCoordinate:CLLocationCoordinate2D!
     private var shouldUpdate:Bool
-    private let kSpanSize:CLLocationDegrees = 0.05
+    private let kSpanSize:CLLocationDegrees = 0.02
     
     init(controller:CGridMap)
     {
@@ -83,6 +83,16 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
     
     func mapView(_ mapView:MKMapView, didSelect view:MKAnnotationView)
     {
+        guard
+        
+            let coordinates:CLLocationCoordinate2D = view.annotation?.coordinate
+        
+        else
+        {
+            return
+        }
+        
+        centerLocation(locationCoordinate:coordinates)
     }
     
     func mapView(_ mapView:MKMapView, didDeselect view:MKAnnotationView)
