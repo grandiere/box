@@ -1,29 +1,26 @@
-import Foundation
+import UIKit
 
 class MGridMapDetailItemTitle:MGridMapDetailItem
 {
     init?(annotation:MGridMapAnnotation)
     {
-        let rawTitle:String
+        guard
         
-        if let algoHostile:MGridAlgoItemHostile = annotation.algo as? MGridAlgoItemHostile
-        {
-            guard
-            
-                let hostileTitle:String = algoHostile.titleMatch()
-            
-            else
-            {
-                return
-            }
-        }
-        else if let algoAid:MGridAlgoItemAid = annotation.algo as? MGridAlgoItemAid
-        {
-            
-        }
+            let rawTitle:String = annotation.algo.titleAnnotation()
+        
         else
         {
             return nil
         }
+        
+        let attributesTitle:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.bold(size:20),
+            NSForegroundColorAttributeName:UIColor.black]
+        
+        let stringTitle:NSAttributedString = NSAttributedString(
+            string:rawTitle,
+            attributes:attributesTitle)
+        
+        super.init(attributedString:stringTitle)
     }
 }
