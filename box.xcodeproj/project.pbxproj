@@ -86,6 +86,7 @@
 		DA7084471EA6680C00B222FE /* MGridVisorOrientationPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084461EA6680C00B222FE /* MGridVisorOrientationPortrait.swift */; };
 		DA7084491EA6683100B222FE /* MGridVisorOrientationLandscapeLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084481EA6683100B222FE /* MGridVisorOrientationLandscapeLeft.swift */; };
 		DA70844B1EA6685600B222FE /* MGridVisorOrientationLandscapeRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA70844A1EA6685600B222FE /* MGridVisorOrientationLandscapeRight.swift */; };
+		DA7135B01EAFA94E007ACEB5 /* VGridMapDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7135AF1EAFA94E007ACEB5 /* VGridMapDetail.swift */; };
 		DA771F361EA5338E00CAA820 /* VGridVisorBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F351EA5338E00CAA820 /* VGridVisorBar.swift */; };
 		DA771F381EA5495400CAA820 /* VGridVisorBarEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F371EA5495400CAA820 /* VGridVisorBarEnergy.swift */; };
 		DA771F3A1EA551F000CAA820 /* MGridVisorGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F391EA551F000CAA820 /* MGridVisorGPS.swift */; };
@@ -240,6 +241,7 @@
 		DA7084461EA6680C00B222FE /* MGridVisorOrientationPortrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorOrientationPortrait.swift; sourceTree = "<group>"; };
 		DA7084481EA6683100B222FE /* MGridVisorOrientationLandscapeLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorOrientationLandscapeLeft.swift; sourceTree = "<group>"; };
 		DA70844A1EA6685600B222FE /* MGridVisorOrientationLandscapeRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorOrientationLandscapeRight.swift; sourceTree = "<group>"; };
+		DA7135AF1EAFA94E007ACEB5 /* VGridMapDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridMapDetail.swift; sourceTree = "<group>"; };
 		DA771F351EA5338E00CAA820 /* VGridVisorBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorBar.swift; sourceTree = "<group>"; };
 		DA771F371EA5495400CAA820 /* VGridVisorBarEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorBarEnergy.swift; sourceTree = "<group>"; };
 		DA771F391EA551F000CAA820 /* MGridVisorGPS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorGPS.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 				DA8852691EAE9F45008CB62C /* VGridMapBar.swift */,
 				DA88526B1EAEA567008CB62C /* VGridMapRender.swift */,
 				DA8852721EAEAEA5008CB62C /* VGridMapRenderPin.swift */,
+				DA7135AF1EAFA94E007ACEB5 /* VGridMapDetail.swift */,
 			);
 			path = GridMap;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 				DA7084471EA6680C00B222FE /* MGridVisorOrientationPortrait.swift in Sources */,
 				DA29FEE51EAA913700CD8FBC /* VProfileCellCircle.swift in Sources */,
 				DAF15D681E9D32BB0000E6B9 /* VBorder.swift in Sources */,
+				DA7135B01EAFA94E007ACEB5 /* VGridMapDetail.swift in Sources */,
 				DA134AAE1E9D549E002BE57D /* MetalVertex.swift in Sources */,
 				DAF15D6E1E9D32BB0000E6B9 /* VToast.swift in Sources */,
 				DA70844B1EA6685600B222FE /* MGridVisorOrientationLandscapeRight.swift in Sources */,
