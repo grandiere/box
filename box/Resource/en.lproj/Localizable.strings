@@ -38,3 +38,6 @@
 "MGridMapDetailItemAge_hoursAgo"="%@ hours ago";
 "MGridMapDetailItemDistance_stringTitle"="Distance  ";
 "MGridMapDetailItemDistance_stringDistance"="%@ meters";
+
+"CGridVisorMatch_titleSuccess"="%@ success!";
+"CGridVisorMatch_titleFail"="%@ failed!";

@@ -71,14 +71,4 @@ class MGridAlgoItemHostile:MGridAlgoItem
     {
         return nil
     }
-    
-    func titleSuccess() -> String?
-    {
-        return nil
-    }
-    
-    func titleFailed() -> String?
-    {
-        return nil
-    }
 }

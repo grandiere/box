@@ -25,4 +25,16 @@ extension UIColor
                 alpha:1)
         }
     }
+    
+    open class var gridOrangeDark:UIColor
+    {
+        get
+        {
+            return UIColor(
+                red:0.85,
+                green:0.555882352941176,
+                blue:0,
+                alpha:1)
+        }
+    }
 }

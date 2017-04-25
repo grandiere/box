@@ -156,14 +156,18 @@ class CGridVisorMatch:CController
         
         guard
         
-            let stringFailed:String = model.titleFailed()
+            let stringMatch:String = model.titleMatch()
         
         else
         {
             return
         }
         
-        VAlert.messageOrange(message:stringFailed)
+        let stringFail:String = String(
+            format:NSLocalizedString("CGridVisorMatch_titleFail", comment:""),
+            stringMatch)
+        
+        VAlert.messageOrange(message:stringFail)
     }
     
     private func success()
@@ -173,12 +177,16 @@ class CGridVisorMatch:CController
         
         guard
             
-            let stringSuccess:String = model.titleSuccess()
+            let stringMatch:String = model.titleMatch()
             
         else
         {
             return
         }
+        
+        let stringSuccess:String = String(
+            format:NSLocalizedString("CGridVisorMatch_titleSuccess", comment:""),
+            stringMatch)
         
         VAlert.messageBlue(message:stringSuccess)
     }

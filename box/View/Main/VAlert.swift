@@ -12,7 +12,7 @@ class VAlert:UIView
     
     class func messageOrange(message:String)
     {
-        VAlert.message(message:message, color:UIColor.gridOrange)
+        VAlert.message(message:message, color:UIColor.gridOrangeDark)
     }
     
     class func messageBlue(message:String)
