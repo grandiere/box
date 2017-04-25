@@ -7,7 +7,7 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
     private let span:MKCoordinateSpan
     private var userCoordinate:CLLocationCoordinate2D!
     private var shouldUpdate:Bool
-    private let kSpanSize:CLLocationDegrees = 0.01
+    private let kSpanSize:CLLocationDegrees = 0.05
     
     init(controller:CGridMap)
     {
