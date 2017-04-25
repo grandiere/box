@@ -37,4 +37,9 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
         
         return title
     }
+    
+    override func annotationImage() -> UIImage?
+    {
+        return #imageLiteral(resourceName: "assetTextureBugAnnotation")
+    }
 }
