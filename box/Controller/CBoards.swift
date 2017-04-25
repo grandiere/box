@@ -10,4 +10,11 @@ class CBoards:CController
         self.viewBoards = viewBoards
         view = viewBoards
     }
+    
+    //MARK: public
+    
+    func back()
+    {
+        parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }

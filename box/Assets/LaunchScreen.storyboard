@@ -19,7 +19,18 @@
                     <view key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="assetGenericSplash" translatesAutoresizingMaskIntoConstraints="NO" id="sLl-2n-dgQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="sLl-2n-dgQ" secondAttribute="bottom" id="8lP-EZ-6n9"/>
+                            <constraint firstItem="sLl-2n-dgQ" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="D4P-lb-u5X"/>
+                            <constraint firstAttribute="trailing" secondItem="sLl-2n-dgQ" secondAttribute="trailing" id="RXD-Ol-CnB"/>
+                            <constraint firstItem="sLl-2n-dgQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="YxL-Wi-f8b"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
@@ -28,4 +39,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="assetGenericSplash" width="414" height="690"/>
+    </resources>
 </document>
