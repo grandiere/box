@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
@@ -58,7 +59,10 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     
     private func updateModel(annotation:MGridMapAnnotation)
     {
-        let model:MGridMapDetail = MGridMapDetail(annotation:annotation)
+        let userLocation:CLLocationCoordinate2D = controller.viewMap.viewRender.userLocation.coordinate
+        let model:MGridMapDetail = MGridMapDetail(
+            userLocation:userLocation,
+            annotation:annotation)
         self.model = model
         
         DispatchQueue.main.async

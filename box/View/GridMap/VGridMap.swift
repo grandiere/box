@@ -76,6 +76,8 @@ class VGridMap:VView
             
             self?.layoutIfNeeded()
         }
+        
+        viewDetail.updateAnnotation(annotation:annotation)
     }
     
     func hideDetail()
