@@ -74,6 +74,7 @@
 		DA4D976F1EB105DE00AE0C0C /* MLandingBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D976E1EB105DE00AE0C0C /* MLandingBarProtocol.swift */; };
 		DA4D97711EB1079100AE0C0C /* MLandingBarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D97701EB1079100AE0C0C /* MLandingBarSettings.swift */; };
 		DA4D97731EB10C1000AE0C0C /* VLandingBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D97721EB10C1000AE0C0C /* VLandingBarCell.swift */; };
+		DA4D97751EB14B4100AE0C0C /* MLandingBarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D97741EB14B4100AE0C0C /* MLandingBarStore.swift */; };
 		DA4DC4601EA1893B0024D28E /* CGridVisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC45F1EA1893B0024D28E /* CGridVisor.swift */; };
 		DA4DC4631EA18A460024D28E /* VGridVisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC4621EA18A460024D28E /* VGridVisor.swift */; };
 		DA4DC4651EA18A520024D28E /* VGridVisorMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC4641EA18A520024D28E /* VGridVisorMetal.swift */; };
@@ -248,6 +249,7 @@
 		DA4D976E1EB105DE00AE0C0C /* MLandingBarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLandingBarProtocol.swift; sourceTree = "<group>"; };
 		DA4D97701EB1079100AE0C0C /* MLandingBarSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLandingBarSettings.swift; sourceTree = "<group>"; };
 		DA4D97721EB10C1000AE0C0C /* VLandingBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLandingBarCell.swift; sourceTree = "<group>"; };
+		DA4D97741EB14B4100AE0C0C /* MLandingBarStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLandingBarStore.swift; sourceTree = "<group>"; };
 		DA4DC45F1EA1893B0024D28E /* CGridVisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVisor.swift; sourceTree = "<group>"; };
 		DA4DC4621EA18A460024D28E /* VGridVisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisor.swift; sourceTree = "<group>"; };
 		DA4DC4641EA18A520024D28E /* VGridVisorMetal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorMetal.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				DA1D49B71EAA49C200C2392C /* MLandingItemBoards.swift */,
 				DA4D976E1EB105DE00AE0C0C /* MLandingBarProtocol.swift */,
 				DA4D97701EB1079100AE0C0C /* MLandingBarSettings.swift */,
+				DA4D97741EB14B4100AE0C0C /* MLandingBarStore.swift */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -951,6 +954,7 @@
 				DAAA0EBE1EA81DE900756A17 /* MGridVisorDetailItemDistance.swift in Sources */,
 				DA599B561EA7C3940070E5AF /* VGridVisorDetailCell.swift in Sources */,
 				DAFA6A431EA91428001BA4B4 /* VGridVisorDetailCellDebug.swift in Sources */,
+				DA4D97751EB14B4100AE0C0C /* MLandingBarStore.swift in Sources */,
 				DA29FEEB1EAAA43A00CD8FBC /* MProfileItemNetwork.swift in Sources */,
 				DA771F381EA5495400CAA820 /* VGridVisorBarEnergy.swift in Sources */,
 				DA134AA11E9D549E002BE57D /* MetalVertexFace.swift in Sources */,
