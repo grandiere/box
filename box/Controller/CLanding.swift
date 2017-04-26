@@ -88,4 +88,12 @@ class CLanding:CController
             controller:controllerBoards,
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
+    
+    func openSettings()
+    {
+        let controllerSettings:CSettings = CSettings()
+        parentController.push(
+            controller:controllerSettings,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }

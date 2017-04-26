@@ -1,12 +1,12 @@
 import UIKit
 
-class MLandingBarSettings:MLandingBarProtocol
+class MLandingBarHelp:MLandingBarProtocol
 {
     var image:UIImage
     {
         get
         {
-            return #imageLiteral(resourceName: "assetGenericSettings")
+            return #imageLiteral(resourceName: "assetGenericHelp")
         }
     }
     
@@ -14,6 +14,5 @@ class MLandingBarSettings:MLandingBarProtocol
     
     func selected(controller:CLanding)
     {
-        controller.openSettings()
     }
 }

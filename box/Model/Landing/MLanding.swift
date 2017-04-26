@@ -19,8 +19,12 @@ class MLanding
             itemBoards]
         
         let barSettings:MLandingBarSettings = MLandingBarSettings()
+        let barStore:MLandingBarStore = MLandingBarStore()
+        let barHelp:MLandingBarHelp = MLandingBarHelp()
         
         barItems = [
-            barSettings]
+            barSettings,
+            barStore,
+            barHelp]
     }
 }

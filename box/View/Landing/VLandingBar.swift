@@ -120,6 +120,7 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
     {
         collectionView.isUserInteractionEnabled = false
         let item:MLandingBarProtocol = modelAtIndex(index:indexPath)
+        item.selected(controller:controller)
         
         DispatchQueue.main.asyncAfter(
             deadline:DispatchTime.now() + kDeselectTime)

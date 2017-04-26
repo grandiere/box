@@ -75,6 +75,7 @@
 		DA4D97711EB1079100AE0C0C /* MLandingBarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D97701EB1079100AE0C0C /* MLandingBarSettings.swift */; };
 		DA4D97731EB10C1000AE0C0C /* VLandingBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D97721EB10C1000AE0C0C /* VLandingBarCell.swift */; };
 		DA4D97751EB14B4100AE0C0C /* MLandingBarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D97741EB14B4100AE0C0C /* MLandingBarStore.swift */; };
+		DA4D97771EB14FAF00AE0C0C /* MLandingBarHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4D97761EB14FAF00AE0C0C /* MLandingBarHelp.swift */; };
 		DA4DC4601EA1893B0024D28E /* CGridVisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC45F1EA1893B0024D28E /* CGridVisor.swift */; };
 		DA4DC4631EA18A460024D28E /* VGridVisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC4621EA18A460024D28E /* VGridVisor.swift */; };
 		DA4DC4651EA18A520024D28E /* VGridVisorMetal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC4641EA18A520024D28E /* VGridVisorMetal.swift */; };
@@ -250,6 +251,7 @@
 		DA4D97701EB1079100AE0C0C /* MLandingBarSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLandingBarSettings.swift; sourceTree = "<group>"; };
 		DA4D97721EB10C1000AE0C0C /* VLandingBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLandingBarCell.swift; sourceTree = "<group>"; };
 		DA4D97741EB14B4100AE0C0C /* MLandingBarStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLandingBarStore.swift; sourceTree = "<group>"; };
+		DA4D97761EB14FAF00AE0C0C /* MLandingBarHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLandingBarHelp.swift; sourceTree = "<group>"; };
 		DA4DC45F1EA1893B0024D28E /* CGridVisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVisor.swift; sourceTree = "<group>"; };
 		DA4DC4621EA18A460024D28E /* VGridVisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisor.swift; sourceTree = "<group>"; };
 		DA4DC4641EA18A520024D28E /* VGridVisorMetal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorMetal.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 				DA4D976E1EB105DE00AE0C0C /* MLandingBarProtocol.swift */,
 				DA4D97701EB1079100AE0C0C /* MLandingBarSettings.swift */,
 				DA4D97741EB14B4100AE0C0C /* MLandingBarStore.swift */,
+				DA4D97761EB14FAF00AE0C0C /* MLandingBarHelp.swift */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -1017,6 +1020,7 @@
 				DA29FEF21EAAAA6400CD8FBC /* VStats.swift in Sources */,
 				DA88525E1EAE3B7D008CB62C /* CGridVisorMatch.swift in Sources */,
 				DAFA6A471EA91975001BA4B4 /* DEnergyExtension.swift in Sources */,
+				DA4D97771EB14FAF00AE0C0C /* MLandingBarHelp.swift in Sources */,
 				DA134AA41E9D549E002BE57D /* MetalSpatialBase.swift in Sources */,
 				DAF15D6F1E9D32BB0000E6B9 /* VView.swift in Sources */,
 				DA4DC4631EA18A460024D28E /* VGridVisor.swift in Sources */,
