@@ -3,6 +3,7 @@ import Foundation
 class MLanding
 {
     let items:[MLandingItem]
+    let barItems:[MLandingBarProtocol]
     
     init()
     {
@@ -16,5 +17,10 @@ class MLanding
             itemProfile,
             itemStats,
             itemBoards]
+        
+        let barSettings:MLandingBarSettings = MLandingBarSettings()
+        
+        barItems = [
+            barSettings]
     }
 }
