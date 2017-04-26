@@ -7,6 +7,7 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
     private let kBorderHeight:CGFloat = 1
     private let kBlurAlpha:CGFloat = 0.99
     private let kCellWidth:CGFloat = 60
+    private let kDeselectTime:TimeInterval = 0.3
     
     init(controller:CLanding)
     {
@@ -113,5 +114,22 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
         cell.config(model:item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
+    {
+        collectionView.isUserInteractionEnabled = false
+        let item:MLandingBarProtocol = modelAtIndex(index:indexPath)
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kDeselectTime)
+        { [weak collectionView] in
+            
+            collectionView?.selectItem(
+                at:nil,
+                animated:true,
+                scrollPosition:UICollectionViewScrollPosition())
+            collectionView?.isUserInteractionEnabled = true
+        }
     }
 }
