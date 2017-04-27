@@ -3,6 +3,7 @@ import Foundation
 class MSession
 {
     static let sharedInstance:MSession = MSession()
+    private(set) var score:Int?
     private(set) var settings:DSettings?
     
     private init()

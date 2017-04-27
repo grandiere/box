@@ -92,9 +92,6 @@
 		DA599B561EA7C3940070E5AF /* VGridVisorDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA599B551EA7C3940070E5AF /* VGridVisorDetailCell.swift */; };
 		DA59D7581EB25F9000EB2973 /* FAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D74C1EB25F9000EB2973 /* FAnalytics.swift */; };
 		DA59D7591EB25F9000EB2973 /* FDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D74F1EB25F9000EB2973 /* FDatabase.swift */; };
-		DA59D75B1EB25F9000EB2973 /* FDatabaseModelGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D7521EB25F9000EB2973 /* FDatabaseModelGallery.swift */; };
-		DA59D75C1EB25F9000EB2973 /* FDatabaseModelGalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D7531EB25F9000EB2973 /* FDatabaseModelGalleryItem.swift */; };
-		DA59D75D1EB25F9000EB2973 /* FDatabaseModelUserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D7541EB25F9000EB2973 /* FDatabaseModelUserItem.swift */; };
 		DA59D75E1EB25F9000EB2973 /* FMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D7561EB25F9000EB2973 /* FMain.swift */; };
 		DA59D75F1EB25F9000EB2973 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA59D7571EB25F9000EB2973 /* GoogleService-Info.plist */; };
 		DA59D7631EB26A2E00EB2973 /* FDatabaseNodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D7621EB26A2E00EB2973 /* FDatabaseNodeProtocol.swift */; };
@@ -279,9 +276,6 @@
 		DA599B551EA7C3940070E5AF /* VGridVisorDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCell.swift; sourceTree = "<group>"; };
 		DA59D74C1EB25F9000EB2973 /* FAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAnalytics.swift; sourceTree = "<group>"; };
 		DA59D74F1EB25F9000EB2973 /* FDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDatabase.swift; sourceTree = "<group>"; };
-		DA59D7521EB25F9000EB2973 /* FDatabaseModelGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDatabaseModelGallery.swift; sourceTree = "<group>"; };
-		DA59D7531EB25F9000EB2973 /* FDatabaseModelGalleryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDatabaseModelGalleryItem.swift; sourceTree = "<group>"; };
-		DA59D7541EB25F9000EB2973 /* FDatabaseModelUserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDatabaseModelUserItem.swift; sourceTree = "<group>"; };
 		DA59D7561EB25F9000EB2973 /* FMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMain.swift; sourceTree = "<group>"; };
 		DA59D7571EB25F9000EB2973 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA59D7621EB26A2E00EB2973 /* FDatabaseNodeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDatabaseNodeProtocol.swift; sourceTree = "<group>"; };
@@ -669,9 +663,6 @@
 		DA59D7511EB25F9000EB2973 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DA59D7521EB25F9000EB2973 /* FDatabaseModelGallery.swift */,
-				DA59D7531EB25F9000EB2973 /* FDatabaseModelGalleryItem.swift */,
-				DA59D7541EB25F9000EB2973 /* FDatabaseModelUserItem.swift */,
 				DA59D7641EB2711B00EB2973 /* FDatabaseNodeUserItem.swift */,
 			);
 			path = Model;
@@ -1146,7 +1137,6 @@
 				DA7084471EA6680C00B222FE /* MGridVisorOrientationPortrait.swift in Sources */,
 				DA59D7651EB2711B00EB2973 /* FDatabaseNodeUserItem.swift in Sources */,
 				DA29FEE51EAA913700CD8FBC /* VProfileCellCircle.swift in Sources */,
-				DA59D75B1EB25F9000EB2973 /* FDatabaseModelGallery.swift in Sources */,
 				DAF15D681E9D32BB0000E6B9 /* VBorder.swift in Sources */,
 				DA7135B01EAFA94E007ACEB5 /* VGridMapDetail.swift in Sources */,
 				DA134AAE1E9D549E002BE57D /* MetalVertex.swift in Sources */,
@@ -1199,7 +1189,6 @@
 				DA4D97731EB10C1000AE0C0C /* VLandingBarCell.swift in Sources */,
 				DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */,
 				DAF15D5A1E9D32BB0000E6B9 /* DSettingsExtension.swift in Sources */,
-				DA59D75C1EB25F9000EB2973 /* FDatabaseModelGalleryItem.swift in Sources */,
 				DAAA0EB81EA80DD700756A17 /* MGridVisorDetailItemHeaderBug.swift in Sources */,
 				DAF15D721E9D34810000E6B9 /* DBox.xcdatamodeld in Sources */,
 				DA4DC4651EA18A520024D28E /* VGridVisorMetal.swift in Sources */,
@@ -1215,7 +1204,6 @@
 				DAF15D6D1E9D32BB0000E6B9 /* VSpinner.swift in Sources */,
 				DAF15D5D1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift in Sources */,
 				DA7135B21EAFAF38007ACEB5 /* VGridMapDetailCell.swift in Sources */,
-				DA59D75D1EB25F9000EB2973 /* FDatabaseModelUserItem.swift in Sources */,
 				DA29FEED1EAAA46C00CD8FBC /* MProfileItemProcessor.swift in Sources */,
 				DA1D49B41EAA49A500C2392C /* MLandingItemProfile.swift in Sources */,
 				DA4DC4721EA191310024D28E /* MGridAlgoItem.swift in Sources */,

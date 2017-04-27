@@ -15,7 +15,6 @@
     </entity>
     <entity name="DStats" representedClassName="DStats" syncable="YES" codeGenerationType="class">
         <attribute name="bugs" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="score" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="virus" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="virusReleased" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="settings" maxCount="1" deletionRule="Nullify" destinationEntity="DSettings" inverseName="stats" inverseEntity="DSettings" syncable="YES"/>
@@ -31,7 +30,7 @@
     <elements>
         <element name="DEnergy" positionX="-63" positionY="0" width="128" height="105"/>
         <element name="DSettings" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="DStats" positionX="-45" positionY="72" width="128" height="105"/>
         <element name="DUser" positionX="-54" positionY="27" width="128" height="135"/>
-        <element name="DStats" positionX="-45" positionY="72" width="128" height="120"/>
     </elements>
 </model>

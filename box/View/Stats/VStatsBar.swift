@@ -19,7 +19,7 @@ class VStatsBar:UIView
             attributes:attributesTitle)
         mutableString.append(stringTitle)
         
-        if let score:Int32 = MSession.sharedInstance.settings?.stats?.score
+        if let score:Int = MSession.sharedInstance.score
         {
             let numberFormatter:NumberFormatter = NumberFormatter()
             numberFormatter.numberStyle = NumberFormatter.Style.decimal
