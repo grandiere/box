@@ -39,81 +39,72 @@ class FDatabase
         childReference.removeValue()
     }
     
-    func listenOnce<ModelType:FDatabaseModel>(path:String, modelType:ModelType.Type, completion:@escaping((ModelType?) -> ()))
+    func listenOnce(
+        path:String,
+        nodeType:FDatabaseNodeProtocol.Type,
+        completion:@escaping((FDatabaseNodeProtocol?) -> ()))
     {
         let pathReference:FIRDatabaseReference = reference.child(path)
         pathReference.observeSingleEvent(of:FIRDataEventType.value)
         { (snapshot:FIRDataSnapshot) in
             
+            var node:FDatabaseNodeProtocol?
+            
             guard
                 
                 let json:Any = snapshot.value
                 
             else
             {
-                completion(nil)
+                completion(node)
                 
                 return
             }
             
             if let _:NSNull = json as? NSNull
             {
-                completion(nil)
-                
-                return
             }
-                
-            guard
-                
-                let model:ModelType = ModelType(snapshot:json)
-                
             else
             {
-                completion(nil)
-                
-                return
+                node = nodeType.init(snapshot:json)
             }
             
-            completion(model)
+            completion(node)
         }
     }
 
-    func listen<ModelType:FDatabaseModel>(eventType:FIRDataEventType, path:String, modelType:ModelType.Type, completion:@escaping((ModelType?) -> ())) -> UInt
+    func listen(
+        eventType:FIRDataEventType,
+        path:String,
+        nodeType:FDatabaseNodeProtocol.Type,
+        completion:@escaping((FDatabaseNodeProtocol?) -> ())) -> UInt
     {
         let pathReference:FIRDatabaseReference = reference.child(path)
         let handler:UInt = pathReference.observe(eventType)
         { (snapshot:FIRDataSnapshot) in
             
+            var node:FDatabaseNodeProtocol?
+            
             guard
                 
                 let json:Any = snapshot.value
                 
             else
             {
-                completion(nil)
+                completion(node)
                 
                 return
             }
             
             if let _:NSNull = json as? NSNull
             {
-                completion(nil)
-                
-                return
             }
-            
-            guard
-                
-                let model:ModelType = ModelType(snapshot:json)
-                
             else
             {
-                completion(nil)
-                
-                return
+                node = nodeType.init(snapshot:json)
             }
             
-            completion(model)
+            completion(node)
         }
         
         return handler
