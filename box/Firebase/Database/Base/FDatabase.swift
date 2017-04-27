@@ -23,7 +23,7 @@ class FDatabase
         let childReference:FIRDatabaseReference = reference.child(path).childByAutoId()
         let childId:String = childReference.key
         childReference.setValue(json)
-        
+
         return childId
     }
     
