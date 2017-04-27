@@ -9,7 +9,6 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     {
         super.init(controller:controller)
         clipsToBounds = true
-        backgroundColor = UIColor.gridBlue
         self.controller = controller as? CSettings
     }
     
