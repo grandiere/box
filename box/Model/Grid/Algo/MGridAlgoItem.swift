@@ -5,9 +5,9 @@ class MGridAlgoItem
 {
     let location:CLLocation
     let created:TimeInterval
+    var multipliedHeading:Float
     private(set) var distance:CLLocationDistance?
     private(set) var heading:Float
-    var multipliedHeading:Float
     private let k180:Double = 180
     
     init(
