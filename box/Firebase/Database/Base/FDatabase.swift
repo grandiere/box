@@ -3,8 +3,8 @@ import FirebaseDatabase
 
 class FDatabase
 {
-    static let kNodeUser:String = "user"
-    static let kNodeAlgo:String = "algo"
+    static let user:String = "user"
+    static let algo:String = "algo"
     private let reference:FIRDatabaseReference
     
     init()
