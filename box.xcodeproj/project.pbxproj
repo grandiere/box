@@ -90,6 +90,14 @@
 		DA599B501EA7AE360070E5AF /* VGridVisorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA599B4F1EA7AE360070E5AF /* VGridVisorDetail.swift */; };
 		DA599B541EA7B3FD0070E5AF /* VGridVisorDetailBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA599B531EA7B3FD0070E5AF /* VGridVisorDetailBar.swift */; };
 		DA599B561EA7C3940070E5AF /* VGridVisorDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA599B551EA7C3940070E5AF /* VGridVisorDetailCell.swift */; };
+		DA59D7581EB25F9000EB2973 /* FAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D74C1EB25F9000EB2973 /* FAnalytics.swift */; };
+		DA59D7591EB25F9000EB2973 /* FDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D74F1EB25F9000EB2973 /* FDatabase.swift */; };
+		DA59D75A1EB25F9000EB2973 /* FDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D7501EB25F9000EB2973 /* FDatabaseModel.swift */; };
+		DA59D75B1EB25F9000EB2973 /* FDatabaseModelGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D7521EB25F9000EB2973 /* FDatabaseModelGallery.swift */; };
+		DA59D75C1EB25F9000EB2973 /* FDatabaseModelGalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D7531EB25F9000EB2973 /* FDatabaseModelGalleryItem.swift */; };
+		DA59D75D1EB25F9000EB2973 /* FDatabaseModelUserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D7541EB25F9000EB2973 /* FDatabaseModelUserItem.swift */; };
+		DA59D75E1EB25F9000EB2973 /* FMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59D7561EB25F9000EB2973 /* FMain.swift */; };
+		DA59D75F1EB25F9000EB2973 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA59D7571EB25F9000EB2973 /* GoogleService-Info.plist */; };
 		DA7084431EA660FA00B222FE /* VGridVisorTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084421EA660FA00B222FE /* VGridVisorTarget.swift */; };
 		DA7084451EA667E500B222FE /* MGridVisorOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084441EA667E500B222FE /* MGridVisorOrientation.swift */; };
 		DA7084471EA6680C00B222FE /* MGridVisorOrientationPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084461EA6680C00B222FE /* MGridVisorOrientationPortrait.swift */; };
@@ -268,6 +276,14 @@
 		DA599B4F1EA7AE360070E5AF /* VGridVisorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetail.swift; sourceTree = "<group>"; };
 		DA599B531EA7B3FD0070E5AF /* VGridVisorDetailBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailBar.swift; sourceTree = "<group>"; };
 		DA599B551EA7C3940070E5AF /* VGridVisorDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCell.swift; sourceTree = "<group>"; };
+		DA59D74C1EB25F9000EB2973 /* FAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAnalytics.swift; sourceTree = "<group>"; };
+		DA59D74F1EB25F9000EB2973 /* FDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDatabase.swift; sourceTree = "<group>"; };
+		DA59D7501EB25F9000EB2973 /* FDatabaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDatabaseModel.swift; sourceTree = "<group>"; };
+		DA59D7521EB25F9000EB2973 /* FDatabaseModelGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDatabaseModelGallery.swift; sourceTree = "<group>"; };
+		DA59D7531EB25F9000EB2973 /* FDatabaseModelGalleryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDatabaseModelGalleryItem.swift; sourceTree = "<group>"; };
+		DA59D7541EB25F9000EB2973 /* FDatabaseModelUserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDatabaseModelUserItem.swift; sourceTree = "<group>"; };
+		DA59D7561EB25F9000EB2973 /* FMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMain.swift; sourceTree = "<group>"; };
+		DA59D7571EB25F9000EB2973 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA7084421EA660FA00B222FE /* VGridVisorTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorTarget.swift; sourceTree = "<group>"; };
 		DA7084441EA667E500B222FE /* MGridVisorOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorOrientation.swift; sourceTree = "<group>"; };
 		DA7084461EA6680C00B222FE /* MGridVisorOrientationPortrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorOrientationPortrait.swift; sourceTree = "<group>"; };
@@ -612,6 +628,61 @@
 			path = GridVisorDetail;
 			sourceTree = "<group>";
 		};
+		DA59D74A1EB25F9000EB2973 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				DA59D74B1EB25F9000EB2973 /* Analytics */,
+				DA59D74D1EB25F9000EB2973 /* Database */,
+				DA59D7551EB25F9000EB2973 /* Main */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		DA59D74B1EB25F9000EB2973 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				DA59D74C1EB25F9000EB2973 /* FAnalytics.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		DA59D74D1EB25F9000EB2973 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				DA59D74E1EB25F9000EB2973 /* Base */,
+				DA59D7511EB25F9000EB2973 /* Model */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		DA59D74E1EB25F9000EB2973 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DA59D74F1EB25F9000EB2973 /* FDatabase.swift */,
+				DA59D7501EB25F9000EB2973 /* FDatabaseModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DA59D7511EB25F9000EB2973 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA59D7521EB25F9000EB2973 /* FDatabaseModelGallery.swift */,
+				DA59D7531EB25F9000EB2973 /* FDatabaseModelGalleryItem.swift */,
+				DA59D7541EB25F9000EB2973 /* FDatabaseModelUserItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA59D7551EB25F9000EB2973 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DA59D7561EB25F9000EB2973 /* FMain.swift */,
+				DA59D7571EB25F9000EB2973 /* GoogleService-Info.plist */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		DA7135C31EAFD241007ACEB5 /* Boards */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +773,7 @@
 		DAC3362C1E9D20EE0022D7ED /* box */ = {
 			isa = PBXGroup;
 			children = (
+				DA59D74A1EB25F9000EB2973 /* Firebase */,
 				DA134A761E9D48E1002BE57D /* Metal */,
 				DAF15D301E9D32BB0000E6B9 /* Assets */,
 				DAF15D321E9D32BB0000E6B9 /* Controller */,
@@ -939,6 +1011,7 @@
 				DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */,
 				DA134AB01E9D5D69002BE57D /* texture.xcassets in Resources */,
 				DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */,
+				DA59D75F1EB25F9000EB2973 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +1077,7 @@
 				DAFA6A3F1EA90D36001BA4B4 /* MGridVisorDetailItemLevel.swift in Sources */,
 				DAF15D6C1E9D32BB0000E6B9 /* VParentPushBackground.swift in Sources */,
 				DA8852751EAEB068008CB62C /* ExtensionMKAnnotationView.swift in Sources */,
+				DA59D75E1EB25F9000EB2973 /* FMain.swift in Sources */,
 				DAF15D5F1E9D32BB0000E6B9 /* ExtensionString.swift in Sources */,
 				DA4D97691EB0F69600AE0C0C /* MSettings.swift in Sources */,
 				DA4DC4601EA1893B0024D28E /* CGridVisor.swift in Sources */,
@@ -1029,6 +1103,7 @@
 				DA7135BE1EAFB062007ACEB5 /* MGridMapDetailItemDistance.swift in Sources */,
 				DA134AA71E9D549E002BE57D /* MetalRenderableProtocol.swift in Sources */,
 				DAF15D591E9D32BB0000E6B9 /* DManager.swift in Sources */,
+				DA59D75A1EB25F9000EB2973 /* FDatabaseModel.swift in Sources */,
 				DAAA0EBE1EA81DE900756A17 /* MGridVisorDetailItemDistance.swift in Sources */,
 				DA599B561EA7C3940070E5AF /* VGridVisorDetailCell.swift in Sources */,
 				DAFA6A431EA91428001BA4B4 /* VGridVisorDetailCellDebug.swift in Sources */,
@@ -1068,6 +1143,7 @@
 				DA1D49B01EAA497700C2392C /* MLandingItem.swift in Sources */,
 				DA7084471EA6680C00B222FE /* MGridVisorOrientationPortrait.swift in Sources */,
 				DA29FEE51EAA913700CD8FBC /* VProfileCellCircle.swift in Sources */,
+				DA59D75B1EB25F9000EB2973 /* FDatabaseModelGallery.swift in Sources */,
 				DAF15D681E9D32BB0000E6B9 /* VBorder.swift in Sources */,
 				DA7135B01EAFA94E007ACEB5 /* VGridMapDetail.swift in Sources */,
 				DA134AAE1E9D549E002BE57D /* MetalVertex.swift in Sources */,
@@ -1081,6 +1157,8 @@
 				DAF15D6B1E9D32BB0000E6B9 /* VParent.swift in Sources */,
 				DA1D49A51EAA42DB00C2392C /* DUserExtension.swift in Sources */,
 				DA134AA31E9D549E002BE57D /* MetalVertexTextured.swift in Sources */,
+				DA59D7581EB25F9000EB2973 /* FAnalytics.swift in Sources */,
+				DA59D7591EB25F9000EB2973 /* FDatabase.swift in Sources */,
 				DAF15D671E9D32BB0000E6B9 /* VBlur.swift in Sources */,
 				DAF15D6A1E9D32BB0000E6B9 /* VCollectionFlow.swift in Sources */,
 				DA1D49C21EAA643700C2392C /* CProfile.swift in Sources */,
@@ -1118,6 +1196,7 @@
 				DA4D97731EB10C1000AE0C0C /* VLandingBarCell.swift in Sources */,
 				DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */,
 				DAF15D5A1E9D32BB0000E6B9 /* DSettingsExtension.swift in Sources */,
+				DA59D75C1EB25F9000EB2973 /* FDatabaseModelGalleryItem.swift in Sources */,
 				DAAA0EB81EA80DD700756A17 /* MGridVisorDetailItemHeaderBug.swift in Sources */,
 				DAF15D721E9D34810000E6B9 /* DBox.xcdatamodeld in Sources */,
 				DA4DC4651EA18A520024D28E /* VGridVisorMetal.swift in Sources */,
@@ -1133,6 +1212,7 @@
 				DAF15D6D1E9D32BB0000E6B9 /* VSpinner.swift in Sources */,
 				DAF15D5D1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift in Sources */,
 				DA7135B21EAFAF38007ACEB5 /* VGridMapDetailCell.swift in Sources */,
+				DA59D75D1EB25F9000EB2973 /* FDatabaseModelUserItem.swift in Sources */,
 				DA29FEED1EAAA46C00CD8FBC /* MProfileItemProcessor.swift in Sources */,
 				DA1D49B41EAA49A500C2392C /* MLandingItemProfile.swift in Sources */,
 				DA4DC4721EA191310024D28E /* MGridAlgoItem.swift in Sources */,
