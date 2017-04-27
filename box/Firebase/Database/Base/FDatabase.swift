@@ -3,12 +3,8 @@ import FirebaseDatabase
 
 class FDatabase
 {
-    enum Node:String
-    {
-        case user = "user"
-        case gallery = "gallery"
-    }
-    
+    static let kNodeUser:String = "user"
+    static let kNodeAlgo:String = "algo"
     private let reference:FIRDatabaseReference
     
     init()
