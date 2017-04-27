@@ -64,9 +64,15 @@ class FDatabaseNodeUserItem:FDatabaseNodeProtocol
     
     func json() -> Any?
     {
-        let json:[String:Any] = [
+        var json:[String:Any] = [
+            FDatabaseNodeUserItem.score:score,
             FDatabaseNodeUserItem.created:created,
             FDatabaseNodeUserItem.active:active]
+        
+        if let handler:String = handler
+        {
+            json[FDatabaseNodeUserItem.handler] = handler
+        }
         
         return json
     }
