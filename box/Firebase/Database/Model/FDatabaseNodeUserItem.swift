@@ -16,15 +16,15 @@ class FDatabaseNodeUserItem:FDatabaseNodeProtocol
     private let kInitialScore:Int = 0
     private let kNoTime:TimeInterval = 0
     
-    //MARK: node protocol
-    
-    required init?()
+    init()
     {
         handler = nil
         score = kInitialScore
         created = NSDate().timeIntervalSince1970
         active = kActive
     }
+    
+    //MARK: node protocol
     
     required init?(snapshot:Any)
     {

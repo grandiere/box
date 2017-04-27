@@ -3,11 +3,15 @@ import Foundation
 class MSession
 {
     static let sharedInstance:MSession = MSession()
-    private(set) var score:Int?
     private(set) var settings:DSettings?
+    private(set) var handler:String?
+    private(set) var score:Int
+    private(set) var active:Bool
     
     private init()
     {
+        score = 0
+        active = true
     }
     
     //MARK: private
@@ -114,21 +118,77 @@ class MSession
             }
             
             self.settings?.stats = stats
-            self.connectFirebase()
-        }
-    }
-    
-    private func connectFirebase()
-    {
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        {
-            DManager.sharedInstance?.save()
             self.sessionLoaded()
         }
     }
     
     private func sessionLoaded()
     {
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            DManager.sharedInstance?.save()
+            
+            if let userId:String = self.settings?.firebaseId
+            {
+                self.loadFirebaseUser(userId:userId)
+            }
+            else
+            {
+                self.createFirebaseUser()
+            }
+        }
+    }
+    
+    private func loadFirebaseUser(userId:String)
+    {
+        let path:String = "\(FDatabase.user)/\(userId)"
+        
+        FMain.sharedInstance.database.listenOnce(
+            path:path,
+            nodeType:FDatabaseNodeUserItem.self)
+        { (node:FDatabaseNodeProtocol?) in
+            
+            guard
+            
+                let user:FDatabaseNodeUserItem = node as? FDatabaseNodeUserItem
+            
+            else
+            {
+                return
+            }
+            
+            self.firebaseLoaded(user:user)
+        }
+    }
+    
+    private func createFirebaseUser()
+    {
+        let user:FDatabaseNodeUserItem = FDatabaseNodeUserItem()
+        
+        guard
+            
+            let userJson:Any = user.json()
+            
+        else
+        {
+            return
+        }
+        
+        let userId:String = FMain.sharedInstance.database.createChild(
+            path:FDatabase.user,
+            json:userJson)
+        settings?.firebaseId = userId
+        
+        firebaseLoaded(user:user)
+    }
+    
+    private func firebaseLoaded(user:FDatabaseNodeUserItem)
+    {
+        handler = user.handler
+        score = user.score
+        active = user.active
+        DManager.sharedInstance?.save()
+        
         NotificationCenter.default.post(
             name:Notification.sessionLoaded,
             object:nil)

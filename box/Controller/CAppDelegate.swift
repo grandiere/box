@@ -5,8 +5,13 @@ class AppDelegate:UIResponder, UIApplicationDelegate
 {
     var window:UIWindow?
 
-    func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplicationLaunchOptionsKey:Any]?) -> Bool
+    func application(
+        _ application:UIApplication,
+        didFinishLaunchingWithOptions
+        launchOptions:[UIApplicationLaunchOptionsKey:Any]?) -> Bool
     {
+        FMain.sharedInstance.load()
+        
         let window:UIWindow = UIWindow(frame:UIScreen.main.bounds)
         window.backgroundColor = UIColor.black
         window.makeKeyAndVisible()
@@ -20,6 +25,6 @@ class AppDelegate:UIResponder, UIApplicationDelegate
     
     func applicationWillEnterForeground(_ application:UIApplication)
     {
-        //MSession.sharedInstance.settings?.becameActive()
+        MSession.sharedInstance.settings?.addTtl()
     }
 }
