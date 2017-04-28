@@ -1,6 +1,6 @@
 import Foundation
 
-class FDatabaseNodeAlgoItemHostile:FDatabaseNodeAlgoItem
+class FDbAlgoHostileItem:FDbAlgoItem
 {
     static let level:String = "level"
     

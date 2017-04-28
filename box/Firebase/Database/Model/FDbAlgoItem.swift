@@ -1,6 +1,6 @@
 import Foundation
 
-class FDatabaseNodeAlgoItem:FDatabaseNodeProtocol
+class FDbAlgoItem:FDbProtocol
 {
     static let latitude:String = "latitude"
     static let longitude:String = "longitude"
@@ -30,7 +30,7 @@ class FDatabaseNodeAlgoItem:FDatabaseNodeProtocol
             let latitude:Double = snapshotDict[FDatabaseNodeAlgoItem.latitude] as? Double,
             let longitude:Double = snapshotDict[FDatabaseNodeAlgoItem.longitude] as? Double,
             let created:TimeInterval = snapshotDict[FDatabaseNodeAlgoItem.created] as? TimeInterval
-        
+            
         else
         {
             return nil
