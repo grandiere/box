@@ -1,10 +1,13 @@
 import UIKit
+import CoreLocation
 
-class CGrid:CController
+class CGrid:CController, CLLocationManagerDelegate
 {
     let model:MGrid
     let modelAlgo:MGridAlgo
     private weak var viewGrid:VGrid!
+    private(set) var userLocation:CLLocation?
+    private var locationManager:CLLocationManager?
     
     override init()
     {
@@ -30,17 +33,12 @@ class CGrid:CController
     {
         super.viewDidAppear(animated)
         
-        if modelAlgo.items.count < 1
-        {
-            DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-            { [weak self] in
-                
-                self?.loadAlgo()
-            }
-        }
-        else
-        {
-            modelAlgo.clearNearItems()
+        viewGrid.startLoading()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.loadAlgo()
         }
     }
     
@@ -48,11 +46,12 @@ class CGrid:CController
     
     private func loadAlgo()
     {
-        modelAlgo.loadAlgo()
-        algosLoaded()
+        modelAlgo.loadAlgo(controller:self)
     }
     
-    private func algosLoaded()
+    //MARK: public
+    
+    func algosLoaded()
     {
         DispatchQueue.main.async
         { [weak self] in
@@ -60,8 +59,6 @@ class CGrid:CController
             self?.viewGrid.refresh()
         }
     }
-    
-    //MARK: public
     
     func back()
     {

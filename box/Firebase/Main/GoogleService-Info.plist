@@ -23,9 +23,9 @@
 	<key>STORAGE_BUCKET</key>
 	<string>the-grid-50653.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<true/>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
 	<false/>
 	<key>IS_GCM_ENABLED</key>

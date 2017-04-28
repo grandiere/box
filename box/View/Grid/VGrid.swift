@@ -76,7 +76,14 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     func refresh()
     {
         spinner.stopAnimating()
+        collectionView.isHidden = false
         collectionView.reloadData()
+    }
+    
+    func startLoading()
+    {
+        spinner.startAnimating()
+        collectionView.isHidden = true
     }
     
     //MARK: collectionView delegate

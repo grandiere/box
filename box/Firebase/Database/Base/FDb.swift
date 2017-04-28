@@ -4,7 +4,9 @@ import FirebaseDatabase
 class FDb
 {
     static let user:String = "user"
-    static let algo:String = "algo"
+    static let algoBug:String = "algoBug"
+    static let algoVirus:String = "algoVirus"
+    static let algoAid:String = "algoAid"
     private let reference:FIRDatabaseReference
     
     init()

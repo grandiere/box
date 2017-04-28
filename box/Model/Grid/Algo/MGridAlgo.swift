@@ -3,6 +3,7 @@ import CoreLocation
 
 class MGridAlgo
 {
+    private weak var controller:CGrid?
     static let kMaxDistance:CLLocationDistance = 1000
     private(set) var items:[MGridAlgoItem]
     private(set) var nearItems:[MGridAlgoItem]?
@@ -14,38 +15,11 @@ class MGridAlgo
     
     //MARK: public
     
-    func clearNearItems()
+    func loadAlgo(controller:CGrid)
     {
+        self.controller = controller
         nearItems = nil
-    }
-    
-    func loadAlgo()
-    {
-        let itemDefault:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
-            latitude:19.410595057002922,
-            longitude:-99.175156495306979,
-            level:1,
-            created:1492719557.41663)
-        let parkSpain:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
-            latitude:19.414791,
-            longitude:-99.171507,
-            level:2,
-            created:1492719557.41663)
-        let mexicali:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
-            latitude:19.408238,
-            longitude:-99.173356,
-            level:3,
-            created:1492719557.41663)
-        let amatlan:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
-            latitude:19.410172,
-            longitude:-99.176893,
-            level:4,
-            created:1492719557.41663)
-        
-        items.append(itemDefault)
-        items.append(parkSpain)
-        items.append(mexicali)
-        items.append(amatlan)
+        items = []
     }
     
     func filterNearItems(userLocation:CLLocation)
