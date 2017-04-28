@@ -164,7 +164,14 @@ class MSession
     private func createFirebaseUser()
     {
         let user:FDbUserItem = FDbUserItem()
-        let userJson:Any = user.json()
+        
+        guard
+            
+            let userJson:Any = user.json()
+        else
+        {
+            return
+        }
         
         let userId:String = FMain.sharedInstance.db.createChild(
             path:FDb.user,

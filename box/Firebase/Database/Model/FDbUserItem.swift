@@ -62,7 +62,7 @@ class FDbUserItem:FDbProtocol
         }
     }
     
-    func json() -> Any
+    func json() -> Any?
     {
         var json:[String:Any] = [
             FDbUserItem.score:score,

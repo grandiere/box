@@ -37,7 +37,7 @@ class FDbAlgoHostileItem:FDbAlgoItem
         super.init(snapshot:snapshot)
     }
     
-    override func json() -> Any
+    override func json() -> Any?
     {
         var json:[String:Any] = [
             FDbAlgoHostileItem.level:level]

@@ -32,7 +32,7 @@ class FDbAlgoHostileBug:FDbProtocol
         self.items = items
     }
     
-    func json() -> Any
+    func json() -> Any?
     {
         return nil
     }
