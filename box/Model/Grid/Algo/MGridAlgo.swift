@@ -74,10 +74,7 @@ class MGridAlgo
                     
                     let item:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
                         firebaseId:bugId,
-                        latitude:bug.latitude,
-                        longitude:bug.longitude,
-                        level:bug.level,
-                        created:bug.created)
+                        firebaseBug:bug)
                     
                     items.append(item)
                 }

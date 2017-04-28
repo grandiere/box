@@ -4,6 +4,18 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
 {
     private let kCreditsMultiplier:CGFloat = 1.5
     
+    init(
+        firebaseId:String,
+        firebaseBug:FDbAlgoHostileBugItem)
+    {
+        super.init(
+            firebaseId:firebaseId,
+            latitude:firebaseBug.latitude,
+            longitude:firebaseBug.longitude,
+            level:firebaseBug.level,
+            created:firebaseBug.created)
+    }
+    
     override func imageStandby() -> UIImage?
     {
         return #imageLiteral(resourceName: "assetTextureBugStandBy")
