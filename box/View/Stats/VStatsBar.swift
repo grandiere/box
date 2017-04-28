@@ -19,25 +19,21 @@ class VStatsBar:UIView
             attributes:attributesTitle)
         mutableString.append(stringTitle)
         
-        if let score:Int = MSession.sharedInstance.score
+        let numberScore:NSNumber = MSession.sharedInstance.score as NSNumber
+        let numberFormatter:NumberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        
+        if let stringScore:String = numberFormatter.string(from:numberScore)
         {
-            let numberFormatter:NumberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = NumberFormatter.Style.decimal
+            let attributesScore:[String:AnyObject] = [
+                NSFontAttributeName:UIFont.numeric(size:20),
+                NSForegroundColorAttributeName:UIColor.white]
             
-            let numberScore:NSNumber = score as NSNumber
+            let stringAttributedScore:NSAttributedString = NSAttributedString(
+                string:stringScore,
+                attributes:attributesScore)
             
-            if let stringScore:String = numberFormatter.string(from:numberScore)
-            {
-                let attributesScore:[String:AnyObject] = [
-                    NSFontAttributeName:UIFont.numeric(size:20),
-                    NSForegroundColorAttributeName:UIColor.white]
-                
-                let stringAttributedScore:NSAttributedString = NSAttributedString(
-                    string:stringScore,
-                    attributes:attributesScore)
-                
-                mutableString.append(stringAttributedScore)
-            }
+            mutableString.append(stringAttributedScore)
         }
         
         super.init(frame:CGRect.zero)

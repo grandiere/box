@@ -62,7 +62,7 @@ class FDatabaseNodeUserItem:FDatabaseNodeProtocol
         }
     }
     
-    func json() -> Any?
+    func json() -> Any
     {
         var json:[String:Any] = [
             FDatabaseNodeUserItem.score:score,

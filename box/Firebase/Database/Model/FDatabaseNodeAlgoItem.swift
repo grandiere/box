@@ -41,7 +41,7 @@ class FDatabaseNodeAlgoItem:FDatabaseNodeProtocol
         self.created = created
     }
     
-    func json() -> Any?
+    func json() -> Any
     {
         let json:[String:Any] = [
             FDatabaseNodeAlgoItem.latitude:latitude,
