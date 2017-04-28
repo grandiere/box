@@ -3,7 +3,7 @@ import MapKit
 
 class MGridMapAnnotation:NSObject, MKAnnotation
 {
-    private(set) weak var algo:MGridAlgoItem!
+    private(set) weak var algo:MGridAlgoItem?
     private(set) var coordinate:CLLocationCoordinate2D
     
     init(algo:MGridAlgoItem)

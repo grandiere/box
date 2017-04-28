@@ -35,6 +35,6 @@ class MGridMapDetail
         }
         
         self.items = items
-        image = annotation.algo.imageDetail()
+        image = annotation.algo?.imageDetail()
     }
 }

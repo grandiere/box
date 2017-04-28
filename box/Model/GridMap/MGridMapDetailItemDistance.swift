@@ -10,7 +10,15 @@ class MGridMapDetailItemDistance:MGridMapDetailItem
         userLocation:CLLocation,
         annotation:MGridMapAnnotation)
     {
-        let location:CLLocation = annotation.algo.location
+        guard
+            
+            let location:CLLocation = annotation.algo?.location
+        
+        else
+        {
+            return nil
+        }
+        
         let rawDistance:CLLocationDistance = location.distance(from:userLocation)
         let rawDistanceNumber:NSNumber = rawDistance as NSNumber
         let numberFormatter:NumberFormatter = NumberFormatter()

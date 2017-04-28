@@ -6,7 +6,15 @@ class MGridMapDetailItemAge:MGridMapDetailItem
     
     init?(annotation:MGridMapAnnotation)
     {
-        let created:TimeInterval = annotation.algo.created
+        guard
+            
+            let created:TimeInterval = annotation.algo?.created
+        
+        else
+        {
+            return nil
+        }
+        
         let timestamp:TimeInterval = Date().timeIntervalSince1970
         let deltaTime:TimeInterval = timestamp - created
         let rawStringTime:String
