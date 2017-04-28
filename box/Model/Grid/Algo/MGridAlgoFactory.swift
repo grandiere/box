@@ -4,7 +4,7 @@ import CoreLocation
 class MGridAlgoFactory
 {
     private let coordinateSpan:UInt32
-    private let kCoordinateDivider:Double = 100000
+    private let kCoordinateDivider:Double = 10000
     private let kBugDifficulty:UInt32 = 10
     private let kCoordinateSingleSpan:Double = 10
     
@@ -36,8 +36,6 @@ class MGridAlgoFactory
         let randomized:Double = randomCoordinate(
             coordinate:location.coordinate.latitude)
         
-        print("latitude: \(location.coordinate.latitude) random: \(randomized)")
-        
         return randomized
     }
     
@@ -45,8 +43,6 @@ class MGridAlgoFactory
     {
         let randomized:Double = randomCoordinate(
             coordinate:location.coordinate.longitude)
-        
-        print("longitude: \(location.coordinate.longitude) random: \(randomized)")
         
         return randomized
     }

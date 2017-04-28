@@ -21,6 +21,7 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         self.spinner = spinner
         
         let collectionView:VCollection = VCollection()
+        collectionView.isHidden = true
         collectionView.isScrollEnabled = false
         collectionView.bounces = false
         collectionView.delegate = self
@@ -98,18 +99,7 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
-        let count:Int
-        
-        if controller.modelAlgo.items.count > 0
-        {
-            count = 1
-        }
-        else
-        {
-            count = 0
-        }
-        
-        return count
+        return 1
     }
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int

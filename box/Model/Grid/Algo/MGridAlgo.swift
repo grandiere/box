@@ -103,7 +103,7 @@ class MGridAlgo
         }
         else
         {
-            forceCreation = false
+            forceCreation = true
         }
         
         if let bug:MGridAlgoItemHostileBug = factory.createBug(
@@ -114,6 +114,7 @@ class MGridAlgo
         }
         
         self.items.append(contentsOf:items)
+        controller?.algosLoaded()
     }
     
     //MARK: public
