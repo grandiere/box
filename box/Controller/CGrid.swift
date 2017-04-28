@@ -44,19 +44,24 @@ class CGrid:CController, CLLocationManagerDelegate
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-            self?.loadAlgo()
+            self?.loadModel()
         }
     }
     
     //MARK: private
     
-    private func loadAlgo()
+    private func loadAlgo(userLocation:CLLocation)
+    {
+        modelAlgo.loadAlgo(
+            userLocation:userLocation,
+            controller:self)
+    }
+    
+    private func loadModel()
     {
         if let userLocation:CLLocation = userLocation
         {
-            modelAlgo.loadAlgo(
-                userLocation:userLocation,
-                controller:self)
+            loadAlgo(userLocation:userLocation)
         }
         else
         {
@@ -167,18 +172,7 @@ class CGrid:CController, CLLocationManagerDelegate
             DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
             { [weak self] in
                 
-                guard
-                    
-                    let strongSelf:CGrid = self
-                
-                else
-                {
-                    return
-                }
-                
-                strongSelf.modelAlgo.loadAlgo(
-                    userLocation:userLocation,
-                    controller:strongSelf)
+                self?.loadAlgo(userLocation:userLocation)
             }
         }
     }

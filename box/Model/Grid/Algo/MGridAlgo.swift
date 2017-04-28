@@ -13,6 +13,18 @@ class MGridAlgo
         items = []
     }
     
+    //MARK: private
+    
+    private func loadFirebaseBugs(userLocation:CLLocation)
+    {
+        FMain.sharedInstance.db.listenOnce(
+            path:FDb.algoBug,
+            nodeType:FDbAlgoHostileBug.self)
+        { (node:FDbProtocol?) in
+            
+        }
+    }
+    
     //MARK: public
     
     func loadAlgo(
@@ -22,6 +34,12 @@ class MGridAlgo
         self.controller = controller
         nearItems = nil
         items = []
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.loadFirebaseBugs(userLocation:userLocation)
+        }
     }
     
     func filterNearItems(userLocation:CLLocation)
