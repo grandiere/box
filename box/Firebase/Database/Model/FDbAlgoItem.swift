@@ -27,9 +27,9 @@ class FDbAlgoItem:FDbProtocol
         guard
             
             let snapshotDict:[String:Any] = snapshot as? [String:Any],
-            let latitude:Double = snapshotDict[FDatabaseNodeAlgoItem.latitude] as? Double,
-            let longitude:Double = snapshotDict[FDatabaseNodeAlgoItem.longitude] as? Double,
-            let created:TimeInterval = snapshotDict[FDatabaseNodeAlgoItem.created] as? TimeInterval
+            let latitude:Double = snapshotDict[FDbAlgoItem.latitude] as? Double,
+            let longitude:Double = snapshotDict[FDbAlgoItem.longitude] as? Double,
+            let created:TimeInterval = snapshotDict[FDbAlgoItem.created] as? TimeInterval
             
         else
         {
@@ -44,9 +44,9 @@ class FDbAlgoItem:FDbProtocol
     func json() -> Any
     {
         let json:[String:Any] = [
-            FDatabaseNodeAlgoItem.latitude:latitude,
-            FDatabaseNodeAlgoItem.longitude:longitude,
-            FDatabaseNodeAlgoItem.created:created]
+            FDbAlgoItem.latitude:latitude,
+            FDbAlgoItem.longitude:longitude,
+            FDbAlgoItem.created:created]
         
         return json
     }

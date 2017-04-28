@@ -29,10 +29,10 @@ class FDbUserItem:FDbProtocol
     required init?(snapshot:Any)
     {
         let snapshotDict:[String:Any]? = snapshot as? [String:Any]
-        handler = snapshotDict?[FDatabaseNodeUserItem.handler] as? String
+        handler = snapshotDict?[FDbUserItem.handler] as? String
         
         if let score:Int = snapshotDict?[
-            FDatabaseNodeUserItem.score] as? Int
+            FDbUserItem.score] as? Int
         {
             self.score = score
         }
@@ -42,7 +42,7 @@ class FDbUserItem:FDbProtocol
         }
         
         if let created:TimeInterval = snapshotDict?[
-            FDatabaseNodeUserItem.created] as? TimeInterval
+            FDbUserItem.created] as? TimeInterval
         {
             self.created = created
         }
@@ -52,7 +52,7 @@ class FDbUserItem:FDbProtocol
         }
         
         if let active:Bool = snapshotDict?[
-            FDatabaseNodeUserItem.active] as? Bool
+            FDbUserItem.active] as? Bool
         {
             self.active = active
         }
@@ -65,13 +65,13 @@ class FDbUserItem:FDbProtocol
     func json() -> Any
     {
         var json:[String:Any] = [
-            FDatabaseNodeUserItem.score:score,
-            FDatabaseNodeUserItem.created:created,
-            FDatabaseNodeUserItem.active:active]
+            FDbUserItem.score:score,
+            FDbUserItem.created:created,
+            FDbUserItem.active:active]
         
         if let handler:String = handler
         {
-            json[FDatabaseNodeUserItem.handler] = handler
+            json[FDbUserItem.handler] = handler
         }
         
         return json

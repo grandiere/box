@@ -25,7 +25,7 @@ class FDbAlgoHostileItem:FDbAlgoItem
         guard
             
             let snapshotDict:[String:Any] = snapshot as? [String:Any],
-            let level:Int = snapshotDict[FDatabaseNodeAlgoItemHostile.level] as? Int
+            let level:Int = snapshotDict[FDbAlgoHostileItem.level] as? Int
             
         else
         {
@@ -40,7 +40,7 @@ class FDbAlgoHostileItem:FDbAlgoItem
     override func json() -> Any
     {
         var json:[String:Any] = [
-            FDatabaseNodeAlgoItemHostile.level:level]
+            FDbAlgoHostileItem.level:level]
         
         if let superJson:[String:Any] = super.json() as? [String:Any]
         {

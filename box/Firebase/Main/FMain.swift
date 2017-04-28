@@ -5,13 +5,13 @@ class FMain
 {
     static let sharedInstance:FMain = FMain()
     let analytics:FAnalytics
-    let database:FDatabase
+    let db:FDb
     
     private init()
     {
         FIRApp.configure()
         analytics = FAnalytics()
-        database = FDatabase()
+        db = FDb()
     }
     
     //MARK: public
