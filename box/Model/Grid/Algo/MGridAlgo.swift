@@ -3,13 +3,15 @@ import CoreLocation
 
 class MGridAlgo
 {
-    private weak var controller:CGrid?
     static let kMaxDistance:CLLocationDistance = 1000
+    private let factory:MGridAlgoFactory
+    private weak var controller:CGrid?
     private(set) var items:[MGridAlgoItem]
     private(set) var nearItems:[MGridAlgoItem]?
     
     init()
     {
+        factory = MGridAlgoFactory()
         items = []
     }
     
@@ -22,7 +24,7 @@ class MGridAlgo
     {
         var near:[MGridAlgoItem] = []
         
-        for item:MGridAlgoItem in items
+        for item:MGridAlgoItem in fromItems
         {
             item.distanceTo(
                 location:location,
@@ -81,13 +83,40 @@ class MGridAlgo
                 }
             }
             
-            self?.firebaseBugsLoaded(items:items)
+            self?.firebaseBugsLoaded(
+                items:items,
+                userLocation:userLocation)
         }
     }
     
-    private func firebaseBugsLoaded(items:[MGridAlgoItemHostileBug])
+    private func firebaseBugsLoaded(
+        items:[MGridAlgoItem],
+        userLocation:CLLocation)
     {
+        let nearBugs:[MGridAlgoItem] = filterNear(
+            fromItems:items,
+            location:userLocation,
+            renderReady:false)
         
+        let forceCreation:Bool
+        
+        if nearBugs.count > 0
+        {
+            forceCreation = true
+        }
+        else
+        {
+            forceCreation = false
+        }
+        
+        if let bug:MGridAlgoItemHostileBug = factory.createBug(
+            location:userLocation,
+            force:forceCreation)
+        {
+            self.items.append(bug)
+        }
+        
+        self.items.append(contentsOf:items)
     }
     
     //MARK: public
