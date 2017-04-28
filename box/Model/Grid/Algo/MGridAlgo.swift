@@ -51,33 +51,43 @@ class MGridAlgo
         FMain.sharedInstance.db.listenOnce(
             path:FDb.algoBug,
             nodeType:FDbAlgoHostileBug.self)
-        { (node:FDbProtocol?) in
+        { [weak self] (node:FDbProtocol?) in
             
-            guard
+            var items:[MGridAlgoItemHostileBug] = []
             
-                let bugs:FDbAlgoHostileBug = node as? FDbAlgoHostileBug
-            
-            else
+            if let bugs:FDbAlgoHostileBug = node as? FDbAlgoHostileBug
             {
-                return
-            }
-            
-            let bugIds:[String] = Array(bugs.items.keys)
-            
-            for bugId:String in bugIds
-            {
-                guard
+                let bugIds:[String] = Array(bugs.items.keys)
                 
-                    let bug:FDbAlgoHostileBugItem = bugs.items[bugId]
-                
-                else
+                for bugId:String in bugIds
                 {
-                    continue
+                    guard
+                        
+                        let bug:FDbAlgoHostileBugItem = bugs.items[bugId]
+                        
+                    else
+                    {
+                        continue
+                    }
+                    
+                    let item:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
+                        firebaseId:bugId,
+                        latitude:bug.latitude,
+                        longitude:bug.longitude,
+                        level:bug.level,
+                        created:bug.created)
+                    
+                    items.append(item)
                 }
-                
-                
             }
+            
+            self?.firebaseBugsLoaded(items:items)
         }
+    }
+    
+    private func firebaseBugsLoaded(items:[MGridAlgoItemHostileBug])
+    {
+        
     }
     
     //MARK: public
