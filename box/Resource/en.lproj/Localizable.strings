@@ -41,3 +41,4 @@
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";
+"CGrid_noLocationGranted"="We need access to your location";

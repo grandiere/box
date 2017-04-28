@@ -7,8 +7,7 @@ class CGridMap:CController
     private(set) weak var viewMap:VGridMap!
     private(set) var modelMap:MGridMap?
     private var locationAsked:Bool
-    private let kDistanceFilter:CLLocationDistance = 10
-    private let kDistanceAccuracy:CLLocationDistance = 100
+    private let kDistanceFilter:CLLocationDistance = 100
     private var locationManager:CLLocationManager?
     
     init(modelAlgo:MGridAlgo)
@@ -56,7 +55,7 @@ class CGridMap:CController
         if status == CLAuthorizationStatus.notDetermined
         {
             let locationManager:CLLocationManager = CLLocationManager()
-            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
             locationManager.distanceFilter = kDistanceFilter
             self.locationManager = locationManager
             

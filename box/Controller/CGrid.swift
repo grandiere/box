@@ -8,6 +8,7 @@ class CGrid:CController, CLLocationManagerDelegate
     private weak var viewGrid:VGrid!
     private(set) var userLocation:CLLocation?
     private var locationManager:CLLocationManager?
+    private let kDistanceFilter:CLLocationDistance = 1000
     
     override init()
     {
@@ -22,6 +23,12 @@ class CGrid:CController, CLLocationManagerDelegate
         return nil
     }
     
+    deinit
+    {
+        locationManager?.stopUpdatingLocation()
+        locationManager = nil
+    }
+    
     override func loadView()
     {
         let viewGrid:VGrid = VGrid(controller:self)
@@ -32,7 +39,6 @@ class CGrid:CController, CLLocationManagerDelegate
     override func viewDidAppear(_ animated:Bool)
     {
         super.viewDidAppear(animated)
-        
         viewGrid.startLoading()
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
@@ -46,7 +52,63 @@ class CGrid:CController, CLLocationManagerDelegate
     
     private func loadAlgo()
     {
-        modelAlgo.loadAlgo(controller:self)
+        if let userLocation:CLLocation = userLocation
+        {
+            modelAlgo.loadAlgo(
+                userLocation:userLocation,
+                controller:self)
+        }
+        else
+        {
+            DispatchQueue.main.async
+            { [weak self] in
+                
+                self?.askLocation()
+            }
+        }
+    }
+    
+    private func askLocation()
+    {
+        let locationManager:CLLocationManager = CLLocationManager()
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.distanceFilter = kDistanceFilter
+        locationManager.delegate = self
+        self.locationManager = locationManager
+        
+        let status:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
+        
+        switch status
+        {
+        case CLAuthorizationStatus.notDetermined:
+            
+            locationManager.requestWhenInUseAuthorization()
+            
+            break
+            
+        case CLAuthorizationStatus.denied:
+            
+            locationDenied()
+            
+            break
+            
+        default:
+            
+            locationAuthorized()
+            
+            break
+        }
+    }
+    
+    private func locationDenied()
+    {
+        let error:String = NSLocalizedString("CGrid_noLocationGranted", comment:"")
+        VAlert.messageOrange(message:error)
+    }
+    
+    private func locationAuthorized()
+    {
+        locationManager?.startUpdatingLocation()
     }
     
     //MARK: public
@@ -79,5 +141,67 @@ class CGrid:CController, CLLocationManagerDelegate
         parentController.push(
             controller:controllerVisor,
             horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
+    //MARK: location delegate
+    
+    func locationManager(_ manager:CLLocationManager, didUpdateLocations locations:[CLLocation])
+    {
+        guard
+            
+            let userLocation:CLLocation = locations.last
+            
+        else
+        {
+            return
+        }
+        
+        let horizontalAccuracy:CLLocationAccuracy = userLocation.horizontalAccuracy
+        
+        if horizontalAccuracy <= kDistanceFilter
+        {
+            self.userLocation = userLocation
+            manager.stopUpdatingLocation()
+            locationManager = nil
+            
+            DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+            { [weak self] in
+                
+                guard
+                    
+                    let strongSelf:CGrid = self
+                
+                else
+                {
+                    return
+                }
+                
+                strongSelf.modelAlgo.loadAlgo(
+                    userLocation:userLocation,
+                    controller:strongSelf)
+            }
+        }
+    }
+    
+    func locationManager(_ manager:CLLocationManager, didChangeAuthorization status:CLAuthorizationStatus)
+    {
+        switch status
+        {
+        case CLAuthorizationStatus.notDetermined:
+            
+            break
+            
+        case CLAuthorizationStatus.denied:
+            
+            locationDenied()
+            
+            break
+            
+        default:
+            
+            locationAuthorized()
+            
+            break
+        }
     }
 }

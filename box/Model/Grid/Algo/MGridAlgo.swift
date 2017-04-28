@@ -15,7 +15,9 @@ class MGridAlgo
     
     //MARK: public
     
-    func loadAlgo(controller:CGrid)
+    func loadAlgo(
+        userLocation:CLLocation,
+        controller:CGrid)
     {
         self.controller = controller
         nearItems = nil
