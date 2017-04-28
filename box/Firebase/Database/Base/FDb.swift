@@ -1,7 +1,7 @@
 import Foundation
 import FirebaseDatabase
 
-class FDatabase
+class FDb
 {
     static let user:String = "user"
     static let algo:String = "algo"
@@ -14,16 +14,20 @@ class FDatabase
     
     //MARK: public
     
-    func createChild(path:String, json:Any) -> String
+    func createChild(
+        path:String,
+        json:Any) -> String
     {
         let childReference:FIRDatabaseReference = reference.child(path).childByAutoId()
         let childId:String = childReference.key
         childReference.setValue(json)
-
+        
         return childId
     }
     
-    func updateChild(path:String, json:Any)
+    func updateChild(
+        path:String,
+        json:Any)
     {
         let childReference:FIRDatabaseReference = reference.child(path)
         childReference.setValue(json)
@@ -68,7 +72,7 @@ class FDatabase
             completion(node)
         }
     }
-
+    
     func listen(
         eventType:FIRDataEventType,
         path:String,
@@ -106,13 +110,17 @@ class FDatabase
         return handler
     }
     
-    func stopListening(path:String, handler:UInt)
+    func stopListening(
+        path:String,
+        handler:UInt)
     {
         let pathReference:FIRDatabaseReference = reference.child(path)
         pathReference.removeObserver(withHandle:handler)
     }
     
-    func transaction(path:String, transactionBlock:@escaping((FIRMutableData) -> (FIRTransactionResult)))
+    func transaction(
+        path:String,
+        transactionBlock:@escaping((FIRMutableData) -> (FIRTransactionResult)))
     {
         let childReference:FIRDatabaseReference = reference.child(path)
         childReference.runTransactionBlock(transactionBlock)

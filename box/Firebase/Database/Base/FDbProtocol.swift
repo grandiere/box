@@ -1,6 +1,6 @@
 import Foundation
 
-protocol FDatabaseNodeProtocol
+protocol FDbProtocol
 {
     init?(snapshot:Any)
     func json() -> Any
