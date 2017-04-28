@@ -31,7 +31,7 @@
 "MStatsItemVirus_title"="Virus";
 "MStatsItemVirusReleased_title"="Virus released";
 "MGridAlgoItemHostileBug_titleMatch"="Debug";
-"MGridAlgoItemHostileBug_titleAnnotaiton"="Bug";
+"MGridAlgoItemHostileBug_titleAnnotation"="Bug";
 "MGridMapDetailItemLevel_stringTitle"="Level  ";
 "MGridMapDetailItemAge_stringTitle"="Created  ";
 "MGridMapDetailItemAge_justNow"="Just now";

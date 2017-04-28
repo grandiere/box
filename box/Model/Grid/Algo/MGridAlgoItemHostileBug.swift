@@ -50,7 +50,7 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
     
     override func titleAnnotation() -> String?
     {
-        let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleAnnotaiton", comment:"")
+        let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleAnnotation", comment:"")
         
         return title
     }
