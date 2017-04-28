@@ -99,7 +99,7 @@ class MGridAlgo
         
         if nearBugs.count > 0
         {
-            forceCreation = true
+            forceCreation = false
         }
         else
         {

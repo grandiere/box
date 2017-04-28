@@ -4,9 +4,9 @@ import CoreLocation
 class MGridAlgoFactory
 {
     private let coordinateSpan:UInt32
-    private let kCoordinateDivider:Double = 10000
     private let kBugDifficulty:UInt32 = 10
-    private let kCoordinateSingleSpan:Double = 10
+    private let kCoordinateDivider:Double = 10000
+    private let kCoordinateSingleSpan:Double = 50
     
     init()
     {
