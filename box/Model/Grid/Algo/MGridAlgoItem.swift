@@ -3,6 +3,7 @@ import CoreLocation
 
 class MGridAlgoItem
 {
+    let firebaseId:String
     let location:CLLocation
     let created:TimeInterval
     var multipliedHeading:Float
@@ -11,6 +12,7 @@ class MGridAlgoItem
     private let k180:Double = 180
     
     init(
+        firebaseId:String,
         latitude:Double,
         longitude:Double,
         created:TimeInterval)
@@ -18,6 +20,7 @@ class MGridAlgoItem
         location = CLLocation(latitude:latitude, longitude:longitude)
         heading = 0
         multipliedHeading = 0
+        self.firebaseId = firebaseId
         self.created = created
     }
     

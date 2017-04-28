@@ -9,6 +9,7 @@ class MGridAlgoItemHostile:MGridAlgoItem
     private let kDistanceDivisor:CLLocationDistance = 20
     
     init(
+        firebaseId:String,
         latitude:Double,
         longitude:Double,
         level:Int,
@@ -18,6 +19,7 @@ class MGridAlgoItemHostile:MGridAlgoItem
         credits = 0
         
         super.init(
+            firebaseId:firebaseId,
             latitude:latitude,
             longitude:longitude,
             created:created)

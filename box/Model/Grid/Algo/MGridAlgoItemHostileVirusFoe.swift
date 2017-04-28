@@ -6,6 +6,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     private let kCreditsMultiplier:CGFloat = 2
     
     init(
+        firebaseId:String,
         latitude:Double,
         longitude:Double,
         level:Int,
@@ -15,6 +16,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
         self.posterId = posterId
         
         super.init(
+            firebaseId:firebaseId,
             latitude:latitude,
             longitude:longitude,
             level:level,
