@@ -141,16 +141,16 @@ class MSession
     
     private func loadFirebaseUser(userId:String)
     {
-        let path:String = "\(FDatabase.user)/\(userId)"
+        let path:String = "\(FDb.user)/\(userId)"
         
-        FMain.sharedInstance.database.listenOnce(
+        FMain.sharedInstance.db.listenOnce(
             path:path,
-            nodeType:FDatabaseNodeUserItem.self)
-        { (node:FDatabaseNodeProtocol?) in
+            nodeType:FDbUserItem.self)
+        { (node:FDbProtocol?) in
             
             guard
             
-                let user:FDatabaseNodeUserItem = node as? FDatabaseNodeUserItem
+                let user:FDbUserItem = node as? FDbUserItem
             
             else
             {
@@ -163,18 +163,18 @@ class MSession
     
     private func createFirebaseUser()
     {
-        let user:FDatabaseNodeUserItem = FDatabaseNodeUserItem()
+        let user:FDbUserItem = FDbUserItem()
         let userJson:Any = user.json()
         
-        let userId:String = FMain.sharedInstance.database.createChild(
-            path:FDatabase.user,
+        let userId:String = FMain.sharedInstance.db.createChild(
+            path:FDb.user,
             json:userJson)
         settings?.firebaseId = userId
         
         firebaseLoaded(user:user)
     }
     
-    private func firebaseLoaded(user:FDatabaseNodeUserItem)
+    private func firebaseLoaded(user:FDbUserItem)
     {
         handler = user.handler
         score = user.score

@@ -41,14 +41,14 @@ class FDb
     
     func listenOnce(
         path:String,
-        nodeType:FDatabaseNodeProtocol.Type,
-        completion:@escaping((FDatabaseNodeProtocol?) -> ()))
+        nodeType:FDbProtocol.Type,
+        completion:@escaping((FDbProtocol?) -> ()))
     {
         let pathReference:FIRDatabaseReference = reference.child(path)
         pathReference.observeSingleEvent(of:FIRDataEventType.value)
         { (snapshot:FIRDataSnapshot) in
             
-            var node:FDatabaseNodeProtocol?
+            var node:FDbProtocol?
             
             guard
                 
@@ -76,14 +76,14 @@ class FDb
     func listen(
         eventType:FIRDataEventType,
         path:String,
-        nodeType:FDatabaseNodeProtocol.Type,
-        completion:@escaping((FDatabaseNodeProtocol?) -> ())) -> UInt
+        nodeType:FDbProtocol.Type,
+        completion:@escaping((FDbProtocol?) -> ())) -> UInt
     {
         let pathReference:FIRDatabaseReference = reference.child(path)
         let handler:UInt = pathReference.observe(eventType)
         { (snapshot:FIRDataSnapshot) in
             
-            var node:FDatabaseNodeProtocol?
+            var node:FDbProtocol?
             
             guard
                 
