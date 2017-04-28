@@ -1,6 +1,6 @@
 import Foundation
 
-class FDatabaseNodeUserItem:FDatabaseNodeProtocol
+class FDbUserItem:FDbProtocol
 {
     static let handler:String = "handler"
     static let score:String = "score"
