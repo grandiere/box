@@ -64,10 +64,16 @@ class MGridAlgoItem
     
     //MARK: public
     
-    func distanceUser(userLocation:CLLocation)
+    func distanceTo(
+        location:CLLocation,
+        renderReady:Bool)
     {
-        distance = location.distance(from:userLocation)
-        heading = headingFrom(reference:userLocation.coordinate)
+        distance = self.location.distance(from:location)
+    
+        if renderReady
+        {
+            heading = headingFrom(reference:location.coordinate)
+        }
     }
     
     func imageStandby() -> UIImage?

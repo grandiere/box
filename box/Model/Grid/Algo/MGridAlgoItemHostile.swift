@@ -23,10 +23,14 @@ class MGridAlgoItemHostile:MGridAlgoItem
             created:created)
     }
     
-    override func distanceUser(userLocation:CLLocation)
+    override func distanceTo(location:CLLocation, renderReady:Bool)
     {
-        super.distanceUser(userLocation:userLocation)
-        updateCredits()
+        super.distanceTo(location:location, renderReady:renderReady)
+        
+        if renderReady
+        {
+            updateCredits()
+        }
     }
     
     //MARK: private

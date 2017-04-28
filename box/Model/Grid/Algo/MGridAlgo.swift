@@ -15,6 +15,37 @@ class MGridAlgo
     
     //MARK: private
     
+    private func filterNear(
+        fromItems:[MGridAlgoItem],
+        location:CLLocation,
+        renderReady:Bool) -> [MGridAlgoItem]
+    {
+        var near:[MGridAlgoItem] = []
+        
+        for item:MGridAlgoItem in items
+        {
+            item.distanceTo(
+                location:location,
+                renderReady:renderReady)
+            
+            guard
+                
+                let itemDistance:CLLocationDistance = item.distance
+                
+            else
+            {
+                continue
+            }
+            
+            if itemDistance < MGridAlgo.kMaxDistance
+            {
+                near.append(item)
+            }
+        }
+        
+        return near
+    }
+    
     private func loadFirebaseBugs(userLocation:CLLocation)
     {
         FMain.sharedInstance.db.listenOnce(
@@ -22,6 +53,30 @@ class MGridAlgo
             nodeType:FDbAlgoHostileBug.self)
         { (node:FDbProtocol?) in
             
+            guard
+            
+                let bugs:FDbAlgoHostileBug = node as? FDbAlgoHostileBug
+            
+            else
+            {
+                return
+            }
+            
+            let bugIds:[String] = Array(bugs.items.keys)
+            
+            for bugId:String in bugIds
+            {
+                guard
+                
+                    let bug:FDbAlgoHostileBugItem = bugs.items[bugId]
+                
+                else
+                {
+                    continue
+                }
+                
+                
+            }
         }
     }
     
@@ -44,27 +99,9 @@ class MGridAlgo
     
     func filterNearItems(userLocation:CLLocation)
     {
-        var nearItems:[MGridAlgoItem] = []
-        
-        for item:MGridAlgoItem in items
-        {
-            item.distanceUser(userLocation:userLocation)
-            
-            guard
-            
-                let itemDistance:CLLocationDistance = item.distance
-            
-            else
-            {
-                continue
-            }
-            
-            if itemDistance < MGridAlgo.kMaxDistance
-            {
-                nearItems.append(item)
-            }
-        }
-        
-        self.nearItems = nearItems
+        nearItems = filterNear(
+            fromItems:items,
+            location:userLocation,
+            renderReady:true)
     }
 }
