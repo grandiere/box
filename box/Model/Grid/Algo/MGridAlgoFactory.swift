@@ -5,6 +5,7 @@ class MGridAlgoFactory
 {
     private let coordinateSpan:UInt32
     private let kBugDifficulty:UInt32 = 10
+    private let kAidDifficulty:UInt32 = 5
     private let kCoordinateDivider:Double = 10000
     private let kCoordinateSingleSpan:Double = 50
     
@@ -99,5 +100,41 @@ class MGridAlgoFactory
             firebaseBug:firebaseBug)
         
         return bug
+    }
+    
+    func createAid(location:CLLocation) -> MGridAlgoItemAid?
+    {
+        if !shouldCreate(difficulty:kAidDifficulty)
+        {
+            return nil
+        }
+        
+        let latitude:Double = latitudeFor(location:location)
+        let longitude:Double = longitudeFor(location:location)
+        let created:TimeInterval = Date().timeIntervalSince1970
+        
+        let firebaseAid:FDbAlgoAidItem = FDbAlgoAidItem(
+            latitude:latitude,
+            longitude:longitude,
+            created:created)
+        
+        guard
+            
+            let aidJson:Any = firebaseAid.json()
+            
+        else
+        {
+            return nil
+        }
+        
+        let aidId:String = FMain.sharedInstance.db.createChild(
+            path:FDb.algoAid,
+            json:aidJson)
+        
+        let aid:MGridAlgoItemAid = MGridAlgoItemAid(
+            firebaseId:aidId,
+            firebaseAid:firebaseAid)
+        
+        return aid
     }
 }

@@ -117,6 +117,59 @@ class MGridAlgo
         controller?.algosLoaded()
     }
     
+    private func loadFirebaseAids(userLocation:CLLocation)
+    {
+        FMain.sharedInstance.db.listenOnce(
+            path:FDb.algoAid,
+            nodeType:FDbAlgoAid.self)
+        { [weak self] (node:FDbProtocol?) in
+            
+            var items:[MGridAlgoItemAid] = []
+            
+            if let aids:FDbAlgoAid = node as? FDbAlgoAid
+            {
+                let aidIds:[String] = Array(aids.items.keys)
+                
+                for aidId:String in aidIds
+                {
+                    guard
+                        
+                        let aid:FDbAlgoAidItem = aids.items[aidId]
+                        
+                    else
+                    {
+                        continue
+                    }
+                    
+                    let item:MGridAlgoItemAid = MGridAlgoItemAid(
+                        firebaseId:aidId,
+                        firebaseAid:aid)
+                    
+                    items.append(item)
+                }
+            }
+            
+            self?.firebaseAidsLoaded(
+                items:items,
+                userLocation:userLocation)
+        }
+    }
+    
+    private func firebaseAidsLoaded(
+        items:[MGridAlgoItem],
+        userLocation:CLLocation)
+    {
+        if let bug:MGridAlgoItemAid = factory.createBug(
+            location:userLocation,
+            force:forceCreation)
+        {
+            self.items.append(bug)
+        }
+        
+        self.items.append(contentsOf:items)
+        controller?.algosLoaded()
+    }
+    
     //MARK: public
     
     func loadAlgo(
