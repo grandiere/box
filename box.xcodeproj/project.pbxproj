@@ -12,6 +12,7 @@
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
 		DA0C16D31EB4FE4B007532A6 /* FDbAlgoAidItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C16D21EB4FE4B007532A6 /* FDbAlgoAidItem.swift */; };
+		DA0C16D51EB4FF5A007532A6 /* FDbAlgoAid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C16D41EB4FF5A007532A6 /* FDbAlgoAid.swift */; };
 		DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A771E9D48ED002BE57D /* MetalConstants.swift */; };
 		DA134A881E9D5076002BE57D /* ExtensionMTKTextureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A841E9D5076002BE57D /* ExtensionMTKTextureLoader.swift */; };
 		DA134A891E9D5076002BE57D /* ExtensionMTLDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A851E9D5076002BE57D /* ExtensionMTLDevice.swift */; };
@@ -202,6 +203,7 @@
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
 		DA0C16D21EB4FE4B007532A6 /* FDbAlgoAidItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDbAlgoAidItem.swift; sourceTree = "<group>"; };
+		DA0C16D41EB4FF5A007532A6 /* FDbAlgoAid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDbAlgoAid.swift; sourceTree = "<group>"; };
 		DA134A771E9D48ED002BE57D /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DA134A841E9D5076002BE57D /* ExtensionMTKTextureLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTKTextureLoader.swift; sourceTree = "<group>"; };
 		DA134A851E9D5076002BE57D /* ExtensionMTLDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTLDevice.swift; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 				DA59D7761EB3BCAD00EB2973 /* FDbAlgoHostileItem.swift */,
 				DA59D77A1EB3D15500EB2973 /* FDbAlgoHostileBug.swift */,
 				DA59D7781EB3BCBC00EB2973 /* FDbAlgoHostileBugItem.swift */,
+				DA0C16D41EB4FF5A007532A6 /* FDbAlgoAid.swift */,
 				DA0C16D21EB4FE4B007532A6 /* FDbAlgoAidItem.swift */,
 			);
 			path = Model;
@@ -1150,6 +1153,7 @@
 				DAAA0EB41EA80D6000756A17 /* MGridVisorDetailItem.swift in Sources */,
 				DA134AA81E9D549E002BE57D /* MetalSpatialDirectionNegative.swift in Sources */,
 				DA8852731EAEAEA5008CB62C /* VGridMapRenderPin.swift in Sources */,
+				DA0C16D51EB4FF5A007532A6 /* FDbAlgoAid.swift in Sources */,
 				DAAEA2D71EAC4CE300986612 /* MStatsItemVirusReleased.swift in Sources */,
 				DAFDEF921EA508D10016746F /* MGrid.swift in Sources */,
 				DA134AA51E9D549E002BE57D /* MetalSpatialDirection.swift in Sources */,
