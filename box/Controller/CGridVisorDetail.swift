@@ -52,4 +52,9 @@ class CGridVisorDetail:CController
         let controllerMatch:CGridVisorMatch = CGridVisorMatch(model:model)
         parentController.animateOver(controller:controllerMatch)
     }
+    
+    func enterTake()
+    {
+        
+    }
 }

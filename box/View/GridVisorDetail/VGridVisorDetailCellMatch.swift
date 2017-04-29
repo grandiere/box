@@ -28,7 +28,7 @@ class VGridVisorDetailCellMatch:VGridVisorDetailCell
             NSForegroundColorAttributeName:UIColor.black]
         
         stringEnergyTitle = NSAttributedString(
-            string:NSLocalizedString("VGridVisorDetailCellDebug_energyTitle", comment:""),
+            string:NSLocalizedString("VGridVisorDetailCellMatch_energyTitle", comment:""),
             attributes:attributesEnergyTitle)
         
         super.init(frame:frame)
@@ -156,6 +156,6 @@ class VGridVisorDetailCellMatch:VGridVisorDetailCell
     
     func actionMatch(sender button:UIButton)
     {
-        controller?.enterMach()
+        controller?.enterTake()
     }
 }
