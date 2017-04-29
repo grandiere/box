@@ -25,7 +25,7 @@ class MGridAlgoItemAid:MGridAlgoItem
     
     override func imageDetail() -> UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureBugDetail")
+        return #imageLiteral(resourceName: "assetTextureAidDetail")
     }
     
     override func detail() -> MGridVisorDetail
@@ -37,12 +37,12 @@ class MGridAlgoItemAid:MGridAlgoItem
     
     override func annotationImageOn() -> UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureBugAnnotationOn")
+        return #imageLiteral(resourceName: "assetTextureAidAnnotationOn")
     }
     
     override func annotationImageOff() -> UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureBugAnnotationOff")
+        return #imageLiteral(resourceName: "assetTextureAidAnnotationOff")
     }
     
     override func titleMatch() -> String?
