@@ -1,12 +1,12 @@
 import UIKit
 
-class VGridVisorDetailCellDebug:VGridVisorDetailCell
+class VGridVisorDetailCellMatch:VGridVisorDetailCell
 {
     private weak var labelEnergy:UILabel!
-    private weak var buttonDebug:UIButton!
-    private weak var modelDebug:MGridVisorDetailItemDebug?
-    private let stringDebugTitle:NSAttributedString
+    private weak var buttonMatch:UIButton!
+    private weak var modelMatch:MGridVisorDetailItemMatch?
     private let stringEnergyTitle:NSAttributedString
+    private let attributesMatchTitle:[String:AnyObject]
     private let attributesEnergy:[String:AnyObject]
     private let kButtonTop:CGFloat = 10
     private let kButtonHeight:CGFloat = 90
@@ -17,19 +17,16 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
     
     override init(frame:CGRect)
     {
-        let attributesDebugTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bold(size:15),
-            NSForegroundColorAttributeName:UIColor.black]
         let attributesEnergyTitle:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:13),
             NSForegroundColorAttributeName:UIColor(white:0, alpha:0.8)]
+        attributesMatchTitle = [
+            NSFontAttributeName:UIFont.bold(size:15),
+            NSForegroundColorAttributeName:UIColor.black]
         attributesEnergy = [
             NSFontAttributeName:UIFont.numeric(size:30),
             NSForegroundColorAttributeName:UIColor.black]
         
-        stringDebugTitle = NSAttributedString(
-            string:NSLocalizedString("VGridVisorDetailCellDebug_labelTitle", comment:""),
-            attributes:attributesDebugTitle)
         stringEnergyTitle = NSAttributedString(
             string:NSLocalizedString("VGridVisorDetailCellDebug_energyTitle", comment:""),
             attributes:attributesEnergyTitle)
@@ -45,24 +42,24 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         labelEnergy.numberOfLines = 0
         self.labelEnergy = labelEnergy
         
-        let buttonDebug:UIButton = UIButton()
-        buttonDebug.translatesAutoresizingMaskIntoConstraints = false
-        buttonDebug.setImage(
+        let buttonMatch:UIButton = UIButton()
+        buttonMatch.translatesAutoresizingMaskIntoConstraints = false
+        buttonMatch.setImage(
             #imageLiteral(resourceName: "assetGenericMatch").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.normal)
-        buttonDebug.setImage(
+        buttonMatch.setImage(
             #imageLiteral(resourceName: "assetGenericMatchOver").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
             for:UIControlState.highlighted)
-        buttonDebug.imageView!.clipsToBounds = true
-        buttonDebug.imageView!.contentMode = UIViewContentMode.center
-        buttonDebug.addTarget(
+        buttonMatch.imageView!.clipsToBounds = true
+        buttonMatch.imageView!.contentMode = UIViewContentMode.center
+        buttonMatch.addTarget(
             self,
-            action:#selector(actionEnter(sender:)),
+            action:#selector(actionMatch(sender:)),
             for:UIControlEvents.touchUpInside)
-        self.buttonDebug = buttonDebug
+        self.buttonMatch = buttonMatch
         
         addSubview(labelEnergy)
-        addSubview(buttonDebug)
+        addSubview(buttonMatch)
         
         NSLayoutConstraint.topToTop(
             view:labelEnergy,
@@ -73,23 +70,23 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
             constant:kButtonHeight)
         NSLayoutConstraint.rightToLeft(
             view:labelEnergy,
-            toView:buttonDebug)
+            toView:buttonMatch)
         NSLayoutConstraint.width(
             view:labelEnergy,
             constant:kLabelWidth)
         
         NSLayoutConstraint.topToTop(
-            view:buttonDebug,
+            view:buttonMatch,
             toView:self,
             constant:kButtonTop)
         NSLayoutConstraint.height(
-            view:buttonDebug,
+            view:buttonMatch,
             constant:kButtonHeight)
         NSLayoutConstraint.rightToRight(
-            view:buttonDebug,
+            view:buttonMatch,
             toView:self)
         NSLayoutConstraint.width(
-            view:buttonDebug,
+            view:buttonMatch,
             constant:kButtonWidth)
     }
     
@@ -104,21 +101,31 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         
         guard
             
-            let modelDebug:MGridVisorDetailItemDebug = model as? MGridVisorDetailItemDebug
+            let modelMatch:MGridVisorDetailItemMatch = model as? MGridVisorDetailItemMatch
             
         else
         {
             return
         }
         
-        self.modelDebug = modelDebug
-        let credits:Int = modelDebug.credits
+        self.modelMatch = modelMatch
+        let credits:Int = modelMatch.credits
         let rawString:String = "\(credits)"
+        
         let stringCredits:NSAttributedString = NSAttributedString(
             string:rawString,
             attributes:attributesEnergy)
+        
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
-        mutableString.append(stringDebugTitle)
+        
+        if let titleString:String = modelMatch.title
+        {
+            let stringMatchTitle:NSAttributedString = NSAttributedString(
+                string:titleString,
+                attributes:attributesMatchTitle)
+            mutableString.append(stringMatchTitle)
+        }
+        
         mutableString.append(stringEnergyTitle)
         mutableString.append(stringCredits)
         
@@ -135,19 +142,19 @@ class VGridVisorDetailCellDebug:VGridVisorDetailCell
         
         if credits > energy
         {
-            buttonDebug.isUserInteractionEnabled = false
-            buttonDebug.alpha = kAlphaInactive
+            buttonMatch.isUserInteractionEnabled = false
+            buttonMatch.alpha = kAlphaInactive
         }
         else
         {
-            buttonDebug.isUserInteractionEnabled = true
-            buttonDebug.alpha = kAlphaActive
+            buttonMatch.isUserInteractionEnabled = true
+            buttonMatch.alpha = kAlphaActive
         }
     }
     
     //MARK: actions
     
-    func actionEnter(sender button:UIButton)
+    func actionMatch(sender button:UIButton)
     {
         controller?.enterMach()
     }

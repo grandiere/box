@@ -1,10 +1,9 @@
 "VGridVisor_errorMetal"="Metal not available";
 "VGridVisorDetailCellDistance_labelTitle"="Distance";
 "VGridVisorDetailCellLevel_labelTitle"="Level";
-"VGridVisorDetailCellDebug_labelTitle"="Debug";
 "VGridVisorBarEnergy_title"="Energy  ";
 "VGridVisorBarEnergy_percent"="%";
-"VGridVisorDetailCellDebug_energyTitle"="\nEnergy required   ";
+"VGridVisorDetailCellMatch_energyTitle"="\nEnergy required   ";
 "VStatsBar_scoreTitle"="Score\n";
 
 "MLandingItemTheGrid_title"="Enter The Grid";

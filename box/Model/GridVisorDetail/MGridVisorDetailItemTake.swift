@@ -6,7 +6,7 @@ class MGridVisorDetailItemTake:MGridVisorDetailItem
     
     init(model:MGridAlgoItemAid)
     {
-        let reusableIdentifier:String = VGridVisorDetailCellDebug.reusableIdentifier
+        let reusableIdentifier:String = VGridVisorDetailCellMatch.reusableIdentifier
         
         super.init(
             reusableIdentifier:reusableIdentifier,
