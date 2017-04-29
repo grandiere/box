@@ -28,10 +28,13 @@ class MGridVisorDetail
     
     class func detailAid(model:MGridAlgoItemAid) -> MGridVisorDetail
     {
+        let itemHeader:MGridVisorDetailItemHeaderAid = MGridVisorDetailItemHeaderAid(
+            model:model)
         let itemDistance:MGridVisorDetailItemDistance = MGridVisorDetailItemDistance(
             model:model)
         
         let items:[MGridVisorDetailItem] = [
+            itemHeader,
             itemDistance]
         
         let detail:MGridVisorDetail = MGridVisorDetail(items:items)

@@ -27,6 +27,7 @@
 "MGridItemReleaseVirus_title"="Release virus";
 "MGridItemReleaseVirus_subtitle"="\nDeploy a virus here";
 "MGridVisorDetailItemHeaderBug_title"="Bug";
+"MGridVisorDetailItemHeaderAid_title"="Power Up";
 "MStatsItemBugs_title"="Bugs";
 "MStatsItemVirus_title"="Virus";
 "MStatsItemVirusReleased_title"="Virus released";
