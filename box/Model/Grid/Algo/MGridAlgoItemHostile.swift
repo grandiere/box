@@ -72,9 +72,4 @@ class MGridAlgoItemHostile:MGridAlgoItem
     {
         return 0
     }
-    
-    func titleMatch() -> String?
-    {
-        return nil
-    }
 }

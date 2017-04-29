@@ -38,6 +38,8 @@
 "MGridMapDetailItemAge_hoursAgo"="%@ hours ago";
 "MGridMapDetailItemDistance_stringTitle"="Distance  ";
 "MGridMapDetailItemDistance_stringDistance"="%@ meters";
+"MGridAlgoItemAid_titleMatch"="Take Power Up";
+"MGridAlgoItemAid_titleAnnotation"="Power Up";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";
