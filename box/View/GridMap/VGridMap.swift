@@ -8,7 +8,7 @@ class VGridMap:VView
     private weak var layoutDetailBottom:NSLayoutConstraint!
     private let kBarHeight:CGFloat = 50
     private let kDetailMarginHorizontal:CGFloat = 6
-    private let kDetailHeight:CGFloat = 230
+    private let kDetailHeight:CGFloat = 240
     private let kDetailMinBottom:CGFloat = 25
     private let kAnimationDuration:TimeInterval = 0.3
     

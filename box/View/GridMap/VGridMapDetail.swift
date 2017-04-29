@@ -9,7 +9,7 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private let kCornerRadius:CGFloat = 6
     private let kBorderWidth:CGFloat = 1
     private let kHeaderHeight:CGFloat = 90
-    private let kCellHeight:CGFloat = 22
+    private let kCellHeight:CGFloat = 24
     
     init(controller:CGridMap)
     {

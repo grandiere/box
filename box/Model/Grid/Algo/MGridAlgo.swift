@@ -114,7 +114,7 @@ class MGridAlgo
         }
         
         self.items.append(contentsOf:items)
-        controller?.algosLoaded()
+        loadFirebaseAids(userLocation:userLocation)
     }
     
     private func loadFirebaseAids(userLocation:CLLocation)
@@ -159,11 +159,9 @@ class MGridAlgo
         items:[MGridAlgoItem],
         userLocation:CLLocation)
     {
-        if let bug:MGridAlgoItemAid = factory.createBug(
-            location:userLocation,
-            force:forceCreation)
+        if let aid:MGridAlgoItemAid = factory.createAid(location:userLocation)
         {
-            self.items.append(bug)
+            self.items.append(aid)
         }
         
         self.items.append(contentsOf:items)
