@@ -15,12 +15,12 @@ class MGridAlgoItemAid:MGridAlgoItem
     
     override func imageStandby() -> UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureBugStandBy")
+        return #imageLiteral(resourceName: "assetTextureAidStandBy")
     }
     
     override func imageTargeted() -> UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureBugTargeted")
+        return #imageLiteral(resourceName: "assetTextureAidTargeted")
     }
     
     override func imageDetail() -> UIImage?
