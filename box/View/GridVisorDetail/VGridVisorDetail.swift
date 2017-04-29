@@ -27,6 +27,7 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.registerCell(cell:VGridVisorDetailCellDistance.self)
         collectionView.registerCell(cell:VGridVisorDetailCellLevel.self)
         collectionView.registerCell(cell:VGridVisorDetailCellDebug.self)
+        collectionView.registerCell(cell:VGridVisorDetailCellTake.self)
         self.collectionView = collectionView
         
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow

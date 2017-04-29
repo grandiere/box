@@ -32,10 +32,13 @@ class MGridVisorDetail
             model:model)
         let itemDistance:MGridVisorDetailItemDistance = MGridVisorDetailItemDistance(
             model:model)
+        let itemTake:MGridVisorDetailItemTake = MGridVisorDetailItemTake(
+            model:model)
         
         let items:[MGridVisorDetailItem] = [
             itemHeader,
-            itemDistance]
+            itemDistance,
+            itemTake]
         
         let detail:MGridVisorDetail = MGridVisorDetail(items:items)
         
