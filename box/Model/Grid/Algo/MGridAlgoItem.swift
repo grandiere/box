@@ -111,11 +111,6 @@ class MGridAlgoItem
         return model
     }
     
-    func titleMatch() -> String?
-    {
-        return nil
-    }
-    
     func titleAnnotation() -> String?
     {
         return nil

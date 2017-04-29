@@ -68,6 +68,11 @@ class MGridAlgoItemHostile:MGridAlgoItem
     
     //MARK: public
     
+    func titleMatch() -> String?
+    {
+        return nil
+    }
+    
     func creditsMultiplier() -> CGFloat
     {
         return 0

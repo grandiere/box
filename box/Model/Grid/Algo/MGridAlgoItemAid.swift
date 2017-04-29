@@ -45,13 +45,6 @@ class MGridAlgoItemAid:MGridAlgoItem
         return #imageLiteral(resourceName: "assetTextureAidAnnotationOff")
     }
     
-    override func titleMatch() -> String?
-    {
-        let title:String = NSLocalizedString("MGridAlgoItemAid_titleMatch", comment:"")
-        
-        return title
-    }
-    
     override func titleAnnotation() -> String?
     {
         let title:String = NSLocalizedString("MGridAlgoItemAid_titleAnnotation", comment:"")
