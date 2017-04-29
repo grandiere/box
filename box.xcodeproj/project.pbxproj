@@ -11,6 +11,7 @@
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
+		DA0C16D31EB4FE4B007532A6 /* FDbAlgoAidItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C16D21EB4FE4B007532A6 /* FDbAlgoAidItem.swift */; };
 		DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A771E9D48ED002BE57D /* MetalConstants.swift */; };
 		DA134A881E9D5076002BE57D /* ExtensionMTKTextureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A841E9D5076002BE57D /* ExtensionMTKTextureLoader.swift */; };
 		DA134A891E9D5076002BE57D /* ExtensionMTLDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A851E9D5076002BE57D /* ExtensionMTLDevice.swift */; };
@@ -200,6 +201,7 @@
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
+		DA0C16D21EB4FE4B007532A6 /* FDbAlgoAidItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDbAlgoAidItem.swift; sourceTree = "<group>"; };
 		DA134A771E9D48ED002BE57D /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DA134A841E9D5076002BE57D /* ExtensionMTKTextureLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTKTextureLoader.swift; sourceTree = "<group>"; };
 		DA134A851E9D5076002BE57D /* ExtensionMTLDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTLDevice.swift; sourceTree = "<group>"; };
@@ -681,6 +683,7 @@
 				DA59D7761EB3BCAD00EB2973 /* FDbAlgoHostileItem.swift */,
 				DA59D77A1EB3D15500EB2973 /* FDbAlgoHostileBug.swift */,
 				DA59D7781EB3BCBC00EB2973 /* FDbAlgoHostileBugItem.swift */,
+				DA0C16D21EB4FE4B007532A6 /* FDbAlgoAidItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1153,6 +1156,7 @@
 				DAAA0EC41EA8397200756A17 /* VGridVisorDetailCellLevel.swift in Sources */,
 				DAFDEF961EA509060016746F /* MGridItemMap.swift in Sources */,
 				DA134A9F1E9D549E002BE57D /* MetalSpatialDirectionPositive.swift in Sources */,
+				DA0C16D31EB4FE4B007532A6 /* FDbAlgoAidItem.swift in Sources */,
 				DAF15D661E9D32BB0000E6B9 /* VAlert.swift in Sources */,
 				DA1D49B01EAA497700C2392C /* MLandingItem.swift in Sources */,
 				DA7084471EA6680C00B222FE /* MGridVisorOrientationPortrait.swift in Sources */,
