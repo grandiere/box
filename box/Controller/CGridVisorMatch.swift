@@ -2,56 +2,15 @@ import UIKit
 
 class CGridVisorMatch:CController
 {
+    private var modelMatch:MGridVisorMatch?
     private(set) weak var model:MGridAlgoItemHostile!
     private weak var viewMatch:VGridVisorMatch!
     private weak var timer:Timer?
-    private var firstTime:Bool
-    private var timesTried:Int
-    private let tryTimes:Int
-    private let difficulty:UInt32
-    private let minDice:UInt32
-    private let kDifficultyDivisor:CGFloat = 3
-    private let kAddDifficulty:CGFloat = 1
     private let kTimeInterval:TimeInterval = 3
-    private let kMinTryTimes:Int = 1
     
     init(model:MGridAlgoItemHostile)
     {
         self.model = model
-        firstTime = true
-        timesTried = 0
-        
-        var tryTimes:Int = model.level
-        
-        if let userLevel:Int16 = MSession.sharedInstance.settings?.user?.level
-        {
-            tryTimes -= Int(userLevel)
-        }
-        
-        if tryTimes < kMinTryTimes
-        {
-            tryTimes = kMinTryTimes
-        }
-        
-        self.tryTimes = tryTimes
-        
-        let rawDifficulty:CGFloat = ceil(CGFloat(model.credits) / kDifficultyDivisor)
-        let totalDifficulty:CGFloat = rawDifficulty + kAddDifficulty
-        difficulty = UInt32(totalDifficulty)
-     
-        var minDice:Int = 0
-        
-        if let user:DUser = MSession.sharedInstance.settings?.user
-        {
-            minDice += Int(user.level)
-            minDice += Int(user.skill)
-            minDice += Int(user.memory)
-            minDice += Int(user.network)
-            minDice += Int(user.processor)
-        }
-        
-        self.minDice = UInt32(minDice)
-        
         super.init()
     }
     
@@ -75,10 +34,8 @@ class CGridVisorMatch:CController
     {
         super.viewDidAppear(animated)
         
-        if firstTime
+        if modelMatch == nil
         {
-            firstTime = false
-            
             let controllersCount:Int = parentController.childViewControllers.count
             let prevController:Int = controllersCount - 2
             
@@ -89,6 +46,8 @@ class CGridVisorMatch:CController
                     parentController.popSilent(removeIndex:prevController)
                 }
             }
+            
+            modelMatch = MGridVisorMatch(model:model, controller:self)
             
             timer = Timer.scheduledTimer(
                 timeInterval:kTimeInterval,
@@ -115,49 +74,32 @@ class CGridVisorMatch:CController
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
-            guard
-                
-                let timesTried:Int = self?.timesTried,
-                let tryTimes:Int = self?.tryTimes
-                
-            else
-            {
-                return
-            }
-            
-            if timesTried < tryTimes
-            {
-                self?.timesTried += 1
-                self?.rollDices()
-            }
-            else
-            {
-                self?.success()
-            }
+            self?.modelMatch?.timerTick()
         }
     }
     
     //MARK: private
     
-    private func rollDices()
+    private func finishMatch()
     {
-        let diceResult:UInt32 = arc4random_uniform(difficulty)
-        
-        if diceResult > minDice
-        {
-            failed()
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.parentController.dismissAnimateOver(completion:nil)
         }
     }
     
-    private func failed()
+    //MARK: public
+    
+    func failed()
     {
         timer?.invalidate()
         finishMatch()
         
         guard
-        
+            
             let stringMatch:String = model.titleMatch()
-        
+            
         else
         {
             return
@@ -170,7 +112,7 @@ class CGridVisorMatch:CController
         VAlert.messageOrange(message:stringFail)
     }
     
-    private func success()
+    func success()
     {
         timer?.invalidate()
         finishMatch()
@@ -189,14 +131,5 @@ class CGridVisorMatch:CController
             stringMatch)
         
         VAlert.messageBlue(message:stringSuccess)
-    }
-    
-    private func finishMatch()
-    {
-        DispatchQueue.main.async
-        { [weak self] in
-            
-            self?.parentController.dismissAnimateOver(completion:nil)
-        }
     }
 }
