@@ -12,6 +12,8 @@ class MGridVisorDetail
             model:model)
         let itemLevel:MGridVisorDetailItemLevel = MGridVisorDetailItemLevel(
             model:model)
+        let itemCreated:MGridVisorDetailItemCreated = MGridVisorDetailItemCreated(
+            model:model)
         let itemMatch:MGridVisorDetailItemMatch = MGridVisorDetailItemMatch(
             model:model)
         
@@ -19,6 +21,7 @@ class MGridVisorDetail
             itemHeader,
             itemDistance,
             itemLevel,
+            itemCreated,
             itemMatch]
         
         let detail:MGridVisorDetail = MGridVisorDetail(items:items)
@@ -32,12 +35,15 @@ class MGridVisorDetail
             model:model)
         let itemDistance:MGridVisorDetailItemDistance = MGridVisorDetailItemDistance(
             model:model)
+        let itemCreated:MGridVisorDetailItemCreated = MGridVisorDetailItemCreated(
+            model:model)
         let itemTake:MGridVisorDetailItemTake = MGridVisorDetailItemTake(
             model:model)
         
         let items:[MGridVisorDetailItem] = [
             itemHeader,
             itemDistance,
+            itemCreated,
             itemTake]
         
         let detail:MGridVisorDetail = MGridVisorDetail(items:items)

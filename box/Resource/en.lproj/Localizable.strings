@@ -35,8 +35,8 @@
 "MGridAlgoItemHostileBug_titleAnnotation"="Bug";
 "MGridMapDetailItemLevel_stringTitle"="Level  ";
 "MGridMapDetailItemAge_stringTitle"="Created  ";
-"MGridMapDetailItemAge_justNow"="Just now";
-"MGridMapDetailItemAge_hoursAgo"="%@ hours ago";
+"MGridAlgoItem_justNow"="Just now";
+"MGridAlgoItem_hoursAgo"="%@ hours ago";
 "MGridMapDetailItemDistance_stringTitle"="Distance  ";
 "MGridMapDetailItemDistance_stringDistance"="%@ meters";
 "MGridAlgoItemAid_titleAnnotation"="Power Up";

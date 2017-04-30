@@ -10,6 +10,7 @@ class MGridAlgoItem
     private(set) var distance:CLLocationDistance?
     private(set) var heading:Float
     private let k180:Double = 180
+    private let kHour:TimeInterval = 3600
     
     init(
         firebaseId:String,
@@ -114,5 +115,31 @@ class MGridAlgoItem
     func titleAnnotation() -> String?
     {
         return nil
+    }
+    
+    //MARK: final
+    
+    final func age() -> String
+    {
+        let stringTime:String
+        let timestamp:TimeInterval = Date().timeIntervalSince1970
+        let deltaTime:TimeInterval = timestamp - created
+        let twoHours:TimeInterval = kHour + kHour
+        
+        if deltaTime < twoHours
+        {
+            stringTime = NSLocalizedString("MGridAlgoItem_justNow", comment:"")
+        }
+        else
+        {
+            let hoursSince:Int = Int(deltaTime / kHour)
+            let hoursSinceNumber:NSNumber = hoursSince as NSNumber
+            
+            stringTime = String(
+                format:NSLocalizedString("MGridAlgoItem_hoursAgo", comment:""),
+                hoursSinceNumber)
+        }
+        
+        return stringTime
     }
 }

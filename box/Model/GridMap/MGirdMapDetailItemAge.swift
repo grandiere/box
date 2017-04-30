@@ -2,8 +2,6 @@ import UIKit
 
 class MGridMapDetailItemAge:MGridMapDetailItem
 {
-    private let kHour:TimeInterval = 3600
-    
     init?(annotation:MGridMapAnnotation)
     {
         guard
