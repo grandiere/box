@@ -6,7 +6,7 @@ class VGridMapDetailHeader:UICollectionReusableView
     private weak var model:MGridMapDetail?
     private weak var imageView:UIImageView!
     private let kImageTop:CGFloat = 10
-    private let kButtonSize:CGFloat = 60
+    private let kButtonSize:CGFloat = 45
     
     override init(frame:CGRect)
     {
