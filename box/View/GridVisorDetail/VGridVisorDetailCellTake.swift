@@ -77,6 +77,6 @@ class VGridVisorDetailCellTake:VGridVisorDetailCell
     
     func actionTake(sender button:UIButton)
     {
-        controller?.enterMach()
+        controller?.enterTake()
     }
 }

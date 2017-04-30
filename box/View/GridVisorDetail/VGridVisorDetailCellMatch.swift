@@ -156,6 +156,6 @@ class VGridVisorDetailCellMatch:VGridVisorDetailCell
     
     func actionMatch(sender button:UIButton)
     {
-        controller?.enterTake()
+        controller?.enterMach()
     }
 }

@@ -4,7 +4,7 @@ import CoreData
 extension DEnergy
 {
     static let kMaxEnergy:Int16 = 100
-    private static let kEnergyUpdateRate:Int = 60
+    private static let kEnergyUpdateRate:Int = 30
     
     //MARK: private
     
