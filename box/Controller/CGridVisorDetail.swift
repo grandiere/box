@@ -55,6 +55,16 @@ class CGridVisorDetail:CController
     
     func enterTake()
     {
+        guard
+            
+            let model:MGridAlgoItemAid = self.model as? MGridAlgoItemAid
+            
+        else
+        {
+            return
+        }
         
+        let controllerTake:CGridVisorTake = CGridVisorTake(model:model)
+        parentController.animateOver(controller:controllerTake)
     }
 }
