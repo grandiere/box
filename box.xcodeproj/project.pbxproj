@@ -44,6 +44,7 @@
 		DA1403B81EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403B71EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift */; };
 		DA1403BA1EB6607A006C9364 /* MGridVisorDetailItemCreated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403B91EB6607A006C9364 /* MGridVisorDetailItemCreated.swift */; };
 		DA1403BC1EB66478006C9364 /* CGridVisorTake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403BB1EB66478006C9364 /* CGridVisorTake.swift */; };
+		DA1403C01EB6652C006C9364 /* MGridVisorMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403BF1EB6652C006C9364 /* MGridVisorMatch.swift */; };
 		DA1D49A51EAA42DB00C2392C /* DUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49A41EAA42DB00C2392C /* DUserExtension.swift */; };
 		DA1D49A71EAA443C00C2392C /* DStatsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49A61EAA443C00C2392C /* DStatsExtension.swift */; };
 		DA1D49A91EAA472D00C2392C /* VLandingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49A81EAA472D00C2392C /* VLandingCell.swift */; };
@@ -242,6 +243,7 @@
 		DA1403B71EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellCreated.swift; sourceTree = "<group>"; };
 		DA1403B91EB6607A006C9364 /* MGridVisorDetailItemCreated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemCreated.swift; sourceTree = "<group>"; };
 		DA1403BB1EB66478006C9364 /* CGridVisorTake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVisorTake.swift; sourceTree = "<group>"; };
+		DA1403BF1EB6652C006C9364 /* MGridVisorMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorMatch.swift; sourceTree = "<group>"; };
 		DA1D49A41EAA42DB00C2392C /* DUserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUserExtension.swift; sourceTree = "<group>"; };
 		DA1D49A61EAA443C00C2392C /* DStatsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DStatsExtension.swift; sourceTree = "<group>"; };
 		DA1D49A81EAA472D00C2392C /* VLandingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLandingCell.swift; sourceTree = "<group>"; };
@@ -456,6 +458,21 @@
 				DA134A771E9D48ED002BE57D /* MetalConstants.swift */,
 			);
 			path = Metal;
+			sourceTree = "<group>";
+		};
+		DA1403BD1EB6651A006C9364 /* GridVisorMatch */ = {
+			isa = PBXGroup;
+			children = (
+				DA1403BF1EB6652C006C9364 /* MGridVisorMatch.swift */,
+			);
+			path = GridVisorMatch;
+			sourceTree = "<group>";
+		};
+		DA1403BE1EB6651A006C9364 /* GridVisorTake */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GridVisorTake;
 			sourceTree = "<group>";
 		};
 		DA1D49AC1EAA496600C2392C /* Landing */ = {
@@ -892,6 +909,8 @@
 		DAF15D431E9D32BB0000E6B9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA1403BD1EB6651A006C9364 /* GridVisorMatch */,
+				DA1403BE1EB6651A006C9364 /* GridVisorTake */,
 				DA4D97671EB0F68C00AE0C0C /* Settings */,
 				DA88526D1EAEA912008CB62C /* GridMap */,
 				DA29FEF71EAAB60100CD8FBC /* Stats */,
@@ -1217,6 +1236,7 @@
 				DA0C16D71EB5122D007532A6 /* MGridVisorDetailItemHeaderAid.swift in Sources */,
 				DA29FEF21EAAAA6400CD8FBC /* VStats.swift in Sources */,
 				DA88525E1EAE3B7D008CB62C /* CGridVisorMatch.swift in Sources */,
+				DA1403C01EB6652C006C9364 /* MGridVisorMatch.swift in Sources */,
 				DAFA6A471EA91975001BA4B4 /* DEnergyExtension.swift in Sources */,
 				DA4D97771EB14FAF00AE0C0C /* MLandingBarHelp.swift in Sources */,
 				DA134AA41E9D549E002BE57D /* MetalSpatialBase.swift in Sources */,
