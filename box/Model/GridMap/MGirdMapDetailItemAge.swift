@@ -6,30 +6,11 @@ class MGridMapDetailItemAge:MGridMapDetailItem
     {
         guard
             
-            let created:TimeInterval = annotation.algo?.created
+            let rawStringTime:String = annotation.algo?.age()
         
         else
         {
             return nil
-        }
-        
-        let timestamp:TimeInterval = Date().timeIntervalSince1970
-        let deltaTime:TimeInterval = timestamp - created
-        let rawStringTime:String
-        let twoHours:TimeInterval = kHour + kHour
-        
-        if deltaTime < twoHours
-        {
-            rawStringTime = NSLocalizedString("MGridMapDetailItemAge_justNow", comment:"")
-        }
-        else
-        {
-            let hoursSince:Int = Int(deltaTime / kHour)
-            let hoursSinceNumber:NSNumber = hoursSince as NSNumber
-            
-            rawStringTime = String(
-                format:NSLocalizedString("MGridMapDetailItemAge_hoursAgo", comment:""),
-                hoursSinceNumber)
         }
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()

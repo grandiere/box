@@ -3,7 +3,8 @@ import UIKit
 class VGridVisorDetailCellCreated:VGridVisorDetailCell
 {
     private weak var labelCreated:UILabel!
-    private let kLabelMargin:CGFloat = 10
+    private let kLabelLeft:CGFloat = 10
+    private let kLabelRight:CGFloat = -25
     private let kLabelWidth:CGFloat = 240
     
     override init(frame:CGRect)
@@ -23,9 +24,9 @@ class VGridVisorDetailCellCreated:VGridVisorDetailCell
         labelCreated.translatesAutoresizingMaskIntoConstraints = false
         labelCreated.isUserInteractionEnabled = false
         labelCreated.backgroundColor = UIColor.clear
-        labelCreated.textAlignment = NSTextAlignment.center
+        labelCreated.textAlignment = NSTextAlignment.right
         labelCreated.font = UIFont.numeric(size:16)
-        labelCreated.textColor = UIColor.white
+        labelCreated.textColor = UIColor.black
         self.labelCreated = labelCreated
         
         addSubview(labelTitle)
@@ -37,7 +38,7 @@ class VGridVisorDetailCellCreated:VGridVisorDetailCell
         NSLayoutConstraint.leftToLeft(
             view:labelTitle,
             toView:self,
-            constant:kLabelMargin)
+            constant:kLabelLeft)
         NSLayoutConstraint.width(
             view:labelTitle,
             constant:kLabelWidth)
@@ -47,7 +48,8 @@ class VGridVisorDetailCellCreated:VGridVisorDetailCell
             toView:self)
         NSLayoutConstraint.rightToRight(
             view:labelCreated,
-            toView:self)
+            toView:self,
+            constant:kLabelRight)
         NSLayoutConstraint.width(
             view:labelCreated,
             constant:kLabelWidth)
@@ -64,12 +66,13 @@ class VGridVisorDetailCellCreated:VGridVisorDetailCell
         
         guard
             
-            let modelLevel:MGridVisorDetailItemLevel = model as? MGridVisorDetailItemLevel
+            let modelCreated:MGridVisorDetailItemCreated = model as? MGridVisorDetailItemCreated
             
         else
         {
             return
         }
         
+        labelCreated.text = modelCreated.created
     }
 }

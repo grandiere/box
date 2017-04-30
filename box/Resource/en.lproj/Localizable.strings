@@ -6,6 +6,7 @@
 "VGridVisorDetailCellMatch_energyTitle"="\nEnergy required   ";
 "VStatsBar_scoreTitle"="Score\n";
 "VGridVisorDetailCellTake_labelTitle"="Take";
+"VGridVisorDetailCellCreated_labelTitle"="Created";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";

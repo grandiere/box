@@ -43,6 +43,7 @@
 		DA134AB01E9D5D69002BE57D /* texture.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA134AAF1E9D5D69002BE57D /* texture.xcassets */; };
 		DA1403B81EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403B71EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift */; };
 		DA1403BA1EB6607A006C9364 /* MGridVisorDetailItemCreated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403B91EB6607A006C9364 /* MGridVisorDetailItemCreated.swift */; };
+		DA1403BC1EB66478006C9364 /* CGridVisorTake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403BB1EB66478006C9364 /* CGridVisorTake.swift */; };
 		DA1D49A51EAA42DB00C2392C /* DUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49A41EAA42DB00C2392C /* DUserExtension.swift */; };
 		DA1D49A71EAA443C00C2392C /* DStatsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49A61EAA443C00C2392C /* DStatsExtension.swift */; };
 		DA1D49A91EAA472D00C2392C /* VLandingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1D49A81EAA472D00C2392C /* VLandingCell.swift */; };
@@ -240,6 +241,7 @@
 		DA134AAF1E9D5D69002BE57D /* texture.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = texture.xcassets; sourceTree = "<group>"; };
 		DA1403B71EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellCreated.swift; sourceTree = "<group>"; };
 		DA1403B91EB6607A006C9364 /* MGridVisorDetailItemCreated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemCreated.swift; sourceTree = "<group>"; };
+		DA1403BB1EB66478006C9364 /* CGridVisorTake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVisorTake.swift; sourceTree = "<group>"; };
 		DA1D49A41EAA42DB00C2392C /* DUserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DUserExtension.swift; sourceTree = "<group>"; };
 		DA1D49A61EAA443C00C2392C /* DStatsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DStatsExtension.swift; sourceTree = "<group>"; };
 		DA1D49A81EAA472D00C2392C /* VLandingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VLandingCell.swift; sourceTree = "<group>"; };
@@ -841,6 +843,7 @@
 				DA4DC45F1EA1893B0024D28E /* CGridVisor.swift */,
 				DA599B4C1EA7AAE90070E5AF /* CGridVisorDetail.swift */,
 				DA88525D1EAE3B7D008CB62C /* CGridVisorMatch.swift */,
+				DA1403BB1EB66478006C9364 /* CGridVisorTake.swift */,
 				DA8852671EAE9D20008CB62C /* CGridMap.swift */,
 				DA22F3CF1EA2F2DB00F6ED91 /* CGrid.swift */,
 				DA1D49C11EAA643700C2392C /* CProfile.swift */,
@@ -1196,6 +1199,7 @@
 				DA59D77B1EB3D15500EB2973 /* FDbAlgoHostileBug.swift in Sources */,
 				DA1D49A51EAA42DB00C2392C /* DUserExtension.swift in Sources */,
 				DA134AA31E9D549E002BE57D /* MetalVertexTextured.swift in Sources */,
+				DA1403BC1EB66478006C9364 /* CGridVisorTake.swift in Sources */,
 				DA59D7581EB25F9000EB2973 /* FAnalytics.swift in Sources */,
 				DA59D7771EB3BCAD00EB2973 /* FDbAlgoHostileItem.swift in Sources */,
 				DA1403B81EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift in Sources */,
