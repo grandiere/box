@@ -3,6 +3,7 @@ import CoreLocation
 
 class MGridMapDetail
 {
+    weak var annotation:MGridMapAnnotation?
     let items:[MGridMapDetailItem]
     let image:UIImage?
     
@@ -10,6 +11,7 @@ class MGridMapDetail
         userLocation:CLLocation,
         annotation:MGridMapAnnotation)
     {
+        self.annotation = annotation
         var items:[MGridMapDetailItem] = []
         
         if let itemTitle:MGridMapDetailItemTitle = MGridMapDetailItemTitle(annotation:annotation)

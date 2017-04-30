@@ -2,6 +2,8 @@ import UIKit
 
 class VGridMapDetailHeader:UICollectionReusableView
 {
+    private weak var controller:CGridMap?
+    private weak var model:MGridMapDetail?
     private weak var imageView:UIImageView!
     private let kImageTop:CGFloat = 10
     private let kButtonSize:CGFloat = 60
@@ -69,13 +71,17 @@ class VGridMapDetailHeader:UICollectionReusableView
     
     func actionClose(sender button:UIButton)
     {
-        
+        controller?.viewMap.viewRender.deselectAnnotation(
+            model?.annotation,
+            animated:true)
     }
     
     //MARK: public
     
-    func config(model:MGridMapDetail)
+    func config(controller:CGridMap, model:MGridMapDetail)
     {
+        self.controller = controller
+        self.model = model
         imageView.image = model.image
     }
 }

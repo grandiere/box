@@ -137,7 +137,7 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             withReuseIdentifier:
             VGridMapDetailHeader.reusableIdentifier,
             for:indexPath) as! VGridMapDetailHeader
-        header.config(model:model!)
+        header.config(controller:controller, model:model!)
         
         return header
     }
