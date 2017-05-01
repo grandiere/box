@@ -2,6 +2,6 @@ import Foundation
 
 protocol MGridVisorTakeProtocol
 {
-    var description:String { get }
+    var descr:NSAttributedString { get }
     func apply(controller:CGridVisorTake)
 }

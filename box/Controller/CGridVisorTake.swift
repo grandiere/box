@@ -47,16 +47,10 @@ class CGridVisorTake:CController
         view = viewTake
     }
     
-    //MARK: private
-    
-    private func finishMatch()
-    {
-        DispatchQueue.main.async
-        { [weak self] in
-                
-            self?.parentController.dismissAnimateOver(completion:nil)
-        }
-    }
-    
     //MARK: public
+    
+    func done()
+    {
+        parentController.dismissAnimateOver(completion:nil)
+    }
 }
