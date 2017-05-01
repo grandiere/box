@@ -34,7 +34,7 @@ class CGridVisorTake:CController
                 }
             }
             
-            modelTake = MGridVisorTake()
+            modelTake = MGridVisorTake(controller:self, model:model)
         }
         
         parentController.viewParent.panRecognizer.isEnabled = false
