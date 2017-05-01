@@ -11,7 +11,7 @@ class VGridVisorTake:VView
         backgroundColor = UIColor.clear
         self.controller = controller as? CGridVisorTake
         
-        let blur:VBlur = VBlur.light()
+        let blur:VBlur = VBlur.extraLight()
         
         let imageView:UIImageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false

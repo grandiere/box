@@ -2,8 +2,5 @@ import UIKit
 
 protocol MSettingsProtocol
 {
-    var image:UIImage
-    {
-        get
-    }
+    var image:UIImage { get }
 }
