@@ -37,7 +37,7 @@ class MGridVisorTake
         DispatchQueue.main.async
         { [weak self] in
             
-            
+            self?.controller?.viewTake.aidDefined(model:strategy)
         }
     }
 }

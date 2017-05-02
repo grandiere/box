@@ -4,7 +4,7 @@ class CGridVisorTake:CController
 {
     private var modelTake:MGridVisorTake?
     private(set) weak var model:MGridAlgoItemAid!
-    private weak var viewTake:VGridVisorTake!
+    private(set) weak var viewTake:VGridVisorTake!
     
     init(model:MGridAlgoItemAid)
     {
