@@ -1,8 +1,11 @@
-import Foundation
+import UIKit
 
 class MGridVisorTakeEnergy:MGridVisorTakeProtocol
 {
     private let energyAmount:Int
+    private let attributedString:NSAttributedString
+    private let kValueFontSize:CGFloat = 30
+    private let kNameFontSize:CGFloat = 18
     
     class func factory() -> MGridVisorTakeEnergy
     {
@@ -15,6 +18,42 @@ class MGridVisorTakeEnergy:MGridVisorTakeProtocol
         case 1:
             
             energyLevel = MGridVisorTakeEnergy20()
+            
+            break
+            
+        case 2:
+            
+            energyLevel = MGridVisorTakeEnergy25()
+            
+            break
+            
+        case 3:
+            
+            energyLevel = MGridVisorTakeEnergy30()
+            
+            break
+            
+        case 4:
+            
+            energyLevel = MGridVisorTakeEnergy35()
+            
+            break
+            
+        case 5:
+            
+            energyLevel = MGridVisorTakeEnergy40()
+            
+            break
+            
+        case 6:
+            
+            energyLevel = MGridVisorTakeEnergy45()
+            
+            break
+            
+        case 7:
+            
+            energyLevel = MGridVisorTakeEnergy50()
             
             break
             
@@ -31,6 +70,32 @@ class MGridVisorTakeEnergy:MGridVisorTakeProtocol
     init(energyAmount:Int)
     {
         self.energyAmount = energyAmount
+        
+        let attributesValue:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.numeric(size:kValueFontSize),
+            NSForegroundColorAttributeName:UIColor.black]
+        
+        let attributesName:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.bold(size:kNameFontSize),
+            NSForegroundColorAttributeName:UIColor.black]
+        
+        let amountAsNumber:NSNumber = energyAmount as NSNumber
+        let amountString:String = String(
+            format:NSLocalizedString("MGridVisorTakeEnergy_stringValue", comment:""),
+            amountAsNumber)
+        
+        let stringValue:NSAttributedString = NSAttributedString(
+            string:amountString,
+            attributes:attributesValue)
+        let stringName:NSAttributedString = NSAttributedString(
+            string:NSLocalizedString("MGridVisorTakeEnergy_stringName", comment:""),
+            attributes:attributesName)
+        
+        let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+        mutableString.append(stringValue)
+        mutableString.append(stringName)
+        
+        attributedString = mutableString
     }
     
     //MARK: visorTake protocol
@@ -39,7 +104,7 @@ class MGridVisorTakeEnergy:MGridVisorTakeProtocol
     {
         get
         {
-            return NSAttributedString()
+            return attributedString
         }
     }
     

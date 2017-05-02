@@ -42,6 +42,8 @@
 "MGridMapDetailItemDistance_stringTitle"="Distance  ";
 "MGridMapDetailItemDistance_stringDistance"="%@ meters";
 "MGridAlgoItemAid_titleAnnotation"="Power Up";
+"MGridVisorTakeEnergy_stringValue"="+%@";
+"MGridVisorTakeEnergy_stringName"=" Energy";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";
