@@ -28,11 +28,33 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         userHeading = 0
         items = []
         removeAlgoItems = []
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(notifiedDestroyAlgo(sender:)),
+            name:Notification.destroyAlgoRendered,
+            object:nil)
     }
     
     deinit
     {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    //MARK: notified
+    
+    @objc func notifiedDestroyAlgo(sender notification:Notification)
+    {
+        guard
+        
+            let algoItem:MGridAlgoItem = notification.object as? MGridAlgoItem
+        
+        else
+        {
+            return
+        }
+        
+        removeAlgoItems.append(algoItem)
     }
     
     //MARK: private
