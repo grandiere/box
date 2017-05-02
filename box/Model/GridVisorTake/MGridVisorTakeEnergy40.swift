@@ -2,7 +2,7 @@ import Foundation
 
 class MGridVisorTakeEnergy40:MGridVisorTakeEnergy
 {
-    private let kEnergyAmount:Int = 40
+    private let kEnergyAmount:Int16 = 40
     
     init()
     {

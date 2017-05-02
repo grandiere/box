@@ -8,7 +8,7 @@ class VGridVisorTake:VView
     private weak var layoutButtonLeft:NSLayoutConstraint!
     private let kImageHeight:CGFloat = 150
     private let kLabelHeight:CGFloat = 300
-    private let kLabelMarginHorizontal:CGFloat = 20
+    private let kLabelMarginHorizontal:CGFloat = 10
     private let kButtonWidth:CGFloat = 90
     private let kButtonHeight:CGFloat = 34
     

@@ -2,10 +2,10 @@ import UIKit
 
 class MGridVisorTakeEnergy:MGridVisorTakeProtocol
 {
-    private let energyAmount:Int
+    private let energyAmount:Int16
     private let attributedString:NSAttributedString
-    private let kValueFontSize:CGFloat = 30
-    private let kNameFontSize:CGFloat = 18
+    private let kValueFontSize:CGFloat = 34
+    private let kNameFontSize:CGFloat = 16
     
     class func factory() -> MGridVisorTakeEnergy
     {
@@ -67,13 +67,13 @@ class MGridVisorTakeEnergy:MGridVisorTakeProtocol
         return energyLevel
     }
     
-    init(energyAmount:Int)
+    init(energyAmount:Int16)
     {
         self.energyAmount = energyAmount
         
         let attributesValue:[String:AnyObject] = [
             NSFontAttributeName:UIFont.numeric(size:kValueFontSize),
-            NSForegroundColorAttributeName:UIColor.black]
+            NSForegroundColorAttributeName:UIColor.gridBlue]
         
         let attributesName:[String:AnyObject] = [
             NSFontAttributeName:UIFont.bold(size:kNameFontSize),

@@ -70,4 +70,22 @@ extension DEnergy
         
         DManager.sharedInstance?.save()
     }
+    
+    func addEnergy(energyAmount:Int16)
+    {
+        amount += energyAmount
+        lastAmount += energyAmount
+        
+        if amount > DEnergy.kMaxEnergy
+        {
+            amount = DEnergy.kMaxEnergy
+        }
+        
+        if lastAmount > DEnergy.kMaxEnergy
+        {
+            lastAmount = DEnergy.kMaxEnergy
+        }
+        
+        DManager.sharedInstance?.save()
+    }
 }
