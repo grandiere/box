@@ -11,6 +11,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     private weak var controller:CGridVisor!
     private weak var device:MTLDevice!
     private(set) var items:[MGridVisorRenderAlgoItem]
+    private var removeAlgoItems:[MGridAlgoItem]
     private var rotation:MetalRotation
     private var moveVertical:Float
     
@@ -26,6 +27,12 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         moveVertical = 0
         userHeading = 0
         items = []
+        removeAlgoItems = []
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: private
@@ -53,6 +60,31 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             position:positionBuffer,
             rotation:rotationBuffer,
             texture:texture)
+    }
+    
+    private func validate(item:MGridVisorRenderAlgoItem) -> MGridVisorRenderAlgoItem?
+    {
+        var validItem:MGridVisorRenderAlgoItem? = item
+        let algo:MGridAlgoItem = item.model
+        
+        let currentRemoveItems:[MGridAlgoItem] = self.removeAlgoItems
+        var removeAlgoItems:[MGridAlgoItem] = []
+        
+        for removeItem:MGridAlgoItem in currentRemoveItems
+        {
+            if removeItem === algo
+            {
+                validItem = nil
+            }
+            else
+            {
+                removeAlgoItems.append(removeItem)
+            }
+        }
+        
+        self.removeAlgoItems = removeAlgoItems
+        
+        return validItem
     }
     
     //MARK: public
@@ -105,19 +137,30 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             return
         }
         
+        var items:[MGridVisorRenderAlgoItem] = []
         let rotationBuffer:MTLBuffer = renderEncoder.device.generateBuffer(
             bufferable:rotation)
         var targeted:MGridVisorRenderAlgoItemPositioned?
         
-        for item:MGridVisorRenderAlgoItem in items
+        for item:MGridVisorRenderAlgoItem in self.items
         {
-            item.modeStandBy()
+            guard
+                
+                let validItem:MGridVisorRenderAlgoItem = validate(item:item)
+            
+            else
+            {
+                continue
+            }
+            
+            items.append(validItem)
+            validItem.modeStandBy()
             
             guard
                 
                 let positioned:MGridVisorRenderAlgoItemPositioned = MGridVisorRenderAlgoItemPositioned(
                     orientation:orientation,
-                    item:item,
+                    item:validItem,
                     userHeading:userHeading,
                     moveVertical:moveVertical)
             
@@ -163,6 +206,8 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
                     positioned:positioned)
             }
         }
+        
+        self.items = items
         
         if let targeted:MGridVisorRenderAlgoItemPositioned = targeted
         {
