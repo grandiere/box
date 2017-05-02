@@ -73,6 +73,10 @@ class CGridVisorTake:CController
         let path:String = "\(parentPath)/\(model.firebaseId)"
         
         FMain.sharedInstance.db.removeChild(path:path)
+        
+        NotificationCenter.default.post(
+            name:Notification.destroyAlgoRendered,
+            object:model)
     }
     
     func done()
