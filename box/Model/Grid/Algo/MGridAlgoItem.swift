@@ -68,6 +68,11 @@ class MGridAlgoItem
     
     //MARK: public
     
+    func firebasePath() -> String
+    {
+        return firebaseId
+    }
+    
     func distanceTo(
         location:CLLocation,
         renderReady:Bool)

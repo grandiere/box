@@ -16,6 +16,13 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
             created:firebaseBug.created)
     }
     
+    override func firebasePath() -> String
+    {
+        let path:String = "\(FDb.algoBug)/\(firebaseId)"
+        
+        return path
+    }
+    
     override func imageStandby() -> UIImage?
     {
         return #imageLiteral(resourceName: "assetTextureBugStandBy")

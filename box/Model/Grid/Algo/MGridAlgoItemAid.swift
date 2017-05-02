@@ -13,6 +13,13 @@ class MGridAlgoItemAid:MGridAlgoItem
             created:firebaseAid.created)
     }
     
+    override func firebasePath() -> String
+    {
+        let path:String = "\(FDb.algoAid)/\(firebaseId)"
+        
+        return path
+    }
+    
     override func imageStandby() -> UIImage?
     {
         return #imageLiteral(resourceName: "assetTextureAidStandBy")

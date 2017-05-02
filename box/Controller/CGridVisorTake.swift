@@ -69,9 +69,7 @@ class CGridVisorTake:CController
             return
         }
         
-        let parentPath:String = FDb.algoAid
-        let path:String = "\(parentPath)/\(model.firebaseId)"
-        
+        let path:String = model.firebasePath()
         FMain.sharedInstance.db.removeChild(path:path)
         
         NotificationCenter.default.post(

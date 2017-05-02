@@ -28,7 +28,7 @@ class VGridVisorMatch:VView
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
         label.textColor = UIColor.white
-        label.text = self.controller.model.titleMatch()
+        label.text = self.controller.model?.titleMatch()
         
         let imageView:UIImageView = UIImageView()
         imageView.isUserInteractionEnabled = false

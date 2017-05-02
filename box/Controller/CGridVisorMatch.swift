@@ -3,7 +3,7 @@ import UIKit
 class CGridVisorMatch:CController
 {
     private var modelMatch:MGridVisorMatch?
-    private(set) weak var model:MGridAlgoItemHostile!
+    private(set) weak var model:MGridAlgoItemHostile?
     private weak var viewMatch:VGridVisorMatch!
     private weak var timer:Timer?
     private let kTimeInterval:TimeInterval = 3
@@ -27,6 +27,16 @@ class CGridVisorMatch:CController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        guard
+            
+            let model:MGridAlgoItemHostile = self.model
+        
+        else
+        {
+            return
+        }
+        
         MSession.sharedInstance.settings?.energy?.spendEnergy(hostile:model)
     }
     
@@ -36,6 +46,15 @@ class CGridVisorMatch:CController
         
         if modelMatch == nil
         {
+            guard
+                
+                let model:MGridAlgoItemHostile = self.model
+                
+            else
+            {
+                return
+            }
+            
             let controllersCount:Int = parentController.childViewControllers.count
             let prevController:Int = controllersCount - 2
             
@@ -82,6 +101,22 @@ class CGridVisorMatch:CController
     
     private func finishMatch()
     {
+        guard
+            
+            let model:MGridAlgoItemHostile = self.model
+            
+        else
+        {
+            return
+        }
+        
+        let path:String = model.firebasePath()
+        FMain.sharedInstance.db.removeChild(path:path)
+        
+        NotificationCenter.default.post(
+            name:Notification.destroyAlgoRendered,
+            object:model)
+        
         DispatchQueue.main.async
         { [weak self] in
             
@@ -98,7 +133,7 @@ class CGridVisorMatch:CController
         
         guard
             
-            let stringMatch:String = model.titleMatch()
+            let stringMatch:String = model?.titleMatch()
             
         else
         {
@@ -119,7 +154,7 @@ class CGridVisorMatch:CController
         
         guard
             
-            let stringMatch:String = model.titleMatch()
+            let stringMatch:String = model?.titleMatch()
             
         else
         {
