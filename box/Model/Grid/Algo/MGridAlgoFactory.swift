@@ -50,6 +50,11 @@ class MGridAlgoFactory
     
     //MARK: public
     
+    func releaseVirus()
+    {
+        
+    }
+    
     func createBug(
         location:CLLocation,
         force:Bool) -> MGridAlgoItemHostileBug?
