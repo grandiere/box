@@ -23,13 +23,20 @@ class MGridVisorTake
     private func strategyTake()
     {
         let random:UInt32 = arc4random_uniform(kDifficultySkill)
+        let strategy:MGridVisorTakeProtocol
         
         if random == 0
         {
-            
+            strategy = MGridVisorTakeSkill.factory()
         }
         else
         {
+            strategy = MGridVisorTakeEnergy.factory()
+        }
+        
+        DispatchQueue.main.async
+        { [weak self] in
+            
             
         }
     }

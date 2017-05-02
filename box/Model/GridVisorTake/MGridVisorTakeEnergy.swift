@@ -23,7 +23,6 @@ class MGridVisorTakeEnergy:MGridVisorTakeProtocol
             break
         }
         
-        
         return energyLevel
     }
     
