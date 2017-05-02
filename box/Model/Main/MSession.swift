@@ -16,6 +16,22 @@ class MSession
     
     //MARK: private
     
+    private func firebasePath() -> String?
+    {
+        guard
+            
+            let userId:String = settings?.firebaseId
+        
+        else
+        {
+            return nil
+        }
+        
+        let path:String = "\(FDb.user)/\(userId)"
+        
+        return path
+    }
+    
     private func asyncLoadSession()
     {
         DManager.sharedInstance?.fetchData(
@@ -128,9 +144,9 @@ class MSession
         {
             DManager.sharedInstance?.save()
             
-            if let userId:String = self.settings?.firebaseId
+            if let _:String = self.settings?.firebaseId
             {
-                self.loadFirebaseUser(userId:userId)
+                self.loadFirebaseUser()
             }
             else
             {
@@ -139,9 +155,16 @@ class MSession
         }
     }
     
-    private func loadFirebaseUser(userId:String)
+    private func loadFirebaseUser()
     {
-        let path:String = "\(FDb.user)/\(userId)"
+        guard
+            
+            let path:String = firebasePath()
+        
+        else
+        {
+            return
+        }
         
         FMain.sharedInstance.db.listenOnce(
             path:path,
@@ -201,5 +224,24 @@ class MSession
         {
             self.asyncLoadSession()
         }
+    }
+    
+    func addScore(credits:Int)
+    {
+        guard
+            
+            let userPath:String = firebasePath()
+        
+        else
+        {
+            return
+        }
+        
+        score += credits
+        
+        let path:String = "\(userPath)/\(FDbUserItem.score)"
+        FMain.sharedInstance.db.updateChild(
+            path:path,
+            json:score)
     }
 }

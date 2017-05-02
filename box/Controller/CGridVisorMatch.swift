@@ -126,6 +126,17 @@ class CGridVisorMatch:CController
     
     private func updateStats()
     {
+        guard
+            
+            let model:MGridAlgoItemHostile = self.model
+            
+        else
+        {
+            return
+        }
+        
+        model.destroySuccess()
+        MSession.sharedInstance.addScore(credits:model.credits)
     }
     
     //MARK: public
