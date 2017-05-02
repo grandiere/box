@@ -27,4 +27,9 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     {
         return kCreditsMultiplier
     }
+    
+    override func destroySuccess()
+    {
+        MSession.sharedInstance.settings?.stats?.antivirusSuccess()
+    }
 }

@@ -73,4 +73,9 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
         
         return title
     }
+    
+    override func destroySuccess()
+    {
+        MSession.sharedInstance.settings?.stats?.debugSuccess()
+    }
 }

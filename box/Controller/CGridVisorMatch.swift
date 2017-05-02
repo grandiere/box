@@ -124,6 +124,10 @@ class CGridVisorMatch:CController
         }
     }
     
+    private func updateStats()
+    {
+    }
+    
     //MARK: public
     
     func failed()
@@ -150,6 +154,7 @@ class CGridVisorMatch:CController
     func success()
     {
         timer?.invalidate()
+        updateStats()
         finishMatch()
         
         guard

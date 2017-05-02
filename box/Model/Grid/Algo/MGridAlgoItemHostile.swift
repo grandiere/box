@@ -77,4 +77,8 @@ class MGridAlgoItemHostile:MGridAlgoItem
     {
         return 0
     }
+    
+    func destroySuccess()
+    {
+    }
 }
