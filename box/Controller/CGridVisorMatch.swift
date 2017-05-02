@@ -101,6 +101,15 @@ class CGridVisorMatch:CController
     
     private func finishMatch()
     {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.parentController.dismissAnimateOver(completion:nil)
+        }
+    }
+    
+    private func destroyHostile()
+    {
         guard
             
             let model:MGridAlgoItemHostile = self.model
@@ -116,12 +125,6 @@ class CGridVisorMatch:CController
         NotificationCenter.default.post(
             name:Notification.destroyAlgoRendered,
             object:model)
-        
-        DispatchQueue.main.async
-        { [weak self] in
-            
-            self?.parentController.dismissAnimateOver(completion:nil)
-        }
     }
     
     private func updateStats()
@@ -166,6 +169,7 @@ class CGridVisorMatch:CController
     {
         timer?.invalidate()
         updateStats()
+        destroyHostile()
         finishMatch()
         
         guard

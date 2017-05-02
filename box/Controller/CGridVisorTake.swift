@@ -58,7 +58,7 @@ class CGridVisorTake:CController
     
     //MARK: public
     
-    func removeAid()
+    func destroyAid()
     {
         guard
         
