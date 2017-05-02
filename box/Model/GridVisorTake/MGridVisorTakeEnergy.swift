@@ -110,6 +110,7 @@ class MGridVisorTakeEnergy:MGridVisorTakeProtocol
     
     func apply(controller:CGridVisorTake)
     {
-        
+        MSession.sharedInstance.settings?.energy?.addEnergy(energyAmount:energyAmount)
+        controller.removeAid()
     }
 }

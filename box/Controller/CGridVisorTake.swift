@@ -3,7 +3,7 @@ import UIKit
 class CGridVisorTake:CController
 {
     private var modelTake:MGridVisorTake?
-    private(set) weak var model:MGridAlgoItemAid!
+    private weak var model:MGridAlgoItemAid?
     private(set) weak var viewTake:VGridVisorTake!
     
     init(model:MGridAlgoItemAid)
@@ -23,6 +23,15 @@ class CGridVisorTake:CController
         
         if modelTake == nil
         {
+            guard
+                
+                let model:MGridAlgoItemAid = self.model
+            
+            else
+            {
+                return
+            }
+            
             let controllersCount:Int = parentController.childViewControllers.count
             let prevController:Int = controllersCount - 2
             
@@ -48,6 +57,23 @@ class CGridVisorTake:CController
     }
     
     //MARK: public
+    
+    func removeAid()
+    {
+        guard
+        
+            let model:MGridAlgoItemAid = self.model
+        
+        else
+        {
+            return
+        }
+        
+        let parentPath:String = FDb.algoAid
+        let path:String = "\(parentPath)/\(model.firebaseId)"
+        
+        FMain.sharedInstance.db.removeChild(path:path)
+    }
     
     func done()
     {
