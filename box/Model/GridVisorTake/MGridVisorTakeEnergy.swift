@@ -2,6 +2,8 @@ import Foundation
 
 class MGridVisorTakeEnergy:MGridVisorTakeProtocol
 {
+    private let energyAmount:Int
+    
     class func factory() -> MGridVisorTakeEnergy
     {
         let energyLevel:MGridVisorTakeEnergy
@@ -24,6 +26,11 @@ class MGridVisorTakeEnergy:MGridVisorTakeProtocol
         }
         
         return energyLevel
+    }
+    
+    init(energyAmount:Int)
+    {
+        self.energyAmount = energyAmount
     }
     
     //MARK: visorTake protocol

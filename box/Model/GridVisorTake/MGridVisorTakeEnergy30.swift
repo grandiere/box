@@ -1,9 +1,11 @@
-//
-//  MGridVisorTakeEnergy30.swift
-//  box
-//
-//  Created by zero on 5/2/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
-
 import Foundation
+
+class MGridVisorTakeEnergy30:MGridVisorTakeEnergy
+{
+    private let kEnergyAmount:Int = 30
+    
+    init()
+    {
+        super.init(energyAmount:kEnergyAmount)
+    }
+}

@@ -34,6 +34,17 @@ class MGridVisorTake
             strategy = MGridVisorTakeEnergy.factory()
         }
         
+        guard
+            
+            let controller:CGridVisorTake = self.controller
+        
+        else
+        {
+            return
+        }
+        
+        strategy.apply(controller:controller)
+        
         DispatchQueue.main.async
         { [weak self] in
             
