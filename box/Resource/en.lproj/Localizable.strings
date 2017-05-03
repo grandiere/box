@@ -8,8 +8,8 @@
 "VGridVisorDetailCellTake_labelTitle"="Take";
 "VGridVisorDetailCellCreated_labelTitle"="Created";
 "VGridVisorTake_button"="Done";
-"VGridVirus_labelTitle"="Release a Virus";
-"VGridVirus_labelSubtitle"="\nEnergy required ";
+"VGridVirus_labelTitle"="Release a Virus\n";
+"VGridVirus_labelSubtitle"="  Energy required";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";

@@ -4,6 +4,8 @@ class VGridVirus:VView
 {
     private weak var controller:CGridVirus!
     private let kImageHeight:CGFloat = 140
+    private let kLabelHorizontalMargin:CGFloat = 10
+    private let kLabelHeight:CGFloat = 100
     
     override init(controller:CController)
     {
@@ -14,11 +16,11 @@ class VGridVirus:VView
             NSFontAttributeName:UIFont.bold(size:17),
             NSForegroundColorAttributeName:UIColor.white]
         let attributesSubtitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:16),
-            NSForegroundColorAttributeName:UIColor.white]
+            NSFontAttributeName:UIFont.regular(size:17),
+            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.7)]
         let attributesEnergy:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.numeric(size:22),
-            NSForegroundColorAttributeName:UIColor.gridBlue]
+            NSFontAttributeName:UIFont.numeric(size:20),
+            NSForegroundColorAttributeName:UIColor.white]
         let rawStringEnergy:String = "\(self.controller.model.kEnergyRequired)"
         
         let stringTitle:NSAttributedString = NSAttributedString(
@@ -33,8 +35,8 @@ class VGridVirus:VView
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(stringTitle)
-        mutableString.append(stringSubtitle)
         mutableString.append(stringEnergy)
+        mutableString.append(stringSubtitle)
         
         let imageView:UIImageView = UIImageView()
         imageView.isUserInteractionEnabled = false
@@ -63,10 +65,23 @@ class VGridVirus:VView
         NSLayoutConstraint.equalsHorizontal(
             view:imageView,
             toView:self)
+        
+        NSLayoutConstraint.topToBottom(
+            view:label,
+            toView:imageView)
+        NSLayoutConstraint.height(
+            view:label,
+            constant:kLabelHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:label,
+            toView:self,
+            margin:kLabelHorizontalMargin)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
     }
+    
+    
 }
