@@ -6,7 +6,7 @@ class VGridVirus:VView
     private weak var layoutOptionsLeft:NSLayoutConstraint!
     private let kImageHeight:CGFloat = 140
     private let kLabelHorizontalMargin:CGFloat = 10
-    private let kLabelHeight:CGFloat = 140
+    private let kLabelHeight:CGFloat = 260
     private let kOptionsWidth:CGFloat = 240
     private let kOptionsHeight:CGFloat = 34
     
@@ -14,6 +14,17 @@ class VGridVirus:VView
     {
         super.init(controller:controller)
         self.controller = controller as? CGridVirus
+        
+        MSession.sharedInstance.settings?.energy?.tryUpdateEnergy()
+        
+        guard
+            
+            let energy:Int16 = MSession.sharedInstance.settings?.energy?.amount
+            
+        else
+        {
+            return
+        }
         
         let attributesTitle:[String:AnyObject] = [
             NSFontAttributeName:UIFont.bold(size:17),
@@ -25,6 +36,7 @@ class VGridVirus:VView
             NSFontAttributeName:UIFont.numeric(size:20),
             NSForegroundColorAttributeName:UIColor.white]
         let rawStringEnergy:String = "\(self.controller.model.kEnergyRequired)"
+        let rawCurrentEnergy:String = "\(energy)"
         
         let stringTitle:NSAttributedString = NSAttributedString(
             string:NSLocalizedString("VGridVirus_labelTitle", comment:""),
@@ -35,11 +47,15 @@ class VGridVirus:VView
         let stringEnergy:NSAttributedString = NSAttributedString(
             string:rawStringEnergy,
             attributes:attributesEnergy)
+        let stringCurrent:NSAttributedString = NSAttributedString(
+            string:rawCurrentEnergy,
+            attributes:attributesEnergy)
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(stringTitle)
         mutableString.append(stringEnergy)
         mutableString.append(stringSubtitle)
+        mutableString.append(stringCurrent)
         
         let imageView:UIImageView = UIImageView()
         imageView.isUserInteractionEnabled = false

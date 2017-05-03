@@ -31,6 +31,14 @@ extension DEnergy
     
     //MARK: public
     
+    func tryUpdateEnergy()
+    {
+        if amount < DEnergy.kMaxEnergy
+        {
+            updateEnergy()
+        }
+    }
+    
     func defaultValues()
     {
         amount = DEnergy.kMaxEnergy

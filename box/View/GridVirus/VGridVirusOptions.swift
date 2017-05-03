@@ -4,6 +4,7 @@ class VGridVirusOptions:UIView
 {
     private weak var controller:CGridVirus!
     private weak var layoutCancelWidth:NSLayoutConstraint!
+    private let kCornerRadius:CGFloat = 8
     
     init(controller:CGridVirus)
     {
@@ -11,6 +12,7 @@ class VGridVirusOptions:UIView
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.clear
+        layer.cornerRadius = kCornerRadius
         self.controller = controller
         
         let buttonCancel:VGridVirusOptionsButton = VGridVirusOptionsButton(
