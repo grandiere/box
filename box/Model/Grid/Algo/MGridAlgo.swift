@@ -192,4 +192,9 @@ class MGridAlgo
             location:userLocation,
             renderReady:true)
     }
+    
+    func releaseVirus(virusLevel:Int)
+    {
+        
+    }
 }

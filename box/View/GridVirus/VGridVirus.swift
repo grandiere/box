@@ -15,7 +15,11 @@ class VGridVirus:VView
         let viewLanding:VGridVirusLanding = VGridVirusLanding(
             controller:self.controller)
         
+        let viewReleased:VGridVirusReleased = VGridVirusReleased(
+            controller:self.controller)
+        
         addSubview(viewLanding)
+        addSubview(viewReleased)
         
         layoutLandingTop = NSLayoutConstraint.topToTop(
             view:viewLanding,
@@ -24,6 +28,16 @@ class VGridVirus:VView
             view:viewLanding)
         NSLayoutConstraint.equalsHorizontal(
             view:viewLanding,
+            toView:self)
+        
+        NSLayoutConstraint.topToBottom(
+            view:viewReleased,
+            toView:viewLanding)
+        NSLayoutConstraint.bottomToBottom(
+            view:viewReleased,
+            toView:self)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewReleased,
             toView:self)
     }
     

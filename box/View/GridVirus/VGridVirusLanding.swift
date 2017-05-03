@@ -9,7 +9,7 @@ class VGridVirusLanding:UIView
     private let kLabelHorizontalMargin:CGFloat = 10
     private let kLabelHeight:CGFloat = 150
     private let kOptionsWidth:CGFloat = 260
-    private let kOptionsHeight:CGFloat = 35
+    private let kOptionsHeight:CGFloat = 34
     
     init(controller:CGridVirus)
     {

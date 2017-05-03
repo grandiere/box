@@ -150,7 +150,9 @@ class CGrid:CController, CLLocationManagerDelegate
     
     func openVirus()
     {
-        let controllerVirus:CGridVirus = CGridVirus(modelAlgo:modelAlgo)
+        let controllerVirus:CGridVirus = CGridVirus(
+            userLocation:userLocation,
+            modelAlgo:modelAlgo)
         parentController.push(
             controller:controllerVirus,
             horizontal:CParent.TransitionHorizontal.fromRight)

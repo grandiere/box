@@ -1,13 +1,18 @@
 import UIKit
+import CoreLocation
 
 class CGridVirus:CController
 {
     let model:MGridVirus
     private weak var modelAlgo:MGridAlgo!
     private weak var viewVirus:VGridVirus!
+    private weak var userLocation:CLLocation?
     
-    init(modelAlgo:MGridAlgo)
+    init(
+        userLocation:CLLocation?,
+        modelAlgo:MGridAlgo)
     {
+        self.userLocation = userLocation
         self.modelAlgo = modelAlgo
         model = MGridVirus()
         super.init()
@@ -34,6 +39,6 @@ class CGridVirus:CController
     
     func releaseVirus()
     {
-        
+        viewVirus.animateRelease()
     }
 }

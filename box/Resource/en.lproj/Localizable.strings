@@ -12,6 +12,7 @@
 "VGridVirus_labelSubtitle"="  Energy required\nCurrent energy  ";
 "VGridVirusOptions_buttonCancel"="Cancel";
 "VGridVirusOptions_buttonRelease"="Release";
+"VGridVirusReleased_button"="Done";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";

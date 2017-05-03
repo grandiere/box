@@ -86,6 +86,7 @@ class VGridVirusOptions:UIView
     
     func actionRelease(sender button:VGridVirusOptionsButton)
     {
+        button.isUserInteractionEnabled = false
         controller.releaseVirus()
     }
     
