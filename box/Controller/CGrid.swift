@@ -148,6 +148,14 @@ class CGrid:CController, CLLocationManagerDelegate
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
     
+    func openVirus()
+    {
+        let controllerVirus:CGridVirus = CGridVirus(modelAlgo:modelAlgo)
+        parentController.push(
+            controller:controllerVirus,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
     //MARK: location delegate
     
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations:[CLLocation])

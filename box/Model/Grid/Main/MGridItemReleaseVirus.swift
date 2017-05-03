@@ -16,6 +16,6 @@ class MGridItemReleaseVirus:MGridItem
     
     override func selected(controller:CGrid)
     {
-        controller.openVisor()
+        controller.openVirus()
     }
 }
