@@ -4,11 +4,12 @@ class VGridVirus:VView
 {
     private weak var controller:CGridVirus!
     private weak var layoutOptionsLeft:NSLayoutConstraint!
-    private let kImageHeight:CGFloat = 140
+    private let kImageTop:CGFloat = 160
+    private let kImageHeight:CGFloat = 80
     private let kLabelHorizontalMargin:CGFloat = 10
-    private let kLabelHeight:CGFloat = 260
-    private let kOptionsWidth:CGFloat = 240
-    private let kOptionsHeight:CGFloat = 34
+    private let kLabelHeight:CGFloat = 150
+    private let kOptionsWidth:CGFloat = 260
+    private let kOptionsHeight:CGFloat = 35
     
     override init(controller:CController)
     {
@@ -81,7 +82,8 @@ class VGridVirus:VView
         
         NSLayoutConstraint.topToTop(
             view:imageView,
-            toView:self)
+            toView:self,
+            constant:kImageTop)
         NSLayoutConstraint.height(
             view:imageView,
             constant:kImageHeight)
