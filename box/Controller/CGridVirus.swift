@@ -2,12 +2,14 @@ import UIKit
 
 class CGridVirus:CController
 {
+    let model:MGridVirus
     private weak var modelAlgo:MGridAlgo!
     private weak var viewVirus:VGridVirus!
     
     init(modelAlgo:MGridAlgo)
     {
         self.modelAlgo = modelAlgo
+        model = MGridVirus()
         super.init()
     }
     
