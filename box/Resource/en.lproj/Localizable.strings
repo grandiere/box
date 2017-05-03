@@ -10,6 +10,8 @@
 "VGridVisorTake_button"="Done";
 "VGridVirus_labelTitle"="Release a Virus\n";
 "VGridVirus_labelSubtitle"="  Energy required";
+"VGridVirusOptions_buttonCancel"="Cancel";
+"VGridVirusOptions_buttonRelease"="Release";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";

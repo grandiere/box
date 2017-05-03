@@ -2,5 +2,5 @@ import Foundation
 
 class MGridVirus
 {
-    let kEnergyRequired:Int = 85
+    let kEnergyRequired:Int16 = 85
 }

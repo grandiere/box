@@ -24,4 +24,16 @@ class CGridVirus:CController
         self.viewVirus = viewVirus
         view = viewVirus
     }
+    
+    //MARK: public
+    
+    func back()
+    {
+        parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
+    func releaseVirus()
+    {
+        
+    }
 }

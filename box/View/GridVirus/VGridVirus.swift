@@ -3,9 +3,12 @@ import UIKit
 class VGridVirus:VView
 {
     private weak var controller:CGridVirus!
+    private weak var layoutOptionsLeft:NSLayoutConstraint!
     private let kImageHeight:CGFloat = 140
     private let kLabelHorizontalMargin:CGFloat = 10
-    private let kLabelHeight:CGFloat = 100
+    private let kLabelHeight:CGFloat = 140
+    private let kOptionsWidth:CGFloat = 240
+    private let kOptionsHeight:CGFloat = 34
     
     override init(controller:CController)
     {
@@ -53,8 +56,12 @@ class VGridVirus:VView
         label.textAlignment = NSTextAlignment.center
         label.attributedText = mutableString
         
+        let options:VGridVirusOptions = VGridVirusOptions(
+            controller:self.controller)
+        
         addSubview(imageView)
         addSubview(label)
+        addSubview(options)
         
         NSLayoutConstraint.topToTop(
             view:imageView,
@@ -76,6 +83,19 @@ class VGridVirus:VView
             view:label,
             toView:self,
             margin:kLabelHorizontalMargin)
+        
+        NSLayoutConstraint.topToBottom(
+            view:options,
+            toView:label)
+        NSLayoutConstraint.height(
+            view:options,
+            constant:kOptionsHeight)
+        layoutOptionsLeft = NSLayoutConstraint.leftToLeft(
+            view:options,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:options,
+            constant:kOptionsWidth)
     }
     
     required init?(coder:NSCoder)
@@ -83,5 +103,13 @@ class VGridVirus:VView
         return nil
     }
     
-    
+    override func layoutSubviews()
+    {
+        let width:CGFloat = bounds.maxX
+        let remainWidth:CGFloat = width - kOptionsWidth
+        let marginLeft:CGFloat = remainWidth / 2.0
+        layoutOptionsLeft.constant = marginLeft
+        
+        super.layoutSubviews()
+    }
 }
