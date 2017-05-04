@@ -35,11 +35,15 @@
 "MGridItemReleaseVirus_subtitle"="\nDeploy a virus here";
 "MGridVisorDetailItemHeaderBug_title"="Bug";
 "MGridVisorDetailItemHeaderAid_title"="Power Up";
+"MGridVisorDetailItemHeaderVirusFriendly_title"="Virus friendly";
 "MStatsItemBugs_title"="Bugs";
 "MStatsItemVirus_title"="Virus";
 "MStatsItemVirusReleased_title"="Virus released";
 "MGridAlgoItemHostileBug_titleMatch"="Debug";
 "MGridAlgoItemHostileBug_titleAnnotation"="Bug";
+"MGridAlgoItemHostileVirusFoe_titleMatch"="Anti virus";
+"MGridAlgoItemHostileVirusFoe_titleAnnotation"="Virus";
+"MGridAlgoItemHostileVirusFriendly_titleAnnotation"="Virus friendly";
 "MGridMapDetailItemLevel_stringTitle"="Level  ";
 "MGridMapDetailItemAge_stringTitle"="Created  ";
 "MGridAlgoItem_justNow"="Just now";

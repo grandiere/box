@@ -14,6 +14,13 @@ class MGridAlgoItemHostileVirusFriendly:MGridAlgoItemHostileVirus
             created:firebaseVirus.created)
     }
     
+    override func detail() -> MGridVisorDetail
+    {
+        let model:MGridVisorDetail = MGridVisorDetail.detailVirusFriendly(model:self)
+        
+        return model
+    }
+    
     override func imageStandby() -> UIImage?
     {
         return #imageLiteral(resourceName: "assetTextureVirusFriendlyStandBy")

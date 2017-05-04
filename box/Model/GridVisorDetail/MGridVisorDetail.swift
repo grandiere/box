@@ -29,6 +29,28 @@ class MGridVisorDetail
         return detail
     }
     
+    class func detailVirusFriendly(model:MGridAlgoItemHostileVirusFriendly) -> MGridVisorDetail
+    {
+        let itemHeader:MGridVisorDetailItemHeaderVirusFriendly = MGridVisorDetailItemHeaderVirusFriendly(
+            model:model)
+        let itemDistance:MGridVisorDetailItemDistance = MGridVisorDetailItemDistance(
+            model:model)
+        let itemLevel:MGridVisorDetailItemLevel = MGridVisorDetailItemLevel(
+            model:model)
+        let itemCreated:MGridVisorDetailItemCreated = MGridVisorDetailItemCreated(
+            model:model)
+        
+        let items:[MGridVisorDetailItem] = [
+            itemHeader,
+            itemDistance,
+            itemLevel,
+            itemCreated]
+        
+        let detail:MGridVisorDetail = MGridVisorDetail(items:items)
+        
+        return detail
+    }
+    
     class func detailAid(model:MGridAlgoItemAid) -> MGridVisorDetail
     {
         let itemHeader:MGridVisorDetailItemHeaderAid = MGridVisorDetailItemHeaderAid(

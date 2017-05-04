@@ -172,7 +172,7 @@ class MGridAlgo
     {
         FMain.sharedInstance.db.listenOnce(
             path:FDb.algoVirus,
-            nodeType:FDbAlgoHostileVirusItem.self)
+            nodeType:FDbAlgoHostileVirus.self)
         { [weak self] (node:FDbProtocol?) in
             
             var items:[MGridAlgoItemHostileVirus] = []
