@@ -42,6 +42,7 @@ class CGridVirus:CController
     {
         MSession.sharedInstance.settings?.energy?.spendEnergy(
             energyCost:model.kEnergyRequired)
+        MSession.sharedInstance.settings?.stats?.virusReleaseSuccess()
         
         guard
             
