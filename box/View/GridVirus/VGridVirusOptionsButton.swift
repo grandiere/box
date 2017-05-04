@@ -2,7 +2,7 @@ import UIKit
 
 class VGridVirusOptionsButton:UIButton
 {
-    private let kNotActiveAlpha:CGFloat = 0.3
+    private let kNotActiveAlpha:CGFloat = 0.4
     
     init(color:UIColor, title:String)
     {
