@@ -2,7 +2,9 @@ import Foundation
 
 class MGridAlgoItemHostileVirus:MGridAlgoItemHostile
 {
-    class func virusWith(firebaseVirus:FDbAlgoHostileVirusItem) -> MGridAlgoItemHostileVirus
+    class func virusWith(
+        firebaseId:String,
+        firebaseVirus:FDbAlgoHostileVirusItem) -> MGridAlgoItemHostileVirus
     {
         let virus:MGridAlgoItemHostileVirus
         var friendly:Bool = false
@@ -18,10 +20,14 @@ class MGridAlgoItemHostileVirus:MGridAlgoItemHostile
         if friendly
         {
             virus = MGridAlgoItemHostileVirusFriendly(
+                firebaseId:firebaseId,
+                firebaseVirus:firebaseVirus)
         }
         else
         {
-            
+            virus = MGridAlgoItemHostileVirusFoe(
+                firebaseId:firebaseId,
+                firebaseVirus:firebaseVirus)
         }
         
         return virus
