@@ -64,9 +64,9 @@ extension DEnergy
         return intPercent
     }
     
-    func spendEnergy(hostile:MGridAlgoItemHostile)
+    func spendEnergy(energyCost:Int16)
     {
-        amount -= Int16(hostile.credits)
+        amount -= energyCost
         
         if amount < 0
         {

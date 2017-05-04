@@ -37,7 +37,8 @@ class CGridVisorMatch:CController
             return
         }
         
-        MSession.sharedInstance.settings?.energy?.spendEnergy(hostile:model)
+        let energyCost:Int16 = Int16(model.credits)
+        MSession.sharedInstance.settings?.energy?.spendEnergy(energyCost:energyCost)
     }
     
     override func viewDidAppear(_ animated:Bool)

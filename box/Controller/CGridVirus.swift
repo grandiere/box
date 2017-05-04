@@ -40,6 +40,9 @@ class CGridVirus:CController
     
     func releaseVirus()
     {
+        MSession.sharedInstance.settings?.energy?.spendEnergy(
+            energyCost:model.kEnergyRequired)
+        
         guard
             
             let userLocation:CLLocation = self.userLocation,
