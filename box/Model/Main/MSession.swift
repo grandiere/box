@@ -7,6 +7,7 @@ class MSession
     private(set) var handler:String?
     private(set) var score:Int
     private(set) var active:Bool
+    private let kScoreLevelRatio:Int = 100
     
     private init()
     {
@@ -216,6 +217,29 @@ class MSession
             object:nil)
     }
     
+    private func tryLevelUp()
+    {
+        guard
+        
+            let level:Int16 = settings?.user?.level
+        
+        else
+        {
+            return
+        }
+        
+        let levelInt:Int = Int(level)
+        let scoreForLevelUp:Int = levelInt * kScoreLevelRatio
+        
+        if score > scoreForLevelUp
+        {
+            settings?.user?.addLevel()
+            
+            let message:String = NSLocalizedString("MSession_levelUp", comment:"")
+            VAlert.messageBlue(message:message)
+        }
+    }
+    
     //MARK: public
     
     func loadSession()
@@ -243,5 +267,7 @@ class MSession
         FMain.sharedInstance.db.updateChild(
             path:path,
             json:score)
+        
+        tryLevelUp()
     }
 }

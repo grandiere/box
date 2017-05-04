@@ -17,6 +17,18 @@ extension DUser
         skill = DUser.kInitialValue
     }
     
+    func addLevel()
+    {
+        level += DUser.kInitialValue
+        
+        if level > DUser.kMaxStats
+        {
+            level = DUser.kMaxStats
+        }
+        
+        DManager.sharedInstance?.save()
+    }
+    
     func addMemory()
     {
         memory += DUser.kInitialValue
