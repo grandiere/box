@@ -25,6 +25,8 @@ extension DUser
         {
             memory = DUser.kMaxStats
         }
+        
+        DManager.sharedInstance?.save()
     }
     
     func addNetwork()
@@ -35,6 +37,8 @@ extension DUser
         {
             network = DUser.kMaxStats
         }
+        
+        DManager.sharedInstance?.save()
     }
     
     func addProcessor()
@@ -45,6 +49,8 @@ extension DUser
         {
             processor = DUser.kMaxStats
         }
+        
+        DManager.sharedInstance?.save()
     }
     
     func addSkill()
@@ -55,5 +61,7 @@ extension DUser
         {
             skill = DUser.kMaxStats
         }
+        
+        DManager.sharedInstance?.save()
     }
 }
