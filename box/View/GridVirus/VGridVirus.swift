@@ -3,6 +3,7 @@ import UIKit
 class VGridVirus:VView
 {
     private weak var controller:CGridVirus!
+    private weak var viewReleased:VGridVirusReleased!
     private weak var layoutLandingTop:NSLayoutConstraint!
     private weak var layoutLandingHeight:NSLayoutConstraint!
     private let kAnimationDuration:TimeInterval = 0.3
@@ -17,6 +18,7 @@ class VGridVirus:VView
         
         let viewReleased:VGridVirusReleased = VGridVirusReleased(
             controller:self.controller)
+        self.viewReleased = viewReleased
         
         addSubview(viewLanding)
         addSubview(viewReleased)
@@ -56,8 +58,9 @@ class VGridVirus:VView
     
     //MARK: public
     
-    func animateRelease()
+    func animateRelease(virusDescription:NSAttributedString)
     {
+        viewReleased.label.attributedText = virusDescription
         layoutLandingTop.constant = -layoutLandingHeight.constant
         
         UIView.animate(withDuration:kAnimationDuration)

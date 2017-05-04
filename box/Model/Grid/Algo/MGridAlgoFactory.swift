@@ -50,9 +50,35 @@ class MGridAlgoFactory
     
     //MARK: public
     
-    func releaseVirus()
+    func releaseVirus(
+        location:CLLocation,
+        level:Int)
     {
+        let latitude:Double = latitudeFor(location:location)
+        let longitude:Double = longitudeFor(location:location)
+        let created:TimeInterval = Date().timeIntervalSince1970
         
+        let firebaseVirus:FDbAlgovir = FDbAlgoAidItem(
+            latitude:latitude,
+            longitude:longitude,
+            created:created)
+        
+        guard
+            
+            let aidJson:Any = firebaseAid.json()
+            
+            else
+        {
+            return nil
+        }
+        
+        let aidId:String = FMain.sharedInstance.db.createChild(
+            path:FDb.algoAid,
+            json:aidJson)
+        
+        let aid:MGridAlgoItemAid = MGridAlgoItemAid(
+            firebaseId:aidId,
+            firebaseAid:firebaseAid)
     }
     
     func createBug(

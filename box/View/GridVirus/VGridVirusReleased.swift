@@ -4,6 +4,7 @@ class VGridVirusReleased:UIView
 {
     private weak var controller:CGridVirus!
     private weak var layoutButtonLeft:NSLayoutConstraint!
+    private(set) weak var label:UILabel!
     private let kImageTop:CGFloat = 100
     private let kImageHeight:CGFloat = 120
     private let kLabelMarginHorizontal:CGFloat = 10
@@ -32,6 +33,7 @@ class VGridVirusReleased:UIView
         label.backgroundColor = UIColor.clear
         label.textAlignment = NSTextAlignment.center
         label.numberOfLines = 0
+        self.label = label
         
         let button:UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false

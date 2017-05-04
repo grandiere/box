@@ -14,7 +14,8 @@ class CGridVirus:CController
     {
         self.userLocation = userLocation
         self.modelAlgo = modelAlgo
-        model = MGridVirus()
+        model = MGridVirus(modelAlgo:modelAlgo)
+        
         super.init()
     }
     
@@ -39,6 +40,17 @@ class CGridVirus:CController
     
     func releaseVirus()
     {
-        viewVirus.animateRelease()
+        guard
+            
+            let userLocation:CLLocation = self.userLocation,
+            let virusDescription:NSAttributedString = model.releaseVirus(
+                userLocation:userLocation)
+        
+        else
+        {
+            return
+        }
+        
+        viewVirus.animateRelease(virusDescription:virusDescription)
     }
 }
