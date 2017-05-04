@@ -2,7 +2,7 @@ import UIKit
 
 class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
 {
-    let posterId:String
+    let userId:String
     private let kCreditsMultiplier:CGFloat = 2
     
     init(
@@ -11,9 +11,9 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
         longitude:Double,
         level:Int,
         created:TimeInterval,
-        posterId:String)
+        userId:String)
     {
-        self.posterId = posterId
+        self.userId = userId
         
         super.init(
             firebaseId:firebaseId,
