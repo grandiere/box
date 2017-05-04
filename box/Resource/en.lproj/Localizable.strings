@@ -57,6 +57,9 @@
 "MGridVirus_labelSubtitle"="\nReleased";
 "MGridVisorTakeStats_stringValue"="+1 ";
 "MGridVisorTakeStatsSkill_name"="Skill";
+"MGridVisorTakeStatsMemory_name"="Memory";
+"MGridVisorTakeStatsNetwork_name"="Network";
+"MGridVisorTakeStatsProcessor_name"="Processor";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";

@@ -3,31 +3,43 @@ import UIKit
 class MGridVisorTakeStats:MGridVisorTakeProtocol
 {
     private let attributedString:NSAttributedString
-    private let kValueFontSize:CGFloat = 34
+    private let kValueFontSize:CGFloat = 38
     private let kNameFontSize:CGFloat = 22
     
     class func factory() -> MGridVisorTakeStats
     {
-        let energyLevel:MGridVisorTakeEnergy
+        let newStats:MGridVisorTakeStats
         
-        let random:UInt32 = arc4random_uniform(10)
+        let random:UInt32 = arc4random_uniform(4)
         
         switch random
         {
         case 1:
             
-            energyLevel = MGridVisorTakeEnergy20()
+            newStats = MGridVisorTakeStatsMemory()
+            
+            break
+            
+        case 2:
+            
+            newStats = MGridVisorTakeStatsNetwork()
+            
+            break
+            
+        case 3:
+            
+            newStats = MGridVisorTakeStatsProcessor()
             
             break
             
         default:
             
-            energyLevel = MGridVisorTakeEnergy15()
+            newStats = MGridVisorTakeStatsSkill()
             
             break
         }
         
-        return energyLevel
+        return newStats
     }
     
     init(name:String)
