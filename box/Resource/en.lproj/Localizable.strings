@@ -60,6 +60,7 @@
 "MGridVisorTakeStatsMemory_name"="Memory";
 "MGridVisorTakeStatsNetwork_name"="Network";
 "MGridVisorTakeStatsProcessor_name"="Processor";
+"MSession_levelUp"="Level up";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";

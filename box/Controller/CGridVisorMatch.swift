@@ -6,7 +6,7 @@ class CGridVisorMatch:CController
     private(set) weak var model:MGridAlgoItemHostile?
     private weak var viewMatch:VGridVisorMatch!
     private weak var timer:Timer?
-    private let kTimeInterval:TimeInterval = 3
+    private let kTimeInterval:TimeInterval = 1
     
     init(model:MGridAlgoItemHostile)
     {
