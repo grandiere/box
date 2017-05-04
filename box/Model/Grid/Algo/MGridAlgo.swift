@@ -168,6 +168,44 @@ class MGridAlgo
         controller?.algosLoaded()
     }
     
+    private func loadFirebaseVirus(userLocation:CLLocation)
+    {
+        FMain.sharedInstance.db.listenOnce(
+            path:FDb.algoVirus,
+            nodeType:FDbAlgoHostileVirusItem.self)
+        { [weak self] (node:FDbProtocol?) in
+            
+            var items:[MGridAlgoItemHostileVirusFriendly] = []
+            
+            if let viruses:FDbAlgoHostileVirus = node as? FDbAlgoHostileVirus
+            {
+                let virusIds:[String] = Array(viruses.items.keys)
+                
+                for virusId:String in virusIds
+                {
+                    guard
+                        
+                        let virus:FDbAlgoHostileVirusItem = viruses.items[virusId]
+                        
+                    else
+                    {
+                        continue
+                    }
+                    
+                    let item:MGridAlgoItemHostileVirus = MGridAlgoItemAid(
+                        firebaseId:virusId,
+                        firebaseAid:virus)
+                    
+                    items.append(item)
+                }
+            }
+            
+            self?.firebaseAidsLoaded(
+                items:items,
+                userLocation:userLocation)
+        }
+    }
+    
     //MARK: public
     
     func loadAlgo(

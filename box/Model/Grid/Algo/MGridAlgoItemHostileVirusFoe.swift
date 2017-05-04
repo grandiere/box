@@ -5,6 +5,19 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     let userId:String
     private let kCreditsMultiplier:CGFloat = 2
     
+    convenience init(
+        firebaseId:String,
+        firebaseVirus:FDbAlgoHostileVirusItem)
+    {
+        self.init(
+            firebaseId:firebaseId,
+            latitude:firebaseVirus.latitude,
+            longitude:firebaseVirus.longitude,
+            level:firebaseVirus.level,
+            created:firebaseVirus.created,
+            userId:firebaseVirus.userId)
+    }
+    
     init(
         firebaseId:String,
         latitude:Double,
