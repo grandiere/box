@@ -2,30 +2,30 @@ import Foundation
 
 class FDbAlgoHostileVirus:FDbProtocol
 {
-    let items:[String:FDbAlgoHostileBugItem]
+    let items:[String:FDbAlgoHostileVirusItem]
     
     required init?(snapshot:Any)
     {
-        var items:[String:FDbAlgoHostileBugItem] = [:]
+        var items:[String:FDbAlgoHostileVirusItem] = [:]
         
         if let snapshotDict:[String:Any] = snapshot as? [String:Any]
         {
             let snapshotKeys:[String] = Array(snapshotDict.keys)
             
-            for bugId:String in snapshotKeys
+            for virusId:String in snapshotKeys
             {
                 guard
                     
-                    let snapshotBug:Any = snapshotDict[bugId],
-                    let bugItem:FDbAlgoHostileBugItem = FDbAlgoHostileBugItem(
-                        snapshot:snapshotBug)
+                    let snapshotVirus:Any = snapshotDict[virusId],
+                    let virusItem:FDbAlgoHostileVirusItem = FDbAlgoHostileVirusItem(
+                        snapshot:snapshotVirus)
                     
-                    else
+                else
                 {
                     continue
                 }
                 
-                items[bugId] = bugItem
+                items[virusId] = virusItem
             }
         }
         
