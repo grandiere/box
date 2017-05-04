@@ -60,7 +60,7 @@ class MGridVisorTakeStats:MGridVisorTakeProtocol
     {
         get
         {
-            return NSAttributedString()
+            return attributedString
         }
     }
     
