@@ -6,9 +6,9 @@ class VGridVirusReleased:UIView
     private weak var layoutButtonLeft:NSLayoutConstraint!
     private(set) weak var label:UILabel!
     private let kImageTop:CGFloat = 100
-    private let kImageHeight:CGFloat = 120
+    private let kImageHeight:CGFloat = 110
     private let kLabelMarginHorizontal:CGFloat = 10
-    private let kLabelHeight:CGFloat = 160
+    private let kLabelHeight:CGFloat = 200
     private let kButtonWidth:CGFloat = 120
     private let kButtonHeight:CGFloat = 34
     

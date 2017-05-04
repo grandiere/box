@@ -16,7 +16,7 @@ class FDb
     
     //MARK: public
     
-    func createChild(
+    @discardableResult func createChild(
         path:String,
         json:Any) -> String
     {

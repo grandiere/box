@@ -4,7 +4,7 @@ import CoreLocation
 class MGridAlgo
 {
     static let kMaxDistance:CLLocationDistance = 1000
-    private let factory:MGridAlgoFactory
+    let factory:MGridAlgoFactory
     private weak var controller:CGrid?
     private(set) var items:[MGridAlgoItem]
     private(set) var nearItems:[MGridAlgoItem]?
@@ -191,10 +191,5 @@ class MGridAlgo
             fromItems:items,
             location:userLocation,
             renderReady:true)
-    }
-    
-    func releaseVirus(virusLevel:Int)
-    {
-        
     }
 }
