@@ -41,6 +41,20 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
         return kCreditsMultiplier
     }
     
+    override func titleMatch() -> String?
+    {
+        let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFoe_titleMatch", comment:"")
+        
+        return title
+    }
+    
+    override func titleAnnotation() -> String?
+    {
+        let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFoe_titleAnnotation", comment:"")
+        
+        return title
+    }
+    
     override func destroySuccess()
     {
         MSession.sharedInstance.settings?.stats?.antivirusSuccess()

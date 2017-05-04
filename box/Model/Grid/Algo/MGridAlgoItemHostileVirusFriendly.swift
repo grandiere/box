@@ -28,4 +28,21 @@ class MGridAlgoItemHostileVirusFriendly:MGridAlgoItemHostileVirus
     {
         return #imageLiteral(resourceName: "assetTextureVirusFriendlyDetail")
     }
+    
+    override func annotationImageOn() -> UIImage?
+    {
+        return #imageLiteral(resourceName: "assetTextureVirusFriendlyAnnotationOn")
+    }
+    
+    override func annotationImageOff() -> UIImage?
+    {
+        return #imageLiteral(resourceName: "assetTextureVirusFriendlyAnnotationOff")
+    }
+    
+    override func titleAnnotation() -> String?
+    {
+        let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFriendly_titleAnnotation", comment:"")
+        
+        return title
+    }
 }
