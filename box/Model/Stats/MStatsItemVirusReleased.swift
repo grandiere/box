@@ -4,7 +4,7 @@ class MStatsItemVirusReleased:MStatsItem
 {
     init()
     {
-        let image:UIImage = #imageLiteral(resourceName: "assetTextureBugDetail")
+        let image:UIImage = #imageLiteral(resourceName: "assetTextureVirusFriendlyDetail")
         let title:String = NSLocalizedString("MStatsItemVirusReleased_title", comment:"")
         let count:Int
         

@@ -38,7 +38,7 @@
 "MGridVisorDetailItemHeaderVirusFriendly_title"="Virus friendly";
 "MStatsItemBugs_title"="Bugs";
 "MStatsItemVirus_title"="Virus";
-"MStatsItemVirusReleased_title"="Virus released";
+"MStatsItemVirusReleased_title"="Released";
 "MGridAlgoItemHostileBug_titleMatch"="Debug";
 "MGridAlgoItemHostileBug_titleAnnotation"="Bug";
 "MGridAlgoItemHostileVirusFoe_titleMatch"="Anti virus";
@@ -55,6 +55,7 @@
 "MGridVisorTakeEnergy_stringName"="  Energy";
 "MGridVirus_labelTitle"="Virus level\n";
 "MGridVirus_labelSubtitle"="\nReleased";
+"MGridVisorTakeStats_stringValue"="+1 ";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";
