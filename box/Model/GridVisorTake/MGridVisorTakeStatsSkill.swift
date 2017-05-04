@@ -13,6 +13,6 @@ class MGridVisorTakeStatsSkill:MGridVisorTakeStats
     {
         super.apply(controller:controller)
         
-        MSession.sharedInstance.settings?.stats.add
+        MSession.sharedInstance.settings?.user?.addSkill()
     }
 }
