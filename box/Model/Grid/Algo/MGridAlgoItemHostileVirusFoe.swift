@@ -43,7 +43,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     
     override func detail() -> MGridVisorDetail
     {
-        let model:MGridVisorDetail = MGridVisorDetail.detailVirusFriendly(model:self)
+        let model:MGridVisorDetail = MGridVisorDetail.detailVirusFoe(model:self)
         
         return model
     }

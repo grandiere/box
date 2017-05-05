@@ -36,6 +36,7 @@
 "MGridVisorDetailItemHeaderBug_title"="Bug";
 "MGridVisorDetailItemHeaderAid_title"="Power Up";
 "MGridVisorDetailItemHeaderVirusFriendly_title"="Virus friendly";
+"MGridVisorDetailItemHeaderVirusFoe_title"="Virus";
 "MStatsItemBugs_title"="Bugs";
 "MStatsItemVirus_title"="Virus";
 "MStatsItemVirusReleased_title"="Released";

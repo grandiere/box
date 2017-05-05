@@ -31,7 +31,7 @@ class MGridVisorDetail
     
     class func detailVirusFoe(model:MGridAlgoItemHostileVirusFoe) -> MGridVisorDetail
     {
-        let itemHeader:MGridVisorDetailItemHeaderVirusFriendly = MGridVisorDetailItemHeaderVirusFriendly(
+        let itemHeader:MGridVisorDetailItemHeaderVirusFoe = MGridVisorDetailItemHeaderVirusFoe(
             model:model)
         let itemDistance:MGridVisorDetailItemDistance = MGridVisorDetailItemDistance(
             model:model)
