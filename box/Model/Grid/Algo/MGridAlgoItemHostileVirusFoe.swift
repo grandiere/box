@@ -41,6 +41,38 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
         return kCreditsMultiplier
     }
     
+    override func detail() -> MGridVisorDetail
+    {
+        let model:MGridVisorDetail = MGridVisorDetail.detailVirusFriendly(model:self)
+        
+        return model
+    }
+    
+    override func imageStandby() -> UIImage?
+    {
+        return #imageLiteral(resourceName: "assetTextureVirusFoeStandBy")
+    }
+    
+    override func imageTargeted() -> UIImage?
+    {
+        return #imageLiteral(resourceName: "assetTextureVirusFoeTargeted")
+    }
+    
+    override func imageDetail() -> UIImage?
+    {
+        return #imageLiteral(resourceName: "assetTextureVirusFoeDetail")
+    }
+    
+    override func annotationImageOn() -> UIImage?
+    {
+        return #imageLiteral(resourceName: "assetTextureVirusFoeAnnotationOn")
+    }
+    
+    override func annotationImageOff() -> UIImage?
+    {
+        return #imageLiteral(resourceName: "assetTextureVirusFoeAnnotationOff")
+    }
+    
     override func titleMatch() -> String?
     {
         let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFoe_titleMatch", comment:"")
