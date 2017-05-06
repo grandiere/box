@@ -8,18 +8,18 @@ class VHandler:VView
     private weak var layoutFieldLeft:NSLayoutConstraint!
     private weak var layoutButtonLeft:NSLayoutConstraint!
     private let kTitleTop:CGFloat = 10
-    private let kTitleHeight:CGFloat = 70
+    private let kTitleHeight:CGFloat = 100
     private let kTitleMarginHorizontal:CGFloat = 10
-    private let kFieldHeight:CGFloat = 50
+    private let kFieldHeight:CGFloat = 60
     private let kFieldWidth:CGFloat = 150
-    private let kWarningHeight:CGFloat = 50
-    private let kButtonWidth:CGFloat = 120
-    private let kButtonHeight:CGFloat = 35
+    private let kWarningHeight:CGFloat = 80
+    private let kButtonWidth:CGFloat = 100
+    private let kButtonHeight:CGFloat = 34
     
     override init(controller:CController)
     {
         let attributesTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bold(size:18),
+            NSFontAttributeName:UIFont.bold(size:19),
             NSForegroundColorAttributeName:UIColor.white]
         let attributesSubtitle:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:16),
@@ -56,8 +56,8 @@ class VHandler:VView
         labelWarning.translatesAutoresizingMaskIntoConstraints = false
         labelWarning.backgroundColor = UIColor.clear
         labelWarning.textAlignment = NSTextAlignment.center
-        labelWarning.font = UIFont.regular(size:16)
-        labelWarning.textColor = UIColor(white:1, alpha:0.8)
+        labelWarning.font = UIFont.regular(size:15)
+        labelWarning.textColor = UIColor(white:1, alpha:0.7)
         labelWarning.text = NSLocalizedString("VHandler_labelWarning", comment:"")
         self.labelWarning = labelWarning
         
@@ -74,7 +74,7 @@ class VHandler:VView
         buttonDone.setTitle(
             NSLocalizedString("VHandler_buttonDone", comment:""),
             for:UIControlState.normal)
-        buttonDone.titleLabel!.font = UIFont.regular(size:16)
+        buttonDone.titleLabel!.font = UIFont.bold(size:14)
         buttonDone.layer.cornerRadius = kButtonHeight / 2.0
         buttonDone.addTarget(
             self,

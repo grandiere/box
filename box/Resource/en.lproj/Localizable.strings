@@ -13,9 +13,9 @@
 "VGridVirusOptions_buttonCancel"="Cancel";
 "VGridVirusOptions_buttonRelease"="Release";
 "VGridVirusReleased_button"="Done";
-"VHandler_labelTitle"="Your handlers";
+"VHandler_labelTitle"="Your handler";
 "VHandler_labelSubtitle"="\nHow you will appear on the boards";
-"VHandler_labelWarning"="You won't appear on boards";
+"VHandler_labelWarning"="Won't appear on boards yet";
 "VHandler_buttonDone"="Done";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
