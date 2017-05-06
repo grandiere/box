@@ -3,10 +3,15 @@ import UIKit
 class VHandler:VView
 {
     private weak var controller:CHandler!
+    private weak var viewField:VHandlerField!
     private weak var labelWarning:UILabel!
+    private weak var layoutFieldLeft:NSLayoutConstraint!
     private let kTitleTop:CGFloat = 10
-    private let kTitleHeight:CGFloat = 60
+    private let kTitleHeight:CGFloat = 70
     private let kTitleMarginHorizontal:CGFloat = 10
+    private let kFieldHeight:CGFloat = 50
+    private let kFieldWidth:CGFloat = 150
+    private let kWarningHeight:CGFloat = 50
     
     override init(controller:CController)
     {
@@ -31,6 +36,10 @@ class VHandler:VView
         super.init(controller:controller)
         self.controller = controller as? CHandler
         
+        let viewField:VHandlerField = VHandlerField(
+            controller:self.controller)
+        self.viewField = viewField
+        
         let labelTitle:UILabel = UILabel()
         labelTitle.isUserInteractionEnabled = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -46,12 +55,14 @@ class VHandler:VView
         labelWarning.textAlignment = NSTextAlignment.center
         labelWarning.font = UIFont.regular(size:16)
         labelWarning.textColor = UIColor(white:1, alpha:0.8)
+        labelWarning.text = NSLocalizedString("VHandler_labelWarning", comment:"")
         self.labelWarning = labelWarning
         
         let buttonDone:UIButton = UIButton()
         
         addSubview(labelTitle)
         addSubview(labelWarning)
+        addSubview(viewField)
         
         NSLayoutConstraint.topToTop(
             view:labelTitle,
@@ -64,7 +75,18 @@ class VHandler:VView
             view:labelTitle,
             toView:self)
         
-        NSLayoutConstraint
+        NSLayoutConstraint.topToBottom(
+            view:viewField,
+            toView:labelTitle)
+        NSLayoutConstraint.height(
+            view:viewField,
+            constant:kFieldHeight)
+        NSLayoutConstraint.width(
+            view:viewField,
+            constant:kFieldWidth)
+        layoutFieldLeft = NSLayoutConstraint.leftToLeft(
+            view:viewField,
+            toView:self)
     }
     
     required init?(coder:NSCoder)

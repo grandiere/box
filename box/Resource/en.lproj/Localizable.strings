@@ -15,6 +15,7 @@
 "VGridVirusReleased_button"="Done";
 "VHandler_labelTitle"="Your handlers";
 "VHandler_labelSubtitle"="\nHow you will appear on the boards";
+"VHandler_labelWarning"="You won't appear on boards";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";
