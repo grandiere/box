@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB2BD80EC92F14C7A532B356 /* Pods_box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D577B23654DA13DD78C0535A /* Pods_box.framework */; };
+		DA0960831EBE418D0005BE96 /* CHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960821EBE418D0005BE96 /* CHandler.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -234,6 +235,7 @@
 /* Begin PBXFileReference section */
 		0B3F365BEE085B9C19AB1340 /* Pods-box.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-box.debug.xcconfig"; path = "Pods/Target Support Files/Pods-box/Pods-box.debug.xcconfig"; sourceTree = "<group>"; };
 		D577B23654DA13DD78C0535A /* Pods_box.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_box.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0960821EBE418D0005BE96 /* CHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHandler.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -972,6 +974,7 @@
 				DA29FEEE1EAAA9F500CD8FBC /* CStats.swift */,
 				DA7135C11EAFD210007ACEB5 /* CBoards.swift */,
 				DA7135CA1EAFF634007ACEB5 /* CSettings.swift */,
+				DA0960821EBE418D0005BE96 /* CHandler.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1309,6 +1312,7 @@
 				DAFDEF981EA5090D0016746F /* MGridItemVisor.swift in Sources */,
 				DAF15D5C1E9D32BB0000E6B9 /* ExtensionNotification.swift in Sources */,
 				DAAA0EB41EA80D6000756A17 /* MGridVisorDetailItem.swift in Sources */,
+				DA0960831EBE418D0005BE96 /* CHandler.swift in Sources */,
 				DA134AA81E9D549E002BE57D /* MetalSpatialDirectionNegative.swift in Sources */,
 				DA8852731EAEAEA5008CB62C /* VGridMapRenderPin.swift in Sources */,
 				DA0C16D51EB4FF5A007532A6 /* FDbAlgoAid.swift in Sources */,
