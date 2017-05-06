@@ -158,6 +158,6 @@ class VHandler:VView
     
     func actionDone(sender button:UIButton)
     {
-        
+        controller.back()
     }
 }
