@@ -87,10 +87,30 @@ class VHandler:VView
         layoutFieldLeft = NSLayoutConstraint.leftToLeft(
             view:viewField,
             toView:self)
+        
+        NSLayoutConstraint.topToBottom(
+            view:labelWarning,
+            toView:viewField)
+        NSLayoutConstraint.height(
+            view:labelWarning,
+            constant:kWarningHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:labelWarning,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    override func layoutSubviews()
+    {
+        let width:CGFloat = bounds.maxX
+        let remainField:CGFloat = width - kFieldWidth
+        let fieldLeft:CGFloat = remainField / 2.0
+        layoutFieldLeft.constant = fieldLeft
+        
+        super.layoutSubviews()
     }
 }
