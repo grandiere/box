@@ -4,6 +4,7 @@ class VHandlerField:UITextField, UITextFieldDelegate
 {
     private weak var controller:CHandler!
     private let kBorderHeight:CGFloat = 1
+    private let kMaxCharacter:Int = 5
     
     init(controller:CHandler)
     {
@@ -11,7 +12,7 @@ class VHandlerField:UITextField, UITextFieldDelegate
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.clear
-        font = UIFont.regular(size:25)
+        font = UIFont.regular(size:30)
         textColor = UIColor.white
         tintColor = UIColor.white
         autocorrectionType = UITextAutocorrectionType.no
@@ -65,15 +66,32 @@ class VHandlerField:UITextField, UITextFieldDelegate
             return
         }
         
+        controller.updateWarning()
+        
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
             MSession.sharedInstance.updateHandler(handler:handler)
         }
     }
     
-    override func shouldChangeText(in range:UITextRange, replacementText text:String) -> Bool
+    func textField(_ textField:UITextField, shouldChangeCharactersIn range:NSRange, replacementString string:String) -> Bool
     {
-        controller.updateWarning()
+        guard
+        
+            let text:String = textField.text
+        
+        else
+        {
+            return false
+        }
+        
+        let nsString:NSString = text as NSString
+        let replaced:String = nsString.replacingCharacters(in:range, with:string)
+        
+        if replaced.characters.count > kMaxCharacter
+        {
+            return false
+        }
         
         return true
     }
