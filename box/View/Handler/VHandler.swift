@@ -4,14 +4,17 @@ class VHandler:VView
 {
     private weak var controller:CHandler!
     private weak var viewField:VHandlerField!
-    private weak var labelWarning:UILabel!
+    private(set) weak var labelWarning:UILabel!
     private weak var layoutFieldLeft:NSLayoutConstraint!
+    private weak var layoutButtonLeft:NSLayoutConstraint!
     private let kTitleTop:CGFloat = 10
     private let kTitleHeight:CGFloat = 70
     private let kTitleMarginHorizontal:CGFloat = 10
     private let kFieldHeight:CGFloat = 50
     private let kFieldWidth:CGFloat = 150
     private let kWarningHeight:CGFloat = 50
+    private let kButtonWidth:CGFloat = 120
+    private let kButtonHeight:CGFloat = 35
     
     override init(controller:CController)
     {
@@ -59,10 +62,29 @@ class VHandler:VView
         self.labelWarning = labelWarning
         
         let buttonDone:UIButton = UIButton()
+        buttonDone.translatesAutoresizingMaskIntoConstraints = false
+        buttonDone.clipsToBounds = true
+        buttonDone.backgroundColor = UIColor.gridBlue
+        buttonDone.setTitleColor(
+            UIColor.white,
+            for:UIControlState.normal)
+        buttonDone.setTitleColor(
+            UIColor(white:1, alpha:0.2),
+            for:UIControlState.highlighted)
+        buttonDone.setTitle(
+            NSLocalizedString("VHandler_buttonDone", comment:""),
+            for:UIControlState.normal)
+        buttonDone.titleLabel!.font = UIFont.regular(size:16)
+        buttonDone.layer.cornerRadius = kButtonHeight / 2.0
+        buttonDone.addTarget(
+            self,
+            action:#selector(actionDone(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         addSubview(labelTitle)
         addSubview(labelWarning)
         addSubview(viewField)
+        addSubview(buttonDone)
         
         NSLayoutConstraint.topToTop(
             view:labelTitle,
@@ -97,6 +119,19 @@ class VHandler:VView
         NSLayoutConstraint.equalsHorizontal(
             view:labelWarning,
             toView:self)
+        
+        NSLayoutConstraint.topToBottom(
+            view:buttonDone,
+            toView:labelWarning)
+        NSLayoutConstraint.height(
+            view:buttonDone,
+            constant:kButtonHeight)
+        NSLayoutConstraint.width(
+            view:buttonDone,
+            constant:kButtonWidth)
+        layoutButtonLeft = NSLayoutConstraint.leftToLeft(
+            view:buttonDone,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
@@ -107,10 +142,22 @@ class VHandler:VView
     override func layoutSubviews()
     {
         let width:CGFloat = bounds.maxX
+        
         let remainField:CGFloat = width - kFieldWidth
         let fieldLeft:CGFloat = remainField / 2.0
         layoutFieldLeft.constant = fieldLeft
         
+        let remainButton:CGFloat = width - kButtonWidth
+        let buttonLeft:CGFloat = remainButton / 2.0
+        layoutButtonLeft.constant = buttonLeft
+        
         super.layoutSubviews()
+    }
+    
+    //MARK: actions
+    
+    func actionDone(sender button:UIButton)
+    {
+        
     }
 }

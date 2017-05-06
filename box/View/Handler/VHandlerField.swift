@@ -7,6 +7,8 @@ class VHandlerField:UITextField, UITextFieldDelegate
     init(controller:CHandler)
     {
         super.init(frame:CGRect.zero)
+        clipsToBounds = true
+        translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
     }
     
