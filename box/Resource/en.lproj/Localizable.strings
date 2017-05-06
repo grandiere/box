@@ -13,6 +13,8 @@
 "VGridVirusOptions_buttonCancel"="Cancel";
 "VGridVirusOptions_buttonRelease"="Release";
 "VGridVirusReleased_button"="Done";
+"VHandler_labelTitle"="Your handlers";
+"VHandler_labelSubtitle"="\nHow you will appear on the boards";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";
