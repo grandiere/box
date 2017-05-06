@@ -10,6 +10,7 @@
 		CB2BD80EC92F14C7A532B356 /* Pods_box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D577B23654DA13DD78C0535A /* Pods_box.framework */; };
 		DA0960831EBE418D0005BE96 /* CHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960821EBE418D0005BE96 /* CHandler.swift */; };
 		DA0960861EBE41F70005BE96 /* VHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960851EBE41F70005BE96 /* VHandler.swift */; };
+		DA0960881EBE429A0005BE96 /* VHandlerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960871EBE429A0005BE96 /* VHandlerField.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -238,6 +239,7 @@
 		D577B23654DA13DD78C0535A /* Pods_box.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_box.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0960821EBE418D0005BE96 /* CHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHandler.swift; sourceTree = "<group>"; };
 		DA0960851EBE41F70005BE96 /* VHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandler.swift; sourceTree = "<group>"; };
+		DA0960871EBE429A0005BE96 /* VHandlerField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandlerField.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				DA0960851EBE41F70005BE96 /* VHandler.swift */,
+				DA0960871EBE429A0005BE96 /* VHandlerField.swift */,
 			);
 			path = Handler;
 			sourceTree = "<group>";
@@ -1400,6 +1403,7 @@
 				DA4DC4701EA191270024D28E /* MGridAlgo.swift in Sources */,
 				DAFDEF941EA508E10016746F /* MGridItem.swift in Sources */,
 				DA134AAA1E9D549E002BE57D /* MetalSpatialShapeSquare.swift in Sources */,
+				DA0960881EBE429A0005BE96 /* VHandlerField.swift in Sources */,
 				DA7135B81EAFB030007ACEB5 /* MGridMapDetailItemTitle.swift in Sources */,
 				DA4DC47C1EA192BD0024D28E /* MGridAlgoItemHostileBug.swift in Sources */,
 				DA4D97731EB10C1000AE0C0C /* VLandingBarCell.swift in Sources */,
