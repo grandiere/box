@@ -10,7 +10,7 @@ class VHandler:VView
     private let kTitleHeight:CGFloat = 120
     private let kTitleMarginHorizontal:CGFloat = 10
     private let kFieldHeight:CGFloat = 50
-    private let kFieldWidth:CGFloat = 120
+    private let kFieldWidth:CGFloat = 100
     private let kWarningHeight:CGFloat = 90
     private let kButtonWidth:CGFloat = 100
     private let kButtonHeight:CGFloat = 34
@@ -51,6 +51,7 @@ class VHandler:VView
         labelTitle.attributedText = mutableString
         
         let labelWarning:UILabel = UILabel()
+        labelWarning.isHidden = true
         labelWarning.isUserInteractionEnabled = false
         labelWarning.translatesAutoresizingMaskIntoConstraints = false
         labelWarning.backgroundColor = UIColor.clear

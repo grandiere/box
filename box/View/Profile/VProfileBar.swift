@@ -5,7 +5,7 @@ class VProfileBar:UIView
     private weak var controller:CProfile!
     private(set) weak var buttonHandler:UIButton!
     private let kButtonSize:CGFloat = 60
-    private let kHandlerHeight:CGFloat = 40
+    private let kHandlerHeight:CGFloat = 100
     
     init(controller:CProfile)
     {
@@ -47,7 +47,7 @@ class VProfileBar:UIView
         buttonHandler.setTitleColor(
             UIColor(white:1, alpha:0.2),
             for:UIControlState.highlighted)
-        buttonHandler.titleLabel!.font = UIFont.bold(size:16)
+        buttonHandler.titleLabel!.font = UIFont.bold(size:22)
         buttonHandler.addTarget(
             self,
             action:#selector(actionHandler(sender:)),
@@ -56,6 +56,7 @@ class VProfileBar:UIView
         
         addSubview(imageView)
         addSubview(backButton)
+        addSubview(buttonHandler)
         
         NSLayoutConstraint.equals(
             view:imageView,

@@ -32,7 +32,14 @@ class CBoards:CController
         {
             firstTime = false
             
-            if MSession.sharedInstance.handler == nil
+            if let handler:String = MSession.sharedInstance.handler
+            {
+                if handler.characters.count < 1
+                {
+                    editHandler()
+                }
+            }
+            else
             {
                 editHandler()
             }
