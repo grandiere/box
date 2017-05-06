@@ -3,6 +3,7 @@ import UIKit
 class VHandler:VView
 {
     private weak var controller:CHandler!
+    private weak var labelWarning:UILabel!
     private let kTitleTop:CGFloat = 10
     private let kTitleHeight:CGFloat = 60
     private let kTitleMarginHorizontal:CGFloat = 10
@@ -38,7 +39,19 @@ class VHandler:VView
         labelTitle.numberOfLines = 0
         labelTitle.attributedText = mutableString
         
+        let labelWarning:UILabel = UILabel()
+        labelWarning.isUserInteractionEnabled = false
+        labelWarning.translatesAutoresizingMaskIntoConstraints = false
+        labelWarning.backgroundColor = UIColor.clear
+        labelWarning.textAlignment = NSTextAlignment.center
+        labelWarning.font = UIFont.regular(size:16)
+        labelWarning.textColor = UIColor(white:1, alpha:0.8)
+        self.labelWarning = labelWarning
+        
+        let buttonDone:UIButton = UIButton()
+        
         addSubview(labelTitle)
+        addSubview(labelWarning)
         
         NSLayoutConstraint.topToTop(
             view:labelTitle,
