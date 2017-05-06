@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CB2BD80EC92F14C7A532B356 /* Pods_box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D577B23654DA13DD78C0535A /* Pods_box.framework */; };
 		DA0960831EBE418D0005BE96 /* CHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960821EBE418D0005BE96 /* CHandler.swift */; };
+		DA0960861EBE41F70005BE96 /* VHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960851EBE41F70005BE96 /* VHandler.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -236,6 +237,7 @@
 		0B3F365BEE085B9C19AB1340 /* Pods-box.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-box.debug.xcconfig"; path = "Pods/Target Support Files/Pods-box/Pods-box.debug.xcconfig"; sourceTree = "<group>"; };
 		D577B23654DA13DD78C0535A /* Pods_box.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_box.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0960821EBE418D0005BE96 /* CHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHandler.swift; sourceTree = "<group>"; };
+		DA0960851EBE41F70005BE96 /* VHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandler.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -490,6 +492,14 @@
 				D577B23654DA13DD78C0535A /* Pods_box.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA0960841EBE41EF0005BE96 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				DA0960851EBE41F70005BE96 /* VHandler.swift */,
+			);
+			path = Handler;
 			sourceTree = "<group>";
 		};
 		DA134A761E9D48E1002BE57D /* Metal */ = {
@@ -1052,6 +1062,7 @@
 		DAF15D491E9D32BB0000E6B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA0960841EBE41EF0005BE96 /* Handler */,
 				DA34E5121EB95AA900AC9389 /* GridVirus */,
 				DA1403C31EB668AD006C9364 /* GridVisorTake */,
 				DA7135CC1EAFF74E007ACEB5 /* Settings */,
@@ -1433,6 +1444,7 @@
 				DA49A81E1EBA1E1400C03ECD /* VGridVirusOptionsButton.swift in Sources */,
 				DA59D77D1EB3D61C00EB2973 /* MGridAlgoFactory.swift in Sources */,
 				DA7084491EA6683100B222FE /* MGridVisorOrientationLandscapeLeft.swift in Sources */,
+				DA0960861EBE41F70005BE96 /* VHandler.swift in Sources */,
 				DA29FEE91EAAA3EB00CD8FBC /* MProfileItemMemory.swift in Sources */,
 				DAAA0EC01EA8219D00756A17 /* VGridVisorDetailCellDistanceAccuracy.swift in Sources */,
 				DA7135BC1EAFB052007ACEB5 /* MGirdMapDetailItemAge.swift in Sources */,
