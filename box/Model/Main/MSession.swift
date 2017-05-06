@@ -270,4 +270,23 @@ class MSession
         
         tryLevelUp()
     }
+    
+    func updateHandler(handler:String)
+    {
+        guard
+            
+            let userPath:String = firebasePath()
+            
+        else
+        {
+            return
+        }
+        
+        self.handler = handler
+        
+        let path:String = "\(userPath)/\(FDbUserItem.handler)"
+        FMain.sharedInstance.db.updateChild(
+            path:path,
+            json:handler)
+    }
 }

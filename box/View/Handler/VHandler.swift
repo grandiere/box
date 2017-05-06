@@ -3,7 +3,7 @@ import UIKit
 class VHandler:VView
 {
     private weak var controller:CHandler!
-    private weak var viewField:VHandlerField!
+    private(set) weak var viewField:VHandlerField!
     private(set) weak var labelWarning:UILabel!
     private weak var layoutFieldLeft:NSLayoutConstraint!
     private weak var layoutButtonLeft:NSLayoutConstraint!
@@ -56,7 +56,7 @@ class VHandler:VView
         labelWarning.backgroundColor = UIColor.clear
         labelWarning.textAlignment = NSTextAlignment.center
         labelWarning.font = UIFont.regular(size:15)
-        labelWarning.textColor = UIColor(white:1, alpha:0.7)
+        labelWarning.textColor = UIColor(white:1, alpha:0.6)
         labelWarning.text = NSLocalizedString("VHandler_labelWarning", comment:"")
         self.labelWarning = labelWarning
         
@@ -156,6 +156,7 @@ class VHandler:VView
     
     func actionDone(sender button:UIButton)
     {
+        UIApplication.shared.keyWindow!.endEditing(true)
         controller.back()
     }
 }

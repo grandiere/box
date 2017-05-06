@@ -15,6 +15,8 @@ class CHandler:CController
     {
         super.viewDidAppear(animated)
         parentController.viewParent.panRecognizer.isEnabled = false
+        viewHandler.viewField.becomeFirstResponder()
+        updateWarning()
     }
     
     //MARK: public
@@ -22,5 +24,28 @@ class CHandler:CController
     func back()
     {
         parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
+    func updateWarning()
+    {
+        let hidden:Bool
+        
+        if let handler:String = MSession.sharedInstance.handler
+        {
+            if handler.characters.count > 0
+            {
+                hidden = true
+            }
+            else
+            {
+                hidden = false
+            }
+        }
+        else
+        {
+            hidden = false
+        }
+        
+        viewHandler.labelWarning.isHidden = hidden
     }
 }
