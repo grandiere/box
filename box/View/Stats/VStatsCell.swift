@@ -8,8 +8,8 @@ class VStatsCell:UICollectionViewCell
     private let kImageWidth:CGFloat = 110
     private let kImageMarginVertical:CGFloat = 20
     private let kTitleHeight:CGFloat = 25
-    private let kCountLeft:CGFloat = -60
-    private let kCountWidth:CGFloat = 150
+    private let kCountLeft:CGFloat = -30
+    private let kCountWidth:CGFloat = 180
     
     override init(frame:CGRect)
     {
@@ -38,8 +38,7 @@ class VStatsCell:UICollectionViewCell
         labelCount.backgroundColor = UIColor.clear
         labelCount.translatesAutoresizingMaskIntoConstraints = false
         labelCount.isUserInteractionEnabled = false
-        labelCount.font = UIFont.numeric(size:20)
-        labelCount.textAlignment = NSTextAlignment.right
+        labelCount.font = UIFont.numeric(size:22)
         labelCount.textColor = UIColor.white
         self.labelCount = labelCount
         
