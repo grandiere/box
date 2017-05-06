@@ -4,6 +4,7 @@ class VProfile:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
 {
     private weak var controller:CProfile!
     private weak var collectionView:VCollection!
+    private(set) weak var viewBar:VProfileBar!
     private let kBarHeight:CGFloat = 220
     private let kCellHeight:CGFloat = 36
     
@@ -13,6 +14,7 @@ class VProfile:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
         self.controller = controller as? CProfile
         
         let viewBar:VProfileBar = VProfileBar(controller:self.controller)
+        self.viewBar = viewBar
         
         let collectionView:VCollection = VCollection()
         collectionView.isUserInteractionEnabled = false

@@ -23,10 +23,24 @@ class CProfile:CController
         view = viewProfile
     }
     
+    override func viewDidAppear(_ animated:Bool)
+    {
+        super.viewDidAppear(animated)
+        viewProfile.viewBar.updateHandler()
+    }
+    
     //MARK: public
     
     func back()
     {
         parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
+    func editHandler()
+    {
+        let controllerHandler:CHandler = CHandler()
+        parentController.push(
+            controller:controllerHandler,
+            horizontal:CParent.TransitionHorizontal.fromRight)
     }
 }

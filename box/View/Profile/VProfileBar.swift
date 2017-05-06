@@ -3,7 +3,9 @@ import UIKit
 class VProfileBar:UIView
 {
     private weak var controller:CProfile!
+    private(set) weak var buttonHandler:UIButton!
     private let kButtonSize:CGFloat = 60
+    private let kHandlerHeight:CGFloat = 40
     
     init(controller:CProfile)
     {
@@ -36,6 +38,22 @@ class VProfileBar:UIView
             action:#selector(actionBack(sender:)),
             for:UIControlEvents.touchUpInside)
         
+        let buttonHandler:UIButton = UIButton()
+        buttonHandler.backgroundColor = UIColor.clear
+        buttonHandler.translatesAutoresizingMaskIntoConstraints = false
+        buttonHandler.setTitleColor(
+            UIColor.white,
+            for:UIControlState.normal)
+        buttonHandler.setTitleColor(
+            UIColor(white:1, alpha:0.2),
+            for:UIControlState.highlighted)
+        buttonHandler.titleLabel!.font = UIFont.bold(size:16)
+        buttonHandler.addTarget(
+            self,
+            action:#selector(actionHandler(sender:)),
+            for:UIControlEvents.touchUpInside)
+        self.buttonHandler = buttonHandler
+        
         addSubview(imageView)
         addSubview(backButton)
         
@@ -52,6 +70,16 @@ class VProfileBar:UIView
         NSLayoutConstraint.size(
             view:backButton,
             constant:kButtonSize)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:buttonHandler,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:buttonHandler,
+            constant:kHandlerHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:buttonHandler,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
@@ -64,5 +92,28 @@ class VProfileBar:UIView
     func actionBack(sender button:UIButton)
     {
         controller.back()
+    }
+    
+    func actionHandler(sender button:UIButton)
+    {
+        controller.editHandler()
+    }
+    
+    //MARK: public
+    
+    func updateHandler()
+    {
+        guard
+        
+            let handler:String = MSession.sharedInstance.handler
+        
+        else
+        {
+            return
+        }
+        
+        buttonHandler.setTitle(
+            handler,
+            for:UIControlState.normal)
     }
 }

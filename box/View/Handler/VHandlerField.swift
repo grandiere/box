@@ -12,7 +12,7 @@ class VHandlerField:UITextField, UITextFieldDelegate
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.clear
-        font = UIFont.regular(size:30)
+        font = UIFont.regular(size:34)
         textColor = UIColor.white
         tintColor = UIColor.white
         autocorrectionType = UITextAutocorrectionType.no
@@ -66,11 +66,15 @@ class VHandlerField:UITextField, UITextFieldDelegate
             return
         }
         
-        controller.updateWarning()
-        
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
             MSession.sharedInstance.updateHandler(handler:handler)
+            
+            DispatchQueue.main.async
+            { [weak self] in
+                
+                self?.controller.updateWarning()
+            }
         }
     }
     
