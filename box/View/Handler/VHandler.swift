@@ -7,12 +7,11 @@ class VHandler:VView
     private(set) weak var labelWarning:UILabel!
     private weak var layoutFieldLeft:NSLayoutConstraint!
     private weak var layoutButtonLeft:NSLayoutConstraint!
-    private let kTitleTop:CGFloat = 10
-    private let kTitleHeight:CGFloat = 100
+    private let kTitleHeight:CGFloat = 120
     private let kTitleMarginHorizontal:CGFloat = 10
-    private let kFieldHeight:CGFloat = 60
+    private let kFieldHeight:CGFloat = 50
     private let kFieldWidth:CGFloat = 150
-    private let kWarningHeight:CGFloat = 80
+    private let kWarningHeight:CGFloat = 90
     private let kButtonWidth:CGFloat = 100
     private let kButtonHeight:CGFloat = 34
     
@@ -88,8 +87,7 @@ class VHandler:VView
         
         NSLayoutConstraint.topToTop(
             view:labelTitle,
-            toView:self,
-            constant:kTitleTop)
+            toView:self)
         NSLayoutConstraint.height(
             view:labelTitle,
             constant:kTitleHeight)
