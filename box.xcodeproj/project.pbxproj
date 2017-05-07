@@ -12,6 +12,7 @@
 		DA0960861EBE41F70005BE96 /* VHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960851EBE41F70005BE96 /* VHandler.swift */; };
 		DA0960881EBE429A0005BE96 /* VHandlerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960871EBE429A0005BE96 /* VHandlerField.swift */; };
 		DA09608A1EBFCE8F0005BE96 /* CTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960891EBFCE8F0005BE96 /* CTutorial.swift */; };
+		DA09608D1EBFD0180005BE96 /* VTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09608C1EBFD0180005BE96 /* VTutorial.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -242,6 +243,7 @@
 		DA0960851EBE41F70005BE96 /* VHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandler.swift; sourceTree = "<group>"; };
 		DA0960871EBE429A0005BE96 /* VHandlerField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandlerField.swift; sourceTree = "<group>"; };
 		DA0960891EBFCE8F0005BE96 /* CTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTutorial.swift; sourceTree = "<group>"; };
+		DA09608C1EBFD0180005BE96 /* VTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTutorial.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -505,6 +507,14 @@
 				DA0960871EBE429A0005BE96 /* VHandlerField.swift */,
 			);
 			path = Handler;
+			sourceTree = "<group>";
+		};
+		DA09608B1EBFD0100005BE96 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				DA09608C1EBFD0180005BE96 /* VTutorial.swift */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 		DA134A761E9D48E1002BE57D /* Metal */ = {
@@ -1068,6 +1078,7 @@
 		DAF15D491E9D32BB0000E6B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA09608B1EBFD0100005BE96 /* Tutorial */,
 				DA0960841EBE41EF0005BE96 /* Handler */,
 				DA34E5121EB95AA900AC9389 /* GridVirus */,
 				DA1403C31EB668AD006C9364 /* GridVisorTake */,
@@ -1276,6 +1287,7 @@
 				DA134A9E1E9D549E002BE57D /* MetalBufferableProtocol.swift in Sources */,
 				DA7135B41EAFAFEF007ACEB5 /* MGridMapDetail.swift in Sources */,
 				DA88526C1EAEA567008CB62C /* VGridMapRender.swift in Sources */,
+				DA09608D1EBFD0180005BE96 /* VTutorial.swift in Sources */,
 				DAAA0EBC1EA81C9300756A17 /* VGridVisorDetailCellDistance.swift in Sources */,
 				DA1D49C51EAA648900C2392C /* VProfile.swift in Sources */,
 				DA7198361EBBDA2100D60D1A /* MGridVisorTakeStatsProcessor.swift in Sources */,
