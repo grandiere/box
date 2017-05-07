@@ -13,6 +13,7 @@
 		DA0960881EBE429A0005BE96 /* VHandlerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960871EBE429A0005BE96 /* VHandlerField.swift */; };
 		DA09608A1EBFCE8F0005BE96 /* CTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960891EBFCE8F0005BE96 /* CTutorial.swift */; };
 		DA09608D1EBFD0180005BE96 /* VTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09608C1EBFD0180005BE96 /* VTutorial.swift */; };
+		DA0960901EBFD0600005BE96 /* MTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09608F1EBFD0600005BE96 /* MTutorial.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -244,6 +245,7 @@
 		DA0960871EBE429A0005BE96 /* VHandlerField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandlerField.swift; sourceTree = "<group>"; };
 		DA0960891EBFCE8F0005BE96 /* CTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTutorial.swift; sourceTree = "<group>"; };
 		DA09608C1EBFD0180005BE96 /* VTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTutorial.swift; sourceTree = "<group>"; };
+		DA09608F1EBFD0600005BE96 /* MTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTutorial.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -513,6 +515,14 @@
 			isa = PBXGroup;
 			children = (
 				DA09608C1EBFD0180005BE96 /* VTutorial.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		DA09608E1EBFD0570005BE96 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				DA09608F1EBFD0600005BE96 /* MTutorial.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -1043,6 +1053,7 @@
 		DAF15D431E9D32BB0000E6B9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA09608E1EBFD0570005BE96 /* Tutorial */,
 				DA49A81F1EBA213500C03ECD /* GridVirus */,
 				DA1403BD1EB6651A006C9364 /* GridVisorMatch */,
 				DA1403BE1EB6651A006C9364 /* GridVisorTake */,
@@ -1423,6 +1434,7 @@
 				DA4DC47C1EA192BD0024D28E /* MGridAlgoItemHostileBug.swift in Sources */,
 				DA4D97731EB10C1000AE0C0C /* VLandingBarCell.swift in Sources */,
 				DAF15D771E9D35CF0000E6B9 /* VLanding.swift in Sources */,
+				DA0960901EBFD0600005BE96 /* MTutorial.swift in Sources */,
 				DAF15D5A1E9D32BB0000E6B9 /* DSettingsExtension.swift in Sources */,
 				DA12133F1EB7D41C0091976C /* MGridVisorTakeProtocol.swift in Sources */,
 				DAAA0EB81EA80DD700756A17 /* MGridVisorDetailItemHeaderBug.swift in Sources */,
