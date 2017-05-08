@@ -7,6 +7,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private weak var spinner:VSpinner?
     private let kBarHeight:CGFloat = 50
     private let kCollectionBottom:CGFloat = 20
+    private let kCellHeight:CGFloat = 60
     
     override init(controller:CController)
     {
@@ -57,5 +58,22 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: collectionView delegate
+    
+    func numberOfSections(in collectionView:UICollectionView) -> Int
+    {
+        return 1
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        
     }
 }
