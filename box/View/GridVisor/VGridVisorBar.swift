@@ -3,6 +3,7 @@ import UIKit
 class VGridVisorBar:UIView
 {
     private(set) weak var viewEnergy:VGridVisorBarEnergy!
+    private(set) weak var viewRange:VGridVisorBarRange!
     private weak var controller:CGridVisor!
     private let kBorderHeight:CGFloat = 1
     private let kButtonWidth:CGFloat = 60

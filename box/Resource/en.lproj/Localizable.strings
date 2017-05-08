@@ -17,6 +17,7 @@
 "VHandler_labelSubtitle"="\nHow you will appear on boards";
 "VHandler_labelWarning"="Won't appear on boards yet";
 "VHandler_buttonDone"="Done";
+"VGridVisorBarRange_labelTitle"="Range ";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";
