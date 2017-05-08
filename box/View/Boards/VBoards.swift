@@ -1,10 +1,12 @@
 import UIKit
 
-class VBoards:VView
+class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private weak var controller:CBoards!
+    private weak var collectionView:VCollection!
     private weak var spinner:VSpinner?
     private let kBarHeight:CGFloat = 50
+    private let kCollectionBottom:CGFloat = 20
     
     override init(controller:CController)
     {
@@ -17,8 +19,25 @@ class VBoards:VView
         let viewBar:VBoardsBar = VBoardsBar(
             controller:self.controller)
         
+        let collectionView:VCollection = VCollection()
+        collectionView.isHidden = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerCell(cell:VBoardsCell.self)
+        self.collectionView = collectionView
+        
+        if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
+        {
+            flow.sectionInset = UIEdgeInsets(
+                top:kBarHeight,
+                left:0,
+                bottom:kCollectionBottom,
+                right:0)
+        }
+        
         addSubview(spinner)
         addSubview(viewBar)
+        addSubview(collectionView)
         
         NSLayoutConstraint.equals(
             view:spinner,
