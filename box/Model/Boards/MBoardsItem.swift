@@ -2,14 +2,20 @@ import Foundation
 
 class MBoardsItem
 {
-    let number:Int
+    var position:Int
     let score:Int
     let name:String
+    let userId:String
     
-    init(number:Int, score:Int, name:String)
+    init(
+        score:Int,
+        name:String,
+        userId:String)
     {
         self.number = number
         self.score = score
         self.name = name
+        self.userId = userId
+        position = 0
     }
 }
