@@ -3,12 +3,10 @@ import StoreKit
 
 class MStore
 {
-    typealias PurchaseId = String
-    
-    private(set) var mapItems:[PurchaseId:MStoreItem]
-    private(set) var references:[PurchaseId]
-    var error:String?
+    private(set) var mapItems:[String:MStoreItem]
+    private(set) var references:[String]
     private let priceFormatter:NumberFormatter
+    var error:String?
     
     init()
     {
@@ -20,21 +18,21 @@ class MStore
         addPurchase(item:MStoreItemPlus())
         
         references.sort
-            { (purchaseA:PurchaseId, purchaseB:PurchaseId) -> Bool in
+        { (purchaseA:String, purchaseB:String) -> Bool in
+            
+            let comparison:ComparisonResult = purchaseA.compare(purchaseB)
+            
+            switch comparison
+            {
+            case ComparisonResult.orderedAscending,
+                 ComparisonResult.orderedSame:
                 
-                let comparison:ComparisonResult = purchaseA.compare(purchaseB)
+                return true
                 
-                switch comparison
-                {
-                case ComparisonResult.orderedAscending,
-                     ComparisonResult.orderedSame:
-                    
-                    return true
-                    
-                case ComparisonResult.orderedDescending:
-                    
-                    return false
-                }
+            case ComparisonResult.orderedDescending:
+                
+                return false
+            }
         }
     }
     
@@ -42,7 +40,7 @@ class MStore
     
     private func addPurchase(item:MStoreItem)
     {
-        let purchaseId:PurchaseId = item.purchaseId
+        let purchaseId:String = item.purchaseId
         
         mapItems[purchaseId] = item
         references.append(purchaseId)
@@ -58,7 +56,7 @@ class MStore
             
             let mappedItem:MStoreItem = mapItems[productId]
             
-            else
+        else
         {
             return
         }
@@ -72,7 +70,7 @@ class MStore
             
             let priceString:String = priceFormatter.string(from:priceNumber)
             
-            else
+        else
         {
             return
         }
@@ -90,7 +88,7 @@ class MStore
                 
                 let mappedItem:MStoreItem = mapItems[productId]
                 
-                else
+            else
             {
                 continue
             }
