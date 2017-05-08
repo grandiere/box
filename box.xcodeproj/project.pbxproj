@@ -24,6 +24,7 @@
 		DA0960A81EC135B00005BE96 /* MStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A71EC135B00005BE96 /* MStore.swift */; };
 		DA0960AA1EC1369E0005BE96 /* MStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A91EC1369E0005BE96 /* MStoreProtocol.swift */; };
 		DA0960AC1EC138520005BE96 /* MStoreStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */; };
+		DA0960AE1EC138DF0005BE96 /* MStoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960AD1EC138DF0005BE96 /* MStoreItem.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -263,6 +264,7 @@
 		DA0960A71EC135B00005BE96 /* MStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStore.swift; sourceTree = "<group>"; };
 		DA0960A91EC1369E0005BE96 /* MStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreProtocol.swift; sourceTree = "<group>"; };
 		DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreStatusProtocol.swift; sourceTree = "<group>"; };
+		DA0960AD1EC138DF0005BE96 /* MStoreItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItem.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 				DA0960A71EC135B00005BE96 /* MStore.swift */,
 				DA0960A91EC1369E0005BE96 /* MStoreProtocol.swift */,
 				DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */,
+				DA0960AD1EC138DF0005BE96 /* MStoreItem.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1472,6 +1475,7 @@
 				DA4D97771EB14FAF00AE0C0C /* MLandingBarHelp.swift in Sources */,
 				DA71982C1EBBAE7B00D60D1A /* MGridVisorDetailItemHeaderVirusFriendly.swift in Sources */,
 				DA134AA41E9D549E002BE57D /* MetalSpatialBase.swift in Sources */,
+				DA0960AE1EC138DF0005BE96 /* MStoreItem.swift in Sources */,
 				DAF15D6F1E9D32BB0000E6B9 /* VView.swift in Sources */,
 				DA09609F1EC0F2BC0005BE96 /* MBoardsItem.swift in Sources */,
 				DA4DC4631EA18A460024D28E /* VGridVisor.swift in Sources */,
