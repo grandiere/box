@@ -3,14 +3,15 @@ import UIKit
 class VBoardsCell:UICollectionViewCell
 {
     private weak var circle:UIView!
-    private weak var labelNumber:UILabel!
+    private weak var labelPosition:UILabel!
     private weak var labelScore:UILabel!
     private weak var labelHandler:UILabel!
     private weak var layoutCircleTop:NSLayoutConstraint!
     private let kCircleSize:CGFloat = 35
     private let kCircleLeft:CGFloat = 10
     private let kHandlerLeft:CGFloat = 7
-    private let kHandlerWidth:CGFloat = 90
+    private let kHandlerWidth:CGFloat = 80
+    private let kScoreWidth:CGFloat = 200
     
     override init(frame:CGRect)
     {
@@ -26,13 +27,13 @@ class VBoardsCell:UICollectionViewCell
         circle.layer.cornerRadius = kCircleSize / 2.0
         self.circle = circle
         
-        let labelNumber:UILabel = UILabel()
-        labelNumber.isUserInteractionEnabled = false
-        labelNumber.translatesAutoresizingMaskIntoConstraints = false
-        labelNumber.backgroundColor = UIColor.clear
-        labelNumber.font = UIFont.bold(size:12)
-        labelNumber.textAlignment = NSTextAlignment.center
-        self.labelNumber = labelNumber
+        let labelPosition:UILabel = UILabel()
+        labelPosition.isUserInteractionEnabled = false
+        labelPosition.translatesAutoresizingMaskIntoConstraints = false
+        labelPosition.backgroundColor = UIColor.clear
+        labelPosition.font = UIFont.bold(size:12)
+        labelPosition.textAlignment = NSTextAlignment.center
+        self.labelPosition = labelPosition
         
         let labelHandler:UILabel = UILabel()
         labelHandler.isUserInteractionEnabled = false
@@ -41,9 +42,17 @@ class VBoardsCell:UICollectionViewCell
         labelHandler.font = UIFont.bold(size:17)
         self.labelHandler = labelHandler
         
-        circle.addSubview(labelNumber)
+        let labelScore:UILabel = UILabel()
+        labelScore.isUserInteractionEnabled = false
+        labelScore.translatesAutoresizingMaskIntoConstraints = false
+        labelScore.backgroundColor = UIColor.clear
+        labelScore.font = UIFont.numeric(size:24)
+        self.labelScore = labelScore
+        
+        circle.addSubview(labelPosition)
         addSubview(circle)
         addSubview(labelHandler)
+        addSubview(labelScore)
         
         layoutCircleTop = NSLayoutConstraint.topToTop(
             view:circle,
@@ -57,7 +66,7 @@ class VBoardsCell:UICollectionViewCell
             constant:kCircleSize)
         
         NSLayoutConstraint.equals(
-            view:labelNumber,
+            view:labelPosition,
             toView:circle)
         
         NSLayoutConstraint.equalsVertical(
@@ -70,6 +79,16 @@ class VBoardsCell:UICollectionViewCell
         NSLayoutConstraint.width(
             view:labelHandler,
             constant:kHandlerWidth)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:labelScore,
+            toView:self)
+        NSLayoutConstraint.leftToRight(
+            view:labelScore,
+            toView:labelHandler)
+        NSLayoutConstraint.width(
+            view:labelScore,
+            constant:kScoreWidth)
     }
     
     required init?(coder:NSCoder)
@@ -92,16 +111,18 @@ class VBoardsCell:UICollectionViewCell
     private func currentUser()
     {
         circle.backgroundColor = UIColor.black
-        labelNumber.textColor = UIColor.white
+        labelPosition.textColor = UIColor.white
         labelHandler.textColor = UIColor.black
+        labelScore.textColor = UIColor.black
         backgroundColor = UIColor(white:1, alpha:0.5)
     }
     
     private func otherUser()
     {
         circle.backgroundColor = UIColor(white:1, alpha:0.75)
-        labelNumber.textColor = UIColor.black
+        labelPosition.textColor = UIColor.black
         labelHandler.textColor = UIColor.white
+        labelScore.textColor = UIColor.white
         backgroundColor = UIColor.clear
     }
     
@@ -109,8 +130,9 @@ class VBoardsCell:UICollectionViewCell
     
     func config(item:MBoardsItem)
     {
-        labelNumber.text = "\(item.position)"
+        labelPosition.text = "\(item.position)"
         labelHandler.text = item.handler
+        labelScore.text = "\(item.score)"
         
         guard
         
