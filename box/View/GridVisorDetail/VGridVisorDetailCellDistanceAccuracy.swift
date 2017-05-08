@@ -14,7 +14,14 @@ class VGridVisorDetailCellDistanceAccuracy:UIView
         initialRadius = CGFloat.pi / -2.0
         
         let pi2:CGFloat = CGFloat.pi + CGFloat.pi
-        var endingPercentage:CGFloat = CGFloat(distance / MGridAlgo.kMaxDistance)
+        var maxDistance:Double = 1
+        
+        if let visorRange:Double = MSession.sharedInstance.settings?.visorRange()
+        {
+            maxDistance = visorRange
+        }
+        
+        var endingPercentage:CGFloat = CGFloat(distance / maxDistance)
         
         if endingPercentage > 1
         {

@@ -23,6 +23,15 @@ class MGridAlgo
     {
         var near:[MGridAlgoItem] = []
         
+        guard
+            
+            let visorRange:Double = MSession.sharedInstance.settings?.visorRange()
+            
+        else
+        {
+            return near
+        }
+        
         for item:MGridAlgoItem in fromItems
         {
             item.distanceTo(
@@ -38,7 +47,7 @@ class MGridAlgo
                 continue
             }
             
-            if itemDistance < MGridAlgo.kMaxDistance
+            if itemDistance < visorRange
             {
                 near.append(item)
             }
