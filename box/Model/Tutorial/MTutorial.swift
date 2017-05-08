@@ -2,10 +2,11 @@ import Foundation
 
 class MTutorial
 {
-    let items:[MTutorialItem]
+    let items:[MTutorialItemProtocol]
     
     init()
     {
-        
+        items = [
+        ]
     }
 }

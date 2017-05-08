@@ -39,24 +39,6 @@ class MGridVisorTakeEnergy:MGridVisorTakeProtocol
             
             break
             
-        case 5:
-            
-            energyLevel = MGridVisorTakeEnergy40()
-            
-            break
-            
-        case 6:
-            
-            energyLevel = MGridVisorTakeEnergy45()
-            
-            break
-            
-        case 7:
-            
-            energyLevel = MGridVisorTakeEnergy50()
-            
-            break
-            
         default:
             
             energyLevel = MGridVisorTakeEnergy15()
