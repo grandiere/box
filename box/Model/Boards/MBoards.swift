@@ -79,6 +79,7 @@ class MBoards
         }
         
         self.items = items
+        controller?.boardsLoaded()
     }
     
     //MARK: public

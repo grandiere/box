@@ -12,7 +12,6 @@ class MBoardsItem
         name:String,
         userId:String)
     {
-        self.number = number
         self.score = score
         self.name = name
         self.userId = userId

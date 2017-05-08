@@ -70,6 +70,6 @@ class VBoardsCell:UICollectionViewCell
     
     func config(item:MBoardsItem)
     {
-        
+        labelNumber.text = "\(item.position)"
     }
 }
