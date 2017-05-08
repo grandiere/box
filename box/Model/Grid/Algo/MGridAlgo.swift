@@ -3,7 +3,6 @@ import CoreLocation
 
 class MGridAlgo
 {
-    static let kMaxDistance:CLLocationDistance = 1000
     let factory:MGridAlgoFactory
     private weak var controller:CGrid?
     private(set) var items:[MGridAlgoItem]
