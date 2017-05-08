@@ -52,11 +52,14 @@ class MBoards
                 continue
             }
             
-            let item:MBoardsItem = MBoardsItem(
-                score:firebaseUser.score,
-                handler:handler,
-                userId:userId)
-            items.append(item)
+            if handler.characters.count > 0
+            {
+                let item:MBoardsItem = MBoardsItem(
+                    score:firebaseUser.score,
+                    handler:handler,
+                    userId:userId)
+                items.append(item)
+            }
         }
         
         items.sort

@@ -9,8 +9,8 @@ class VBoardsCell:UICollectionViewCell
     private weak var layoutCircleTop:NSLayoutConstraint!
     private let kCircleSize:CGFloat = 35
     private let kCircleLeft:CGFloat = 10
-    private let kHandlerLeft:CGFloat = 10
-    private let kHandlerWidth:CGFloat = 100
+    private let kHandlerLeft:CGFloat = 7
+    private let kHandlerWidth:CGFloat = 90
     
     override init(frame:CGRect)
     {
@@ -38,7 +38,7 @@ class VBoardsCell:UICollectionViewCell
         labelHandler.isUserInteractionEnabled = false
         labelHandler.translatesAutoresizingMaskIntoConstraints = false
         labelHandler.backgroundColor = UIColor.clear
-        labelHandler.font = UIFont.bold(size:15)
+        labelHandler.font = UIFont.bold(size:17)
         self.labelHandler = labelHandler
         
         circle.addSubview(labelNumber)
@@ -94,7 +94,7 @@ class VBoardsCell:UICollectionViewCell
         circle.backgroundColor = UIColor.black
         labelNumber.textColor = UIColor.white
         labelHandler.textColor = UIColor.black
-        backgroundColor = UIColor(white:1, alpha:0.3)
+        backgroundColor = UIColor(white:1, alpha:0.5)
     }
     
     private func otherUser()
