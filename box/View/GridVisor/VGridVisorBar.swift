@@ -8,6 +8,7 @@ class VGridVisorBar:UIView
     private let kBorderHeight:CGFloat = 1
     private let kButtonWidth:CGFloat = 60
     private let kEnergyWidth:CGFloat = 260
+    private let kRangeWidth:CGFloat = 200
     
     init(controller:CGridVisor)
     {
@@ -18,7 +19,6 @@ class VGridVisorBar:UIView
         self.controller = controller
         
         let blur:VBlur = VBlur.dark()
-        
         let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.1))
         
         let viewRange:VGridVisorBarRange = VGridVisorBarRange(
@@ -55,9 +55,15 @@ class VGridVisorBar:UIView
             view:blur,
             toView:self)
         
-        NSLayoutConstraint.equals(
+        NSLayoutConstraint.equalsVertical(
             view:viewRange,
             toView:self)
+        NSLayoutConstraint.leftToRight(
+            view:viewRange,
+            toView:backButton)
+        NSLayoutConstraint.width(
+            view:viewRange,
+            constant:kRangeWidth)
         
         NSLayoutConstraint.height(
             view:border,
