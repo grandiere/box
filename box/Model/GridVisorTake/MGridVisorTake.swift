@@ -4,7 +4,7 @@ class MGridVisorTake
 {
     private weak var controller:CGridVisorTake?
     private weak var model:MGridAlgoItemAid!
-    private let kDifficultyStats:UInt32 = 35
+    private let kDifficultyStats:UInt32 = 80
     
     init(controller:CGridVisorTake, model:MGridAlgoItemAid)
     {
