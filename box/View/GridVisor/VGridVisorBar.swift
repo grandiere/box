@@ -21,6 +21,10 @@ class VGridVisorBar:UIView
         
         let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.1))
         
+        let viewRange:VGridVisorBarRange = VGridVisorBarRange(
+            controller:self.controller)
+        self.viewRange = viewRange
+        
         let backButton:UIButton = UIButton()
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.setImage(
@@ -43,11 +47,16 @@ class VGridVisorBar:UIView
         
         addSubview(blur)
         addSubview(border)
+        addSubview(viewRange)
         addSubview(backButton)
         addSubview(viewEnergy)
         
         NSLayoutConstraint.equals(
             view:blur,
+            toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:viewRange,
             toView:self)
         
         NSLayoutConstraint.height(

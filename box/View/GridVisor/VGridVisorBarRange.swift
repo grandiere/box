@@ -33,6 +33,7 @@ class VGridVisorBarRange:UIView
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
+        isUserInteractionEnabled = false
         self.controller = controller
         
         let label:UILabel = UILabel()
