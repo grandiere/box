@@ -7,7 +7,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private weak var spinner:VSpinner?
     private let kBarHeight:CGFloat = 50
     private let kCollectionBottom:CGFloat = 20
-    private let kCellHeight:CGFloat = 60
+    private let kCellHeight:CGFloat = 80
     
     override init(controller:CController)
     {
@@ -22,6 +22,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         let collectionView:VCollection = VCollection()
         collectionView.isHidden = true
+        collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerCell(cell:VBoardsCell.self)
@@ -30,15 +31,15 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
             flow.sectionInset = UIEdgeInsets(
-                top:kBarHeight,
+                top:kBarHeight + kCollectionBottom,
                 left:0,
                 bottom:kCollectionBottom,
                 right:0)
         }
         
         addSubview(spinner)
-        addSubview(viewBar)
         addSubview(collectionView)
+        addSubview(viewBar)
         
         NSLayoutConstraint.equals(
             view:spinner,
@@ -52,6 +53,10 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
             constant:kBarHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:viewBar,
+            toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:collectionView,
             toView:self)
     }
     
