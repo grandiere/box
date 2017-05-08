@@ -21,6 +21,7 @@
 		DA09609F1EC0F2BC0005BE96 /* MBoardsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09609E1EC0F2BC0005BE96 /* MBoardsItem.swift */; };
 		DA0960A11EC10CAD0005BE96 /* FDbUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A01EC10CAD0005BE96 /* FDbUser.swift */; };
 		DA0960A31EC129C20005BE96 /* CStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A21EC129C20005BE96 /* CStore.swift */; };
+		DA0960A81EC135B00005BE96 /* MStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A71EC135B00005BE96 /* MStore.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -257,6 +258,7 @@
 		DA09609E1EC0F2BC0005BE96 /* MBoardsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoardsItem.swift; sourceTree = "<group>"; };
 		DA0960A01EC10CAD0005BE96 /* FDbUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDbUser.swift; sourceTree = "<group>"; };
 		DA0960A21EC129C20005BE96 /* CStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CStore.swift; sourceTree = "<group>"; };
+		DA0960A71EC135B00005BE96 /* MStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStore.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -543,6 +545,30 @@
 				DA09609E1EC0F2BC0005BE96 /* MBoardsItem.swift */,
 			);
 			path = Boards;
+			sourceTree = "<group>";
+		};
+		DA0960A41EC132F10005BE96 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				DA0960A51EC135A50005BE96 /* Base */,
+				DA0960A61EC135A50005BE96 /* Purchases */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		DA0960A51EC135A50005BE96 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DA0960A71EC135B00005BE96 /* MStore.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DA0960A61EC135A50005BE96 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Purchases;
 			sourceTree = "<group>";
 		};
 		DA134A761E9D48E1002BE57D /* Metal */ = {
@@ -1072,6 +1098,7 @@
 		DAF15D431E9D32BB0000E6B9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA0960A41EC132F10005BE96 /* Store */,
 				DA09609B1EC0F2950005BE96 /* Boards */,
 				DA09608E1EBFD0570005BE96 /* Tutorial */,
 				DA49A81F1EBA213500C03ECD /* GridVirus */,
@@ -1448,6 +1475,7 @@
 				DAF15D581E9D32BB0000E6B9 /* CParent.swift in Sources */,
 				DAFE877E1EA51D5300350434 /* MGridAlgoItemHostileVirusFriendly.swift in Sources */,
 				DA29FEEF1EAAA9F500CD8FBC /* CStats.swift in Sources */,
+				DA0960A81EC135B00005BE96 /* MStore.swift in Sources */,
 				DA4D97711EB1079100AE0C0C /* MLandingBarSettings.swift in Sources */,
 				DA134A8A1E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift in Sources */,
 				DA7135BA1EAFB042007ACEB5 /* MGridMapDetailItemLevel.swift in Sources */,
