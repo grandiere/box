@@ -2,12 +2,14 @@ import UIKit
 
 class CBoards:CController
 {
+    let model:MBoards
     private weak var viewBoards:VBoards!
     private var firstTime:Bool
     
     override init()
     {
         firstTime = true
+        model = MBoards()
         
         super.init()
     }
@@ -44,6 +46,8 @@ class CBoards:CController
                 editHandler()
             }
         }
+        
+        model.load(controller:self)
     }
     
     //MARK: private
@@ -61,5 +65,14 @@ class CBoards:CController
     func back()
     {
         parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
+    func boardsLoaded()
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.viewBoards.refresh()
+        }
     }
 }

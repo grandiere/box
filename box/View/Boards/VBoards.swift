@@ -60,7 +60,33 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         return nil
     }
     
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> MBoardsItem
+    {
+        let item:MBoardsItem = controller.model.items[index.item]
+        
+        return item
+    }
+    
+    //MARK: public
+    
+    func refresh()
+    {
+        collectionView.isHidden = false
+        collectionView.reloadData()
+        spinner?.removeFromSuperview()
+    }
+    
     //MARK: collectionView delegate
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let width:CGFloat = bounds.maxX
+        let size:CGSize = CGSize(width:width, height:kCellHeight)
+        
+        return size
+    }
     
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
@@ -69,11 +95,30 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
+        let count:Int = controller.model.items.count
         
+        return count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
+        let item:MBoardsItem = modelAtIndex(index:indexPath)
+        let cell:VBoardsCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            VBoardsCell.reusableIdentifier,
+            for:indexPath) as! VBoardsCell
+        cell.config(item:item)
         
+        return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
     }
 }

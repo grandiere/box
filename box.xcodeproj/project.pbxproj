@@ -19,6 +19,7 @@
 		DA09609A1EC0EDAB0005BE96 /* VBoardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960991EC0EDAB0005BE96 /* VBoardsCell.swift */; };
 		DA09609D1EC0F2A00005BE96 /* MBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09609C1EC0F2A00005BE96 /* MBoards.swift */; };
 		DA09609F1EC0F2BC0005BE96 /* MBoardsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09609E1EC0F2BC0005BE96 /* MBoardsItem.swift */; };
+		DA0960A11EC10CAD0005BE96 /* FDbUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A01EC10CAD0005BE96 /* FDbUser.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -253,6 +254,7 @@
 		DA0960991EC0EDAB0005BE96 /* VBoardsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardsCell.swift; sourceTree = "<group>"; };
 		DA09609C1EC0F2A00005BE96 /* MBoards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoards.swift; sourceTree = "<group>"; };
 		DA09609E1EC0F2BC0005BE96 /* MBoardsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoardsItem.swift; sourceTree = "<group>"; };
+		DA0960A01EC10CAD0005BE96 /* FDbUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDbUser.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -860,6 +862,7 @@
 		DA59D7511EB25F9000EB2973 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA0960A01EC10CAD0005BE96 /* FDbUser.swift */,
 				DA59D7721EB3BC4900EB2973 /* FDbUserItem.swift */,
 				DA59D7741EB3BC9700EB2973 /* FDbAlgoItem.swift */,
 				DA59D7761EB3BCAD00EB2973 /* FDbAlgoHostileItem.swift */,
@@ -1361,6 +1364,7 @@
 				DA771F3A1EA551F000CAA820 /* MGridVisorGPS.swift in Sources */,
 				DAB1B4BD1EB8CBA9009AFA46 /* MGridVisorTakeEnergy15.swift in Sources */,
 				DA771F4A1EA5664000CAA820 /* MGridVisorRenderAlgoItem.swift in Sources */,
+				DA0960A11EC10CAD0005BE96 /* FDbUser.swift in Sources */,
 				DA134AAD1E9D549E002BE57D /* MetalShaderFragmentSimple.metal in Sources */,
 				DA599B541EA7B3FD0070E5AF /* VGridVisorDetailBar.swift in Sources */,
 				DA7198301EBBC19C00D60D1A /* MGridVisorTakeStatsSkill.swift in Sources */,
