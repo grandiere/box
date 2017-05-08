@@ -23,6 +23,7 @@
 		DA0960A31EC129C20005BE96 /* CStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A21EC129C20005BE96 /* CStore.swift */; };
 		DA0960A81EC135B00005BE96 /* MStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A71EC135B00005BE96 /* MStore.swift */; };
 		DA0960AA1EC1369E0005BE96 /* MStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A91EC1369E0005BE96 /* MStoreProtocol.swift */; };
+		DA0960AC1EC138520005BE96 /* MStoreStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -261,6 +262,7 @@
 		DA0960A21EC129C20005BE96 /* CStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CStore.swift; sourceTree = "<group>"; };
 		DA0960A71EC135B00005BE96 /* MStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStore.swift; sourceTree = "<group>"; };
 		DA0960A91EC1369E0005BE96 /* MStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreProtocol.swift; sourceTree = "<group>"; };
+		DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreStatusProtocol.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 			children = (
 				DA0960A71EC135B00005BE96 /* MStore.swift */,
 				DA0960A91EC1369E0005BE96 /* MStoreProtocol.swift */,
+				DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1335,6 +1338,7 @@
 				DA8852751EAEB068008CB62C /* ExtensionMKAnnotationView.swift in Sources */,
 				DA59D75E1EB25F9000EB2973 /* FMain.swift in Sources */,
 				DAF15D5F1E9D32BB0000E6B9 /* ExtensionString.swift in Sources */,
+				DA0960AC1EC138520005BE96 /* MStoreStatusProtocol.swift in Sources */,
 				DA4D97691EB0F69600AE0C0C /* MSettings.swift in Sources */,
 				DA4DC4601EA1893B0024D28E /* CGridVisor.swift in Sources */,
 				DA31C10B1EA66DBB002FE157 /* MGridVisorRenderAlgoItemPositioned.swift in Sources */,
