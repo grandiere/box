@@ -54,7 +54,7 @@ class MBoards
             
             let item:MBoardsItem = MBoardsItem(
                 score:firebaseUser.score,
-                name:handler,
+                handler:handler,
                 userId:userId)
             items.append(item)
         }

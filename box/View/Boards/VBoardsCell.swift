@@ -5,10 +5,12 @@ class VBoardsCell:UICollectionViewCell
     private weak var circle:UIView!
     private weak var labelNumber:UILabel!
     private weak var labelScore:UILabel!
-    private weak var labelName:UILabel!
+    private weak var labelHandler:UILabel!
     private weak var layoutCircleTop:NSLayoutConstraint!
     private let kCircleSize:CGFloat = 35
-    private let kCircleLeft:CGFloat = 15
+    private let kCircleLeft:CGFloat = 10
+    private let kHandlerLeft:CGFloat = 10
+    private let kHandlerWidth:CGFloat = 100
     
     override init(frame:CGRect)
     {
@@ -32,8 +34,16 @@ class VBoardsCell:UICollectionViewCell
         labelNumber.textAlignment = NSTextAlignment.center
         self.labelNumber = labelNumber
         
+        let labelHandler:UILabel = UILabel()
+        labelHandler.isUserInteractionEnabled = false
+        labelHandler.translatesAutoresizingMaskIntoConstraints = false
+        labelHandler.backgroundColor = UIColor.clear
+        labelHandler.font = UIFont.bold(size:15)
+        self.labelHandler = labelHandler
+        
         circle.addSubview(labelNumber)
         addSubview(circle)
+        addSubview(labelHandler)
         
         layoutCircleTop = NSLayoutConstraint.topToTop(
             view:circle,
@@ -49,6 +59,17 @@ class VBoardsCell:UICollectionViewCell
         NSLayoutConstraint.equals(
             view:labelNumber,
             toView:circle)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:labelHandler,
+            toView:self)
+        NSLayoutConstraint.leftToRight(
+            view:labelHandler,
+            toView:circle,
+            constant:kHandlerLeft)
+        NSLayoutConstraint.width(
+            view:labelHandler,
+            constant:kHandlerWidth)
     }
     
     required init?(coder:NSCoder)
@@ -72,6 +93,7 @@ class VBoardsCell:UICollectionViewCell
     {
         circle.backgroundColor = UIColor.black
         labelNumber.textColor = UIColor.white
+        labelHandler.textColor = UIColor.black
         backgroundColor = UIColor(white:1, alpha:0.3)
     }
     
@@ -79,6 +101,7 @@ class VBoardsCell:UICollectionViewCell
     {
         circle.backgroundColor = UIColor(white:1, alpha:0.75)
         labelNumber.textColor = UIColor.black
+        labelHandler.textColor = UIColor.white
         backgroundColor = UIColor.clear
     }
     
@@ -87,6 +110,7 @@ class VBoardsCell:UICollectionViewCell
     func config(item:MBoardsItem)
     {
         labelNumber.text = "\(item.position)"
+        labelHandler.text = item.handler
         
         guard
         

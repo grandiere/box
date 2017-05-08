@@ -4,16 +4,16 @@ class MBoardsItem
 {
     var position:Int
     let score:Int
-    let name:String
+    let handler:String
     let userId:String
     
     init(
         score:Int,
-        name:String,
+        handler:String,
         userId:String)
     {
         self.score = score
-        self.name = name
+        self.handler = handler
         self.userId = userId
         position = 0
     }
