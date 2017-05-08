@@ -114,7 +114,7 @@ class VBoardsCell:UICollectionViewCell
         labelPosition.textColor = UIColor.white
         labelHandler.textColor = UIColor.black
         labelScore.textColor = UIColor.black
-        backgroundColor = UIColor(white:1, alpha:0.5)
+        backgroundColor = UIColor(white:1, alpha:0.6)
     }
     
     private func otherUser()

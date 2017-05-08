@@ -20,6 +20,7 @@
 		DA09609D1EC0F2A00005BE96 /* MBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09609C1EC0F2A00005BE96 /* MBoards.swift */; };
 		DA09609F1EC0F2BC0005BE96 /* MBoardsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09609E1EC0F2BC0005BE96 /* MBoardsItem.swift */; };
 		DA0960A11EC10CAD0005BE96 /* FDbUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A01EC10CAD0005BE96 /* FDbUser.swift */; };
+		DA0960A31EC129C20005BE96 /* CStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A21EC129C20005BE96 /* CStore.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -255,6 +256,7 @@
 		DA09609C1EC0F2A00005BE96 /* MBoards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoards.swift; sourceTree = "<group>"; };
 		DA09609E1EC0F2BC0005BE96 /* MBoardsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoardsItem.swift; sourceTree = "<group>"; };
 		DA0960A01EC10CAD0005BE96 /* FDbUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDbUser.swift; sourceTree = "<group>"; };
+		DA0960A21EC129C20005BE96 /* CStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CStore.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -1027,6 +1029,7 @@
 				DA7135CA1EAFF634007ACEB5 /* CSettings.swift */,
 				DA0960821EBE418D0005BE96 /* CHandler.swift */,
 				DA0960891EBFCE8F0005BE96 /* CTutorial.swift */,
+				DA0960A21EC129C20005BE96 /* CStore.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1379,6 +1382,7 @@
 				DAFDEF921EA508D10016746F /* MGrid.swift in Sources */,
 				DA134AA51E9D549E002BE57D /* MetalSpatialDirection.swift in Sources */,
 				DAAA0EC41EA8397200756A17 /* VGridVisorDetailCellLevel.swift in Sources */,
+				DA0960A31EC129C20005BE96 /* CStore.swift in Sources */,
 				DAFDEF961EA509060016746F /* MGridItemMap.swift in Sources */,
 				DA134A9F1E9D549E002BE57D /* MetalSpatialDirectionPositive.swift in Sources */,
 				DA0C16D31EB4FE4B007532A6 /* FDbAlgoAidItem.swift in Sources */,
