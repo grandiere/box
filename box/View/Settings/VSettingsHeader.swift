@@ -3,7 +3,10 @@ import UIKit
 class VSettingsHeader:UICollectionReusableView
 {
     private weak var controller:CSettings?
-    private let kBackButtonSize:CGFloat = 60
+    private let kBackButtonSize:CGFloat = 70
+    private let kVersionHeight:CGFloat = 20
+    private let kVersionBottom:CGFloat = -50
+    private let kVersionKey:String = "CFBundleShortVersionString"
     
     override init(frame:CGRect)
     {
@@ -17,6 +20,14 @@ class VSettingsHeader:UICollectionReusableView
         imageView.contentMode = UIViewContentMode.center
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "assetGenericLogo")
+        
+        let labelVersion:UILabel = UILabel()
+        labelVersion.translatesAutoresizingMaskIntoConstraints = false
+        labelVersion.backgroundColor = UIColor.clear
+        labelVersion.isUserInteractionEnabled = false
+        labelVersion.textAlignment = NSTextAlignment.center
+        labelVersion.font = UIFont.regular(size:14)
+        labelVersion.textColor = UIColor.white
         
         let backButton:UIButton = UIButton()
         backButton.translatesAutoresizingMaskIntoConstraints = false
@@ -50,6 +61,29 @@ class VSettingsHeader:UICollectionReusableView
         NSLayoutConstraint.size(
             view:backButton,
             constant:kBackButtonSize)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:labelVersion,
+            toView:self,
+            constant:kVersionBottom)
+        NSLayoutConstraint.height(
+            view:labelVersion,
+            constant:kVersionHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:labelVersion,
+            toView:self)
+        
+        guard
+            
+            let bundleDictionary:[String:Any] = Bundle.main.infoDictionary
+            
+        else
+        {
+            return
+        }
+        
+        let versionString:String? = bundleDictionary[kVersionKey] as? String
+        labelVersion.text = versionString
     }
     
     required init?(coder:NSCoder)
