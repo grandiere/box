@@ -96,4 +96,12 @@ extension DEnergy
         
         DManager.sharedInstance?.save()
     }
+    
+    func rechargeEnergy()
+    {
+        amount = DEnergy.kMaxEnergy
+        lastAmount = DEnergy.kMaxEnergy
+        
+        DManager.sharedInstance?.save()
+    }
 }
