@@ -4,8 +4,13 @@ class VStoreBar:UIView
 {
     private weak var controller:CStore!
     private let kBorderHeight:CGFloat = 1
-    private let kContentTop:CGFloat = 20
+    private let kIconHeight:CGFloat = 50
     private let kBackWidth:CGFloat = 60
+    private let kRestoreRight:CGFloat = -10
+    private let kRestoreWidth:CGFloat = 200
+    private let kRestoreBottom:CGFloat = -10
+    private let kRestoreHeight:CGFloat = 32
+    private let kCornerRadius:CGFloat = 6
     
     init(controller:CStore)
     {
@@ -15,7 +20,7 @@ class VStoreBar:UIView
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.1))
+        let border:VBorder = VBorder(color:UIColor.white)
         
         let icon:UIImageView = UIImageView()
         icon.isUserInteractionEnabled = false
@@ -40,9 +45,26 @@ class VStoreBar:UIView
             action:#selector(actionBack(sender:)),
             for:UIControlEvents.touchUpInside)
         
+        let buttonRestore:UIButton = UIButton()
+        buttonRestore.backgroundColor = UIColor(white:1, alpha:0.1)
+        buttonRestore.clipsToBounds = true
+        buttonRestore.translatesAutoresizingMaskIntoConstraints = false
+        buttonRestore.setTitleColor(
+            UIColor.white,
+            for:UIControlState.normal)
+        buttonRestore.setTitleColor(
+            UIColor(white:1, alpha:0.2),
+            for:UIControlState.highlighted)
+        buttonRestore.setTitle(
+            NSLocalizedString("VStoreBar_buttonRestore", comment:""),
+            for:UIControlState.normal)
+        buttonRestore.titleLabel!.font = UIFont.regular(size:14)
+        buttonRestore.layer.cornerRadius = kCornerRadius
+        
         addSubview(border)
         addSubview(icon)
         addSubview(buttonBack)
+        addSubview(buttonRestore)
         
         NSLayoutConstraint.bottomToBottom(
             view:border,
@@ -56,28 +78,41 @@ class VStoreBar:UIView
         
         NSLayoutConstraint.topToTop(
             view:icon,
-            toView:self,
-            constant:kContentTop)
-        NSLayoutConstraint.bottomToBottom(
-            view:icon,
             toView:self)
+        NSLayoutConstraint.height(
+            view:icon,
+            constant:kIconHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:icon,
             toView:self)
         
         NSLayoutConstraint.topToTop(
             view:buttonBack,
-            toView:self,
-            constant:kContentTop)
-        NSLayoutConstraint.bottomToBottom(
-            view:buttonBack,
             toView:self)
+        NSLayoutConstraint.height(
+            view:buttonBack,
+            constant:kIconHeight)
         NSLayoutConstraint.leftToLeft(
             view:buttonBack,
             toView:self)
         NSLayoutConstraint.width(
             view:buttonBack,
             constant:kBackWidth)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:buttonRestore,
+            toView:self,
+            constant:kRestoreBottom)
+        NSLayoutConstraint.height(
+            view:buttonRestore,
+            constant:kRestoreHeight)
+        NSLayoutConstraint.rightToRight(
+            view:buttonRestore,
+            toView:self,
+            constant:kRestoreRight)
+        NSLayoutConstraint.width(
+            view:buttonRestore,
+            constant:kRestoreWidth)
     }
     
     required init?(coder:NSCoder)

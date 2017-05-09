@@ -19,6 +19,12 @@
 "VHandler_buttonDone"="Done";
 "VGridVisorBarRange_labelTitle"="Range ";
 "VGridVisorBarRange_labelSubtitle"="m";
+"VStoreCellNew_buttonPurchase"="Purchase";
+"VStoreCellDeferred_label"="Purchase deferred";
+"VStoreCellPurchasing_label"="Purchasing";
+"VStoreCellPurchased_label"="Purchased";
+"VStoreCellNotAvailable_label"="Not available";
+"VStoreBar_buttonRestore"="Restore purchases";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";

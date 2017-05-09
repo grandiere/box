@@ -8,13 +8,12 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     private weak var layoutBarTop:NSLayoutConstraint!
     private let kHeaderHeight:CGFloat = 140
     private let kInterLine:CGFloat = 1
-    private let kCollectionTop:CGFloat = 140
+    private let kCollectionTop:CGFloat = 120
     private let kCollectionBottom:CGFloat = 20
     
     override init(controller:CController)
     {
         super.init(controller:controller)
-        backgroundColor = UIColor(white:0.96, alpha:1)
         self.controller = controller as? CStore
         
         let spinner:VSpinner = VSpinner()
