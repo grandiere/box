@@ -218,7 +218,6 @@
 		DAB1B4B31EB8CAD8009AFA46 /* MGridVisorTakeEnergy20.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB1B4B21EB8CAD8009AFA46 /* MGridVisorTakeEnergy20.swift */; };
 		DAB1B4B71EB8CAEE009AFA46 /* MGridVisorTakeEnergy25.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB1B4B61EB8CAEE009AFA46 /* MGridVisorTakeEnergy25.swift */; };
 		DAB1B4B91EB8CB10009AFA46 /* MGridVisorTakeEnergy30.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB1B4B81EB8CB10009AFA46 /* MGridVisorTakeEnergy30.swift */; };
-		DAB1B4BB1EB8CB19009AFA46 /* MGridVisorTakeEnergy35.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB1B4BA1EB8CB19009AFA46 /* MGridVisorTakeEnergy35.swift */; };
 		DAB1B4BD1EB8CBA9009AFA46 /* MGridVisorTakeEnergy15.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB1B4BC1EB8CBA9009AFA46 /* MGridVisorTakeEnergy15.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
@@ -475,7 +474,6 @@
 		DAB1B4B21EB8CAD8009AFA46 /* MGridVisorTakeEnergy20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorTakeEnergy20.swift; sourceTree = "<group>"; };
 		DAB1B4B61EB8CAEE009AFA46 /* MGridVisorTakeEnergy25.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorTakeEnergy25.swift; sourceTree = "<group>"; };
 		DAB1B4B81EB8CB10009AFA46 /* MGridVisorTakeEnergy30.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorTakeEnergy30.swift; sourceTree = "<group>"; };
-		DAB1B4BA1EB8CB19009AFA46 /* MGridVisorTakeEnergy35.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorTakeEnergy35.swift; sourceTree = "<group>"; };
 		DAB1B4BC1EB8CBA9009AFA46 /* MGridVisorTakeEnergy15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorTakeEnergy15.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -663,7 +661,6 @@
 				DAB1B4B21EB8CAD8009AFA46 /* MGridVisorTakeEnergy20.swift */,
 				DAB1B4B61EB8CAEE009AFA46 /* MGridVisorTakeEnergy25.swift */,
 				DAB1B4B81EB8CB10009AFA46 /* MGridVisorTakeEnergy30.swift */,
-				DAB1B4BA1EB8CB19009AFA46 /* MGridVisorTakeEnergy35.swift */,
 				DA71982D1EBBC0C400D60D1A /* MGridVisorTakeStats.swift */,
 				DA71982F1EBBC19C00D60D1A /* MGridVisorTakeStatsSkill.swift */,
 				DA7198311EBBD99F00D60D1A /* MGridVisorTakeStatsMemory.swift */,
@@ -1404,7 +1401,6 @@
 				DA31C10B1EA66DBB002FE157 /* MGridVisorRenderAlgoItemPositioned.swift in Sources */,
 				DA7135C21EAFD210007ACEB5 /* CBoards.swift in Sources */,
 				DA29FEF61EAAB37B00CD8FBC /* VStatsCell.swift in Sources */,
-				DAB1B4BB1EB8CB19009AFA46 /* MGridVisorTakeEnergy35.swift in Sources */,
 				DA134A8B1E9D5076002BE57D /* ExtensionMTLTexture.swift in Sources */,
 				DA88526F1EAEA939008CB62C /* MGridMap.swift in Sources */,
 				DA8852631EAE6D6C008CB62C /* MGridItemReleaseVirus.swift in Sources */,
