@@ -10,6 +10,17 @@ class MStoreItem
     private(set) var price:String?
     private(set) var status:MStoreStatusProtocol?
     
+    init(
+        purchaseId:String,
+        title:String,
+        descr:String)
+    {
+        self.purchaseId = purchaseId
+        self.title = title
+        self.descr = descr
+        status = MStoreItemStatusNotAvailable()
+    }
+    
     //MARK: public
     
     func purchaseAction()
@@ -59,12 +70,12 @@ class MStoreItem
         status = MStoreItemStatusPurchased()
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-            { [weak self] in
-                
-                if callAction
-                {
-                    self?.purchaseAction()
-                }
+        { [weak self] in
+            
+            if callAction
+            {
+                self?.purchaseAction()
+            }
         }
     }
 }
