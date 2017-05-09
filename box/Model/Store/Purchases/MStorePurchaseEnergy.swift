@@ -22,6 +22,8 @@ class MStorePurchaseEnergy:MStoreItem
     
     override func buyingError() -> String?
     {
+        MSession.sharedInstance.settings?.energy?.tryUpdateEnergy()
+        
         guard
         
             let energy:Int16 = MSession.sharedInstance.settings?.energy?.amount
