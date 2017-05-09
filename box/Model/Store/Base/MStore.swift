@@ -20,24 +20,6 @@ class MStore
         
         addPurchase(item:itemPlusRange)
         addPurchase(item:itemEnergy)
-        
-        references.sort
-        { (purchaseA:String, purchaseB:String) -> Bool in
-            
-            let comparison:ComparisonResult = purchaseA.compare(purchaseB)
-            
-            switch comparison
-            {
-            case ComparisonResult.orderedAscending,
-                 ComparisonResult.orderedSame:
-                
-                return true
-                
-            case ComparisonResult.orderedDescending:
-                
-                return false
-            }
-        }
     }
     
     //MARK: private
