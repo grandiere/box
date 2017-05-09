@@ -65,7 +65,8 @@
 "MGridAlgoItem_justNow"="Just now";
 "MGridAlgoItem_hoursAgo"="%@ hours ago";
 "MGridMapDetailItemDistance_stringTitle"="Distance  ";
-"MGridMapDetailItemDistance_stringDistance"="%@ meters";
+"MGridMapDetailItemDistance_stringDistanceMeters"=" meters";
+"MGridMapDetailItemDistance_stringDistanceMiles"=" miles";
 "MGridAlgoItemAid_titleAnnotation"="Power Up";
 "MGridVisorTakeEnergy_stringValue"="+%@";
 "MGridVisorTakeEnergy_stringName"="  Energy";

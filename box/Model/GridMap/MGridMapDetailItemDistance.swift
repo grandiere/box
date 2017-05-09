@@ -12,7 +12,8 @@ class MGridMapDetailItemDistance:MGridMapDetailItem
     {
         guard
             
-            let location:CLLocation = annotation.algo?.location
+            let location:CLLocation = annotation.algo?.location,
+            let distanceMetrics:DSettings.Distance = MSession.sharedInstance.settings?.currentDistance()
         
         else
         {
@@ -36,9 +37,22 @@ class MGridMapDetailItemDistance:MGridMapDetailItem
             return nil
         }
         
-        let rawDistanceStringUnits:String = String(
-            format:NSLocalizedString("MGridMapDetailItemDistance_stringDistance", comment:""),
-            rawDistanceString)
+        let rawStringMetrics:String
+        
+        switch distanceMetrics
+        {
+        case DSettings.Distance.meters:
+            
+            rawStringMetrics = NSLocalizedString("MGridMapDetailItemDistance_stringDistanceMeters", comment:"")
+            
+            break
+            
+        case DSettings.Distance.miles:
+            
+            rawStringMetrics = NSLocalizedString("MGridMapDetailItemDistance_stringDistanceMiles", comment:"")
+            
+            break
+        }
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         
@@ -53,8 +67,9 @@ class MGridMapDetailItemDistance:MGridMapDetailItem
             string:NSLocalizedString("MGridMapDetailItemDistance_stringTitle", comment:""),
             attributes:attributesTitle)
         let stringDistance:NSAttributedString = NSAttributedString(
-            string:rawDistanceStringUnits,
+            string:rawDistanceString,
             attributes:attributesSubtitle)
+        let string
         
         mutableString.append(stringTitle)
         mutableString.append(stringDistance)
