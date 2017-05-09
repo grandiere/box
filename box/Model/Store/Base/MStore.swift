@@ -20,12 +20,14 @@ class MStore
         let itemMemory:MStorePurchaseMemory = MStorePurchaseMemory()
         let itemNetwork:MStorePurchaseNetwork = MStorePurchaseNetwork()
         let itemProcessor:MStorePurchaseProcessor = MStorePurchaseProcessor()
+        let itemSkill:MStorePurchaseSkill = MStorePurchaseSkill()
         
         addPurchase(item:itemPlusRange)
         addPurchase(item:itemEnergy)
         addPurchase(item:itemMemory)
         addPurchase(item:itemNetwork)
         addPurchase(item:itemProcessor)
+        addPurchase(item:itemSkill)
     }
     
     //MARK: private

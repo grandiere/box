@@ -17,23 +17,23 @@ class MStorePurchaseSkill:MStoreItem
     
     override func purchaseAction()
     {
-        MSession.sharedInstance.settings?.user?.adds
+        MSession.sharedInstance.settings?.user?.addSkill()
     }
     
     override func buyingError() -> String?
     {
         guard
             
-            let processor:Int16 = MSession.sharedInstance.settings?.user?.processor
+            let skill:Int16 = MSession.sharedInstance.settings?.user?.skill
             
-            else
+        else
         {
             return nil
         }
         
-        if processor >= DUser.kMaxStats
+        if skill >= DUser.kMaxStats
         {
-            let error:String = NSLocalizedString("MStorePurchaseProcessor_buyingError", comment:"")
+            let error:String = NSLocalizedString("MStorePurchaseSkill_buyingError", comment:"")
             
             return error
         }
