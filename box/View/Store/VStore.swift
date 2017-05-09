@@ -124,7 +124,7 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
             yOffset = 0
         }
         
-        layoutBarTop.constant = yOffset / -3.0
+        layoutBarTop.constant = yOffset / -4.0
     }
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, insetForSectionAt section:Int) -> UIEdgeInsets

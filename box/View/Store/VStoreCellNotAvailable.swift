@@ -12,8 +12,8 @@ class VStoreCellNotAvailable:VStoreCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.regular(size:14)
-        label.textColor = UIColor(white:0.5, alpha:1)
+        label.font = UIFont.regular(size:15)
+        label.textColor = UIColor(white:0.8, alpha:1)
         label.text = NSLocalizedString("VStoreCellNotAvailable_label", comment:"")
         
         addSubview(label)

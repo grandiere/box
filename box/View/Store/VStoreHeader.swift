@@ -34,7 +34,7 @@ class VStoreHeader:UICollectionReusableView
         label.numberOfLines = 0
         self.label = label
         
-        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.5))
+        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.3))
         
         addSubview(label)
         addSubview(border)
