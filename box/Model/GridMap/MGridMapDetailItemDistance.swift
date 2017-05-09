@@ -13,7 +13,7 @@ class MGridMapDetailItemDistance:MGridMapDetailItem
         guard
             
             let location:CLLocation = annotation.algo?.location,
-            let distanceMetrics:DSettings.Distance = MSession.sharedInstance.settings?.currentDistance()
+            let distanceMetrics:MDistanceProtocol = MSession.sharedInstance.settings?.currentDistance()
         
         else
         {
@@ -21,7 +21,8 @@ class MGridMapDetailItemDistance:MGridMapDetailItem
         }
         
         let rawDistance:CLLocationDistance = location.distance(from:userLocation)
-        let rawDistanceNumber:NSNumber = rawDistance as NSNumber
+        let convertDistance:Double = distanceMetrics.convertFromStandard(standard:rawDistance)
+        let rawDistanceNumber:NSNumber = convertDistance as NSNumber
         let numberFormatter:NumberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         numberFormatter.maximumFractionDigits = kMaxDecimals
@@ -35,23 +36,6 @@ class MGridMapDetailItemDistance:MGridMapDetailItem
         else
         {
             return nil
-        }
-        
-        let rawStringMetrics:String
-        
-        switch distanceMetrics
-        {
-        case DSettings.Distance.meters:
-            
-            rawStringMetrics = NSLocalizedString("MGridMapDetailItemDistance_stringDistanceMeters", comment:"")
-            
-            break
-            
-        case DSettings.Distance.miles:
-            
-            rawStringMetrics = NSLocalizedString("MGridMapDetailItemDistance_stringDistanceMiles", comment:"")
-            
-            break
         }
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
@@ -69,10 +53,13 @@ class MGridMapDetailItemDistance:MGridMapDetailItem
         let stringDistance:NSAttributedString = NSAttributedString(
             string:rawDistanceString,
             attributes:attributesSubtitle)
-        let string
+        let stringMetrics:NSAttributedString = NSAttributedString(
+            string:" \(distanceMetrics.name)",
+            attributes:attributesSubtitle)
         
         mutableString.append(stringTitle)
         mutableString.append(stringDistance)
+        mutableString.append(stringMetrics)
         
         super.init(attributedString:mutableString)
     }

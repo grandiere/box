@@ -18,10 +18,9 @@
 "VHandler_labelWarning"="Won't appear on boards yet";
 "VHandler_buttonDone"="Done";
 "VGridVisorBarRange_labelTitle"="Range ";
-"VGridVisorBarRange_labelSubtitle"="m";
 "VSettingsCellDistance_labelTitle"="Distance in";
-"VSettingsCellDistance_segmentedMeters"="Meters";
-"VSettingsCellDistance_segmentedMiles"="Miles";
+"VSettingsCellDistance_segmentedMetres"="Metres";
+"VSettingsCellDistance_segmentedFeet"="Feet";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";
@@ -65,8 +64,6 @@
 "MGridAlgoItem_justNow"="Just now";
 "MGridAlgoItem_hoursAgo"="%@ hours ago";
 "MGridMapDetailItemDistance_stringTitle"="Distance  ";
-"MGridMapDetailItemDistance_stringDistanceMeters"=" meters";
-"MGridMapDetailItemDistance_stringDistanceMiles"=" miles";
 "MGridAlgoItemAid_titleAnnotation"="Power Up";
 "MGridVisorTakeEnergy_stringValue"="+%@";
 "MGridVisorTakeEnergy_stringName"="  Energy";

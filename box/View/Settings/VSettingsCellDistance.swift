@@ -23,8 +23,8 @@ class VSettingsCellDistance:VSettingsCell
         labelTitle.text = NSLocalizedString("VSettingsCellDistance_labelTitle", comment:"")
         
         let segmentedItems:[String] = [
-            NSLocalizedString("VSettingsCellDistance_segmentedMeters", comment:""),
-            NSLocalizedString("VSettingsCellDistance_segmentedMiles", comment:"")]
+            NSLocalizedString("VSettingsCellDistance_segmentedMetres", comment:""),
+            NSLocalizedString("VSettingsCellDistance_segmentedFeet", comment:"")]
         let segmented:UISegmentedControl = UISegmentedControl(
             items:segmentedItems)
         segmented.translatesAutoresizingMaskIntoConstraints = false
@@ -78,15 +78,15 @@ class VSettingsCellDistance:VSettingsCell
     func actionSegmented(sender segmented:UISegmentedControl)
     {
         let selected:Int = segmented.selectedSegmentIndex
-        let distance:DSettings.Distance
+        let distance:MDistanceProtocol
         
         if selected == 0
         {
-            distance = DSettings.Distance.meters
+            distance = MDistanceMetre()
         }
         else
         {
-            distance = DSettings.Distance.miles
+            distance = MDistanceFoot()
         }
         
         MSession.sharedInstance.settings?.changeDistance(
@@ -99,7 +99,7 @@ class VSettingsCellDistance:VSettingsCell
     {
         guard
         
-            let currentDistance:DSettings.Distance = MSession.sharedInstance.settings?.currentDistance()
+            let currentDistance:MDistanceProtocol = MSession.sharedInstance.settings?.currentDistance()
         
         else
         {
@@ -108,19 +108,13 @@ class VSettingsCellDistance:VSettingsCell
         
         let index:Int
         
-        switch currentDistance
+        if let _:MDistanceFoot = currentDistance as? MDistanceFoot
         {
-        case DSettings.Distance.meters:
-            
-            index = 0
-            
-            break
-            
-        case DSettings.Distance.miles:
-            
             index = 1
-            
-            break
+        }
+        else
+        {
+            index = 0
         }
         
         segmented.selectedSegmentIndex = index

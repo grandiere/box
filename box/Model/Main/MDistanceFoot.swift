@@ -2,6 +2,8 @@ import Foundation
 
 class MDistanceFoot:MDistanceProtocol
 {
+    private let kMetreToFoot:Double = 3.28084
+    
     var name:String
     {
         get
@@ -20,6 +22,6 @@ class MDistanceFoot:MDistanceProtocol
     
     func convertFromStandard(standard:Double) -> Double
     {
-        return standard
+        return standard * kMetreToFoot
     }
 }
