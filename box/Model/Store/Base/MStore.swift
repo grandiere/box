@@ -17,9 +17,11 @@ class MStore
         
         let itemPlusRange:MStorePurchasePlusRange = MStorePurchasePlusRange()
         let itemEnergy:MStorePurchaseEnergy = MStorePurchaseEnergy()
+        let itemMemory:MStorePurchaseMemory = MStorePurchaseMemory()
         
         addPurchase(item:itemPlusRange)
         addPurchase(item:itemEnergy)
+        addPurchase(item:itemMemory)
     }
     
     //MARK: private

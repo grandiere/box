@@ -80,6 +80,9 @@
 "MStorePurchaseEnergy_title"="Recharge Energy\n\n";
 "MStorePurchaseEnergy_descr"="Recharge energy to 100%";
 "MStorePurchaseEnergy_buyingError"="Your energy is full";
+"MStorePurchaseMemory_title"="Memory +1\n\n";
+"MStorePurchaseMemory_descr"="Increase Memory and improve performance\nMax memory level is 10";
+"MStorePurchaseMemory_buyingError"="Can't increase Memory anymore";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";

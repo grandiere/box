@@ -11,7 +11,7 @@ class MGridVisorTakeEnergy:MGridVisorTakeProtocol
     {
         let energyLevel:MGridVisorTakeEnergy
         
-        let random:UInt32 = arc4random_uniform(10)
+        let random:UInt32 = arc4random_uniform(11)
         
         switch random
         {

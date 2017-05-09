@@ -17,24 +17,23 @@ class MStorePurchaseMemory:MStoreItem
     
     override func purchaseAction()
     {
-        MSession.sharedInstance.settings?.plusRange = true
-        DManager.sharedInstance?.save()
+        MSession.sharedInstance.settings?.user?.addMemory()
     }
     
     override func buyingError() -> String?
     {
         guard
             
-            let energy:Int16 = MSession.sharedInstance.settings?.energy?.amount
+            let memory:Int16 = MSession.sharedInstance.settings?.user?.memory
             
-            else
+        else
         {
             return nil
         }
         
-        if energy >= DEnergy.kMaxEnergy
+        if memory >= DUser.kMaxStats
         {
-            let error:String = NSLocalizedString("MStorePurchaseEnergy_buyingError", comment:"")
+            let error:String = NSLocalizedString("MStorePurchaseMemory_buyingError", comment:"")
             
             return error
         }
