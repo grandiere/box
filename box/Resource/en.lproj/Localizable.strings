@@ -75,6 +75,9 @@
 "MGridVisorTakeStatsProcessor_name"="Processor";
 "MSession_levelUp"="Level up";
 
+"MStorePurchasePlusRange_title"="Plus Range";
+"MStorePurchasePlusRange_descr"="\nIncrease the Augmented Reality Visor Range to interact with The Grid";
+
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";
 "CGrid_noLocationGranted"="We need access to your location";
