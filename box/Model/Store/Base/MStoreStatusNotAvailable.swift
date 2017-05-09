@@ -1,6 +1,6 @@
 import UIKit
 
-class MStoreStatusDeferred:MStoreStatusProtocol
+class MStoreStatusNotAvailable:MStoreStatusProtocol
 {
     private let kCellHeight:CGFloat = 50
     
@@ -8,7 +8,7 @@ class MStoreStatusDeferred:MStoreStatusProtocol
     {
         get
         {
-            return VStoreCellDeferred.reusableIdentifier
+            return VStoreCellNotAvailable.reusableIdentifier
         }
     }
     

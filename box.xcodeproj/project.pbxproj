@@ -110,6 +110,9 @@
 		DA31F69C1EC207CA003978C7 /* VStoreCellPurchasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6931EC207CA003978C7 /* VStoreCellPurchasing.swift */; };
 		DA31F69D1EC207CA003978C7 /* VStoreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6941EC207CA003978C7 /* VStoreHeader.swift */; };
 		DA31F69F1EC207F9003978C7 /* MStoreStatusNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F69E1EC207F9003978C7 /* MStoreStatusNew.swift */; };
+		DA31F6A11EC20828003978C7 /* MStoreStatusNotAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6A01EC20828003978C7 /* MStoreStatusNotAvailable.swift */; };
+		DA31F6A31EC208B9003978C7 /* MStoreStatusPurchased.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6A21EC208B9003978C7 /* MStoreStatusPurchased.swift */; };
+		DA31F6A51EC208D8003978C7 /* MStoreStatusPurchasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6A41EC208D8003978C7 /* MStoreStatusPurchasing.swift */; };
 		DA34E5111EB958DA00AC9389 /* CGridVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34E5101EB958DA00AC9389 /* CGridVirus.swift */; };
 		DA34E5141EB95AB100AC9389 /* VGridVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34E5131EB95AB100AC9389 /* VGridVirus.swift */; };
 		DA49A81C1EBA1D9E00C03ECD /* VGridVirusOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49A81B1EBA1D9E00C03ECD /* VGridVirusOptions.swift */; };
@@ -361,6 +364,9 @@
 		DA31F6931EC207CA003978C7 /* VStoreCellPurchasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreCellPurchasing.swift; sourceTree = "<group>"; };
 		DA31F6941EC207CA003978C7 /* VStoreHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStoreHeader.swift; sourceTree = "<group>"; };
 		DA31F69E1EC207F9003978C7 /* MStoreStatusNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreStatusNew.swift; sourceTree = "<group>"; };
+		DA31F6A01EC20828003978C7 /* MStoreStatusNotAvailable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreStatusNotAvailable.swift; sourceTree = "<group>"; };
+		DA31F6A21EC208B9003978C7 /* MStoreStatusPurchased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreStatusPurchased.swift; sourceTree = "<group>"; };
+		DA31F6A41EC208D8003978C7 /* MStoreStatusPurchasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreStatusPurchasing.swift; sourceTree = "<group>"; };
 		DA34E5101EB958DA00AC9389 /* CGridVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVirus.swift; sourceTree = "<group>"; };
 		DA34E5131EB95AB100AC9389 /* VGridVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVirus.swift; sourceTree = "<group>"; };
 		DA49A81B1EBA1D9E00C03ECD /* VGridVirusOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVirusOptions.swift; sourceTree = "<group>"; };
@@ -590,6 +596,9 @@
 				DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */,
 				DA31F6891EC20503003978C7 /* MStoreStatusDeferred.swift */,
 				DA31F69E1EC207F9003978C7 /* MStoreStatusNew.swift */,
+				DA31F6A01EC20828003978C7 /* MStoreStatusNotAvailable.swift */,
+				DA31F6A21EC208B9003978C7 /* MStoreStatusPurchased.swift */,
+				DA31F6A41EC208D8003978C7 /* MStoreStatusPurchasing.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1500,6 +1509,7 @@
 				DA71982E1EBBC0C400D60D1A /* MGridVisorTakeStats.swift in Sources */,
 				DAB1B4AF1EB8C5DF009AFA46 /* MGridVisorTakeEnergy.swift in Sources */,
 				DAF15D671E9D32BB0000E6B9 /* VBlur.swift in Sources */,
+				DA31F6A51EC208D8003978C7 /* MStoreStatusPurchasing.swift in Sources */,
 				DAF15D6A1E9D32BB0000E6B9 /* VCollectionFlow.swift in Sources */,
 				DA1D49C21EAA643700C2392C /* CProfile.swift in Sources */,
 				DAAA0EB61EA80DCE00756A17 /* MGridVisorDetailItemHeader.swift in Sources */,
@@ -1533,6 +1543,7 @@
 				DAFE877E1EA51D5300350434 /* MGridAlgoItemHostileVirusFriendly.swift in Sources */,
 				DA29FEEF1EAAA9F500CD8FBC /* CStats.swift in Sources */,
 				DA0960A81EC135B00005BE96 /* MStore.swift in Sources */,
+				DA31F6A11EC20828003978C7 /* MStoreStatusNotAvailable.swift in Sources */,
 				DA4D97711EB1079100AE0C0C /* MLandingBarSettings.swift in Sources */,
 				DA134A8A1E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift in Sources */,
 				DA7135BA1EAFB042007ACEB5 /* MGridMapDetailItemLevel.swift in Sources */,
@@ -1595,6 +1606,7 @@
 				DA31F69B1EC207CA003978C7 /* VStoreCellPurchased.swift in Sources */,
 				DAF15D631E9D32BB0000E6B9 /* ExtensionURL.swift in Sources */,
 				DA7135C51EAFD247007ACEB5 /* VBoards.swift in Sources */,
+				DA31F6A31EC208B9003978C7 /* MStoreStatusPurchased.swift in Sources */,
 				DA1D49D31EAA803500C2392C /* MProfileItemSkill.swift in Sources */,
 				DAFE877C1EA51D4900350434 /* MGridAlgoItemHostileVirusFoe.swift in Sources */,
 				DA1403C51EB668B8006C9364 /* VGridVisorTake.swift in Sources */,

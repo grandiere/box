@@ -1,14 +1,14 @@
 import UIKit
 
-class MStoreStatusDeferred:MStoreStatusProtocol
+class MStoreStatusPurchased:MStoreStatusProtocol
 {
-    private let kCellHeight:CGFloat = 50
+    private let kCellHeight:CGFloat = 40
     
     var reusableIdentifier:String
     {
         get
         {
-            return VStoreCellDeferred.reusableIdentifier
+            return VStoreCellPurchased.reusableIdentifier
         }
     }
     
