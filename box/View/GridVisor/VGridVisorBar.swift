@@ -8,7 +8,7 @@ class VGridVisorBar:UIView
     private let kBorderHeight:CGFloat = 1
     private let kButtonWidth:CGFloat = 60
     private let kEnergyWidth:CGFloat = 260
-    private let kRangeWidth:CGFloat = 200
+    private let kRangeWidth:CGFloat = 250
     
     init(controller:CGridVisor)
     {

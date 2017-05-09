@@ -20,7 +20,6 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         numberFormatter.minimumIntegerDigits = kMinIntegers
         numberFormatter.maximumFractionDigits = kMaxDecimals
-        numberFormatter.positiveSuffix = kSuffix
         
         super.init(frame:frame)
         isUserInteractionEnabled = false
@@ -81,9 +80,22 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
         guard
         
             let modelDistance:MGridVisorDetailItemDistance = model as? MGridVisorDetailItemDistance,
-            let distance:Double = modelDistance.distance,
+            let distanceMetric:MDistanceProtocol = MSession.sharedInstance.settings?.currentDistance(),
+            let distance:Double = modelDistance.distance
+        
+        else
+        {
+            return
+        }
+        
+        numberFormatter.positiveSuffix = distanceMetric.shortName
+        let distanceConverted:Double = distanceMetric.convertFromStandard(standard:distance)
+        let distanceNumber:NSNumber = distanceConverted as NSNumber
+        
+        guard
+            
             let stringDistance:String = numberFormatter.string(
-                from:distance as NSNumber)
+                from:distanceNumber)
         
         else
         {
