@@ -81,11 +81,14 @@
 "MStorePurchaseEnergy_descr"="Recharge energy to 100%";
 "MStorePurchaseEnergy_buyingError"="Your energy is full";
 "MStorePurchaseMemory_title"="Memory +1\n\n";
-"MStorePurchaseMemory_descr"="Increase Memory and improve performance\nMax memory level is 10";
+"MStorePurchaseMemory_descr"="Increase Memory and improve performance\nMax Memory level is 10";
 "MStorePurchaseMemory_buyingError"="Memory is at max";
 "MStorePurchaseNetwork_title"="Network +1\n\n";
-"MStorePurchaseNetwork_descr"="Increase Network and improve performance\nMax network level is 10";
+"MStorePurchaseNetwork_descr"="Increase Network and improve performance\nMax Network level is 10";
 "MStorePurchaseNetwork_buyingError"="Network is at max";
+"MStorePurchaseProcessor_title"="Processor +1\n\n";
+"MStorePurchaseProcessor_descr"="Increase Processor and improve performance\nMax Processor level is 10";
+"MStorePurchaseProcessor_buyingError"="Processor is at max";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";
