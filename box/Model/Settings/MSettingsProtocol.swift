@@ -2,5 +2,6 @@ import UIKit
 
 protocol MSettingsProtocol
 {
-    var image:UIImage { get }
+    var reusableIdentifier:String { get }
+    var cellHeight:CGFloat { get }
 }
