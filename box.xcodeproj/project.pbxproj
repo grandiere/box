@@ -118,6 +118,7 @@
 		DA31F6AB1EC231D2003978C7 /* MStorePurchaseMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6AA1EC231D2003978C7 /* MStorePurchaseMemory.swift */; };
 		DA31F6AD1EC2449A003978C7 /* MStorePurchaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6AC1EC2449A003978C7 /* MStorePurchaseNetwork.swift */; };
 		DA31F6AF1EC2487C003978C7 /* MStorePurchaseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6AE1EC2487C003978C7 /* MStorePurchaseProcessor.swift */; };
+		DA31F6B11EC24A27003978C7 /* MStorePurchaseSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6B01EC24A27003978C7 /* MStorePurchaseSkill.swift */; };
 		DA34E5111EB958DA00AC9389 /* CGridVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34E5101EB958DA00AC9389 /* CGridVirus.swift */; };
 		DA34E5141EB95AB100AC9389 /* VGridVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34E5131EB95AB100AC9389 /* VGridVirus.swift */; };
 		DA49A81C1EBA1D9E00C03ECD /* VGridVirusOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49A81B1EBA1D9E00C03ECD /* VGridVirusOptions.swift */; };
@@ -376,6 +377,7 @@
 		DA31F6AA1EC231D2003978C7 /* MStorePurchaseMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStorePurchaseMemory.swift; sourceTree = "<group>"; };
 		DA31F6AC1EC2449A003978C7 /* MStorePurchaseNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStorePurchaseNetwork.swift; sourceTree = "<group>"; };
 		DA31F6AE1EC2487C003978C7 /* MStorePurchaseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStorePurchaseProcessor.swift; sourceTree = "<group>"; };
+		DA31F6B01EC24A27003978C7 /* MStorePurchaseSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStorePurchaseSkill.swift; sourceTree = "<group>"; };
 		DA34E5101EB958DA00AC9389 /* CGridVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVirus.swift; sourceTree = "<group>"; };
 		DA34E5131EB95AB100AC9389 /* VGridVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVirus.swift; sourceTree = "<group>"; };
 		DA49A81B1EBA1D9E00C03ECD /* VGridVirusOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVirusOptions.swift; sourceTree = "<group>"; };
@@ -619,6 +621,7 @@
 				DA31F6AA1EC231D2003978C7 /* MStorePurchaseMemory.swift */,
 				DA31F6AC1EC2449A003978C7 /* MStorePurchaseNetwork.swift */,
 				DA31F6AE1EC2487C003978C7 /* MStorePurchaseProcessor.swift */,
+				DA31F6B01EC24A27003978C7 /* MStorePurchaseSkill.swift */,
 			);
 			path = Purchases;
 			sourceTree = "<group>";
@@ -1520,6 +1523,7 @@
 				DA1403BC1EB66478006C9364 /* CGridVisorTake.swift in Sources */,
 				DA59D7581EB25F9000EB2973 /* FAnalytics.swift in Sources */,
 				DA59D7771EB3BCAD00EB2973 /* FDbAlgoHostileItem.swift in Sources */,
+				DA31F6B11EC24A27003978C7 /* MStorePurchaseSkill.swift in Sources */,
 				DA1403B81EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift in Sources */,
 				DA71982E1EBBC0C400D60D1A /* MGridVisorTakeStats.swift in Sources */,
 				DAB1B4AF1EB8C5DF009AFA46 /* MGridVisorTakeEnergy.swift in Sources */,
