@@ -22,7 +22,6 @@
 		DA0960A11EC10CAD0005BE96 /* FDbUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A01EC10CAD0005BE96 /* FDbUser.swift */; };
 		DA0960A31EC129C20005BE96 /* CStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A21EC129C20005BE96 /* CStore.swift */; };
 		DA0960A81EC135B00005BE96 /* MStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A71EC135B00005BE96 /* MStore.swift */; };
-		DA0960AA1EC1369E0005BE96 /* MStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960A91EC1369E0005BE96 /* MStoreProtocol.swift */; };
 		DA0960AC1EC138520005BE96 /* MStoreStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */; };
 		DA0960AE1EC138DF0005BE96 /* MStoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960AD1EC138DF0005BE96 /* MStoreItem.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
@@ -262,7 +261,6 @@
 		DA0960A01EC10CAD0005BE96 /* FDbUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDbUser.swift; sourceTree = "<group>"; };
 		DA0960A21EC129C20005BE96 /* CStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CStore.swift; sourceTree = "<group>"; };
 		DA0960A71EC135B00005BE96 /* MStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStore.swift; sourceTree = "<group>"; };
-		DA0960A91EC1369E0005BE96 /* MStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreProtocol.swift; sourceTree = "<group>"; };
 		DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreStatusProtocol.swift; sourceTree = "<group>"; };
 		DA0960AD1EC138DF0005BE96 /* MStoreItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItem.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
@@ -566,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				DA0960A71EC135B00005BE96 /* MStore.swift */,
-				DA0960A91EC1369E0005BE96 /* MStoreProtocol.swift */,
 				DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */,
 				DA0960AD1EC138DF0005BE96 /* MStoreItem.swift */,
 			);
@@ -1391,7 +1388,6 @@
 				DA4DC4741EA191B40024D28E /* MGridAlgoItemAid.swift in Sources */,
 				DAF15D5E1E9D32BB0000E6B9 /* ExtensionNSManagedObject.swift in Sources */,
 				DA0960981EC0D6510005BE96 /* VGridVisorBarRange.swift in Sources */,
-				DA0960AA1EC1369E0005BE96 /* MStoreProtocol.swift in Sources */,
 				DA29FEF91EAAB60A00CD8FBC /* MStats.swift in Sources */,
 				DAAA0EB21EA80D1000756A17 /* MGridVisorDetail.swift in Sources */,
 				DAF15D5B1E9D32BB0000E6B9 /* ExtensionFileManager.swift in Sources */,
