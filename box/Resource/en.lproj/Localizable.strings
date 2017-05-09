@@ -79,6 +79,7 @@
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
 "MStorePurchaseEnergy_title"="Recharge Energy\n\n";
 "MStorePurchaseEnergy_descr"="Recharge energy to 100%";
+"MStorePurchaseEnergy_buyingError"="Your energy is full";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";

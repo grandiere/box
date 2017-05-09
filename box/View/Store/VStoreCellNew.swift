@@ -78,6 +78,17 @@ class VStoreCellNew:VStoreCell
     
     func actionPurchase(sender button:UIButton)
     {
-        controller?.purchase(skProduct:model?.skProduct)
+        guard
+            
+            let error:String = model?.buyingError()
+        
+        else
+        {
+            controller?.purchase(skProduct:model?.skProduct)
+            
+            return
+        }
+        
+        VAlert.messageOrange(message:error)
     }
 }
