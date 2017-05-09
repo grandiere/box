@@ -9,7 +9,7 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     private let kHeaderHeight:CGFloat = 150
     private let kInterLine:CGFloat = 1
     private let kCollectionTop:CGFloat = 120
-    private let kCollectionBottom:CGFloat = 20
+    private let kCollectionBottom:CGFloat = 50
     
     override init(controller:CController)
     {

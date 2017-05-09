@@ -27,6 +27,11 @@ class MStoreItem
     {
     }
     
+    func buyingError() -> String?
+    {
+        return nil
+    }
+    
     func validatePurchase() -> Bool
     {
         return false
