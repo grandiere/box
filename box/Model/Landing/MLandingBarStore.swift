@@ -14,5 +14,6 @@ class MLandingBarStore:MLandingBarProtocol
     
     func selected(controller:CLanding)
     {
+        controller.openStore()
     }
 }

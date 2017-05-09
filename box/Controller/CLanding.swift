@@ -96,4 +96,12 @@ class CLanding:CController
             controller:controllerSettings,
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
+    
+    func openStore()
+    {
+        let controllerStore:CStore = CStore()
+        parentController.push(
+            controller:controllerStore,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }
