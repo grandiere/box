@@ -44,4 +44,10 @@ extension DSettings
         
         return distance
     }
+    
+    func changeDistance(distance:Distance)
+    {
+        self.distance = distance.rawValue        
+        DManager.sharedInstance?.save()
+    }
 }
