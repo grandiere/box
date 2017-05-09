@@ -15,7 +15,11 @@ class MStore
         mapItems = [:]
         references = []
         
-        //addPurchase(item:MStoreItemPlus())
+        let itemPlusRange:MStorePurchasePlusRange = MStorePurchasePlusRange()
+        let itemEnergy:MStorePurchaseEnergy = MStorePurchaseEnergy()
+        
+        addPurchase(item:itemPlusRange)
+        addPurchase(item:itemEnergy)
         
         references.sort
         { (purchaseA:String, purchaseB:String) -> Bool in

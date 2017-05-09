@@ -9,16 +9,17 @@ class VStoreHeader:UICollectionReusableView
     private weak var layoutLabelHeight:NSLayoutConstraint!
     private let kLabelTop:CGFloat = 16
     private let kLabelMargin:CGFloat = 10
+    private let kBorderHeight:CGFloat = 1
     
     override init(frame:CGRect)
     {
         attrTitle = [
             NSFontAttributeName:UIFont.bold(size:20),
-            NSForegroundColorAttributeName:UIColor.gridBlue]
+            NSForegroundColorAttributeName:UIColor.white]
         
         attrDescr = [
-            NSFontAttributeName:UIFont.regular(size:16),
-            NSForegroundColorAttributeName:UIColor.black]
+            NSFontAttributeName:UIFont.regular(size:15),
+            NSForegroundColorAttributeName:UIColor.white]
         labelMargin2 = kLabelMargin + kLabelMargin
         
         super.init(frame:frame)
@@ -33,7 +34,10 @@ class VStoreHeader:UICollectionReusableView
         label.numberOfLines = 0
         self.label = label
         
+        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.5))
+        
         addSubview(label)
+        addSubview(border)
         
         NSLayoutConstraint.topToTop(
             view:label,
@@ -45,6 +49,16 @@ class VStoreHeader:UICollectionReusableView
             view:label,
             toView:self,
             margin:kLabelMargin)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:border,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:border,
+            constant:kBorderHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:border,
+            toView:self)
     }
     
     required init?(coder:NSCoder)

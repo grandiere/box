@@ -6,7 +6,7 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     private weak var spinner:VSpinner?
     private weak var collectionView:VCollection!
     private weak var layoutBarTop:NSLayoutConstraint!
-    private let kHeaderHeight:CGFloat = 140
+    private let kHeaderHeight:CGFloat = 150
     private let kInterLine:CGFloat = 1
     private let kCollectionTop:CGFloat = 120
     private let kCollectionBottom:CGFloat = 20
@@ -83,7 +83,7 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     
     private func modelAtIndex(index:IndexPath) -> MStoreItem
     {
-        let itemId:String = controller.model.references[index.section]
+        let itemId:String = controller.model.references[index.section - 1]
         let item:MStoreItem = controller.model.mapItems[itemId]!
         
         return item
@@ -168,24 +168,32 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
-        let count:Int = controller.model.references.count
+        let count:Int = controller.model.references.count + 1
         
         return count
     }
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let indexPath:IndexPath = IndexPath(item:0, section:section)
-        let item:MStoreItem = modelAtIndex(index:indexPath)
         let count:Int
         
-        if item.status == nil
+        if section == 0
         {
             count = 0
         }
         else
         {
-            count = 1
+            let indexPath:IndexPath = IndexPath(item:0, section:section)
+            let item:MStoreItem = modelAtIndex(index:indexPath)
+            
+            if item.status == nil
+            {
+                count = 0
+            }
+            else
+            {
+                count = 1
+            }
         }
         
         return count

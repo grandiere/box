@@ -75,8 +75,10 @@
 "MGridVisorTakeStatsProcessor_name"="Processor";
 "MSession_levelUp"="Level up";
 
-"MStorePurchasePlusRange_title"="Plus Range";
-"MStorePurchasePlusRange_descr"="\nIncrease the Augmented Reality Visor Range to interact with The Grid";
+"MStorePurchasePlusRange_title"="Plus Range\n\n";
+"MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
+"MStorePurchaseEnergy_title"="Recharge Energy\n\n";
+"MStorePurchaseEnergy_descr"="Recharge energy to 100%";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";

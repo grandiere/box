@@ -3,7 +3,7 @@ import UIKit
 class VStoreCellNew:VStoreCell
 {
     private weak var labelPrice:UILabel!
-    private let kButtonPurchaseWidth:CGFloat = 100
+    private let kButtonPurchaseWidth:CGFloat = 110
     private let kLabelPriceWidth:CGFloat = 200
     private let kLabelButtonSeparation:CGFloat = -10
     
@@ -33,7 +33,7 @@ class VStoreCellNew:VStoreCell
         labelPrice.isUserInteractionEnabled = false
         labelPrice.translatesAutoresizingMaskIntoConstraints = false
         labelPrice.backgroundColor = UIColor.clear
-        labelPrice.font = UIFont.bold(size:16)
+        labelPrice.font = UIFont.bold(size:17)
         labelPrice.textColor = UIColor.white
         labelPrice.textAlignment = NSTextAlignment.right
         self.labelPrice = labelPrice
