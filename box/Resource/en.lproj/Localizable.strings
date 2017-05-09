@@ -82,7 +82,10 @@
 "MStorePurchaseEnergy_buyingError"="Your energy is full";
 "MStorePurchaseMemory_title"="Memory +1\n\n";
 "MStorePurchaseMemory_descr"="Increase Memory and improve performance\nMax memory level is 10";
-"MStorePurchaseMemory_buyingError"="Can't increase Memory anymore";
+"MStorePurchaseMemory_buyingError"="Memory is at max";
+"MStorePurchaseNetwork_title"="Network +1\n\n";
+"MStorePurchaseNetwork_descr"="Increase Network and improve performance\nMax network level is 10";
+"MStorePurchaseNetwork_buyingError"="Network is at max";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";
