@@ -7,7 +7,7 @@ class VStoreBar:UIView
     private let kIconHeight:CGFloat = 50
     private let kBackWidth:CGFloat = 60
     private let kRestoreRight:CGFloat = -10
-    private let kRestoreWidth:CGFloat = 200
+    private let kRestoreWidth:CGFloat = 170
     private let kRestoreBottom:CGFloat = -10
     private let kRestoreHeight:CGFloat = 32
     private let kCornerRadius:CGFloat = 6
@@ -46,7 +46,7 @@ class VStoreBar:UIView
             for:UIControlEvents.touchUpInside)
         
         let buttonRestore:UIButton = UIButton()
-        buttonRestore.backgroundColor = UIColor(white:1, alpha:0.1)
+        buttonRestore.backgroundColor = UIColor(white:1, alpha:0.3)
         buttonRestore.clipsToBounds = true
         buttonRestore.translatesAutoresizingMaskIntoConstraints = false
         buttonRestore.setTitleColor(
@@ -60,6 +60,10 @@ class VStoreBar:UIView
             for:UIControlState.normal)
         buttonRestore.titleLabel!.font = UIFont.regular(size:14)
         buttonRestore.layer.cornerRadius = kCornerRadius
+        buttonRestore.addTarget(
+            self,
+            action:#selector(actionRestore(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         addSubview(border)
         addSubview(icon)
@@ -125,5 +129,10 @@ class VStoreBar:UIView
     func actionBack(sender button:UIButton)
     {
         controller.back()
+    }
+    
+    func actionRestore(sender button:UIButton)
+    {
+        controller.restorePurchases()
     }
 }
