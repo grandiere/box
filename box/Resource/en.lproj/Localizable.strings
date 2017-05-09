@@ -19,6 +19,7 @@
 "VHandler_buttonDone"="Done";
 "VGridVisorBarRange_labelTitle"="Range ";
 "VGridVisorBarRange_labelSubtitle"="m";
+"VSettingsCellDistance_labelTitle"="Show distance as";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";
