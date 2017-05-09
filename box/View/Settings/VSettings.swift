@@ -4,7 +4,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
 {
     private weak var controller:CSettings!
     private weak var collectionView:VCollection!
-    private let kHeaderHeight:CGFloat = 200
+    private let kHeaderHeight:CGFloat = 240
     private let kCollectionBottom:CGFloat = 20
     
     override init(controller:CController)
@@ -48,7 +48,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        return 1
+        return 0
     }
     
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
@@ -63,8 +63,13 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return header
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        return UICollectionViewCell()
+        let cell:VSettingsCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            VSettingsCell.reusableIdentifier,
+            for:indexPath) as! VSettingsCell
+        
+        return cell
     }
 }

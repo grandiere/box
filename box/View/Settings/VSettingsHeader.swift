@@ -15,7 +15,7 @@ class VSettingsHeader:UICollectionReusableView
         imageView.clipsToBounds = true
         imageView.contentMode = UIViewContentMode.center
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = #imageLiteral(resourceName: "assetTextureVirusFriendlyTargeted")
+        imageView.image = #imageLiteral(resourceName: "assetGenericLogo")
         
         addSubview(imageView)
         

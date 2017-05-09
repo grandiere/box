@@ -10,4 +10,11 @@ class CSettings:CController
         self.viewSettings = viewSettings
         view = viewSettings
     }
+    
+    //MARK: public
+    
+    func back()
+    {
+        parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }
