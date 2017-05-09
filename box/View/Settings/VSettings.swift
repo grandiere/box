@@ -18,7 +18,7 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerCell(cell:VSettingsCell.self)
+        collectionView.registerCell(cell:VSettingsCellDistance.self)
         collectionView.registerHeader(header:VSettingsHeader.self)
         self.collectionView = collectionView
         
@@ -39,7 +39,25 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return nil
     }
     
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> MSettingsProtocol
+    {
+        let item:MSettingsProtocol = controller.model.items[index.item]
+                
+        return item
+    }
+    
     //MARK: collectionView delegate
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let item:MSettingsProtocol = modelAtIndex(index:indexPath)
+        let width:CGFloat = bounds.maxX
+        let size:CGSize = CGSize(width:width, height:item.cellHeight)
+        
+        return size
+    }
     
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {
@@ -48,7 +66,9 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        return 0
+        let count:Int = controller.model.items.count
+        
+        return count
     }
     
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
@@ -65,11 +85,23 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
+        let item:MSettingsProtocol = modelAtIndex(index:indexPath)
         let cell:VSettingsCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
-            VSettingsCell.reusableIdentifier,
+            item.reusableIdentifier,
             for:indexPath) as! VSettingsCell
+        cell.config(controller:controller)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
     }
 }

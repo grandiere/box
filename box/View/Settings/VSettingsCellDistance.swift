@@ -18,6 +18,15 @@ class VSettingsCellDistance:VSettingsCell
         labelTitle.textColor = UIColor.white
         labelTitle.text = NSLocalizedString("VSettingsCellDistance_labelTitle", comment:"")
         
+        let segmentedItems:[String] = [
+            NSLocalizedString("VSettingsCellDistance_segmentedMeters", comment:""),
+            NSLocalizedString("VSettingsCellDistance_segmentedMiles", comment:"")]
+        let segmented:UISegmentedControl = UISegmentedControl(
+            items:segmentedItems)
+        segmented.translatesAutoresizingMaskIntoConstraints = false
+        segmented.clipsToBounds = true
+        segmented.tintColor = UIColor.gridBlue
+        
         addSubview(labelTitle)
         
         NSLayoutConstraint.equalsVertical(

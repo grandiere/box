@@ -7,6 +7,7 @@
         <relationship name="settings" maxCount="1" deletionRule="Nullify" destinationEntity="DSettings" inverseName="energy" inverseEntity="DSettings" syncable="YES"/>
     </entity>
     <entity name="DSettings" representedClassName="DSettings" syncable="YES" codeGenerationType="class">
+        <attribute name="distance" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="firebaseId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plusRange" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="ttl" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -30,7 +31,7 @@
     </entity>
     <elements>
         <element name="DEnergy" positionX="-63" positionY="0" width="128" height="105"/>
-        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="DSettings" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="DStats" positionX="-45" positionY="72" width="128" height="105"/>
         <element name="DUser" positionX="-54" positionY="27" width="128" height="135"/>
     </elements>
