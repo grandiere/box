@@ -9,7 +9,7 @@ class VStoreCell:UICollectionViewCell
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.clear
     }
     
     required init?(coder:NSCoder)

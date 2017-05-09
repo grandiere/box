@@ -5,10 +5,10 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     private weak var controller:CStore!
     private weak var spinner:VSpinner?
     private weak var collectionView:VCollection!
+    private weak var layoutBarTop:NSLayoutConstraint!
     private let kHeaderHeight:CGFloat = 140
-    private let kFooterHeight:CGFloat = 80
     private let kInterLine:CGFloat = 1
-    private let kCollectionTop:CGFloat = 70
+    private let kCollectionTop:CGFloat = 140
     private let kCollectionBottom:CGFloat = 20
     
     override init(controller:CController)
@@ -34,18 +34,11 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         collectionView.registerCell(cell:VStoreCellPurchased.self)
         collectionView.registerCell(cell:VStoreCellPurchasing.self)
         collectionView.registerHeader(header:VStoreHeader.self)
-        collectionView.registerFooter(footer:VStoreFooter.self)
         self.collectionView = collectionView
         
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
-            flow.headerReferenceSize = CGSize(width:0, height:kHeaderHeight)
             flow.minimumLineSpacing = kInterLine
-            flow.sectionInset = UIEdgeInsets(
-                top:kInterLine,
-                left:0,
-                bottom:kCollectionBottom,
-                right:0)
         }
         
         addSubview(collectionView)
@@ -54,8 +47,7 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         
         NSLayoutConstraint.topToTop(
             view:collectionView,
-            toView:self,
-            constant:kCollectionTop)
+            toView:self)
         NSLayoutConstraint.bottomToBottom(
             view:collectionView,
             toView:self)
@@ -67,7 +59,7 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
             view:spinner,
             toView:self)
         
-        NSLayoutConstraint.topToTop(
+        layoutBarTop = NSLayoutConstraint.topToTop(
             view:viewBar,
             toView:self)
         NSLayoutConstraint.height(
@@ -88,18 +80,11 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         spinner?.stopAnimating()
     }
     
-    override func layoutSubviews()
-    {
-        collectionView.collectionViewLayout.invalidateLayout()
-        
-        super.layoutSubviews()
-    }
-    
     //MARK: private
     
     private func modelAtIndex(index:IndexPath) -> MStoreItem
     {
-        let itemId:MStore.PurchaseId = controller.model.references[index.section]
+        let itemId:String = controller.model.references[index.section]
         let item:MStoreItem = controller.model.mapItems[itemId]!
         
         return item
@@ -125,25 +110,48 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
                 return
             }
             
-            VAlert.message(message:errorMessage)
+            VAlert.messageOrange(message:errorMessage)
         }
     }
     
-    //MARK: collection delegate
+    //MARK: collectionView delegate
     
-    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForFooterInSection section:Int) -> CGSize
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, insetForSectionAt section:Int) -> UIEdgeInsets
     {
-        let indexPath:IndexPath = IndexPath(item:0, section:section)
-        let item:MStoreItem = modelAtIndex(index:indexPath)
-        let size:CGSize
+        let top:CGFloat
+        let bottom:CGFloat
         
-        if item.status?.restorable == true
+        if section == 0
         {
-            size = CGSize(width:0, height:kFooterHeight)
+            top = kCollectionTop
+            bottom = 0
         }
         else
         {
+            top = 0
+            bottom = kCollectionBottom
+        }
+        
+        let insets:UIEdgeInsets = UIEdgeInsets(
+            top:top,
+            left:0,
+            bottom:bottom,
+            right:0)
+        
+        return insets
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section:Int) -> CGSize
+    {
+        let size:CGSize
+        
+        if section == 0
+        {
             size = CGSize.zero
+        }
+        else
+        {
+            size = CGSize(width:0, height:kHeaderHeight)
         }
         
         return size
@@ -186,32 +194,15 @@ class VStore:VView, UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
     {
-        let reusable:UICollectionReusableView
+        let item:MStoreItem = modelAtIndex(index:indexPath)
+        let header:VStoreHeader = collectionView.dequeueReusableSupplementaryView(
+            ofKind:kind,
+            withReuseIdentifier:
+            VStoreHeader.reusableIdentifier,
+            for:indexPath) as! VStoreHeader
+        header.config(model:item)
         
-        if kind == UICollectionElementKindSectionHeader
-        {
-            let item:MStoreItem = modelAtIndex(index:indexPath)
-            let header:VStoreHeader = collectionView.dequeueReusableSupplementaryView(
-                ofKind:kind,
-                withReuseIdentifier:
-                VStoreHeader.reusableIdentifier,
-                for:indexPath) as! VStoreHeader
-            header.config(model:item)
-            reusable = header
-        }
-        else
-        {
-            let footer:VStoreFooter = collectionView.dequeueReusableSupplementaryView(
-                ofKind:kind,
-                withReuseIdentifier:
-                VStoreFooter.reusableIdentifier,
-                for:indexPath) as! VStoreFooter
-            footer.config(controller:controller)
-            
-            reusable = footer
-        }
-        
-        return reusable
+        return header
     }
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell

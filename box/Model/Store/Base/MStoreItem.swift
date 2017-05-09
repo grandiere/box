@@ -18,7 +18,7 @@ class MStoreItem
         self.purchaseId = purchaseId
         self.title = title
         self.descr = descr
-        status = MStoreItemStatusNotAvailable()
+        status = MStoreStatusNotAvailable()
     }
     
     //MARK: public
@@ -52,22 +52,22 @@ class MStoreItem
     
     final func statusNew()
     {
-        status = MStoreItemStatusNew()
+        status = MStoreStatusNew()
     }
     
     final func statusDeferred()
     {
-        status = MStoreItemStatusDeferred()
+        status = MStoreStatusDeferred()
     }
     
     final func statusPurchasing()
     {
-        status = MStoreItemStatusPurchasing()
+        status = MStoreStatusPurchasing()
     }
     
     final func statusPurchased(callAction:Bool)
     {
-        status = MStoreItemStatusPurchased()
+        status = MStoreStatusPurchased()
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in

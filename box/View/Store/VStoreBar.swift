@@ -11,11 +11,11 @@ class VStoreBar:UIView
     {
         super.init(frame:CGRect.zero)
         clipsToBounds = true
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
+        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.1))
         
         let icon:UIImageView = UIImageView()
         icon.isUserInteractionEnabled = false
@@ -34,7 +34,7 @@ class VStoreBar:UIView
             for:UIControlState.highlighted)
         buttonBack.imageView!.clipsToBounds = true
         buttonBack.imageView!.contentMode = UIViewContentMode.center
-        buttonBack.imageView!.tintColor = UIColor(white:0, alpha:0.1)
+        buttonBack.imageView!.tintColor = UIColor(white:1, alpha:0.1)
         buttonBack.addTarget(
             self,
             action:#selector(actionBack(sender:)),

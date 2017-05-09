@@ -15,7 +15,7 @@ class MStore
         mapItems = [:]
         references = []
         
-        addPurchase(item:MStoreItemPlus())
+        //addPurchase(item:MStoreItemPlus())
         
         references.sort
         { (purchaseA:String, purchaseB:String) -> Bool in

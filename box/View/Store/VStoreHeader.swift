@@ -4,30 +4,26 @@ class VStoreHeader:UICollectionReusableView
 {
     private let attrTitle:[String:Any]
     private let attrDescr:[String:Any]
-    private let labelMargins:CGFloat
+    private let labelMargin2:CGFloat
     private weak var label:UILabel!
-    private weak var imageView:UIImageView!
     private weak var layoutLabelHeight:NSLayoutConstraint!
     private let kLabelTop:CGFloat = 16
-    private let kLabelLeft:CGFloat = 10
-    private let kLabelRight:CGFloat = -10
-    private let kImageSize:CGFloat = 100
+    private let kLabelMargin:CGFloat = 10
     
     override init(frame:CGRect)
     {
         attrTitle = [
-            NSFontAttributeName:UIFont.bolder(size:20),
-            NSForegroundColorAttributeName:UIColor.hyperBlue]
+            NSFontAttributeName:UIFont.bold(size:20),
+            NSForegroundColorAttributeName:UIColor.gridBlue]
         
         attrDescr = [
             NSFontAttributeName:UIFont.regular(size:16),
             NSForegroundColorAttributeName:UIColor.black]
-        
-        labelMargins = -kLabelRight + kLabelLeft + kImageSize
+        labelMargin2 = kLabelMargin + kLabelMargin
         
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.clear
         isUserInteractionEnabled = false
         
         let label:UILabel = UILabel()
@@ -37,15 +33,7 @@ class VStoreHeader:UICollectionReusableView
         label.numberOfLines = 0
         self.label = label
         
-        let imageView:UIImageView = UIImageView()
-        imageView.isUserInteractionEnabled = false
-        imageView.clipsToBounds = true
-        imageView.contentMode = UIViewContentMode.center
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        self.imageView = imageView
-        
         addSubview(label)
-        addSubview(imageView)
         
         NSLayoutConstraint.topToTop(
             view:label,
@@ -53,24 +41,10 @@ class VStoreHeader:UICollectionReusableView
             constant:kLabelTop)
         layoutLabelHeight = NSLayoutConstraint.height(
             view:label)
-        NSLayoutConstraint.leftToRight(
-            view:label,
-            toView:imageView,
-            constant:kLabelLeft)
-        NSLayoutConstraint.rightToRight(
+        NSLayoutConstraint.equalsHorizontal(
             view:label,
             toView:self,
-            constant:kLabelRight)
-        
-        NSLayoutConstraint.topToTop(
-            view:imageView,
-            toView:self)
-        NSLayoutConstraint.size(
-            view:imageView,
-            constant:kImageSize)
-        NSLayoutConstraint.leftToLeft(
-            view:imageView,
-            toView:self)
+            margin:kLabelMargin)
     }
     
     required init?(coder:NSCoder)
@@ -91,7 +65,7 @@ class VStoreHeader:UICollectionReusableView
         
         let width:CGFloat = bounds.maxX
         let height:CGFloat = bounds.maxY
-        let usableWidth:CGFloat = width - labelMargins
+        let usableWidth:CGFloat = width - labelMargin2
         let usableSize:CGSize = CGSize(width:usableWidth, height:height)
         let boundingRect:CGRect = attributedText.boundingRect(
             with:usableSize,
@@ -119,7 +93,6 @@ class VStoreHeader:UICollectionReusableView
         mutableString.append(stringDescr)
         
         label.attributedText = mutableString
-        imageView.image = model.image
         
         setNeedsLayout()
     }

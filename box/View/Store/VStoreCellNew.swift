@@ -13,7 +13,7 @@ class VStoreCellNew:VStoreCell
         
         let buttonPurchase:UIButton = UIButton()
         buttonPurchase.translatesAutoresizingMaskIntoConstraints = false
-        buttonPurchase.backgroundColor = UIColor.hyperBlue
+        buttonPurchase.backgroundColor = UIColor.gridBlue
         buttonPurchase.setTitleColor(
             UIColor.white,
             for:UIControlState.normal)
@@ -34,7 +34,7 @@ class VStoreCellNew:VStoreCell
         labelPrice.translatesAutoresizingMaskIntoConstraints = false
         labelPrice.backgroundColor = UIColor.clear
         labelPrice.font = UIFont.bold(size:16)
-        labelPrice.textColor = UIColor.black
+        labelPrice.textColor = UIColor.white
         labelPrice.textAlignment = NSTextAlignment.right
         self.labelPrice = labelPrice
         
