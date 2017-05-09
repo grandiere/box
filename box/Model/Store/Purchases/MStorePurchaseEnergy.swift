@@ -17,8 +17,7 @@ class MStorePurchaseEnergy:MStoreItem
     
     override func purchaseAction()
     {
-        MSession.sharedInstance.settings?.plusRange = true
-        DManager.sharedInstance?.save()
+        MSession.sharedInstance.settings?.energy?.rechargeEnergy()
     }
     
     override func buyingError() -> String?
