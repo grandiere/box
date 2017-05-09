@@ -89,6 +89,9 @@
 "MStorePurchaseProcessor_title"="Processor +1\n\n";
 "MStorePurchaseProcessor_descr"="Increase Processor and improve performance\nMax Processor level is 10";
 "MStorePurchaseProcessor_buyingError"="Processor is at max";
+"MStorePurchaseSkill_title"="Skill +1\n\n";
+"MStorePurchaseSkill_descr"="Increase Skill and improve performance\nMax Skill level is 10";
+"MStorePurchaseSkill_buyingError"="Skill is at max";
 
 "CGridVisorMatch_titleSuccess"="%@ success!";
 "CGridVisorMatch_titleFail"="%@ failed!";
