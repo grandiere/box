@@ -6,7 +6,7 @@ class MDistanceMetre:MDistanceProtocol
     {
         get
         {
-            return NSLocalizedString("", comment:"")
+            return NSLocalizedString("MDistanceMetre_name", comment:"")
         }
     }
     
@@ -14,7 +14,7 @@ class MDistanceMetre:MDistanceProtocol
     {
         get
         {
-            return NSLocalizedString("", comment:"")
+            return NSLocalizedString("MDistanceMetre_shortName", comment:"")
         }
     }
     

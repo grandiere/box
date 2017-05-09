@@ -78,6 +78,10 @@
 "MGridVisorTakeStatsNetwork_name"="Network";
 "MGridVisorTakeStatsProcessor_name"="Processor";
 "MSession_levelUp"="Level up";
+"MDistanceMetre_name"="metres";
+"MDistanceMetre_shortName"="m";
+"MDistanceFoot_name"="feet";
+"MDistanceFoot_shortName"="ft";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";

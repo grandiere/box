@@ -3,12 +3,6 @@ import CoreData
 
 extension DSettings
 {
-    enum Distance:Int16
-    {
-        case meters = 0
-        case miles = 1
-    }
-    
     private static let kRangeRegular:Double = 500
     
     //MARK: public
@@ -31,23 +25,39 @@ extension DSettings
         return range
     }
     
-    func currentDistance() -> Distance
+    func currentDistance() -> MDistanceProtocol
     {
-        guard
+        let distance:MDistanceProtocol
         
-            let distance:Distance = Distance(rawValue:self.distance)
-        
-        else
+        switch self.distance
         {
-            return Distance.meters
+        case 1:
+            
+            distance = MDistanceFoot()
+            
+            break
+            
+        default:
+            
+            distance = MDistanceMetre()
+            
+            break
         }
         
         return distance
     }
     
-    func changeDistance(distance:Distance)
+    func changeDistance(distance:MDistanceProtocol)
     {
-        self.distance = distance.rawValue        
+        if let _:MDistanceFoot = distance as? MDistanceFoot
+        {
+            self.distance = 1
+        }
+        else
+        {
+            self.distance = 0
+        }
+        
         DManager.sharedInstance?.save()
     }
 }
