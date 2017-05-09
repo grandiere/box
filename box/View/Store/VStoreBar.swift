@@ -7,9 +7,9 @@ class VStoreBar:UIView
     private let kIconHeight:CGFloat = 50
     private let kBackWidth:CGFloat = 60
     private let kRestoreRight:CGFloat = -10
-    private let kRestoreWidth:CGFloat = 170
+    private let kRestoreWidth:CGFloat = 174
     private let kRestoreBottom:CGFloat = -10
-    private let kRestoreHeight:CGFloat = 32
+    private let kRestoreHeight:CGFloat = 33
     private let kCornerRadius:CGFloat = 6
     
     init(controller:CStore)
@@ -46,7 +46,7 @@ class VStoreBar:UIView
             for:UIControlEvents.touchUpInside)
         
         let buttonRestore:UIButton = UIButton()
-        buttonRestore.backgroundColor = UIColor(white:1, alpha:0.3)
+        buttonRestore.backgroundColor = UIColor(white:1, alpha:0.2)
         buttonRestore.clipsToBounds = true
         buttonRestore.translatesAutoresizingMaskIntoConstraints = false
         buttonRestore.setTitleColor(
