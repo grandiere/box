@@ -116,6 +116,7 @@
 		DA31F6A71EC220C5003978C7 /* MStorePurchasePlusRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6A61EC220C5003978C7 /* MStorePurchasePlusRange.swift */; };
 		DA31F6A91EC22A78003978C7 /* MStorePurchaseEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6A81EC22A78003978C7 /* MStorePurchaseEnergy.swift */; };
 		DA31F6AB1EC231D2003978C7 /* MStorePurchaseMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6AA1EC231D2003978C7 /* MStorePurchaseMemory.swift */; };
+		DA31F6AD1EC2449A003978C7 /* MStorePurchaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6AC1EC2449A003978C7 /* MStorePurchaseNetwork.swift */; };
 		DA34E5111EB958DA00AC9389 /* CGridVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34E5101EB958DA00AC9389 /* CGridVirus.swift */; };
 		DA34E5141EB95AB100AC9389 /* VGridVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34E5131EB95AB100AC9389 /* VGridVirus.swift */; };
 		DA49A81C1EBA1D9E00C03ECD /* VGridVirusOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA49A81B1EBA1D9E00C03ECD /* VGridVirusOptions.swift */; };
@@ -372,6 +373,7 @@
 		DA31F6A61EC220C5003978C7 /* MStorePurchasePlusRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStorePurchasePlusRange.swift; sourceTree = "<group>"; };
 		DA31F6A81EC22A78003978C7 /* MStorePurchaseEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStorePurchaseEnergy.swift; sourceTree = "<group>"; };
 		DA31F6AA1EC231D2003978C7 /* MStorePurchaseMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStorePurchaseMemory.swift; sourceTree = "<group>"; };
+		DA31F6AC1EC2449A003978C7 /* MStorePurchaseNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStorePurchaseNetwork.swift; sourceTree = "<group>"; };
 		DA34E5101EB958DA00AC9389 /* CGridVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVirus.swift; sourceTree = "<group>"; };
 		DA34E5131EB95AB100AC9389 /* VGridVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVirus.swift; sourceTree = "<group>"; };
 		DA49A81B1EBA1D9E00C03ECD /* VGridVirusOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVirusOptions.swift; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 				DA31F6A61EC220C5003978C7 /* MStorePurchasePlusRange.swift */,
 				DA31F6A81EC22A78003978C7 /* MStorePurchaseEnergy.swift */,
 				DA31F6AA1EC231D2003978C7 /* MStorePurchaseMemory.swift */,
+				DA31F6AC1EC2449A003978C7 /* MStorePurchaseNetwork.swift */,
 			);
 			path = Purchases;
 			sourceTree = "<group>";
@@ -1529,6 +1532,7 @@
 				DA7135C91EAFD512007ACEB5 /* VBoardsBar.swift in Sources */,
 				DA1D49AB1EAA47AD00C2392C /* VLandingBar.swift in Sources */,
 				DA0C16D71EB5122D007532A6 /* MGridVisorDetailItemHeaderAid.swift in Sources */,
+				DA31F6AD1EC2449A003978C7 /* MStorePurchaseNetwork.swift in Sources */,
 				DA29FEF21EAAAA6400CD8FBC /* VStats.swift in Sources */,
 				DA88525E1EAE3B7D008CB62C /* CGridVisorMatch.swift in Sources */,
 				DA1403C01EB6652C006C9364 /* MGridVisorMatch.swift in Sources */,
