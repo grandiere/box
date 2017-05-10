@@ -25,7 +25,7 @@ class VSettingsCellReview:VSettingsCell
             self,
             action:#selector(actionButton(sender:)),
             for:UIControlEvents.touchUpInside)
-        button.titleLabel!.font = UIFont.bold(size:15)
+        button.titleLabel!.font = UIFont.bold(size:14)
         
         addSubview(button)
         

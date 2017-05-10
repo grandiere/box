@@ -2,7 +2,7 @@ import UIKit
 
 class MSettingsShare:MSettingsProtocol
 {
-    private let kCellHeight:CGFloat = 80
+    private let kCellHeight:CGFloat = 50
     
     var reusableIdentifier:String
     {

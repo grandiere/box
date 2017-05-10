@@ -22,6 +22,7 @@
 "VSettingsCellDistance_segmentedMetres"="Metres";
 "VSettingsCellDistance_segmentedFeet"="Feet";
 "VSettingsCellReview_button"="Review in the App Store";
+"VSettingsCellShare_button"="Share app";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";
