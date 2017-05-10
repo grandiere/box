@@ -1,9 +1,22 @@
-//
-//  MSettingsShare.swift
-//  box
-//
-//  Created by zero on 5/10/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class MSettingsShare:MSettingsProtocol
+{
+    private let kCellHeight:CGFloat = 80
+    
+    var reusableIdentifier:String
+    {
+        get
+        {
+            return VSettingsCellDistance.reusableIdentifier
+        }
+    }
+    
+    var cellHeight:CGFloat
+    {
+        get
+        {
+            return kCellHeight
+        }
+    }
+}
