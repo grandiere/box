@@ -161,6 +161,7 @@
 		DA4E6A011EC3A241004B138B /* MHelpBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4E6A001EC3A241004B138B /* MHelpBasic.swift */; };
 		DA4E6A031EC3A2C8004B138B /* MHelpBasicIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4E6A021EC3A2C8004B138B /* MHelpBasicIntro.swift */; };
 		DA4E6A061EC3ABFB004B138B /* help.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4E6A051EC3ABFB004B138B /* help.xcassets */; };
+		DA4E6A0A1EC3CA20004B138B /* CHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4E6A091EC3CA20004B138B /* CHelp.swift */; };
 		DA599B4D1EA7AAE90070E5AF /* CGridVisorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA599B4C1EA7AAE90070E5AF /* CGridVisorDetail.swift */; };
 		DA599B501EA7AE360070E5AF /* VGridVisorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA599B4F1EA7AE360070E5AF /* VGridVisorDetail.swift */; };
 		DA599B541EA7B3FD0070E5AF /* VGridVisorDetailBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA599B531EA7B3FD0070E5AF /* VGridVisorDetailBar.swift */; };
@@ -436,6 +437,7 @@
 		DA4E6A001EC3A241004B138B /* MHelpBasic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpBasic.swift; sourceTree = "<group>"; };
 		DA4E6A021EC3A2C8004B138B /* MHelpBasicIntro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpBasicIntro.swift; sourceTree = "<group>"; };
 		DA4E6A051EC3ABFB004B138B /* help.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = help.xcassets; sourceTree = "<group>"; };
+		DA4E6A091EC3CA20004B138B /* CHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHelp.swift; sourceTree = "<group>"; };
 		DA599B4C1EA7AAE90070E5AF /* CGridVisorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVisorDetail.swift; sourceTree = "<group>"; };
 		DA599B4F1EA7AE360070E5AF /* VGridVisorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetail.swift; sourceTree = "<group>"; };
 		DA599B531EA7B3FD0070E5AF /* VGridVisorDetailBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailBar.swift; sourceTree = "<group>"; };
@@ -1233,6 +1235,7 @@
 				DA0960821EBE418D0005BE96 /* CHandler.swift */,
 				DA0960891EBFCE8F0005BE96 /* CTutorial.swift */,
 				DA0960A21EC129C20005BE96 /* CStore.swift */,
+				DA4E6A091EC3CA20004B138B /* CHelp.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1630,6 +1633,7 @@
 				DA7198341EBBD9CB00D60D1A /* MGridVisorTakeStatsNetwork.swift in Sources */,
 				DAF15D621E9D32BB0000E6B9 /* ExtensionUIFont.swift in Sources */,
 				DA09609A1EC0EDAB0005BE96 /* VBoardsCell.swift in Sources */,
+				DA4E6A0A1EC3CA20004B138B /* CHelp.swift in Sources */,
 				DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */,
 				DA59D7731EB3BC4900EB2973 /* FDbUserItem.swift in Sources */,
 				DA31F6A71EC220C5003978C7 /* MStorePurchasePlusRange.swift in Sources */,
