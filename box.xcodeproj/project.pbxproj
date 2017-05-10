@@ -15,7 +15,6 @@
 		DA09608A1EBFCE8F0005BE96 /* CTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960891EBFCE8F0005BE96 /* CTutorial.swift */; };
 		DA09608D1EBFD0180005BE96 /* VTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09608C1EBFD0180005BE96 /* VTutorial.swift */; };
 		DA0960901EBFD0600005BE96 /* MTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09608F1EBFD0600005BE96 /* MTutorial.swift */; };
-		DA0960961EC0BAFC0005BE96 /* MTutorialItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960951EC0BAFC0005BE96 /* MTutorialItemProtocol.swift */; };
 		DA0960981EC0D6510005BE96 /* VGridVisorBarRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960971EC0D6510005BE96 /* VGridVisorBarRange.swift */; };
 		DA09609A1EC0EDAB0005BE96 /* VBoardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960991EC0EDAB0005BE96 /* VBoardsCell.swift */; };
 		DA09609D1EC0F2A00005BE96 /* MBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA09609C1EC0F2A00005BE96 /* MBoards.swift */; };
@@ -157,6 +156,8 @@
 		DA4DC47C1EA192BD0024D28E /* MGridAlgoItemHostileBug.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC47B1EA192BD0024D28E /* MGridAlgoItemHostileBug.swift */; };
 		DA4DC47E1EA192CC0024D28E /* MGridAlgoItemHostileVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4DC47D1EA192CC0024D28E /* MGridAlgoItemHostileVirus.swift */; };
 		DA4E69F41EC398BD004B138B /* MTutorialProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4E69F31EC398BD004B138B /* MTutorialProtocol.swift */; };
+		DA4E69FD1EC3A0D7004B138B /* MHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4E69FC1EC3A0D7004B138B /* MHelp.swift */; };
+		DA4E69FF1EC3A0E0004B138B /* MHelpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4E69FE1EC3A0E0004B138B /* MHelpProtocol.swift */; };
 		DA599B4D1EA7AAE90070E5AF /* CGridVisorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA599B4C1EA7AAE90070E5AF /* CGridVisorDetail.swift */; };
 		DA599B501EA7AE360070E5AF /* VGridVisorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA599B4F1EA7AE360070E5AF /* VGridVisorDetail.swift */; };
 		DA599B541EA7B3FD0070E5AF /* VGridVisorDetailBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA599B531EA7B3FD0070E5AF /* VGridVisorDetailBar.swift */; };
@@ -285,7 +286,6 @@
 		DA0960891EBFCE8F0005BE96 /* CTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTutorial.swift; sourceTree = "<group>"; };
 		DA09608C1EBFD0180005BE96 /* VTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTutorial.swift; sourceTree = "<group>"; };
 		DA09608F1EBFD0600005BE96 /* MTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTutorial.swift; sourceTree = "<group>"; };
-		DA0960951EC0BAFC0005BE96 /* MTutorialItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTutorialItemProtocol.swift; sourceTree = "<group>"; };
 		DA0960971EC0D6510005BE96 /* VGridVisorBarRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorBarRange.swift; sourceTree = "<group>"; };
 		DA0960991EC0EDAB0005BE96 /* VBoardsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardsCell.swift; sourceTree = "<group>"; };
 		DA09609C1EC0F2A00005BE96 /* MBoards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoards.swift; sourceTree = "<group>"; };
@@ -428,6 +428,8 @@
 		DA4DC47B1EA192BD0024D28E /* MGridAlgoItemHostileBug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoItemHostileBug.swift; sourceTree = "<group>"; };
 		DA4DC47D1EA192CC0024D28E /* MGridAlgoItemHostileVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoItemHostileVirus.swift; sourceTree = "<group>"; };
 		DA4E69F31EC398BD004B138B /* MTutorialProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTutorialProtocol.swift; sourceTree = "<group>"; };
+		DA4E69FC1EC3A0D7004B138B /* MHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelp.swift; sourceTree = "<group>"; };
+		DA4E69FE1EC3A0E0004B138B /* MHelpProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpProtocol.swift; sourceTree = "<group>"; };
 		DA599B4C1EA7AAE90070E5AF /* CGridVisorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVisorDetail.swift; sourceTree = "<group>"; };
 		DA599B4F1EA7AE360070E5AF /* VGridVisorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetail.swift; sourceTree = "<group>"; };
 		DA599B531EA7B3FD0070E5AF /* VGridVisorDetailBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailBar.swift; sourceTree = "<group>"; };
@@ -599,7 +601,6 @@
 			isa = PBXGroup;
 			children = (
 				DA09608F1EBFD0600005BE96 /* MTutorial.swift */,
-				DA0960951EC0BAFC0005BE96 /* MTutorialItemProtocol.swift */,
 				DA4E69F31EC398BD004B138B /* MTutorialProtocol.swift */,
 			);
 			path = Tutorial;
@@ -932,6 +933,63 @@
 			path = Algo;
 			sourceTree = "<group>";
 		};
+		DA4E69F51EC3A012004B138B /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				DA4E69F61EC3A012004B138B /* Base */,
+				DA4E69F71EC3A012004B138B /* Basic */,
+				DA4E69F81EC3A012004B138B /* Bugs */,
+				DA4E69F91EC3A012004B138B /* Energy */,
+				DA4E69FA1EC3A012004B138B /* Skills */,
+				DA4E69FB1EC3A012004B138B /* Virus */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		DA4E69F61EC3A012004B138B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DA4E69FC1EC3A0D7004B138B /* MHelp.swift */,
+				DA4E69FE1EC3A0E0004B138B /* MHelpProtocol.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		DA4E69F71EC3A012004B138B /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		DA4E69F81EC3A012004B138B /* Bugs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bugs;
+			sourceTree = "<group>";
+		};
+		DA4E69F91EC3A012004B138B /* Energy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Energy;
+			sourceTree = "<group>";
+		};
+		DA4E69FA1EC3A012004B138B /* Skills */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Skills;
+			sourceTree = "<group>";
+		};
+		DA4E69FB1EC3A012004B138B /* Virus */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Virus;
+			sourceTree = "<group>";
+		};
 		DA599B4E1EA7AE2B0070E5AF /* GridVisorDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1200,6 +1258,7 @@
 		DAF15D431E9D32BB0000E6B9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA4E69F51EC3A012004B138B /* Help */,
 				DA0960A41EC132F10005BE96 /* Store */,
 				DA09609B1EC0F2950005BE96 /* Boards */,
 				DA09608E1EBFD0570005BE96 /* Tutorial */,
@@ -1438,6 +1497,7 @@
 				DA7135C01EAFB0FE007ACEB5 /* VGridMapDetailHeader.swift in Sources */,
 				DAFA6A3F1EA90D36001BA4B4 /* MGridVisorDetailItemLevel.swift in Sources */,
 				DAF15D6C1E9D32BB0000E6B9 /* VParentPushBackground.swift in Sources */,
+				DA4E69FD1EC3A0D7004B138B /* MHelp.swift in Sources */,
 				DA31F6AB1EC231D2003978C7 /* MStorePurchaseMemory.swift in Sources */,
 				DA8852751EAEB068008CB62C /* ExtensionMKAnnotationView.swift in Sources */,
 				DA59D75E1EB25F9000EB2973 /* FMain.swift in Sources */,
@@ -1464,7 +1524,6 @@
 				DA34E5141EB95AB100AC9389 /* VGridVirus.swift in Sources */,
 				DA88526A1EAE9F45008CB62C /* VGridMapBar.swift in Sources */,
 				DA31F6981EC207CA003978C7 /* VStoreCellDeferred.swift in Sources */,
-				DA0960961EC0BAFC0005BE96 /* MTutorialItemProtocol.swift in Sources */,
 				DA29FEFD1EAAB66400CD8FBC /* MStatsItemBugs.swift in Sources */,
 				DAFDEF8F1EA5061C0016746F /* VGridCell.swift in Sources */,
 				DA771F481EA5662F00CAA820 /* MGridVisorRenderAlgo.swift in Sources */,
@@ -1492,6 +1551,7 @@
 				DAB1B4B31EB8CAD8009AFA46 /* MGridVisorTakeEnergy20.swift in Sources */,
 				DA49A8291EBAA7B500C03ECD /* FDbAlgoHostileVirusItem.swift in Sources */,
 				DA771F401EA565A600CAA820 /* MGridVisorRender.swift in Sources */,
+				DA4E69FF1EC3A0E0004B138B /* MHelpProtocol.swift in Sources */,
 				DA4DC4741EA191B40024D28E /* MGridAlgoItemAid.swift in Sources */,
 				DAF15D5E1E9D32BB0000E6B9 /* ExtensionNSManagedObject.swift in Sources */,
 				DA0960981EC0D6510005BE96 /* VGridVisorBarRange.swift in Sources */,
