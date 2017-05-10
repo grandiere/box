@@ -14,6 +14,11 @@ class VHelpCell:UICollectionViewCell
     
     override init(frame:CGRect)
     {
+        drawingOptions = NSStringDrawingOptions([
+            NSStringDrawingOptions.usesLineFragmentOrigin,
+            NSStringDrawingOptions.usesFontLeading])
+        labelMargin2 = kLabelMargin + kLabelMargin
+        
         super.init(frame:frame)
         clipsToBounds = true
         backgroundColor = UIColor.clear
@@ -58,6 +63,8 @@ class VHelpCell:UICollectionViewCell
     func config(model:MHelpProtocol)
     {
         imageView.image = model.image
+        
+        let attributedText:NSAttributedString = model.message
         label.attributedText = model.message
         
         let width:CGFloat = bounds.maxX

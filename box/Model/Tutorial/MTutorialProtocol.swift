@@ -3,5 +3,5 @@ import Foundation
 protocol MTutorialProtocol
 {
     var name:String { get }
-    var model:
+    var model:MHelp { get }
 }
