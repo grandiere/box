@@ -81,6 +81,7 @@
 "MDistanceMetre_shortName"="m";
 "MDistanceFoot_name"="feet";
 "MDistanceFoot_shortName"="ft";
+"MTutorialBasic_name"="Game basics";
 "MHelpBasicIntro_title"="Become the master of the grid";
 "MHelpBasicIntro_description"="\nFix bugs around the digital world, bust virus created by other players and deploy your own";
 

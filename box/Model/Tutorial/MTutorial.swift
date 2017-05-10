@@ -6,7 +6,9 @@ class MTutorial
     
     init()
     {
+        let itemBasic:MTutorialBasic = MTutorialBasic()
+        
         items = [
-        ]
+            itemBasic]
     }
 }
