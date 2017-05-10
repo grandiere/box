@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB2BD80EC92F14C7A532B356 /* Pods_box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D577B23654DA13DD78C0535A /* Pods_box.framework */; };
+		DA07D5761EC3545A00AC73E1 /* ResourceURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA07D5751EC3545A00AC73E1 /* ResourceURL.plist */; };
 		DA0960831EBE418D0005BE96 /* CHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960821EBE418D0005BE96 /* CHandler.swift */; };
 		DA0960861EBE41F70005BE96 /* VHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960851EBE41F70005BE96 /* VHandler.swift */; };
 		DA0960881EBE429A0005BE96 /* VHandlerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960871EBE429A0005BE96 /* VHandlerField.swift */; };
@@ -276,6 +277,7 @@
 /* Begin PBXFileReference section */
 		0B3F365BEE085B9C19AB1340 /* Pods-box.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-box.debug.xcconfig"; path = "Pods/Target Support Files/Pods-box/Pods-box.debug.xcconfig"; sourceTree = "<group>"; };
 		D577B23654DA13DD78C0535A /* Pods_box.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_box.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA07D5751EC3545A00AC73E1 /* ResourceURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceURL.plist; sourceTree = "<group>"; };
 		DA0960821EBE418D0005BE96 /* CHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHandler.swift; sourceTree = "<group>"; };
 		DA0960851EBE41F70005BE96 /* VHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandler.swift; sourceTree = "<group>"; };
 		DA0960871EBE429A0005BE96 /* VHandlerField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandlerField.swift; sourceTree = "<group>"; };
@@ -1229,6 +1231,7 @@
 			isa = PBXGroup;
 			children = (
 				DAF15D471E9D32BB0000E6B9 /* Localizable.strings */,
+				DA07D5751EC3545A00AC73E1 /* ResourceURL.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1364,6 +1367,7 @@
 				DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */,
 				DA134AB01E9D5D69002BE57D /* texture.xcassets in Resources */,
 				DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */,
+				DA07D5761EC3545A00AC73E1 /* ResourceURL.plist in Resources */,
 				DA59D75F1EB25F9000EB2973 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
