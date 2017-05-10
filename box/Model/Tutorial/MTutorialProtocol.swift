@@ -1,0 +1,6 @@
+import Foundation
+
+protocol MTutorialProtocol
+{
+    
+}

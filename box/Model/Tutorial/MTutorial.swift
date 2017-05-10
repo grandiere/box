@@ -2,7 +2,7 @@ import Foundation
 
 class MTutorial
 {
-    let items:[MTutorialItemProtocol]
+    let items:[MTutorialProtocol]
     
     init()
     {
