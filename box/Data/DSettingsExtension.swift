@@ -3,7 +3,7 @@ import CoreData
 
 extension DSettings
 {
-    private static let kRangeRegular:Double = 500
+    private static let kRangeRegular:Double = 200
     
     //MARK: public
     
