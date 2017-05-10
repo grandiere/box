@@ -8,7 +8,7 @@ class MSettingsReview:MSettingsProtocol
     {
         get
         {
-            return VSettingsCellDistance.reusableIdentifier
+            return VSettingsCellReview.reusableIdentifier
         }
     }
     

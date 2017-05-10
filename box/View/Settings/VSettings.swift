@@ -19,6 +19,8 @@ class VSettings:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerCell(cell:VSettingsCellDistance.self)
+        collectionView.registerCell(cell:VSettingsCellReview.self)
+        collectionView.registerCell(cell:VSettingsCellShare.self)
         collectionView.registerHeader(header:VSettingsHeader.self)
         self.collectionView = collectionView
         

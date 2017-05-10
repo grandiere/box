@@ -8,7 +8,7 @@ class MSettingsShare:MSettingsProtocol
     {
         get
         {
-            return VSettingsCellDistance.reusableIdentifier
+            return VSettingsCellShare.reusableIdentifier
         }
     }
     

@@ -5,7 +5,7 @@ class CSettings:CController
     let model:MSettings
     private weak var viewSettings:VSettings!
     private let urlMap:[String:String]?
-    private let kResourceName:String = "ResourceUrl"
+    private let kResourceName:String = "ResourceURL"
     private let kResourceExtension:String = "plist"
     private let kReviewKey:String = "review"
     private let kShareKey:String = "share"
