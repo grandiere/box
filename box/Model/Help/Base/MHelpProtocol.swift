@@ -2,6 +2,6 @@ import UIKit
 
 protocol MHelpProtocol
 {
-    var title:NSAttributedString { get }
+    var message:NSAttributedString { get }
     var image:UIImage { get }
 }
