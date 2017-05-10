@@ -66,6 +66,8 @@
 		DA1403C51EB668B8006C9364 /* VGridVisorTake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403C41EB668B8006C9364 /* VGridVisorTake.swift */; };
 		DA158C591EC3422900E4848C /* MSettingsReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158C581EC3422900E4848C /* MSettingsReview.swift */; };
 		DA158C5B1EC3423500E4848C /* MSettingsShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158C5A1EC3423500E4848C /* MSettingsShare.swift */; };
+		DA158C5D1EC3438900E4848C /* VSettingsCellReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158C5C1EC3438900E4848C /* VSettingsCellReview.swift */; };
+		DA158C5F1EC3439400E4848C /* VSettingsCellShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158C5E1EC3439400E4848C /* VSettingsCellShare.swift */; };
 		DA17EF331EC24E7000A846A3 /* VSettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA17EF321EC24E7000A846A3 /* VSettingsHeader.swift */; };
 		DA17EF351EC258DF00A846A3 /* MSettingsDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA17EF341EC258DF00A846A3 /* MSettingsDistance.swift */; };
 		DA17EF371EC2592300A846A3 /* VSettingsCellDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA17EF361EC2592300A846A3 /* VSettingsCellDistance.swift */; };
@@ -333,6 +335,8 @@
 		DA1403C41EB668B8006C9364 /* VGridVisorTake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorTake.swift; sourceTree = "<group>"; };
 		DA158C581EC3422900E4848C /* MSettingsReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsReview.swift; sourceTree = "<group>"; };
 		DA158C5A1EC3423500E4848C /* MSettingsShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsShare.swift; sourceTree = "<group>"; };
+		DA158C5C1EC3438900E4848C /* VSettingsCellReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellReview.swift; sourceTree = "<group>"; };
+		DA158C5E1EC3439400E4848C /* VSettingsCellShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellShare.swift; sourceTree = "<group>"; };
 		DA17EF321EC24E7000A846A3 /* VSettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsHeader.swift; sourceTree = "<group>"; };
 		DA17EF341EC258DF00A846A3 /* MSettingsDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsDistance.swift; sourceTree = "<group>"; };
 		DA17EF361EC2592300A846A3 /* VSettingsCellDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellDistance.swift; sourceTree = "<group>"; };
@@ -1019,6 +1023,8 @@
 				DA17EF321EC24E7000A846A3 /* VSettingsHeader.swift */,
 				DA4D97651EB0ECB500AE0C0C /* VSettingsCell.swift */,
 				DA17EF361EC2592300A846A3 /* VSettingsCellDistance.swift */,
+				DA158C5C1EC3438900E4848C /* VSettingsCellReview.swift */,
+				DA158C5E1EC3439400E4848C /* VSettingsCellShare.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1558,6 +1564,7 @@
 				DAB1B4AF1EB8C5DF009AFA46 /* MGridVisorTakeEnergy.swift in Sources */,
 				DAF15D671E9D32BB0000E6B9 /* VBlur.swift in Sources */,
 				DA31F6A51EC208D8003978C7 /* MStoreStatusPurchasing.swift in Sources */,
+				DA158C5F1EC3439400E4848C /* VSettingsCellShare.swift in Sources */,
 				DAF15D6A1E9D32BB0000E6B9 /* VCollectionFlow.swift in Sources */,
 				DA1D49C21EAA643700C2392C /* CProfile.swift in Sources */,
 				DAAA0EB61EA80DCE00756A17 /* MGridVisorDetailItemHeader.swift in Sources */,
@@ -1646,6 +1653,7 @@
 				DA1D49B21EAA499800C2392C /* MLandingItemTheGrid.swift in Sources */,
 				DA1403BA1EB6607A006C9364 /* MGridVisorDetailItemCreated.swift in Sources */,
 				DA134A891E9D5076002BE57D /* ExtensionMTLDevice.swift in Sources */,
+				DA158C5D1EC3438900E4848C /* VSettingsCellReview.swift in Sources */,
 				DA49A81E1EBA1E1400C03ECD /* VGridVirusOptionsButton.swift in Sources */,
 				DA59D77D1EB3D61C00EB2973 /* MGridAlgoFactory.swift in Sources */,
 				DA7084491EA6683100B222FE /* MGridVisorOrientationLandscapeLeft.swift in Sources */,
