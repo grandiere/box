@@ -4,9 +4,10 @@ class VTutorial:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
 {
     private weak var controller:CTutorial!
     private weak var collectionView:VCollection!
-    private let kBarHeight:CGFloat = 120
+    private let kBarHeight:CGFloat = 140
     private let kCollectionBottom:CGFloat = 20
     private let kCellHeight:CGFloat = 52
+    private let kDeselectTime:TimeInterval = 0.3
     
     override init(controller:CController)
     {
@@ -96,5 +97,24 @@ class VTutorial:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         cell.config(model:item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, didSelectItemAt indexPath:IndexPath)
+    {
+        collectionView.isUserInteractionEnabled = false
+        let item:MTutorialProtocol = modelAtIndex(index:indexPath)
+        
+        controller.tutorialSelected(model:item.model)
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kDeselectTime)
+        { [weak collectionView] in
+            
+            collectionView?.isUserInteractionEnabled = true
+            collectionView?.selectItem(
+                at:nil,
+                animated:true,
+                scrollPosition:UICollectionViewScrollPosition())
+        }
     }
 }

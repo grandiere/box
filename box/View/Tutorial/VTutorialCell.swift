@@ -5,7 +5,7 @@ class VTutorialCell:UICollectionViewCell
     private weak var label:UILabel!
     private let kBorderHeight:CGFloat = 1
     private let kLabelLeft:CGFloat = 10
-    private let kLabelWidth:CGFloat = 260
+    private let kLabelWidth:CGFloat = 300
     
     override init(frame:CGRect)
     {
@@ -74,7 +74,7 @@ class VTutorialCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            backgroundColor = UIColor(white:1, alpha:0.2)
+            backgroundColor = UIColor(white:1, alpha:0.3)
         }
         else
         {

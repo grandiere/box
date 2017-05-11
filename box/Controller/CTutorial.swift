@@ -25,6 +25,11 @@ class CTutorial:CController
     
     //MARK: public
     
+    func back()
+    {
+        parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
     func tutorialSelected(model:MHelp)
     {
         let controllerHelp:CHelp = CHelp(model:model)

@@ -39,6 +39,7 @@ class VHelpCell:UICollectionViewCell
         label.numberOfLines = 0
         self.label = label
         
+        addSubview(label)
         addSubview(imageView)
         
         NSLayoutConstraint.equalsHorizontal(
