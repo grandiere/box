@@ -11,7 +11,7 @@ class MHelpBasicIntro:MHelpProtocol
             NSForegroundColorAttributeName:UIColor.white]
         let attributesDescription:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:18),
-            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.7)]
+            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.8)]
         
         let stringTitle:NSAttributedString = NSAttributedString(
             string:NSLocalizedString("MHelpBasicIntro_title", comment:""),

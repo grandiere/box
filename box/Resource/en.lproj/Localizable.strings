@@ -90,11 +90,11 @@
 "MHelpBasicMap_title"="Map";
 "MHelpBasicMap_description"="\nSee where you could find bugs or virus";
 "MHelpBasicVisor_title"="Visor";
-"MHelpBasicVisor_description"="\nThis is how you can interact with the digital world, find bugs, clean virus and take power ups";
+"MHelpBasicVisor_description"="\nThis is how you can interact with the digital world, find bugs, clean virus and pick power ups";
 "MHelpBasicRelease_title"="Your Virus";
 "MHelpBasicRelease_description"="\nRelease your own virus and let others be defeated by them";
 "MHelpDebugIntro_title"="Bugs";
-"MHelpDebugIntro_description"="\nThey appear randomly and everywhere\nDebug them and earn points";
+"MHelpDebugIntro_description"="\nAppear randomly and everywhere\nDebug them to earn points\n\nEnergy is spent every attemp to Debug";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
