@@ -30,6 +30,7 @@
 "VStoreCellNotAvailable_label"="Not available";
 "VStoreBar_buttonRestore"="Restore purchases";
 "VHelp_button"="Done";
+"VTutorialBar_writeButton"="Email us";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";
