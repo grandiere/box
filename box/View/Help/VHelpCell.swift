@@ -9,8 +9,7 @@ class VHelpCell:UICollectionViewCell
     private let labelMargin2:CGFloat
     private let kLabelMargin:CGFloat = 10
     private let kLabelMaxHeight:CGFloat = 900
-    private let kImageTop:CGFloat = 20
-    private let kImageHeight:CGFloat = 180
+    private let kImageHeight:CGFloat = 240
     
     override init(frame:CGRect)
     {
@@ -42,16 +41,15 @@ class VHelpCell:UICollectionViewCell
         addSubview(label)
         addSubview(imageView)
         
-        NSLayoutConstraint.equalsHorizontal(
-            view:imageView,
-            toView:self)
         NSLayoutConstraint.topToTop(
             view:imageView,
-            toView:self,
-            constant:kImageTop)
+            toView:self)
         NSLayoutConstraint.height(
             view:imageView,
             constant:kImageHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:imageView,
+            toView:self)
         
         NSLayoutConstraint.topToBottom(
             view:label,
@@ -60,7 +58,8 @@ class VHelpCell:UICollectionViewCell
             view:label)
         NSLayoutConstraint.equalsHorizontal(
             view:label,
-            toView:self)
+            toView:self,
+            margin:kLabelMargin)
     }
     
     required init?(coder:NSCoder)

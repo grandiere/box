@@ -7,10 +7,10 @@ class MHelpBasicIntro:MHelpProtocol
     init()
     {
         let attributesTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bold(size:16),
+            NSFontAttributeName:UIFont.bold(size:20),
             NSForegroundColorAttributeName:UIColor.white]
         let attributesDescription:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:15),
+            NSFontAttributeName:UIFont.regular(size:18),
             NSForegroundColorAttributeName:UIColor(white:1, alpha:0.7)]
         
         let stringTitle:NSAttributedString = NSAttributedString(
