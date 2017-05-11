@@ -8,9 +8,11 @@ class MTutorial
     {
         let itemBasic:MTutorialBasic = MTutorialBasic()
         let itemDebug:MTutorialDebug = MTutorialDebug()
+        let itemAntivirus:MTutorialAntivirus = MTutorialAntivirus()
         
         items = [
             itemBasic,
-            itemDebug]
+            itemDebug,
+            itemAntivirus]
     }
 }
