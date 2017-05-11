@@ -95,6 +95,8 @@
 "MHelpBasicRelease_description"="\nRelease your own virus and let others be defeated by them";
 "MHelpDebugIntro_title"="Bugs";
 "MHelpDebugIntro_description"="\nAppear randomly and everywhere\nDebug them to earn points\n\nEnergy is spent every attemp to Debug";
+"MHelpDebugStats_title"="Chance of Success";
+"MHelpDebugStats_description"="\nStats in your Profile will determine how well you perform debugging";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";

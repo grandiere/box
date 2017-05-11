@@ -5,9 +5,11 @@ class MHelpDebug:MHelp
     init()
     {
         let itemIntro:MHelpDebugIntro = MHelpDebugIntro()
+        let itemStats:MHelpDebugStats = MHelpDebugStats()
         
         let items:[MHelpProtocol] = [
-            itemIntro]
+            itemIntro,
+            itemStats]
         
         super.init(items:items)
     }
