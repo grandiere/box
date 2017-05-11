@@ -23,6 +23,12 @@ class CHelp:CController
         view = viewHelp
     }
     
+    override func viewDidAppear(_ animated:Bool)
+    {
+        super.viewDidAppear(animated)
+        parentController.viewParent.panRecognizer.isEnabled = false
+    }
+    
     //MARK: public
     
     func back()

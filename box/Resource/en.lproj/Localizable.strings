@@ -29,6 +29,7 @@
 "VStoreCellPurchased_label"="Purchased";
 "VStoreCellNotAvailable_label"="Not available";
 "VStoreBar_buttonRestore"="Restore purchases";
+"VHelp_button"="Done";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";

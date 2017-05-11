@@ -15,10 +15,7 @@ class VHelp:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     override init(controller:CController)
     {
         super.init(controller:controller)
-        backgroundColor = UIColor.clear
         self.controller = controller as? CHelp
-        
-        let blur:VBlur = VBlur.extraLight()
         
         let button:UIButton = UIButton()
         button.backgroundColor = UIColor.gridBlue
@@ -63,14 +60,10 @@ class VHelp:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         pageControl.pageIndicatorTintColor = UIColor(white:1, alpha:0.2)
         self.pageControl = pageControl
         
-        addSubview(blur)
         addSubview(collectionView)
         addSubview(pageControl)
         addSubview(button)
         
-        NSLayoutConstraint.equals(
-            view:blur,
-            toView:self)
         NSLayoutConstraint.equals(
             view:collectionView,
             toView:self)

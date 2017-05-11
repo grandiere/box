@@ -7,10 +7,10 @@ class VHelpCell:UICollectionViewCell
     private weak var layoutLabelHeight:NSLayoutConstraint!
     private let drawingOptions:NSStringDrawingOptions
     private let labelMargin2:CGFloat
-    private let kLabelMargin:CGFloat = 20
+    private let kLabelMargin:CGFloat = 10
     private let kLabelMaxHeight:CGFloat = 900
     private let kImageTop:CGFloat = 20
-    private let kImageHeight:CGFloat = 250
+    private let kImageHeight:CGFloat = 180
     
     override init(frame:CGRect)
     {
@@ -52,6 +52,15 @@ class VHelpCell:UICollectionViewCell
         NSLayoutConstraint.height(
             view:imageView,
             constant:kImageHeight)
+        
+        NSLayoutConstraint.topToBottom(
+            view:label,
+            toView:imageView)
+        layoutLabelHeight = NSLayoutConstraint.height(
+            view:label)
+        NSLayoutConstraint.equalsHorizontal(
+            view:label,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
