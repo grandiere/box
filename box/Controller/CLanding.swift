@@ -104,4 +104,12 @@ class CLanding:CController
             controller:controllerStore,
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
+    
+    func openTutorial()
+    {
+        let controllerTutorial:CTutorial = CTutorial()
+        parentController.push(
+            controller:controllerTutorial,
+            horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }

@@ -14,5 +14,6 @@ class MLandingBarHelp:MLandingBarProtocol
     
     func selected(controller:CLanding)
     {
+        controller.openTutorial()
     }
 }
