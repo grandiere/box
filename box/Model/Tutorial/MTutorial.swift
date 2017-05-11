@@ -7,8 +7,10 @@ class MTutorial
     init()
     {
         let itemBasic:MTutorialBasic = MTutorialBasic()
+        let itemDebug:MTutorialDebug = MTutorialDebug()
         
         items = [
-            itemBasic]
+            itemBasic,
+            itemDebug]
     }
 }

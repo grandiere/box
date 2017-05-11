@@ -84,6 +84,7 @@
 "MDistanceFoot_name"="feet";
 "MDistanceFoot_shortName"="ft";
 "MTutorialBasic_name"="Game basics";
+"MTutorialDebug_name"="Debug";
 "MHelpBasicIntro_title"="The Grid";
 "MHelpBasicIntro_description"="\nFix bugs around the digital world\nBust virus created by others\nRelease your own virus\n\nBecome the master of the grid";
 "MHelpBasicMap_title"="Map";
