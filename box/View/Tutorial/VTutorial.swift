@@ -6,7 +6,7 @@ class VTutorial:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     private weak var collectionView:VCollection!
     private let kBarHeight:CGFloat = 140
     private let kCollectionBottom:CGFloat = 20
-    private let kCellHeight:CGFloat = 52
+    private let kCellHeight:CGFloat = 60
     private let kDeselectTime:TimeInterval = 0.3
     
     override init(controller:CController)

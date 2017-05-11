@@ -187,6 +187,7 @@
 		DA6D30EA1EC4C2070018E0B1 /* MHelpBasicVisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D30E91EC4C2070018E0B1 /* MHelpBasicVisor.swift */; };
 		DA6D30EC1EC4D3510018E0B1 /* MHelpBasicRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D30EB1EC4D3510018E0B1 /* MHelpBasicRelease.swift */; };
 		DA6D30EE1EC4EFD20018E0B1 /* MTutorialDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D30ED1EC4EFD20018E0B1 /* MTutorialDebug.swift */; };
+		DA6D30F11EC4F06A0018E0B1 /* MHelpDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D30F01EC4F06A0018E0B1 /* MHelpDebug.swift */; };
 		DA7084431EA660FA00B222FE /* VGridVisorTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084421EA660FA00B222FE /* VGridVisorTarget.swift */; };
 		DA7084451EA667E500B222FE /* MGridVisorOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084441EA667E500B222FE /* MGridVisorOrientation.swift */; };
 		DA7084471EA6680C00B222FE /* MGridVisorOrientationPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084461EA6680C00B222FE /* MGridVisorOrientationPortrait.swift */; };
@@ -472,6 +473,7 @@
 		DA6D30E91EC4C2070018E0B1 /* MHelpBasicVisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpBasicVisor.swift; sourceTree = "<group>"; };
 		DA6D30EB1EC4D3510018E0B1 /* MHelpBasicRelease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpBasicRelease.swift; sourceTree = "<group>"; };
 		DA6D30ED1EC4EFD20018E0B1 /* MTutorialDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTutorialDebug.swift; sourceTree = "<group>"; };
+		DA6D30F01EC4F06A0018E0B1 /* MHelpDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpDebug.swift; sourceTree = "<group>"; };
 		DA7084421EA660FA00B222FE /* VGridVisorTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorTarget.swift; sourceTree = "<group>"; };
 		DA7084441EA667E500B222FE /* MGridVisorOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorOrientation.swift; sourceTree = "<group>"; };
 		DA7084461EA6680C00B222FE /* MGridVisorOrientationPortrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorOrientationPortrait.swift; sourceTree = "<group>"; };
@@ -966,9 +968,9 @@
 		DA4E69F51EC3A012004B138B /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				DA6D30EF1EC4F0600018E0B1 /* Debug */,
 				DA4E69F61EC3A012004B138B /* Base */,
 				DA4E69F71EC3A012004B138B /* Basic */,
-				DA4E69F81EC3A012004B138B /* Bugs */,
 				DA4E69F91EC3A012004B138B /* Energy */,
 				DA4E69FA1EC3A012004B138B /* Skills */,
 				DA4E69FB1EC3A012004B138B /* Virus */,
@@ -996,13 +998,6 @@
 				DA6D30EB1EC4D3510018E0B1 /* MHelpBasicRelease.swift */,
 			);
 			path = Basic;
-			sourceTree = "<group>";
-		};
-		DA4E69F81EC3A012004B138B /* Bugs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Bugs;
 			sourceTree = "<group>";
 		};
 		DA4E69F91EC3A012004B138B /* Energy */ = {
@@ -1119,6 +1114,14 @@
 				DA59D7571EB25F9000EB2973 /* GoogleService-Info.plist */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		DA6D30EF1EC4F0600018E0B1 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				DA6D30F01EC4F06A0018E0B1 /* MHelpDebug.swift */,
+			);
+			path = Debug;
 			sourceTree = "<group>";
 		};
 		DA7135C31EAFD241007ACEB5 /* Boards */ = {
@@ -1811,6 +1814,7 @@
 				DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */,
 				DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */,
 				DA29FEFF1EAAB9E400CD8FBC /* MStatsItemVirus.swift in Sources */,
+				DA6D30F11EC4F06A0018E0B1 /* MHelpDebug.swift in Sources */,
 				DA8852681EAE9D20008CB62C /* CGridMap.swift in Sources */,
 				DA0C16DB1EB51742007532A6 /* VGridVisorDetailCellTake.swift in Sources */,
 				DA22F3D31EA2F30800F6ED91 /* VGrid.swift in Sources */,
