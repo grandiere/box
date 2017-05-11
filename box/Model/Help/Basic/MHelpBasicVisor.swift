@@ -1,6 +1,6 @@
 import UIKit
 
-class MHelpBasicMap:MHelpProtocol
+class MHelpBasicVisor:MHelpProtocol
 {
     private let attributedString:NSAttributedString
     
@@ -14,10 +14,10 @@ class MHelpBasicMap:MHelpProtocol
             NSForegroundColorAttributeName:UIColor(white:1, alpha:0.7)]
         
         let stringTitle:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("MHelpBasicMap_title", comment:""),
+            string:NSLocalizedString("MHelpBasicVisor_title", comment:""),
             attributes:attributesTitle)
         let stringDescription:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("MHelpBasicMap_description", comment:""),
+            string:NSLocalizedString("MHelpBasicVisor_description", comment:""),
             attributes:attributesDescription)
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(stringTitle)
@@ -38,7 +38,7 @@ class MHelpBasicMap:MHelpProtocol
     {
         get
         {
-            return #imageLiteral(resourceName: "assetHelpBasicMap")
+            return #imageLiteral(resourceName: "assetHelpBasicVisor")
         }
     }
 }

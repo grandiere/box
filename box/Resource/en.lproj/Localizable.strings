@@ -85,6 +85,10 @@
 "MTutorialBasic_name"="Game basics";
 "MHelpBasicIntro_title"="The Grid";
 "MHelpBasicIntro_description"="\nFix bugs around the digital world\nBust virus created by others\nRelease your own virus\n\nBecome the master of the grid";
+"MHelpBasicMap_title"="Map view";
+"MHelpBasicMap_description"="\nSee where you could find bugs or virus";
+"MHelpBasicVisor_title"="Visor";
+"MHelpBasicVisor_description"="\nThis is how you can interact with the digital world, find bugs, clean virus and take power ups";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";

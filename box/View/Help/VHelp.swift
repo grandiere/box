@@ -57,7 +57,7 @@ class VHelp:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         pageControl.numberOfPages = self.controller.model.items.count
         pageControl.currentPage = 0
         pageControl.currentPageIndicatorTintColor = UIColor.gridOrange
-        pageControl.pageIndicatorTintColor = UIColor(white:1, alpha:0.2)
+        pageControl.pageIndicatorTintColor = UIColor(white:1, alpha:0.4)
         self.pageControl = pageControl
         
         addSubview(collectionView)
