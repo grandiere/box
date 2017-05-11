@@ -191,6 +191,7 @@
 		DA6D30F31EC501660018E0B1 /* MHelpDebugIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D30F21EC501660018E0B1 /* MHelpDebugIntro.swift */; };
 		DA6D30F51EC515FB0018E0B1 /* MHelpDebugStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D30F41EC515FB0018E0B1 /* MHelpDebugStats.swift */; };
 		DA6D30F71EC51B380018E0B1 /* MHelpDebugDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D30F61EC51B380018E0B1 /* MHelpDebugDistance.swift */; };
+		DA6D30FA1EC528C90018E0B1 /* MHelpAntivirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D30F91EC528C90018E0B1 /* MHelpAntivirus.swift */; };
 		DA7084431EA660FA00B222FE /* VGridVisorTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084421EA660FA00B222FE /* VGridVisorTarget.swift */; };
 		DA7084451EA667E500B222FE /* MGridVisorOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084441EA667E500B222FE /* MGridVisorOrientation.swift */; };
 		DA7084471EA6680C00B222FE /* MGridVisorOrientationPortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7084461EA6680C00B222FE /* MGridVisorOrientationPortrait.swift */; };
@@ -480,6 +481,7 @@
 		DA6D30F21EC501660018E0B1 /* MHelpDebugIntro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpDebugIntro.swift; sourceTree = "<group>"; };
 		DA6D30F41EC515FB0018E0B1 /* MHelpDebugStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpDebugStats.swift; sourceTree = "<group>"; };
 		DA6D30F61EC51B380018E0B1 /* MHelpDebugDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpDebugDistance.swift; sourceTree = "<group>"; };
+		DA6D30F91EC528C90018E0B1 /* MHelpAntivirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpAntivirus.swift; sourceTree = "<group>"; };
 		DA7084421EA660FA00B222FE /* VGridVisorTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorTarget.swift; sourceTree = "<group>"; };
 		DA7084441EA667E500B222FE /* MGridVisorOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorOrientation.swift; sourceTree = "<group>"; };
 		DA7084461EA6680C00B222FE /* MGridVisorOrientationPortrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorOrientationPortrait.swift; sourceTree = "<group>"; };
@@ -974,12 +976,12 @@
 		DA4E69F51EC3A012004B138B /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				DA6D30F81EC528BD0018E0B1 /* Antivirus */,
 				DA6D30EF1EC4F0600018E0B1 /* Debug */,
 				DA4E69F61EC3A012004B138B /* Base */,
 				DA4E69F71EC3A012004B138B /* Basic */,
 				DA4E69F91EC3A012004B138B /* Energy */,
 				DA4E69FA1EC3A012004B138B /* Skills */,
-				DA4E69FB1EC3A012004B138B /* Virus */,
 				DA4E6A041EC3A2DB004B138B /* Aids */,
 			);
 			path = Help;
@@ -1018,13 +1020,6 @@
 			children = (
 			);
 			path = Skills;
-			sourceTree = "<group>";
-		};
-		DA4E69FB1EC3A012004B138B /* Virus */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Virus;
 			sourceTree = "<group>";
 		};
 		DA4E6A041EC3A2DB004B138B /* Aids */ = {
@@ -1131,6 +1126,14 @@
 				DA6D30F61EC51B380018E0B1 /* MHelpDebugDistance.swift */,
 			);
 			path = Debug;
+			sourceTree = "<group>";
+		};
+		DA6D30F81EC528BD0018E0B1 /* Antivirus */ = {
+			isa = PBXGroup;
+			children = (
+				DA6D30F91EC528C90018E0B1 /* MHelpAntivirus.swift */,
+			);
+			path = Antivirus;
 			sourceTree = "<group>";
 		};
 		DA7135C31EAFD241007ACEB5 /* Boards */ = {
@@ -1815,6 +1818,7 @@
 				DA6D30E81EC4BBED0018E0B1 /* MHelpBasicMap.swift in Sources */,
 				DA31F69B1EC207CA003978C7 /* VStoreCellPurchased.swift in Sources */,
 				DAF15D631E9D32BB0000E6B9 /* ExtensionURL.swift in Sources */,
+				DA6D30FA1EC528C90018E0B1 /* MHelpAntivirus.swift in Sources */,
 				DA7135C51EAFD247007ACEB5 /* VBoards.swift in Sources */,
 				DA31F6A31EC208B9003978C7 /* MStoreStatusPurchased.swift in Sources */,
 				DA17EF331EC24E7000A846A3 /* VSettingsHeader.swift in Sources */,

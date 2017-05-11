@@ -1,6 +1,6 @@
 import Foundation
 
-class MHelpDebug:MHelp
+class MHelpAntivirus:MHelp
 {
     init()
     {
