@@ -11,6 +11,7 @@ class MTutorial
         let itemAntivirus:MTutorialAntivirus = MTutorialAntivirus()
         let itemRelease:MTutorialRelease = MTutorialRelease()
         let itemEnergy:MTutorialEnergy = MTutorialEnergy()
+        let itemSkills:MTutorialSkills = MTutorialSkills()
         
         items = [
             itemBasic,

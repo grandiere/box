@@ -88,6 +88,7 @@
 "MTutorialAntivirus_name"="Antivirus";
 "MTutorialRelease_name"="Release virus";
 "MTutorialEnergy_name"="Energy";
+"MTutorialSkills_name"="Stats";
 "MHelpBasicIntro_title"="The Grid";
 "MHelpBasicIntro_description"="\nFix bugs around the digital world\nBust virus created by others\nRelease your own virus\n\nBecome the master of the grid";
 "MHelpBasicMap_title"="Map";
@@ -122,6 +123,8 @@
 "MHelpEnergyAids_description"="\nSome power ups help you recover energy";
 "MHelpEnergyPurchase_title"="Go to the Store";
 "MHelpEnergyPurchase_description"="\nYou can also purchase energy recovery";
+"MHelpSkillsIntro_title"="Stats";
+"MHelpskillsIntro_description"="\nDetermine how well you perform against virus and bugs";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";

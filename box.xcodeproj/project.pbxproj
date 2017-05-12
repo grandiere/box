@@ -252,6 +252,9 @@
 		DA8C06EB1EC63E01000DF6D4 /* MHelpEnergyAids.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06EA1EC63E01000DF6D4 /* MHelpEnergyAids.swift */; };
 		DA8C06ED1EC63E0D000DF6D4 /* MHelpEnergyPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06EC1EC63E0D000DF6D4 /* MHelpEnergyPurchase.swift */; };
 		DA8C06EF1EC63E21000DF6D4 /* MTutorialEnergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06EE1EC63E21000DF6D4 /* MTutorialEnergy.swift */; };
+		DA8C06F11EC64ACF000DF6D4 /* MHelpSkills.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06F01EC64ACF000DF6D4 /* MHelpSkills.swift */; };
+		DA8C06F31EC64B1B000DF6D4 /* MHelpSkillsIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06F21EC64B1B000DF6D4 /* MHelpSkillsIntro.swift */; };
+		DA8C06F51EC64DBE000DF6D4 /* MTutorialSkills.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06F41EC64DBE000DF6D4 /* MTutorialSkills.swift */; };
 		DA90B2A81EBCBDCC00F3E70D /* MGridVisorDetailItemHeaderVirusFoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90B2A71EBCBDCC00F3E70D /* MGridVisorDetailItemHeaderVirusFoe.swift */; };
 		DAAA0EB21EA80D1000756A17 /* MGridVisorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA0EB11EA80D1000756A17 /* MGridVisorDetail.swift */; };
 		DAAA0EB41EA80D6000756A17 /* MGridVisorDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA0EB31EA80D6000756A17 /* MGridVisorDetailItem.swift */; };
@@ -557,6 +560,9 @@
 		DA8C06EA1EC63E01000DF6D4 /* MHelpEnergyAids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpEnergyAids.swift; sourceTree = "<group>"; };
 		DA8C06EC1EC63E0D000DF6D4 /* MHelpEnergyPurchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpEnergyPurchase.swift; sourceTree = "<group>"; };
 		DA8C06EE1EC63E21000DF6D4 /* MTutorialEnergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTutorialEnergy.swift; sourceTree = "<group>"; };
+		DA8C06F01EC64ACF000DF6D4 /* MHelpSkills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpSkills.swift; sourceTree = "<group>"; };
+		DA8C06F21EC64B1B000DF6D4 /* MHelpSkillsIntro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpSkillsIntro.swift; sourceTree = "<group>"; };
+		DA8C06F41EC64DBE000DF6D4 /* MTutorialSkills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTutorialSkills.swift; sourceTree = "<group>"; };
 		DA90B2A71EBCBDCC00F3E70D /* MGridVisorDetailItemHeaderVirusFoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemHeaderVirusFoe.swift; sourceTree = "<group>"; };
 		DAAA0EB11EA80D1000756A17 /* MGridVisorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetail.swift; sourceTree = "<group>"; };
 		DAAA0EB31EA80D6000756A17 /* MGridVisorDetailItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItem.swift; sourceTree = "<group>"; };
@@ -675,6 +681,7 @@
 				DA6D30FB1EC52A700018E0B1 /* MTutorialAntivirus.swift */,
 				DA8C06DE1EC631A1000DF6D4 /* MTutorialRelease.swift */,
 				DA8C06EE1EC63E21000DF6D4 /* MTutorialEnergy.swift */,
+				DA8C06F41EC64DBE000DF6D4 /* MTutorialSkills.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -1057,6 +1064,8 @@
 		DA4E69FA1EC3A012004B138B /* Skills */ = {
 			isa = PBXGroup;
 			children = (
+				DA8C06F01EC64ACF000DF6D4 /* MHelpSkills.swift */,
+				DA8C06F21EC64B1B000DF6D4 /* MHelpSkillsIntro.swift */,
 			);
 			path = Skills;
 			sourceTree = "<group>";
@@ -1675,6 +1684,7 @@
 				DAB1B4B91EB8CB10009AFA46 /* MGridVisorTakeEnergy30.swift in Sources */,
 				DA771F381EA5495400CAA820 /* VGridVisorBarEnergy.swift in Sources */,
 				DA4E6A0F1EC3CF5E004B138B /* VHelpCell.swift in Sources */,
+				DA8C06F51EC64DBE000DF6D4 /* MTutorialSkills.swift in Sources */,
 				DA134AA11E9D549E002BE57D /* MetalVertexFace.swift in Sources */,
 				DAF15D741E9D34FF0000E6B9 /* CLanding.swift in Sources */,
 				DA4E6A111EC3D6BD004B138B /* MTutorialBasic.swift in Sources */,
@@ -1684,6 +1694,7 @@
 				DA49A8291EBAA7B500C03ECD /* FDbAlgoHostileVirusItem.swift in Sources */,
 				DA771F401EA565A600CAA820 /* MGridVisorRender.swift in Sources */,
 				DA4E69FF1EC3A0E0004B138B /* MHelpProtocol.swift in Sources */,
+				DA8C06F11EC64ACF000DF6D4 /* MHelpSkills.swift in Sources */,
 				DA4DC4741EA191B40024D28E /* MGridAlgoItemAid.swift in Sources */,
 				DAF15D5E1E9D32BB0000E6B9 /* ExtensionNSManagedObject.swift in Sources */,
 				DA0960981EC0D6510005BE96 /* VGridVisorBarRange.swift in Sources */,
@@ -1749,6 +1760,7 @@
 				DAF15D621E9D32BB0000E6B9 /* ExtensionUIFont.swift in Sources */,
 				DA8C06E71EC63A80000DF6D4 /* MHelpEnergyIntro.swift in Sources */,
 				DA09609A1EC0EDAB0005BE96 /* VBoardsCell.swift in Sources */,
+				DA8C06F31EC64B1B000DF6D4 /* MHelpSkillsIntro.swift in Sources */,
 				DA4E6A0A1EC3CA20004B138B /* CHelp.swift in Sources */,
 				DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */,
 				DA59D7731EB3BC4900EB2973 /* FDbUserItem.swift in Sources */,
