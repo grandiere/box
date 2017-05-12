@@ -1,6 +1,6 @@
 import UIKit
 
-class MHelpReleaseSpend:MHelpProtocol
+class MHelpReleaseLevel:MHelpProtocol
 {
     private let attributedString:NSAttributedString
     
@@ -14,10 +14,10 @@ class MHelpReleaseSpend:MHelpProtocol
             NSForegroundColorAttributeName:UIColor(white:1, alpha:0.8)]
         
         let stringTitle:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("MHelpReleaseSpend_title", comment:""),
+            string:NSLocalizedString("MHelpReleaseLevel_title", comment:""),
             attributes:attributesTitle)
         let stringDescription:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("MHelpReleaseSpend_description", comment:""),
+            string:NSLocalizedString("MHelpReleaseLevel_description", comment:""),
             attributes:attributesDescription)
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(stringTitle)
@@ -38,7 +38,7 @@ class MHelpReleaseSpend:MHelpProtocol
     {
         get
         {
-            return #imageLiteral(resourceName: "assetHelpReleaseSpend")
+            return #imageLiteral(resourceName: "assetHelpReleaseLevel")
         }
     }
 }

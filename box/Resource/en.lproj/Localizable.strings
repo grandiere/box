@@ -111,6 +111,8 @@
 "MHelpReleaseIntro_description"="\nDeploy your own virus to the world and let other players get defeated by them";
 "MHelpReleaseSpend_title"="Energy for Points";
 "MHelpReleaseSpend_description"="\nYou will earn points every time but also spend some energy doing it";
+"MHelpReleaseLevel_title"="Virus Level";
+"MHelpReleaseLevel_description"="\nYour level will determine the virus level and the difficulty to clean it";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
