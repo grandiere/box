@@ -128,7 +128,7 @@
 "MHelpSkillsAids_title"="Power Up";
 "MHelpSkillsAids_description"="\nSome power ups help you increase your stats";
 "MHelpSkillsPurchase_title"="Go to the Store";
-"MHelpSkillsPurchase_description"="\nYou can also purchase stats upgraders";
+"MHelpSkillsPurchase_description"="\nYou can also purchase stats upgrades";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
