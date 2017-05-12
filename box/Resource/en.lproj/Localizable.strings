@@ -101,7 +101,7 @@
 "MHelpDebugDistance_title"="Get closer";
 "MHelpDebugDistance_description"="\nBetter chances of succeeding when closer to the Bug";
 "MHelpAntivirusIntro_title"="Virus";
-"MHelpAntivirusIntro_description"="\nAre released by other players, you can try to clean them and win some points\n\nEnergy is spent on every attempt";
+"MHelpAntivirusIntro_description"="\nReleased by other players\nTry to clean them and earn some points\n\nEnergy is spent on every attempt";
 "MHelpAntivirusStats_title"="Chance of Success";
 "MHelpAntivirusStats_description"="\nStats in your Profile will determine how well you perform against a virus";
 "MHelpAntivirusDistance_title"="Get closer";
