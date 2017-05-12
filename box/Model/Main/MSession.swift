@@ -8,6 +8,7 @@ class MSession
     private(set) var score:Int
     private(set) var active:Bool
     private let kScoreLevelRatio:Int = 100
+    private let kReleaseVirusDivider:Int = 2
     
     private init()
     {
@@ -288,5 +289,15 @@ class MSession
         FMain.sharedInstance.db.updateChild(
             path:path,
             json:handler)
+    }
+    
+    func releaseVirus(energyRequired:Int16)
+    {
+        let scoreEarned:Int = Int(energyRequired) / kReleaseVirusDivider
+        
+        addScore(credits:scoreEarned)
+        settings?.energy?.spendEnergy(
+            energyCost:energyRequired)
+        settings?.stats?.virusReleaseSuccess()
     }
 }

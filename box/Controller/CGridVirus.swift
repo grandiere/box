@@ -40,9 +40,20 @@ class CGridVirus:CController
     
     func releaseVirus()
     {
-        MSession.sharedInstance.settings?.energy?.spendEnergy(
-            energyCost:model.kEnergyRequired)
-        MSession.sharedInstance.settings?.stats?.virusReleaseSuccess()
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            guard
+                
+                let energyRequired:Int16 = self?.model.kEnergyRequired
+            
+            else
+            {
+                return
+            }
+            
+            MSession.sharedInstance.releaseVirus(energyRequired:energyRequired)
+        }
         
         guard
             
