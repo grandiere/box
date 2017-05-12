@@ -53,6 +53,11 @@ class CGridVisor:CController
             
             self?.turnOnGPS()
         }
+        
+        DispatchQueue.main.asyncAfter(deadline:DispatchTime.now() + 5) { 
+            let message:String = NSLocalizedString("MSession_levelUp", comment:"")
+            VToast.messageBlue(message:message)
+        }
     }
     
     //MARK: private

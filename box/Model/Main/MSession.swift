@@ -237,7 +237,7 @@ class MSession
             settings?.user?.addLevel()
             
             let message:String = NSLocalizedString("MSession_levelUp", comment:"")
-            VAlert.messageBlue(message:message)
+            VToast.messageBlue(message:message)
         }
     }
     

@@ -2,13 +2,12 @@ import UIKit
 
 class VToast:UIView
 {
-    private static let kHeight:CGFloat = 65
-    private weak var layoutTop:NSLayoutConstraint!
+    private static let kHeight:CGFloat = 52
     private weak var timer:Timer?
-    private let kAnimationDuration:TimeInterval = 0.3
-    private let kTimeOut:TimeInterval = 6
-    private let kFontSize:CGFloat = 15
-    private let kLabelMargin:CGFloat = 9
+    private let kAnimationDuration:TimeInterval = 0.4
+    private let kTimeOut:TimeInterval = 4
+    private let kFontSize:CGFloat = 17
+    private let kLabelMargin:CGFloat = 15
     
     class func messageOrange(message:String)
     {
@@ -31,10 +30,14 @@ class VToast:UIView
             let rootView:UIView = UIApplication.shared.keyWindow!.rootViewController!.view
             rootView.addSubview(toast)
             
-            toast.layoutTop = NSLayoutConstraint.topToTop(
+            let screenHeight:CGFloat = UIScreen.main.bounds.size.height
+            let remain:CGFloat = screenHeight - kHeight
+            let top:CGFloat = remain / 2.0
+            
+            NSLayoutConstraint.topToTop(
                 view:toast,
                 toView:rootView,
-                constant:-kHeight)
+                constant:top)
             NSLayoutConstraint.equalsHorizontal(
                 view:toast,
                 toView:rootView)
@@ -52,6 +55,7 @@ class VToast:UIView
         self.init()
         clipsToBounds = true
         backgroundColor = color
+        alpha = 0
         translatesAutoresizingMaskIntoConstraints = false
         
         let label:UILabel = UILabel()
@@ -113,18 +117,15 @@ class VToast:UIView
     
     private func animate(open:Bool)
     {
-        let height:CGFloat = VToast.kHeight
+        let alpha:CGFloat
         
         if open
         {
-            let screenHeight:CGFloat = UIScreen.main.bounds.size.height
-            let remain:CGFloat = screenHeight - height
-            let top:CGFloat = remain / 2.0
-            layoutTop.constant = top
+            alpha = 1
         }
         else
         {
-            layoutTop.constant = -height
+            alpha = 0
         }
         
         UIView.animate(
@@ -132,8 +133,7 @@ class VToast:UIView
             animations:
             { [weak self] in
                 
-                self?.superview?.layoutIfNeeded()
-                
+                self?.alpha = alpha
             })
         { [weak self] (done:Bool) in
             
