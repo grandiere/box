@@ -12,7 +12,7 @@ class VTutorialCell:UICollectionViewCell
         super.init(frame:frame)
         clipsToBounds = true
         
-        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.4))
+        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.25))
         
         let label:UILabel = UILabel()
         label.isUserInteractionEnabled = false

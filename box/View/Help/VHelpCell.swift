@@ -7,7 +7,7 @@ class VHelpCell:UICollectionViewCell
     private weak var layoutLabelHeight:NSLayoutConstraint!
     private let drawingOptions:NSStringDrawingOptions
     private let labelMargin2:CGFloat
-    private let kLabelMargin:CGFloat = 10
+    private let kLabelMargin:CGFloat = 20
     private let kLabelMaxHeight:CGFloat = 900
     private let kImageHeight:CGFloat = 240
     

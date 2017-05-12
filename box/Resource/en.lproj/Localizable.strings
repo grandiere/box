@@ -86,6 +86,7 @@
 "MTutorialBasic_name"="Game basics";
 "MTutorialDebug_name"="Debug";
 "MTutorialAntivirus_name"="Antivirus";
+"MTutorialRelease_name"="Release virus";
 "MHelpBasicIntro_title"="The Grid";
 "MHelpBasicIntro_description"="\nFix bugs around the digital world\nBust virus created by others\nRelease your own virus\n\nBecome the master of the grid";
 "MHelpBasicMap_title"="Map";
@@ -106,6 +107,10 @@
 "MHelpAntivirusStats_description"="\nStats in your Profile will determine how well you perform against a virus";
 "MHelpAntivirusDistance_title"="Get closer";
 "MHelpAntivirusDistance_description"="\nBetter chances of succeeding when closer to the Virus";
+"MHelpReleaseIntro_title"="Create Virus";
+"MHelpReleaseIntro_description"="\nDeploy your own virus to the world and let other players get defeated by them";
+"MHelpReleaseSpend_title"="Energy for Points";
+"MHelpReleaseSpend_description"="\nYou will earn points every time but also spend some energy doing it";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
