@@ -10,11 +10,13 @@ class MTutorial
         let itemDebug:MTutorialDebug = MTutorialDebug()
         let itemAntivirus:MTutorialAntivirus = MTutorialAntivirus()
         let itemRelease:MTutorialRelease = MTutorialRelease()
+        let itemEnergy:MTutorialEnergy = MTutorialEnergy()
         
         items = [
             itemBasic,
             itemDebug,
             itemAntivirus,
-            itemRelease]
+            itemRelease,
+            itemEnergy]
     }
 }
