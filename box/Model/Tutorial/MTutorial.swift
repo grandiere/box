@@ -18,6 +18,7 @@ class MTutorial
             itemDebug,
             itemAntivirus,
             itemRelease,
-            itemEnergy]
+            itemEnergy,
+            itemSkills]
     }
 }

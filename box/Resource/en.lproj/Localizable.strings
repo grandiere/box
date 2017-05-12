@@ -124,7 +124,11 @@
 "MHelpEnergyPurchase_title"="Go to the Store";
 "MHelpEnergyPurchase_description"="\nYou can also purchase energy recovery";
 "MHelpSkillsIntro_title"="Stats";
-"MHelpskillsIntro_description"="\nDetermine how well you perform against virus and bugs";
+"MHelpSkillsIntro_description"="\nDetermine how well you perform against virus and bugs";
+"MHelpSkillsAids_title"="Power Up";
+"MHelpSkillsAids_description"="\nSome power ups help you increase your stats";
+"MHelpSkillsPurchase_title"="Go to the Store";
+"MHelpSkillsPurchase_description"="\nYou can also purchase stats upgraders";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";

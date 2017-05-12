@@ -1,6 +1,6 @@
 import UIKit
 
-class MHelpSkillsIntro:MHelpProtocol
+class MHelpSkillsAids:MHelpProtocol
 {
     private let attributedString:NSAttributedString
     
@@ -14,10 +14,10 @@ class MHelpSkillsIntro:MHelpProtocol
             NSForegroundColorAttributeName:UIColor(white:1, alpha:0.8)]
         
         let stringTitle:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("MHelpSkillsIntro_title", comment:""),
+            string:NSLocalizedString("MHelpSkillsAids_title", comment:""),
             attributes:attributesTitle)
         let stringDescription:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("MHelpSkillsIntro_description", comment:""),
+            string:NSLocalizedString("MHelpSkillsAids_description", comment:""),
             attributes:attributesDescription)
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(stringTitle)
@@ -38,7 +38,7 @@ class MHelpSkillsIntro:MHelpProtocol
     {
         get
         {
-            return #imageLiteral(resourceName: "assetHelpSkillsIntro")
+            return #imageLiteral(resourceName: "assetHelpEnergyAids")
         }
     }
 }
