@@ -4,14 +4,14 @@ class MHelpEnergy:MHelp
 {
     init()
     {
-        let itemIntro:MHelpReleaseIntro = MHelpReleaseIntro()
-        let itemSpend:MHelpReleaseSpend = MHelpReleaseSpend()
-        let itemLevel:MHelpReleaseLevel = MHelpReleaseLevel()
+        let itemIntro:MHelpEnergyIntro = MHelpEnergyIntro()
+        let itemTime:MHelpEnergyTime = MHelpEnergyTime()
+        let itemAids:MHelpEnergyAids = MHelpEnergyAids()
         
         let items:[MHelpProtocol] = [
             itemIntro,
-            itemSpend,
-            itemLevel]
+            itemTime,
+            itemAids]
         
         super.init(items:items)
     }

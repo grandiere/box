@@ -87,6 +87,7 @@
 "MTutorialDebug_name"="Debug";
 "MTutorialAntivirus_name"="Antivirus";
 "MTutorialRelease_name"="Release virus";
+"MTutorialEnergy_name"="Energy";
 "MHelpBasicIntro_title"="The Grid";
 "MHelpBasicIntro_description"="\nFix bugs around the digital world\nBust virus created by others\nRelease your own virus\n\nBecome the master of the grid";
 "MHelpBasicMap_title"="Map";
@@ -113,6 +114,12 @@
 "MHelpReleaseSpend_description"="\nYou will earn points every time but also spend some energy doing it";
 "MHelpReleaseLevel_title"="Virus Level";
 "MHelpReleaseLevel_description"="\nYour level will determine the virus level and the difficulty to clean it";
+"MHelpEnergyIntro_title"="Energy";
+"MHelpEnergyIntro_description"="\nYou will always require energy in The Grid";
+"MHelpEnergyTime_title"="Just wait";
+"MHelpEnergyTime_description"="\nEnergy gets recovered over time";
+"MHelpEnergyAids_title"="Power Up";
+"MHelpEnergyAids_description"="\nSome power ups help you recover energy";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
