@@ -4,7 +4,7 @@ class MHelpRelease:MHelp
 {
     init()
     {
-        let itemIntro:MHelpAntivirusIntro = MHelpAntivirusIntro()
+        let itemIntro:MHelpReleaseIntro = MHelpReleaseIntro()
         let itemStats:MHelpAntivirusStats = MHelpAntivirusStats()
         let itemDistance:MHelpAntivirusDistance = MHelpAntivirusDistance()
         
