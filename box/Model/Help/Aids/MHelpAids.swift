@@ -4,14 +4,14 @@ class MHelpAids:MHelp
 {
     init()
     {
-        let itemIntro:MHelpSkillsIntro = MHelpSkillsIntro()
-        let itemAids:MHelpSkillsAids = MHelpSkillsAids()
-        let itemPurchase:MHelpSkillsPurchase = MHelpSkillsPurchase()
+        let itemIntro:MHelpAidsIntro = MHelpAidsIntro()
+        let itemSkills:MHelpAidsSkills = MHelpAidsSkills()
+        let itemEnergy:MHelpAidsEnergy = MHelpAidsEnergy()
         
         let items:[MHelpProtocol] = [
             itemIntro,
-            itemAids,
-            itemPurchase]
+            itemSkills,
+            itemEnergy]
         
         super.init(items:items)
     }

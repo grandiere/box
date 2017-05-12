@@ -12,6 +12,7 @@ class MTutorial
         let itemRelease:MTutorialRelease = MTutorialRelease()
         let itemEnergy:MTutorialEnergy = MTutorialEnergy()
         let itemSkills:MTutorialSkills = MTutorialSkills()
+        let itemAids:MTutorialAids = MTutorialAids()
         
         items = [
             itemBasic,
@@ -19,6 +20,7 @@ class MTutorial
             itemAntivirus,
             itemRelease,
             itemEnergy,
-            itemSkills]
+            itemSkills,
+            itemAids]
     }
 }

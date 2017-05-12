@@ -89,6 +89,7 @@
 "MTutorialRelease_name"="Release virus";
 "MTutorialEnergy_name"="Energy";
 "MTutorialSkills_name"="Stats";
+"MTutorialAids_name"="Power ups";
 "MHelpBasicIntro_title"="The Grid";
 "MHelpBasicIntro_description"="\nFix bugs around the digital world\nBust virus created by others\nRelease your own virus\n\nBecome the master of the grid";
 "MHelpBasicMap_title"="Map";
@@ -129,6 +130,12 @@
 "MHelpSkillsAids_description"="\nSome power ups help you increase your stats";
 "MHelpSkillsPurchase_title"="Go to the Store";
 "MHelpSkillsPurchase_description"="\nYou can also purchase stats upgrades";
+"MHelpAidsIntro_title"="Power Ups";
+"MHelpAidsIntro_description"="\nAppear randomly in The Grid";
+"MHelpAidsSkills_title"="Your profile";
+"MHelpAidsSkills_description"="\nSometimes they can increase your stats";
+"MHelpAidsEnergy_title"="Your energy";
+"MHelpAidsEnergy_description"="\nSometimes they can restore your energy";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
