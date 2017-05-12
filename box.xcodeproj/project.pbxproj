@@ -241,6 +241,7 @@
 		DA8852751EAEB068008CB62C /* ExtensionMKAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8852741EAEB068008CB62C /* ExtensionMKAnnotationView.swift */; };
 		DA8C06D61EC628BB000DF6D4 /* MHelpAntivirusStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06D51EC628BB000DF6D4 /* MHelpAntivirusStats.swift */; };
 		DA8C06D81EC628C4000DF6D4 /* MHelpAntivirusDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06D71EC628C4000DF6D4 /* MHelpAntivirusDistance.swift */; };
+		DA8C06DB1EC62AA1000DF6D4 /* MHelpRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06DA1EC62AA1000DF6D4 /* MHelpRelease.swift */; };
 		DA90B2A81EBCBDCC00F3E70D /* MGridVisorDetailItemHeaderVirusFoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90B2A71EBCBDCC00F3E70D /* MGridVisorDetailItemHeaderVirusFoe.swift */; };
 		DAAA0EB21EA80D1000756A17 /* MGridVisorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA0EB11EA80D1000756A17 /* MGridVisorDetail.swift */; };
 		DAAA0EB41EA80D6000756A17 /* MGridVisorDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA0EB31EA80D6000756A17 /* MGridVisorDetailItem.swift */; };
@@ -535,6 +536,7 @@
 		DA8852741EAEB068008CB62C /* ExtensionMKAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMKAnnotationView.swift; sourceTree = "<group>"; };
 		DA8C06D51EC628BB000DF6D4 /* MHelpAntivirusStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpAntivirusStats.swift; sourceTree = "<group>"; };
 		DA8C06D71EC628C4000DF6D4 /* MHelpAntivirusDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpAntivirusDistance.swift; sourceTree = "<group>"; };
+		DA8C06DA1EC62AA1000DF6D4 /* MHelpRelease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpRelease.swift; sourceTree = "<group>"; };
 		DA90B2A71EBCBDCC00F3E70D /* MGridVisorDetailItemHeaderVirusFoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemHeaderVirusFoe.swift; sourceTree = "<group>"; };
 		DAAA0EB11EA80D1000756A17 /* MGridVisorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetail.swift; sourceTree = "<group>"; };
 		DAAA0EB31EA80D6000756A17 /* MGridVisorDetailItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItem.swift; sourceTree = "<group>"; };
@@ -985,6 +987,7 @@
 		DA4E69F51EC3A012004B138B /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				DA8C06D91EC62A76000DF6D4 /* Release */,
 				DA6D30F81EC528BD0018E0B1 /* Antivirus */,
 				DA6D30EF1EC4F0600018E0B1 /* Debug */,
 				DA4E69F61EC3A012004B138B /* Base */,
@@ -1206,6 +1209,14 @@
 				DA7135BD1EAFB062007ACEB5 /* MGridMapDetailItemDistance.swift */,
 			);
 			path = GridMap;
+			sourceTree = "<group>";
+		};
+		DA8C06D91EC62A76000DF6D4 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				DA8C06DA1EC62AA1000DF6D4 /* MHelpRelease.swift */,
+			);
+			path = Release;
 			sourceTree = "<group>";
 		};
 		DAAA0EB01EA80CEC00756A17 /* GridVisorDetail */ = {
@@ -1600,6 +1611,7 @@
 				DA134A9E1E9D549E002BE57D /* MetalBufferableProtocol.swift in Sources */,
 				DA7135B41EAFAFEF007ACEB5 /* MGridMapDetail.swift in Sources */,
 				DA88526C1EAEA567008CB62C /* VGridMapRender.swift in Sources */,
+				DA8C06DB1EC62AA1000DF6D4 /* MHelpRelease.swift in Sources */,
 				DA31F68A1EC20503003978C7 /* MStoreStatusDeferred.swift in Sources */,
 				DA09608D1EBFD0180005BE96 /* VTutorial.swift in Sources */,
 				DAAA0EBC1EA81C9300756A17 /* VGridVisorDetailCellDistance.swift in Sources */,

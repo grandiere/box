@@ -1,6 +1,6 @@
 import Foundation
 
-class MHelpAntivirus:MHelp
+class MHelpRelease:MHelp
 {
     init()
     {
