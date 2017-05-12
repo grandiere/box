@@ -2,145 +2,149 @@ import UIKit
 
 class VToast:UIView
 {
-    private weak var label:UILabel!
-    private weak var layoutLabelHeight:NSLayoutConstraint!
+    private static let kHeight:CGFloat = 65
+    private weak var layoutTop:NSLayoutConstraint!
     private weak var timer:Timer?
-    private let drawingOptions:NSStringDrawingOptions
-    private let textMargin2:CGFloat
-    private let kToastDuration:TimeInterval = 4
     private let kAnimationDuration:TimeInterval = 0.3
-    private let kFontSize:CGFloat = 16
-    private let kTextMargin:CGFloat = 20
-    private let kBackgroundMargin:CGFloat = -10
-    private let kCornerRadius:CGFloat = 20
-    private let kMaxHeight:CGFloat = 1000
+    private let kTimeOut:TimeInterval = 6
+    private let kFontSize:CGFloat = 15
+    private let kLabelMargin:CGFloat = 9
     
-    init(
-        message:String,
-        color:UIColor,
-        textColor:UIColor = UIColor.white)
+    class func messageOrange(message:String)
     {
-        textMargin2 = kTextMargin + kTextMargin
-        drawingOptions = NSStringDrawingOptions([
-            NSStringDrawingOptions.usesFontLeading,
-            NSStringDrawingOptions.usesLineFragmentOrigin])
-        
-        super.init(frame:CGRect.zero)
+        VToast.message(message:message, color:UIColor.gridOrange)
+    }
+    
+    class func messageBlue(message:String)
+    {
+        VToast.message(message:message, color:UIColor.gridBlue)
+    }
+    
+    private class func message(message:String, color:UIColor)
+    {
+        DispatchQueue.main.async
+        {
+            let toast:VToast = VToast(
+                message:message,
+                color:color)
+            
+            let rootView:UIView = UIApplication.shared.keyWindow!.rootViewController!.view
+            rootView.addSubview(toast)
+            
+            toast.layoutTop = NSLayoutConstraint.topToTop(
+                view:toast,
+                toView:rootView,
+                constant:-kHeight)
+            NSLayoutConstraint.equalsHorizontal(
+                view:toast,
+                toView:rootView)
+            NSLayoutConstraint.height(
+                view:toast,
+                constant:kHeight)
+            
+            rootView.layoutIfNeeded()
+            toast.animate(open:true)
+        }
+    }
+    
+    private convenience init(message:String, color:UIColor)
+    {
+        self.init()
         clipsToBounds = true
-        backgroundColor = UIColor.clear
+        backgroundColor = color
         translatesAutoresizingMaskIntoConstraints = false
-        isUserInteractionEnabled = false
-        alpha = 0
-        
-        let attributes:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:kFontSize)]
-        let string:NSAttributedString = NSAttributedString(
-            string:message,
-            attributes:attributes)
-        
-        let background:UIView = UIView()
-        background.translatesAutoresizingMaskIntoConstraints = false
-        background.backgroundColor = color
-        background.isUserInteractionEnabled = false
-        background.clipsToBounds = true
-        background.layer.cornerRadius = kCornerRadius
         
         let label:UILabel = UILabel()
         label.isUserInteractionEnabled = false
-        label.numberOfLines = 0
-        label.textAlignment = NSTextAlignment.center
-        label.backgroundColor = UIColor.clear
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = textColor
-        label.attributedText = string
-        self.label = label
+        label.font = UIFont.bold(size:kFontSize)
+        label.textColor = UIColor.white
+        label.textAlignment = NSTextAlignment.center
+        label.numberOfLines = 0
+        label.backgroundColor = UIColor.clear
+        label.text = message
         
-        addSubview(background)
+        let button:UIButton = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor.clear
+        button.addTarget(
+            self,
+            action:#selector(actionButton(sender:)),
+            for:UIControlEvents.touchUpInside)
+        
         addSubview(label)
+        addSubview(button)
         
-        NSLayoutConstraint.topToTop(
+        NSLayoutConstraint.equalsVertical(
             view:label,
-            toView:self,
-            constant:kTextMargin)
-        layoutLabelHeight = NSLayoutConstraint.height(
-            view:label)
+            toView:self)
         NSLayoutConstraint.equalsHorizontal(
             view:label,
             toView:self,
-            margin:kTextMargin)
-        
-        NSLayoutConstraint.equals(
-            view:background,
-            toView:label,
-            margin:kBackgroundMargin)
-        
-        animateShow()
+            margin:kLabelMargin)
     }
     
-    required init?(coder:NSCoder)
-    {
-        return nil
-    }
-    
-    deinit
+    func alertTimeOut(sender timer:Timer?)
     {
         timer?.invalidate()
+        animate(open:false)
     }
     
-    override func layoutSubviews()
-    {
-        let labelWidth:CGFloat = bounds.maxX - textMargin2
-        let maxSize:CGSize = CGSize(width:labelWidth, height:kMaxHeight)
-        
-        if let labelSize:CGRect = label.attributedText?.boundingRect(
-            with:maxSize,
-            options:drawingOptions,
-            context:nil)
-        {
-            let labelHeight:CGFloat = ceil(
-                labelSize.size.height)
-            layoutLabelHeight.constant = labelHeight
-        }
-        
-        super.layoutSubviews()
-    }
+    //MARK: actions
     
-    func timeOut(sender timer:Timer)
+    func actionButton(sender button:UIButton)
     {
-        timer.invalidate()
-        animateHide()
+        button.isUserInteractionEnabled = false
+        timer?.invalidate()
+        alertTimeOut(sender:timer)
     }
     
     //MARK: private
     
-    private func animateHide()
+    private func scheduleTimer()
     {
-        UIView.animate(
-            withDuration:kAnimationDuration,
-        animations:
-        { [weak self] in
-            
-            self?.alpha = 0
-        })
-        { [weak self] (done:Bool) in
-        
-            self?.removeFromSuperview()
-        }
-    }
-    
-    private func animateShow()
-    {
-        UIView.animate(withDuration:kAnimationDuration)
-        { [weak self] in
-            
-            self?.alpha = 1
-        }
-        
-        timer = Timer.scheduledTimer(
-            timeInterval:kToastDuration,
+        self.timer = Timer.scheduledTimer(
+            timeInterval:kTimeOut,
             target:self,
-            selector:#selector(timeOut(sender:)),
+            selector:#selector(alertTimeOut(sender:)),
             userInfo:nil,
             repeats:false)
+    }
+    
+    private func animate(open:Bool)
+    {
+        let height:CGFloat = VToast.kHeight
+        
+        if open
+        {
+            let screenHeight:CGFloat = UIScreen.main.bounds.size.height
+            let remain:CGFloat = screenHeight - height
+            let top:CGFloat = remain / 2.0
+            layoutTop.constant = top
+        }
+        else
+        {
+            layoutTop.constant = -height
+        }
+        
+        UIView.animate(
+            withDuration:kAnimationDuration,
+            animations:
+            { [weak self] in
+                
+                self?.superview?.layoutIfNeeded()
+                
+            })
+        { [weak self] (done:Bool) in
+            
+            if open
+            {
+                self?.scheduleTimer()
+            }
+            else
+            {
+                self?.removeFromSuperview()
+            }
+        }
     }
 }
