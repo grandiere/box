@@ -120,6 +120,8 @@
 "MHelpEnergyTime_description"="\nEnergy gets recovered over time";
 "MHelpEnergyAids_title"="Power Up";
 "MHelpEnergyAids_description"="\nSome power ups help you recover energy";
+"MHelpEnergyPurchase_title"="Go to the Store";
+"MHelpEnergyPurchase_description"="\nYou can also purchase energy recovery";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";

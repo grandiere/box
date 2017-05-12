@@ -7,11 +7,13 @@ class MHelpEnergy:MHelp
         let itemIntro:MHelpEnergyIntro = MHelpEnergyIntro()
         let itemTime:MHelpEnergyTime = MHelpEnergyTime()
         let itemAids:MHelpEnergyAids = MHelpEnergyAids()
+        let itemPurchase:MHelpEnergyPurchase = MHelpEnergyPurchase()
         
         let items:[MHelpProtocol] = [
             itemIntro,
             itemTime,
-            itemAids]
+            itemAids,
+            itemPurchase]
         
         super.init(items:items)
     }
