@@ -100,6 +100,8 @@
 "MHelpDebugStats_description"="\nStats in your Profile will determine how well you perform debugging";
 "MHelpDebugDistance_title"="Get closer";
 "MHelpDebugDistance_description"="\nBetter chances of succeeding when closer to the Bug";
+"MHelpAntivirusIntro_title"="Virus";
+"MHelpAntivirusIntro_description"="\nAre released by other player, you can try to clean them and win some points\n\nEnergy is spent on every attemp";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
