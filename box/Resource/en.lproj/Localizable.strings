@@ -102,6 +102,10 @@
 "MHelpDebugDistance_description"="\nBetter chances of succeeding when closer to the Bug";
 "MHelpAntivirusIntro_title"="Virus";
 "MHelpAntivirusIntro_description"="\nAre released by other players, you can try to clean them and win some points\n\nEnergy is spent on every attempt";
+"MHelpAntivirusStats_title"="Chance of Success";
+"MHelpAntivirusStats_description"="\nStats in your Profile will determine how well you perform against a virus";
+"MHelpAntivirusDistance_title"="Get closer";
+"MHelpAntivirusDistance_description"="\nBetter chances of succeeding when closer to the Virus";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
