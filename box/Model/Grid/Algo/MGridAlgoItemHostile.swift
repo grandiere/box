@@ -4,6 +4,7 @@ import CoreLocation
 class MGridAlgoItemHostile:MGridAlgoItem
 {
     let level:Int
+    private(set) var defeated:Int
     private(set) var credits:Int
     private let kTimeDivisor:TimeInterval = 36000
     private let kDistanceDivisor:CLLocationDistance = 20
@@ -13,9 +14,11 @@ class MGridAlgoItemHostile:MGridAlgoItem
         latitude:Double,
         longitude:Double,
         level:Int,
+        defeated:Int,
         created:TimeInterval)
     {
         self.level = level
+        self.defeated = defeated
         credits = 0
         
         super.init(
@@ -80,5 +83,12 @@ class MGridAlgoItemHostile:MGridAlgoItem
     
     func destroySuccess()
     {
+    }
+    
+    //MARK: final
+    
+    final func addDefeated()
+    {
+        defeated += 1
     }
 }

@@ -128,6 +128,25 @@ class CGridVisorMatch:CController
             object:model)
     }
     
+    private func addDefeated()
+    {
+        guard
+            
+            let model:MGridAlgoItemHostile = self.model
+            
+        else
+        {
+            return
+        }
+        
+        model.addDefeated()
+        
+        let path:String = "\(model.firebasePath())/\(FDbAlgoHostileItem.defeated)"
+        FMain.sharedInstance.db.updateChild(
+            path:path,
+            json:model.defeated)
+    }
+    
     private func updateStats()
     {
         guard
@@ -153,6 +172,7 @@ class CGridVisorMatch:CController
     {
         timer?.invalidate()
         finishMatch()
+        addDefeated()
         
         guard
             
