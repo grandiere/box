@@ -3,11 +3,13 @@ import Foundation
 class FDbUserItem:FDbProtocol
 {
     static let handler:String = "handler"
+    static let level:Int = "level"
     static let score:String = "score"
     static let created:String = "created"
     static let active:String = "active"
     
     let handler:String?
+    let level:Int
     let score:Int
     let created:TimeInterval
     let active:Bool
