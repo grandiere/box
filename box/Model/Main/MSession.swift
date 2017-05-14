@@ -235,6 +235,20 @@ class MSession
                 level = maxLevel
             }
             
+            guard
+                
+                let userPath:String = firebasePath()
+                
+            else
+            {
+                return
+            }
+            
+            let path:String = "\(userPath)/\(FDbUserItem.level)"
+            FMain.sharedInstance.db.updateChild(
+                path:path,
+                json:level)
+            
             let message:String = NSLocalizedString("MSession_levelUp", comment:"")
             VToast.messageBlue(message:message)
         }
@@ -268,7 +282,10 @@ class MSession
             path:path,
             json:score)
         
-        tryLevelUp()
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            self.tryLevelUp()
+        }
     }
     
     func updateHandler(handler:String)
