@@ -92,16 +92,7 @@ class MGridAlgoFactory
             }
         }
         
-        guard
-            
-            let level16:Int16 = MSession.sharedInstance.settings?.user?.level
-            
-        else
-        {
-            return nil
-        }
-        
-        let level:Int = Int(level16)
+        let level:Int = MSession.sharedInstance.level
         let latitude:Double = latitudeFor(location:location)
         let longitude:Double = longitudeFor(location:location)
         let created:TimeInterval = Date().timeIntervalSince1970

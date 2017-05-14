@@ -18,14 +18,14 @@ class MGridVirus
     {
         guard
             
-            let userId:String = MSession.sharedInstance.settings?.firebaseId,
-            let userLevel:Int16 = MSession.sharedInstance.settings?.user?.level
+            let userId:String = MSession.sharedInstance.settings?.firebaseId
         
         else
         {
             return nil
         }
         
+        let userLevel:Int = MSession.sharedInstance.level
         let maxRandom:UInt32 = UInt32(userLevel)
         let random:UInt32 = arc4random_uniform(maxRandom)
         let virusLevel:Int = Int(random) + kUserLevelAdd

@@ -18,12 +18,8 @@ class MGridVisorMatch
         self.controller = controller
         timesTried = 0
         
-        var tryTimes:Int = model.level
-        
-        if let userLevel:Int16 = MSession.sharedInstance.settings?.user?.level
-        {
-            tryTimes -= Int(userLevel)
-        }
+        let userLevel:Int = MSession.sharedInstance.level
+        var tryTimes:Int = model.level - userLevel
         
         if tryTimes < kMinTryTimes
         {
@@ -36,11 +32,10 @@ class MGridVisorMatch
         let totalDifficulty:CGFloat = rawDifficulty + kAddDifficulty
         difficulty = UInt32(totalDifficulty)
         
-        var minDice:Int = 0
+        var minDice:Int = userLevel
         
         if let user:DUser = MSession.sharedInstance.settings?.user
         {
-            minDice += Int(user.level)
             minDice += Int(user.skill)
             minDice += Int(user.memory)
             minDice += Int(user.network)
