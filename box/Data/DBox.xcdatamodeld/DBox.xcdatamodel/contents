@@ -22,7 +22,6 @@
         <relationship name="settings" maxCount="1" deletionRule="Nullify" destinationEntity="DSettings" inverseName="stats" inverseEntity="DSettings" syncable="YES"/>
     </entity>
     <entity name="DUser" representedClassName="DUser" syncable="YES" codeGenerationType="class">
-        <attribute name="level" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="memory" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="network" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="processor" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -33,6 +32,6 @@
         <element name="DEnergy" positionX="-63" positionY="0" width="128" height="105"/>
         <element name="DSettings" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="DStats" positionX="-45" positionY="72" width="128" height="105"/>
-        <element name="DUser" positionX="-54" positionY="27" width="128" height="135"/>
+        <element name="DUser" positionX="-54" positionY="27" width="128" height="120"/>
     </elements>
 </model>
