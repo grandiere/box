@@ -5,6 +5,7 @@ class MSession
     static let sharedInstance:MSession = MSession()
     private(set) var settings:DSettings?
     private(set) var handler:String?
+    private(set) var level:Int
     private(set) var score:Int
     private(set) var active:Bool
     private let kScoreLevelRatio:Int = 100
@@ -12,6 +13,7 @@ class MSession
     
     private init()
     {
+        level = 0
         score = 0
         active = true
     }
@@ -209,6 +211,7 @@ class MSession
     private func firebaseLoaded(user:FDbUserItem)
     {
         handler = user.handler
+        level = user.level
         score = user.score
         active = user.active
         DManager.sharedInstance?.save()
@@ -220,21 +223,17 @@ class MSession
     
     private func tryLevelUp()
     {
-        guard
-        
-            let level:Int16 = settings?.user?.level
-        
-        else
-        {
-            return
-        }
-        
-        let levelInt:Int = Int(level)
-        let scoreForLevelUp:Int = levelInt * kScoreLevelRatio
+        let scoreForLevelUp:Int = level * kScoreLevelRatio
         
         if score > scoreForLevelUp
         {
-            settings?.user?.addLevel()
+            let maxLevel:Int = Int(DUser.kMaxStats)
+            level += 1
+            
+            if level > maxLevel
+            {
+                level = maxLevel
+            }
             
             let message:String = NSLocalizedString("MSession_levelUp", comment:"")
             VToast.messageBlue(message:message)

@@ -10,23 +10,10 @@ extension DUser
     
     func defaultValues()
     {
-        level = DUser.kInitialValue
         memory = DUser.kInitialValue
         network = DUser.kInitialValue
         processor = DUser.kInitialValue
         skill = DUser.kInitialValue
-    }
-    
-    func addLevel()
-    {
-        level += DUser.kInitialValue
-        
-        if level > DUser.kMaxStats
-        {
-            level = DUser.kMaxStats
-        }
-        
-        DManager.sharedInstance?.save()
     }
     
     func addMemory()
