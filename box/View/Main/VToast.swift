@@ -5,7 +5,7 @@ class VToast:UIView
     private static let kHeight:CGFloat = 52
     private weak var timer:Timer?
     private let kAnimationDuration:TimeInterval = 0.4
-    private let kTimeOut:TimeInterval = 4
+    private let kTimeOut:TimeInterval = 3.5
     private let kFontSize:CGFloat = 17
     private let kLabelMargin:CGFloat = 15
     
