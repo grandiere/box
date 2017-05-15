@@ -7,7 +7,7 @@ class MGridAlgoFactory
     private let kBugDifficulty:UInt32 = 10
     private let kAidDifficulty:UInt32 = 5
     private let kCoordinateDivider:Double = 10000
-    private let kCoordinateSingleSpan:Double = 50
+    private let kCoordinateSingleSpan:Double = 35
     
     init()
     {
