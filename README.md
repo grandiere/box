@@ -13,9 +13,16 @@ Augmented Reality Cyberspace
 
 ## Features
 
-■ Bugs
+■ Augmented Reality
 
-■ Virus
+■ Geolocation
 
-■ Treasures
+■ Massive Multiplayer Online Game
 
+■ Metal Graphics
+
+■ Firebase Real Time Database
+
+■ Firebase Analytics
+
+■ In English and soon Spanish also
