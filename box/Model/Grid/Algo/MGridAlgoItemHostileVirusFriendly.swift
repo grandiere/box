@@ -11,6 +11,7 @@ class MGridAlgoItemHostileVirusFriendly:MGridAlgoItemHostileVirus
             latitude:firebaseVirus.latitude,
             longitude:firebaseVirus.longitude,
             level:firebaseVirus.level,
+            defeated:firebaseVirus.defeated,
             created:firebaseVirus.created)
     }
     

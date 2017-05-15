@@ -14,6 +14,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
             latitude:firebaseVirus.latitude,
             longitude:firebaseVirus.longitude,
             level:firebaseVirus.level,
+            defeated:firebaseVirus.defeated,
             created:firebaseVirus.created,
             userId:firebaseVirus.userId)
     }
@@ -23,6 +24,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
         latitude:Double,
         longitude:Double,
         level:Int,
+        defeated:Int,
         created:TimeInterval,
         userId:String)
     {
@@ -33,6 +35,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
             latitude:latitude,
             longitude:longitude,
             level:level,
+            defeated:defeated,
             created:created)
     }
     

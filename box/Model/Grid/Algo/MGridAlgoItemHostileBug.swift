@@ -13,6 +13,7 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
             latitude:firebaseBug.latitude,
             longitude:firebaseBug.longitude,
             level:firebaseBug.level,
+            defeated:firebaseBug.defeated,
             created:firebaseBug.created)
     }
     
