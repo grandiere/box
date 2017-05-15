@@ -12,6 +12,10 @@ The Grid
 Augmented Reality Cyberspace
 
 ## Features
+
 ■ Bugs
+
 ■ Virus
+
 ■ Treasures
+
