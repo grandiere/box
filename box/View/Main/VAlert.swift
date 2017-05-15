@@ -6,7 +6,7 @@ class VAlert:UIView
     private weak var layoutTop:NSLayoutConstraint!
     private weak var timer:Timer?
     private let kAnimationDuration:TimeInterval = 0.3
-    private let kTimeOut:TimeInterval = 6
+    private let kTimeOut:TimeInterval = 5
     private let kFontSize:CGFloat = 15
     private let kLabelMargin:CGFloat = 9
     
