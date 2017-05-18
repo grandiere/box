@@ -13,7 +13,9 @@ class MBoardsSortKills:MBoardsSortProtocol
             }
             else if itemA.kills == itemB.kills
             {
-                let comparison:ComparisonResult = itemA.handler.compare(itemB.handler)
+                let comparison:ComparisonResult = itemA.handler.compare(
+                    itemB.handler,
+                    options:String.CompareOptions.caseInsensitive)
                 
                 switch comparison
                 {

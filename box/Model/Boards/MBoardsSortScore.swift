@@ -11,9 +11,11 @@ class MBoardsSortScore:MBoardsSortProtocol
             {
                 return true
             }
-            else if itemA.kills == itemB.kills
+            else if itemA.score == itemB.score
             {
-                let comparison:ComparisonResult = itemA.handler.compare(itemB.handler)
+                let comparison:ComparisonResult = itemA.handler.compare(
+                    itemB.handler,
+                    options:String.CompareOptions.caseInsensitive)
                 
                 switch comparison
                 {

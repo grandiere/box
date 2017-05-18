@@ -90,12 +90,7 @@ class VBoardsBarSelector:UIView
             toView:self,
             multiplier:kItemMultiplier)
         
-        DispatchQueue.main.async
-        { [weak self] in
-                
-            self?.layoutIfNeeded()
-            self?.indicatorScore(animated:false)
-        }
+        buttonScore()
     }
     
     required init?(coder:NSCoder)
