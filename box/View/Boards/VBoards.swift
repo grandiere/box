@@ -126,7 +126,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let item:MBoardsItem = modelAtIndex(index:indexPath)
         let cell:VBoardsCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
-            VBoardsCell.reusableIdentifier,
+            controller.model.sort.reusableIdentifier,
             for:indexPath) as! VBoardsCell
         cell.config(item:item)
         
