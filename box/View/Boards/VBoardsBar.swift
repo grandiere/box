@@ -3,6 +3,11 @@ import UIKit
 class VBoardsBar:UIView
 {
     private weak var controller:CBoards!
+    private weak var viewSelector:VBoardsBarSelector!
+    private weak var layoutSelectorLeft:NSLayoutConstraint!
+    private let kSelectorWidth:CGFloat = 160
+    private let kSelectorHeight:CGFloat = 35
+    private let kSelectorBottom:CGFloat = -15
     private let kButtonWidth:CGFloat = 60
     private let kImageHeight:CGFloat = 70
     private let kBorderHeight:CGFloat = 1
@@ -38,11 +43,15 @@ class VBoardsBar:UIView
         imageView.image = #imageLiteral(resourceName: "assetGenericBoards")
         imageView.isUserInteractionEnabled = false
         
+        let viewSelector:VBoardsBarSelector = VBoardsBarSelector(controller:controller)
+        self.viewSelector = viewSelector
+        
         let border:VBorder = VBorder(color:UIColor.gridBlue)
         
         addSubview(border)
         addSubview(imageView)
         addSubview(backButton)
+        addSubview(viewSelector)
         
         NSLayoutConstraint.equalsVertical(
             view:backButton,
@@ -73,11 +82,35 @@ class VBoardsBar:UIView
         NSLayoutConstraint.equalsHorizontal(
             view:border,
             toView:self)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:viewSelector,
+            toView:self,
+            constant:kSelectorBottom)
+        NSLayoutConstraint.height(
+            view:viewSelector,
+            constant:kSelectorHeight)
+        layoutSelectorLeft = NSLayoutConstraint.leftToLeft(
+            view:viewSelector,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:viewSelector,
+            constant:kSelectorWidth)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    override func layoutSubviews()
+    {
+        let width:CGFloat = bounds.maxX
+        let remainSelector:CGFloat = width - kSelectorWidth
+        let selectorLeft:CGFloat = remainSelector / 2.0
+        layoutSelectorLeft.constant = selectorLeft
+        
+        super.layoutSubviews()
     }
     
     //MARK: actions
