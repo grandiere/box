@@ -4,7 +4,7 @@ class VBoardsBar:UIView
 {
     private weak var controller:CBoards!
     private let kButtonWidth:CGFloat = 60
-    private let kImageHeight:CGFloat = 60
+    private let kImageHeight:CGFloat = 70
     private let kBorderHeight:CGFloat = 1
     
     init(controller:CBoards)
@@ -33,7 +33,7 @@ class VBoardsBar:UIView
         
         let imageView:UIImageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIViewContentMode.center
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "assetGenericBoards")
         imageView.isUserInteractionEnabled = false
