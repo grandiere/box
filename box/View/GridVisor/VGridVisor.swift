@@ -18,6 +18,8 @@ class VGridVisor:VView
         super.init(controller:controller)
         self.controller = controller as? CGridVisor
         
+        return
+        
         guard
             
             let viewMetal:VGridVisorMetal = VGridVisorMetal(
