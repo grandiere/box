@@ -2,6 +2,14 @@ import Foundation
 
 class MBoardsSortKills:MBoardsSortProtocol
 {
+    var reusableIdentifier:String
+    {
+        get
+        {
+            return VBoardsCellKills.reusableIdentifier
+        }
+    }
+    
     func sort(items:[MBoardsItem]) -> [MBoardsItem]
     {
         let sorted:[MBoardsItem] = items.sorted

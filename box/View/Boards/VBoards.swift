@@ -27,7 +27,8 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerCell(cell:VBoardsCell.self)
+        collectionView.registerCell(cell:VBoardsCellScore.self)
+        collectionView.registerCell(cell:VBoardsCellKills.self)
         self.collectionView = collectionView
         
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
