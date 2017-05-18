@@ -3,9 +3,9 @@ import UIKit
 class VBoardsBarSelector:UIView
 {
     private weak var controller:CBoards!
-    private weak var itemDeposit:VMovementsMenuTypeItem!
-    private weak var itemExpense:VMovementsMenuTypeItem!
-    private weak var viewIndicator:VMovementsMenuTypeIndicator!
+    private weak var itemScore:VBoardsBarSelectorItem!
+    private weak var itemKills:VBoardsBarSelectorItem!
+    private weak var viewIndicator:VBoardsBarSelectorIndicator!
     private weak var layoutIndicatorLeft:NSLayoutConstraint!
     private var gestureLastX:CGFloat?
     private let kItemMultiplier:CGFloat = 0.5
@@ -13,7 +13,7 @@ class VBoardsBarSelector:UIView
     private let kBackgroundMargin:CGFloat = 1
     private let kAnimationDuration:TimeInterval = 0.4
     
-    init(controller:CMovements)
+    init(controller:CBoards)
     {
         super.init(frame:CGRect.zero)
         clipsToBounds = true
@@ -21,25 +21,25 @@ class VBoardsBarSelector:UIView
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let viewBackground:VMovementsMenuTypeBackground = VMovementsMenuTypeBackground()
+        let viewBackground:VBoardsBarSelectorBackground = VBoardsBarSelectorBackground()
         
-        let itemDeposit:VMovementsMenuTypeItem = VMovementsMenuTypeItem(
-            title:NSLocalizedString("VMovementsMenuType_itemDeposit", comment:""))
-        itemDeposit.addTarget(
+        let itemScore:VBoardsBarSelectorItem = VBoardsBarSelectorItem(
+            title:NSLocalizedString("VBoardsBarSelector_itemScore", comment:""))
+        itemScore.addTarget(
             self,
-            action:#selector(actionDeposit(sender:)),
+            action:#selector(actionScore(sender:)),
             for:UIControlEvents.touchUpInside)
-        self.itemDeposit = itemDeposit
+        self.itemScore = itemScore
         
-        let itemExpense:VMovementsMenuTypeItem = VMovementsMenuTypeItem(
-            title:NSLocalizedString("VMovementsMenuType_itemExpense", comment:""))
-        itemExpense.addTarget(
+        let itemKills:VBoardsBarSelectorItem = VBoardsBarSelectorItem(
+            title:NSLocalizedString("VBoardsBarSelector_itemKills", comment:""))
+        itemKills.addTarget(
             self,
-            action:#selector(actionExpense(sender:)),
+            action:#selector(actionKills(sender:)),
             for:UIControlEvents.touchUpInside)
-        self.itemExpense = itemExpense
+        self.itemKills = itemKills
         
-        let viewIndicator:VMovementsMenuTypeIndicator = VMovementsMenuTypeIndicator()
+        let viewIndicator:VBoardsBarSelectorIndicator = VBoardsBarSelectorIndicator()
         self.viewIndicator = viewIndicator
         
         let panGesture:UIPanGestureRecognizer = UIPanGestureRecognizer(
@@ -48,8 +48,8 @@ class VBoardsBarSelector:UIView
         
         addSubview(viewBackground)
         addSubview(viewIndicator)
-        addSubview(itemExpense)
-        addSubview(itemDeposit)
+        addSubview(itemScore)
+        addSubview(itemKills)
         addGestureRecognizer(panGesture)
         
         NSLayoutConstraint.equals(
@@ -69,24 +69,24 @@ class VBoardsBarSelector:UIView
             multiplier:kIndicatorMultiplier)
         
         NSLayoutConstraint.equalsVertical(
-            view:itemExpense,
+            view:itemScore,
             toView:self)
         NSLayoutConstraint.leftToLeft(
-            view:itemExpense,
+            view:itemScore,
             toView:self)
         NSLayoutConstraint.width(
-            view:itemExpense,
+            view:itemScore,
             toView:self,
             multiplier:kItemMultiplier)
         
         NSLayoutConstraint.equalsVertical(
-            view:itemDeposit,
+            view:itemKills,
             toView:self)
         NSLayoutConstraint.rightToRight(
-            view:itemDeposit,
+            view:itemKills,
             toView:self)
         NSLayoutConstraint.width(
-            view:itemDeposit,
+            view:itemKills,
             toView:self,
             multiplier:kItemMultiplier)
         
@@ -115,13 +115,13 @@ class VBoardsBarSelector:UIView
     
     //MARK: actions
     
-    func actionExpense(sender button:UIButton)
+    func actionScore(sender button:UIButton)
     {
         controller.isDeposit = false
         indicatorExpense(animated:true)
     }
     
-    func actionDeposit(sender button:UIButton)
+    func actionKills(sender button:UIButton)
     {
         controller.isDeposit = true
         indicatorDeposit(animated:true)
@@ -222,19 +222,19 @@ class VBoardsBarSelector:UIView
         }
     }
     
-    private func buttonDeposit()
+    private func buttonScore()
     {
         itemDeposit.isSelected = true
         itemExpense.isSelected = false
     }
     
-    private func buttonExpense()
+    private func buttonKills()
     {
         itemDeposit.isSelected = false
         itemExpense.isSelected = true
     }
     
-    private func indicatorExpense(animated:Bool)
+    private func indicatorScore(animated:Bool)
     {
         buttonExpense()
         
@@ -258,7 +258,7 @@ class VBoardsBarSelector:UIView
         }
     }
     
-    private func indicatorDeposit(animated:Bool)
+    private func indicatorKills(animated:Bool)
     {
         buttonDeposit()
         
