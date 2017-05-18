@@ -25,6 +25,9 @@
 		DA0960AC1EC138520005BE96 /* MStoreStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */; };
 		DA0960AE1EC138DF0005BE96 /* MStoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960AD1EC138DF0005BE96 /* MStoreItem.swift */; };
 		DA098E631ECE339200FD500E /* VBoardsBarSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E621ECE339200FD500E /* VBoardsBarSelector.swift */; };
+		DA098E651ECE346E00FD500E /* VBoardsBarSelectorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E641ECE346E00FD500E /* VBoardsBarSelectorItem.swift */; };
+		DA098E671ECE34A400FD500E /* VBoardsBarSelectorIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E661ECE34A400FD500E /* VBoardsBarSelectorIndicator.swift */; };
+		DA098E691ECE34CA00FD500E /* VBoardsBarSelectorBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E681ECE34CA00FD500E /* VBoardsBarSelectorBackground.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -340,6 +343,9 @@
 		DA0960AB1EC138520005BE96 /* MStoreStatusProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreStatusProtocol.swift; sourceTree = "<group>"; };
 		DA0960AD1EC138DF0005BE96 /* MStoreItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreItem.swift; sourceTree = "<group>"; };
 		DA098E621ECE339200FD500E /* VBoardsBarSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardsBarSelector.swift; sourceTree = "<group>"; };
+		DA098E641ECE346E00FD500E /* VBoardsBarSelectorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardsBarSelectorItem.swift; sourceTree = "<group>"; };
+		DA098E661ECE34A400FD500E /* VBoardsBarSelectorIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardsBarSelectorIndicator.swift; sourceTree = "<group>"; };
+		DA098E681ECE34CA00FD500E /* VBoardsBarSelectorBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardsBarSelectorBackground.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -1216,6 +1222,9 @@
 				DA7135C41EAFD247007ACEB5 /* VBoards.swift */,
 				DA7135C81EAFD512007ACEB5 /* VBoardsBar.swift */,
 				DA098E621ECE339200FD500E /* VBoardsBarSelector.swift */,
+				DA098E641ECE346E00FD500E /* VBoardsBarSelectorItem.swift */,
+				DA098E661ECE34A400FD500E /* VBoardsBarSelectorIndicator.swift */,
+				DA098E681ECE34CA00FD500E /* VBoardsBarSelectorBackground.swift */,
 				DA0960991EC0EDAB0005BE96 /* VBoardsCell.swift */,
 			);
 			path = Boards;
@@ -1657,6 +1666,7 @@
 				DAF15D6C1E9D32BB0000E6B9 /* VParentPushBackground.swift in Sources */,
 				DA4E69FD1EC3A0D7004B138B /* MHelp.swift in Sources */,
 				DA31F6AB1EC231D2003978C7 /* MStorePurchaseMemory.swift in Sources */,
+				DA098E671ECE34A400FD500E /* VBoardsBarSelectorIndicator.swift in Sources */,
 				DA8852751EAEB068008CB62C /* ExtensionMKAnnotationView.swift in Sources */,
 				DA59D75E1EB25F9000EB2973 /* FMain.swift in Sources */,
 				DAF15D5F1E9D32BB0000E6B9 /* ExtensionString.swift in Sources */,
@@ -1769,6 +1779,7 @@
 				DA17EF371EC2592300A846A3 /* VSettingsCellDistance.swift in Sources */,
 				DAF15D661E9D32BB0000E6B9 /* VAlert.swift in Sources */,
 				DA4E6A011EC3A241004B138B /* MHelpBasic.swift in Sources */,
+				DA098E651ECE346E00FD500E /* VBoardsBarSelectorItem.swift in Sources */,
 				DA49A82B1EBAA7C900C03ECD /* FDbAlgoHostileVirus.swift in Sources */,
 				DA49A8231EBA470E00C03ECD /* VGridVirusLanding.swift in Sources */,
 				DA1D49B01EAA497700C2392C /* MLandingItem.swift in Sources */,
@@ -1792,6 +1803,7 @@
 				DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */,
 				DA59D7731EB3BC4900EB2973 /* FDbUserItem.swift in Sources */,
 				DA31F6A71EC220C5003978C7 /* MStorePurchasePlusRange.swift in Sources */,
+				DA098E691ECE34CA00FD500E /* VBoardsBarSelectorBackground.swift in Sources */,
 				DA22F3D01EA2F2DB00F6ED91 /* CGrid.swift in Sources */,
 				DA31F6A91EC22A78003978C7 /* MStorePurchaseEnergy.swift in Sources */,
 				DA8C06E51EC63A58000DF6D4 /* MHelpEnergy.swift in Sources */,
