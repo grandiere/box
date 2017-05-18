@@ -83,15 +83,15 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func startLoading()
     {
-        collectionView.isHidden = true
         spinner.startAnimating()
+        collectionView.isHidden = true
     }
     
     func refresh()
     {
+        spinner.stopAnimating()
         collectionView.isHidden = false
         collectionView.reloadData()
-        spinner?.removeFromSuperview()
     }
     
     //MARK: collectionView delegate

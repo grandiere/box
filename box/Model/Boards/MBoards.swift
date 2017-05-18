@@ -87,6 +87,17 @@ class MBoards
         controller?.boardsLoaded()
     }
     
+    private func numberItems()
+    {
+        var position:Int = 1
+        
+        for item:MBoardsItem in items
+        {
+            item.position = position
+            position += 1
+        }
+    }
+    
     //MARK: public
     
     func load(controller:CBoards)
@@ -102,11 +113,13 @@ class MBoards
     
     func sortScore()
     {
+        controller?.viewBoards.startLoading()
         sort = MBoardsSortScore()
     }
     
     func sortKills()
     {
+        controller?.viewBoards.startLoading()
         sort = MBoardsSortKills()
     }
 }
