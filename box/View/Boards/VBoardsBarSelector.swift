@@ -202,11 +202,11 @@ class VBoardsBarSelector:UIView
         
         if layoutIndicatorLeft.constant > midX
         {
-            indicatorScore(animated:true)
+            indicatorKills(animated:true)
         }
         else
         {
-            indicatorKills(animated:true)
+            indicatorScore(animated:true)
         }
     }
     

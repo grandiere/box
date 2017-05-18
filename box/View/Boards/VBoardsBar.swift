@@ -5,9 +5,9 @@ class VBoardsBar:UIView
     private weak var controller:CBoards!
     private weak var viewSelector:VBoardsBarSelector!
     private weak var layoutSelectorLeft:NSLayoutConstraint!
-    private let kSelectorWidth:CGFloat = 160
+    private let kSelectorWidth:CGFloat = 190
     private let kSelectorHeight:CGFloat = 35
-    private let kSelectorBottom:CGFloat = -15
+    private let kSelectorBottom:CGFloat = -10
     private let kButtonWidth:CGFloat = 60
     private let kImageHeight:CGFloat = 70
     private let kBorderHeight:CGFloat = 1

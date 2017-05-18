@@ -9,13 +9,13 @@ class VBoardsBarSelectorItem:UIButton
         clipsToBounds = true
         setTitle(title, for:UIControlState.normal)
         setTitleColor(
-            UIColor.gridBlue,
+            UIColor.white,
             for:UIControlState.highlighted)
         setTitleColor(
             UIColor.white,
             for:UIControlState.selected)
         setTitleColor(
-            UIColor.gridOrange,
+            UIColor.gridBlue,
             for:UIControlState.normal)
         titleLabel!.font = UIFont.bold(size:15)
     }
