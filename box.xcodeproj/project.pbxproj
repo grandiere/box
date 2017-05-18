@@ -31,6 +31,8 @@
 		DA098E6B1ECE3C5A00FD500E /* MBoardsSortProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E6A1ECE3C5A00FD500E /* MBoardsSortProtocol.swift */; };
 		DA098E6D1ECE3C9100FD500E /* MBoardsSortScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E6C1ECE3C9100FD500E /* MBoardsSortScore.swift */; };
 		DA098E6F1ECE3C9B00FD500E /* MBoardsSortKills.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E6E1ECE3C9B00FD500E /* MBoardsSortKills.swift */; };
+		DA098E711ECE517B00FD500E /* VBoardsCellScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E701ECE517B00FD500E /* VBoardsCellScore.swift */; };
+		DA098E731ECE518500FD500E /* VBoardsCellKills.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E721ECE518500FD500E /* VBoardsCellKills.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -352,6 +354,8 @@
 		DA098E6A1ECE3C5A00FD500E /* MBoardsSortProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoardsSortProtocol.swift; sourceTree = "<group>"; };
 		DA098E6C1ECE3C9100FD500E /* MBoardsSortScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoardsSortScore.swift; sourceTree = "<group>"; };
 		DA098E6E1ECE3C9B00FD500E /* MBoardsSortKills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoardsSortKills.swift; sourceTree = "<group>"; };
+		DA098E701ECE517B00FD500E /* VBoardsCellScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardsCellScore.swift; sourceTree = "<group>"; };
+		DA098E721ECE518500FD500E /* VBoardsCellKills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardsCellKills.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -1235,6 +1239,8 @@
 				DA098E661ECE34A400FD500E /* VBoardsBarSelectorIndicator.swift */,
 				DA098E681ECE34CA00FD500E /* VBoardsBarSelectorBackground.swift */,
 				DA0960991EC0EDAB0005BE96 /* VBoardsCell.swift */,
+				DA098E701ECE517B00FD500E /* VBoardsCellScore.swift */,
+				DA098E721ECE518500FD500E /* VBoardsCellKills.swift */,
 			);
 			path = Boards;
 			sourceTree = "<group>";
@@ -1747,6 +1753,7 @@
 				DAAA0EB21EA80D1000756A17 /* MGridVisorDetail.swift in Sources */,
 				DA17EF3B1EC2687100A846A3 /* MDistanceMetre.swift in Sources */,
 				DAF15D5B1E9D32BB0000E6B9 /* ExtensionFileManager.swift in Sources */,
+				DA098E731ECE518500FD500E /* VBoardsCellKills.swift in Sources */,
 				DA31F6961EC207CA003978C7 /* VStoreBar.swift in Sources */,
 				DA6D30EE1EC4EFD20018E0B1 /* MTutorialDebug.swift in Sources */,
 				DA134AA91E9D549E002BE57D /* MetalShaderVertexTextured.metal in Sources */,
@@ -1862,6 +1869,7 @@
 				DA49A81C1EBA1D9E00C03ECD /* VGridVirusOptions.swift in Sources */,
 				DA4D97771EB14FAF00AE0C0C /* MLandingBarHelp.swift in Sources */,
 				DA8C06D81EC628C4000DF6D4 /* MHelpAntivirusDistance.swift in Sources */,
+				DA098E711ECE517B00FD500E /* VBoardsCellScore.swift in Sources */,
 				DA71982C1EBBAE7B00D60D1A /* MGridVisorDetailItemHeaderVirusFriendly.swift in Sources */,
 				DA134AA41E9D549E002BE57D /* MetalSpatialBase.swift in Sources */,
 				DA0960AE1EC138DF0005BE96 /* MStoreItem.swift in Sources */,
