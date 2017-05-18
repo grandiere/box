@@ -18,21 +18,23 @@ class VGridVisor:VView
         super.init(controller:controller)
         self.controller = controller as? CGridVisor
         
-        guard
+        if let viewMetal:VGridVisorMetal = VGridVisorMetal(
+            controller:self.controller)
+        {
+            viewMetal.isHidden = true
+            self.viewMetal = viewMetal
             
-            let viewMetal:VGridVisorMetal = VGridVisorMetal(
-                controller:self.controller)
+            addSubview(viewMetal)
             
+            NSLayoutConstraint.equals(
+                view:viewMetal,
+                toView:self)
+        }
         else
         {
             let error:String = NSLocalizedString("VGridVisor_errorMetal", comment:"")
             VAlert.messageOrange(message:error)
-            
-            return
         }
-        
-        viewMetal.isHidden = true
-        self.viewMetal = viewMetal
         
         let spinner:VSpinner = VSpinner()
         self.spinner = spinner
@@ -45,14 +47,9 @@ class VGridVisor:VView
             controller:self.controller)
         self.viewTarget = viewTarget
         
-        addSubview(viewMetal)
         addSubview(spinner)
         addSubview(viewBar)
         addSubview(viewTarget)
-        
-        NSLayoutConstraint.equals(
-            view:viewMetal,
-            toView:self)
         
         NSLayoutConstraint.topToBottom(
             view:spinner,
@@ -88,6 +85,11 @@ class VGridVisor:VView
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    deinit
+    {
+        spinner?.stopAnimating()
     }
     
     override func layoutSubviews()

@@ -1,4 +1,4 @@
-"VGridVisor_errorMetal"="Metal not available";
+"VGridVisor_errorMetal"="Your device doesn't support Metal Graphics";
 "VGridVisorDetailCellDistance_labelTitle"="Distance";
 "VGridVisorDetailCellLevel_labelTitle"="Level";
 "VGridVisorBarEnergy_title"="Energy  ";
@@ -18,6 +18,10 @@
 "VHandler_labelWarning"="Won't appear on boards yet";
 "VHandler_buttonDone"="Done";
 "VGridVisorBarRange_labelTitle"="Range ";
+"VBoardsBarSelector_itemScore"="Score";
+"VBoardsBarSelector_itemKills"="Fixes";
+"VHelp_button"="Done";
+"VTutorialBar_writeButton"="Email us";
 "VSettingsCellDistance_labelTitle"="Distance in";
 "VSettingsCellDistance_segmentedMetres"="Metres";
 "VSettingsCellDistance_segmentedFeet"="Feet";
@@ -29,8 +33,6 @@
 "VStoreCellPurchased_label"="Purchased";
 "VStoreCellNotAvailable_label"="Not available";
 "VStoreBar_buttonRestore"="Restore purchases";
-"VHelp_button"="Done";
-"VTutorialBar_writeButton"="Email us";
 
 "MLandingItemTheGrid_title"="Enter The Grid";
 "MLandingItemTheProfile_title"="Profile";

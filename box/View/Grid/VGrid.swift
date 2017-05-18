@@ -63,6 +63,11 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         return nil
     }
     
+    deinit
+    {
+        spinner.stopAnimating()
+    }
+    
     //MARK: private
     
     private func modelAtIndex(index:IndexPath) -> MGridItem

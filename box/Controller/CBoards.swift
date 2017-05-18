@@ -3,7 +3,7 @@ import UIKit
 class CBoards:CController
 {
     let model:MBoards
-    private weak var viewBoards:VBoards!
+    private(set) weak var viewBoards:VBoards!
     private var firstTime:Bool
     
     override init()
@@ -72,7 +72,7 @@ class CBoards:CController
         DispatchQueue.main.async
         { [weak self] in
             
-            self?.viewBoards.refresh()
+            self?.viewBoards.stopLoading()
         }
     }
 }

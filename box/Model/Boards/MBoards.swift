@@ -2,11 +2,14 @@ import Foundation
 
 class MBoards
 {
+    private(set) var sort:MBoardsSortProtocol
     private(set) var items:[MBoardsItem]
     private weak var controller:CBoards?
+    private let kSortWait:TimeInterval = 1
     
     init()
     {
+        sort = MBoardsSortScore()
         items = []
     }
     
@@ -56,23 +59,26 @@ class MBoards
             {
                 let item:MBoardsItem = MBoardsItem(
                     score:firebaseUser.score,
+                    kills:firebaseUser.kills,
                     handler:handler,
                     userId:userId)
                 items.append(item)
             }
         }
         
-        items.sort
-        { (itemA:MBoardsItem, itemB:MBoardsItem) -> Bool in
-            
-            if itemA.score > itemB.score
-            {
-                return true
-            }
-            
-            return false
-        }
-
+        self.items = items
+        itemsLoaded()
+    }
+    
+    private func itemsLoaded()
+    {
+        items = sort.sort(items:items)
+        numberItems()
+        controller?.boardsLoaded()
+    }
+    
+    private func numberItems()
+    {
         var position:Int = 1
         
         for item:MBoardsItem in items
@@ -80,9 +86,6 @@ class MBoards
             item.position = position
             position += 1
         }
-        
-        self.items = items
-        controller?.boardsLoaded()
     }
     
     //MARK: public
@@ -95,6 +98,32 @@ class MBoards
         { [weak self] in
             
             self?.asyncLoad()
+        }
+    }
+    
+    func sortScore()
+    {
+        controller?.viewBoards.startLoading()
+        sort = MBoardsSortScore()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).asyncAfter(
+            deadline:DispatchTime.now() + kSortWait)
+        { [weak self] in
+            
+            self?.itemsLoaded()
+        }
+    }
+    
+    func sortKills()
+    {
+        controller?.viewBoards.startLoading()
+        sort = MBoardsSortKills()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).asyncAfter(
+            deadline:DispatchTime.now() + kSortWait)
+        { [weak self] in
+            
+            self?.itemsLoaded()
         }
     }
 }

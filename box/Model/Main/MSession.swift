@@ -288,6 +288,35 @@ class MSession
         }
     }
     
+    func updateKills()
+    {
+        guard
+            
+            let bugs:Int16 = settings?.stats?.bugs,
+            let virus:Int16 = settings?.stats?.virus
+            
+        else
+        {
+            return
+        }
+        
+        let kills:Int = Int(bugs) + Int(virus)
+        
+        guard
+            
+            let userPath:String = firebasePath()
+            
+        else
+        {
+            return
+        }
+        
+        let path:String = "\(userPath)/\(FDbUserItem.kills)"
+        FMain.sharedInstance.db.updateChild(
+            path:path,
+            json:kills)
+    }
+    
     func updateHandler(handler:String)
     {
         guard

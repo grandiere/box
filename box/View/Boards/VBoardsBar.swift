@@ -2,9 +2,14 @@ import UIKit
 
 class VBoardsBar:UIView
 {
+    private(set) weak var viewSelector:VBoardsBarSelector!
     private weak var controller:CBoards!
+    private weak var layoutSelectorLeft:NSLayoutConstraint!
+    private let kSelectorWidth:CGFloat = 190
+    private let kSelectorHeight:CGFloat = 35
+    private let kSelectorBottom:CGFloat = -10
     private let kButtonWidth:CGFloat = 60
-    private let kImageMarginVertical:CGFloat = 1
+    private let kImageHeight:CGFloat = 70
     private let kBorderHeight:CGFloat = 1
     
     init(controller:CBoards)
@@ -33,16 +38,20 @@ class VBoardsBar:UIView
         
         let imageView:UIImageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIViewContentMode.center
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "assetGenericBoards")
         imageView.isUserInteractionEnabled = false
+        
+        let viewSelector:VBoardsBarSelector = VBoardsBarSelector(controller:controller)
+        self.viewSelector = viewSelector
         
         let border:VBorder = VBorder(color:UIColor.gridBlue)
         
         addSubview(border)
         addSubview(imageView)
         addSubview(backButton)
+        addSubview(viewSelector)
         
         NSLayoutConstraint.equalsVertical(
             view:backButton,
@@ -54,10 +63,12 @@ class VBoardsBar:UIView
             view:backButton,
             constant:kButtonWidth)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.topToTop(
             view:imageView,
-            toView:self,
-            margin:kImageMarginVertical)
+            toView:self)
+        NSLayoutConstraint.height(
+            view:imageView,
+            constant:kImageHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:imageView,
             toView:self)
@@ -71,11 +82,35 @@ class VBoardsBar:UIView
         NSLayoutConstraint.equalsHorizontal(
             view:border,
             toView:self)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:viewSelector,
+            toView:self,
+            constant:kSelectorBottom)
+        NSLayoutConstraint.height(
+            view:viewSelector,
+            constant:kSelectorHeight)
+        layoutSelectorLeft = NSLayoutConstraint.leftToLeft(
+            view:viewSelector,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:viewSelector,
+            constant:kSelectorWidth)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    override func layoutSubviews()
+    {
+        let width:CGFloat = bounds.maxX
+        let remainSelector:CGFloat = width - kSelectorWidth
+        let selectorLeft:CGFloat = remainSelector / 2.0
+        layoutSelectorLeft.constant = selectorLeft
+        
+        super.layoutSubviews()
     }
     
     //MARK: actions

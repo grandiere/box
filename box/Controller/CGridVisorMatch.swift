@@ -163,6 +163,11 @@ class CGridVisorMatch:CController
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         {
             MSession.sharedInstance.addScore(credits:model.credits)
+            
+            DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+            {
+                MSession.sharedInstance.updateKills()
+            }
         }
     }
     
