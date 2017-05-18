@@ -6,12 +6,13 @@ class VBoardsCell:UICollectionViewCell
     private weak var labelPosition:UILabel!
     private weak var labelScore:UILabel!
     private weak var labelHandler:UILabel!
+    private let kHandlerLeft:CGFloat = 10
+    private let kHandlerWidth:CGFloat = 150
+    private let kScoreWidth:CGFloat = 300
+    private let kScoreRight:CGFloat = -10
     private let kSquareMargin:CGFloat = 10
-    private let kSquareSize:CGFloat = 40
-    private let kHandlerLeft:CGFloat = 7
-    private let kHandlerWidth:CGFloat = 80
-    private let kScoreWidth:CGFloat = 200
-    private let kSquareCornerRadius:CGFloat = 4
+    private let kSquareSize:CGFloat = 30
+    private let kSquareCornerRadius:CGFloat = 3
     
     override init(frame:CGRect)
     {
@@ -33,6 +34,7 @@ class VBoardsCell:UICollectionViewCell
         labelPosition.backgroundColor = UIColor.clear
         labelPosition.font = UIFont.bold(size:12)
         labelPosition.textAlignment = NSTextAlignment.center
+        labelPosition.textColor = UIColor.black
         self.labelPosition = labelPosition
         
         let labelHandler:UILabel = UILabel()
@@ -40,13 +42,16 @@ class VBoardsCell:UICollectionViewCell
         labelHandler.translatesAutoresizingMaskIntoConstraints = false
         labelHandler.backgroundColor = UIColor.clear
         labelHandler.font = UIFont.bold(size:17)
+        labelHandler.textColor = UIColor.white
         self.labelHandler = labelHandler
         
         let labelScore:UILabel = UILabel()
         labelScore.isUserInteractionEnabled = false
         labelScore.translatesAutoresizingMaskIntoConstraints = false
         labelScore.backgroundColor = UIColor.clear
-        labelScore.font = UIFont.numeric(size:24)
+        labelScore.font = UIFont.numeric(size:16)
+        labelScore.textColor = UIColor(white:1, alpha:0.8)
+        labelScore.textAlignment = NSTextAlignment.right
         self.labelScore = labelScore
         
         square.addSubview(labelPosition)
@@ -84,9 +89,10 @@ class VBoardsCell:UICollectionViewCell
         NSLayoutConstraint.equalsVertical(
             view:labelScore,
             toView:self)
-        NSLayoutConstraint.leftToRight(
+        NSLayoutConstraint.rightToRight(
             view:labelScore,
-            toView:labelHandler)
+            toView:self,
+            constant:kScoreRight)
         NSLayoutConstraint.width(
             view:labelScore,
             constant:kScoreWidth)
@@ -102,28 +108,31 @@ class VBoardsCell:UICollectionViewCell
     private func currentUser()
     {
         square.backgroundColor = UIColor.gridBlue
-        labelPosition.textColor = UIColor.black
-        labelHandler.textColor = UIColor.white
-        labelScore.textColor = UIColor.white
-        backgroundColor = UIColor.clear
     }
     
     private func otherUser()
     {
         square.backgroundColor = UIColor.gridOrange
-        labelPosition.textColor = UIColor.black
-        labelHandler.textColor = UIColor.white
-        labelScore.textColor = UIColor.white
-        backgroundColor = UIColor.clear
     }
     
     //MARK: public
     
     func config(item:MBoardsItem)
     {
-        labelPosition.text = "\(item.position)"
+        let position:Int = item.position
+        
+        labelPosition.text = "\(position)"
         labelHandler.text = item.handler
         labelScore.text = "\(item.score)"
+        
+        if position % 2 == 0
+        {
+            backgroundColor = UIColor(white:1, alpha:0.12)
+        }
+        else
+        {
+            backgroundColor = UIColor.clear
+        }
         
         guard
         

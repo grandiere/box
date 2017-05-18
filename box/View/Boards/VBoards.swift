@@ -8,7 +8,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private weak var spinner:VSpinner!
     private let kBarHeight:CGFloat = 130
     private let kCollectionBottom:CGFloat = 20
-    private let kCellHeight:CGFloat = 90
+    private let kCellHeight:CGFloat = 50
     
     override init(controller:CController)
     {
