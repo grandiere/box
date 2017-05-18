@@ -118,7 +118,6 @@ class MBoards
     {
         controller?.viewBoards.startLoading()
         sort = MBoardsSortKills()
-        itemsLoaded()
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).asyncAfter(
             deadline:DispatchTime.now() + kSortWait)

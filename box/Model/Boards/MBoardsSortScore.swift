@@ -11,6 +11,22 @@ class MBoardsSortScore:MBoardsSortProtocol
             {
                 return true
             }
+            else if itemA.kills == itemB.kills
+            {
+                let comparison:ComparisonResult = itemA.handler.compare(itemB.handler)
+                
+                switch comparison
+                {
+                case ComparisonResult.orderedAscending:
+                    
+                    return true
+                    
+                case ComparisonResult.orderedDescending,
+                     ComparisonResult.orderedSame:
+                    
+                    return false
+                }
+            }
             
             return false
         }
