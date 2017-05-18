@@ -90,21 +90,11 @@ class VBoardsBarSelector:UIView
             toView:self,
             multiplier:kItemMultiplier)
         
-        let deposit:Bool = controller.isDeposit
-        
         DispatchQueue.main.async
-            { [weak self] in
+        { [weak self] in
                 
-                self?.layoutIfNeeded()
-                
-                if deposit
-                {
-                    self?.indicatorDeposit(animated:false)
-                }
-                else
-                {
-                    self?.indicatorExpense(animated:false)
-                }
+            self?.layoutIfNeeded()
+            self?.indicatorScore(animated:false)
         }
     }
     
@@ -117,14 +107,12 @@ class VBoardsBarSelector:UIView
     
     func actionScore(sender button:UIButton)
     {
-        controller.isDeposit = false
-        indicatorExpense(animated:true)
+        indicatorScore(animated:true)
     }
     
     func actionKills(sender button:UIButton)
     {
-        controller.isDeposit = true
-        indicatorDeposit(animated:true)
+        indicatorKills(animated:true)
     }
     
     func actionPanning(sender panGesture:UIPanGestureRecognizer)
@@ -173,7 +161,7 @@ class VBoardsBarSelector:UIView
             
             let gestureLastX:CGFloat = self.gestureLastX
             
-            else
+        else
         {
             return
         }
@@ -196,11 +184,11 @@ class VBoardsBarSelector:UIView
         
         if indicatorNewX > midX
         {
-            buttonDeposit()
+            buttonKills()
         }
         else
         {
-            buttonExpense()
+            buttonScore()
         }
         
         layoutIndicatorLeft.constant = indicatorNewX
@@ -214,29 +202,30 @@ class VBoardsBarSelector:UIView
         
         if layoutIndicatorLeft.constant > midX
         {
-            indicatorDeposit(animated:true)
+            indicatorScore(animated:true)
         }
         else
         {
-            indicatorExpense(animated:true)
+            indicatorKills(animated:true)
         }
     }
     
     private func buttonScore()
     {
-        itemDeposit.isSelected = true
-        itemExpense.isSelected = false
+        itemScore.isSelected = true
+        itemKills.isSelected = false
     }
     
     private func buttonKills()
     {
-        itemDeposit.isSelected = false
-        itemExpense.isSelected = true
+        itemScore.isSelected = false
+        itemKills.isSelected = true
     }
     
     private func indicatorScore(animated:Bool)
     {
-        buttonExpense()
+        controller.model.sortScore()
+        buttonScore()
         
         let duration:TimeInterval
         
@@ -260,7 +249,8 @@ class VBoardsBarSelector:UIView
     
     private func indicatorKills(animated:Bool)
     {
-        buttonDeposit()
+        controller.model.sortKills()
+        buttonKills()
         
         let duration:TimeInterval
         

@@ -2,11 +2,13 @@ import Foundation
 
 class MBoards
 {
+    private(set) var sort:MBoardsSortProtocol
     private(set) var items:[MBoardsItem]
     private weak var controller:CBoards?
     
     init()
     {
+        sort = MBoardsSortScore()
         items = []
     }
     
@@ -96,5 +98,15 @@ class MBoards
             
             self?.asyncLoad()
         }
+    }
+    
+    func sortScore()
+    {
+        sort = MBoardsSortScore()
+    }
+    
+    func sortKills()
+    {
+        sort = MBoardsSortKills()
     }
 }
