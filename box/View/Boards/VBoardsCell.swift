@@ -102,7 +102,7 @@ class VBoardsCell:UICollectionViewCell
         
         if position % 2 == 0
         {
-            backgroundColor = UIColor(white:1, alpha:0.12)
+            backgroundColor = UIColor(white:1, alpha:0.1)
         }
         else
         {

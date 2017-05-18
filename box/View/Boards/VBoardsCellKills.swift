@@ -3,8 +3,8 @@ import UIKit
 class VBoardsCellKills:VBoardsCell
 {
     private weak var labelKills:UILabel!
+    private let kIconWidth:CGFloat = 54
     private let kKillsWidth:CGFloat = 200
-    private let kKillsRight:CGFloat = -10
     
     override init(frame:CGRect)
     {
@@ -14,23 +14,40 @@ class VBoardsCellKills:VBoardsCell
         labelKills.isUserInteractionEnabled = false
         labelKills.translatesAutoresizingMaskIntoConstraints = false
         labelKills.backgroundColor = UIColor.clear
-        labelKills.font = UIFont.numeric(size:16)
-        labelKills.textColor = UIColor(white:1, alpha:0.8)
+        labelKills.font = UIFont.bold(size:18)
+        labelKills.textColor = UIColor.white
         labelKills.textAlignment = NSTextAlignment.right
         self.labelKills = labelKills
         
+        let imageView:UIImageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.contentMode = UIViewContentMode.center
+        imageView.image = #imageLiteral(resourceName: "assetGenericBoardsKills")
+        
+        addSubview(imageView)
         addSubview(labelKills)
         
         NSLayoutConstraint.equalsVertical(
             view:labelKills,
             toView:self)
-        NSLayoutConstraint.rightToRight(
+        NSLayoutConstraint.rightToLeft(
             view:labelKills,
-            toView:self,
-            constant:kKillsRight)
+            toView:imageView)
         NSLayoutConstraint.width(
             view:labelKills,
             constant:kKillsWidth)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:imageView,
+            toView:self)
+        NSLayoutConstraint.rightToRight(
+            view:imageView,
+            toView:self)
+        NSLayoutConstraint.width(
+            view:imageView,
+            constant:kIconWidth)
     }
     
     required init?(coder:NSCoder)
