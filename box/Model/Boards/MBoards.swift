@@ -58,32 +58,30 @@ class MBoards
             {
                 let item:MBoardsItem = MBoardsItem(
                     score:firebaseUser.score,
+                    kills:firebaseUser.kills,
                     handler:handler,
                     userId:userId)
                 items.append(item)
             }
         }
         
-        items.sort
-        { (itemA:MBoardsItem, itemB:MBoardsItem) -> Bool in
-            
-            if itemA.score > itemB.score
-            {
-                return true
-            }
-            
-            return false
-        }
-
-        var position:Int = 1
-        
-        for item:MBoardsItem in items
-        {
-            item.position = position
-            position += 1
-        }
-        
         self.items = items
+        itemsLoaded()
+    }
+    
+    private func itemsLoaded()
+    {
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.asyncItemsLoaded()
+        }
+    }
+    
+    private func asyncItemsLoaded()
+    {
+        items = sort.sort(items:items)
+        numberItems()
         controller?.boardsLoaded()
     }
     
@@ -115,11 +113,13 @@ class MBoards
     {
         controller?.viewBoards.startLoading()
         sort = MBoardsSortScore()
+        itemsLoaded()
     }
     
     func sortKills()
     {
         controller?.viewBoards.startLoading()
         sort = MBoardsSortKills()
+        itemsLoaded()
     }
 }
