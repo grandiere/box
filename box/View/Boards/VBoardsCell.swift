@@ -2,16 +2,16 @@ import UIKit
 
 class VBoardsCell:UICollectionViewCell
 {
-    private weak var circle:UIView!
+    private weak var square:UIView!
     private weak var labelPosition:UILabel!
     private weak var labelScore:UILabel!
     private weak var labelHandler:UILabel!
-    private weak var layoutCircleTop:NSLayoutConstraint!
-    private let kCircleSize:CGFloat = 35
-    private let kCircleLeft:CGFloat = 10
+    private let kSquareMargin:CGFloat = 10
+    private let kSquareSize:CGFloat = 40
     private let kHandlerLeft:CGFloat = 7
     private let kHandlerWidth:CGFloat = 80
     private let kScoreWidth:CGFloat = 200
+    private let kSquareCornerRadius:CGFloat = 4
     
     override init(frame:CGRect)
     {
@@ -20,12 +20,12 @@ class VBoardsCell:UICollectionViewCell
         translatesAutoresizingMaskIntoConstraints = false
         isUserInteractionEnabled = false
         
-        let circle:UIView = UIView()
-        circle.isUserInteractionEnabled = false
-        circle.translatesAutoresizingMaskIntoConstraints = false
-        circle.clipsToBounds = true
-        circle.layer.cornerRadius = kCircleSize / 2.0
-        self.circle = circle
+        let square:UIView = UIView()
+        square.isUserInteractionEnabled = false
+        square.translatesAutoresizingMaskIntoConstraints = false
+        square.clipsToBounds = true
+        square.layer.cornerRadius = kSquareCornerRadius
+        self.square = square
         
         let labelPosition:UILabel = UILabel()
         labelPosition.isUserInteractionEnabled = false
@@ -49,32 +49,33 @@ class VBoardsCell:UICollectionViewCell
         labelScore.font = UIFont.numeric(size:24)
         self.labelScore = labelScore
         
-        circle.addSubview(labelPosition)
-        addSubview(circle)
+        square.addSubview(labelPosition)
+        addSubview(square)
         addSubview(labelHandler)
         addSubview(labelScore)
         
-        layoutCircleTop = NSLayoutConstraint.topToTop(
-            view:circle,
-            toView:self)
-        NSLayoutConstraint.leftToLeft(
-            view:circle,
+        NSLayoutConstraint.topToTop(
+            view:square,
             toView:self,
-            constant:kCircleLeft)
+            constant:kSquareMargin)
+        NSLayoutConstraint.leftToLeft(
+            view:square,
+            toView:self,
+            constant:kSquareMargin)
         NSLayoutConstraint.size(
-            view:circle,
-            constant:kCircleSize)
+            view:square,
+            constant:kSquareSize)
         
         NSLayoutConstraint.equals(
             view:labelPosition,
-            toView:circle)
+            toView:square)
         
         NSLayoutConstraint.equalsVertical(
             view:labelHandler,
             toView:self)
         NSLayoutConstraint.leftToRight(
             view:labelHandler,
-            toView:circle,
+            toView:square,
             constant:kHandlerLeft)
         NSLayoutConstraint.width(
             view:labelHandler,
@@ -96,30 +97,20 @@ class VBoardsCell:UICollectionViewCell
         return nil
     }
     
-    override func layoutSubviews()
-    {
-        let height:CGFloat = bounds.maxY
-        let remainCircle:CGFloat = height - kCircleSize
-        let marginTop:CGFloat = remainCircle / 2.0
-        layoutCircleTop.constant = marginTop
-        
-        super.layoutSubviews()
-    }
-    
     //MARK: private
     
     private func currentUser()
     {
-        circle.backgroundColor = UIColor.black
-        labelPosition.textColor = UIColor.white
-        labelHandler.textColor = UIColor.black
-        labelScore.textColor = UIColor.black
-        backgroundColor = UIColor(white:1, alpha:0.6)
+        square.backgroundColor = UIColor.gridBlue
+        labelPosition.textColor = UIColor.black
+        labelHandler.textColor = UIColor.white
+        labelScore.textColor = UIColor.white
+        backgroundColor = UIColor.clear
     }
     
     private func otherUser()
     {
-        circle.backgroundColor = UIColor(white:1, alpha:0.75)
+        square.backgroundColor = UIColor.gridOrange
         labelPosition.textColor = UIColor.black
         labelHandler.textColor = UIColor.white
         labelScore.textColor = UIColor.white
