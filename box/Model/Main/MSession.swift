@@ -216,6 +216,12 @@ class MSession
         active = user.active
         DManager.sharedInstance?.save()
         
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.checkKills(user:user)
+        }
+        
         NotificationCenter.default.post(
             name:Notification.sessionLoaded,
             object:nil)
@@ -252,6 +258,13 @@ class MSession
             let message:String = NSLocalizedString("MSession_levelUp", comment:"")
             VToast.messageBlue(message:message)
         }
+    }
+    
+    //MARK: temporal
+    
+    private func checkKills(user:FDbUserItem)
+    {
+        
     }
     
     //MARK: public
