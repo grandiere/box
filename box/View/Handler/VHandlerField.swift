@@ -4,7 +4,7 @@ class VHandlerField:UITextField, UITextFieldDelegate
 {
     private weak var controller:CHandler!
     private let kBorderHeight:CGFloat = 1
-    private let kMaxCharacter:Int = 5
+    private let kMaxCharacter:Int = 8
     
     init(controller:CHandler)
     {

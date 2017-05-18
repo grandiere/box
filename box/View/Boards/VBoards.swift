@@ -8,7 +8,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private weak var spinner:VSpinner!
     private let kBarHeight:CGFloat = 130
     private let kCollectionBottom:CGFloat = 20
-    private let kCellHeight:CGFloat = 80
+    private let kCellHeight:CGFloat = 90
     
     override init(controller:CController)
     {
@@ -33,7 +33,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
             flow.sectionInset = UIEdgeInsets(
-                top:kBarHeight + kCollectionBottom,
+                top:kBarHeight,
                 left:0,
                 bottom:kCollectionBottom,
                 right:0)
