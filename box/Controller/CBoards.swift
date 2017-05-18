@@ -72,7 +72,7 @@ class CBoards:CController
         DispatchQueue.main.async
         { [weak self] in
             
-            self?.viewBoards.startLoading()
+            self?.viewBoards.stopLoading()
         }
     }
 }

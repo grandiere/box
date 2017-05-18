@@ -87,7 +87,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         collectionView.isHidden = true
     }
     
-    func refresh()
+    func stopLoading()
     {
         spinner.stopAnimating()
         collectionView.isHidden = false
