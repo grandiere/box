@@ -3,6 +3,7 @@ import UIKit
 class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private weak var controller:CBoards!
+    private weak var viewBar:VBoardsBar!
     private weak var collectionView:VCollection!
     private weak var spinner:VSpinner!
     private let kBarHeight:CGFloat = 130
@@ -19,6 +20,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         let viewBar:VBoardsBar = VBoardsBar(
             controller:self.controller)
+        self.viewBar = viewBar
         
         let collectionView:VCollection = VCollection()
         collectionView.isHidden = true
@@ -85,6 +87,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     {
         spinner.startAnimating()
         collectionView.isHidden = true
+        viewBar.viewSelector.isUserInteractionEnabled = false
     }
     
     func stopLoading()
@@ -92,6 +95,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         spinner.stopAnimating()
         collectionView.isHidden = false
         collectionView.reloadData()
+        viewBar.viewSelector.isUserInteractionEnabled = true
     }
     
     //MARK: collectionView delegate

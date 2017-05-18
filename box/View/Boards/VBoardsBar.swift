@@ -2,8 +2,8 @@ import UIKit
 
 class VBoardsBar:UIView
 {
+    private(set) weak var viewSelector:VBoardsBarSelector!
     private weak var controller:CBoards!
-    private weak var viewSelector:VBoardsBarSelector!
     private weak var layoutSelectorLeft:NSLayoutConstraint!
     private let kSelectorWidth:CGFloat = 190
     private let kSelectorHeight:CGFloat = 35

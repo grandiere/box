@@ -5,6 +5,7 @@ class MBoards
     private(set) var sort:MBoardsSortProtocol
     private(set) var items:[MBoardsItem]
     private weak var controller:CBoards?
+    private let kSortWait:TimeInterval = 1
     
     init()
     {
@@ -71,15 +72,6 @@ class MBoards
     
     private func itemsLoaded()
     {
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        { [weak self] in
-            
-            self?.asyncItemsLoaded()
-        }
-    }
-    
-    private func asyncItemsLoaded()
-    {
         items = sort.sort(items:items)
         numberItems()
         controller?.boardsLoaded()
@@ -113,7 +105,13 @@ class MBoards
     {
         controller?.viewBoards.startLoading()
         sort = MBoardsSortScore()
-        itemsLoaded()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).asyncAfter(
+            deadline:DispatchTime.now() + kSortWait)
+        { [weak self] in
+            
+            self?.itemsLoaded()
+        }
     }
     
     func sortKills()
@@ -121,5 +119,12 @@ class MBoards
         controller?.viewBoards.startLoading()
         sort = MBoardsSortKills()
         itemsLoaded()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).asyncAfter(
+            deadline:DispatchTime.now() + kSortWait)
+        { [weak self] in
+            
+            self?.itemsLoaded()
+        }
     }
 }
