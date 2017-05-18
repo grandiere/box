@@ -1,4 +1,4 @@
-"VGridVisor_errorMetal"="Metal not available";
+"VGridVisor_errorMetal"="Your device doesn't support Metal Graphics";
 "VGridVisorDetailCellDistance_labelTitle"="Distance";
 "VGridVisorDetailCellLevel_labelTitle"="Level";
 "VGridVisorBarEnergy_title"="Energy  ";
