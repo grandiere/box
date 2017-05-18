@@ -216,12 +216,6 @@ class MSession
         active = user.active
         DManager.sharedInstance?.save()
         
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        { [weak self] in
-            
-            self?.checkKills(user:user)
-        }
-        
         NotificationCenter.default.post(
             name:Notification.sessionLoaded,
             object:nil)
@@ -260,13 +254,6 @@ class MSession
         }
     }
     
-    //MARK: temporal
-    
-    private func checkKills(user:FDbUserItem)
-    {
-        
-    }
-    
     //MARK: public
     
     func loadSession()
@@ -299,6 +286,35 @@ class MSession
         {
             self.tryLevelUp()
         }
+    }
+    
+    func updateKills()
+    {
+        guard
+            
+            let bugs:Int16 = settings?.stats?.bugs,
+            let virus:Int16 = settings?.stats?.virus
+            
+        else
+        {
+            return
+        }
+        
+        let kills:Int = Int(bugs) + Int(virus)
+        
+        guard
+            
+            let userPath:String = firebasePath()
+            
+        else
+        {
+            return
+        }
+        
+        let path:String = "\(userPath)/\(FDbUserItem.kills)"
+        FMain.sharedInstance.db.updateChild(
+            path:path,
+            json:kills)
     }
     
     func updateHandler(handler:String)
