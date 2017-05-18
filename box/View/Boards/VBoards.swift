@@ -4,7 +4,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
 {
     private weak var controller:CBoards!
     private weak var collectionView:VCollection!
-    private weak var spinner:VSpinner?
+    private weak var spinner:VSpinner!
     private let kBarHeight:CGFloat = 130
     private let kCollectionBottom:CGFloat = 20
     private let kCellHeight:CGFloat = 80
@@ -65,6 +65,11 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         return nil
     }
     
+    deinit
+    {
+        spinner.stopAnimating()
+    }
+    
     //MARK: private
     
     private func modelAtIndex(index:IndexPath) -> MBoardsItem
@@ -75,6 +80,12 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     //MARK: public
+    
+    func startLoading()
+    {
+        collectionView.isHidden = true
+        spinner.startAnimating()
+    }
     
     func refresh()
     {

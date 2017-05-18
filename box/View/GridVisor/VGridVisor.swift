@@ -87,6 +87,11 @@ class VGridVisor:VView
         return nil
     }
     
+    deinit
+    {
+        spinner?.stopAnimating()
+    }
+    
     override func layoutSubviews()
     {
         previewLayer?.frame = bounds
