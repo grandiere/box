@@ -29,6 +29,8 @@
 		DA098E671ECE34A400FD500E /* VBoardsBarSelectorIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E661ECE34A400FD500E /* VBoardsBarSelectorIndicator.swift */; };
 		DA098E691ECE34CA00FD500E /* VBoardsBarSelectorBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E681ECE34CA00FD500E /* VBoardsBarSelectorBackground.swift */; };
 		DA098E6B1ECE3C5A00FD500E /* MBoardsSortProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E6A1ECE3C5A00FD500E /* MBoardsSortProtocol.swift */; };
+		DA098E6D1ECE3C9100FD500E /* MBoardsSortScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E6C1ECE3C9100FD500E /* MBoardsSortScore.swift */; };
+		DA098E6F1ECE3C9B00FD500E /* MBoardsSortKills.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA098E6E1ECE3C9B00FD500E /* MBoardsSortKills.swift */; };
 		DA0BDA061EA414F900282D73 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA051EA414F900282D73 /* spinner.xcassets */; };
 		DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BDA071EA418E500282D73 /* VGridBar.swift */; };
 		DA0BDA0A1EA41F1200282D73 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0BDA091EA41F1200282D73 /* generic.xcassets */; };
@@ -348,6 +350,8 @@
 		DA098E661ECE34A400FD500E /* VBoardsBarSelectorIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardsBarSelectorIndicator.swift; sourceTree = "<group>"; };
 		DA098E681ECE34CA00FD500E /* VBoardsBarSelectorBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardsBarSelectorBackground.swift; sourceTree = "<group>"; };
 		DA098E6A1ECE3C5A00FD500E /* MBoardsSortProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoardsSortProtocol.swift; sourceTree = "<group>"; };
+		DA098E6C1ECE3C9100FD500E /* MBoardsSortScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoardsSortScore.swift; sourceTree = "<group>"; };
+		DA098E6E1ECE3C9B00FD500E /* MBoardsSortKills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBoardsSortKills.swift; sourceTree = "<group>"; };
 		DA0BDA051EA414F900282D73 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA0BDA071EA418E500282D73 /* VGridBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridBar.swift; sourceTree = "<group>"; };
 		DA0BDA091EA41F1200282D73 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
@@ -717,6 +721,8 @@
 				DA09609C1EC0F2A00005BE96 /* MBoards.swift */,
 				DA09609E1EC0F2BC0005BE96 /* MBoardsItem.swift */,
 				DA098E6A1ECE3C5A00FD500E /* MBoardsSortProtocol.swift */,
+				DA098E6C1ECE3C9100FD500E /* MBoardsSortScore.swift */,
+				DA098E6E1ECE3C9B00FD500E /* MBoardsSortKills.swift */,
 			);
 			path = Boards;
 			sourceTree = "<group>";
@@ -1809,6 +1815,7 @@
 				DA31F6A71EC220C5003978C7 /* MStorePurchasePlusRange.swift in Sources */,
 				DA098E691ECE34CA00FD500E /* VBoardsBarSelectorBackground.swift in Sources */,
 				DA22F3D01EA2F2DB00F6ED91 /* CGrid.swift in Sources */,
+				DA098E6F1ECE3C9B00FD500E /* MBoardsSortKills.swift in Sources */,
 				DA31F6A91EC22A78003978C7 /* MStorePurchaseEnergy.swift in Sources */,
 				DA8C06E51EC63A58000DF6D4 /* MHelpEnergy.swift in Sources */,
 				DA31F6971EC207CA003978C7 /* VStoreCell.swift in Sources */,
@@ -1959,6 +1966,7 @@
 				DA29FEFF1EAAB9E400CD8FBC /* MStatsItemVirus.swift in Sources */,
 				DA6D30F11EC4F06A0018E0B1 /* MHelpDebug.swift in Sources */,
 				DA8C06F71EC64F56000DF6D4 /* MHelpSkillsAids.swift in Sources */,
+				DA098E6D1ECE3C9100FD500E /* MBoardsSortScore.swift in Sources */,
 				DA8852681EAE9D20008CB62C /* CGridMap.swift in Sources */,
 				DA0C16DB1EB51742007532A6 /* VGridVisorDetailCellTake.swift in Sources */,
 				DA22F3D31EA2F30800F6ED91 /* VGrid.swift in Sources */,
