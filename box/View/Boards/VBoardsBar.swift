@@ -4,7 +4,7 @@ class VBoardsBar:UIView
 {
     private weak var controller:CBoards!
     private let kButtonWidth:CGFloat = 60
-    private let kImageMarginVertical:CGFloat = 1
+    private let kImageHeight:CGFloat = 60
     private let kBorderHeight:CGFloat = 1
     
     init(controller:CBoards)
@@ -54,10 +54,12 @@ class VBoardsBar:UIView
             view:backButton,
             constant:kButtonWidth)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.topToTop(
             view:imageView,
-            toView:self,
-            margin:kImageMarginVertical)
+            toView:self)
+        NSLayoutConstraint.height(
+            view:imageView,
+            constant:kImageHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:imageView,
             toView:self)

@@ -5,7 +5,7 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
     private weak var controller:CBoards!
     private weak var collectionView:VCollection!
     private weak var spinner:VSpinner?
-    private let kBarHeight:CGFloat = 50
+    private let kBarHeight:CGFloat = 100
     private let kCollectionBottom:CGFloat = 20
     private let kCellHeight:CGFloat = 80
     
