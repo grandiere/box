@@ -7,7 +7,7 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
     private let kBorderHeight:CGFloat = 1
     private let kBlurAlpha:CGFloat = 0.99
     private let kCellSize:CGFloat = 60
-    private let kLogoHeight:CGFloat = 80
+    private let kLogoHeight:CGFloat = 100
     private let kDeselectTime:TimeInterval = 0.3
     
     init(controller:CLanding)
