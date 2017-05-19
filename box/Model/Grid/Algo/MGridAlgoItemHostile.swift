@@ -85,9 +85,7 @@ class MGridAlgoItemHostile:MGridAlgoItem
     {
     }
     
-    //MARK: final
-    
-    final func addDefeated()
+    func addDefeated()
     {
         defeated += 1
     }

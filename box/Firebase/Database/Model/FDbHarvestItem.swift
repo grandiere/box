@@ -44,7 +44,7 @@ class FDbHarvestItem:FDbProtocol
     
     func json() -> Any?
     {
-        var json:[String:Any] = [
+        let json:[String:Any] = [
             FDbHarvestItem.score:score,
             FDbHarvestItem.kills:kills]
         

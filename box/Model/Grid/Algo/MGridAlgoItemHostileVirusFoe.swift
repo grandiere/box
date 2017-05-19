@@ -94,4 +94,10 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     {
         MSession.sharedInstance.settings?.stats?.antivirusSuccess()
     }
+    
+    override func addDefeated()
+    {
+        super.addDefeated()
+        
+    }
 }
