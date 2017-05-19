@@ -7,7 +7,7 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
     private weak var collectionView:VCollection!
     private weak var spinner:VSpinner?
     private let kBarHeight:CGFloat = 150
-    private let kCellHeight:CGFloat = 90
+    private let kCellHeight:CGFloat = 100
     private let kCollectionBottom:CGFloat = 20
     private let kDeselectTime:TimeInterval = 0.2
     
@@ -35,7 +35,7 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
             flow.sectionInset = UIEdgeInsets(
-                top:kBarHeight + kCollectionBottom,
+                top:kBarHeight,
                 left:0,
                 bottom:kCollectionBottom,
                 right:0)

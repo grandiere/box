@@ -14,9 +14,9 @@ class MLanding
         
         items = [
             itemTheGrid,
+            itemBoards,
             itemProfile,
-            itemStats,
-            itemBoards]
+            itemStats]
         
         let barSettings:MLandingBarSettings = MLandingBarSettings()
         let barStore:MLandingBarStore = MLandingBarStore()

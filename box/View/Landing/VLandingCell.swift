@@ -4,13 +4,14 @@ class VLandingCell:UICollectionViewCell
 {
     private weak var icon:UIImageView!
     private weak var label:UILabel!
-    private let kIconWidth:CGFloat = 100
-    private let kLabelWidth:CGFloat = 200
+    private let kLabelHeight:CGFloat = 30
     
     override init(frame:CGRect)
     {
         super.init(frame:frame)
         clipsToBounds = true
+        
+        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.2))
         
         let icon:UIImageView = UIImageView()
         icon.isUserInteractionEnabled = false
@@ -27,6 +28,7 @@ class VLandingCell:UICollectionViewCell
         label.textColor = UIColor.white
         self.label = label
         
+        addSubview(border)
         addSubview(icon)
         addSubview(label)
         
@@ -49,6 +51,17 @@ class VLandingCell:UICollectionViewCell
         NSLayoutConstraint.width(
             view:label,
             constant:kLabelWidth)
+        
+        NSLayoutConstraint.topToTop(
+            view:border,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:border,
+            constant:kBorderHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:border,
+            toView:self,
+            margin:kBorderHorizontal)
     }
     
     required init?(coder:NSCoder)
@@ -78,7 +91,7 @@ class VLandingCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            backgroundColor = UIColor(white:1, alpha:0.15)
+            backgroundColor = UIColor(white:1, alpha:0.2)
         }
         else
         {
