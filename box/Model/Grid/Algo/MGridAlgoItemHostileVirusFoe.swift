@@ -99,5 +99,9 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     {
         super.addDefeated()
         
+        let path:String = "\(firebasePath())/\(FDbAlgoHostileItem.defeated)"
+        FMain.sharedInstance.db.updateChild(
+            path:path,
+            json:defeated)
     }
 }

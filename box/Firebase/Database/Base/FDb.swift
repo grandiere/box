@@ -7,6 +7,7 @@ class FDb
     static let algoBug:String = "algoBug"
     static let algoVirus:String = "algoVirus"
     static let algoAid:String = "algoAid"
+    static let harvest:String = "harvest"
     private let reference:FIRDatabaseReference
     
     init()
