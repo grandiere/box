@@ -1,9 +1,11 @@
 import UIKit
+import FirebaseDatabase
 
 class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
 {
     let userId:String
     private let kCreditsMultiplier:CGFloat = 2
+    private let kHarvestMultiplier:Int = 10
     
     convenience init(
         firebaseId:String,
@@ -99,9 +101,63 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     {
         super.addDefeated()
         
+        let score:Int = harvestScore()
+        
+        let path:String = "\(FDb.harvest)/\(userId)"
+        FMain.sharedInstance.db.transaction(
+            path:path)
+        { (mutableData:FIRMutableData) -> (FIRTransactionResult) in
+            
+            guard
+            
+                let currentHarvest:Any = mutableData.value,
+                let harvestItem:FDbHarvestItem = FDbHarvestItem(snapshot:currentHarvest)
+            
+            else
+            {
+                return
+            }
+            
+            
+        }
+        
+        FMain.sharedInstance.database.transaction(
+            path:path)
+        { (mutableData:FIRMutableData) -> (FIRTransactionResult) in
+            
+            if let currentLikes:Int = mutableData.value as? Int
+            {
+                let newLikes:Int = currentLikes + deltaLike
+                mutableData.value = newLikes
+            }
+            else
+            {
+                if deltaLike > 0
+                {
+                    mutableData.value = deltaLike
+                }
+                else
+                {
+                    mutableData.value = 0
+                }
+            }
+            
+            let transationResult:FIRTransactionResult = FIRTransactionResult.success(
+                withValue:mutableData)
+            
+            return transationResult
+        }
+        
         let path:String = "\(firebasePath())/\(FDbAlgoHostileItem.defeated)"
         FMain.sharedInstance.db.updateChild(
             path:path,
             json:defeated)
+    }
+    
+    //MARK: private
+    
+    private func harvestScore() -> Int
+    {
+        return level * kHarvestMultiplier
     }
 }

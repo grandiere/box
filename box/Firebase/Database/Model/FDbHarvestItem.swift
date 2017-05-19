@@ -9,10 +9,10 @@ class FDbHarvestItem:FDbProtocol
     let kills:Int
     private let kDefault:Int = 0
     
-    init()
+    init(score:Int, kills:Int)
     {
-        score = kDefault
-        kills = kDefault
+        self.score = score
+        self.kills = kills
     }
     
     //MARK: node protocol
