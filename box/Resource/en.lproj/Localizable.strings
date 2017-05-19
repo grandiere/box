@@ -80,7 +80,8 @@
 "MGridVisorTakeStatsMemory_name"="Memory";
 "MGridVisorTakeStatsNetwork_name"="Network";
 "MGridVisorTakeStatsProcessor_name"="Processor";
-"MSession_levelUp"="Level up";
+"MSessionLevelUp_levelUp"="Level up";
+"MSessionLevelUp_maxLevel"="You are Max Level";
 "MDistanceMetre_name"="metres";
 "MDistanceMetre_shortName"="m";
 "MDistanceFoot_name"="feet";

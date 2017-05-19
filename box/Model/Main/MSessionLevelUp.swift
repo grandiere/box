@@ -2,6 +2,9 @@ import Foundation
 
 class MSessionLevelUp
 {
+    private static let kResourceName:String = "ResourceLevels"
+    private static let kResourceExtension:String = "plist"
+    
     class func levelUp()
     {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
@@ -12,37 +15,40 @@ class MSessionLevelUp
     
     private class func asyncLevelUp()
     {
+        guard
+            
+            let resourceLevels:URL = Bundle.main.url(
+                forResource:kResourceName,
+                withExtension:kResourceExtension),
+            let levelsArray:NSArray = NSArray(
+                contentsOf:resourceLevels),
+            let levelsList:[Int] = levelsArray as? [Int]
+            
+        else
+        {
+            return
+        }
+        
         let level:Int = MSession.sharedInstance.level
         let score:Int = MSession.sharedInstance.score
+        let scoreForLevelUp:Int = levelsList[level]
         
-        let scoreForLevelUp:Int = level * kScoreLevelRatio
-        
-        if score > scoreForLevelUp
+        if score >= scoreForLevelUp
         {
             let maxLevel:Int = Int(DUser.kMaxStats)
-            level += 1
             
-            if level > maxLevel
+            if level < maxLevel
             {
-                level = maxLevel
+                MSession.sharedInstance.performLevelUp()
+                
+                let message:String = NSLocalizedString("MSessionLevelUp_levelUp", comment:"")
+                VToast.messageBlue(message:message)
             }
-            
-            guard
-                
-                let userPath:String = firebasePath()
-                
-                else
+            else
             {
-                return
+                let message:String = NSLocalizedString("MSessionLevelUp_maxLevel", comment:"")
+                VToast.messageOrange(message:message)
             }
-            
-            let path:String = "\(userPath)/\(FDbUserItem.level)"
-            FMain.sharedInstance.db.updateChild(
-                path:path,
-                json:level)
-            
-            let message:String = NSLocalizedString("MSession_levelUp", comment:"")
-            VToast.messageBlue(message:message)
         }
     }
 }

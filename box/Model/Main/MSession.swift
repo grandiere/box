@@ -308,4 +308,23 @@ class MSession
             energyCost:energyRequired)
         settings?.stats?.virusReleaseSuccess()
     }
+    
+    func performLevelUp()
+    {
+        level += 1
+        
+        guard
+            
+            let userPath:String = firebasePath()
+            
+        else
+        {
+            return
+        }
+        
+        let path:String = "\(userPath)/\(FDbUserItem.level)"
+        FMain.sharedInstance.db.updateChild(
+            path:path,
+            json:level)
+    }
 }
