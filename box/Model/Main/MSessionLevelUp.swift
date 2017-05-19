@@ -39,10 +39,13 @@ class MSessionLevelUp
             
             if level < maxLevel
             {
-                MSession.sharedInstance.performLevelUp()
-                
-                let message:String = NSLocalizedString("MSessionLevelUp_levelUp", comment:"")
-                VToast.messageBlue(message:message)
+                DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+                {
+                    MSession.sharedInstance.performLevelUp()
+                    
+                    let message:String = NSLocalizedString("MSessionLevelUp_levelUp", comment:"")
+                    VToast.messageBlue(message:message)
+                }
             }
             else
             {
