@@ -6,7 +6,7 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
     private weak var viewBar:VLandingBar!
     private weak var collectionView:VCollection!
     private weak var spinner:VSpinner?
-    private let kBarHeight:CGFloat = 60
+    private let kBarHeight:CGFloat = 150
     private let kCellHeight:CGFloat = 90
     private let kCollectionBottom:CGFloat = 20
     private let kDeselectTime:TimeInterval = 0.2
