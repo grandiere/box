@@ -33,7 +33,7 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
         
         let blur:VBlur = VBlur.dark()
         
-        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.2))
+        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.3))
         
         let collectionView:VCollection = VCollection()
         collectionView.isScrollEnabled = false

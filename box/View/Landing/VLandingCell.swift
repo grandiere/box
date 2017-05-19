@@ -4,14 +4,15 @@ class VLandingCell:UICollectionViewCell
 {
     private weak var icon:UIImageView!
     private weak var label:UILabel!
-    private let kLabelHeight:CGFloat = 30
+    private let kLabelHeight:CGFloat = 90
+    private let kAlphaSelected:CGFloat = 0.4
+    private let kAlphaNotSelected:CGFloat = 1
     
     override init(frame:CGRect)
     {
         super.init(frame:frame)
         clipsToBounds = true
-        
-        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.2))
+        backgroundColor = UIColor.clear
         
         let icon:UIImageView = UIImageView()
         icon.isUserInteractionEnabled = false
@@ -25,43 +26,25 @@ class VLandingCell:UICollectionViewCell
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clear
         label.font = UIFont.bold(size:14)
-        label.textColor = UIColor.white
+        label.textAlignment = NSTextAlignment.center
         self.label = label
         
-        addSubview(border)
         addSubview(icon)
         addSubview(label)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.equals(
             view:icon,
             toView:self)
-        NSLayoutConstraint.leftToLeft(
-            view:icon,
-            toView:self)
-        NSLayoutConstraint.width(
-            view:icon,
-            constant:kIconWidth)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.bottomToBottom(
             view:label,
-            toView:self)
-        NSLayoutConstraint.leftToRight(
-            view:label,
-            toView:icon)
-        NSLayoutConstraint.width(
-            view:label,
-            constant:kLabelWidth)
-        
-        NSLayoutConstraint.topToTop(
-            view:border,
             toView:self)
         NSLayoutConstraint.height(
-            view:border,
-            constant:kBorderHeight)
+            view:label,
+            constant:kLabelHeight)
         NSLayoutConstraint.equalsHorizontal(
-            view:border,
-            toView:self,
-            margin:kBorderHorizontal)
+            view:label,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
@@ -91,11 +74,13 @@ class VLandingCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            backgroundColor = UIColor(white:1, alpha:0.2)
+            icon.alpha = kAlphaSelected
+            label.textColor = UIColor.gridOrange
         }
         else
         {
-            backgroundColor = UIColor.clear
+            icon.alpha = kAlphaNotSelected
+            label.textColor = UIColor.white
         }
     }
     

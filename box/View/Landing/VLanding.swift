@@ -7,7 +7,7 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
     private weak var collectionView:VCollection!
     private weak var spinner:VSpinner?
     private let kBarHeight:CGFloat = 150
-    private let kCellHeight:CGFloat = 100
+    private let kCellHeight:CGFloat = 180
     private let kCollectionBottom:CGFloat = 20
     private let kDeselectTime:TimeInterval = 0.2
     
@@ -98,8 +98,9 @@ class VLanding:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
         let width:CGFloat = collectionView.bounds.size.width
+        let width_2:CGFloat = width / 2.0
         let size:CGSize = CGSize(
-            width:width,
+            width:width_2,
             height:kCellHeight)
         
         return size
