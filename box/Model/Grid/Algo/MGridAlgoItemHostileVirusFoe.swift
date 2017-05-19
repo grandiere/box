@@ -108,50 +108,33 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
             path:path)
         { (mutableData:FIRMutableData) -> (FIRTransactionResult) in
             
-            guard
+            var newHarvestItem:FDbHarvestItem?
             
-                let currentHarvest:Any = mutableData.value,
-                let harvestItem:FDbHarvestItem = FDbHarvestItem(snapshot:currentHarvest)
-            
-            else
+            if let currentHarvest:Any = mutableData.value
             {
-                return
-            }
-            
-            
-        }
-        
-        FMain.sharedInstance.database.transaction(
-            path:path)
-        { (mutableData:FIRMutableData) -> (FIRTransactionResult) in
-            
-            if let currentLikes:Int = mutableData.value as? Int
-            {
-                let newLikes:Int = currentLikes + deltaLike
-                mutableData.value = newLikes
-            }
-            else
-            {
-                if deltaLike > 0
+                if let harvestItem:FDbHarvestItem = FDbHarvestItem(snapshot:currentHarvest)
                 {
-                    mutableData.value = deltaLike
-                }
-                else
-                {
-                    mutableData.value = 0
+                    newHarvestItem = FDbHarvestItem(
+                        score:harvestItem.score + score,
+                        kills:harvestItem.kills + 1)
                 }
             }
             
-            let transationResult:FIRTransactionResult = FIRTransactionResult.success(
+            if newHarvestItem == nil
+            {
+                newHarvestItem = FDbHarvestItem(
+                    score:score,
+                    kills:1)
+            }
+            
+            let harvestJson:Any? = newHarvestItem?.json()
+            mutableData.value = harvestJson
+            
+            let transactionResult:FIRTransactionResult = FIRTransactionResult.success(
                 withValue:mutableData)
             
-            return transationResult
+            return transactionResult
         }
-        
-        let path:String = "\(firebasePath())/\(FDbAlgoHostileItem.defeated)"
-        FMain.sharedInstance.db.updateChild(
-            path:path,
-            json:defeated)
     }
     
     //MARK: private
