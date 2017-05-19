@@ -5,7 +5,7 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     private weak var controller:CGrid!
     private weak var spinner:VSpinner!
     private weak var collectionView:VCollection!
-    private let kBarHeight:CGFloat = 220
+    private let kBarHeight:CGFloat = 150
     private let kCollectionBottom:CGFloat = 20
     private let kCellHeight:CGFloat = 110
     private let kAfterSelect:TimeInterval = 0.2
@@ -38,8 +38,8 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
                 right:0)
         }
         
-        addSubview(viewBar)
         addSubview(collectionView)
+        addSubview(viewBar)
         addSubview(spinner)
         
         NSLayoutConstraint.equals(
