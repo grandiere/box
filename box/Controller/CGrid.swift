@@ -158,6 +158,11 @@ class CGrid:CController, CLLocationManagerDelegate
             horizontal:CParent.TransitionHorizontal.fromRight)
     }
     
+    func openHarvest()
+    {
+        
+    }
+    
     //MARK: location delegate
     
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations:[CLLocation])
