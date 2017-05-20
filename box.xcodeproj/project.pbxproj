@@ -293,6 +293,7 @@
 		DAE2657C1ED016AE00E886F8 /* MGridItemHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2657B1ED016AE00E886F8 /* MGridItemHarvest.swift */; };
 		DAE2657E1ED0175200E886F8 /* CGridHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2657D1ED0175200E886F8 /* CGridHarvest.swift */; };
 		DAE265811ED0179200E886F8 /* VGridHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE265801ED0179200E886F8 /* VGridHarvest.swift */; };
+		DAE265831ED0209500E886F8 /* VGridHarvestBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE265821ED0209500E886F8 /* VGridHarvestBar.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -625,6 +626,7 @@
 		DAE2657B1ED016AE00E886F8 /* MGridItemHarvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridItemHarvest.swift; sourceTree = "<group>"; };
 		DAE2657D1ED0175200E886F8 /* CGridHarvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridHarvest.swift; sourceTree = "<group>"; };
 		DAE265801ED0179200E886F8 /* VGridHarvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridHarvest.swift; sourceTree = "<group>"; };
+		DAE265821ED0209500E886F8 /* VGridHarvestBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridHarvestBar.swift; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DAF15D341E9D32BB0000E6B9 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -1377,6 +1379,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE265801ED0179200E886F8 /* VGridHarvest.swift */,
+				DAE265821ED0209500E886F8 /* VGridHarvestBar.swift */,
 			);
 			path = GridHarvest;
 			sourceTree = "<group>";
@@ -1859,6 +1862,7 @@
 				DA31F6971EC207CA003978C7 /* VStoreCell.swift in Sources */,
 				DAF15D6B1E9D32BB0000E6B9 /* VParent.swift in Sources */,
 				DA6D30FE1EC52C900018E0B1 /* MHelpAntivirusIntro.swift in Sources */,
+				DAE265831ED0209500E886F8 /* VGridHarvestBar.swift in Sources */,
 				DA8C06EB1EC63E01000DF6D4 /* MHelpEnergyAids.swift in Sources */,
 				DA59D77B1EB3D15500EB2973 /* FDbAlgoHostileBug.swift in Sources */,
 				DA09609D1EC0F2A00005BE96 /* MBoards.swift in Sources */,
