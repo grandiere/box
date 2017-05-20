@@ -16,7 +16,15 @@ class VGridHarvest:VView
         
         addSubview(viewBar)
         
-        
+        NSLayoutConstraint.topToTop(
+            view:viewBar,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:viewBar,
+            constant:kBarHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewBar,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
