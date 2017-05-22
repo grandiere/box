@@ -1,13 +1,16 @@
 import UIKit
 
-class VGridHarvestCell:UICollectionViewCell
+class VGridHarvestBarCollect:UIButton
 {
-    override init(frame:CGRect)
+    private weak var controller:CGridHarvest!
+    
+    init(controller:CGridHarvest)
     {
         super.init(frame:frame)
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
+        self.controller = controller
     }
     
     required init?(coder:NSCoder)
