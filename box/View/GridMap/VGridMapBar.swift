@@ -24,7 +24,7 @@ class VGridMapBar:UIView
         labelCount.translatesAutoresizingMaskIntoConstraints = false
         labelCount.backgroundColor = UIColor.clear
         labelCount.textAlignment = NSTextAlignment.center
-        labelCount.font = UIFont.regular(size:14)
+        labelCount.font = UIFont.regular(size:15)
         labelCount.textColor = UIColor.black
         self.labelCount = labelCount
         
