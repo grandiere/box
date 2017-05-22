@@ -34,6 +34,7 @@
 "VGridHarvestSubbar_labelLevel"="Level";
 "VGridHarvestSubbar_labelKills"="Rounds";
 "VGridHarvestSubbar_labelAge"="Created";
+"VGridMapBar_labelCount"="%@ items";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";

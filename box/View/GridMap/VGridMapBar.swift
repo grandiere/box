@@ -3,6 +3,7 @@ import UIKit
 class VGridMapBar:UIView
 {
     private weak var controller:CGridMap!
+    private weak var labelCount:UILabel!
     private let kBorderHeight:CGFloat = 1
     private let kButtonWidth:CGFloat = 60
     
@@ -17,6 +18,15 @@ class VGridMapBar:UIView
         let blur:VBlur = VBlur.light()
         
         let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.4))
+        
+        let labelCount:UILabel = UILabel()
+        labelCount.isUserInteractionEnabled = false
+        labelCount.translatesAutoresizingMaskIntoConstraints = false
+        labelCount.backgroundColor = UIColor.clear
+        labelCount.textAlignment = NSTextAlignment.center
+        labelCount.font = UIFont.regular(size:14)
+        labelCount.textColor = UIColor.black
+        self.labelCount = labelCount
         
         let backButton:UIButton = UIButton()
         backButton.translatesAutoresizingMaskIntoConstraints = false
@@ -52,11 +62,16 @@ class VGridMapBar:UIView
         
         addSubview(blur)
         addSubview(border)
+        addSubview(labelCount)
         addSubview(backButton)
         addSubview(buttonUser)
         
         NSLayoutConstraint.equals(
             view:blur,
+            toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:labelCount,
             toView:self)
         
         NSLayoutConstraint.height(
@@ -88,6 +103,26 @@ class VGridMapBar:UIView
         NSLayoutConstraint.width(
             view:buttonUser,
             constant:kButtonWidth)
+        
+        let countInt:Int = controller.modelAlgo.items.count
+        let countNumber:NSNumber = countInt as NSNumber
+        let numberFormatter:NumberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        
+        guard
+            
+            let numberString:String = numberFormatter.string(from:countNumber)
+        
+        else
+        {
+            return
+        }
+        
+        let countString:String = String(
+            format:NSLocalizedString("VGridMapBar_labelCount", comment:""),
+            numberString)
+        
+        labelCount.text = countString
     }
     
     required init?(coder:NSCoder)
