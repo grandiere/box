@@ -16,7 +16,7 @@ class VGridMapBar:UIView
         
         let blur:VBlur = VBlur.light()
         
-        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.1))
+        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.4))
         
         let backButton:UIButton = UIButton()
         backButton.translatesAutoresizingMaskIntoConstraints = false

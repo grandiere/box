@@ -58,6 +58,7 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
             return
         }
         
+        selectAnnotation(userLocation, animated:true)
         centerLocation(locationCoordinate:userCoordinated)
     }
     

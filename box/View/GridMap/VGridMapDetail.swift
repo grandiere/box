@@ -18,7 +18,7 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
-        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.3))
+        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.4))
         
         let blur:VBlur = VBlur.light()
         
