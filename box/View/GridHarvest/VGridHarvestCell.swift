@@ -4,7 +4,7 @@ class VGridHarvestCell:UICollectionViewCell
 {
     private weak var labelKills:UILabel!
     private weak var labelAge:UILabel!
-    private let kImageMargin:CGFloat = 20
+    private let kImageMargin:CGFloat = 15
     private let kImageWidth:CGFloat = 60
     
     override init(frame:CGRect)

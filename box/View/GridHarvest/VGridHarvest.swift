@@ -2,12 +2,13 @@ import UIKit
 
 class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
+    private(set) weak var viewBar:VGridHarvestBar!
     private weak var controller:CGridHarvest!
     private weak var spinner:VSpinner!
     private weak var collectionView:VCollection!
-    private(set) weak var viewBar:VGridHarvestBar!
     private let kBarHeight:CGFloat = 150
-    private let kCellHeight:CGFloat = 100
+    private let kSubbarHeight:CGFloat = 30
+    private let kCellHeight:CGFloat = 65
     private let kHeaderHeight:CGFloat = 200
     private let kCollectionBottom:CGFloat = 20
     
@@ -18,6 +19,8 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
         
         let viewBar:VGridHarvestBar = VGridHarvestBar(controller:self.controller)
         self.viewBar = viewBar
+        
+        let viewSubbar:VGridHarvestSubbar = VGridHarvestSubbar()
         
         let spinner:VSpinner = VSpinner()
         self.spinner = spinner
@@ -34,13 +37,14 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
             flow.sectionInset = UIEdgeInsets(
-                top:0,
+                top:kSubbarHeight,
                 left:0,
                 bottom:kCollectionBottom,
                 right:0)
         }
         
         addSubview(viewBar)
+        addSubview(viewSubbar)
         addSubview(spinner)
         addSubview(collectionView)
         
@@ -62,6 +66,16 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
             toView:self)
         NSLayoutConstraint.equalsHorizontal(
             view:collectionView,
+            toView:self)
+        
+        NSLayoutConstraint.topToBottom(
+            view:viewSubbar,
+            toView:viewBar)
+        NSLayoutConstraint.height(
+            view:viewSubbar,
+            constant:kSubbarHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewSubbar,
             toView:self)
         
         NSLayoutConstraint.equals(
@@ -158,7 +172,7 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
         
         if indexPath.item % 2 == 0
         {
-            cell.backgroundColor = UIColor(white:1, alpha:0)
+            cell.backgroundColor = UIColor(white:1, alpha:0.1)
         }
         else
         {
