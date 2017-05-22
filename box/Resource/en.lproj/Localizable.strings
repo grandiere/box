@@ -30,6 +30,7 @@
 "VGridHarvestBarCollect_labelGet"="Get";
 "VGridHarvestBarCollect_labelScoreTitle"="XP";
 "VGridHarvestBarCollect_labelKillsTitle"="Kills";
+"VGridHarvestHeader_label"="You have no virus active";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";

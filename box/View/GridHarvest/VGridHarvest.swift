@@ -1,6 +1,6 @@
 import UIKit
 
-class VGridHarvest:VView
+class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private weak var controller:CGridHarvest!
     private(set) weak var viewBar:VGridHarvestBar!
@@ -30,5 +30,17 @@ class VGridHarvest:VView
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: collectionView delegate
+    
+    func numberOfSections(in collectionView:UICollectionView) -> Int
+    {
+        return 1
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
+    {
+        return 0
     }
 }
