@@ -48,11 +48,13 @@
 "MGridVisorCamera_errorNoOutput"="Unable to connect camera output";
 "MGridVisorGPS_errorAuth"="Can't access your location";
 "MGridItemMap_title"="Map";
-"MGridItemMap_subtitle"="\nLong distance view";
+"MGridItemMap_subtitle"="\nThe Grid overview";
 "MGridItemVisor_title"="Visor";
-"MGridItemVisor_subtitle"="\nAugmented Reality";
+"MGridItemVisor_subtitle"="\nPlay in The Grid";
 "MGridItemReleaseVirus_title"="Release virus";
 "MGridItemReleaseVirus_subtitle"="\nDeploy a virus here";
+"MGridItemHarvest_title"="Harvest";
+"MGridItemHarvest_subtitle"="\nCollect xp from your viruses";
 "MGridVisorDetailItemHeaderBug_title"="Bug";
 "MGridVisorDetailItemHeaderAid_title"="Power Up";
 "MGridVisorDetailItemHeaderVirusFriendly_title"="Virus friendly";

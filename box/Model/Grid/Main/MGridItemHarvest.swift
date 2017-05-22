@@ -4,7 +4,7 @@ class MGridItemHarvest:MGridItem
 {
     init()
     {
-        let image:UIImage = #imageLiteral(resourceName: "assetGenericVisor")
+        let image:UIImage = #imageLiteral(resourceName: "assetGenericHarvest")
         let title:String = NSLocalizedString("MGridItemHarvest_title", comment:"")
         let subtitle:String = NSLocalizedString("MGridItemHarvest_subtitle", comment:"")
         
