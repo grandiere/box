@@ -2,7 +2,19 @@ import UIKit
 
 class CGridHarvest:CController
 {
+    let model:MGridHarvest
     private weak var viewHarvest:VGridHarvest!
+    
+    override init()
+    {
+        model = MGridHarvest()
+        super.init()
+    }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
     
     override func loadView()
     {
@@ -11,37 +23,10 @@ class CGridHarvest:CController
         view = viewHarvest
     }
     
-    //MARK: private
-    
-    private func asyncLoadHarvest()
+    override func viewDidAppear(_ animated:Bool)
     {
-        guard
-            
-            let userId:String = MSession.sharedInstance.settings?.firebaseId
-        
-        else
-        {
-            return
-        }
-        
-        let path:String = "\(FDb.harvest)/\(userId)/"
-        
-        FMain.sharedInstance.db.listenOnce(
-            path:path,
-            nodeType:FDbHarvestItem.self)
-        { [weak self] (data:FDbProtocol?) in
-            
-            guard
-            
-                let harvestItem:FDbHarvestItem = data as? FDbHarvestItem
-            
-            else
-            {
-                return
-            }
-            
-            
-        }
+        super.viewDidAppear(animated)
+        model.loadHarvest(controller:self)
     }
     
     //MARK: public
@@ -49,14 +34,5 @@ class CGridHarvest:CController
     func back()
     {
         parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
-    }
-    
-    func loadHarvest()
-    {
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        { [weak self] in
-            
-            self?.asyncLoadHarvest()
-        }
     }
 }
