@@ -6,7 +6,7 @@ class VGridHarvestBarCollect:UIButton
     
     init(controller:CGridHarvest)
     {
-        super.init(frame:frame)
+        super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
