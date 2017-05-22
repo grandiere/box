@@ -4,12 +4,13 @@ class VGridHarvestBar:UIView
 {
     private weak var controller:CGridHarvest!
     private weak var viewCollect:VGridHarvestBarCollect!
-    private let kCollectWidth:CGFloat = 140
-    private let kCollectHeight:CGFloat = 34
+    private let kCollectWidth:CGFloat = 160
+    private let kCollectHeight:CGFloat = 32
+    private let kCollectRight:CGFloat = -10
     private let kCollectBottom:CGFloat = -10
     private let kButtonWidth:CGFloat = 60
     private let kBorderHeight:CGFloat = 1
-    private let kImageHeight:CGFloat = 70
+    private let kImageHeight:CGFloat = 80
     
     init(controller:CGridHarvest)
     {
@@ -55,13 +56,15 @@ class VGridHarvestBar:UIView
         
         NSLayoutConstraint.bottomToBottom(
             view:viewCollect,
-            toView:self)
+            toView:self,
+            constant:kCollectBottom)
         NSLayoutConstraint.height(
             view:viewCollect,
             constant:kCollectHeight)
         NSLayoutConstraint.rightToRight(
             view:viewCollect,
-            toView:self)
+            toView:self,
+            constant:kCollectRight)
         NSLayoutConstraint.width(
             view:viewCollect,
             constant:kCollectWidth)

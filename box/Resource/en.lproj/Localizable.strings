@@ -27,6 +27,7 @@
 "VSettingsCellDistance_segmentedFeet"="Feet";
 "VSettingsCellReview_button"="Review in the App Store";
 "VSettingsCellShare_button"="Share app";
+"VGridHarvestBarCollect_labelGet"="Get";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";

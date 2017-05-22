@@ -4,7 +4,7 @@ class VGridHarvest:VView
 {
     private weak var controller:CGridHarvest!
     private weak var viewBar:VGridHarvestBar!
-    private let kBarHeight:CGFloat = 120
+    private let kBarHeight:CGFloat = 150
     
     override init(controller:CController)
     {
