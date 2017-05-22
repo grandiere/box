@@ -6,10 +6,9 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     private var model:MGridMapDetail?
     private weak var controller:CGridMap!
     private weak var collectionView:VCollection!
-    private let kCornerRadius:CGFloat = 6
-    private let kBorderWidth:CGFloat = 1
     private let kHeaderHeight:CGFloat = 90
     private let kCellHeight:CGFloat = 24
+    private let kBorderHeight:CGFloat = 1
     
     init(controller:CGridMap)
     {
@@ -17,10 +16,9 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = kCornerRadius
-        layer.borderWidth = kBorderWidth
-        layer.borderColor = UIColor(white:0, alpha:0.1).cgColor
         self.controller = controller
+        
+        let border:VBorder = VBorder(color:UIColor(white:0, alpha:0.3))
         
         let blur:VBlur = VBlur.light()
         
@@ -39,6 +37,7 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         }
         
         addSubview(blur)
+        addSubview(border)
         addSubview(collectionView)
         
         NSLayoutConstraint.equals(
@@ -47,6 +46,16 @@ class VGridMapDetail:UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         
         NSLayoutConstraint.equals(
             view:collectionView,
+            toView:self)
+        
+        NSLayoutConstraint.topToTop(
+            view:border,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:border,
+            constant:kBorderHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:border,
             toView:self)
     }
     
