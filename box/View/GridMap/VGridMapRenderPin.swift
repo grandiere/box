@@ -32,9 +32,9 @@ class VGridMapRenderPin:MKAnnotationView
         }
     }
     
-    //MARK: private
+    //MARK: public
     
-    private func hover()
+    func hover()
     {
         guard
             
