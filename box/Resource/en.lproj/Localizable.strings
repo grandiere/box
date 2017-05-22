@@ -95,6 +95,7 @@
 "MDistanceMetre_shortName"="m";
 "MDistanceFoot_name"="feet";
 "MDistanceFoot_shortName"="ft";
+"MGridHarvest_success"="Points harvested!";
 "MTutorialBasic_name"="Game basics";
 "MTutorialDebug_name"="Debug";
 "MTutorialAntivirus_name"="Antivirus";

@@ -118,7 +118,14 @@ class MGridHarvest
     
     private func finishCollecting()
     {
+        let message:String = NSLocalizedString("MGridHarvest_success", comment:"")
+        VAlert.messageBlue(message:message)
         
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.ascynLoadHarvest()
+        }
     }
     
     //MARK: public
@@ -198,5 +205,9 @@ class MGridHarvest
             
             return transactionResult
         }
+        
+        MSession.sharedInstance.addScore(credits:harvestScore)
+        
+        finishCollecting()
     }
 }
