@@ -3,9 +3,9 @@ import UIKit
 class VGridHarvestBar:UIView
 {
     private weak var controller:CGridHarvest!
-    private weak var viewCollect:VGridHarvestBarCollect!
+    private(set) weak var viewCollect:VGridHarvestBarCollect!
     private let kCollectWidth:CGFloat = 160
-    private let kCollectHeight:CGFloat = 32
+    private let kCollectHeight:CGFloat = 34
     private let kCollectRight:CGFloat = -10
     private let kCollectBottom:CGFloat = -10
     private let kButtonWidth:CGFloat = 60
