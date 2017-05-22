@@ -131,7 +131,9 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        return 0
+        let count:Int = controller.model.items.count
+        
+        return count
     }
     
     func collectionView(_ collectionView:UICollectionView, viewForSupplementaryElementOfKind kind:String, at indexPath:IndexPath) -> UICollectionReusableView
@@ -153,6 +155,15 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
             VGridHarvestCell.reusableIdentifier,
             for:indexPath) as! VGridHarvestCell
         cell.config(virus:item)
+        
+        if indexPath.item % 2 == 0
+        {
+            cell.backgroundColor = UIColor(white:1, alpha:0)
+        }
+        else
+        {
+            cell.backgroundColor = UIColor.clear
+        }
         
         return cell
     }

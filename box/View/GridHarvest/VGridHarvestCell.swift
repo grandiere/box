@@ -11,7 +11,6 @@ class VGridHarvestCell:UICollectionViewCell
     {
         super.init(frame:frame)
         clipsToBounds = true
-        backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         isUserInteractionEnabled = false
         

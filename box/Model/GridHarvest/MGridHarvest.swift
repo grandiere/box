@@ -56,13 +56,8 @@ class MGridHarvest
     {
         harvestScore = 0
         harvestKills = 0
-        items = []
         
-        DispatchQueue.main.async
-        { [weak self] in
-            
-            self?.controller?.harvestLoaded()
-        }
+        filterVirus()
     }
     
     private func harvestLoaded(harvestItem:FDbHarvestItem)
