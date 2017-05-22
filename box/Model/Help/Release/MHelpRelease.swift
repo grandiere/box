@@ -7,11 +7,13 @@ class MHelpRelease:MHelp
         let itemIntro:MHelpReleaseIntro = MHelpReleaseIntro()
         let itemSpend:MHelpReleaseSpend = MHelpReleaseSpend()
         let itemLevel:MHelpReleaseLevel = MHelpReleaseLevel()
+        let itemHarvest:MHelpReleaseHarvest = MHelpReleaseHarvest()
         
         let items:[MHelpProtocol] = [
             itemIntro,
             itemSpend,
-            itemLevel]
+            itemLevel,
+            itemHarvest]
         
         super.init(items:items)
     }

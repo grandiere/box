@@ -149,6 +149,8 @@
 "MHelpAidsSkills_description"="\nSometimes they can increase your stats";
 "MHelpAidsEnergy_title"="Your energy";
 "MHelpAidsEnergy_description"="\nSometimes they can restore your energy";
+"MHelpReleaseHarvest_title"="Harvest";
+"MHelpReleaseHarvest_description"="\nEvery time your viruses defeat another player they get Experience Points for you, collect them on Harvest screen";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";
