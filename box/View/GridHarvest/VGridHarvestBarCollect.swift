@@ -201,22 +201,11 @@ class VGridHarvestBarCollect:UIButton
             }
             else
             {
-                if controller.model.harvestScore > 0
-                {
-                    layer.borderColor = UIColor.gridBlue.cgColor
-                    viewGet.backgroundColor = UIColor.gridBlue
-                    labelGet.textColor = UIColor.black
-                    labelScore.textColor = UIColor.white
-                    labelKills.textColor = UIColor.white
-                }
-                else
-                {
-                    layer.borderColor = UIColor(white:1, alpha:0.2).cgColor
-                    viewGet.backgroundColor = UIColor(white:1, alpha:0.2)
-                    labelGet.textColor = UIColor(white:1, alpha:0.4)
-                    labelScore.textColor = UIColor(white:1, alpha:0.6)
-                    labelKills.textColor = UIColor(white:1, alpha:0.6)
-                }
+                layer.borderColor = UIColor.gridBlue.cgColor
+                viewGet.backgroundColor = UIColor.gridBlue
+                labelGet.textColor = UIColor.black
+                labelScore.textColor = UIColor.white
+                labelKills.textColor = UIColor.white
             }
         }
         else
@@ -235,6 +224,15 @@ class VGridHarvestBarCollect:UIButton
     {
         labelScore.text = "\(controller.model.harvestScore)"
         labelKills.text = "\(controller.model.harvestKills)"
+        
+        if controller.model.harvestScore > 0
+        {
+            isUserInteractionEnabled = true
+        }
+        else
+        {
+            isUserInteractionEnabled = false
+        }
         
         hover()
     }

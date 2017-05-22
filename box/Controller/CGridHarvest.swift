@@ -3,10 +3,12 @@ import UIKit
 class CGridHarvest:CController
 {
     let model:MGridHarvest
+    private weak var modelAlgo:MGridAlgo?
     private(set) weak var viewHarvest:VGridHarvest!
     
-    override init()
+    init(modelAlgo:MGridAlgo)
     {
+        self.modelAlgo = modelAlgo
         model = MGridHarvest()
         super.init()
     }
@@ -26,7 +28,19 @@ class CGridHarvest:CController
     override func viewDidAppear(_ animated:Bool)
     {
         super.viewDidAppear(animated)
-        model.loadHarvest(controller:self)
+        
+        guard
+            
+            let modelAlgo:MGridAlgo = self.modelAlgo
+        
+        else
+        {
+            return
+        }
+        
+        model.loadHarvest(
+            controller:self,
+            modelAlgo:modelAlgo)
     }
     
     //MARK: public
@@ -34,5 +48,10 @@ class CGridHarvest:CController
     func back()
     {
         parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
+    
+    func harvestLoaded()
+    {
+        viewHarvest.refresh()
     }
 }

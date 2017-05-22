@@ -160,7 +160,8 @@ class CGrid:CController, CLLocationManagerDelegate
     
     func openHarvest()
     {
-        let controllerHarvest:CGridHarvest = CGridHarvest()
+        let controllerHarvest:CGridHarvest = CGridHarvest(
+            modelAlgo:modelAlgo)
         parentController.push(
             controller:controllerHarvest,
             horizontal:CParent.TransitionHorizontal.fromRight)
