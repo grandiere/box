@@ -1398,8 +1398,8 @@
 			children = (
 				DAE265801ED0179200E886F8 /* VGridHarvest.swift */,
 				DAE265821ED0209500E886F8 /* VGridHarvestBar.swift */,
-				DA8D05BD1ED3719B00098411 /* VGridHarvestSubbar.swift */,
 				DAE265861ED292B000E886F8 /* VGridHarvestBarCollect.swift */,
+				DA8D05BD1ED3719B00098411 /* VGridHarvestSubbar.swift */,
 				DAE265841ED2924000E886F8 /* VGridHarvestCell.swift */,
 				DA8D05B91ED3562000098411 /* VGridHarvestHeader.swift */,
 			);

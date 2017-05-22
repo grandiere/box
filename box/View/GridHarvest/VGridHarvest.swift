@@ -8,7 +8,7 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
     private weak var collectionView:VCollection!
     private let kBarHeight:CGFloat = 150
     private let kSubbarHeight:CGFloat = 40
-    private let kCellHeight:CGFloat = 65
+    private let kCellHeight:CGFloat = 50
     private let kHeaderHeight:CGFloat = 200
     private let kCollectionBottom:CGFloat = 20
     
@@ -110,6 +110,12 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
         collectionView.isHidden = false
         collectionView.reloadData()
         viewBar.viewCollect.displayHarvest()
+    }
+    
+    func loading()
+    {
+        spinner.startAnimating()
+        collectionView.isHidden = true
     }
     
     //MARK: collectionView delegate

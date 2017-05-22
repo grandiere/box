@@ -24,6 +24,10 @@ class VGridHarvestBarCollect:UIButton
         layer.cornerRadius = kCornerRadius
         layer.borderWidth = KBorderWidth
         isUserInteractionEnabled = false
+        addTarget(
+            self,
+            action:#selector(actionCollect(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.controller = controller
         
         let viewGet:UIView = UIView()
@@ -183,6 +187,14 @@ class VGridHarvestBarCollect:UIButton
         {
             hover()
         }
+    }
+    
+    //MARK: actions
+    
+    func actionCollect(sender button:UIButton)
+    {
+        button.isUserInteractionEnabled = false
+        controller.collect()
     }
     
     //MARK: private

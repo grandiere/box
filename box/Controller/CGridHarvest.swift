@@ -54,4 +54,15 @@ class CGridHarvest:CController
     {
         viewHarvest.refresh()
     }
+    
+    func collect()
+    {
+        viewHarvest.loading()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.model.collect()
+        }
+    }
 }

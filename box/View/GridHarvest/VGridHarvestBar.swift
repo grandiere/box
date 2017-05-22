@@ -40,7 +40,7 @@ class VGridHarvestBar:UIView
             action:#selector(actionBack(sender:)),
             for:UIControlEvents.touchUpInside)
         
-        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.1))
+        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.2))
         
         let imageView:UIImageView = UIImageView()
         imageView.isUserInteractionEnabled = false

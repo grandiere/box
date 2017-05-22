@@ -1,4 +1,5 @@
 import Foundation
+import FirebaseDatabase
 
 class MGridHarvest
 {
@@ -98,7 +99,7 @@ class MGridHarvest
         items.sort
         { (virusA, virusB) -> Bool in
             
-            return virusA.created > virusB.created
+            return virusA.created < virusB.created
         }
         
         self.items = items
@@ -115,6 +116,11 @@ class MGridHarvest
         }
     }
     
+    private func finishCollecting()
+    {
+        
+    }
+    
     //MARK: public
     
     func loadHarvest(
@@ -128,6 +134,69 @@ class MGridHarvest
         { [weak self] in
             
             self?.ascynLoadHarvest()
+        }
+    }
+    
+    func collect()
+    {
+        guard
+            
+            let userId:String = MSession.sharedInstance.settings?.firebaseId
+        
+        else
+        {
+            finishCollecting()
+            
+            return
+        }
+        
+        let harvestScore:Int = self.harvestScore
+        let harvestKills:Int = self.harvestKills
+        
+        let path:String = "\(FDb.harvest)/\(userId)"
+        FMain.sharedInstance.db.transaction(
+            path:path)
+        { (mutableData:FIRMutableData) -> (FIRTransactionResult) in
+            
+            var newHarvestItem:FDbHarvestItem?
+            
+            if let currentHarvest:Any = mutableData.value
+            {
+                if let harvestItem:FDbHarvestItem = FDbHarvestItem(snapshot:currentHarvest)
+                {
+                    var newScore:Int = harvestItem.score - harvestScore
+                    var newKills:Int = harvestItem.kills - harvestKills
+                    
+                    if newScore < 0
+                    {
+                        newScore = 0
+                    }
+                    
+                    if newKills < 0
+                    {
+                        newKills = 0
+                    }
+                    
+                    newHarvestItem = FDbHarvestItem(
+                        score:newScore,
+                        kills:newKills)
+                }
+            }
+            
+            if newHarvestItem == nil
+            {
+                newHarvestItem = FDbHarvestItem(
+                    score:0,
+                    kills:0)
+            }
+            
+            let harvestJson:Any? = newHarvestItem?.json()
+            mutableData.value = harvestJson
+            
+            let transactionResult:FIRTransactionResult = FIRTransactionResult.success(
+                withValue:mutableData)
+            
+            return transactionResult
         }
     }
 }
