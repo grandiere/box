@@ -14,11 +14,9 @@ class VGridCell:UICollectionViewCell
     override init(frame:CGRect)
     {
         attributesTitle = [
-            NSFontAttributeName:UIFont.bold(size:16),
-            NSForegroundColorAttributeName:UIColor.white]
+            NSFontAttributeName:UIFont.bold(size:16)]
         attributesSubtitle = [
-            NSFontAttributeName:UIFont.bold(size:12),
-            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.7)]
+            NSFontAttributeName:UIFont.regular(size:12)]
         
         super.init(frame:frame)
         clipsToBounds = true
@@ -90,11 +88,13 @@ class VGridCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            alpha = kAlphaSelected
+            imageView.alpha = kAlphaSelected
+            label.textColor = UIColor.gridOrange
         }
         else
         {
-            alpha = kAlphaNotSelected
+            imageView.alpha = kAlphaNotSelected
+            label.textColor = UIColor.white
         }
     }
     

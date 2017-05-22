@@ -10,4 +10,11 @@ class CGridHarvest:CController
         self.viewHarvest = viewHarvest
         view = viewHarvest
     }
+    
+    //MARK: public
+    
+    func back()
+    {
+        parentController.pop(horizontal:CParent.TransitionHorizontal.fromRight)
+    }
 }
