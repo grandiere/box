@@ -29,6 +29,7 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
         collectionView.dataSource = self
         collectionView.registerCell(cell:VGridHarvestCell.self)
         collectionView.registerHeader(header:VGridHarvestHeader.self)
+        self.collectionView = collectionView
         
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
@@ -78,6 +79,15 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
         spinner.stopAnimating()
     }
     
+    //MARK: private
+    
+    private func modelAtIndex(index:IndexPath) -> MGridAlgoItemHostileVirusFriendly
+    {
+        let item:MGridAlgoItemHostileVirusFriendly = controller.model.items[index.item]
+        
+        return item
+    }
+    
     //MARK: public
     
     func refresh()
@@ -90,7 +100,7 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
     
     //MARK: collectionView delegate
 
-    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, referenceSizeForHeaderInSection section:Int) -> CGSize
     {
         let size:CGSize
         
@@ -102,6 +112,14 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
         {
             size = CGSize(width:0, height:kHeaderHeight)
         }
+        
+        return size
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
+    {
+        let width:CGFloat = bounds.maxX
+        let size:CGSize = CGSize(width:width, height:kCellHeight)
         
         return size
     }
@@ -127,13 +145,25 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
         return header
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) ->UICollectionViewCell
     {
+        let item:MGridAlgoItemHostileVirusFriendly = modelAtIndex(index:indexPath)
         let cell:VGridHarvestCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
             VGridHarvestCell.reusableIdentifier,
             for:indexPath) as! VGridHarvestCell
+        cell.config(virus:item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldSelectItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
+    }
+    
+    func collectionView(_ collectionView:UICollectionView, shouldHighlightItemAt indexPath:IndexPath) -> Bool
+    {
+        return false
     }
 }
