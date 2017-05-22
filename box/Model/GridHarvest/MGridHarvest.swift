@@ -41,7 +41,19 @@ class MGridHarvest
                 return
             }
             
+            self?.harvestLoaded(harvestItem:harvestItem)
+        }
+    }
+    
+    private func harvestLoaded(harvestItem:FDbHarvestItem)
+    {
+        harvestScore = harvestItem.score
+        harvestKills = harvestItem.kills
+        
+        DispatchQueue.main.async
+        { [weak self] in
             
+            self?.controller?.viewHarvest.viewBar.viewCollect.displayHarvest()
         }
     }
     

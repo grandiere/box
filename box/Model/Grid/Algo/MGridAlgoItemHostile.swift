@@ -51,7 +51,8 @@ class MGridAlgoItemHostile:MGridAlgoItem
             return
         }
         
-        var credits:CGFloat = CGFloat(level)
+        let credsMultiplier:CGFloat = creditsMultiplier()
+        var credits:CGFloat = CGFloat(level) * credsMultiplier
         let timestamp:TimeInterval = Date().timeIntervalSince1970
         let deltaTime:TimeInterval = timestamp - created
         let timeDivided:TimeInterval = deltaTime / kTimeDivisor
@@ -59,7 +60,7 @@ class MGridAlgoItemHostile:MGridAlgoItem
         let maxCredits:CGFloat = CGFloat(DEnergy.kMaxEnergy)
         credits += CGFloat(timeDivided)
         credits += CGFloat(distanceDivided)
-        credits *= creditsMultiplier()
+        credits *= credsMultiplier
         
         if credits > maxCredits
         {

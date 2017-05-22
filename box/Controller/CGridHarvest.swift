@@ -3,7 +3,7 @@ import UIKit
 class CGridHarvest:CController
 {
     let model:MGridHarvest
-    private weak var viewHarvest:VGridHarvest!
+    private(set) weak var viewHarvest:VGridHarvest!
     
     override init()
     {

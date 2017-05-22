@@ -8,7 +8,7 @@ class VGridHarvestBarCollect:UIButton
     private weak var viewGet:UIView!
     private let KBorderWidth:CGFloat = 1
     private let kCornerRadius:CGFloat = 6
-    private let kGetWidth:CGFloat = 80
+    private let kGetWidth:CGFloat = 65
     private let kAmountRight:CGFloat = -5
     
     init(controller:CGridHarvest)
@@ -113,10 +113,20 @@ class VGridHarvestBarCollect:UIButton
             }
             else
             {
-                layer.borderColor = UIColor.gridBlue.cgColor
-                viewGet.backgroundColor = UIColor.gridBlue
-                labelGet.textColor = UIColor.black
-                labelAmount.textColor = UIColor.white
+                if controller.model.harvestScore > 0
+                {
+                    layer.borderColor = UIColor.gridBlue.cgColor
+                    viewGet.backgroundColor = UIColor.gridBlue
+                    labelGet.textColor = UIColor.black
+                    labelAmount.textColor = UIColor.white
+                }
+                else
+                {
+                    layer.borderColor = UIColor(white:1, alpha:0.2).cgColor
+                    viewGet.backgroundColor = UIColor(white:1, alpha:0.2)
+                    labelGet.textColor = UIColor(white:1, alpha:0.4)
+                    labelAmount.textColor = UIColor(white:1, alpha:0.4)
+                }
             }
         }
         else
@@ -126,5 +136,14 @@ class VGridHarvestBarCollect:UIButton
             labelGet.textColor = UIColor(white:1, alpha:0.4)
             labelAmount.textColor = UIColor(white:1, alpha:0.4)
         }
+    }
+    
+    //MARK: public
+    
+    func displayHarvest()
+    {
+        labelAmount.text = "\(controller.model.harvestScore)"
+        
+        hover()
     }
 }
