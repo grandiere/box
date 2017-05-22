@@ -22,6 +22,8 @@ class MGridHarvest
             
         else
         {
+            self.harvestNotLoaded()
+            
             return
         }
         
@@ -38,10 +40,24 @@ class MGridHarvest
                 
             else
             {
+                self?.harvestNotLoaded()
+                
                 return
             }
             
             self?.harvestLoaded(harvestItem:harvestItem)
+        }
+    }
+    
+    private func harvestNotLoaded()
+    {
+        harvestScore = 0
+        harvestKills = 0
+        
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.controller?.viewHarvest.viewBar.viewCollect.displayHarvest()
         }
     }
     

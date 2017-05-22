@@ -8,6 +8,7 @@ class MGridAlgoItemHostile:MGridAlgoItem
     private(set) var credits:Int
     private let kTimeDivisor:TimeInterval = 36000
     private let kDistanceDivisor:CLLocationDistance = 20
+    private let kLevelMultiplier:CGFloat = 4
     
     init(
         firebaseId:String,
@@ -52,7 +53,7 @@ class MGridAlgoItemHostile:MGridAlgoItem
         }
         
         let credsMultiplier:CGFloat = creditsMultiplier()
-        var credits:CGFloat = CGFloat(level) * credsMultiplier
+        var credits:CGFloat = CGFloat(level) * kLevelMultiplier
         let timestamp:TimeInterval = Date().timeIntervalSince1970
         let deltaTime:TimeInterval = timestamp - created
         let timeDivided:TimeInterval = deltaTime / kTimeDivisor

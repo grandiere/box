@@ -28,6 +28,8 @@
 "VSettingsCellReview_button"="Review in the App Store";
 "VSettingsCellShare_button"="Share app";
 "VGridHarvestBarCollect_labelGet"="Get";
+"VGridHarvestBarCollect_labelScoreTitle"="XP";
+"VGridHarvestBarCollect_labelKillsTitle"="Kills";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";

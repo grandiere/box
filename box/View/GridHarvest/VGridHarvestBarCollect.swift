@@ -3,13 +3,17 @@ import UIKit
 class VGridHarvestBarCollect:UIButton
 {
     private weak var controller:CGridHarvest!
-    private weak var labelAmount:UILabel!
+    private weak var labelScore:UILabel!
+    private weak var labelKills:UILabel!
     private weak var labelGet:UILabel!
     private weak var viewGet:UIView!
+    private let kLabelsHeight:CGFloat = 26
+    private let kTitlesHeigth:CGFloat = 18
     private let KBorderWidth:CGFloat = 1
     private let kCornerRadius:CGFloat = 6
-    private let kGetWidth:CGFloat = 65
-    private let kAmountRight:CGFloat = -5
+    private let kGetWidth:CGFloat = 50
+    private let kScoreMultiplier:CGFloat = 0.6
+    private let kKillsMultiplier:CGFloat = 0.4
     
     init(controller:CGridHarvest)
     {
@@ -28,6 +32,12 @@ class VGridHarvestBarCollect:UIButton
         viewGet.clipsToBounds = true
         self.viewGet = viewGet
         
+        let viewLabels:UIView = UIView()
+        viewLabels.isUserInteractionEnabled = false
+        viewLabels.translatesAutoresizingMaskIntoConstraints = false
+        viewLabels.clipsToBounds = true
+        viewLabels.backgroundColor = UIColor.clear
+        
         let labelGet:UILabel = UILabel()
         labelGet.isUserInteractionEnabled = false
         labelGet.backgroundColor = UIColor.clear
@@ -37,21 +47,61 @@ class VGridHarvestBarCollect:UIButton
         labelGet.text = NSLocalizedString("VGridHarvestBarCollect_labelGet", comment:"")
         self.labelGet = labelGet
         
-        let labelAmount:UILabel = UILabel()
-        labelAmount.translatesAutoresizingMaskIntoConstraints = false
-        labelAmount.isUserInteractionEnabled = false
-        labelAmount.backgroundColor = UIColor.clear
-        labelAmount.textAlignment = NSTextAlignment.right
-        labelAmount.font = UIFont.numeric(size:14)
-        self.labelAmount = labelAmount
+        let labelScore:UILabel = UILabel()
+        labelScore.translatesAutoresizingMaskIntoConstraints = false
+        labelScore.isUserInteractionEnabled = false
+        labelScore.backgroundColor = UIColor.clear
+        labelScore.textAlignment = NSTextAlignment.center
+        labelScore.font = UIFont.numeric(size:15)
+        self.labelScore = labelScore
+
+        let labelKills:UILabel = UILabel()
+        labelKills.translatesAutoresizingMaskIntoConstraints = false
+        labelKills.isUserInteractionEnabled = false
+        labelKills.backgroundColor = UIColor.clear
+        labelKills.textAlignment = NSTextAlignment.center
+        labelKills.font = UIFont.numeric(size:15)
+        self.labelKills = labelKills
+        
+        let labelScoreTitle:UILabel = UILabel()
+        labelScoreTitle.isUserInteractionEnabled = false
+        labelScoreTitle.translatesAutoresizingMaskIntoConstraints = false
+        labelScoreTitle.backgroundColor = UIColor.clear
+        labelScoreTitle.textAlignment = NSTextAlignment.center
+        labelScoreTitle.font = UIFont.regular(size:10)
+        labelScoreTitle.textColor = UIColor.white
+        labelScoreTitle.text = NSLocalizedString("VGridHarvestBarCollect_labelScoreTitle", comment:"")
+        
+        let labelKillsTitle:UILabel = UILabel()
+        labelKillsTitle.isUserInteractionEnabled = false
+        labelKillsTitle.translatesAutoresizingMaskIntoConstraints = false
+        labelKillsTitle.backgroundColor = UIColor.clear
+        labelKillsTitle.textAlignment = NSTextAlignment.center
+        labelKillsTitle.font = UIFont.regular(size:10)
+        labelKillsTitle.textColor = UIColor.white
+        labelKillsTitle.text = NSLocalizedString("VGridHarvestBarCollect_labelKillsTitle", comment:"")
         
         viewGet.addSubview(labelGet)
+        viewLabels.addSubview(labelScore)
+        viewLabels.addSubview(labelKills)
+        viewLabels.addSubview(labelScoreTitle)
+        viewLabels.addSubview(labelKillsTitle)
+        addSubview(viewLabels)
         addSubview(viewGet)
-        addSubview(labelAmount)
         
         NSLayoutConstraint.equals(
             view:labelGet,
             toView:viewGet)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:viewLabels,
+            toView:self)
+        NSLayoutConstraint.rightToLeft(
+            view:viewLabels,
+            toView:viewGet)
+        NSLayoutConstraint.leftToLeft(
+            view:viewLabels,
+            toView:self)
         
         NSLayoutConstraint.equalsVertical(
             view:viewGet,
@@ -63,16 +113,53 @@ class VGridHarvestBarCollect:UIButton
             view:viewGet,
             constant:kGetWidth)
         
-        NSLayoutConstraint.equalsVertical(
-            view:labelAmount,
-            toView:self)
+        NSLayoutConstraint.topToTop(
+            view:labelScore,
+            toView:viewLabels)
+        NSLayoutConstraint.height(
+            view:labelScore,
+            constant:kLabelsHeight)
+        NSLayoutConstraint.width(
+            view:labelScore,
+            toView:viewLabels,
+            multiplier:kScoreMultiplier)
+        NSLayoutConstraint.rightToRight(
+            view:labelScore,
+            toView:viewLabels)
+        
+        NSLayoutConstraint.topToTop(
+            view:labelKills,
+            toView:viewLabels)
+        NSLayoutConstraint.height(
+            view:labelKills,
+            constant:kLabelsHeight)
         NSLayoutConstraint.leftToLeft(
-            view:labelAmount,
-            toView:self)
-        NSLayoutConstraint.rightToLeft(
-            view:labelAmount,
-            toView:viewGet,
-            constant:kAmountRight)
+            view:labelKills,
+            toView:viewLabels)
+        NSLayoutConstraint.width(
+            view:labelKills,
+            toView:viewLabels,
+            multiplier:kKillsMultiplier)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:labelScoreTitle,
+            toView:viewLabels)
+        NSLayoutConstraint.height(
+            view:labelScoreTitle,
+            constant:kTitlesHeigth)
+        NSLayoutConstraint.equalsHorizontal(
+            view:labelScore,
+            toView:labelScoreTitle)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:labelKillsTitle,
+            toView:viewLabels)
+        NSLayoutConstraint.height(
+            view:labelKillsTitle,
+            constant:kTitlesHeigth)
+        NSLayoutConstraint.equalsHorizontal(
+            view:labelKillsTitle,
+            toView:labelKills)
         
         hover()
     }
@@ -109,7 +196,8 @@ class VGridHarvestBarCollect:UIButton
                 layer.borderColor = UIColor.gridOrange.cgColor
                 viewGet.backgroundColor = UIColor.gridOrange
                 labelGet.textColor = UIColor.white
-                labelAmount.textColor = UIColor.gridOrange
+                labelScore.textColor = UIColor.gridOrange
+                labelKills.textColor = UIColor.gridOrange
             }
             else
             {
@@ -118,14 +206,16 @@ class VGridHarvestBarCollect:UIButton
                     layer.borderColor = UIColor.gridBlue.cgColor
                     viewGet.backgroundColor = UIColor.gridBlue
                     labelGet.textColor = UIColor.black
-                    labelAmount.textColor = UIColor.white
+                    labelScore.textColor = UIColor.white
+                    labelKills.textColor = UIColor.white
                 }
                 else
                 {
                     layer.borderColor = UIColor(white:1, alpha:0.2).cgColor
                     viewGet.backgroundColor = UIColor(white:1, alpha:0.2)
                     labelGet.textColor = UIColor(white:1, alpha:0.4)
-                    labelAmount.textColor = UIColor(white:1, alpha:0.4)
+                    labelScore.textColor = UIColor(white:1, alpha:0.6)
+                    labelKills.textColor = UIColor(white:1, alpha:0.6)
                 }
             }
         }
@@ -134,7 +224,8 @@ class VGridHarvestBarCollect:UIButton
             layer.borderColor = UIColor(white:1, alpha:0.2).cgColor
             viewGet.backgroundColor = UIColor(white:1, alpha:0.2)
             labelGet.textColor = UIColor(white:1, alpha:0.4)
-            labelAmount.textColor = UIColor(white:1, alpha:0.4)
+            labelScore.textColor = UIColor(white:1, alpha:0.4)
+            labelKills.textColor = UIColor(white:1, alpha:0.4)
         }
     }
     
@@ -142,7 +233,8 @@ class VGridHarvestBarCollect:UIButton
     
     func displayHarvest()
     {
-        labelAmount.text = "\(controller.model.harvestScore)"
+        labelScore.text = "\(controller.model.harvestScore)"
+        labelKills.text = "\(controller.model.harvestKills)"
         
         hover()
     }
