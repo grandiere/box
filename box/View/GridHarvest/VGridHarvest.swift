@@ -4,6 +4,7 @@ class VGridHarvest:VView
 {
     private weak var controller:CGridHarvest!
     private weak var viewBar:VGridHarvestBar!
+    private weak var buttonCollect:UIButton!
     private let kBarHeight:CGFloat = 150
     
     override init(controller:CController)
@@ -13,6 +14,9 @@ class VGridHarvest:VView
         
         let viewBar:VGridHarvestBar = VGridHarvestBar(controller:self.controller)
         self.viewBar = viewBar
+        
+        let buttonCollect:UIButton = UIButton()
+        self.buttonCollect = buttonCollect
         
         addSubview(viewBar)
         
