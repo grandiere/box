@@ -31,6 +31,9 @@
 "VGridHarvestBarCollect_labelScoreTitle"="XP";
 "VGridHarvestBarCollect_labelKillsTitle"="Kills";
 "VGridHarvestHeader_label"="You have no virus active";
+"VGridHarvestSubbar_labelLevel"="Level";
+"VGridHarvestSubbar_labelKills"="Rounds";
+"VGridHarvestSubbar_labelAge"="Created";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";

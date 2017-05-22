@@ -7,7 +7,7 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
     private weak var spinner:VSpinner!
     private weak var collectionView:VCollection!
     private let kBarHeight:CGFloat = 150
-    private let kSubbarHeight:CGFloat = 30
+    private let kSubbarHeight:CGFloat = 40
     private let kCellHeight:CGFloat = 65
     private let kHeaderHeight:CGFloat = 200
     private let kCollectionBottom:CGFloat = 20
@@ -44,9 +44,9 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         
         addSubview(viewBar)
+        addSubview(collectionView)
         addSubview(viewSubbar)
         addSubview(spinner)
-        addSubview(collectionView)
         
         NSLayoutConstraint.topToTop(
             view:viewBar,
@@ -172,11 +172,11 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
         
         if indexPath.item % 2 == 0
         {
-            cell.backgroundColor = UIColor(white:1, alpha:0.1)
+            cell.backgroundColor = UIColor.clear
         }
         else
         {
-            cell.backgroundColor = UIColor.clear
+            cell.backgroundColor = UIColor(white:1, alpha:0.1)
         }
         
         return cell

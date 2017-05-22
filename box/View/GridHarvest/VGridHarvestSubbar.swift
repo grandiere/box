@@ -11,7 +11,7 @@ class VGridHarvestSubbar:UIView
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
         isUserInteractionEnabled = false
-        backgroundColor = UIColor(white:0, alpha:0.9)
+        backgroundColor = UIColor(white:0, alpha:0.7)
         
         let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.3))
         
