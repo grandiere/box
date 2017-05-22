@@ -5,8 +5,11 @@ class VGridHarvestBar:UIView
     private weak var controller:CGridHarvest!
     private weak var viewCollect:VGridHarvestBarCollect!
     private let kCollectWidth:CGFloat = 140
+    private let kCollectHeight:CGFloat = 34
+    private let kCollectBottom:CGFloat = -10
     private let kButtonWidth:CGFloat = 60
     private let kBorderHeight:CGFloat = 1
+    private let kImageHeight:CGFloat = 70
     
     init(controller:CGridHarvest)
     {
@@ -38,13 +41,24 @@ class VGridHarvestBar:UIView
         
         let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.3))
         
-        addSubview(viewCollect)
-        addSubview(backButton)
-        addSubview(border)
+        let imageView:UIImageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.contentMode = UIViewContentMode.center
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = #imageLiteral(resourceName: "assetGenericHarvest")
         
-        NSLayoutConstraint.equalsVertical(
+        addSubview(imageView)
+        addSubview(border)
+        addSubview(backButton)
+        addSubview(viewCollect)
+        
+        NSLayoutConstraint.bottomToBottom(
             view:viewCollect,
             toView:self)
+        NSLayoutConstraint.height(
+            view:viewCollect,
+            constant:kCollectHeight)
         NSLayoutConstraint.rightToRight(
             view:viewCollect,
             toView:self)
@@ -70,6 +84,16 @@ class VGridHarvestBar:UIView
             constant:kBorderHeight)
         NSLayoutConstraint.equalsHorizontal(
             view:border,
+            toView:self)
+        
+        NSLayoutConstraint.topToTop(
+            view:imageView,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:imageView,
+            constant:kImageHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:imageView,
             toView:self)
     }
     
