@@ -139,12 +139,10 @@ class CGridVisorMatch:CController
             return
         }
         
-        model.addDefeated()
-        
-        let path:String = "\(model.firebasePath())/\(FDbAlgoHostileItem.defeated)"
-        FMain.sharedInstance.db.updateChild(
-            path:path,
-            json:model.defeated)
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        {
+            model.addDefeated()
+        }
     }
     
     private func updateStats()

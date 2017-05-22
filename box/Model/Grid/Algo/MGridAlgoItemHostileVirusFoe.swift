@@ -1,9 +1,11 @@
 import UIKit
+import FirebaseDatabase
 
 class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
 {
     let userId:String
     private let kCreditsMultiplier:CGFloat = 2
+    private let kHarvestMultiplier:Int = 10
     
     convenience init(
         firebaseId:String,
@@ -93,5 +95,52 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     override func destroySuccess()
     {
         MSession.sharedInstance.settings?.stats?.antivirusSuccess()
+    }
+    
+    override func addDefeated()
+    {
+        super.addDefeated()
+        
+        let score:Int = harvestScore()
+        
+        let path:String = "\(FDb.harvest)/\(userId)"
+        FMain.sharedInstance.db.transaction(
+            path:path)
+        { (mutableData:FIRMutableData) -> (FIRTransactionResult) in
+            
+            var newHarvestItem:FDbHarvestItem?
+            
+            if let currentHarvest:Any = mutableData.value
+            {
+                if let harvestItem:FDbHarvestItem = FDbHarvestItem(snapshot:currentHarvest)
+                {
+                    newHarvestItem = FDbHarvestItem(
+                        score:harvestItem.score + score,
+                        kills:harvestItem.kills + 1)
+                }
+            }
+            
+            if newHarvestItem == nil
+            {
+                newHarvestItem = FDbHarvestItem(
+                    score:score,
+                    kills:1)
+            }
+            
+            let harvestJson:Any? = newHarvestItem?.json()
+            mutableData.value = harvestJson
+            
+            let transactionResult:FIRTransactionResult = FIRTransactionResult.success(
+                withValue:mutableData)
+            
+            return transactionResult
+        }
+    }
+    
+    //MARK: private
+    
+    private func harvestScore() -> Int
+    {
+        return level * kHarvestMultiplier
     }
 }

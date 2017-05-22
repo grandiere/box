@@ -6,7 +6,8 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
     private weak var collectionView:VCollection!
     private let kBorderHeight:CGFloat = 1
     private let kBlurAlpha:CGFloat = 0.99
-    private let kCellWidth:CGFloat = 60
+    private let kCellSize:CGFloat = 60
+    private let kLogoHeight:CGFloat = 100
     private let kDeselectTime:TimeInterval = 0.3
     
     init(controller:CLanding)
@@ -17,6 +18,13 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
         translatesAutoresizingMaskIntoConstraints = false
         self.controller = controller
         
+        let imageView:UIImageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.contentMode = UIViewContentMode.center
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = #imageLiteral(resourceName: "assetGenericLandingLogo")
+        
         let blurContainer:UIView = UIView()
         blurContainer.isUserInteractionEnabled = false
         blurContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +33,7 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
         
         let blur:VBlur = VBlur.dark()
         
-        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.1))
+        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.3))
         
         let collectionView:VCollection = VCollection()
         collectionView.isScrollEnabled = false
@@ -38,11 +46,13 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
         if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
         {
             flow.scrollDirection = UICollectionViewScrollDirection.horizontal
+            flow.itemSize = CGSize(width:kCellSize, height:kCellSize)
         }
         
         blurContainer.addSubview(blur)
         addSubview(blurContainer)
         addSubview(border)
+        addSubview(imageView)
         addSubview(collectionView)
         
         NSLayoutConstraint.equals(
@@ -63,8 +73,24 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
             view:border,
             toView:self)
         
-        NSLayoutConstraint.equals(
+        NSLayoutConstraint.bottomToBottom(
             view:collectionView,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:collectionView,
+            constant:kCellSize)
+        NSLayoutConstraint.equalsHorizontal(
+            view:collectionView,
+            toView:self)
+        
+        NSLayoutConstraint.topToTop(
+            view:imageView,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:imageView,
+            constant:kLogoHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:imageView,
             toView:self)
     }
     
@@ -83,14 +109,6 @@ class VLandingBar:UIView, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     //MARK: collectionView delegate
-    
-    func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
-    {
-        let height:CGFloat = collectionView.bounds.maxY
-        let size:CGSize = CGSize(width:kCellWidth, height:height)
-        
-        return size
-    }
     
     func numberOfSections(in collectionView:UICollectionView) -> Int
     {

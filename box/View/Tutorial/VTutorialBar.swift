@@ -80,12 +80,9 @@ class VTutorialBar:UIView
             view:border,
             toView:self)
         
-        NSLayoutConstraint.topToTop(
+        NSLayoutConstraint.equalsVertical(
             view:backButton,
             toView:self)
-        NSLayoutConstraint.height(
-            view:backButton,
-            constant:kIconHeight)
         NSLayoutConstraint.leftToLeft(
             view:backButton,
             toView:self)

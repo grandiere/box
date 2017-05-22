@@ -9,10 +9,12 @@ class MGrid
         let itemMap:MGridItemMap = MGridItemMap()
         let itemVisor:MGridItemVisor = MGridItemVisor()
         let itemReleaseVirus:MGridItemReleaseVirus = MGridItemReleaseVirus()
+        let itemHarvest:MGridItemHarvest = MGridItemHarvest()
         
         items = [
             itemMap,
             itemVisor,
-            itemReleaseVirus]
+            itemReleaseVirus,
+            itemHarvest]
     }
 }

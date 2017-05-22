@@ -3,7 +3,7 @@ import MetalKit
 
 class VGridVisorMetal:MTKView
 {
-    private weak var controller:CGridVisor!
+    private weak var controller:CGridVisor?
     private let samplerState:MTLSamplerState
     private let commandQueue:MTLCommandQueue
     private let pipelineState:MTLRenderPipelineState
@@ -83,7 +83,7 @@ class VGridVisorMetal:MTKView
     override func draw()
     {
         super.draw()
-        controller.viewGridVisor.viewTarget.update()
+        controller?.viewGridVisor.viewTarget.update()
         
         guard
             
@@ -103,7 +103,7 @@ class VGridVisorMetal:MTKView
         renderEncoder.setFragmentSamplerState(
             samplerState,
             at:MetalConstants.kFragmentSamplerIndex)
-        controller.modelRender?.render(renderEncoder:renderEncoder)
+        controller?.modelRender?.render(renderEncoder:renderEncoder)
         
         renderEncoder.endEncoding()
         commandBuffer.present(drawable)

@@ -2,7 +2,7 @@ import UIKit
 
 class VHandlerField:UITextField, UITextFieldDelegate
 {
-    private weak var controller:CHandler!
+    private weak var controller:CHandler?
     private let kBorderHeight:CGFloat = 1
     private let kMaxCharacter:Int = 10
     
@@ -73,7 +73,7 @@ class VHandlerField:UITextField, UITextFieldDelegate
             DispatchQueue.main.async
             { [weak self] in
                 
-                self?.controller.updateWarning()
+                self?.controller?.updateWarning()
             }
         }
     }

@@ -8,7 +8,6 @@ class VGridMapRenderPin:MKAnnotationView
         let reuseIdentifier:String = VGridMapRenderPin.reusableIdentifier
         
         super.init(annotation:annotation, reuseIdentifier:reuseIdentifier)
-        hover()
     }
     
     required init?(coder:NSCoder)
@@ -32,9 +31,9 @@ class VGridMapRenderPin:MKAnnotationView
         }
     }
     
-    //MARK: private
+    //MARK: public
     
-    private func hover()
+    func hover()
     {
         guard
             

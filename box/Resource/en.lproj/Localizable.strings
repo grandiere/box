@@ -27,6 +27,14 @@
 "VSettingsCellDistance_segmentedFeet"="Feet";
 "VSettingsCellReview_button"="Review in the App Store";
 "VSettingsCellShare_button"="Share app";
+"VGridHarvestBarCollect_labelGet"="Get";
+"VGridHarvestBarCollect_labelScoreTitle"="XP";
+"VGridHarvestBarCollect_labelKillsTitle"="Kills";
+"VGridHarvestHeader_label"="You have no virus active";
+"VGridHarvestSubbar_labelLevel"="Level";
+"VGridHarvestSubbar_labelKills"="Rounds";
+"VGridHarvestSubbar_labelAge"="Created";
+"VGridMapBar_labelCount"="%@ items";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";
@@ -34,7 +42,7 @@
 "VStoreCellNotAvailable_label"="Not available";
 "VStoreBar_buttonRestore"="Restore purchases";
 
-"MLandingItemTheGrid_title"="Enter The Grid";
+"MLandingItemTheGrid_title"="The Grid";
 "MLandingItemTheProfile_title"="Profile";
 "MLandingItemTheStats_title"="Stats";
 "MLandingItemTheBoards_title"="Boards";
@@ -48,11 +56,13 @@
 "MGridVisorCamera_errorNoOutput"="Unable to connect camera output";
 "MGridVisorGPS_errorAuth"="Can't access your location";
 "MGridItemMap_title"="Map";
-"MGridItemMap_subtitle"="\nLong distance view";
+"MGridItemMap_subtitle"="\nOverview";
 "MGridItemVisor_title"="Visor";
-"MGridItemVisor_subtitle"="\nAugmented Reality";
+"MGridItemVisor_subtitle"="\nThe Grid";
 "MGridItemReleaseVirus_title"="Release virus";
 "MGridItemReleaseVirus_subtitle"="\nDeploy a virus here";
+"MGridItemHarvest_title"="Harvest";
+"MGridItemHarvest_subtitle"="\nCollect from your viruses";
 "MGridVisorDetailItemHeaderBug_title"="Bug";
 "MGridVisorDetailItemHeaderAid_title"="Power Up";
 "MGridVisorDetailItemHeaderVirusFriendly_title"="Virus friendly";
@@ -80,11 +90,13 @@
 "MGridVisorTakeStatsMemory_name"="Memory";
 "MGridVisorTakeStatsNetwork_name"="Network";
 "MGridVisorTakeStatsProcessor_name"="Processor";
-"MSession_levelUp"="Level up";
+"MSessionLevelUp_levelUp"="Level up";
+"MSessionLevelUp_maxLevel"="You are Max Level";
 "MDistanceMetre_name"="metres";
 "MDistanceMetre_shortName"="m";
 "MDistanceFoot_name"="feet";
 "MDistanceFoot_shortName"="ft";
+"MGridHarvest_success"="Points harvested!";
 "MTutorialBasic_name"="Game basics";
 "MTutorialDebug_name"="Debug";
 "MTutorialAntivirus_name"="Antivirus";
@@ -138,6 +150,8 @@
 "MHelpAidsSkills_description"="\nSometimes they can increase your stats";
 "MHelpAidsEnergy_title"="Your energy";
 "MHelpAidsEnergy_description"="\nSometimes they can restore your energy";
+"MHelpReleaseHarvest_title"="Harvest";
+"MHelpReleaseHarvest_description"="\nEvery time your viruses defeat another player they get Experience Points for you, collect them on Harvest screen";
 
 "MStorePurchasePlusRange_title"="Plus Range\n\n";
 "MStorePurchasePlusRange_descr"="Increase the Visor Range\nYou will be able to interact with further away elements";

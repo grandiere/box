@@ -8,7 +8,6 @@ class MSession
     private(set) var level:Int
     private(set) var score:Int
     private(set) var active:Bool
-    private let kScoreLevelRatio:Int = 100
     private let kReleaseVirusDivider:Int = 2
     
     private init()
@@ -221,39 +220,6 @@ class MSession
             object:nil)
     }
     
-    private func tryLevelUp()
-    {
-        let scoreForLevelUp:Int = level * kScoreLevelRatio
-        
-        if score > scoreForLevelUp
-        {
-            let maxLevel:Int = Int(DUser.kMaxStats)
-            level += 1
-            
-            if level > maxLevel
-            {
-                level = maxLevel
-            }
-            
-            guard
-                
-                let userPath:String = firebasePath()
-                
-            else
-            {
-                return
-            }
-            
-            let path:String = "\(userPath)/\(FDbUserItem.level)"
-            FMain.sharedInstance.db.updateChild(
-                path:path,
-                json:level)
-            
-            let message:String = NSLocalizedString("MSession_levelUp", comment:"")
-            VToast.messageBlue(message:message)
-        }
-    }
-    
     //MARK: public
     
     func loadSession()
@@ -282,10 +248,7 @@ class MSession
             path:path,
             json:score)
         
-        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
-        {
-            self.tryLevelUp()
-        }
+        MSessionLevelUp.levelUp()
     }
     
     func updateKills()
@@ -344,5 +307,24 @@ class MSession
         settings?.energy?.spendEnergy(
             energyCost:energyRequired)
         settings?.stats?.virusReleaseSuccess()
+    }
+    
+    func performLevelUp()
+    {
+        level += 1
+        
+        guard
+            
+            let userPath:String = firebasePath()
+            
+        else
+        {
+            return
+        }
+        
+        let path:String = "\(userPath)/\(FDbUserItem.level)"
+        FMain.sharedInstance.db.updateChild(
+            path:path,
+            json:level)
     }
 }

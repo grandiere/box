@@ -3,7 +3,7 @@ import UIKit
 class VSettingsHeader:UICollectionReusableView
 {
     private weak var controller:CSettings?
-    private let kBackButtonSize:CGFloat = 70
+    private let kBackButtonWidth:CGFloat = 70
     private let kVersionHeight:CGFloat = 20
     private let kVersionBottom:CGFloat = -68
     private let kVersionKey:String = "CFBundleShortVersionString"
@@ -53,15 +53,15 @@ class VSettingsHeader:UICollectionReusableView
             view:imageView,
             toView:self)
         
-        NSLayoutConstraint.topToTop(
+        NSLayoutConstraint.equalsVertical(
             view:backButton,
             toView:self)
         NSLayoutConstraint.leftToLeft(
             view:backButton,
             toView:self)
-        NSLayoutConstraint.size(
+        NSLayoutConstraint.width(
             view:backButton,
-            constant:kBackButtonSize)
+            constant:kBackButtonWidth)
         
         NSLayoutConstraint.bottomToBottom(
             view:labelVersion,

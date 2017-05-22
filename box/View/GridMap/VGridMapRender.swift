@@ -58,6 +58,7 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
             return
         }
         
+        selectAnnotation(userLocation, animated:true)
         centerLocation(locationCoordinate:userCoordinated)
     }
     
@@ -74,8 +75,9 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
             return nil
         }
         
-        var view:MKAnnotationView? = mapView.dequeueReusableAnnotationView(
-            withIdentifier:VGridMapRenderPin.reusableIdentifier)
+        var view:VGridMapRenderPin? = mapView.dequeueReusableAnnotationView(
+            withIdentifier:
+            VGridMapRenderPin.reusableIdentifier) as? VGridMapRenderPin
         
         if view == nil
         {
@@ -85,6 +87,8 @@ class VGridMapRender:MKMapView, MKMapViewDelegate
         {
             view!.annotation = modelAnnotation
         }
+        
+        view?.hover()
         
         return view
     }

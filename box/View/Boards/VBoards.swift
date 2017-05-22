@@ -96,6 +96,9 @@ class VBoards:VView, UICollectionViewDelegate, UICollectionViewDataSource, UICol
         spinner.stopAnimating()
         collectionView.isHidden = false
         collectionView.reloadData()
+        collectionView.scrollRectToVisible(
+            CGRect(x:0, y:0, width:1, height:1),
+            animated:false)
         viewBar.viewSelector.isUserInteractionEnabled = true
     }
     

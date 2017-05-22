@@ -3,7 +3,9 @@ import UIKit
 class VGridBar:UIView
 {
     private weak var controller:CGrid!
-    private let kButtonSize:CGFloat = 60
+    private let kButtonWidth:CGFloat = 60
+    private let kBorderHeight:CGFloat = 1
+    private let kBlurAlpha:CGFloat = 0.99
     
     init(controller:CGrid)
     {
@@ -36,21 +38,52 @@ class VGridBar:UIView
         imageView.clipsToBounds = true
         imageView.image = #imageLiteral(resourceName: "assetGenericTheGrid")
         
+        let border:VBorder = VBorder(color:UIColor(white:1, alpha:0.3))
+        
+        let blurContainer:UIView = UIView()
+        blurContainer.isUserInteractionEnabled = false
+        blurContainer.translatesAutoresizingMaskIntoConstraints = false
+        blurContainer.clipsToBounds = true
+        blurContainer.alpha = kBlurAlpha
+        
+        let blur:VBlur = VBlur.dark()
+        
+        blurContainer.addSubview(blur)
+        addSubview(blurContainer)
+        addSubview(border)
         addSubview(imageView)
         addSubview(backButton)
         
-        NSLayoutConstraint.topToTop(
+        NSLayoutConstraint.equals(
+            view:blur,
+            toView:blurContainer)
+        
+        NSLayoutConstraint.equals(
+            view:blurContainer,
+            toView:self)
+        
+        NSLayoutConstraint.equalsVertical(
             view:backButton,
             toView:self)
         NSLayoutConstraint.leftToLeft(
             view:backButton,
             toView:self)
-        NSLayoutConstraint.size(
+        NSLayoutConstraint.width(
             view:backButton,
-            constant:kButtonSize)
+            constant:kButtonWidth)
         
         NSLayoutConstraint.equals(
             view:imageView,
+            toView:self)
+        
+        NSLayoutConstraint.bottomToBottom(
+            view:border,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:border,
+            constant:kBorderHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:border,
             toView:self)
     }
     

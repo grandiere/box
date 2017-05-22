@@ -5,7 +5,8 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     private weak var controller:CGrid!
     private weak var spinner:VSpinner!
     private weak var collectionView:VCollection!
-    private let kBarHeight:CGFloat = 220
+    private let kBarHeight:CGFloat = 150
+    private let kCollectionBottom:CGFloat = 20
     private let kCellHeight:CGFloat = 110
     private let kAfterSelect:TimeInterval = 0.2
     
@@ -22,15 +23,23 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         
         let collectionView:VCollection = VCollection()
         collectionView.isHidden = true
-        collectionView.isScrollEnabled = false
-        collectionView.bounces = false
+        collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerCell(cell:VGridCell.self)
         self.collectionView = collectionView
         
-        addSubview(viewBar)
+        if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
+        {
+            flow.sectionInset = UIEdgeInsets(
+                top:kBarHeight,
+                left:0,
+                bottom:kCollectionBottom,
+                right:0)
+        }
+        
         addSubview(collectionView)
+        addSubview(viewBar)
         addSubview(spinner)
         
         NSLayoutConstraint.equals(
@@ -47,13 +56,7 @@ class VGrid:VView, UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             view:viewBar,
             toView:self)
         
-        NSLayoutConstraint.topToBottom(
-            view:collectionView,
-            toView:viewBar)
-        NSLayoutConstraint.bottomToBottom(
-            view:collectionView,
-            toView:self)
-        NSLayoutConstraint.equalsHorizontal(
+        NSLayoutConstraint.equals(
             view:collectionView,
             toView:self)
     }
