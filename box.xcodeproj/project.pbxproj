@@ -294,6 +294,7 @@
 		DAE2657E1ED0175200E886F8 /* CGridHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2657D1ED0175200E886F8 /* CGridHarvest.swift */; };
 		DAE265811ED0179200E886F8 /* VGridHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE265801ED0179200E886F8 /* VGridHarvest.swift */; };
 		DAE265831ED0209500E886F8 /* VGridHarvestBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE265821ED0209500E886F8 /* VGridHarvestBar.swift */; };
+		DAE265851ED2924000E886F8 /* VGridHarvestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE265841ED2924000E886F8 /* VGridHarvestCell.swift */; };
 		DAF15D551E9D32BB0000E6B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */; };
 		DAF15D561E9D32BB0000E6B9 /* CAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */; };
 		DAF15D571E9D32BB0000E6B9 /* CController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF15D341E9D32BB0000E6B9 /* CController.swift */; };
@@ -627,6 +628,7 @@
 		DAE2657D1ED0175200E886F8 /* CGridHarvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridHarvest.swift; sourceTree = "<group>"; };
 		DAE265801ED0179200E886F8 /* VGridHarvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridHarvest.swift; sourceTree = "<group>"; };
 		DAE265821ED0209500E886F8 /* VGridHarvestBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridHarvestBar.swift; sourceTree = "<group>"; };
+		DAE265841ED2924000E886F8 /* VGridHarvestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridHarvestCell.swift; sourceTree = "<group>"; };
 		DAF15D311E9D32BB0000E6B9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAF15D331E9D32BB0000E6B9 /* CAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAppDelegate.swift; sourceTree = "<group>"; };
 		DAF15D341E9D32BB0000E6B9 /* CController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CController.swift; sourceTree = "<group>"; };
@@ -1380,6 +1382,7 @@
 			children = (
 				DAE265801ED0179200E886F8 /* VGridHarvest.swift */,
 				DAE265821ED0209500E886F8 /* VGridHarvestBar.swift */,
+				DAE265841ED2924000E886F8 /* VGridHarvestCell.swift */,
 			);
 			path = GridHarvest;
 			sourceTree = "<group>";
@@ -1954,6 +1957,7 @@
 				DAF15D691E9D32BB0000E6B9 /* VCollection.swift in Sources */,
 				DA1D49A71EAA443C00C2392C /* DStatsExtension.swift in Sources */,
 				DAAA0EBA1EA8119E00756A17 /* VGridVisorDetailCellHeader.swift in Sources */,
+				DAE265851ED2924000E886F8 /* VGridHarvestCell.swift in Sources */,
 				DAF15D6D1E9D32BB0000E6B9 /* VSpinner.swift in Sources */,
 				DAF15D5D1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift in Sources */,
 				DA158C5B1EC3423500E4848C /* MSettingsShare.swift in Sources */,
