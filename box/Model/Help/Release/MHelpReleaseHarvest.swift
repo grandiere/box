@@ -38,7 +38,7 @@ class MHelpReleaseHarvest:MHelpProtocol
     {
         get
         {
-            return #imageLiteral(resourceName: "assetHelpReleaseLevel")
+            return #imageLiteral(resourceName: "assetHelpReleaseHarvest")
         }
     }
 }
