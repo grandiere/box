@@ -90,12 +90,9 @@ class VStoreBar:UIView
             view:icon,
             toView:self)
         
-        NSLayoutConstraint.topToTop(
+        NSLayoutConstraint.equalsVertical(
             view:buttonBack,
             toView:self)
-        NSLayoutConstraint.height(
-            view:buttonBack,
-            constant:kIconHeight)
         NSLayoutConstraint.leftToLeft(
             view:buttonBack,
             toView:self)
