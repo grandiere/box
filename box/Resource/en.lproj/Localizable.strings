@@ -1,7 +1,6 @@
 "VGridVisor_errorMetal"="Your device doesn't support Metal Graphics";
 "VGridVisorDetailCellDistance_labelTitle"="Distance";
 "VGridVisorDetailCellLevel_labelTitle"="Level";
-"VGridVisorBarEnergy_title"="Energy  ";
 "VGridVisorBarEnergy_percent"="%";
 "VGridVisorDetailCellMatch_energyTitle"="\nEnergy required   ";
 "VStatsBar_scoreTitle"="Score\n";

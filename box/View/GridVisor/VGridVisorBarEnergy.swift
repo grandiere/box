@@ -4,13 +4,35 @@ class VGridVisorBarEnergy:UIView
 {
     private weak var controller:CGridVisor!
     private weak var labelEnergy:UILabel!
-    private let stringTitle:NSAttributedString
+    private let circleColor:UIColor
+    private let outerColor:UIColor
+    private let rectOuter:CGRect
+    private let rectCircle:CGRect
     private let stringPercent:NSAttributedString
     private let attributesAmount:[String:AnyObject]
+    private let kOuterLeft:CGFloat = 5
+    private let kCircleLeft:CGFloat = 15
+    private let kOuterTop:CGFloat = -30
+    private let kCircleTop:CGFloat = -20
+    private let kOuterSize:CGFloat = 160
+    private let kCircleSize:CGFloat = 140
     private let kLabelRight:CGFloat = -10
     
     init(controller:CGridVisor)
     {
+        circleColor = UIColor(white:1, alpha:0.75)
+        outerColor = UIColor(white:1, alpha:0.2)
+        rectOuter = CGRect(
+            x:kOuterLeft,
+            y:kOuterTop,
+            width:kOuterSize,
+            height:kOuterSize)
+        rectCircle = CGRect(
+            x:kCircleLeft,
+            y:kCircleTop,
+            width:kCircleSize,
+            height:kCircleSize)
+        
         let attributesTitle:[String:AnyObject] = [
             NSFontAttributeName:UIFont.regular(size:12),
             NSForegroundColorAttributeName:UIColor(white:1, alpha:0.8)]
@@ -21,9 +43,6 @@ class VGridVisorBarEnergy:UIView
             NSFontAttributeName:UIFont.bold(size:20),
             NSForegroundColorAttributeName:UIColor.white]
         
-        stringTitle = NSAttributedString(
-            string:NSLocalizedString("VGridVisorBarEnergy_title", comment:""),
-            attributes:attributesTitle)
         stringPercent = NSAttributedString(
             string:NSLocalizedString("VGridVisorBarEnergy_percent", comment:""),
             attributes:attributesPercent)
@@ -61,6 +80,26 @@ class VGridVisorBarEnergy:UIView
         return nil
     }
     
+    override func draw(_ rect:CGRect)
+    {
+        guard
+        
+            let context:CGContext = UIGraphicsGetCurrentContext()
+        
+        else
+        {
+            return
+        }
+        
+        context.setFillColor(outerColor.cgColor)
+        context.addEllipse(in:rectOuter)
+        context.drawPath(using:CGPathDrawingMode.fill)
+        
+        context.setFillColor(circleColor.cgColor)
+        context.addEllipse(in:rectCircle)
+        context.drawPath(using:CGPathDrawingMode.fill)
+    }
+    
     //MARK: private
     
     private func asyncRefresh()
@@ -89,7 +128,6 @@ class VGridVisorBarEnergy:UIView
             attributes:attributesAmount)
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
-        mutableString.append(stringTitle)
         mutableString.append(stringAmount)
         mutableString.append(stringPercent)
         
