@@ -1,6 +1,6 @@
 import UIKit
 
-class VGridVisorTarget:UIView
+class VGridVisorTarget:UIButton
 {
     private weak var controller:CGridVisor!
     
@@ -10,22 +10,11 @@ class VGridVisorTarget:UIView
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
-        self.controller = controller
-        
-        let button:UIButton = UIButton()
-        button.backgroundColor = UIColor.clear
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
-        button.addTarget(
+        addTarget(
             self,
             action:#selector(actionButton(sender:)),
             for:UIControlEvents.touchUpInside)
-        
-        addSubview(button)
-        
-        NSLayoutConstraint.equals(
-            view:button,
-            toView:self)
+        self.controller = controller
     }
     
     required init?(coder:NSCoder)
