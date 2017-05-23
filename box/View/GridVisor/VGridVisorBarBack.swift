@@ -19,6 +19,10 @@ class VGridVisorBarBack:UIButton
         imageView!.clipsToBounds = true
         imageView!.contentMode = UIViewContentMode.center
         imageView!.tintColor = UIColor.white
+        addTarget(
+            self,
+            action:#selector(actionBack(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.controller = controller
     }
     
@@ -31,6 +35,7 @@ class VGridVisorBarBack:UIButton
     
     func actionBack(sender button:UIButton)
     {
+        isUserInteractionEnabled = false
         controller.back()
     }
 }

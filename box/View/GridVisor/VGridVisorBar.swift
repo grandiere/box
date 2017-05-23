@@ -6,8 +6,7 @@ class VGridVisorBar:UIView
     private(set) weak var viewRange:VGridVisorBarRange!
     private weak var viewBack:VGridVisorBarBack!
     private weak var controller:CGridVisor!
-    private let kBackSize:CGFloat = 80
-    private let kButtonWidth:CGFloat = 60
+    private let kBackSize:CGFloat = 70
     private let kEnergyWidth:CGFloat = 260
     private let kRangeWidth:CGFloat = 250
     
