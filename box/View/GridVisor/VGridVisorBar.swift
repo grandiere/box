@@ -7,7 +7,7 @@ class VGridVisorBar:UIView
     private weak var viewBack:VGridVisorBarBack!
     private weak var controller:CGridVisor!
     private let kBackSize:CGFloat = 70
-    private let kEnergyWidth:CGFloat = 160
+    private let kEnergyWidth:CGFloat = 80
     private let kRangeWidth:CGFloat = 75
     private let kRangeLeft:CGFloat = -5
     

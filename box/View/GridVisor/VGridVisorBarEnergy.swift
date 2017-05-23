@@ -12,11 +12,12 @@ class VGridVisorBarEnergy:UIView
     private let attributesAmount:[String:AnyObject]
     private let kOuterLeft:CGFloat = 5
     private let kCircleLeft:CGFloat = 15
-    private let kOuterTop:CGFloat = -30
-    private let kCircleTop:CGFloat = -20
+    private let kOuterTop:CGFloat = -90
+    private let kCircleTop:CGFloat = -80
     private let kOuterSize:CGFloat = 160
     private let kCircleSize:CGFloat = 140
-    private let kLabelRight:CGFloat = -10
+    private let kLabelRight:CGFloat = -5
+    private let kLabelHeight:CGFloat = 48
     
     init(controller:CGridVisor)
     {
@@ -33,15 +34,12 @@ class VGridVisorBarEnergy:UIView
             width:kCircleSize,
             height:kCircleSize)
         
-        let attributesTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:12),
-            NSForegroundColorAttributeName:UIColor(white:1, alpha:0.8)]
         let attributesPercent:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bold(size:16),
+            NSFontAttributeName:UIFont.bold(size:11),
             NSForegroundColorAttributeName:UIColor.gridBlue]
         attributesAmount = [
-            NSFontAttributeName:UIFont.bold(size:20),
-            NSForegroundColorAttributeName:UIColor.white]
+            NSFontAttributeName:UIFont.bold(size:16),
+            NSForegroundColorAttributeName:UIColor.black]
         
         stringPercent = NSAttributedString(
             string:NSLocalizedString("VGridVisorBarEnergy_percent", comment:""),
@@ -63,9 +61,12 @@ class VGridVisorBarEnergy:UIView
         
         addSubview(labelEnergy)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.topToTop(
             view:labelEnergy,
             toView:self)
+        NSLayoutConstraint.height(
+            view:labelEnergy,
+            constant:kLabelHeight)
         NSLayoutConstraint.rightToRight(
             view:labelEnergy,
             toView:self,
