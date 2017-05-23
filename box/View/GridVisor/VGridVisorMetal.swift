@@ -83,10 +83,20 @@ class VGridVisorMetal:MTKView
     override func draw()
     {
         super.draw()
-        controller?.viewGridVisor.viewTarget.update()
         
         guard
             
+            let controller:CGridVisor = self.controller
+        
+        else
+        {
+            return
+        }
+        
+        controller.viewGridVisor.viewTarget.update()
+        
+        guard
+        
             let drawable:CAMetalDrawable = currentDrawable,
             let passDescriptor:MTLRenderPassDescriptor = currentRenderPassDescriptor
             
@@ -103,7 +113,7 @@ class VGridVisorMetal:MTKView
         renderEncoder.setFragmentSamplerState(
             samplerState,
             at:MetalConstants.kFragmentSamplerIndex)
-        controller?.modelRender?.render(renderEncoder:renderEncoder)
+        controller.modelRender?.render(renderEncoder:renderEncoder)
         
         renderEncoder.endEncoding()
         commandBuffer.present(drawable)
