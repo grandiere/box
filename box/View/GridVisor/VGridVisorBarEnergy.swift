@@ -12,7 +12,7 @@ class VGridVisorBarEnergy:UIView
     private let attributesAmount:[String:AnyObject]
     private let kRadiusStart:CGFloat = 0.00001
     private let kRadiusEnd:CGFloat = 0.0
-    private let kLabelRight:CGFloat = -2
+    private let kLabelRight:CGFloat = -5
     private let kLabelHeight:CGFloat = 40
     private let kLineWidth:CGFloat = 8
     private let kCircleRadius:CGFloat = 65
@@ -159,8 +159,9 @@ class VGridVisorBarEnergy:UIView
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(stringAmount)
         mutableString.append(stringPercent)
-        
         labelEnergy.attributedText = mutableString
+        
+        setNeedsDisplay()
     }
     
     //MARK: public
