@@ -57,7 +57,7 @@
 "MGridVisorGPS_errorAuth"="Can't access your location";
 "MGridItemMap_title"="Map";
 "MGridItemMap_subtitle"="\nOverview";
-"MGridItemVisor_title"="Visor";
+"MGridItemVisor_title"="Enter";
 "MGridItemVisor_subtitle"="\nThe Grid";
 "MGridItemReleaseVirus_title"="Release virus";
 "MGridItemReleaseVirus_subtitle"="\nDeploy a virus here";
