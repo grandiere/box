@@ -3,5 +3,4 @@ import Firebase
 
 class FAnalytics
 {
-    
 }
