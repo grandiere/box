@@ -9,7 +9,7 @@ class FMain
     
     private init()
     {
-        FIRApp.configure()
+        FirebaseApp.configure()
         analytics = FAnalytics()
         db = FDb()
     }

@@ -106,7 +106,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
         let path:String = "\(FDb.harvest)/\(userId)"
         FMain.sharedInstance.db.transaction(
             path:path)
-        { (mutableData:FIRMutableData) -> (FIRTransactionResult) in
+        { (mutableData:MutableData) -> (TransactionResult) in
             
             var newHarvestItem:FDbHarvestItem?
             
@@ -130,7 +130,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
             let harvestJson:Any? = newHarvestItem?.json()
             mutableData.value = harvestJson
             
-            let transactionResult:FIRTransactionResult = FIRTransactionResult.success(
+            let transactionResult:TransactionResult = TransactionResult.success(
                 withValue:mutableData)
             
             return transactionResult
