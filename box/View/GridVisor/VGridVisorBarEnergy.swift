@@ -7,45 +7,32 @@ class VGridVisorBarEnergy:UIView
     private var energyPercent:CGFloat
     private let circleColor:UIColor
     private let outerColor:UIColor
-    private let rectOuter:CGRect
-    private let rectCircle:CGRect
     private let energyCenter:CGPoint
     private let stringPercent:NSAttributedString
     private let attributesAmount:[String:AnyObject]
-    private let kOuterLeft:CGFloat = 5
-    private let kCircleLeft:CGFloat = 15
-    private let kOuterTop:CGFloat = -90
-    private let kCircleTop:CGFloat = -80
-    private let kOuterSize:CGFloat = 160
-    private let kCircleSize:CGFloat = 140
-    private let kLabelRight:CGFloat = -5
-    private let kLabelHeight:CGFloat = 48
-    private let kLineWidth:CGFloat = 7
-    private let kEnergyRadius:CGFloat = 80
+    private let kRadiusStart:CGFloat = 0.00001
+    private let kRadiusEnd:CGFloat = 0.0
+    private let kLabelRight:CGFloat = -2
+    private let kLabelHeight:CGFloat = 40
+    private let kLineWidth:CGFloat = 8
+    private let kCircleRadius:CGFloat = 65
+    private let kOuterRadius:CGFloat = 73
+    private let kEnergyRadius:CGFloat = 69
     private let kPi_2:CGFloat = CGFloat.pi / 2.0
+    private let kEnergyThreshold:CGFloat = 0.4
     
     init(controller:CGridVisor)
     {
-        energyPercent = 0.5
+        energyPercent = 0
         energyCenter = CGPoint(x:85, y:-5)
         circleColor = UIColor(white:1, alpha:0.75)
         outerColor = UIColor(white:1, alpha:0.2)
-        rectOuter = CGRect(
-            x:kOuterLeft,
-            y:kOuterTop,
-            width:kOuterSize,
-            height:kOuterSize)
-        rectCircle = CGRect(
-            x:kCircleLeft,
-            y:kCircleTop,
-            width:kCircleSize,
-            height:kCircleSize)
         
         let attributesPercent:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.bold(size:11),
-            NSForegroundColorAttributeName:UIColor.gridBlue]
+            NSFontAttributeName:UIFont.bold(size:9),
+            NSForegroundColorAttributeName:UIColor.black]
         attributesAmount = [
-            NSFontAttributeName:UIFont.bold(size:16),
+            NSFontAttributeName:UIFont.bold(size:12),
             NSForegroundColorAttributeName:UIColor.black]
         
         stringPercent = NSAttributedString(
@@ -100,11 +87,21 @@ class VGridVisorBarEnergy:UIView
         }
         
         context.setFillColor(outerColor.cgColor)
-        context.addEllipse(in:rectOuter)
+        context.addArc(
+            center:energyCenter,
+            radius:kOuterRadius,
+            startAngle:kRadiusStart,
+            endAngle:kRadiusEnd,
+            clockwise:false)
         context.drawPath(using:CGPathDrawingMode.fill)
         
         context.setFillColor(circleColor.cgColor)
-        context.addEllipse(in:rectCircle)
+        context.addArc(
+            center:energyCenter,
+            radius:kCircleRadius,
+            startAngle:kRadiusStart,
+            endAngle:kRadiusEnd,
+            clockwise:false)
         context.drawPath(using:CGPathDrawingMode.fill)
         
         let radiansEnergy:CGFloat = kPi_2 * energyPercent
@@ -112,7 +109,16 @@ class VGridVisorBarEnergy:UIView
         
         context.setLineCap(CGLineCap.round)
         context.setLineWidth(kLineWidth)
-        context.setStrokeColor(UIColor.gridBlue.cgColor)
+        
+        if energyPercent > kEnergyThreshold
+        {
+            context.setStrokeColor(UIColor.gridBlue.cgColor)
+        }
+        else
+        {
+            context.setStrokeColor(UIColor.gridOrange.cgColor)
+        }
+        
         context.addArc(
             center:energyCenter,
             radius:kEnergyRadius,
@@ -144,6 +150,7 @@ class VGridVisorBarEnergy:UIView
     
     private func updateEnergy(energy:Int)
     {
+        energyPercent = CGFloat(energy) / 100.0
         let rawAmount:String = "\(energy)"
         let stringAmount:NSAttributedString = NSAttributedString(
             string:rawAmount,

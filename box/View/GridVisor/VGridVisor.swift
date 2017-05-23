@@ -10,7 +10,7 @@ class VGridVisor:VView
     private weak var spinner:VSpinner?
     private weak var controller:CGridVisor!
     private weak var previewLayer:CALayer?
-    private let kBarHeight:CGFloat = 80
+    private let kBarHeight:CGFloat = 70
     private let kTargetSize:CGFloat = 220
     
     override init(controller:CController)
