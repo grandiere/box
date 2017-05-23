@@ -4,10 +4,12 @@ class VGridVisorBarEnergy:UIView
 {
     private weak var controller:CGridVisor!
     private weak var labelEnergy:UILabel!
+    private var energyPercent:CGFloat
     private let circleColor:UIColor
     private let outerColor:UIColor
     private let rectOuter:CGRect
     private let rectCircle:CGRect
+    private let energyCenter:CGPoint
     private let stringPercent:NSAttributedString
     private let attributesAmount:[String:AnyObject]
     private let kOuterLeft:CGFloat = 5
@@ -18,9 +20,14 @@ class VGridVisorBarEnergy:UIView
     private let kCircleSize:CGFloat = 140
     private let kLabelRight:CGFloat = -5
     private let kLabelHeight:CGFloat = 48
+    private let kLineWidth:CGFloat = 7
+    private let kEnergyRadius:CGFloat = 80
+    private let kPi_2:CGFloat = CGFloat.pi / 2.0
     
     init(controller:CGridVisor)
     {
+        energyPercent = 0.5
+        energyCenter = CGPoint(x:85, y:-5)
         circleColor = UIColor(white:1, alpha:0.75)
         outerColor = UIColor(white:1, alpha:0.2)
         rectOuter = CGRect(
@@ -99,6 +106,20 @@ class VGridVisorBarEnergy:UIView
         context.setFillColor(circleColor.cgColor)
         context.addEllipse(in:rectCircle)
         context.drawPath(using:CGPathDrawingMode.fill)
+        
+        let radiansEnergy:CGFloat = kPi_2 * energyPercent
+        let endAngle:CGFloat = radiansEnergy + kPi_2
+        
+        context.setLineCap(CGLineCap.round)
+        context.setLineWidth(kLineWidth)
+        context.setStrokeColor(UIColor.gridBlue.cgColor)
+        context.addArc(
+            center:energyCenter,
+            radius:kEnergyRadius,
+            startAngle:kPi_2,
+            endAngle:endAngle,
+            clockwise:false)
+        context.drawPath(using:CGPathDrawingMode.stroke)
     }
     
     //MARK: private
