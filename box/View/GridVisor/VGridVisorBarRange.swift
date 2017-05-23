@@ -3,6 +3,7 @@ import UIKit
 class VGridVisorBarRange:UIView
 {
     private weak var controller:CGridVisor!
+    private let kLabelLeft:CGFloat = 30
     
     init(controller:CGridVisor)
     {
@@ -32,7 +33,14 @@ class VGridVisorBarRange:UIView
             view:background,
             toView:self)
         
-        NSLayoutConstraint.equals(
+        NSLayoutConstraint.equalsVertical(
+            view:label,
+            toView:self)
+        NSLayoutConstraint.leftToLeft(
+            view:label,
+            toView:self,
+            constant:kLabelLeft)
+        NSLayoutConstraint.rightToRight(
             view:label,
             toView:self)
         
@@ -45,21 +53,18 @@ class VGridVisorBarRange:UIView
             return
         }
         
-        let attributesTitle:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:13),
-            NSForegroundColorAttributeName:UIColor(white:0, alpha:0.6)]
         let attributesRange:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.numeric(size:14),
+            NSFontAttributeName:UIFont.numeric(size:13),
             NSForegroundColorAttributeName:UIColor.black]
-        let stringTitle:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("VGridVisorBarRange_labelTitle", comment:""),
-            attributes:attributesTitle)
-        let stringSubtitle:NSAttributedString = NSAttributedString(
+        let attributesDistance:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:11),
+            NSForegroundColorAttributeName:UIColor(white:0, alpha:0.7)]
+        
+        let stringDistance:NSAttributedString = NSAttributedString(
             string:distance.shortName,
-            attributes:attributesRange)
+            attributes:attributesDistance)
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
-        mutableString.append(stringTitle)
         
         if let range:Double = MSession.sharedInstance.settings?.visorRange()
         {
@@ -72,8 +77,7 @@ class VGridVisorBarRange:UIView
             mutableString.append(stringRange)
         }
         
-        mutableString.append(stringSubtitle)
-        
+        mutableString.append(stringDistance)
         label.attributedText = mutableString
     }
     

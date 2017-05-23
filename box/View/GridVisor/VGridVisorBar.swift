@@ -8,7 +8,7 @@ class VGridVisorBar:UIView
     private weak var controller:CGridVisor!
     private let kBackSize:CGFloat = 70
     private let kEnergyWidth:CGFloat = 260
-    private let kRangeWidth:CGFloat = 250
+    private let kRangeWidth:CGFloat = 75
     
     init(controller:CGridVisor)
     {
@@ -43,6 +43,16 @@ class VGridVisorBar:UIView
         NSLayoutConstraint.size(
             view:viewBack,
             constant:kBackSize)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:viewRange,
+            toView:viewBack)
+        NSLayoutConstraint.leftToRight(
+            view:viewRange,
+            toView:viewBack)
+        NSLayoutConstraint.width(
+            view:viewRange,
+            constant:kRangeWidth)
         
         NSLayoutConstraint.equalsVertical(
             view:viewEnergy,
