@@ -93,8 +93,6 @@ class VGridVisorMetal:MTKView
             return
         }
         
-        controller.viewGridVisor.viewTarget.update()
-        
         guard
         
             let drawable:CAMetalDrawable = currentDrawable,

@@ -295,6 +295,7 @@
 		DAB1B4B91EB8CB10009AFA46 /* MGridVisorTakeEnergy30.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB1B4B81EB8CB10009AFA46 /* MGridVisorTakeEnergy30.swift */; };
 		DAB1B4BD1EB8CBA9009AFA46 /* MGridVisorTakeEnergy15.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB1B4BC1EB8CBA9009AFA46 /* MGridVisorTakeEnergy15.swift */; };
 		DACADD4D1ED4DCAB00ED2F94 /* VGridVisorBarBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACADD4C1ED4DCAB00ED2F94 /* VGridVisorBarBack.swift */; };
+		DACADD4F1ED501FB00ED2F94 /* MGridVisorRenderFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACADD4E1ED501FB00ED2F94 /* MGridVisorRenderFinder.swift */; };
 		DAE2657C1ED016AE00E886F8 /* MGridItemHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2657B1ED016AE00E886F8 /* MGridItemHarvest.swift */; };
 		DAE2657E1ED0175200E886F8 /* CGridHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2657D1ED0175200E886F8 /* CGridHarvest.swift */; };
 		DAE265811ED0179200E886F8 /* VGridHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE265801ED0179200E886F8 /* VGridHarvest.swift */; };
@@ -635,6 +636,7 @@
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DACADD4C1ED4DCAB00ED2F94 /* VGridVisorBarBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorBarBack.swift; sourceTree = "<group>"; };
+		DACADD4E1ED501FB00ED2F94 /* MGridVisorRenderFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderFinder.swift; sourceTree = "<group>"; };
 		DAE2657B1ED016AE00E886F8 /* MGridItemHarvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridItemHarvest.swift; sourceTree = "<group>"; };
 		DAE2657D1ED0175200E886F8 /* CGridHarvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridHarvest.swift; sourceTree = "<group>"; };
 		DAE265801ED0179200E886F8 /* VGridHarvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridHarvest.swift; sourceTree = "<group>"; };
@@ -1054,6 +1056,7 @@
 			isa = PBXGroup;
 			children = (
 				DA771F3F1EA565A600CAA820 /* MGridVisorRender.swift */,
+				DACADD4E1ED501FB00ED2F94 /* MGridVisorRenderFinder.swift */,
 				DA771F411EA565B200CAA820 /* MGridVisorRenderBackground.swift */,
 				DA771F471EA5662F00CAA820 /* MGridVisorRenderAlgo.swift */,
 				DA771F491EA5664000CAA820 /* MGridVisorRenderAlgoItem.swift */,
@@ -1778,6 +1781,7 @@
 				DA771F481EA5662F00CAA820 /* MGridVisorRenderAlgo.swift in Sources */,
 				DA17EF3D1EC2687800A846A3 /* MDistanceFoot.swift in Sources */,
 				DA7198321EBBD99F00D60D1A /* MGridVisorTakeStatsMemory.swift in Sources */,
+				DACADD4F1ED501FB00ED2F94 /* MGridVisorRenderFinder.swift in Sources */,
 				DAE2657C1ED016AE00E886F8 /* MGridItemHarvest.swift in Sources */,
 				DA771F361EA5338E00CAA820 /* VGridVisorBar.swift in Sources */,
 				DA134AA61E9D549E002BE57D /* MetalProjectionMatrix.swift in Sources */,
