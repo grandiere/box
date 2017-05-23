@@ -3,7 +3,7 @@ import UIKit
 class VGridVisorBarRange:UIView
 {
     private weak var controller:CGridVisor!
-    private let kLabelLeft:CGFloat = 30
+    private let kLabelLeft:CGFloat = 29
     
     init(controller:CGridVisor)
     {
@@ -54,10 +54,10 @@ class VGridVisorBarRange:UIView
         }
         
         let attributesRange:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.numeric(size:13),
+            NSFontAttributeName:UIFont.numeric(size:12),
             NSForegroundColorAttributeName:UIColor.black]
         let attributesDistance:[String:AnyObject] = [
-            NSFontAttributeName:UIFont.regular(size:11),
+            NSFontAttributeName:UIFont.regular(size:10),
             NSForegroundColorAttributeName:UIColor(white:0, alpha:0.7)]
         
         let stringDistance:NSAttributedString = NSAttributedString(

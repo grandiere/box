@@ -9,6 +9,7 @@ class VGridVisorBar:UIView
     private let kBackSize:CGFloat = 70
     private let kEnergyWidth:CGFloat = 260
     private let kRangeWidth:CGFloat = 75
+    private let kRangeLeft:CGFloat = -5
     
     init(controller:CGridVisor)
     {
@@ -30,9 +31,9 @@ class VGridVisorBar:UIView
             controller:controller)
         self.viewEnergy = viewEnergy
         
-        addSubview(viewBack)
         addSubview(viewRange)
         addSubview(viewEnergy)
+        addSubview(viewBack)
         
         NSLayoutConstraint.topToTop(
             view:viewBack,
@@ -49,7 +50,8 @@ class VGridVisorBar:UIView
             toView:viewBack)
         NSLayoutConstraint.leftToRight(
             view:viewRange,
-            toView:viewBack)
+            toView:viewBack,
+            constant:kRangeLeft)
         NSLayoutConstraint.width(
             view:viewRange,
             constant:kRangeWidth)
