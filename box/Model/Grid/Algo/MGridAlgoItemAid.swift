@@ -58,4 +58,9 @@ class MGridAlgoItemAid:MGridAlgoItem
         
         return title
     }
+    
+    override func textureColour() -> UIColor
+    {
+        return UIColor.gridBlue
+    }
 }

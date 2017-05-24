@@ -5,11 +5,12 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
 {
     static let kSize:Float = 220
     private weak var controller:CGridVisor!
+    private weak var algoItem:MGridAlgoItem?
+    private var colourBuffer:MTLBuffer?
     private let sequence:MGridVisorRenderFinderSequence
     private let rotationBuffer:MTLBuffer
     private let spatialSquare:MetalSpatialShapeSquarePositive
     private let positionBuffer:MTLBuffer
-    private let colourBuffer:MTLBuffer
     
     init(
         controller:CGridVisor,
@@ -20,9 +21,6 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
         let rotation:MetalRotation = MetalRotation.none()
         positionBuffer = device.generateBuffer(bufferable:position)
         rotationBuffer = device.generateBuffer(bufferable:rotation)
-        colourBuffer = MetalColour.color(
-            device:device,
-            originalColor:UIColor.gridBlue)
         spatialSquare = MetalSpatialShapeSquarePositive(
             device:device,
             width:MGridVisorRenderFinder.kSize,
@@ -35,11 +33,21 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
     
     func render(manager:MetalRenderManager)
     {
-        if let _:MGridAlgoItem = controller.targeting
+        if let algoItem:MGridAlgoItem = controller.targeting
         {
+            if colourBuffer == nil || algoItem !== self.algoItem
+            {
+                self.algoItem = algoItem
+                
+                colourBuffer = MetalColour.color(
+                    device:manager.device,
+                    originalColor:algoItem.textureColour())
+            }
+            
             guard
                 
-                let texture:MTLTexture = sequence.current()
+                let texture:MTLTexture = sequence.current(),
+                let colourBuffer:MTLBuffer = self.colourBuffer
                 
             else
             {
@@ -52,6 +60,10 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
                 rotation:rotationBuffer,
                 colour:colourBuffer,
                 texture:texture)
+        }
+        else
+        {
+            sequence.restart()
         }
     }
 }

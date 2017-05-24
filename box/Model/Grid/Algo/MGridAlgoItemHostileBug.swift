@@ -79,4 +79,9 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
     {
         MSession.sharedInstance.settings?.stats?.debugSuccess()
     }
+    
+    override func textureColour() -> UIColor
+    {
+        return UIColor.gridGreen
+    }
 }

@@ -122,6 +122,11 @@ class MGridAlgoItem
         return nil
     }
     
+    func textureColour() -> UIColor
+    {
+        return UIColor.clear
+    }
+    
     //MARK: final
     
     final func age() -> String

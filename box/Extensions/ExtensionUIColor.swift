@@ -25,4 +25,16 @@ extension UIColor
                 alpha:1)
         }
     }
+    
+    open class var gridGreen:UIColor //#00C88C
+    {
+        get
+        {
+            return UIColor(
+                red:0,
+                green:0.784313725490196,
+                blue:0.549019607843137,
+                alpha:1)
+        }
+    }
 }

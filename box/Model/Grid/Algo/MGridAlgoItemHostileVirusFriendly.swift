@@ -53,4 +53,9 @@ class MGridAlgoItemHostileVirusFriendly:MGridAlgoItemHostileVirus
         
         return title
     }
+    
+    override func textureColour() -> UIColor
+    {
+        return UIColor.gridBlue
+    }
 }

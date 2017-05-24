@@ -143,4 +143,9 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     {
         return level * kHarvestMultiplier
     }
+    
+    override func textureColour() -> UIColor
+    {
+        return UIColor.gridOrange
+    }
 }
