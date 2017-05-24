@@ -10,6 +10,7 @@
 		CB2BD80EC92F14C7A532B356 /* Pods_box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D577B23654DA13DD78C0535A /* Pods_box.framework */; };
 		DA06AFEC1ED60F53001BCEF7 /* MGridVisorRenderFinderSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06AFEB1ED60F53001BCEF7 /* MGridVisorRenderFinderSequence.swift */; };
 		DA06AFEE1ED630C6001BCEF7 /* VGridVisorDetailCellActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06AFED1ED630C6001BCEF7 /* VGridVisorDetailCellActions.swift */; };
+		DA06AFF01ED654BF001BCEF7 /* VGridVisorDetailCellActionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06AFEF1ED654BF001BCEF7 /* VGridVisorDetailCellActionsCell.swift */; };
 		DA07D5761EC3545A00AC73E1 /* ResourceURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA07D5751EC3545A00AC73E1 /* ResourceURL.plist */; };
 		DA0960831EBE418D0005BE96 /* CHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960821EBE418D0005BE96 /* CHandler.swift */; };
 		DA0960861EBE41F70005BE96 /* VHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960851EBE41F70005BE96 /* VHandler.swift */; };
@@ -352,6 +353,7 @@
 		D577B23654DA13DD78C0535A /* Pods_box.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_box.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA06AFEB1ED60F53001BCEF7 /* MGridVisorRenderFinderSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderFinderSequence.swift; sourceTree = "<group>"; };
 		DA06AFED1ED630C6001BCEF7 /* VGridVisorDetailCellActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellActions.swift; sourceTree = "<group>"; };
+		DA06AFEF1ED654BF001BCEF7 /* VGridVisorDetailCellActionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellActionsCell.swift; sourceTree = "<group>"; };
 		DA07D5751EC3545A00AC73E1 /* ResourceURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceURL.plist; sourceTree = "<group>"; };
 		DA0960821EBE418D0005BE96 /* CHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHandler.swift; sourceTree = "<group>"; };
 		DA0960851EBE41F70005BE96 /* VHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandler.swift; sourceTree = "<group>"; };
@@ -1168,6 +1170,7 @@
 				DA0C16DE1EB519F1007532A6 /* VGridVisorDetailCellMatch.swift */,
 				DA0C16DA1EB51742007532A6 /* VGridVisorDetailCellTake.swift */,
 				DA06AFED1ED630C6001BCEF7 /* VGridVisorDetailCellActions.swift */,
+				DA06AFEF1ED654BF001BCEF7 /* VGridVisorDetailCellActionsCell.swift */,
 			);
 			path = GridVisorDetail;
 			sourceTree = "<group>";
@@ -1947,6 +1950,7 @@
 				DA22F3D01EA2F2DB00F6ED91 /* CGrid.swift in Sources */,
 				DA098E6F1ECE3C9B00FD500E /* MBoardsSortKills.swift in Sources */,
 				DA31F6A91EC22A78003978C7 /* MStorePurchaseEnergy.swift in Sources */,
+				DA06AFF01ED654BF001BCEF7 /* VGridVisorDetailCellActionsCell.swift in Sources */,
 				DA8C06E51EC63A58000DF6D4 /* MHelpEnergy.swift in Sources */,
 				DA31F6971EC207CA003978C7 /* VStoreCell.swift in Sources */,
 				DA87C49A1ED5ED4300501EDC /* MetalVertexTextured.swift in Sources */,
