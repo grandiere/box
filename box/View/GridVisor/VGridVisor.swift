@@ -11,7 +11,6 @@ class VGridVisor:VView
     private weak var controller:CGridVisor!
     private weak var previewLayer:CALayer?
     private let kBarHeight:CGFloat = 70
-    private let kTargetSize:CGFloat = 220
     
     override init(controller:CController)
     {
@@ -79,7 +78,7 @@ class VGridVisor:VView
             toView:self)
         NSLayoutConstraint.size(
             view:viewTarget,
-            constant:kTargetSize)
+            constant:MGridVisorRenderFinder.kSize)
     }
     
     required init?(coder:NSCoder)
@@ -96,10 +95,11 @@ class VGridVisor:VView
     {
         previewLayer?.frame = bounds
         
+        let size:CGFloat = MGridVisorRenderFinder.kSize
         let width:CGFloat = bounds.maxX
         let height:CGFloat = bounds.maxY
-        let remainWidth:CGFloat = width - kTargetSize
-        let remainHeight:CGFloat = height - kTargetSize
+        let remainWidth:CGFloat = width - size
+        let remainHeight:CGFloat = height - size
         let marginLeft:CGFloat = remainWidth / 2.0
         let marginTop:CGFloat = remainHeight / 2.0
         layoutTargetTop.constant = marginTop

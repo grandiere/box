@@ -3,6 +3,8 @@ import MetalKit
 
 class MGridVisorRenderFinder:MetalRenderableProtocol
 {
+    static let kSize:CGFloat = 220
+    
     //MARK: renderable Protocol
     
     func render(renderEncoder:MTLRenderCommandEncoder)
