@@ -27,6 +27,7 @@ class MetalConstants
     static let kBufferElementSize:Int = 4
     static let kColorAttachmentIndex:Int = 0
     static let kVertexIndex:Int = 0
+    static let kColorIndex:Int = 0
     static let kPositionIndex:Int = 2
     static let kRotationIndex:Int = 3
     static let kTextureIndex:Int = 0
