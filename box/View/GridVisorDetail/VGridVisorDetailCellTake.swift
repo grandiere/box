@@ -10,7 +10,6 @@ class VGridVisorDetailCellTake:VGridVisorDetailCell
     override init(frame:CGRect)
     {
         super.init(frame:frame)
-        backgroundColor = UIColor.clear
         
         let labelTitle:UILabel = UILabel()
         labelTitle.translatesAutoresizingMaskIntoConstraints = false

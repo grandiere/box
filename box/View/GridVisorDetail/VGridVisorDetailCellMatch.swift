@@ -32,7 +32,6 @@ class VGridVisorDetailCellMatch:VGridVisorDetailCell
             attributes:attributesEnergyTitle)
         
         super.init(frame:frame)
-        backgroundColor = UIColor.clear
         
         let labelEnergy:UILabel = UILabel()
         labelEnergy.translatesAutoresizingMaskIntoConstraints = false
