@@ -60,7 +60,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     //MARK: private
     
     private func renderPositionedItem(
-        renderEncoder:MTLRenderCommandEncoder,
+        manager:MetalRenderManager,
         rotationBuffer:MTLBuffer,
         positioned:MGridVisorRenderAlgoItemPositioned)
     {
@@ -77,7 +77,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         let positionBuffer:MTLBuffer = device.generateBuffer(
             bufferable:positioned.position)
         
-        renderEncoder.render(
+        manager.renderSimple(
             vertex:vertex,
             position:positionBuffer,
             rotation:rotationBuffer,
@@ -160,7 +160,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         }
         
         var items:[MGridVisorRenderAlgoItem] = []
-        let rotationBuffer:MTLBuffer = renderEncoder.device.generateBuffer(
+        let rotationBuffer:MTLBuffer = manager.device.generateBuffer(
             bufferable:rotation)
         var targeted:MGridVisorRenderAlgoItemPositioned?
         
@@ -200,7 +200,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
                         if deltaPosition < currentDelta
                         {
                             renderPositionedItem(
-                                renderEncoder:renderEncoder,
+                                manager:manager,
                                 rotationBuffer:rotationBuffer,
                                 positioned:currentTargeted)
                             
@@ -209,7 +209,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
                         else
                         {
                             renderPositionedItem(
-                                renderEncoder:renderEncoder,
+                                manager:manager,
                                 rotationBuffer:rotationBuffer,
                                 positioned:positioned)
                         }
@@ -223,7 +223,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             else
             {
                 renderPositionedItem(
-                    renderEncoder:renderEncoder,
+                    manager:manager,
                     rotationBuffer:rotationBuffer,
                     positioned:positioned)
             }
@@ -236,7 +236,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             targeted.item.modeTargeted()
             
             renderPositionedItem(
-                renderEncoder:renderEncoder,
+                manager:manager,
                 rotationBuffer:rotationBuffer,
                 positioned:targeted)
             

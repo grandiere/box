@@ -45,10 +45,12 @@ class VGridVisorMetal:MTKView
         let simplePipelineDescriptor:MTLRenderPipelineDescriptor = MTLRenderPipelineDescriptor()
         simplePipelineDescriptor.vertexFunction = vertexFunction
         simplePipelineDescriptor.fragmentFunction = simpleFragmentFunction
+        MetalConstants.colorAttachmentConfig(pipelineDescriptor:simplePipelineDescriptor)
         
         let colourPipelineDescriptor:MTLRenderPipelineDescriptor = MTLRenderPipelineDescriptor()
         colourPipelineDescriptor.vertexFunction = vertexFunction
         colourPipelineDescriptor.fragmentFunction = colourFragmentFunction
+        MetalConstants.colorAttachmentConfig(pipelineDescriptor:colourPipelineDescriptor)
         
         do
         {
@@ -80,14 +82,6 @@ class VGridVisorMetal:MTKView
         autoResizeDrawable = true
         isPaused = false
         self.controller = controller
-        
-        let colorAttachmentSimple:MTLRenderPipelineColorAttachmentDescriptor = simplePipelineDescriptor.colorAttachments[
-            MetalConstants.kColorAttachmentIndex]
-        let colorAttachmentColour:MTLRenderPipelineColorAttachmentDescriptor = simplePipelineDescriptor.colorAttachments[
-            MetalConstants.kColorAttachmentIndex]
-        
-        colorAttachmentConfig(colorAttachment:colorAttachmentSimple)
-        colorAttachmentConfig(colorAttachment:colorAttachmentColour)
     }
     
     required init(coder:NSCoder)
@@ -136,19 +130,5 @@ class VGridVisorMetal:MTKView
         renderEncoder.endEncoding()
         commandBuffer.present(drawable)
         commandBuffer.commit()
-    }
-    
-    //MARK: private
-    
-    private func colorAttachmentConfig(colorAttachment:MTLRenderPipelineColorAttachmentDescriptor)
-    {
-        colorAttachment.pixelFormat = MetalConstants.kPixelFormat
-        colorAttachment.isBlendingEnabled = MetalConstants.kBlendingEnabled
-        colorAttachment.rgbBlendOperation = MetalConstants.kRgbBlendOperation
-        colorAttachment.alphaBlendOperation = MetalConstants.kAlphaBlendOperation
-        colorAttachment.sourceRGBBlendFactor = MetalConstants.kSourceRgbBlendFactor
-        colorAttachment.sourceAlphaBlendFactor = MetalConstants.kSourceAlphaBlendFactor
-        colorAttachment.destinationRGBBlendFactor = MetalConstants.kDestinationRgbBlendFactor
-        colorAttachment.destinationAlphaBlendFactor = MetalConstants.kDestinationAlphaBlendFactor
     }
 }

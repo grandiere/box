@@ -36,4 +36,18 @@ class MetalConstants
     static let kFragmentSamplerIndex:Int = 0
     static let kBlendingEnabled:Bool = true
     static let kSamplerNormalizedCoordinates:Bool = true
+    
+    class func colorAttachmentConfig(pipelineDescriptor:MTLRenderPipelineDescriptor)
+    {
+        let colorAttachment:MTLRenderPipelineColorAttachmentDescriptor = pipelineDescriptor.colorAttachments[kColorAttachmentIndex]
+        
+        colorAttachment.pixelFormat = kPixelFormat
+        colorAttachment.isBlendingEnabled = kBlendingEnabled
+        colorAttachment.rgbBlendOperation = kRgbBlendOperation
+        colorAttachment.alphaBlendOperation = kAlphaBlendOperation
+        colorAttachment.sourceRGBBlendFactor = kSourceRgbBlendFactor
+        colorAttachment.sourceAlphaBlendFactor = kSourceAlphaBlendFactor
+        colorAttachment.destinationRGBBlendFactor = kDestinationRgbBlendFactor
+        colorAttachment.destinationAlphaBlendFactor = kDestinationAlphaBlendFactor
+    }
 }

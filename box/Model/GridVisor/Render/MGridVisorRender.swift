@@ -57,13 +57,13 @@ class MGridVisorRender:MetalRenderableProtocol
     
     //MARK: renderable Protocol
     
-    func render(renderEncoder:MTLRenderCommandEncoder)
+    func render(manager:MetalRenderManager)
     {
-        renderEncoder.projectionMatrix(
+        manager.projectionMatrix(
             projection:projection.projectionBuffer)
         
-        background.render(renderEncoder:renderEncoder)
-        algo.render(renderEncoder:renderEncoder)
-        finder.render(renderEncoder:renderEncoder)
+        background.render(manager:manager)
+        algo.render(manager:manager)
+        finder.render(manager:manager)
     }
 }

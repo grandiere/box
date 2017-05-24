@@ -33,7 +33,7 @@ class MGridVisorRenderBackground:MetalRenderableProtocol
     
     //MARK: renderable Protocol
     
-    func render(renderEncoder:MTLRenderCommandEncoder)
+    func render(manager:MetalRenderManager)
     {
         guard
             
@@ -44,7 +44,7 @@ class MGridVisorRenderBackground:MetalRenderableProtocol
             return
         }
         
-        renderEncoder.render(
+        manager.renderSimple(
             vertex:spatialSquare.vertexBuffer,
             position:positionBuffer,
             rotation:rotationBuffer,

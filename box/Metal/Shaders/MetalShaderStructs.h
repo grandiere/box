@@ -30,4 +30,11 @@ struct rotation_matrix
     float2x2 rotate;
 };
 
+struct fragment_colour
+{
+    float red;
+    float green;
+    float blue;
+};
+
 #endif

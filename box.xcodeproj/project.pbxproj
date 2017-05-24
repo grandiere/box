@@ -46,7 +46,6 @@
 		DA12133F1EB7D41C0091976C /* MGridVisorTakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12133E1EB7D41C0091976C /* MGridVisorTakeProtocol.swift */; };
 		DA134A881E9D5076002BE57D /* ExtensionMTKTextureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A841E9D5076002BE57D /* ExtensionMTKTextureLoader.swift */; };
 		DA134A891E9D5076002BE57D /* ExtensionMTLDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A851E9D5076002BE57D /* ExtensionMTLDevice.swift */; };
-		DA134A8A1E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A861E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift */; };
 		DA134A8B1E9D5076002BE57D /* ExtensionMTLTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A871E9D5076002BE57D /* ExtensionMTLTexture.swift */; };
 		DA134AB01E9D5D69002BE57D /* texture.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA134AAF1E9D5D69002BE57D /* texture.xcassets */; };
 		DA1403B81EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403B71EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift */; };
@@ -386,7 +385,6 @@
 		DA12133E1EB7D41C0091976C /* MGridVisorTakeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorTakeProtocol.swift; sourceTree = "<group>"; };
 		DA134A841E9D5076002BE57D /* ExtensionMTKTextureLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTKTextureLoader.swift; sourceTree = "<group>"; };
 		DA134A851E9D5076002BE57D /* ExtensionMTLDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTLDevice.swift; sourceTree = "<group>"; };
-		DA134A861E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTLRenderCommandEncoder.swift; sourceTree = "<group>"; };
 		DA134A871E9D5076002BE57D /* ExtensionMTLTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTLTexture.swift; sourceTree = "<group>"; };
 		DA134AAF1E9D5D69002BE57D /* texture.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = texture.xcassets; sourceTree = "<group>"; };
 		DA1403B71EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellCreated.swift; sourceTree = "<group>"; };
@@ -1519,7 +1517,6 @@
 			children = (
 				DA134A841E9D5076002BE57D /* ExtensionMTKTextureLoader.swift */,
 				DA134A851E9D5076002BE57D /* ExtensionMTLDevice.swift */,
-				DA134A861E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift */,
 				DA134A871E9D5076002BE57D /* ExtensionMTLTexture.swift */,
 				DAF15D3A1E9D32BB0000E6B9 /* ExtensionFileManager.swift */,
 				DAF15D3B1E9D32BB0000E6B9 /* ExtensionNotification.swift */,
@@ -2009,7 +2006,6 @@
 				DA0960A81EC135B00005BE96 /* MStore.swift in Sources */,
 				DA31F6A11EC20828003978C7 /* MStoreStatusNotAvailable.swift in Sources */,
 				DA4D97711EB1079100AE0C0C /* MLandingBarSettings.swift in Sources */,
-				DA134A8A1E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift in Sources */,
 				DA7135BA1EAFB042007ACEB5 /* MGridMapDetailItemLevel.swift in Sources */,
 				DA7135CE1EAFF75B007ACEB5 /* VSettings.swift in Sources */,
 				DA4DC4701EA191270024D28E /* MGridAlgo.swift in Sources */,

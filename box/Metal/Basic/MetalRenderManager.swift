@@ -21,6 +21,14 @@ class MetalRenderManager
     
     //MARK: public
     
+    func projectionMatrix(projection:MTLBuffer)
+    {
+        renderEnconder.setVertexBuffer(
+            projection,
+            offset:0,
+            at:MetalConstants.kProjectionIndex)
+    }
+    
     func renderSimple(
         vertex:MTLBuffer,
         position:MTLBuffer,
@@ -54,6 +62,7 @@ class MetalRenderManager
         vertex:MTLBuffer,
         position:MTLBuffer,
         rotation:MTLBuffer,
+        colour:MTLBuffer,
         texture:MTLTexture)
     {
         renderEnconder.setRenderPipelineState(colourPipelineState)
@@ -70,6 +79,10 @@ class MetalRenderManager
             rotation,
             offset:0,
             at:MetalConstants.kRotationIndex)
+        renderEnconder.setFragmentBuffer(
+            colour,
+            offset:0,
+            at:MetalConstants.kColorIndex)
         renderEnconder.setFragmentTexture(
             texture,
             at:MetalConstants.kTextureIndex)

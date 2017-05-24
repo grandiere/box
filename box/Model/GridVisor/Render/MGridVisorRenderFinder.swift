@@ -9,6 +9,7 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
     private let rotationBuffer:MTLBuffer
     private let spatialSquare:MetalSpatialShapeSquarePositive
     private let positionBuffer:MTLBuffer
+    private let colourBuffer:MTLBuffer
     
     init(
         controller:CGridVisor,
@@ -19,6 +20,9 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
         let rotation:MetalRotation = MetalRotation.none()
         positionBuffer = device.generateBuffer(bufferable:position)
         rotationBuffer = device.generateBuffer(bufferable:rotation)
+        colourBuffer = MetalColour.color(
+            device:device,
+            originalColor:UIColor.gridBlue)
         spatialSquare = MetalSpatialShapeSquarePositive(
             device:device,
             width:MGridVisorRenderFinder.kSize,
@@ -39,7 +43,7 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
     
     //MARK: renderable Protocol
     
-    func render(renderEncoder:MTLRenderCommandEncoder)
+    func render(manager:MetalRenderManager)
     {
         if let _:MGridAlgoItem = controller.targeting
         {
@@ -52,10 +56,11 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
                 return
             }
             
-            renderEncoder.render(
+            manager.renderColour(
                 vertex:spatialSquare.vertexBuffer,
                 position:positionBuffer,
                 rotation:rotationBuffer,
+                colour:colourBuffer,
                 texture:texture)
         }
     }
