@@ -4,13 +4,20 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
 {
     private weak var imageView:UIImageView!
     private weak var labelTitle:UILabel!
-    private let kImageHeight:CGFloat = 160
-    private let kTitleHeight:CGFloat = 50
+    private let kImageHeight:CGFloat = 200
+    private let kTitleHeight:CGFloat = 60
     
     override init(frame:CGRect)
     {
         super.init(frame:frame)
         isUserInteractionEnabled = false
+        
+        let finder:UIImageView = UIImageView()
+        finder.isUserInteractionEnabled = false
+        finder.translatesAutoresizingMaskIntoConstraints = false
+        finder.contentMode = UIViewContentMode.center
+        finder.clipsToBounds = true
+        finder.image = #imageLiteral(resourceName: "assetGenericFinder")
         
         let imageView:UIImageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -28,6 +35,7 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         labelTitle.textAlignment = NSTextAlignment.center
         self.labelTitle = labelTitle
         
+        addSubview(finder)
         addSubview(imageView)
         addSubview(labelTitle)
         
@@ -40,6 +48,10 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         NSLayoutConstraint.equalsHorizontal(
             view:imageView,
             toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:finder,
+            toView:imageView)
         
         NSLayoutConstraint.bottomToBottom(
             view:labelTitle,

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CB2BD80EC92F14C7A532B356 /* Pods_box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D577B23654DA13DD78C0535A /* Pods_box.framework */; };
 		DA06AFEC1ED60F53001BCEF7 /* MGridVisorRenderFinderSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06AFEB1ED60F53001BCEF7 /* MGridVisorRenderFinderSequence.swift */; };
+		DA06AFEE1ED630C6001BCEF7 /* VGridVisorDetailCellActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06AFED1ED630C6001BCEF7 /* VGridVisorDetailCellActions.swift */; };
 		DA07D5761EC3545A00AC73E1 /* ResourceURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA07D5751EC3545A00AC73E1 /* ResourceURL.plist */; };
 		DA0960831EBE418D0005BE96 /* CHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960821EBE418D0005BE96 /* CHandler.swift */; };
 		DA0960861EBE41F70005BE96 /* VHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960851EBE41F70005BE96 /* VHandler.swift */; };
@@ -350,6 +351,7 @@
 		0B3F365BEE085B9C19AB1340 /* Pods-box.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-box.debug.xcconfig"; path = "Pods/Target Support Files/Pods-box/Pods-box.debug.xcconfig"; sourceTree = "<group>"; };
 		D577B23654DA13DD78C0535A /* Pods_box.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_box.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA06AFEB1ED60F53001BCEF7 /* MGridVisorRenderFinderSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderFinderSequence.swift; sourceTree = "<group>"; };
+		DA06AFED1ED630C6001BCEF7 /* VGridVisorDetailCellActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellActions.swift; sourceTree = "<group>"; };
 		DA07D5751EC3545A00AC73E1 /* ResourceURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceURL.plist; sourceTree = "<group>"; };
 		DA0960821EBE418D0005BE96 /* CHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHandler.swift; sourceTree = "<group>"; };
 		DA0960851EBE41F70005BE96 /* VHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandler.swift; sourceTree = "<group>"; };
@@ -1165,6 +1167,7 @@
 				DA1403B71EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift */,
 				DA0C16DE1EB519F1007532A6 /* VGridVisorDetailCellMatch.swift */,
 				DA0C16DA1EB51742007532A6 /* VGridVisorDetailCellTake.swift */,
+				DA06AFED1ED630C6001BCEF7 /* VGridVisorDetailCellActions.swift */,
 			);
 			path = GridVisorDetail;
 			sourceTree = "<group>";
@@ -1856,6 +1859,7 @@
 				DAE2657E1ED0175200E886F8 /* CGridHarvest.swift in Sources */,
 				DA8C06F51EC64DBE000DF6D4 /* MTutorialSkills.swift in Sources */,
 				DAF15D741E9D34FF0000E6B9 /* CLanding.swift in Sources */,
+				DA06AFEE1ED630C6001BCEF7 /* VGridVisorDetailCellActions.swift in Sources */,
 				DA4E6A111EC3D6BD004B138B /* MTutorialBasic.swift in Sources */,
 				DA0C16DD1EB5199E007532A6 /* MGridVisorDetailItemMatch.swift in Sources */,
 				DA1D49B81EAA49C200C2392C /* MLandingItemBoards.swift in Sources */,
