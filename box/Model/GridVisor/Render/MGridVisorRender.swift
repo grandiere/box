@@ -7,7 +7,9 @@ class MGridVisorRender:MetalRenderableProtocol
 {
     let background:MGridVisorRenderBackground
     let algo:MGridVisorRenderAlgo
-    private weak var controller:CGridVisor!
+    private(set) weak var controller:CGridVisor!
+    private(set) var rotationBuffer:MTLBuffer?
+    private var rotation:MetalRotation
     private let finder:MGridVisorRenderFinder
     private let cIContext:CIContext
     private let textureLoader:MTKTextureLoader
@@ -22,16 +24,18 @@ class MGridVisorRender:MetalRenderableProtocol
         cIContext = CIContext(mtlDevice:device)
         background = MGridVisorRenderBackground(device:device)
         projection = MetalProjection(device:device)
+        rotation = MetalRotation.none()
         
         algo = MGridVisorRenderAlgo(
-            controller:controller,
             device:device,
             textureLoader:textureLoader)
         
         finder = MGridVisorRenderFinder(
-            controller:controller,
             device:device,
             textureLoader:textureLoader)
+        
+        algo.render = self
+        finder.render = self
         self.controller = controller
     }
     
@@ -55,12 +59,23 @@ class MGridVisorRender:MetalRenderableProtocol
         background.texture = textureLoader.loadCGImage(cGImage:cGImage)
     }
     
+    func motionRotate(
+        moveHorizontal:Float,
+        moveVertical:Float)
+    {
+        algo.moveVertical = moveVertical
+        rotation = MetalRotation(radians:moveHorizontal)
+    }
+    
     //MARK: renderable Protocol
     
     func render(manager:MetalRenderManager)
     {
         manager.projectionMatrix(
             projection:projection.projectionBuffer)
+        
+        rotationBuffer = manager.device.generateBuffer(
+            bufferable:rotation)
         
         background.render(manager:manager)
         algo.render(manager:manager)

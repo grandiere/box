@@ -7,23 +7,19 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     static let kMaxTarget:Float = 85
     
     var userHeading:Float
+    var moveVertical:Float
+    weak var render:MGridVisorRender!
     private weak var textureLoader:MTKTextureLoader!
-    private weak var controller:CGridVisor!
     private weak var device:MTLDevice!
     private(set) var items:[MGridVisorRenderAlgoItem]
     private var removeAlgoItems:[MGridAlgoItem]
-    private var rotation:MetalRotation
-    private var moveVertical:Float
     
     init(
-        controller:CGridVisor,
         device:MTLDevice,
         textureLoader:MTKTextureLoader)
     {
-        self.controller = controller
         self.device = device
         self.textureLoader = textureLoader
-        rotation = MetalRotation.none()
         moveVertical = 0
         userHeading = 0
         items = []
@@ -119,7 +115,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         {
             guard
                 
-                let multipliedHeading:Float = controller.orientation?.normalHeading(
+                let multipliedHeading:Float = render.controller.orientation?.normalHeading(
                     rawHeading:nearItem.heading),
                 let item:MGridVisorRenderAlgoItem = MGridVisorRenderAlgoItem(
                     device:device,
@@ -138,21 +134,22 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         self.items = items
     }
     
-    func motionRotate(
-        moveHorizontal:Float,
-        moveVertical:Float)
-    {
-        self.moveVertical = moveVertical
-        rotation = MetalRotation(radians:moveHorizontal)
-    }
-    
     //MARK: renderable Protocol
     
     func render(manager:MetalRenderManager)
     {
         guard
             
-            let orientation:MGridVisorOrientation = controller.orientation
+            let rotationBuffer:MTLBuffer = render.rotationBuffer
+            
+        else
+        {
+            return
+        }
+        
+        guard
+            
+            let orientation:MGridVisorOrientation = render.controller.orientation
         
         else
         {
@@ -160,8 +157,6 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         }
         
         var items:[MGridVisorRenderAlgoItem] = []
-        let rotationBuffer:MTLBuffer = manager.device.generateBuffer(
-            bufferable:rotation)
         var targeted:MGridVisorRenderAlgoItemPositioned?
         
         for item:MGridVisorRenderAlgoItem in self.items
@@ -240,11 +235,11 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
                 rotationBuffer:rotationBuffer,
                 positioned:targeted)
             
-            controller.targeting = targeted.item.model
+            render.controller.targeting = targeted.item.model
         }
         else
         {
-            controller.targeting = nil
+            render.controller.targeting = nil
         }
     }
 }
