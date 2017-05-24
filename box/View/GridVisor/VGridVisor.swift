@@ -78,7 +78,7 @@ class VGridVisor:VView
             toView:self)
         NSLayoutConstraint.size(
             view:viewTarget,
-            constant:MGridVisorRenderFinder.kSize)
+            constant:CGFloat(MGridVisorRenderFinder.kSize))
     }
     
     required init?(coder:NSCoder)
@@ -95,7 +95,7 @@ class VGridVisor:VView
     {
         previewLayer?.frame = bounds
         
-        let size:CGFloat = MGridVisorRenderFinder.kSize
+        let size:CGFloat = CGFloat(MGridVisorRenderFinder.kSize)
         let width:CGFloat = bounds.maxX
         let height:CGFloat = bounds.maxY
         let remainWidth:CGFloat = width - size
