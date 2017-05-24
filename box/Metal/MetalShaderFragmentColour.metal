@@ -4,7 +4,7 @@ using namespace metal;
 #include "MetalShaderStructs.h"
 
 fragment float4
-fragment_simple(vertex_destination interpolated [[stage_in]],
+fragment_colour(vertex_destination interpolated [[stage_in]],
                 texture2d<float> current_texture [[texture(0)]],
                 sampler current_sampler [[sampler(0)]])
 {

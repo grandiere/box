@@ -65,7 +65,7 @@ class VGridVisorMetal:MTKView
         
         super.init(frame:CGRect.zero, device:device)
         backgroundColor = UIColor.clear
-        framebufferOnly = false
+        framebufferOnly = true
         clipsToBounds = true
         isUserInteractionEnabled = false
         translatesAutoresizingMaskIntoConstraints = false
