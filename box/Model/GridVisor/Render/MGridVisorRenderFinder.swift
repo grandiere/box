@@ -47,7 +47,7 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
                 
                 let texture:MTLTexture = self.texture
                 
-                else
+            else
             {
                 return
             }
