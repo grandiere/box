@@ -4,12 +4,14 @@ import MetalKit
 class MGridVisorRenderFinder:MetalRenderableProtocol
 {
     static let kSize:Float = 220
+    private weak var controller:CGridVisor!
     private var texture:MTLTexture?
     private let rotationBuffer:MTLBuffer
     private let spatialSquare:MetalSpatialShapeSquarePositive
     private let positionBuffer:MTLBuffer
     
     init(
+        controller:CGridVisor,
         device:MTLDevice,
         textureLoader:MTKTextureLoader)
     {
@@ -21,6 +23,7 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
             device:device,
             width:MGridVisorRenderFinder.kSize,
             height:MGridVisorRenderFinder.kSize)
+        self.controller = controller
         
         guard
         
@@ -38,19 +41,22 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
     
     func render(renderEncoder:MTLRenderCommandEncoder)
     {
-        guard
-            
-            let texture:MTLTexture = self.texture
-            
-        else
+        if let _:MGridAlgoItem = controller.targeting
         {
-            return
+            guard
+                
+                let texture:MTLTexture = self.texture
+                
+                else
+            {
+                return
+            }
+            
+            renderEncoder.render(
+                vertex:spatialSquare.vertexBuffer,
+                position:positionBuffer,
+                rotation:rotationBuffer,
+                texture:texture)
         }
-        
-        renderEncoder.render(
-            vertex:spatialSquare.vertexBuffer,
-            position:positionBuffer,
-            rotation:rotationBuffer,
-            texture:texture)
     }
 }

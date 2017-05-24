@@ -29,6 +29,7 @@ class MGridVisorRender:MetalRenderableProtocol
             textureLoader:textureLoader)
         
         finder = MGridVisorRenderFinder(
+            controller:controller,
             device:device,
             textureLoader:textureLoader)
         self.controller = controller
@@ -63,10 +64,6 @@ class MGridVisorRender:MetalRenderableProtocol
         
         background.render(renderEncoder:renderEncoder)
         algo.render(renderEncoder:renderEncoder)
-        
-        if let _:MGridAlgoItem = controller.targeting
-        {
-            finder.render(renderEncoder:renderEncoder)
-        }
+        finder.render(renderEncoder:renderEncoder)
     }
 }
