@@ -44,28 +44,10 @@
 		DA0C16DD1EB5199E007532A6 /* MGridVisorDetailItemMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C16DC1EB5199E007532A6 /* MGridVisorDetailItemMatch.swift */; };
 		DA0C16DF1EB519F1007532A6 /* VGridVisorDetailCellMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C16DE1EB519F1007532A6 /* VGridVisorDetailCellMatch.swift */; };
 		DA12133F1EB7D41C0091976C /* MGridVisorTakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12133E1EB7D41C0091976C /* MGridVisorTakeProtocol.swift */; };
-		DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A771E9D48ED002BE57D /* MetalConstants.swift */; };
 		DA134A881E9D5076002BE57D /* ExtensionMTKTextureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A841E9D5076002BE57D /* ExtensionMTKTextureLoader.swift */; };
 		DA134A891E9D5076002BE57D /* ExtensionMTLDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A851E9D5076002BE57D /* ExtensionMTLDevice.swift */; };
 		DA134A8A1E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A861E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift */; };
 		DA134A8B1E9D5076002BE57D /* ExtensionMTLTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A871E9D5076002BE57D /* ExtensionMTLTexture.swift */; };
-		DA134A9E1E9D549E002BE57D /* MetalBufferableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A8C1E9D549E002BE57D /* MetalBufferableProtocol.swift */; };
-		DA134A9F1E9D549E002BE57D /* MetalSpatialDirectionPositive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A8D1E9D549E002BE57D /* MetalSpatialDirectionPositive.swift */; };
-		DA134AA01E9D549E002BE57D /* MetalPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A8E1E9D549E002BE57D /* MetalPosition.swift */; };
-		DA134AA11E9D549E002BE57D /* MetalVertexFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A8F1E9D549E002BE57D /* MetalVertexFace.swift */; };
-		DA134AA21E9D549E002BE57D /* MetalProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A901E9D549E002BE57D /* MetalProjection.swift */; };
-		DA134AA31E9D549E002BE57D /* MetalVertexTextured.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A911E9D549E002BE57D /* MetalVertexTextured.swift */; };
-		DA134AA41E9D549E002BE57D /* MetalSpatialBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A921E9D549E002BE57D /* MetalSpatialBase.swift */; };
-		DA134AA51E9D549E002BE57D /* MetalSpatialDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A931E9D549E002BE57D /* MetalSpatialDirection.swift */; };
-		DA134AA61E9D549E002BE57D /* MetalProjectionMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A941E9D549E002BE57D /* MetalProjectionMatrix.swift */; };
-		DA134AA71E9D549E002BE57D /* MetalRenderableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A961E9D549E002BE57D /* MetalRenderableProtocol.swift */; };
-		DA134AA81E9D549E002BE57D /* MetalSpatialDirectionNegative.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A971E9D549E002BE57D /* MetalSpatialDirectionNegative.swift */; };
-		DA134AA91E9D549E002BE57D /* MetalShaderVertexTextured.metal in Sources */ = {isa = PBXBuildFile; fileRef = DA134A981E9D549E002BE57D /* MetalShaderVertexTextured.metal */; };
-		DA134AAA1E9D549E002BE57D /* MetalSpatialShapeSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A991E9D549E002BE57D /* MetalSpatialShapeSquare.swift */; };
-		DA134AAB1E9D549E002BE57D /* MetalRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A9A1E9D549E002BE57D /* MetalRotation.swift */; };
-		DA134AAC1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A9B1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift */; };
-		DA134AAD1E9D549E002BE57D /* MetalShaderFragmentSimple.metal in Sources */ = {isa = PBXBuildFile; fileRef = DA134A9C1E9D549E002BE57D /* MetalShaderFragmentSimple.metal */; };
-		DA134AAE1E9D549E002BE57D /* MetalVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA134A9D1E9D549E002BE57D /* MetalVertex.swift */; };
 		DA134AB01E9D5D69002BE57D /* texture.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA134AAF1E9D5D69002BE57D /* texture.xcassets */; };
 		DA1403B81EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403B71EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift */; };
 		DA1403BA1EB6607A006C9364 /* MGridVisorDetailItemCreated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403B91EB6607A006C9364 /* MGridVisorDetailItemCreated.swift */; };
@@ -239,7 +221,25 @@
 		DA771F421EA565B200CAA820 /* MGridVisorRenderBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F411EA565B200CAA820 /* MGridVisorRenderBackground.swift */; };
 		DA771F481EA5662F00CAA820 /* MGridVisorRenderAlgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F471EA5662F00CAA820 /* MGridVisorRenderAlgo.swift */; };
 		DA771F4A1EA5664000CAA820 /* MGridVisorRenderAlgoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA771F491EA5664000CAA820 /* MGridVisorRenderAlgoItem.swift */; };
-		DA87C46E1ED5E7B300501EDC /* MetalShaderFragmentColour.metal in Sources */ = {isa = PBXBuildFile; fileRef = DA87C46D1ED5E7B300501EDC /* MetalShaderFragmentColour.metal */; };
+		DA87C4881ED5ED4300501EDC /* MetalBufferableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4701ED5ED4300501EDC /* MetalBufferableProtocol.swift */; };
+		DA87C4891ED5ED4300501EDC /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4711ED5ED4300501EDC /* MetalConstants.swift */; };
+		DA87C48A1ED5ED4300501EDC /* MetalRenderableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4721ED5ED4300501EDC /* MetalRenderableProtocol.swift */; };
+		DA87C48B1ED5ED4300501EDC /* MetalShaderFragmentColour.metal in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4741ED5ED4300501EDC /* MetalShaderFragmentColour.metal */; };
+		DA87C48C1ED5ED4300501EDC /* MetalShaderFragmentSimple.metal in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4751ED5ED4300501EDC /* MetalShaderFragmentSimple.metal */; };
+		DA87C48D1ED5ED4300501EDC /* MetalShaderVertexTextured.metal in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4771ED5ED4300501EDC /* MetalShaderVertexTextured.metal */; };
+		DA87C48E1ED5ED4300501EDC /* MetalPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4791ED5ED4300501EDC /* MetalPosition.swift */; };
+		DA87C48F1ED5ED4300501EDC /* MetalProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C47A1ED5ED4300501EDC /* MetalProjection.swift */; };
+		DA87C4901ED5ED4300501EDC /* MetalProjectionMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C47B1ED5ED4300501EDC /* MetalProjectionMatrix.swift */; };
+		DA87C4911ED5ED4300501EDC /* MetalRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C47C1ED5ED4300501EDC /* MetalRotation.swift */; };
+		DA87C4921ED5ED4300501EDC /* MetalSpatialBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C47E1ED5ED4300501EDC /* MetalSpatialBase.swift */; };
+		DA87C4931ED5ED4300501EDC /* MetalSpatialDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C47F1ED5ED4300501EDC /* MetalSpatialDirection.swift */; };
+		DA87C4941ED5ED4300501EDC /* MetalSpatialDirectionNegative.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4801ED5ED4300501EDC /* MetalSpatialDirectionNegative.swift */; };
+		DA87C4951ED5ED4300501EDC /* MetalSpatialDirectionPositive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4811ED5ED4300501EDC /* MetalSpatialDirectionPositive.swift */; };
+		DA87C4961ED5ED4300501EDC /* MetalSpatialShapeSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4821ED5ED4300501EDC /* MetalSpatialShapeSquare.swift */; };
+		DA87C4971ED5ED4300501EDC /* MetalSpatialShapeSquarePositive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4831ED5ED4300501EDC /* MetalSpatialShapeSquarePositive.swift */; };
+		DA87C4981ED5ED4300501EDC /* MetalVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4851ED5ED4300501EDC /* MetalVertex.swift */; };
+		DA87C4991ED5ED4300501EDC /* MetalVertexFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4861ED5ED4300501EDC /* MetalVertexFace.swift */; };
+		DA87C49A1ED5ED4300501EDC /* MetalVertexTextured.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4871ED5ED4300501EDC /* MetalVertexTextured.swift */; };
 		DA88525E1EAE3B7D008CB62C /* CGridVisorMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA88525D1EAE3B7D008CB62C /* CGridVisorMatch.swift */; };
 		DA8852611EAE3E44008CB62C /* VGridVisorMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8852601EAE3E44008CB62C /* VGridVisorMatch.swift */; };
 		DA8852631EAE6D6C008CB62C /* MGridItemReleaseVirus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8852621EAE6D6C008CB62C /* MGridItemReleaseVirus.swift */; };
@@ -382,29 +382,10 @@
 		DA0C16DC1EB5199E007532A6 /* MGridVisorDetailItemMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemMatch.swift; sourceTree = "<group>"; };
 		DA0C16DE1EB519F1007532A6 /* VGridVisorDetailCellMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellMatch.swift; sourceTree = "<group>"; };
 		DA12133E1EB7D41C0091976C /* MGridVisorTakeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorTakeProtocol.swift; sourceTree = "<group>"; };
-		DA134A771E9D48ED002BE57D /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DA134A841E9D5076002BE57D /* ExtensionMTKTextureLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTKTextureLoader.swift; sourceTree = "<group>"; };
 		DA134A851E9D5076002BE57D /* ExtensionMTLDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTLDevice.swift; sourceTree = "<group>"; };
 		DA134A861E9D5076002BE57D /* ExtensionMTLRenderCommandEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTLRenderCommandEncoder.swift; sourceTree = "<group>"; };
 		DA134A871E9D5076002BE57D /* ExtensionMTLTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMTLTexture.swift; sourceTree = "<group>"; };
-		DA134A8C1E9D549E002BE57D /* MetalBufferableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalBufferableProtocol.swift; sourceTree = "<group>"; };
-		DA134A8D1E9D549E002BE57D /* MetalSpatialDirectionPositive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialDirectionPositive.swift; sourceTree = "<group>"; };
-		DA134A8E1E9D549E002BE57D /* MetalPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalPosition.swift; sourceTree = "<group>"; };
-		DA134A8F1E9D549E002BE57D /* MetalVertexFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVertexFace.swift; sourceTree = "<group>"; };
-		DA134A901E9D549E002BE57D /* MetalProjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalProjection.swift; sourceTree = "<group>"; };
-		DA134A911E9D549E002BE57D /* MetalVertexTextured.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVertexTextured.swift; sourceTree = "<group>"; };
-		DA134A921E9D549E002BE57D /* MetalSpatialBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialBase.swift; sourceTree = "<group>"; };
-		DA134A931E9D549E002BE57D /* MetalSpatialDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialDirection.swift; sourceTree = "<group>"; };
-		DA134A941E9D549E002BE57D /* MetalProjectionMatrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalProjectionMatrix.swift; sourceTree = "<group>"; };
-		DA134A951E9D549E002BE57D /* MetalShaderStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalShaderStructs.h; sourceTree = "<group>"; };
-		DA134A961E9D549E002BE57D /* MetalRenderableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRenderableProtocol.swift; sourceTree = "<group>"; };
-		DA134A971E9D549E002BE57D /* MetalSpatialDirectionNegative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialDirectionNegative.swift; sourceTree = "<group>"; };
-		DA134A981E9D549E002BE57D /* MetalShaderVertexTextured.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MetalShaderVertexTextured.metal; sourceTree = "<group>"; };
-		DA134A991E9D549E002BE57D /* MetalSpatialShapeSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialShapeSquare.swift; sourceTree = "<group>"; };
-		DA134A9A1E9D549E002BE57D /* MetalRotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRotation.swift; sourceTree = "<group>"; };
-		DA134A9B1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialShapeSquarePositive.swift; sourceTree = "<group>"; };
-		DA134A9C1E9D549E002BE57D /* MetalShaderFragmentSimple.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MetalShaderFragmentSimple.metal; sourceTree = "<group>"; };
-		DA134A9D1E9D549E002BE57D /* MetalVertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVertex.swift; sourceTree = "<group>"; };
 		DA134AAF1E9D5D69002BE57D /* texture.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = texture.xcassets; sourceTree = "<group>"; };
 		DA1403B71EB65F4D006C9364 /* VGridVisorDetailCellCreated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellCreated.swift; sourceTree = "<group>"; };
 		DA1403B91EB6607A006C9364 /* MGridVisorDetailItemCreated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemCreated.swift; sourceTree = "<group>"; };
@@ -578,7 +559,26 @@
 		DA771F411EA565B200CAA820 /* MGridVisorRenderBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderBackground.swift; sourceTree = "<group>"; };
 		DA771F471EA5662F00CAA820 /* MGridVisorRenderAlgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderAlgo.swift; sourceTree = "<group>"; };
 		DA771F491EA5664000CAA820 /* MGridVisorRenderAlgoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderAlgoItem.swift; sourceTree = "<group>"; };
-		DA87C46D1ED5E7B300501EDC /* MetalShaderFragmentColour.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MetalShaderFragmentColour.metal; sourceTree = "<group>"; };
+		DA87C4701ED5ED4300501EDC /* MetalBufferableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalBufferableProtocol.swift; sourceTree = "<group>"; };
+		DA87C4711ED5ED4300501EDC /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
+		DA87C4721ED5ED4300501EDC /* MetalRenderableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRenderableProtocol.swift; sourceTree = "<group>"; };
+		DA87C4741ED5ED4300501EDC /* MetalShaderFragmentColour.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MetalShaderFragmentColour.metal; sourceTree = "<group>"; };
+		DA87C4751ED5ED4300501EDC /* MetalShaderFragmentSimple.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MetalShaderFragmentSimple.metal; sourceTree = "<group>"; };
+		DA87C4761ED5ED4300501EDC /* MetalShaderStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetalShaderStructs.h; sourceTree = "<group>"; };
+		DA87C4771ED5ED4300501EDC /* MetalShaderVertexTextured.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MetalShaderVertexTextured.metal; sourceTree = "<group>"; };
+		DA87C4791ED5ED4300501EDC /* MetalPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalPosition.swift; sourceTree = "<group>"; };
+		DA87C47A1ED5ED4300501EDC /* MetalProjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalProjection.swift; sourceTree = "<group>"; };
+		DA87C47B1ED5ED4300501EDC /* MetalProjectionMatrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalProjectionMatrix.swift; sourceTree = "<group>"; };
+		DA87C47C1ED5ED4300501EDC /* MetalRotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRotation.swift; sourceTree = "<group>"; };
+		DA87C47E1ED5ED4300501EDC /* MetalSpatialBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialBase.swift; sourceTree = "<group>"; };
+		DA87C47F1ED5ED4300501EDC /* MetalSpatialDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialDirection.swift; sourceTree = "<group>"; };
+		DA87C4801ED5ED4300501EDC /* MetalSpatialDirectionNegative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialDirectionNegative.swift; sourceTree = "<group>"; };
+		DA87C4811ED5ED4300501EDC /* MetalSpatialDirectionPositive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialDirectionPositive.swift; sourceTree = "<group>"; };
+		DA87C4821ED5ED4300501EDC /* MetalSpatialShapeSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialShapeSquare.swift; sourceTree = "<group>"; };
+		DA87C4831ED5ED4300501EDC /* MetalSpatialShapeSquarePositive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalSpatialShapeSquarePositive.swift; sourceTree = "<group>"; };
+		DA87C4851ED5ED4300501EDC /* MetalVertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVertex.swift; sourceTree = "<group>"; };
+		DA87C4861ED5ED4300501EDC /* MetalVertexFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVertexFace.swift; sourceTree = "<group>"; };
+		DA87C4871ED5ED4300501EDC /* MetalVertexTextured.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVertexTextured.swift; sourceTree = "<group>"; };
 		DA88525D1EAE3B7D008CB62C /* CGridVisorMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVisorMatch.swift; sourceTree = "<group>"; };
 		DA8852601EAE3E44008CB62C /* VGridVisorMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorMatch.swift; sourceTree = "<group>"; };
 		DA8852621EAE6D6C008CB62C /* MGridItemReleaseVirus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridItemReleaseVirus.swift; sourceTree = "<group>"; };
@@ -801,26 +801,11 @@
 		DA134A761E9D48E1002BE57D /* Metal */ = {
 			isa = PBXGroup;
 			children = (
-				DA134A8C1E9D549E002BE57D /* MetalBufferableProtocol.swift */,
-				DA134A8D1E9D549E002BE57D /* MetalSpatialDirectionPositive.swift */,
-				DA134A8E1E9D549E002BE57D /* MetalPosition.swift */,
-				DA134A8F1E9D549E002BE57D /* MetalVertexFace.swift */,
-				DA134A901E9D549E002BE57D /* MetalProjection.swift */,
-				DA134A911E9D549E002BE57D /* MetalVertexTextured.swift */,
-				DA134A921E9D549E002BE57D /* MetalSpatialBase.swift */,
-				DA134A931E9D549E002BE57D /* MetalSpatialDirection.swift */,
-				DA134A941E9D549E002BE57D /* MetalProjectionMatrix.swift */,
-				DA134A951E9D549E002BE57D /* MetalShaderStructs.h */,
-				DA134A961E9D549E002BE57D /* MetalRenderableProtocol.swift */,
-				DA134A971E9D549E002BE57D /* MetalSpatialDirectionNegative.swift */,
-				DA134A981E9D549E002BE57D /* MetalShaderVertexTextured.metal */,
-				DA134A991E9D549E002BE57D /* MetalSpatialShapeSquare.swift */,
-				DA134A9A1E9D549E002BE57D /* MetalRotation.swift */,
-				DA134A9B1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift */,
-				DA134A9C1E9D549E002BE57D /* MetalShaderFragmentSimple.metal */,
-				DA87C46D1ED5E7B300501EDC /* MetalShaderFragmentColour.metal */,
-				DA134A9D1E9D549E002BE57D /* MetalVertex.swift */,
-				DA134A771E9D48ED002BE57D /* MetalConstants.swift */,
+				DA87C46F1ED5ED4300501EDC /* Basic */,
+				DA87C4731ED5ED4300501EDC /* Shaders */,
+				DA87C4781ED5ED4300501EDC /* Space */,
+				DA87C47D1ED5ED4300501EDC /* Spatial */,
+				DA87C4841ED5ED4300501EDC /* Vertex */,
 			);
 			path = Metal;
 			sourceTree = "<group>";
@@ -1291,6 +1276,61 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		DA87C46F1ED5ED4300501EDC /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				DA87C4701ED5ED4300501EDC /* MetalBufferableProtocol.swift */,
+				DA87C4711ED5ED4300501EDC /* MetalConstants.swift */,
+				DA87C4721ED5ED4300501EDC /* MetalRenderableProtocol.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		DA87C4731ED5ED4300501EDC /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				DA87C4741ED5ED4300501EDC /* MetalShaderFragmentColour.metal */,
+				DA87C4751ED5ED4300501EDC /* MetalShaderFragmentSimple.metal */,
+				DA87C4761ED5ED4300501EDC /* MetalShaderStructs.h */,
+				DA87C4771ED5ED4300501EDC /* MetalShaderVertexTextured.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		DA87C4781ED5ED4300501EDC /* Space */ = {
+			isa = PBXGroup;
+			children = (
+				DA87C4791ED5ED4300501EDC /* MetalPosition.swift */,
+				DA87C47A1ED5ED4300501EDC /* MetalProjection.swift */,
+				DA87C47B1ED5ED4300501EDC /* MetalProjectionMatrix.swift */,
+				DA87C47C1ED5ED4300501EDC /* MetalRotation.swift */,
+			);
+			path = Space;
+			sourceTree = "<group>";
+		};
+		DA87C47D1ED5ED4300501EDC /* Spatial */ = {
+			isa = PBXGroup;
+			children = (
+				DA87C47E1ED5ED4300501EDC /* MetalSpatialBase.swift */,
+				DA87C47F1ED5ED4300501EDC /* MetalSpatialDirection.swift */,
+				DA87C4801ED5ED4300501EDC /* MetalSpatialDirectionNegative.swift */,
+				DA87C4811ED5ED4300501EDC /* MetalSpatialDirectionPositive.swift */,
+				DA87C4821ED5ED4300501EDC /* MetalSpatialShapeSquare.swift */,
+				DA87C4831ED5ED4300501EDC /* MetalSpatialShapeSquarePositive.swift */,
+			);
+			path = Spatial;
+			sourceTree = "<group>";
+		};
+		DA87C4841ED5ED4300501EDC /* Vertex */ = {
+			isa = PBXGroup;
+			children = (
+				DA87C4851ED5ED4300501EDC /* MetalVertex.swift */,
+				DA87C4861ED5ED4300501EDC /* MetalVertexFace.swift */,
+				DA87C4871ED5ED4300501EDC /* MetalVertexTextured.swift */,
+			);
+			path = Vertex;
+			sourceTree = "<group>";
+		};
 		DA88525F1EAE3E09008CB62C /* GridVisorMatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -1732,13 +1772,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA87C4931ED5ED4300501EDC /* MetalSpatialDirection.swift in Sources */,
 				DA59D76F1EB3BB6300EB2973 /* FDb.swift in Sources */,
 				DA1D49A91EAA472D00C2392C /* VLandingCell.swift in Sources */,
 				DA134A881E9D5076002BE57D /* ExtensionMTKTextureLoader.swift in Sources */,
 				DA17EF351EC258DF00A846A3 /* MSettingsDistance.swift in Sources */,
-				DA134AA21E9D549E002BE57D /* MetalProjection.swift in Sources */,
 				DA7135C01EAFB0FE007ACEB5 /* VGridMapDetailHeader.swift in Sources */,
 				DA8C07011EC65206000DF6D4 /* MHelpAidsEnergy.swift in Sources */,
+				DA87C48B1ED5ED4300501EDC /* MetalShaderFragmentColour.metal in Sources */,
 				DAFA6A3F1EA90D36001BA4B4 /* MGridVisorDetailItemLevel.swift in Sources */,
 				DAF15D6C1E9D32BB0000E6B9 /* VParentPushBackground.swift in Sources */,
 				DA4E69FD1EC3A0D7004B138B /* MHelp.swift in Sources */,
@@ -1759,9 +1800,8 @@
 				DA134A8B1E9D5076002BE57D /* ExtensionMTLTexture.swift in Sources */,
 				DA31F6AF1EC2487C003978C7 /* MStorePurchaseProcessor.swift in Sources */,
 				DA88526F1EAEA939008CB62C /* MGridMap.swift in Sources */,
+				DA87C48D1ED5ED4300501EDC /* MetalShaderVertexTextured.metal in Sources */,
 				DA8852631EAE6D6C008CB62C /* MGridItemReleaseVirus.swift in Sources */,
-				DA134AAB1E9D549E002BE57D /* MetalRotation.swift in Sources */,
-				DA134A9E1E9D549E002BE57D /* MetalBufferableProtocol.swift in Sources */,
 				DA7135B41EAFAFEF007ACEB5 /* MGridMapDetail.swift in Sources */,
 				DA88526C1EAEA567008CB62C /* VGridMapRender.swift in Sources */,
 				DA8C06DB1EC62AA1000DF6D4 /* MHelpRelease.swift in Sources */,
@@ -1769,6 +1809,7 @@
 				DA09608D1EBFD0180005BE96 /* VTutorial.swift in Sources */,
 				DAAA0EBC1EA81C9300756A17 /* VGridVisorDetailCellDistance.swift in Sources */,
 				DA1D49C51EAA648900C2392C /* VProfile.swift in Sources */,
+				DA87C4901ED5ED4300501EDC /* MetalProjectionMatrix.swift in Sources */,
 				DA6D30EC1EC4D3510018E0B1 /* MHelpBasicRelease.swift in Sources */,
 				DA7198361EBBDA2100D60D1A /* MGridVisorTakeStatsProcessor.swift in Sources */,
 				DA34E5141EB95AB100AC9389 /* VGridVirus.swift in Sources */,
@@ -1781,15 +1822,15 @@
 				DA771F481EA5662F00CAA820 /* MGridVisorRenderAlgo.swift in Sources */,
 				DA17EF3D1EC2687800A846A3 /* MDistanceFoot.swift in Sources */,
 				DA7198321EBBD99F00D60D1A /* MGridVisorTakeStatsMemory.swift in Sources */,
+				DA87C48F1ED5ED4300501EDC /* MetalProjection.swift in Sources */,
 				DACADD4F1ED501FB00ED2F94 /* MGridVisorRenderFinder.swift in Sources */,
 				DAE2657C1ED016AE00E886F8 /* MGridItemHarvest.swift in Sources */,
 				DA771F361EA5338E00CAA820 /* VGridVisorBar.swift in Sources */,
-				DA134AA61E9D549E002BE57D /* MetalProjectionMatrix.swift in Sources */,
+				DA87C4971ED5ED4300501EDC /* MetalSpatialShapeSquarePositive.swift in Sources */,
 				DA8D05B81ED340A800098411 /* MGridHarvest.swift in Sources */,
 				DA1D49D11EAA7D2E00C2392C /* MProfileItem.swift in Sources */,
 				DA0C16DF1EB519F1007532A6 /* VGridVisorDetailCellMatch.swift in Sources */,
 				DA7135BE1EAFB062007ACEB5 /* MGridMapDetailItemDistance.swift in Sources */,
-				DA134AA71E9D549E002BE57D /* MetalRenderableProtocol.swift in Sources */,
 				DA6D30FC1EC52A700018E0B1 /* MTutorialAntivirus.swift in Sources */,
 				DAF15D591E9D32BB0000E6B9 /* DManager.swift in Sources */,
 				DAAA0EBE1EA81DE900756A17 /* MGridVisorDetailItemDistance.swift in Sources */,
@@ -1798,18 +1839,17 @@
 				DA59D7711EB3BB6C00EB2973 /* FDbProtocol.swift in Sources */,
 				DA4D97751EB14B4100AE0C0C /* MLandingBarStore.swift in Sources */,
 				DA29FEEB1EAAA43A00CD8FBC /* MProfileItemNetwork.swift in Sources */,
-				DA87C46E1ED5E7B300501EDC /* MetalShaderFragmentColour.metal in Sources */,
 				DAE265871ED292B000E886F8 /* VGridHarvestBarCollect.swift in Sources */,
 				DAB1B4B91EB8CB10009AFA46 /* MGridVisorTakeEnergy30.swift in Sources */,
 				DA771F381EA5495400CAA820 /* VGridVisorBarEnergy.swift in Sources */,
 				DA4E6A0F1EC3CF5E004B138B /* VHelpCell.swift in Sources */,
 				DAE2657E1ED0175200E886F8 /* CGridHarvest.swift in Sources */,
 				DA8C06F51EC64DBE000DF6D4 /* MTutorialSkills.swift in Sources */,
-				DA134AA11E9D549E002BE57D /* MetalVertexFace.swift in Sources */,
 				DAF15D741E9D34FF0000E6B9 /* CLanding.swift in Sources */,
 				DA4E6A111EC3D6BD004B138B /* MTutorialBasic.swift in Sources */,
 				DA0C16DD1EB5199E007532A6 /* MGridVisorDetailItemMatch.swift in Sources */,
 				DA1D49B81EAA49C200C2392C /* MLandingItemBoards.swift in Sources */,
+				DA87C4911ED5ED4300501EDC /* MetalRotation.swift in Sources */,
 				DAB1B4B31EB8CAD8009AFA46 /* MGridVisorTakeEnergy20.swift in Sources */,
 				DA49A8291EBAA7B500C03ECD /* FDbAlgoHostileVirusItem.swift in Sources */,
 				DA771F401EA565A600CAA820 /* MGridVisorRender.swift in Sources */,
@@ -1826,8 +1866,8 @@
 				DA098E731ECE518500FD500E /* VBoardsCellKills.swift in Sources */,
 				DA2B41111ECF5DBD007FF946 /* MSessionLevelUp.swift in Sources */,
 				DA31F6961EC207CA003978C7 /* VStoreBar.swift in Sources */,
+				DA87C4941ED5ED4300501EDC /* MetalSpatialDirectionNegative.swift in Sources */,
 				DA6D30EE1EC4EFD20018E0B1 /* MTutorialDebug.swift in Sources */,
-				DA134AA91E9D549E002BE57D /* MetalShaderVertexTextured.metal in Sources */,
 				DA1403C21EB66896006C9364 /* MGridVisorTake.swift in Sources */,
 				DA8852611EAE3E44008CB62C /* VGridVisorMatch.swift in Sources */,
 				DA31F69D1EC207CA003978C7 /* VStoreHeader.swift in Sources */,
@@ -1842,7 +1882,6 @@
 				DA8C06F91EC64F64000DF6D4 /* MHelpSkillsPurchase.swift in Sources */,
 				DA0960A11EC10CAD0005BE96 /* FDbUser.swift in Sources */,
 				DA8C06EF1EC63E21000DF6D4 /* MTutorialEnergy.swift in Sources */,
-				DA134AAD1E9D549E002BE57D /* MetalShaderFragmentSimple.metal in Sources */,
 				DA4E6A151EC3E115004B138B /* VTutorialCell.swift in Sources */,
 				DA599B541EA7B3FD0070E5AF /* VGridVisorDetailBar.swift in Sources */,
 				DA7198301EBBC19C00D60D1A /* MGridVisorTakeStatsSkill.swift in Sources */,
@@ -1851,16 +1890,13 @@
 				DAF15D5C1E9D32BB0000E6B9 /* ExtensionNotification.swift in Sources */,
 				DAAA0EB41EA80D6000756A17 /* MGridVisorDetailItem.swift in Sources */,
 				DA0960831EBE418D0005BE96 /* CHandler.swift in Sources */,
-				DA134AA81E9D549E002BE57D /* MetalSpatialDirectionNegative.swift in Sources */,
 				DA8852731EAEAEA5008CB62C /* VGridMapRenderPin.swift in Sources */,
 				DA0C16D51EB4FF5A007532A6 /* FDbAlgoAid.swift in Sources */,
 				DAAEA2D71EAC4CE300986612 /* MStatsItemVirusReleased.swift in Sources */,
 				DAFDEF921EA508D10016746F /* MGrid.swift in Sources */,
-				DA134AA51E9D549E002BE57D /* MetalSpatialDirection.swift in Sources */,
 				DAAA0EC41EA8397200756A17 /* VGridVisorDetailCellLevel.swift in Sources */,
 				DA0960A31EC129C20005BE96 /* CStore.swift in Sources */,
 				DAFDEF961EA509060016746F /* MGridItemMap.swift in Sources */,
-				DA134A9F1E9D549E002BE57D /* MetalSpatialDirectionPositive.swift in Sources */,
 				DA0C16D31EB4FE4B007532A6 /* FDbAlgoAidItem.swift in Sources */,
 				DA31F69F1EC207F9003978C7 /* MStoreStatusNew.swift in Sources */,
 				DA17EF371EC2592300A846A3 /* VSettingsCellDistance.swift in Sources */,
@@ -1876,12 +1912,12 @@
 				DA8D05BE1ED3719B00098411 /* VGridHarvestSubbar.swift in Sources */,
 				DAF15D681E9D32BB0000E6B9 /* VBorder.swift in Sources */,
 				DA7135B01EAFA94E007ACEB5 /* VGridMapDetail.swift in Sources */,
-				DA134AAE1E9D549E002BE57D /* MetalVertex.swift in Sources */,
 				DAF15D6E1E9D32BB0000E6B9 /* VToast.swift in Sources */,
 				DA098E6B1ECE3C5A00FD500E /* MBoardsSortProtocol.swift in Sources */,
 				DA70844B1EA6685600B222FE /* MGridVisorOrientationLandscapeRight.swift in Sources */,
 				DA1D49C71EAA6B2900C2392C /* VProfileBar.swift in Sources */,
 				DA599B4D1EA7AAE90070E5AF /* CGridVisorDetail.swift in Sources */,
+				DA87C4891ED5ED4300501EDC /* MetalConstants.swift in Sources */,
 				DA4E69F41EC398BD004B138B /* MTutorialProtocol.swift in Sources */,
 				DA7198341EBBD9CB00D60D1A /* MGridVisorTakeStatsNetwork.swift in Sources */,
 				DAF15D621E9D32BB0000E6B9 /* ExtensionUIFont.swift in Sources */,
@@ -1898,9 +1934,12 @@
 				DA31F6A91EC22A78003978C7 /* MStorePurchaseEnergy.swift in Sources */,
 				DA8C06E51EC63A58000DF6D4 /* MHelpEnergy.swift in Sources */,
 				DA31F6971EC207CA003978C7 /* VStoreCell.swift in Sources */,
+				DA87C49A1ED5ED4300501EDC /* MetalVertexTextured.swift in Sources */,
 				DAF15D6B1E9D32BB0000E6B9 /* VParent.swift in Sources */,
 				DA6D30FE1EC52C900018E0B1 /* MHelpAntivirusIntro.swift in Sources */,
+				DA87C48A1ED5ED4300501EDC /* MetalRenderableProtocol.swift in Sources */,
 				DAE265831ED0209500E886F8 /* VGridHarvestBar.swift in Sources */,
+				DA87C4981ED5ED4300501EDC /* MetalVertex.swift in Sources */,
 				DA8C06EB1EC63E01000DF6D4 /* MHelpEnergyAids.swift in Sources */,
 				DA59D77B1EB3D15500EB2973 /* FDbAlgoHostileBug.swift in Sources */,
 				DA09609D1EC0F2A00005BE96 /* MBoards.swift in Sources */,
@@ -1908,8 +1947,8 @@
 				DA1D49A51EAA42DB00C2392C /* DUserExtension.swift in Sources */,
 				DA8C06E11EC632C2000DF6D4 /* MHelpReleaseSpend.swift in Sources */,
 				DA31F6991EC207CA003978C7 /* VStoreCellNew.swift in Sources */,
-				DA134AA31E9D549E002BE57D /* MetalVertexTextured.swift in Sources */,
 				DA1403BC1EB66478006C9364 /* CGridVisorTake.swift in Sources */,
+				DA87C4951ED5ED4300501EDC /* MetalSpatialDirectionPositive.swift in Sources */,
 				DA59D7581EB25F9000EB2973 /* FAnalytics.swift in Sources */,
 				DA59D7771EB3BCAD00EB2973 /* FDbAlgoHostileItem.swift in Sources */,
 				DA8C06D61EC628BB000DF6D4 /* MHelpAntivirusStats.swift in Sources */,
@@ -1932,6 +1971,7 @@
 				DA7135CB1EAFF634007ACEB5 /* CSettings.swift in Sources */,
 				DA7135C91EAFD512007ACEB5 /* VBoardsBar.swift in Sources */,
 				DA1D49AB1EAA47AD00C2392C /* VLandingBar.swift in Sources */,
+				DA87C48E1ED5ED4300501EDC /* MetalPosition.swift in Sources */,
 				DA0C16D71EB5122D007532A6 /* MGridVisorDetailItemHeaderAid.swift in Sources */,
 				DA31F6AD1EC2449A003978C7 /* MStorePurchaseNetwork.swift in Sources */,
 				DA29FEF21EAAAA6400CD8FBC /* VStats.swift in Sources */,
@@ -1945,7 +1985,6 @@
 				DA8C06D81EC628C4000DF6D4 /* MHelpAntivirusDistance.swift in Sources */,
 				DA098E711ECE517B00FD500E /* VBoardsCellScore.swift in Sources */,
 				DA71982C1EBBAE7B00D60D1A /* MGridVisorDetailItemHeaderVirusFriendly.swift in Sources */,
-				DA134AA41E9D549E002BE57D /* MetalSpatialBase.swift in Sources */,
 				DA0960AE1EC138DF0005BE96 /* MStoreItem.swift in Sources */,
 				DAF15D6F1E9D32BB0000E6B9 /* VView.swift in Sources */,
 				DA09609F1EC0F2BC0005BE96 /* MBoardsItem.swift in Sources */,
@@ -1959,6 +1998,7 @@
 				DAF15D581E9D32BB0000E6B9 /* CParent.swift in Sources */,
 				DAFE877E1EA51D5300350434 /* MGridAlgoItemHostileVirusFriendly.swift in Sources */,
 				DA29FEEF1EAAA9F500CD8FBC /* CStats.swift in Sources */,
+				DA87C48C1ED5ED4300501EDC /* MetalShaderFragmentSimple.metal in Sources */,
 				DA0960A81EC135B00005BE96 /* MStore.swift in Sources */,
 				DA31F6A11EC20828003978C7 /* MStoreStatusNotAvailable.swift in Sources */,
 				DA4D97711EB1079100AE0C0C /* MLandingBarSettings.swift in Sources */,
@@ -1968,7 +2008,7 @@
 				DA4DC4701EA191270024D28E /* MGridAlgo.swift in Sources */,
 				DA6D30F71EC51B380018E0B1 /* MHelpDebugDistance.swift in Sources */,
 				DAFDEF941EA508E10016746F /* MGridItem.swift in Sources */,
-				DA134AAA1E9D549E002BE57D /* MetalSpatialShapeSquare.swift in Sources */,
+				DA87C4881ED5ED4300501EDC /* MetalBufferableProtocol.swift in Sources */,
 				DA0960881EBE429A0005BE96 /* VHandlerField.swift in Sources */,
 				DA7135B81EAFB030007ACEB5 /* MGridMapDetailItemTitle.swift in Sources */,
 				DA4DC47C1EA192BD0024D28E /* MGridAlgoItemHostileBug.swift in Sources */,
@@ -1995,6 +2035,7 @@
 				DAE265851ED2924000E886F8 /* VGridHarvestCell.swift in Sources */,
 				DAF15D6D1E9D32BB0000E6B9 /* VSpinner.swift in Sources */,
 				DAF15D5D1E9D32BB0000E6B9 /* ExtensionNSLayoutConstraint.swift in Sources */,
+				DA87C4991ED5ED4300501EDC /* MetalVertexFace.swift in Sources */,
 				DA158C5B1EC3423500E4848C /* MSettingsShare.swift in Sources */,
 				DA7135B21EAFAF38007ACEB5 /* VGridMapDetailCell.swift in Sources */,
 				DA29FEED1EAAA46C00CD8FBC /* MProfileItemProcessor.swift in Sources */,
@@ -2003,7 +2044,6 @@
 				DA4E6A0D1EC3CE29004B138B /* VHelp.swift in Sources */,
 				DA771F421EA565B200CAA820 /* MGridVisorRenderBackground.swift in Sources */,
 				DA34E5111EB958DA00AC9389 /* CGridVirus.swift in Sources */,
-				DA134AA01E9D549E002BE57D /* MetalPosition.swift in Sources */,
 				DAF15D641E9D32BB0000E6B9 /* MSession.swift in Sources */,
 				DA29FEFB1EAAB61300CD8FBC /* MStatsItem.swift in Sources */,
 				DA4D976B1EB0F78D00AE0C0C /* MSettingsProtocol.swift in Sources */,
@@ -2023,6 +2063,7 @@
 				DA1403BA1EB6607A006C9364 /* MGridVisorDetailItemCreated.swift in Sources */,
 				DA8C07031EC652EA000DF6D4 /* MTutorialAids.swift in Sources */,
 				DA134A891E9D5076002BE57D /* ExtensionMTLDevice.swift in Sources */,
+				DA87C4961ED5ED4300501EDC /* MetalSpatialShapeSquare.swift in Sources */,
 				DA158C5D1EC3438900E4848C /* VSettingsCellReview.swift in Sources */,
 				DA49A81E1EBA1E1400C03ECD /* VGridVirusOptionsButton.swift in Sources */,
 				DA59D77D1EB3D61C00EB2973 /* MGridAlgoFactory.swift in Sources */,
@@ -2041,11 +2082,10 @@
 				DA31F6A31EC208B9003978C7 /* MStoreStatusPurchased.swift in Sources */,
 				DA17EF331EC24E7000A846A3 /* VSettingsHeader.swift in Sources */,
 				DA1D49D31EAA803500C2392C /* MProfileItemSkill.swift in Sources */,
+				DA87C4921ED5ED4300501EDC /* MetalSpatialBase.swift in Sources */,
 				DAFE877C1EA51D4900350434 /* MGridAlgoItemHostileVirusFoe.swift in Sources */,
 				DA1403C51EB668B8006C9364 /* VGridVisorTake.swift in Sources */,
 				DA1D49CF1EAA787F00C2392C /* MProfile.swift in Sources */,
-				DA134AAC1E9D549E002BE57D /* MetalSpatialShapeSquarePositive.swift in Sources */,
-				DA134A781E9D48ED002BE57D /* MetalConstants.swift in Sources */,
 				DA0BDA081EA418E500282D73 /* VGridBar.swift in Sources */,
 				DA29FEFF1EAAB9E400CD8FBC /* MStatsItemVirus.swift in Sources */,
 				DA6D30F11EC4F06A0018E0B1 /* MHelpDebug.swift in Sources */,
