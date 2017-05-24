@@ -4,7 +4,8 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
 {
     private weak var imageView:UIImageView!
     private weak var labelTitle:UILabel!
-    private let kImageWidth:CGFloat = 100
+    private let kImageHeight:CGFloat = 160
+    private let kTitleHeight:CGFloat = 50
     
     override init(frame:CGRect)
     {
@@ -22,30 +23,31 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         labelTitle.isUserInteractionEnabled = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.bold(size:22)
-        labelTitle.textColor = UIColor.black
+        labelTitle.font = UIFont.bold(size:16)
+        labelTitle.textColor = UIColor.white
+        labelTitle.textAlignment = NSTextAlignment.center
         self.labelTitle = labelTitle
         
         addSubview(imageView)
         addSubview(labelTitle)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.topToTop(
             view:imageView,
             toView:self)
-        NSLayoutConstraint.leftToLeft(
+        NSLayoutConstraint.height(
+            view:imageView,
+            constant:kImageHeight)
+        NSLayoutConstraint.equalsHorizontal(
             view:imageView,
             toView:self)
-        NSLayoutConstraint.width(
-            view:imageView,
-            constant:kImageWidth)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.bottomToBottom(
             view:labelTitle,
             toView:self)
-        NSLayoutConstraint.leftToRight(
+        NSLayoutConstraint.height(
             view:labelTitle,
-            toView:imageView)
-        NSLayoutConstraint.rightToRight(
+            constant:kTitleHeight)
+        NSLayoutConstraint.equalsHorizontal(
             view:labelTitle,
             toView:self)
     }

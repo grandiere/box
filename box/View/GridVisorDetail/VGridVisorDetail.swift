@@ -13,7 +13,7 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         backgroundColor = UIColor.clear
         self.controller = controller as? CGridVisorDetail
         
-        let blur:VBlur = VBlur.extraLight()
+        let blur:VBlur = VBlur.dark()
         
         let viewBar:VGridVisorDetailBar = VGridVisorDetailBar(
             controller:self.controller)

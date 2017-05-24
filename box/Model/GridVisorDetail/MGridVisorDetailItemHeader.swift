@@ -4,7 +4,7 @@ class MGridVisorDetailItemHeader:MGridVisorDetailItem
 {
     let image:UIImage?
     let title:String
-    private let kCellHeight:CGFloat = 110
+    private let kCellHeight:CGFloat = 200
     
     init(image:UIImage?, title:String)
     {
