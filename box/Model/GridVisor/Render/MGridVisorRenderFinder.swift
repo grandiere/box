@@ -9,7 +9,9 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
     private let spatialSquare:MetalSpatialShapeSquarePositive
     private let positionBuffer:MTLBuffer
     
-    init(device:MTLDevice)
+    init(
+        device:MTLDevice,
+        textureLoader:MTKTextureLoader)
     {
         let position:MetalPosition = MetalPosition.zero()
         let rotation:MetalRotation = MetalRotation.none()
@@ -19,8 +21,6 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
             device:device,
             width:MGridVisorRenderFinder.kSize,
             height:MGridVisorRenderFinder.kSize)
-        
-        let textureLoader:MTKTextureLoader = MTKTextureLoader(device:device)
         
         guard
         

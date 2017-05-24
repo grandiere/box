@@ -7,6 +7,8 @@ class MGridVisorRender:MetalRenderableProtocol
 {
     let background:MGridVisorRenderBackground
     let algo:MGridVisorRenderAlgo
+    private weak var controller:CGridVisor!
+    private let finder:MGridVisorRenderFinder
     private let cIContext:CIContext
     private let textureLoader:MTKTextureLoader
     private let projection:MetalProjection
@@ -25,6 +27,11 @@ class MGridVisorRender:MetalRenderableProtocol
             controller:controller,
             device:device,
             textureLoader:textureLoader)
+        
+        finder = MGridVisorRenderFinder(
+            device:device,
+            textureLoader:textureLoader)
+        self.controller = controller
     }
     
     //MARK: public
@@ -56,5 +63,10 @@ class MGridVisorRender:MetalRenderableProtocol
         
         background.render(renderEncoder:renderEncoder)
         algo.render(renderEncoder:renderEncoder)
+        
+        if let _:MGridAlgoItem = controller.targeting
+        {
+            finder.render(renderEncoder:renderEncoder)
+        }
     }
 }
