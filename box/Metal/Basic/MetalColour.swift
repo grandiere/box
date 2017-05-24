@@ -1,11 +1,11 @@
 import UIKit
 import MetalKit
 
-class MetalColor:MetalBufferableProtocol
+class MetalColour:MetalBufferableProtocol
 {
     class func color(device:MTLDevice, originalColor:UIColor) -> MTLBuffer
     {
-        let color:MetalColor = MetalColor(originalColor:originalColor)
+        let color:MetalColour = MetalColour(originalColor:originalColor)
         let metalBuffer:MTLBuffer = device.generateBuffer(
             bufferable:color)
         
