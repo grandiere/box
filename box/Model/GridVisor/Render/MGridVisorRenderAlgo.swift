@@ -148,7 +148,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     
     //MARK: renderable Protocol
     
-    func render(renderEncoder:MTLRenderCommandEncoder)
+    func render(manager:MetalRenderManager)
     {
         guard
             

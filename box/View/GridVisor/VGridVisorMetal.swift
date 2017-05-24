@@ -125,7 +125,13 @@ class VGridVisorMetal:MTKView
         renderEncoder.setFragmentSamplerState(
             samplerState,
             at:MetalConstants.kFragmentSamplerIndex)
-        controller.modelRender?.render(renderEncoder:renderEncoder)
+        
+        let renderManager:MetalRenderManager = MetalRenderManager(
+            renderEncoder:renderEncoder,
+            simplePipelineState:simplePipelineState,
+            colourPipelineState:colourPipelineState)
+        
+        controller.modelRender?.render(manager:renderManager)
         
         renderEncoder.endEncoding()
         commandBuffer.present(drawable)

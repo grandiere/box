@@ -3,6 +3,7 @@ import MetalKit
 
 class MetalRenderManager
 {
+    let device:MTLDevice
     private let renderEnconder:MTLRenderCommandEncoder
     private let simplePipelineState:MTLRenderPipelineState
     private let colourPipelineState:MTLRenderPipelineState
@@ -15,6 +16,7 @@ class MetalRenderManager
         self.renderEnconder = renderEncoder
         self.simplePipelineState = simplePipelineState
         self.colourPipelineState = colourPipelineState
+        device = renderEncoder.device
     }
     
     //MARK: public
