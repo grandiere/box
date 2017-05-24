@@ -3,7 +3,8 @@ import MetalKit
 class MetalConstants
 {
     static let kVertexFunction:String = "vertex_textured"
-    static let kFragmentFunction:String = "fragment_simple"
+    static let kFragmentFunctionSimple:String = "fragment_simple"
+    static let kFragmentFunctionColour:String = "fragment_colour"
     static let kPixelFormat:MTLPixelFormat = MTLPixelFormat.bgra8Unorm
     static let kRgbBlendOperation:MTLBlendOperation = MTLBlendOperation.add
     static let kAlphaBlendOperation:MTLBlendOperation = MTLBlendOperation.add
