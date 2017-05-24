@@ -3,8 +3,8 @@ import MetalKit
 
 class MetalTextureSequence
 {
-    private(set) var currentFrame:Int
-    private(set) var frameTick:Int
+    private var currentFrame:Int
+    private var frameTick:Int
     private let frames:[MTLTexture]
     private let ticksPerFrame:Int
     private let totalFrames:Int

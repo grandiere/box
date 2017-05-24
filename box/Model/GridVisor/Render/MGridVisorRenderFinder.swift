@@ -5,7 +5,7 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
 {
     static let kSize:Float = 220
     private weak var controller:CGridVisor!
-    private var texture:MTLTexture?
+    private let sequence:MGridVisorRenderFinderSequence
     private let rotationBuffer:MTLBuffer
     private let spatialSquare:MetalSpatialShapeSquarePositive
     private let positionBuffer:MTLBuffer
@@ -27,18 +27,8 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
             device:device,
             width:MGridVisorRenderFinder.kSize,
             height:MGridVisorRenderFinder.kSize)
+        sequence = MGridVisorRenderFinderSequence(textureLoader:textureLoader)
         self.controller = controller
-        
-        guard
-        
-            let texture:MTLTexture = textureLoader.loadImage(image:#imageLiteral(resourceName: "assetTextureTarget01"))
-        
-        else
-        {
-            return
-        }
-        
-        self.texture = texture
     }
     
     //MARK: renderable Protocol
@@ -49,7 +39,7 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
         {
             guard
                 
-                let texture:MTLTexture = self.texture
+                let texture:MTLTexture = sequence.current()
                 
             else
             {

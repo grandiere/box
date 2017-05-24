@@ -3,7 +3,7 @@ import MetalKit
 
 class MGridVisorRenderFinderSequence:MetalTextureSequence
 {
-    private let kTicksPerFrame:Int = 30
+    private let kTicksPerFrame:Int = 5
     
     init(textureLoader:MTKTextureLoader)
     {
