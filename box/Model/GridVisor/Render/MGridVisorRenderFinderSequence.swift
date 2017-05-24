@@ -8,6 +8,7 @@ class MGridVisorRenderFinderSequence:MetalTextureSequence
     init(textureLoader:MTKTextureLoader)
     {
         let images:[UIImage] = [
+            #imageLiteral(resourceName: "assetTextureTarget00"),
             #imageLiteral(resourceName: "assetTextureTarget01"),
             #imageLiteral(resourceName: "assetTextureTarget02"),
             #imageLiteral(resourceName: "assetTextureTarget03"),
@@ -16,7 +17,11 @@ class MGridVisorRenderFinderSequence:MetalTextureSequence
             #imageLiteral(resourceName: "assetTextureTarget06"),
             #imageLiteral(resourceName: "assetTextureTarget07"),
             #imageLiteral(resourceName: "assetTextureTarget08"),
-            #imageLiteral(resourceName: "assetTextureTarget09")]
+            #imageLiteral(resourceName: "assetTextureTarget09"),
+            #imageLiteral(resourceName: "assetTextureTarget10"),
+            #imageLiteral(resourceName: "assetTextureTarget11"),
+            #imageLiteral(resourceName: "assetTextureTarget12")
+        ]
         
         super.init(
             ticksPerFrame:kTicksPerFrame,
