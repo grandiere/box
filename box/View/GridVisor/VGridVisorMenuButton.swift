@@ -4,6 +4,7 @@ class VGridVisorMenuButton:UIButton
 {
     private let kAlphaNotSelected:CGFloat = 1
     private let kAlphaSelected:CGFloat = 0.3
+    private let kAnimationDuration:TimeInterval = 0.5
     
     init(image:UIImage)
     {
@@ -52,6 +53,30 @@ class VGridVisorMenuButton:UIButton
         else
         {
             alpha = kAlphaNotSelected
+        }
+    }
+    
+    //MARK: public
+    
+    func animate(show:Bool)
+    {
+        let alpha:CGFloat
+        
+        if show
+        {
+            alpha = 1
+            isUserInteractionEnabled = true
+        }
+        else
+        {
+            alpha = 0
+            isUserInteractionEnabled = false
+        }
+        
+        UIView.animate(withDuration:kAnimationDuration)
+        { [weak self] in
+            
+            self?.alpha = alpha
         }
     }
 }

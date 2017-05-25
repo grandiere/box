@@ -2,16 +2,20 @@ import UIKit
 
 class VGridVisorMenu:UIView
 {
+    private weak var itemAlgo:MGridAlgoItem?
     private weak var controller:CGridVisor!
     private weak var buttonMatch:VGridVisorMenuButton!
     private weak var buttonDetail:VGridVisorMenuButton!
     private weak var buttonDownload:VGridVisorMenuButton!
     private weak var layoutMatchLeft:NSLayoutConstraint!
+    private var shown:Bool
     private let kItemWidth:CGFloat = 100
     private let kBottom:CGFloat = -50
     
     init(controller:CGridVisor)
     {
+        shown = false
+        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
@@ -79,5 +83,59 @@ class VGridVisorMenu:UIView
         layoutMatchLeft.constant = marginLeft
         
         super.layoutSubviews()
+    }
+    
+    //MARK: private
+    
+    private func hideAll()
+    {
+        buttonMatch.animate(show:false)
+        buttonDetail.animate(show:false)
+        buttonDownload.animate(show:false)
+    }
+    
+    private func showHostile()
+    {
+        
+    }
+    
+    private func showFriendly()
+    {
+        
+    }
+    
+    private func showAid()
+    {
+        
+    }
+    
+    //MARK: public
+    
+    func updateMenu()
+    {
+        if let itemAlgo:MGridAlgoItem = controller.targeting
+        {
+            shown = true
+            
+            if itemAlgo !== self.itemAlgo
+            {
+                self.itemAlgo = itemAlgo
+            }
+        }
+        else
+        {
+            itemAlgo = nil
+            
+            if shown
+            {
+                shown = false
+                
+                DispatchQueue.main.async
+                { [weak self] in
+                    
+                    self?.hideAll()
+                }
+            }
+        }
     }
 }
