@@ -1,7 +1,7 @@
 import UIKit
 import CoreLocation
 
-class MGridAlgoItem
+class MGridAlgoItem:MGridAlgoItemMenuProtocol
 {
     let firebaseId:String
     let location:CLLocation
@@ -11,6 +11,9 @@ class MGridAlgoItem
     private(set) var heading:Float
     private let k180:Double = 180
     private let kHour:TimeInterval = 3600
+    private let kShowDetail:Bool = true
+    private let kShowDownload:Bool = false
+    private let kShowMatch:Bool = false
     
     init(
         firebaseId:String,
@@ -151,5 +154,31 @@ class MGridAlgoItem
         }
         
         return stringTime
+    }
+    
+    //MARK: menu protocol
+    
+    var showDetail:Bool
+    {
+        get
+        {
+            return kShowDetail
+        }
+    }
+    
+    var showDownload:Bool
+    {
+        get
+        {
+            return kShowDownload
+        }
+    }
+    
+    var showMatch:Bool
+    {
+        get
+        {
+            return kShowMatch
+        }
     }
 }
