@@ -257,6 +257,8 @@
 		DA823A291ED74B0B00BF3B84 /* MGridAlgoHostileVirusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A281ED74B0B00BF3B84 /* MGridAlgoHostileVirusItem.swift */; };
 		DA823A2B1ED74B4400BF3B84 /* MGridAlgoHostileVirusFoeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A2A1ED74B4400BF3B84 /* MGridAlgoHostileVirusFoeItem.swift */; };
 		DA823A2D1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A2C1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift */; };
+		DA823A2F1ED74C7200BF3B84 /* MGridAlgoItemRenderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A2E1ED74C7200BF3B84 /* MGridAlgoItemRenderProtocol.swift */; };
+		DA823A311ED74D2300BF3B84 /* MGridAlgoItemMapProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A301ED74D2300BF3B84 /* MGridAlgoItemMapProtocol.swift */; };
 		DA87C4881ED5ED4300501EDC /* MetalBufferableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4701ED5ED4300501EDC /* MetalBufferableProtocol.swift */; };
 		DA87C4891ED5ED4300501EDC /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4711ED5ED4300501EDC /* MetalConstants.swift */; };
 		DA87C48A1ED5ED4300501EDC /* MetalRenderableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4721ED5ED4300501EDC /* MetalRenderableProtocol.swift */; };
@@ -615,6 +617,8 @@
 		DA823A281ED74B0B00BF3B84 /* MGridAlgoHostileVirusItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoHostileVirusItem.swift; sourceTree = "<group>"; };
 		DA823A2A1ED74B4400BF3B84 /* MGridAlgoHostileVirusFoeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoHostileVirusFoeItem.swift; sourceTree = "<group>"; };
 		DA823A2C1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoHostileVirusFriendlyItem.swift; sourceTree = "<group>"; };
+		DA823A2E1ED74C7200BF3B84 /* MGridAlgoItemRenderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoItemRenderProtocol.swift; sourceTree = "<group>"; };
+		DA823A301ED74D2300BF3B84 /* MGridAlgoItemMapProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoItemMapProtocol.swift; sourceTree = "<group>"; };
 		DA87C4701ED5ED4300501EDC /* MetalBufferableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalBufferableProtocol.swift; sourceTree = "<group>"; };
 		DA87C4711ED5ED4300501EDC /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DA87C4721ED5ED4300501EDC /* MetalRenderableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRenderableProtocol.swift; sourceTree = "<group>"; };
@@ -1180,6 +1184,8 @@
 				DA823A2C1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift */,
 				DA59D77C1EB3D61C00EB2973 /* MGridAlgoFactory.swift */,
 				DA823A1C1ED73DCD00BF3B84 /* MGridAlgoItemMenuProtocol.swift */,
+				DA823A2E1ED74C7200BF3B84 /* MGridAlgoItemRenderProtocol.swift */,
+				DA823A301ED74D2300BF3B84 /* MGridAlgoItemMapProtocol.swift */,
 			);
 			path = Algo;
 			sourceTree = "<group>";
@@ -2028,11 +2034,13 @@
 				DA31F69D1EC207CA003978C7 /* VStoreHeader.swift in Sources */,
 				DA8D05C01ED3919700098411 /* MHelpReleaseHarvest.swift in Sources */,
 				DA4D976F1EB105DE00AE0C0C /* MLandingBarProtocol.swift in Sources */,
+				DA823A311ED74D2300BF3B84 /* MGridAlgoItemMapProtocol.swift in Sources */,
 				DA1D49B61EAA49B000C2392C /* MLandingItemStats.swift in Sources */,
 				DA49A8211EBA213E00C03ECD /* MGridVirus.swift in Sources */,
 				DA823A111ED722F900BF3B84 /* CTutorial.swift in Sources */,
 				DA771F3A1EA551F000CAA820 /* MGridVisorGPS.swift in Sources */,
 				DAB1B4BD1EB8CBA9009AFA46 /* MGridVisorTakeEnergy15.swift in Sources */,
+				DA823A2F1ED74C7200BF3B84 /* MGridAlgoItemRenderProtocol.swift in Sources */,
 				DA17EF391EC2685A00A846A3 /* MDistanceProtocol.swift in Sources */,
 				DA771F4A1EA5664000CAA820 /* MGridVisorRenderAlgoItem.swift in Sources */,
 				DA8C06F91EC64F64000DF6D4 /* MHelpSkillsPurchase.swift in Sources */,

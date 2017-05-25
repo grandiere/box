@@ -1,7 +1,7 @@
 import UIKit
 import CoreLocation
 
-class MGridAlgoItem:MGridAlgoItemMenuProtocol
+class MGridAlgoItem:MGridAlgoItemMenuProtocol, MGridAlgoItemRenderProtocol
 {
     let firebaseId:String
     let location:CLLocation
@@ -71,32 +71,31 @@ class MGridAlgoItem:MGridAlgoItemMenuProtocol
     
     //MARK: public
     
-    func firebasePath() -> String
-    {
-        return firebaseId
-    }
-    
     func distanceTo(
         location:CLLocation,
         renderReady:Bool)
     {
         distance = self.location.distance(from:location)
-    
+        
         if renderReady
         {
             heading = headingFrom(reference:location.coordinate)
         }
     }
     
-    func imageStandby() -> UIImage?
+    
+    
+    
+    
+    
+    func firebasePath() -> String
     {
-        return nil
+        return firebaseId
     }
     
-    func imageTargeted() -> UIImage?
-    {
-        return nil
-    }
+    
+    
+    
     
     func imageDetail() -> UIImage?
     {
@@ -113,22 +112,14 @@ class MGridAlgoItem:MGridAlgoItemMenuProtocol
         return nil
     }
     
-    func detail() -> [MGridVisorDetailProtocol]
-    {
-        let items:[MGridVisorDetailProtocol] = []
-        
-        return items
-    }
+    
     
     func titleAnnotation() -> String?
     {
         return nil
     }
     
-    func textureColour() -> UIColor
-    {
-        return UIColor.clear
-    }
+    
     
     //MARK: final
     
@@ -181,4 +172,13 @@ class MGridAlgoItem:MGridAlgoItemMenuProtocol
             return kShowMatch
         }
     }
+    
+    func detail() -> [MGridVisorDetailProtocol]?
+    {        
+        return nil
+    }
+    
+    //MARK: render protocol
+    
+    
 }

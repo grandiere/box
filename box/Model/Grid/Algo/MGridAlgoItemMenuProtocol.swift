@@ -6,5 +6,5 @@ protocol MGridAlgoItemMenuProtocol
     var showDetail:Bool { get }
     var showDownload:Bool { get }
     
-    func detail() -> [MGridVisorDetailProtocol]
+    func detail() -> [MGridVisorDetailProtocol]?
 }
