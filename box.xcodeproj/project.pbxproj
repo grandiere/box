@@ -33,6 +33,13 @@
 		DA06B0241ED65F7C001BCEF7 /* VGridVisorDetailCellLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06B0181ED65F7C001BCEF7 /* VGridVisorDetailCellLevel.swift */; };
 		DA06B0251ED65F7C001BCEF7 /* VGridVisorDetailCellMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06B0191ED65F7C001BCEF7 /* VGridVisorDetailCellMatch.swift */; };
 		DA06B0261ED65F7C001BCEF7 /* VGridVisorDetailCellTake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06B01A1ED65F7C001BCEF7 /* VGridVisorDetailCellTake.swift */; };
+		DA06B0281ED66057001BCEF7 /* MGridVisorDetailItemActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06B0271ED66057001BCEF7 /* MGridVisorDetailItemActions.swift */; };
+		DA06B02A1ED66102001BCEF7 /* MGridVisorDetailItemActionsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06B0291ED66102001BCEF7 /* MGridVisorDetailItemActionsItem.swift */; };
+		DA06B02C1ED6617E001BCEF7 /* MGridVisorDetailItemActionsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06B02B1ED6617E001BCEF7 /* MGridVisorDetailItemActionsProtocol.swift */; };
+		DA06B02E1ED6619C001BCEF7 /* MGridVisorDetailItemActionsTake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06B02D1ED6619C001BCEF7 /* MGridVisorDetailItemActionsTake.swift */; };
+		DA06B0301ED661A7001BCEF7 /* MGridVisorDetailItemActionsMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06B02F1ED661A7001BCEF7 /* MGridVisorDetailItemActionsMatch.swift */; };
+		DA06B0321ED661B3001BCEF7 /* MGridVisorDetailItemActionsBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06B0311ED661B3001BCEF7 /* MGridVisorDetailItemActionsBack.swift */; };
+		DA06B0341ED661BC001BCEF7 /* MGridVisorDetailItemActionsShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA06B0331ED661BC001BCEF7 /* MGridVisorDetailItemActionsShare.swift */; };
 		DA07D5761EC3545A00AC73E1 /* ResourceURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA07D5751EC3545A00AC73E1 /* ResourceURL.plist */; };
 		DA0960831EBE418D0005BE96 /* CHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960821EBE418D0005BE96 /* CHandler.swift */; };
 		DA0960861EBE41F70005BE96 /* VHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0960851EBE41F70005BE96 /* VHandler.swift */; };
@@ -376,6 +383,13 @@
 		DA06B0181ED65F7C001BCEF7 /* VGridVisorDetailCellLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellLevel.swift; sourceTree = "<group>"; };
 		DA06B0191ED65F7C001BCEF7 /* VGridVisorDetailCellMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellMatch.swift; sourceTree = "<group>"; };
 		DA06B01A1ED65F7C001BCEF7 /* VGridVisorDetailCellTake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellTake.swift; sourceTree = "<group>"; };
+		DA06B0271ED66057001BCEF7 /* MGridVisorDetailItemActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemActions.swift; sourceTree = "<group>"; };
+		DA06B0291ED66102001BCEF7 /* MGridVisorDetailItemActionsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemActionsItem.swift; sourceTree = "<group>"; };
+		DA06B02B1ED6617E001BCEF7 /* MGridVisorDetailItemActionsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemActionsProtocol.swift; sourceTree = "<group>"; };
+		DA06B02D1ED6619C001BCEF7 /* MGridVisorDetailItemActionsTake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemActionsTake.swift; sourceTree = "<group>"; };
+		DA06B02F1ED661A7001BCEF7 /* MGridVisorDetailItemActionsMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemActionsMatch.swift; sourceTree = "<group>"; };
+		DA06B0311ED661B3001BCEF7 /* MGridVisorDetailItemActionsBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemActionsBack.swift; sourceTree = "<group>"; };
+		DA06B0331ED661BC001BCEF7 /* MGridVisorDetailItemActionsShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailItemActionsShare.swift; sourceTree = "<group>"; };
 		DA07D5751EC3545A00AC73E1 /* ResourceURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceURL.plist; sourceTree = "<group>"; };
 		DA0960821EBE418D0005BE96 /* CHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHandler.swift; sourceTree = "<group>"; };
 		DA0960851EBE41F70005BE96 /* VHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VHandler.swift; sourceTree = "<group>"; };
@@ -729,6 +743,13 @@
 			children = (
 				DA06AFF21ED65F68001BCEF7 /* MGridVisorDetailItemMatch.swift */,
 				DA06AFF31ED65F68001BCEF7 /* MGridVisorDetailItemTake.swift */,
+				DA06B0271ED66057001BCEF7 /* MGridVisorDetailItemActions.swift */,
+				DA06B0291ED66102001BCEF7 /* MGridVisorDetailItemActionsItem.swift */,
+				DA06B02B1ED6617E001BCEF7 /* MGridVisorDetailItemActionsProtocol.swift */,
+				DA06B02D1ED6619C001BCEF7 /* MGridVisorDetailItemActionsTake.swift */,
+				DA06B02F1ED661A7001BCEF7 /* MGridVisorDetailItemActionsMatch.swift */,
+				DA06B0311ED661B3001BCEF7 /* MGridVisorDetailItemActionsBack.swift */,
+				DA06B0331ED661BC001BCEF7 /* MGridVisorDetailItemActionsShare.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -1845,6 +1866,7 @@
 				DA87C48B1ED5ED4300501EDC /* MetalShaderFragmentColour.metal in Sources */,
 				DAF15D6C1E9D32BB0000E6B9 /* VParentPushBackground.swift in Sources */,
 				DA4E69FD1EC3A0D7004B138B /* MHelp.swift in Sources */,
+				DA06B0281ED66057001BCEF7 /* MGridVisorDetailItemActions.swift in Sources */,
 				DA31F6AB1EC231D2003978C7 /* MStorePurchaseMemory.swift in Sources */,
 				DA8D05BA1ED3562000098411 /* VGridHarvestHeader.swift in Sources */,
 				DA098E671ECE34A400FD500E /* VBoardsBarSelectorIndicator.swift in Sources */,
@@ -1934,6 +1956,7 @@
 				DA87C4941ED5ED4300501EDC /* MetalSpatialDirectionNegative.swift in Sources */,
 				DA6D30EE1EC4EFD20018E0B1 /* MTutorialDebug.swift in Sources */,
 				DA1403C21EB66896006C9364 /* MGridVisorTake.swift in Sources */,
+				DA06B0301ED661A7001BCEF7 /* MGridVisorDetailItemActionsMatch.swift in Sources */,
 				DA8852611EAE3E44008CB62C /* VGridVisorMatch.swift in Sources */,
 				DA31F69D1EC207CA003978C7 /* VStoreHeader.swift in Sources */,
 				DA8D05C01ED3919700098411 /* MHelpReleaseHarvest.swift in Sources */,
@@ -2044,6 +2067,7 @@
 				DA31F6AD1EC2449A003978C7 /* MStorePurchaseNetwork.swift in Sources */,
 				DA29FEF21EAAAA6400CD8FBC /* VStats.swift in Sources */,
 				DA88525E1EAE3B7D008CB62C /* CGridVisorMatch.swift in Sources */,
+				DA06B02E1ED6619C001BCEF7 /* MGridVisorDetailItemActionsTake.swift in Sources */,
 				DA1403C01EB6652C006C9364 /* MGridVisorMatch.swift in Sources */,
 				DAFA6A471EA91975001BA4B4 /* DEnergyExtension.swift in Sources */,
 				DA31F69C1EC207CA003978C7 /* VStoreCellPurchasing.swift in Sources */,
@@ -2066,6 +2090,7 @@
 				DAF15D581E9D32BB0000E6B9 /* CParent.swift in Sources */,
 				DAFE877E1EA51D5300350434 /* MGridAlgoItemHostileVirusFriendly.swift in Sources */,
 				DA29FEEF1EAAA9F500CD8FBC /* CStats.swift in Sources */,
+				DA06B02C1ED6617E001BCEF7 /* MGridVisorDetailItemActionsProtocol.swift in Sources */,
 				DA87C48C1ED5ED4300501EDC /* MetalShaderFragmentSimple.metal in Sources */,
 				DA0960A81EC135B00005BE96 /* MStore.swift in Sources */,
 				DA31F6A11EC20828003978C7 /* MStoreStatusNotAvailable.swift in Sources */,
@@ -2123,6 +2148,7 @@
 				DA09608A1EBFCE8F0005BE96 /* CTutorial.swift in Sources */,
 				DA59D7751EB3BC9700EB2973 /* FDbAlgoItem.swift in Sources */,
 				DA1D49CC1EAA731E00C2392C /* VProfileCell.swift in Sources */,
+				DA06B0341ED661BC001BCEF7 /* MGridVisorDetailItemActionsShare.swift in Sources */,
 				DA6D30EA1EC4C2070018E0B1 /* MHelpBasicVisor.swift in Sources */,
 				DA8852711EAEAA23008CB62C /* MGridMapAnnotation.swift in Sources */,
 				DA87C49C1ED5EDDC00501EDC /* MetalColour.swift in Sources */,
@@ -2137,6 +2163,7 @@
 				DA0960861EBE41F70005BE96 /* VHandler.swift in Sources */,
 				DA29FEE91EAAA3EB00CD8FBC /* MProfileItemMemory.swift in Sources */,
 				DA7135BC1EAFB052007ACEB5 /* MGirdMapDetailItemAge.swift in Sources */,
+				DA06B0321ED661B3001BCEF7 /* MGridVisorDetailItemActionsBack.swift in Sources */,
 				DA4DC47E1EA192CC0024D28E /* MGridAlgoItemHostileVirus.swift in Sources */,
 				DACADD4D1ED4DCAB00ED2F94 /* VGridVisorBarBack.swift in Sources */,
 				DA6D30E81EC4BBED0018E0B1 /* MHelpBasicMap.swift in Sources */,
@@ -2148,6 +2175,7 @@
 				DA06B00A1ED65F68001BCEF7 /* MGridVisorDetailItemCreated.swift in Sources */,
 				DA17EF331EC24E7000A846A3 /* VSettingsHeader.swift in Sources */,
 				DA1D49D31EAA803500C2392C /* MProfileItemSkill.swift in Sources */,
+				DA06B02A1ED66102001BCEF7 /* MGridVisorDetailItemActionsItem.swift in Sources */,
 				DA87C4921ED5ED4300501EDC /* MetalSpatialBase.swift in Sources */,
 				DAFE877C1EA51D4900350434 /* MGridAlgoItemHostileVirusFoe.swift in Sources */,
 				DA1403C51EB668B8006C9364 /* VGridVisorTake.swift in Sources */,
