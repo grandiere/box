@@ -1,6 +1,6 @@
 import Foundation
 
-class MGridAlgoItemHostileVirus:MGridAlgoItemHostile
+class MGridAlgoHostileVirusItem:MGridAlgoItemHostile
 {
     class func virusWith(
         firebaseId:String,
