@@ -37,6 +37,11 @@ class VGridVisorDetailCellActions:VGridVisorDetailCell, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell:vcolle
+        let cell:VGridVisorDetailCellActionsCell = collectionView.dequeueReusableCell(
+            withReuseIdentifier:
+            VGridVisorDetailCellActionsCell.reusableIdentifier,
+            for:indexPath) as! VGridVisorDetailCellActionsCell
+        
+        return cell
     }
 }
