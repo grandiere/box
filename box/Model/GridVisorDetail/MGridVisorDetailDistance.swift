@@ -2,8 +2,7 @@ import UIKit
 
 class MGridVisorDetailDistance:MGridVisorDetailProtocol
 {
-    let icon:UIImage?
-    let title:String?
+    let distance:Double?
     private let kCellHeight:CGFloat = 200
     
     var cellHeight:CGFloat
@@ -18,13 +17,12 @@ class MGridVisorDetailDistance:MGridVisorDetailProtocol
     {
         get
         {
-            return VGridVisorDetailCellHeader.reusableIdentifier
+            return VGridVisorDetailCellDistance.reusableIdentifier
         }
     }
     
     init(model:MGridAlgoItem)
     {
-        icon = model.icon
-        title = model.algoTitle
+        distance = model.distance
     }
 }

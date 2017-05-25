@@ -50,7 +50,12 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
     
     override func detail() -> [MGridVisorDetailProtocol]
     {
-        let items:[MGridVisorDetailProtocol] = []
+        let itemHeader:MGridVisorDetailHeader = MGridVisorDetailHeader(model:self)
+        let itemDistance:MGridVisorDetailDistance = MGridVisorDetailDistance(model:self)
+        
+        let items:[MGridVisorDetailProtocol] = [
+            itemHeader,
+            itemDistance]
         
         return items
     }
