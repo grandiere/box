@@ -20,6 +20,16 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
     
     //MARK: algo protocol
     
+    override var algoTitle:String?
+    {
+        get
+        {
+            let title:String = NSLocalizedString("MGridAlgoItemHostileBug_title", comment:"")
+            
+            return title
+        }
+    }
+    
     override var firebasePath:String
     {
         get
@@ -97,13 +107,6 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
         {
             return #imageLiteral(resourceName: "assetTextureBugAnnotationOff")
         }
-    }
-    
-    override var annotationTitle:String?
-    {
-        let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleAnnotation", comment:"")
-        
-        return title
     }
     
     //MARK: match protocol

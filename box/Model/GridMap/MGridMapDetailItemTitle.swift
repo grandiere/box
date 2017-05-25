@@ -6,7 +6,7 @@ class MGridMapDetailItemTitle:MGridMapDetailItem
     {
         guard
         
-            let rawTitle:String = annotation.algo?.annotationTitle
+            let rawTitle:String = annotation.algo?.algoTitle
         
         else
         {

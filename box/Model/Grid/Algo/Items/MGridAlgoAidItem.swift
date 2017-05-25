@@ -16,6 +16,16 @@ class MGridAlgoAidItem:MGridAlgoItem
     }
     
     //MARK: algo protocol
+
+    override var algoTitle:String?
+    {
+        get
+        {
+            let title:String = NSLocalizedString("MGridAlgoItemAid_title", comment:"")
+            
+            return title
+        }
+    }
     
     override var firebasePath:String
     {
@@ -96,16 +106,6 @@ class MGridAlgoAidItem:MGridAlgoItem
         get
         {
             return #imageLiteral(resourceName: "assetTextureAidAnnotationOff")
-        }
-    }
-    
-    override var annotationTitle:String?
-    {
-        get
-        {
-            let title:String = NSLocalizedString("MGridAlgoItemAid_titleAnnotation", comment:"")
-            
-            return title
         }
     }
 }

@@ -51,6 +51,16 @@ class MGridAlgoHostileVirusFoeItem:MGridAlgoHostileVirusItem
     
     //MARK: algo protocol
     
+    override var algoTitle:String?
+    {
+        get
+        {
+            let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFoe_title", comment:"")
+            
+            return title
+        }
+    }
+    
     override var icon:UIImage?
     {
         get
@@ -117,16 +127,6 @@ class MGridAlgoHostileVirusFoeItem:MGridAlgoHostileVirusItem
         get
         {
             return #imageLiteral(resourceName: "assetTextureVirusFoeAnnotationOff")
-        }
-    }
-    
-    override var annotationTitle:String?
-    {
-        get
-        {
-            let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFoe_titleAnnotation", comment:"")
-            
-            return title
         }
     }
     

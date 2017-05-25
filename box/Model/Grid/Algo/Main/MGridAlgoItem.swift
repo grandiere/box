@@ -115,6 +115,14 @@ class MGridAlgoItem:
     
     //MARK: algo protocol
     
+    var algoTitle:String?
+    {
+        get
+        {
+            return nil
+        }
+    }
+    
     var firebasePath:String
     {
         get
@@ -199,14 +207,6 @@ class MGridAlgoItem:
     }
     
     var annotationImageOff:UIImage?
-    {
-        get
-        {
-            return nil
-        }
-    }
-    
-    var annotationTitle:String?
     {
         get
         {
