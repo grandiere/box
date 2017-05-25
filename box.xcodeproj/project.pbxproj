@@ -1445,8 +1445,8 @@
 			isa = PBXGroup;
 			children = (
 				DA823A351ED750A000BF3B84 /* MGridAlgoAidItem.swift */,
-				DA823A361ED750A000BF3B84 /* MGridAlgoHostileBugItem.swift */,
 				DA823A371ED750A000BF3B84 /* MGridAlgoHostileItem.swift */,
+				DA823A361ED750A000BF3B84 /* MGridAlgoHostileBugItem.swift */,
 				DA823A381ED750A000BF3B84 /* MGridAlgoHostileVirusFoeItem.swift */,
 				DA823A391ED750A000BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift */,
 				DA823A3A1ED750A000BF3B84 /* MGridAlgoHostileVirusItem.swift */,

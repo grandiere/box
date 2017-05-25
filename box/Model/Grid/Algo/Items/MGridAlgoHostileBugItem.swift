@@ -18,16 +18,24 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
             created:firebaseBug.created)
     }
     
-    override func creditsMultiplier() -> CGFloat
+    //MARK: match protocol
+    
+    override var creditsMultiplier:CGFloat
     {
-        return kCreditsMultiplier
+        get
+        {
+            return kCreditsMultiplier
+        }
     }
     
-    override func titleMatch() -> String?
+    override var matchTitle:String?
     {
-        let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleMatch", comment:"")
-        
-        return title
+        get
+        {
+            let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleMatch", comment:"")
+            
+            return title
+        }
     }
     
     //MARK: algo protocol

@@ -3,5 +3,7 @@ import UIKit
 protocol MGridAlgoItemMatchProtocol
 {
     var matchTitle:String? { get }
-    var credistMultiplier:CGFloat { get }
+    var creditsMultiplier:CGFloat { get }
+    func destroySuccess()
+    func addDefeated()
 }

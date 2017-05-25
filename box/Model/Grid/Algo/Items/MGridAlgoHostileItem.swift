@@ -1,7 +1,7 @@
 import UIKit
 import CoreLocation
 
-class MGridAlgoHostileItem:MGridAlgoItem
+class MGridAlgoHostileItem:MGridAlgoItem, MGridAlgoItemMatchProtocol
 {
     let level:Int
     private(set) var defeated:Int
@@ -52,7 +52,7 @@ class MGridAlgoHostileItem:MGridAlgoItem
             return
         }
         
-        let credsMultiplier:CGFloat = creditsMultiplier()
+        let credsMultiplier:CGFloat = creditsMultiplier
         var credits:CGFloat = CGFloat(level) * kLevelMultiplier
         let timestamp:TimeInterval = Date().timeIntervalSince1970
         let deltaTime:TimeInterval = timestamp - created
@@ -71,16 +71,22 @@ class MGridAlgoHostileItem:MGridAlgoItem
         self.credits = Int(credits)
     }
     
-    //MARK: public
+    //MARK: match protocol
     
-    func titleMatch() -> String?
+    var matchTitle:String?
     {
-        return nil
+        get
+        {
+            return nil
+        }
     }
     
-    func creditsMultiplier() -> CGFloat
+    var creditsMultiplier:CGFloat
     {
-        return 0
+        get
+        {
+            return 0
+        }
     }
     
     func destroySuccess()
