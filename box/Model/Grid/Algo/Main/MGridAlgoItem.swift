@@ -131,6 +131,11 @@ class MGridAlgoItem:
         }
     }
     
+    func detail() -> [MGridVisorDetailProtocol]
+    {
+        return []
+    }
+    
     //MARK: menu protocol
     
     var showDetail:Bool
@@ -155,11 +160,6 @@ class MGridAlgoItem:
         {
             return kShowMatch
         }
-    }
-    
-    func detail() -> [MGridVisorDetailProtocol]?
-    {        
-        return nil
     }
     
     //MARK: render protocol

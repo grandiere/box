@@ -2,7 +2,7 @@ import UIKit
 
 class CGridVisorDetail:CController
 {
-    let modelDetail:MGridVisorDetail
+    let modelDetail:[MGridVisorDetailProtocol]
     private weak var viewDetail:VGridVisorDetail!
     private weak var model:MGridAlgoItem!
     

@@ -67,9 +67,9 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
     
     //MARK: private
     
-    private func modelAtIndex(index:IndexPath) -> MGridVisorDetailItem
+    private func modelAtIndex(index:IndexPath) -> MGridVisorDetailProtocol
     {
-        let item:MGridVisorDetailItem = controller.modelDetail.items[index.item]
+        let item:MGridVisorDetailProtocol = controller.modelDetail[index.item]
         
         return item
     }
@@ -78,7 +78,7 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath:IndexPath) -> CGSize
     {
-        let item:MGridVisorDetailItem = modelAtIndex(index:indexPath)
+        let item:MGridVisorDetailProtocol = modelAtIndex(index:indexPath)
         let width:CGFloat = collectionView.bounds.maxX
         let size:CGSize = CGSize(
             width:width,
@@ -94,18 +94,18 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        let count:Int = controller.modelDetail.items.count
+        let count:Int = controller.modelDetail.count
         
         return count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) -> UICollectionViewCell
     {
-        let item:MGridVisorDetailItem = modelAtIndex(index:indexPath)
+        let item:MGridVisorDetailProtocol = modelAtIndex(index:indexPath)
         let cell:VGridVisorDetailCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:item.reusableIdentifier,
             for:indexPath) as! VGridVisorDetailCell
-        cell.config(controller:controller, model:item)
+//        cell.config(controller:controller, model:item)
         
         return cell
     }
