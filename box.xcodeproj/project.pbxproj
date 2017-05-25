@@ -114,6 +114,7 @@
 		DA2B41111ECF5DBD007FF946 /* MSessionLevelUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B41101ECF5DBD007FF946 /* MSessionLevelUp.swift */; };
 		DA2B41131ECF60BF007FF946 /* ResourceLevels.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA2B41121ECF60BF007FF946 /* ResourceLevels.plist */; };
 		DA2B41151ECF7DD1007FF946 /* FDbHarvestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B41141ECF7DD1007FF946 /* FDbHarvestItem.swift */; };
+		DA2FBA631ED7A482000B6D50 /* MGridVisorDetailKills.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FBA621ED7A482000B6D50 /* MGridVisorDetailKills.swift */; };
 		DA31C10B1EA66DBB002FE157 /* MGridVisorRenderAlgoItemPositioned.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31C10A1EA66DBB002FE157 /* MGridVisorRenderAlgoItemPositioned.swift */; };
 		DA31F68A1EC20503003978C7 /* MStoreStatusDeferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F6891EC20503003978C7 /* MStoreStatusDeferred.swift */; };
 		DA31F6951EC207CA003978C7 /* VStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA31F68C1EC207CA003978C7 /* VStore.swift */; };
@@ -472,6 +473,7 @@
 		DA2B41101ECF5DBD007FF946 /* MSessionLevelUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSessionLevelUp.swift; sourceTree = "<group>"; };
 		DA2B41121ECF60BF007FF946 /* ResourceLevels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ResourceLevels.plist; sourceTree = "<group>"; };
 		DA2B41141ECF7DD1007FF946 /* FDbHarvestItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDbHarvestItem.swift; sourceTree = "<group>"; };
+		DA2FBA621ED7A482000B6D50 /* MGridVisorDetailKills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailKills.swift; sourceTree = "<group>"; };
 		DA31C10A1EA66DBB002FE157 /* MGridVisorRenderAlgoItemPositioned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderAlgoItemPositioned.swift; sourceTree = "<group>"; };
 		DA31F6891EC20503003978C7 /* MStoreStatusDeferred.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStoreStatusDeferred.swift; sourceTree = "<group>"; };
 		DA31F68C1EC207CA003978C7 /* VStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VStore.swift; sourceTree = "<group>"; };
@@ -1587,6 +1589,7 @@
 				DA823A1E1ED745BA00BF3B84 /* MGridVisorDetailProtocol.swift */,
 				DA823A201ED745F600BF3B84 /* MGridVisorDetailHeader.swift */,
 				DA9E30BC1ED780E600E8E32C /* MGridVisorDetailDistance.swift */,
+				DA2FBA621ED7A482000B6D50 /* MGridVisorDetailKills.swift */,
 				DA06AFF11ED65F68001BCEF7 /* Actions */,
 				DA06AFF41ED65F68001BCEF7 /* Base */,
 				DA06AFF71ED65F68001BCEF7 /* Headers */,
@@ -2174,6 +2177,7 @@
 				DA0960AE1EC138DF0005BE96 /* MStoreItem.swift in Sources */,
 				DAF15D6F1E9D32BB0000E6B9 /* VView.swift in Sources */,
 				DA09609F1EC0F2BC0005BE96 /* MBoardsItem.swift in Sources */,
+				DA2FBA631ED7A482000B6D50 /* MGridVisorDetailKills.swift in Sources */,
 				DA4DC4631EA18A460024D28E /* VGridVisor.swift in Sources */,
 				DA7135B61EAFAFF8007ACEB5 /* MGridMapDetailItem.swift in Sources */,
 				DAF15D601E9D32BB0000E6B9 /* ExtensionUICollectionReusableView.swift in Sources */,
