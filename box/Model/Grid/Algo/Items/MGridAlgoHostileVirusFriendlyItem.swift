@@ -1,6 +1,6 @@
 import UIKit
 
-class MGridAlgoHostileVirusFriendlyItem:MGridAlgoItemHostileVirus
+class MGridAlgoHostileVirusFriendlyItem:MGridAlgoHostileVirusItem
 {
     init(
         firebaseId:String,
@@ -14,7 +14,7 @@ class MGridAlgoHostileVirusFriendlyItem:MGridAlgoItemHostileVirus
             defeated:firebaseVirus.defeated,
             created:firebaseVirus.created)
     }
-    
+    /*
     override func detail() -> MGridVisorDetail
     {
         let model:MGridVisorDetail = MGridVisorDetail.detailVirusFriendly(model:self)
@@ -57,5 +57,5 @@ class MGridAlgoHostileVirusFriendlyItem:MGridAlgoItemHostileVirus
     override func textureColour() -> UIColor
     {
         return UIColor.gridBlue
-    }
+    }*/
 }

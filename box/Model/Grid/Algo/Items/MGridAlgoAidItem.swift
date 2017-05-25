@@ -15,6 +15,7 @@ class MGridAlgoAidItem:MGridAlgoItem
             created:firebaseAid.created)
     }
     
+    /*
     override func firebasePath() -> String
     {
         let path:String = "\(FDb.algoAid)/\(firebaseId)"
@@ -73,4 +74,6 @@ class MGridAlgoAidItem:MGridAlgoItem
             return kShowDownload
         }
     }
+ 
+ */
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-class MGridAlgoHostileBugItem:MGridAlgoItemHostile
+class MGridAlgoHostileBugItem:MGridAlgoHostileItem
 {
     private let kCreditsMultiplier:CGFloat = 1.5
     private let kShowMatch:Bool = true
@@ -18,6 +18,9 @@ class MGridAlgoHostileBugItem:MGridAlgoItemHostile
             created:firebaseBug.created)
     }
     
+    //MARK: algo protocol
+    
+    /*
     override func firebasePath() -> String
     {
         let path:String = "\(FDb.algoBug)/\(firebaseId)"
@@ -92,5 +95,5 @@ class MGridAlgoHostileBugItem:MGridAlgoItemHostile
         {
             return kShowMatch
         }
-    }
+    }*/
 }
