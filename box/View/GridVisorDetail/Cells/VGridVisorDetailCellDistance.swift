@@ -4,10 +4,14 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
 {
     private weak var labelKm:UILabel!
     private weak var viewAccuracy:VGridVisorDetailCellDistanceAccuracy?
+    private weak var layoutLabelTop:NSLayoutConstraint!
+    private weak var layoutLabelLeft:NSLayoutConstraint!
     private let numberFormatter:NumberFormatter
-    private let kMaxDecimals:Int = 1
+    private let kMaxDecimals:Int = 0
     private let kMinIntegers:Int = 1
-    private let kKmWidth:CGFloat = 160
+    private let kLabelWidth:CGFloat = 200
+    private let kLabelHeight:CGFloat = 50
+    private let kLabelLeft:CGFloat = 8
     
     override init(frame:CGRect)
     {
@@ -23,27 +27,39 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
         labelKm.translatesAutoresizingMaskIntoConstraints = false
         labelKm.isUserInteractionEnabled = false
         labelKm.backgroundColor = UIColor.clear
-        labelKm.font = UIFont.numeric(size:12)
+        labelKm.font = UIFont.numeric(size:18)
         labelKm.textColor = UIColor.black
-        labelKm.textAlignment = NSTextAlignment.right
         self.labelKm = labelKm
         
         addSubview(labelKm)
         
-        NSLayoutConstraint.equalsVertical(
+        layoutLabelTop = NSLayoutConstraint.topToTop(
             view:labelKm,
             toView:self)
-        NSLayoutConstraint.rightToRight(
+        layoutLabelLeft = NSLayoutConstraint.leftToLeft(
             view:labelKm,
             toView:self)
         NSLayoutConstraint.width(
             view:labelKm,
-            constant:kKmWidth)
+            constant:kLabelWidth)
+        NSLayoutConstraint.height(
+            view:labelKm,
+            constant:kLabelHeight)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    override func layoutSubviews()
+    {
+        let centerX:CGFloat = bounds.midX
+        let centerY:CGFloat = bounds.midY
+        layoutLabelTop.constant = centerY
+        layoutLabelLeft.constant = centerX - kLabelLeft
+        
+        super.layoutSubviews()
     }
     
     override func config(controller:CGridVisorDetail, model:MGridVisorDetailProtocol)

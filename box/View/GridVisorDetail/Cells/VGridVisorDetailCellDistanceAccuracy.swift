@@ -3,10 +3,10 @@ import UIKit
 class VGridVisorDetailCellDistanceAccuracy:UIView
 {
     private let endingX:CGFloat
-    private let kDotRadius:CGFloat = 4
+    private let kDotRadius:CGFloat = 9
     private let kRadius:CGFloat = 80
     private let kCircleLine:CGFloat = 2
-    private let kLineWidth:CGFloat = 8
+    private let kLineWidth:CGFloat = 3
     private let kBackgroundInitial:CGFloat = 0
     private let kBackgroundEnding:CGFloat = -0.0001
     
@@ -56,9 +56,8 @@ class VGridVisorDetailCellDistanceAccuracy:UIView
         let width_2:CGFloat = width / 2.0
         let height_2:CGFloat = height / 2.0
         let center:CGPoint = CGPoint(x:width_2, y:height_2)
-        let endingPoint:CGPoint = CGPoint(x:endingX, y:height_2)
+        let endingPoint:CGPoint = CGPoint(x:width_2 + endingX, y:height_2)
         
-        context.setLineCap(CGLineCap.round)
         context.setLineWidth(kCircleLine)
         context.setStrokeColor(UIColor.gridGreen.cgColor)
         
@@ -86,5 +85,16 @@ class VGridVisorDetailCellDistanceAccuracy:UIView
         context.move(to:center)
         context.addLine(to:endingPoint)
         context.drawPath(using:CGPathDrawingMode.stroke)
+        
+        context.setFillColor(UIColor.gridOrange.cgColor)
+        
+        context.addArc(
+            center:endingPoint,
+            radius:kDotRadius,
+            startAngle:kBackgroundInitial,
+            endAngle:kBackgroundEnding,
+            clockwise:false)
+        
+        context.drawPath(using:CGPathDrawingMode.fill)
     }
 }
