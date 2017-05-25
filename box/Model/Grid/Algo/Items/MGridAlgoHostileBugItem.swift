@@ -18,31 +18,6 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
             created:firebaseBug.created)
     }
     
-    //MARK: match protocol
-    
-    override var creditsMultiplier:CGFloat
-    {
-        get
-        {
-            return kCreditsMultiplier
-        }
-    }
-    
-    override var matchTitle:String?
-    {
-        get
-        {
-            let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleMatch", comment:"")
-            
-            return title
-        }
-    }
-    
-    override func destroySuccess()
-    {
-        MSession.sharedInstance.settings?.stats?.debugSuccess()
-    }
-    
     //MARK: algo protocol
     
     override var firebasePath:String
@@ -61,6 +36,13 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
         {
             return #imageLiteral(resourceName: "assetTextureBugDetail")
         }
+    }
+    
+    override func detail() -> [MGridVisorDetailProtocol]
+    {
+        let items:[MGridVisorDetailProtocol] = []
+        
+        return items
     }
     
     //MARK: menu protocol
@@ -122,5 +104,30 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
         let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleAnnotation", comment:"")
         
         return title
+    }
+    
+    //MARK: match protocol
+    
+    override var creditsMultiplier:CGFloat
+    {
+        get
+        {
+            return kCreditsMultiplier
+        }
+    }
+    
+    override var matchTitle:String?
+    {
+        get
+        {
+            let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleMatch", comment:"")
+            
+            return title
+        }
+    }
+    
+    override func destroySuccess()
+    {
+        MSession.sharedInstance.settings?.stats?.debugSuccess()
     }
 }

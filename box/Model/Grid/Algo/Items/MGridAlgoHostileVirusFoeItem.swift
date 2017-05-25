@@ -41,56 +41,113 @@ class MGridAlgoHostileVirusFoeItem:MGridAlgoHostileVirusItem
             defeated:defeated,
             created:created)
     }
-    /*
-    override func creditsMultiplier() -> CGFloat
+    
+    //MARK: private
+    
+    private func harvestScore() -> Int
     {
-        return kCreditsMultiplier
+        return level * kHarvestMultiplier
     }
     
-    override func detail() -> MGridVisorDetail
+    //MARK: algo protocol
+    
+    override var icon:UIImage?
     {
-        let model:MGridVisorDetail = MGridVisorDetail.detailVirusFoe(model:self)
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureVirusFoeDetail")
+        }
+    }
+    
+    override func detail() -> [MGridVisorDetailProtocol]
+    {
+        let items:[MGridVisorDetailProtocol] = []
         
-        return model
+        return items
     }
     
-    override func imageStandby() -> UIImage?
+    //MARK: menu protocol
+    
+    override var showMatch:Bool
     {
-        return #imageLiteral(resourceName: "assetTextureVirusFoeStandBy")
+        get
+        {
+            return kShowMatch
+        }
     }
     
-    override func imageTargeted() -> UIImage?
+    //MARK: render protocol
+    
+    override var textureStandby:UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureVirusFoeTargeted")
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureVirusFoeStandBy")
+        }
     }
     
-    override func imageDetail() -> UIImage?
+    override var textureTargeted:UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureVirusFoeDetail")
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureVirusFoeTargeted")
+        }
     }
     
-    override func annotationImageOn() -> UIImage?
+    override var overlayColour:UIColor
     {
-        return #imageLiteral(resourceName: "assetTextureVirusFoeAnnotationOn")
+        get
+        {
+            return UIColor.gridOrange
+        }
     }
     
-    override func annotationImageOff() -> UIImage?
+    //MARK: map protocol
+    
+    override var annotationImageOn:UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureVirusFoeAnnotationOff")
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureVirusFoeAnnotationOn")
+        }
     }
     
-    override func titleMatch() -> String?
+    override var annotationImageOff:UIImage?
     {
-        let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFoe_titleMatch", comment:"")
-        
-        return title
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureVirusFoeAnnotationOff")
+        }
     }
     
-    override func titleAnnotation() -> String?
+    override var annotationTitle:String?
     {
-        let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFoe_titleAnnotation", comment:"")
-        
-        return title
+        get
+        {
+            let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFoe_titleAnnotation", comment:"")
+            
+            return title
+        }
+    }
+    
+    //MARK: match protocol
+    
+    override var creditsMultiplier:CGFloat
+    {
+        get
+        {
+            return kCreditsMultiplier
+        }
+    }
+    
+    override var matchTitle:String?
+    {
+        get
+        {
+            let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFoe_titleMatch", comment:"")
+            
+            return title
+        }
     }
     
     override func destroySuccess()
@@ -137,24 +194,4 @@ class MGridAlgoHostileVirusFoeItem:MGridAlgoHostileVirusItem
             return transactionResult
         }
     }
-    
-    override var showMatch:Bool
-        {
-        get
-        {
-            return kShowMatch
-        }
-    }
-    
-    //MARK: private
-    
-    private func harvestScore() -> Int
-    {
-        return level * kHarvestMultiplier
-    }
-    
-    override func textureColour() -> UIColor
-    {
-        return UIColor.gridOrange
-    }*/
 }
