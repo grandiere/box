@@ -4,8 +4,9 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
 {
     private weak var imageView:UIImageView!
     private weak var labelTitle:UILabel!
-    private let kImageHeight:CGFloat = 220
-    private let kTitleHeight:CGFloat = 60
+    private let kImageHeight:CGFloat = 180
+    private let kTitleHeight:CGFloat = 50
+    private let kCloseSize:CGFloat = 60
     
     override init(frame:CGRect)
     {
@@ -29,7 +30,7 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         labelTitle.isUserInteractionEnabled = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.bold(size:15)
+        labelTitle.font = UIFont.bold(size:14)
         labelTitle.textColor = UIColor.black
         labelTitle.textAlignment = NSTextAlignment.center
         self.labelTitle = labelTitle
@@ -42,10 +43,18 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         buttonClose.setImage(
             #imageLiteral(resourceName: "assetGenericClose").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
             for:UIControlState.highlighted)
+        buttonClose.imageView!.contentMode = UIViewContentMode.center
+        buttonClose.imageView!.clipsToBounds = true
+        buttonClose.imageView!.tintColor = UIColor(white:0, alpha:0.2)
+        buttonClose.addTarget(
+            self,
+            action:#selector(actionClose(sender:)),
+            for:UIControlEvents.touchUpInside)
         
         addSubview(finder)
         addSubview(imageView)
         addSubview(labelTitle)
+        addSubview(buttonClose)
         
         NSLayoutConstraint.topToTop(
             view:imageView,
@@ -70,6 +79,16 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         NSLayoutConstraint.equalsHorizontal(
             view:labelTitle,
             toView:self)
+        
+        NSLayoutConstraint.topToTop(
+            view:buttonClose,
+            toView:self)
+        NSLayoutConstraint.rightToRight(
+            view:buttonClose,
+            toView:self)
+        NSLayoutConstraint.size(
+            view:buttonClose,
+            constant:kCloseSize)
     }
     
     required init?(coder:NSCoder)
@@ -92,5 +111,12 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         
         imageView.image = modelHeader.icon
         labelTitle.text = modelHeader.title
+    }
+    
+    //MARK: actions
+    
+    func actionClose(sender button:UIButton)
+    {
+        controller?.back()
     }
 }
