@@ -87,17 +87,6 @@ class MGridAlgoItem:
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     //MARK: final
     
     final func age() -> String
@@ -122,6 +111,24 @@ class MGridAlgoItem:
         }
         
         return stringTime
+    }
+    
+    //MARK: algo protocol
+    
+    var firebasePath:String
+    {
+        get
+        {
+            return firebaseId
+        }
+    }
+    
+    var icon:UIImage?
+    {
+        get
+        {
+            return nil
+        }
     }
     
     //MARK: menu protocol
@@ -157,5 +164,53 @@ class MGridAlgoItem:
     
     //MARK: render protocol
     
+    var textureStandby:UIImage?
+    {
+        get
+        {
+            return nil
+        }
+    }
     
+    var textureTargeted:UIImage?
+    {
+        get
+        {
+            return nil
+        }
+    }
+    
+    var overlayColour:UIColor
+    {
+        get
+        {
+            return UIColor.clear
+        }
+    }
+    
+    //MARK: map protocol
+    
+    var annotationImageOn:UIImage?
+    {
+        get
+        {
+            return nil
+        }
+    }
+    
+    var annoationImageOff:UIImage?
+    {
+        get
+        {
+            return nil
+        }
+    }
+    
+    var titleAnnotation:String?
+    {
+        get
+        {
+            return nil
+        }
+    }
 }

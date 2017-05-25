@@ -1456,8 +1456,8 @@
 			isa = PBXGroup;
 			children = (
 				DA823A3D1ED750A000BF3B84 /* MGridAlgo.swift */,
-				DA823A3E1ED750A000BF3B84 /* MGridAlgoFactory.swift */,
 				DA823A3F1ED750A000BF3B84 /* MGridAlgoItem.swift */,
+				DA823A3E1ED750A000BF3B84 /* MGridAlgoFactory.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1465,10 +1465,10 @@
 		DA823A401ED750A000BF3B84 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				DA823A411ED750A000BF3B84 /* MGridAlgoItemMapProtocol.swift */,
-				DA823A421ED750A000BF3B84 /* MGridAlgoItemMenuProtocol.swift */,
 				DA823A431ED750A000BF3B84 /* MGridAlgoItemProtocol.swift */,
+				DA823A421ED750A000BF3B84 /* MGridAlgoItemMenuProtocol.swift */,
 				DA823A441ED750A000BF3B84 /* MGridAlgoItemRenderProtocol.swift */,
+				DA823A411ED750A000BF3B84 /* MGridAlgoItemMapProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
