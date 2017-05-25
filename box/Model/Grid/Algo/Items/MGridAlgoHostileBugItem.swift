@@ -18,42 +18,59 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
             created:firebaseBug.created)
     }
     
-    //MARK: algo protocol
-    
-    /*
-    override func firebasePath() -> String
-    {
-        let path:String = "\(FDb.algoBug)/\(firebaseId)"
-        
-        return path
-    }
-    
-    override func imageStandby() -> UIImage?
-    {
-        return #imageLiteral(resourceName: "assetTextureBugStandBy")
-    }
-    
-    override func imageTargeted() -> UIImage?
-    {
-        return #imageLiteral(resourceName: "assetTextureBugTargeted")
-    }
-    
-    override func imageDetail() -> UIImage?
-    {
-        return #imageLiteral(resourceName: "assetTextureBugDetail")
-    }
-    
-    override func detail() -> MGridVisorDetail
-    {
-        let model:MGridVisorDetail = MGridVisorDetail.detailBug(model:self)
-        
-        return model
-    }
-    
     override func creditsMultiplier() -> CGFloat
     {
         return kCreditsMultiplier
     }
+    
+    override func titleMatch() -> String?
+    {
+        let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleMatch", comment:"")
+        
+        return title
+    }
+    
+    //MARK: algo protocol
+    
+    override var firebasePath:String
+    {
+        get
+        {
+            let path:String = "\(FDb.algoBug)/\(firebaseId)"
+            
+            return path
+        }
+    }
+    
+    override var icon:UIImage?
+    {
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureBugDetail")
+        }
+    }
+    
+    //MARK: render protocol
+    
+    override var textureStandby:UIImage?
+    {
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureBugStandBy")
+        }
+    }
+    
+    override var textureTargeted:UIImage?
+    {
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureBugTargeted")
+        }
+    }
+    
+    /*
+    
+    
     
     override func annotationImageOn() -> UIImage?
     {
