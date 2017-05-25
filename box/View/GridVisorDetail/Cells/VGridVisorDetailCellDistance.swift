@@ -10,7 +10,7 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
     private let kMaxDecimals:Int = 0
     private let kMinIntegers:Int = 1
     private let kLabelWidth:CGFloat = 200
-    private let kLabelHeight:CGFloat = 50
+    private let kLabelHeight:CGFloat = 35
     private let kLabelLeft:CGFloat = 8
     
     override init(frame:CGRect)
@@ -27,7 +27,7 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
         labelKm.translatesAutoresizingMaskIntoConstraints = false
         labelKm.isUserInteractionEnabled = false
         labelKm.backgroundColor = UIColor.clear
-        labelKm.font = UIFont.numeric(size:18)
+        labelKm.font = UIFont.numeric(size:12)
         labelKm.textColor = UIColor.black
         self.labelKm = labelKm
         

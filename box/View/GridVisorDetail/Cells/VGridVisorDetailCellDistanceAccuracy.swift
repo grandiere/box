@@ -4,7 +4,7 @@ class VGridVisorDetailCellDistanceAccuracy:UIView
 {
     private let endingX:CGFloat
     private let kDotRadius:CGFloat = 9
-    private let kRadius:CGFloat = 80
+    private let kRadius:CGFloat = 50
     private let kCircleLine:CGFloat = 2
     private let kLineWidth:CGFloat = 3
     private let kBackgroundInitial:CGFloat = 0
