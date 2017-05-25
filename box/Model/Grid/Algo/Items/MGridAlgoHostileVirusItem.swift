@@ -1,12 +1,12 @@
 import Foundation
 
-class MGridAlgoHostileVirusItem:MGridAlgoItemHostile
+class MGridAlgoHostileVirusItem:MGridAlgoHostileItem
 {
     class func virusWith(
         firebaseId:String,
-        firebaseVirus:FDbAlgoHostileVirusItem) -> MGridAlgoItemHostileVirus
+        firebaseVirus:FDbAlgoHostileVirusItem) -> MGridAlgoHostileVirusItem
     {
-        let virus:MGridAlgoItemHostileVirus
+        let virus:MGridAlgoHostileVirusItem
         var friendly:Bool = false
         
         if let userId:String = MSession.sharedInstance.settings?.firebaseId
@@ -19,13 +19,13 @@ class MGridAlgoHostileVirusItem:MGridAlgoItemHostile
         
         if friendly
         {
-            virus = MGridAlgoItemHostileVirusFriendly(
+            virus = MGridAlgoHostileVirusFriendlyItem(
                 firebaseId:firebaseId,
                 firebaseVirus:firebaseVirus)
         }
         else
         {
-            virus = MGridAlgoItemHostileVirusFoe(
+            virus = MGridAlgoHostileVirusFoeItem(
                 firebaseId:firebaseId,
                 firebaseVirus:firebaseVirus)
         }
@@ -33,10 +33,11 @@ class MGridAlgoHostileVirusItem:MGridAlgoItemHostile
         return virus
     }
     
+    /*
     override func firebasePath() -> String
     {
         let path:String = "\(FDb.algoVirus)/\(firebaseId)"
         
         return path
-    }
+    }*/
 }

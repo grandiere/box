@@ -45,7 +45,7 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
                 
                 colourBuffer = MetalColour.color(
                     device:manager.device,
-                    originalColor:algoItem.textureColour())
+                    originalColor:algoItem.overlayColour)
             }
             
             guard

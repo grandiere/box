@@ -3,10 +3,10 @@ import Foundation
 class MGridVisorTake
 {
     private weak var controller:CGridVisorTake?
-    private weak var model:MGridAlgoItemAid!
+    private weak var model:MGridAlgoAidItem!
     private let kDifficultyStats:UInt32 = 80
     
-    init(controller:CGridVisorTake, model:MGridAlgoItemAid)
+    init(controller:CGridVisorTake, model:MGridAlgoAidItem)
     {
         self.controller = controller
         self.model = model

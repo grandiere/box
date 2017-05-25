@@ -95,9 +95,9 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
     
     //MARK: private
     
-    private func modelAtIndex(index:IndexPath) -> MGridAlgoItemHostileVirusFriendly
+    private func modelAtIndex(index:IndexPath) -> MGridAlgoHostileVirusFriendlyItem
     {
-        let item:MGridAlgoItemHostileVirusFriendly = controller.model.items[index.item]
+        let item:MGridAlgoHostileVirusFriendlyItem = controller.model.items[index.item]
         
         return item
     }

@@ -3,12 +3,12 @@ import UIKit
 class CGridVisorMatch:CController
 {
     private var modelMatch:MGridVisorMatch?
-    private(set) weak var model:MGridAlgoItemHostile?
+    private(set) weak var model:MGridAlgoHostileItem?
     private weak var viewMatch:VGridVisorMatch!
     private weak var timer:Timer?
     private let kTimeInterval:TimeInterval = 1
     
-    init(model:MGridAlgoItemHostile)
+    init(model:MGridAlgoHostileItem)
     {
         self.model = model
         super.init()

@@ -3,10 +3,10 @@ import UIKit
 class CGridVisorTake:CController
 {
     private var modelTake:MGridVisorTake?
-    private weak var model:MGridAlgoItemAid?
+    private weak var model:MGridAlgoAidItem?
     private(set) weak var viewTake:VGridVisorTake!
     
-    init(model:MGridAlgoItemAid)
+    init(model:MGridAlgoAidItem)
     {
         self.model = model
         super.init()

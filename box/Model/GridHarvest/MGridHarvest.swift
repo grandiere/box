@@ -3,7 +3,7 @@ import FirebaseDatabase
 
 class MGridHarvest
 {
-    private(set) var items:[MGridAlgoItemHostileVirusFriendly]
+    private(set) var items:[MGridAlgoHostileVirusFriendlyItem]
     private(set) var harvestScore:Int
     private(set) var harvestKills:Int
     private weak var controller:CGridHarvest?

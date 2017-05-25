@@ -6,7 +6,7 @@ class MGridVisorDetailItemMatch:MGridVisorDetailItem
     let title:String?
     private let kCellHeight:CGFloat = 280
     
-    init(model:MGridAlgoItemHostile)
+    init(model:MGridAlgoHostileItem)
     {
         let reusableIdentifier:String = VGridVisorDetailCellMatch.reusableIdentifier
         credits = model.credits

@@ -1,7 +1,7 @@
 import UIKit
 import FirebaseDatabase
 
-class MGridAlgoHostileVirusFoeItem:MGridAlgoItemHostileVirus
+class MGridAlgoHostileVirusFoeItem:MGridAlgoHostileVirusItem
 {
     let userId:String
     private let kCreditsMultiplier:CGFloat = 2
@@ -41,7 +41,7 @@ class MGridAlgoHostileVirusFoeItem:MGridAlgoItemHostileVirus
             defeated:defeated,
             created:created)
     }
-    
+    /*
     override func creditsMultiplier() -> CGFloat
     {
         return kCreditsMultiplier
@@ -156,5 +156,5 @@ class MGridAlgoHostileVirusFoeItem:MGridAlgoItemHostileVirus
     override func textureColour() -> UIColor
     {
         return UIColor.gridOrange
-    }
+    }*/
 }
