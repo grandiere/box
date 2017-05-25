@@ -24,7 +24,12 @@ class VGridVisorMenu:UIView
         let buttonDownload:VGridVisorMenuButton = VGridVisorMenuButton(image:#imageLiteral(resourceName: "assetGenericDownload"))
         self.buttonDownload = buttonDownload
         
+        let buttonDetail:VGridVisorMenuButton = VGridVisorMenuButton(image:#imageLiteral(resourceName: "assetGenericDetail"))
+        self.buttonDetail = buttonDetail
+        
+        addSubview(buttonDownload)
         addSubview(buttonMatch)
+        addSubview(buttonDetail)
         
         NSLayoutConstraint.topToTop(
             view:buttonMatch,
@@ -48,6 +53,16 @@ class VGridVisorMenu:UIView
             toView:buttonMatch)
         NSLayoutConstraint.width(
             view:buttonDownload,
+            constant:kItemWidth)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:buttonDetail,
+            toView:buttonMatch)
+        NSLayoutConstraint.leftToRight(
+            view:buttonDetail,
+            toView:buttonMatch)
+        NSLayoutConstraint.width(
+            view:buttonDetail,
             constant:kItemWidth)
     }
     
