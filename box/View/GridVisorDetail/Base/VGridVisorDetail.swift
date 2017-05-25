@@ -90,7 +90,7 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         let cell:VGridVisorDetailCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:item.reusableIdentifier,
             for:indexPath) as! VGridVisorDetailCell
-//        cell.config(controller:controller, model:item)
+        cell.config(controller:controller, model:item)
         
         return cell
     }

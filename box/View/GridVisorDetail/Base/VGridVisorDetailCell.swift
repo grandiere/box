@@ -17,7 +17,7 @@ class VGridVisorDetailCell:UICollectionViewCell
     
     //MARK: public
     
-    func config(controller:CGridVisorDetail, model:MGridVisorDetailItem)
+    func config(controller:CGridVisorDetail, model:MGridVisorDetailProtocol)
     {
         self.controller = controller
     }

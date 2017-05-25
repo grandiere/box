@@ -4,13 +4,12 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
 {
     private weak var imageView:UIImageView!
     private weak var labelTitle:UILabel!
-    private let kImageHeight:CGFloat = 200
+    private let kImageHeight:CGFloat = 220
     private let kTitleHeight:CGFloat = 60
     
     override init(frame:CGRect)
     {
         super.init(frame:frame)
-        isUserInteractionEnabled = false
         
         let finder:UIImageView = UIImageView()
         finder.isUserInteractionEnabled = false
@@ -30,8 +29,8 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         labelTitle.isUserInteractionEnabled = false
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.bold(size:16)
-        labelTitle.textColor = UIColor.white
+        labelTitle.font = UIFont.bold(size:15)
+        labelTitle.textColor = UIColor.black
         labelTitle.textAlignment = NSTextAlignment.center
         self.labelTitle = labelTitle
         
@@ -69,20 +68,20 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         return nil
     }
     
-    override func config(controller:CGridVisorDetail, model:MGridVisorDetailItem)
+    override func config(controller:CGridVisorDetail, model:MGridVisorDetailProtocol)
     {
         super.config(controller:controller, model:model)
         
         guard
         
-            let modelHeader:MGridVisorDetailItemHeader = model as? MGridVisorDetailItemHeader
+            let modelHeader:MGridVisorDetailHeader = model as? MGridVisorDetailHeader
         
         else
         {
             return
         }
         
-        imageView.image = modelHeader.image
+        imageView.image = modelHeader.icon
         labelTitle.text = modelHeader.title
     }
 }
