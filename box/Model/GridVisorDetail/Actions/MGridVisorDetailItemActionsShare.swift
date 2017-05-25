@@ -12,6 +12,5 @@ class MGridVisorDetailItemActionsShare:MGridVisorDetailItemActionsProtocol
     
     func selected(controller:CGridVisorDetail)
     {
-        controller.share()
     }
 }

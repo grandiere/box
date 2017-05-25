@@ -39,11 +39,6 @@ class CGridVisorDetail:CController
         parentController.pop(vertical:CParent.TransitionVertical.fromBottom)
     }
     
-    func share()
-    {
-        
-    }
-    
     func enterMach()
     {
         guard

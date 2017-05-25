@@ -4,16 +4,12 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
 {
     private weak var controller:CGridVisorDetail!
     private weak var collectionView:VCollection!
-    private let kBarHeight:CGFloat = 60
     
     override init(controller:CController)
     {
         super.init(controller:controller)
         backgroundColor = UIColor.white
         self.controller = controller as? CGridVisorDetail
-        
-        let viewBar:VGridVisorDetailBar = VGridVisorDetailBar(
-            controller:self.controller)
         
         let collectionView:VCollection = VCollection()
         collectionView.alwaysBounceVertical = true
@@ -28,17 +24,6 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         self.collectionView = collectionView
         
         addSubview(collectionView)
-        addSubview(viewBar)
-        
-        NSLayoutConstraint.bottomToBottom(
-            view:viewBar,
-            toView:self)
-        NSLayoutConstraint.height(
-            view:viewBar,
-            constant:kBarHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:viewBar,
-            toView:self)
         
         NSLayoutConstraint.equals(
             view:collectionView,
