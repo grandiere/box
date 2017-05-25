@@ -1,6 +1,6 @@
 import UIKit
 
-class VGridVisorDetailCellActions:VGridVisorDetailCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewFlowLayout
+class VGridVisorDetailCellActions:VGridVisorDetailCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     private weak var collectionView:VCollection!
     
@@ -32,7 +32,7 @@ class VGridVisorDetailCellActions:VGridVisorDetailCell, UICollectionViewDelegate
     
     func collectionView(_ collectionView:UICollectionView, numberOfItemsInSection section:Int) -> Int
     {
-        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell

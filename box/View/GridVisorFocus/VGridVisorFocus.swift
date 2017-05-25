@@ -10,4 +10,9 @@ class VGridVisorFocus:VView
         backgroundColor = UIColor.clear
         self.controller = controller as? CGridVisorFocus
     }
+    
+    required init?(coder:NSCoder)
+    {
+        return nil
+    }
 }
