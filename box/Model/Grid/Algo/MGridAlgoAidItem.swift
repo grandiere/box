@@ -1,6 +1,6 @@
 import UIKit
 
-class MGridAlgoItemAid:MGridAlgoItem
+class MGridAlgoAidItem:MGridAlgoItem
 {
     private let kShowDownload:Bool = true
     
@@ -67,7 +67,7 @@ class MGridAlgoItemAid:MGridAlgoItem
     }
     
     override var showDownload:Bool
-    {
+        {
         get
         {
             return kShowDownload
