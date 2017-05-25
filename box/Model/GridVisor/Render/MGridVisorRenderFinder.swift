@@ -3,14 +3,13 @@ import MetalKit
 
 class MGridVisorRenderFinder:MetalRenderableProtocol
 {
-    static let kSize:Float = 220
-    
     weak var render:MGridVisorRender!
     private weak var algoItem:MGridAlgoItem?
     private var colourBuffer:MTLBuffer?
     private let sequence:MGridVisorRenderFinderSequence
     private let spatialSquare:MetalSpatialShapeSquarePositive
     private let positionBuffer:MTLBuffer
+    private let kSize:Float = 220
     
     init(
         device:MTLDevice,
@@ -20,8 +19,8 @@ class MGridVisorRenderFinder:MetalRenderableProtocol
         positionBuffer = device.generateBuffer(bufferable:position)
         spatialSquare = MetalSpatialShapeSquarePositive(
             device:device,
-            width:MGridVisorRenderFinder.kSize,
-            height:MGridVisorRenderFinder.kSize)
+            width:kSize,
+            height:kSize)
         sequence = MGridVisorRenderFinderSequence(textureLoader:textureLoader)
     }
     
