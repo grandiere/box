@@ -2,7 +2,7 @@ import UIKit
 
 class MGridVisorMatch
 {
-    private weak var model:MGridAlgoItemHostile!
+    private weak var model:MGridAlgoHostileItem!
     private weak var controller:CGridVisorMatch?
     private var timesTried:Int
     private let tryTimes:Int
@@ -12,7 +12,7 @@ class MGridVisorMatch
     private let kAddDifficulty:CGFloat = 1
     private let kMinTryTimes:Int = 1
     
-    init(model:MGridAlgoItemHostile, controller:CGridVisorMatch)
+    init(model:MGridAlgoHostileItem, controller:CGridVisorMatch)
     {
         self.model = model
         self.controller = controller

@@ -30,7 +30,7 @@ class CGridVisorMatch:CController
         
         guard
             
-            let model:MGridAlgoItemHostile = self.model
+            let model:MGridAlgoHostileItem = self.model
         
         else
         {
@@ -49,7 +49,7 @@ class CGridVisorMatch:CController
         {
             guard
                 
-                let model:MGridAlgoItemHostile = self.model
+                let model:MGridAlgoHostileItem = self.model
                 
             else
             {
@@ -113,14 +113,14 @@ class CGridVisorMatch:CController
     {
         guard
             
-            let model:MGridAlgoItemHostile = self.model
+            let model:MGridAlgoHostileItem = self.model
             
         else
         {
             return
         }
         
-        let path:String = model.firebasePath()
+        let path:String = model.firebasePath
         FMain.sharedInstance.db.removeChild(path:path)
         
         NotificationCenter.default.post(
@@ -132,7 +132,7 @@ class CGridVisorMatch:CController
     {
         guard
             
-            let model:MGridAlgoItemHostile = self.model
+            let model:MGridAlgoHostileItem = self.model
             
         else
         {
@@ -149,7 +149,7 @@ class CGridVisorMatch:CController
     {
         guard
             
-            let model:MGridAlgoItemHostile = self.model
+            let model:MGridAlgoHostileItem = self.model
             
         else
         {

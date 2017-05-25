@@ -25,7 +25,7 @@ class CGridVisorTake:CController
         {
             guard
                 
-                let model:MGridAlgoItemAid = self.model
+                let model:MGridAlgoAidItem = self.model
             
             else
             {
@@ -62,7 +62,7 @@ class CGridVisorTake:CController
     {
         guard
         
-            let model:MGridAlgoItemAid = self.model
+            let model:MGridAlgoAidItem = self.model
         
         else
         {

@@ -198,7 +198,7 @@ class MGridAlgoItem:
         }
     }
     
-    var annoationImageOff:UIImage?
+    var annotationImageOff:UIImage?
     {
         get
         {

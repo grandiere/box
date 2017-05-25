@@ -80,13 +80,13 @@ class MGridHarvest
             return
         }
         
-        var items:[MGridAlgoItemHostileVirusFriendly] = []
+        var items:[MGridAlgoHostileVirusFriendlyItem] = []
         
         for item:MGridAlgoItem in modelAlgo.items
         {
             guard
             
-                let itemVirusFriendly:MGridAlgoItemHostileVirusFriendly = item as? MGridAlgoItemHostileVirusFriendly
+                let itemVirusFriendly:MGridAlgoHostileVirusFriendlyItem = item as? MGridAlgoHostileVirusFriendlyItem
                 
             else
             {

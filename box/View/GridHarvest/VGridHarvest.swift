@@ -169,7 +169,7 @@ class VGridHarvest:VView, UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView:UICollectionView, cellForItemAt indexPath:IndexPath) ->UICollectionViewCell
     {
-        let item:MGridAlgoItemHostileVirusFriendly = modelAtIndex(index:indexPath)
+        let item:MGridAlgoHostileVirusFriendlyItem = modelAtIndex(index:indexPath)
         let cell:VGridHarvestCell = collectionView.dequeueReusableCell(
             withReuseIdentifier:
             VGridHarvestCell.reusableIdentifier,

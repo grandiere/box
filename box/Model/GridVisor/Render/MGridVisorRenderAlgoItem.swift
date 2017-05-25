@@ -20,8 +20,8 @@ class MGridVisorRenderAlgoItem
         
         guard
             
-            let imageStandby:UIImage = model.imageStandby(),
-            let imageTargeted:UIImage = model.imageTargeted(),
+            let imageStandby:UIImage = model.textureStandby,
+            let imageTargeted:UIImage = model.textureTargeted,
             let textureStandby:MTLTexture = textureLoader.loadImage(
                 image:imageStandby),
             let textureTargeted:MTLTexture = textureLoader.loadImage(

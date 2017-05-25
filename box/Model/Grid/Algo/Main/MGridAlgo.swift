@@ -63,7 +63,7 @@ class MGridAlgo
             nodeType:FDbAlgoHostileBug.self)
         { [weak self] (node:FDbProtocol?) in
             
-            var items:[MGridAlgoItemHostileBug] = []
+            var items:[MGridAlgoHostileBugItem] = []
             
             if let bugs:FDbAlgoHostileBug = node as? FDbAlgoHostileBug
             {
@@ -80,7 +80,7 @@ class MGridAlgo
                         continue
                     }
                     
-                    let item:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
+                    let item:MGridAlgoHostileBugItem = MGridAlgoHostileBugItem(
                         firebaseId:bugId,
                         firebaseBug:bug)
                     
@@ -114,7 +114,7 @@ class MGridAlgo
             forceCreation = true
         }
         
-        if let bug:MGridAlgoItemHostileBug = factory.createBug(
+        if let bug:MGridAlgoHostileBugItem = factory.createBug(
             location:userLocation,
             force:forceCreation)
         {
@@ -132,7 +132,7 @@ class MGridAlgo
             nodeType:FDbAlgoAid.self)
         { [weak self] (node:FDbProtocol?) in
             
-            var items:[MGridAlgoItemAid] = []
+            var items:[MGridAlgoAidItem] = []
             
             if let aids:FDbAlgoAid = node as? FDbAlgoAid
             {
@@ -149,7 +149,7 @@ class MGridAlgo
                         continue
                     }
                     
-                    let item:MGridAlgoItemAid = MGridAlgoItemAid(
+                    let item:MGridAlgoAidItem = MGridAlgoAidItem(
                         firebaseId:aidId,
                         firebaseAid:aid)
                     
@@ -183,7 +183,7 @@ class MGridAlgo
             nodeType:FDbAlgoHostileVirus.self)
         { [weak self] (node:FDbProtocol?) in
             
-            var items:[MGridAlgoItemHostileVirus] = []
+            var items:[MGridAlgoHostileVirusItem] = []
             
             if let viruses:FDbAlgoHostileVirus = node as? FDbAlgoHostileVirus
             {
@@ -200,7 +200,7 @@ class MGridAlgo
                         continue
                     }
                     
-                    let item:MGridAlgoItemHostileVirus = MGridAlgoItemHostileVirus.virusWith(
+                    let item:MGridAlgoHostileVirusItem = MGridAlgoHostileVirusItem.virusWith(
                         firebaseId:virusId,
                         firebaseVirus:virus)
                     
