@@ -82,7 +82,7 @@ class MGridAlgoFactory
     
     func createBug(
         location:CLLocation,
-        force:Bool) -> MGridAlgoItemHostileBug?
+        force:Bool) -> MGridAlgoHostileBugItem?
     {
         if !force
         {
@@ -116,14 +116,14 @@ class MGridAlgoFactory
             path:FDb.algoBug,
             json:bugJson)
         
-        let bug:MGridAlgoItemHostileBug = MGridAlgoItemHostileBug(
+        let bug:MGridAlgoHostileBugItem = MGridAlgoHostileBugItem(
             firebaseId:bugId,
             firebaseBug:firebaseBug)
         
         return bug
     }
     
-    func createAid(location:CLLocation) -> MGridAlgoItemAid?
+    func createAid(location:CLLocation) -> MGridAlgoAidItem?
     {
         if !shouldCreate(difficulty:kAidDifficulty)
         {
@@ -152,7 +152,7 @@ class MGridAlgoFactory
             path:FDb.algoAid,
             json:aidJson)
         
-        let aid:MGridAlgoItemAid = MGridAlgoItemAid(
+        let aid:MGridAlgoAidItem = MGridAlgoAidItem(
             firebaseId:aidId,
             firebaseAid:firebaseAid)
         
