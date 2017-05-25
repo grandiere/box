@@ -14,48 +14,75 @@ class MGridAlgoHostileVirusFriendlyItem:MGridAlgoHostileVirusItem
             defeated:firebaseVirus.defeated,
             created:firebaseVirus.created)
     }
-    /*
-    override func detail() -> MGridVisorDetail
+    
+    //MARK: algo protocol
+    
+    override var icon:UIImage?
     {
-        let model:MGridVisorDetail = MGridVisorDetail.detailVirusFriendly(model:self)
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureVirusFriendlyDetail")
+        }
+    }
+    
+    override func detail() -> [MGridVisorDetailProtocol]
+    {
+        let items:[MGridVisorDetailProtocol] = []
         
-        return model
+        return items
     }
     
-    override func imageStandby() -> UIImage?
+    //MARK: render protocol
+    
+    override var textureStandby:UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureVirusFriendlyStandBy")
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureVirusFriendlyStandBy")
+        }
     }
     
-    override func imageTargeted() -> UIImage?
+    override var textureTargeted:UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureVirusFriendlyTargeted")
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureVirusFriendlyTargeted")
+        }
     }
     
-    override func imageDetail() -> UIImage?
+    override var overlayColour:UIColor
     {
-        return #imageLiteral(resourceName: "assetTextureVirusFriendlyDetail")
+        get
+        {
+            return UIColor.gridBlue
+        }
     }
     
-    override func annotationImageOn() -> UIImage?
+    //MARK: map protocol
+    
+    override var annotationImageOn:UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureVirusFriendlyAnnotationOn")
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureVirusFriendlyAnnotationOn")
+        }
     }
     
-    override func annotationImageOff() -> UIImage?
+    override var annotationImageOff:UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureVirusFriendlyAnnotationOff")
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureVirusFriendlyAnnotationOff")
+        }
     }
     
-    override func titleAnnotation() -> String?
+    override var annotationTitle:String?
     {
-        let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFriendly_titleAnnotation", comment:"")
-        
-        return title
+        get
+        {
+            let title:String = NSLocalizedString("MGridAlgoItemHostileVirusFriendly_titleAnnotation", comment:"")
+            
+            return title
+        }
     }
-    
-    override func textureColour() -> UIColor
-    {
-        return UIColor.gridBlue
-    }*/
 }
