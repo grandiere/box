@@ -106,7 +106,19 @@ class VGridVisorMenu:UIView
     
     func actionDetail(sender button:VGridVirusOptionsButton)
     {
+        guard
+            
+            let algoItem:MGridAlgoItem = controller.targeting
+            
+        else
+        {
+            return
+        }
         
+        if algoItem.showDetail
+        {
+            controller.showAlgoDetail(item:algoItem)
+        }
     }
     
     func actionDownload(sender button:VGridVirusOptionsButton)
