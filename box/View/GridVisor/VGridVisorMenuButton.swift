@@ -25,6 +25,22 @@ class VGridVisorMenuButton:UIButton
         return nil
     }
     
+    override var isSelected:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
+    override var isHighlighted:Bool
+    {
+        didSet
+        {
+            hover()
+        }
+    }
+    
     //MARK: private
     
     private func hover()
