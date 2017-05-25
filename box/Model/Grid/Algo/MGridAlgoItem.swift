@@ -102,22 +102,7 @@ class MGridAlgoItem:MGridAlgoItemMenuProtocol, MGridAlgoItemRenderProtocol
         return nil
     }
     
-    func annotationImageOn() -> UIImage?
-    {
-        return nil
-    }
     
-    func annotationImageOff() -> UIImage?
-    {
-        return nil
-    }
-    
-    
-    
-    func titleAnnotation() -> String?
-    {
-        return nil
-    }
     
     
     

@@ -1,9 +1,8 @@
-//
-//  MGridAlgoItemMapProtocol.swift
-//  box
-//
-//  Created by zero on 5/25/17.
-//  Copyright © 2017 iturbide. All rights reserved.
-//
+import UIKit
 
-import Foundation
+protocol MGridAlgoItemMapProtocol
+{
+    var annotationImageOn:UIImage? { get }
+    var annoationImageOff:UIImage? { get }
+    var titleAnnotation:String? { get }
+}

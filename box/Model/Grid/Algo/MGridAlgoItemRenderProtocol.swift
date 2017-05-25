@@ -2,7 +2,7 @@ import UIKit
 
 protocol MGridAlgoItemRenderProtocol
 {
-    func textureStandby() -> UIImage?
-    func textureTargeted() -> UIImage?
-    func overlayColour() -> UIColor
+    var textureStandby:UIImage? { get }
+    var textureTargeted:UIImage? { get }
+    var overlayColour:UIColor { get }
 }
