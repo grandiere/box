@@ -1,7 +1,10 @@
 import UIKit
 import CoreLocation
 
-class MGridAlgoItem:MGridAlgoItemMenuProtocol, MGridAlgoItemRenderProtocol
+class MGridAlgoItem:
+    MGridAlgoItemMenuProtocol,
+    MGridAlgoItemRenderProtocol,
+    MGridAlgoItemMapProtocol
 {
     let firebaseId:String
     let location:CLLocation
@@ -88,19 +91,7 @@ class MGridAlgoItem:MGridAlgoItemMenuProtocol, MGridAlgoItemRenderProtocol
     
     
     
-    func firebasePath() -> String
-    {
-        return firebaseId
-    }
     
-    
-    
-    
-    
-    func imageDetail() -> UIImage?
-    {
-        return nil
-    }
     
     
     

@@ -259,6 +259,7 @@
 		DA823A2D1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A2C1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift */; };
 		DA823A2F1ED74C7200BF3B84 /* MGridAlgoItemRenderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A2E1ED74C7200BF3B84 /* MGridAlgoItemRenderProtocol.swift */; };
 		DA823A311ED74D2300BF3B84 /* MGridAlgoItemMapProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A301ED74D2300BF3B84 /* MGridAlgoItemMapProtocol.swift */; };
+		DA823A331ED74FD500BF3B84 /* MGridAlgoItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A321ED74FD500BF3B84 /* MGridAlgoItemProtocol.swift */; };
 		DA87C4881ED5ED4300501EDC /* MetalBufferableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4701ED5ED4300501EDC /* MetalBufferableProtocol.swift */; };
 		DA87C4891ED5ED4300501EDC /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4711ED5ED4300501EDC /* MetalConstants.swift */; };
 		DA87C48A1ED5ED4300501EDC /* MetalRenderableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4721ED5ED4300501EDC /* MetalRenderableProtocol.swift */; };
@@ -619,6 +620,7 @@
 		DA823A2C1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoHostileVirusFriendlyItem.swift; sourceTree = "<group>"; };
 		DA823A2E1ED74C7200BF3B84 /* MGridAlgoItemRenderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoItemRenderProtocol.swift; sourceTree = "<group>"; };
 		DA823A301ED74D2300BF3B84 /* MGridAlgoItemMapProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoItemMapProtocol.swift; sourceTree = "<group>"; };
+		DA823A321ED74FD500BF3B84 /* MGridAlgoItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoItemProtocol.swift; sourceTree = "<group>"; };
 		DA87C4701ED5ED4300501EDC /* MetalBufferableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalBufferableProtocol.swift; sourceTree = "<group>"; };
 		DA87C4711ED5ED4300501EDC /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DA87C4721ED5ED4300501EDC /* MetalRenderableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRenderableProtocol.swift; sourceTree = "<group>"; };
@@ -1183,6 +1185,7 @@
 				DA823A2A1ED74B4400BF3B84 /* MGridAlgoHostileVirusFoeItem.swift */,
 				DA823A2C1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift */,
 				DA59D77C1EB3D61C00EB2973 /* MGridAlgoFactory.swift */,
+				DA823A321ED74FD500BF3B84 /* MGridAlgoItemProtocol.swift */,
 				DA823A1C1ED73DCD00BF3B84 /* MGridAlgoItemMenuProtocol.swift */,
 				DA823A2E1ED74C7200BF3B84 /* MGridAlgoItemRenderProtocol.swift */,
 				DA823A301ED74D2300BF3B84 /* MGridAlgoItemMapProtocol.swift */,
@@ -2055,6 +2058,7 @@
 				DA06B01D1ED65F7C001BCEF7 /* VGridVisorDetailCell.swift in Sources */,
 				DA8852731EAEAEA5008CB62C /* VGridMapRenderPin.swift in Sources */,
 				DA0C16D51EB4FF5A007532A6 /* FDbAlgoAid.swift in Sources */,
+				DA823A331ED74FD500BF3B84 /* MGridAlgoItemProtocol.swift in Sources */,
 				DAAEA2D71EAC4CE300986612 /* MStatsItemVirusReleased.swift in Sources */,
 				DAFDEF921EA508D10016746F /* MGrid.swift in Sources */,
 				DAFDEF961EA509060016746F /* MGridItemMap.swift in Sources */,
