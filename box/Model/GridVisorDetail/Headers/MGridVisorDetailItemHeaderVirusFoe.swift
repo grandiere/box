@@ -2,9 +2,9 @@ import UIKit
 
 class MGridVisorDetailItemHeaderVirusFoe:MGridVisorDetailItemHeader
 {
-    init(model:MGridAlgoItemHostileVirusFoe)
+    init(model:MGridAlgoHostileVirusFoeItem)
     {
-        let image:UIImage? = model.imageDetail()
+        let image:UIImage? = model.icon
         let title:String = NSLocalizedString("MGridVisorDetailItemHeaderVirusFoe_title", comment:"")
         
         super.init(image:image, title:title)

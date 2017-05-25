@@ -4,7 +4,7 @@ class MGridVisorDetailItemTake:MGridVisorDetailItem
 {
     private let kCellHeight:CGFloat = 320
     
-    init(model:MGridAlgoItemAid)
+    init(model:MGridAlgoAidItem)
     {
         let reusableIdentifier:String = VGridVisorDetailCellTake.reusableIdentifier
         

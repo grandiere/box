@@ -167,7 +167,7 @@ class MGridAlgo
         items:[MGridAlgoItem],
         userLocation:CLLocation)
     {
-        if let aid:MGridAlgoItemAid = factory.createAid(location:userLocation)
+        if let aid:MGridAlgoAidItem = factory.createAid(location:userLocation)
         {
             self.items.append(aid)
         }

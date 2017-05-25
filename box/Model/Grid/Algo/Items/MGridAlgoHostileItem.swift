@@ -91,7 +91,7 @@ class MGridAlgoHostileItem:MGridAlgoItem
     {
         defeated += 1
         
-        let path:String = "\(firebasePath())/\(FDbAlgoHostileItem.defeated)"
+        let path:String = "\(firebasePath)/\(FDbAlgoHostileItem.defeated)"
         FMain.sharedInstance.db.updateChild(
             path:path,
             json:defeated)

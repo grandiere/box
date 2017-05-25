@@ -42,7 +42,7 @@ class CGridVisorDetail:CController
     {
         guard
             
-            let model:MGridAlgoItemHostile = self.model as? MGridAlgoItemHostile
+            let model:MGridAlgoHostileItem = self.model as? MGridAlgoHostileItem
         
         else
         {
@@ -57,7 +57,7 @@ class CGridVisorDetail:CController
     {
         guard
             
-            let model:MGridAlgoItemAid = self.model as? MGridAlgoItemAid
+            let model:MGridAlgoAidItem = self.model as? MGridAlgoAidItem
             
         else
         {
