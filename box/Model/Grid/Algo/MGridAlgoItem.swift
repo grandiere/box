@@ -2,6 +2,7 @@ import UIKit
 import CoreLocation
 
 class MGridAlgoItem:
+    MGridAlgoItemProtocol,
     MGridAlgoItemMenuProtocol,
     MGridAlgoItemRenderProtocol,
     MGridAlgoItemMapProtocol
