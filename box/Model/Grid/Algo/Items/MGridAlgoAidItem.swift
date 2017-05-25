@@ -96,7 +96,7 @@ class MGridAlgoAidItem:MGridAlgoItem
         }
     }
     
-    override var titleAnnotation:String?
+    override var annotationTitle:String?
     {
         get
         {

@@ -38,6 +38,11 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
         }
     }
     
+    override func destroySuccess()
+    {
+        MSession.sharedInstance.settings?.stats?.debugSuccess()
+    }
+    
     //MARK: algo protocol
     
     override var firebasePath:String
@@ -55,6 +60,16 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
         get
         {
             return #imageLiteral(resourceName: "assetTextureBugDetail")
+        }
+    }
+    
+    //MARK: menu protocol
+    
+    override var showMatch:Bool
+    {
+        get
+        {
+            return kShowMatch
         }
     }
     
@@ -76,49 +91,36 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
         }
     }
     
-    /*
-    
-    
-    
-    override func annotationImageOn() -> UIImage?
+    override var overlayColour:UIColor
     {
-        return #imageLiteral(resourceName: "assetTextureBugAnnotationOn")
+        get
+        {
+            return UIColor.gridGreen
+        }
     }
     
-    override func annotationImageOff() -> UIImage?
+    //MARK: map protocol
+    
+    override var annotationImageOn:UIImage?
     {
-        return #imageLiteral(resourceName: "assetTextureBugAnnotationOff")
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureBugAnnotationOn")
+        }
     }
     
-    override func titleMatch() -> String?
+    override var annotationImageOff:UIImage?
     {
-        let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleMatch", comment:"")
-        
-        return title
+        get
+        {
+            return #imageLiteral(resourceName: "assetTextureBugAnnotationOff")
+        }
     }
     
-    override func titleAnnotation() -> String?
+    override var annotationTitle:String?
     {
         let title:String = NSLocalizedString("MGridAlgoItemHostileBug_titleAnnotation", comment:"")
         
         return title
     }
-    
-    override func destroySuccess()
-    {
-        MSession.sharedInstance.settings?.stats?.debugSuccess()
-    }
-    
-    override func textureColour() -> UIColor
-    {
-        return UIColor.gridGreen
-    }
-    
-    override var showMatch:Bool
-        {
-        get
-        {
-            return kShowMatch
-        }
-    }*/
 }

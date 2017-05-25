@@ -179,7 +179,7 @@ class CGridVisorMatch:CController
         
         guard
             
-            let stringMatch:String = model?.titleMatch()
+            let stringMatch:String = model?.matchTitle
             
         else
         {
@@ -202,7 +202,7 @@ class CGridVisorMatch:CController
         
         guard
             
-            let stringMatch:String = model?.titleMatch()
+            let stringMatch:String = model?.matchTitle
             
         else
         {

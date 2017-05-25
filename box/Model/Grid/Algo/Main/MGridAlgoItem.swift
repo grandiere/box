@@ -206,7 +206,7 @@ class MGridAlgoItem:
         }
     }
     
-    var titleAnnotation:String?
+    var annotationTitle:String?
     {
         get
         {

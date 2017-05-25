@@ -47,7 +47,7 @@ class MGridAlgoHostileItem:MGridAlgoItem, MGridAlgoItemMatchProtocol
             
             let distance:CLLocationDistance = self.distance
             
-            else
+        else
         {
             return
         }

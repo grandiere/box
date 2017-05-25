@@ -10,7 +10,7 @@ class MGridVisorDetailItemMatch:MGridVisorDetailItem
     {
         let reusableIdentifier:String = VGridVisorDetailCellMatch.reusableIdentifier
         credits = model.credits
-        title = model.titleMatch()
+        title = model.matchTitle
         
         super.init(
             reusableIdentifier:reusableIdentifier,
