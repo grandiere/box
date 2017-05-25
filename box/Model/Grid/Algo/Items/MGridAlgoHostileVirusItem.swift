@@ -33,11 +33,13 @@ class MGridAlgoHostileVirusItem:MGridAlgoHostileItem
         return virus
     }
     
-    /*
-    override func firebasePath() -> String
+    override var firebasePath:String
     {
-        let path:String = "\(FDb.algoVirus)/\(firebaseId)"
-        
-        return path
-    }*/
+        get
+        {
+            let path:String = "\(FDb.algoVirus)/\(firebaseId)"
+            
+            return path
+        }
+    }
 }
