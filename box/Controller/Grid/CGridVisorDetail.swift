@@ -26,11 +26,17 @@ class CGridVisorDetail:CController
         view = viewDetail
     }
     
+    override func viewDidAppear(_ animated:Bool)
+    {
+        super.viewDidAppear(animated)
+        parentController.viewParent.panRecognizer.isEnabled = false
+    }
+    
     //MARK: public
     
     func back()
     {
-        parentController.dismissAnimateOver(completion:nil)
+        parentController.pop(vertical:CParent.TransitionVertical.fromBottom)
     }
     
     func share()

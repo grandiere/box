@@ -37,7 +37,10 @@ class MGridAlgoAidItem:MGridAlgoItem
     
     override func detail() -> [MGridVisorDetailProtocol]
     {
-        let items:[MGridVisorDetailProtocol] = []
+        let itemHeader:MGridVisorDetailHeader = MGridVisorDetailHeader(model:self)
+        
+        let items:[MGridVisorDetailProtocol] = [
+            itemHeader]
         
         return items
     }

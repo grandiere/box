@@ -5,22 +5,18 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
     private weak var controller:CGridVisorDetail!
     private weak var collectionView:VCollection!
     private let kBarHeight:CGFloat = 60
-    private let kInterItems:CGFloat = 2
     
     override init(controller:CController)
     {
         super.init(controller:controller)
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.white
         self.controller = controller as? CGridVisorDetail
-        
-        let blur:VBlur = VBlur.dark()
         
         let viewBar:VGridVisorDetailBar = VGridVisorDetailBar(
             controller:self.controller)
         
         let collectionView:VCollection = VCollection()
-        collectionView.isScrollEnabled = false
-        collectionView.bounces = false
+        collectionView.alwaysBounceVertical = true
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerCell(cell:VGridVisorDetailCellHeader.self)
@@ -31,19 +27,8 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.registerCell(cell:VGridVisorDetailCellTake.self)
         self.collectionView = collectionView
         
-        if let flow:VCollectionFlow = collectionView.collectionViewLayout as? VCollectionFlow
-        {
-            flow.minimumInteritemSpacing = kInterItems
-            flow.minimumLineSpacing = kInterItems
-        }
-        
-        addSubview(blur)
         addSubview(collectionView)
         addSubview(viewBar)
-        
-        NSLayoutConstraint.equals(
-            view:blur,
-            toView:self)
         
         NSLayoutConstraint.bottomToBottom(
             view:viewBar,

@@ -2,6 +2,7 @@ import UIKit
 
 class MGridVisorDetailHeader:MGridVisorDetailProtocol
 {
+    let icon:UIImage?
     private let kCellHeight:CGFloat = 200
     
     var cellHeight:CGFloat
@@ -22,6 +23,6 @@ class MGridVisorDetailHeader:MGridVisorDetailProtocol
     
     init(model:MGridAlgoItem)
     {
-        
+        icon = model.icon
     }
 }
