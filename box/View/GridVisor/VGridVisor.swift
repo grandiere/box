@@ -9,7 +9,7 @@ class VGridVisor:VView
     private weak var controller:CGridVisor!
     private weak var previewLayer:CALayer?
     private let kBarHeight:CGFloat = 70
-    private let kMenuHeight:CGFloat = 100
+    private let kMenuHeight:CGFloat = 140
     
     override init(controller:CController)
     {
