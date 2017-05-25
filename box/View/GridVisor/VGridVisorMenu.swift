@@ -94,19 +94,20 @@ class VGridVisorMenu:UIView
         buttonDownload.animate(show:false)
     }
     
-    private func showHostile()
+    private func showOptions()
     {
+        guard
         
-    }
-    
-    private func showFriendly()
-    {
+            let itemAlgo:MGridAlgoItem = self.itemAlgo
         
-    }
-    
-    private func showAid()
-    {
+        else
+        {
+            return
+        }
         
+        buttonMatch.animate(show:itemAlgo.showMatch)
+        buttonDetail.animate(show:itemAlgo.showDetail)
+        buttonDownload.animate(show:itemAlgo.showDownload)
     }
     
     //MARK: public
@@ -120,6 +121,12 @@ class VGridVisorMenu:UIView
             if itemAlgo !== self.itemAlgo
             {
                 self.itemAlgo = itemAlgo
+                
+                DispatchQueue.main.async
+                { [weak self] in
+                    
+                    self?.showOptions()
+                }
             }
         }
         else

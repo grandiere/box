@@ -6,6 +6,7 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
     let userId:String
     private let kCreditsMultiplier:CGFloat = 2
     private let kHarvestMultiplier:Int = 10
+    private let kShowMatch:Bool = true
     
     convenience init(
         firebaseId:String,
@@ -134,6 +135,14 @@ class MGridAlgoItemHostileVirusFoe:MGridAlgoItemHostileVirus
                 withValue:mutableData)
             
             return transactionResult
+        }
+    }
+    
+    override var showMatch:Bool
+    {
+        get
+        {
+            return kShowMatch
         }
     }
     

@@ -3,6 +3,7 @@ import UIKit
 class MGridAlgoItemHostileBug:MGridAlgoItemHostile
 {
     private let kCreditsMultiplier:CGFloat = 1.5
+    private let kShowMatch:Bool = true
     
     init(
         firebaseId:String,
@@ -83,5 +84,13 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
     override func textureColour() -> UIColor
     {
         return UIColor.gridGreen
+    }
+    
+    override var showMatch:Bool
+    {
+        get
+        {
+            return kShowMatch
+        }
     }
 }

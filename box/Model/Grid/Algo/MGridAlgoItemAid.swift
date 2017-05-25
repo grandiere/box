@@ -2,6 +2,8 @@ import UIKit
 
 class MGridAlgoItemAid:MGridAlgoItem
 {
+    private let kShowDownload:Bool = true
+    
     init(
         firebaseId:String,
         firebaseAid:FDbAlgoAidItem)
@@ -62,5 +64,13 @@ class MGridAlgoItemAid:MGridAlgoItem
     override func textureColour() -> UIColor
     {
         return UIColor.gridBlue
+    }
+    
+    override var showDownload:Bool
+    {
+        get
+        {
+            return kShowDownload
+        }
     }
 }
