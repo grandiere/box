@@ -1,7 +1,7 @@
 import UIKit
 import CoreLocation
 
-class MGridAlgoItemHostile:MGridAlgoItem
+class MGridAlgoHostileItem:MGridAlgoItem
 {
     let level:Int
     private(set) var defeated:Int
@@ -46,8 +46,8 @@ class MGridAlgoItemHostile:MGridAlgoItem
         guard
             
             let distance:CLLocationDistance = self.distance
-        
-        else
+            
+            else
         {
             return
         }
