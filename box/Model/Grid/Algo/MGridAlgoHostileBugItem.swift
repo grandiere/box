@@ -1,6 +1,6 @@
 import UIKit
 
-class MGridAlgoItemHostileBug:MGridAlgoItemHostile
+class MGridAlgoHostileBugItem:MGridAlgoItemHostile
 {
     private let kCreditsMultiplier:CGFloat = 1.5
     private let kShowMatch:Bool = true
@@ -87,7 +87,7 @@ class MGridAlgoItemHostileBug:MGridAlgoItemHostile
     }
     
     override var showMatch:Bool
-    {
+        {
         get
         {
             return kShowMatch
