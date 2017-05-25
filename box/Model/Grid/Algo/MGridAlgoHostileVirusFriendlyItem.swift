@@ -1,6 +1,6 @@
 import UIKit
 
-class MGridAlgoItemHostileVirusFriendly:MGridAlgoItemHostileVirus
+class MGridAlgoHostileVirusFriendlyItem:MGridAlgoItemHostileVirus
 {
     init(
         firebaseId:String,

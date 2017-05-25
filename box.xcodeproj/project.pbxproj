@@ -256,6 +256,7 @@
 		DA823A271ED74ADC00BF3B84 /* MGridAlgoHostileBugItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A261ED74ADC00BF3B84 /* MGridAlgoHostileBugItem.swift */; };
 		DA823A291ED74B0B00BF3B84 /* MGridAlgoHostileVirusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A281ED74B0B00BF3B84 /* MGridAlgoHostileVirusItem.swift */; };
 		DA823A2B1ED74B4400BF3B84 /* MGridAlgoHostileVirusFoeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A2A1ED74B4400BF3B84 /* MGridAlgoHostileVirusFoeItem.swift */; };
+		DA823A2D1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA823A2C1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift */; };
 		DA87C4881ED5ED4300501EDC /* MetalBufferableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4701ED5ED4300501EDC /* MetalBufferableProtocol.swift */; };
 		DA87C4891ED5ED4300501EDC /* MetalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4711ED5ED4300501EDC /* MetalConstants.swift */; };
 		DA87C48A1ED5ED4300501EDC /* MetalRenderableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87C4721ED5ED4300501EDC /* MetalRenderableProtocol.swift */; };
@@ -360,7 +361,6 @@
 		DAFDEF961EA509060016746F /* MGridItemMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF951EA509060016746F /* MGridItemMap.swift */; };
 		DAFDEF981EA5090D0016746F /* MGridItemVisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFDEF971EA5090D0016746F /* MGridItemVisor.swift */; };
 		DAFE877C1EA51D4900350434 /* MGridAlgoItemHostileVirusFoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE877B1EA51D4900350434 /* MGridAlgoItemHostileVirusFoe.swift */; };
-		DAFE877E1EA51D5300350434 /* MGridAlgoItemHostileVirusFriendly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFE877D1EA51D5300350434 /* MGridAlgoItemHostileVirusFriendly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -614,6 +614,7 @@
 		DA823A261ED74ADC00BF3B84 /* MGridAlgoHostileBugItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoHostileBugItem.swift; sourceTree = "<group>"; };
 		DA823A281ED74B0B00BF3B84 /* MGridAlgoHostileVirusItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoHostileVirusItem.swift; sourceTree = "<group>"; };
 		DA823A2A1ED74B4400BF3B84 /* MGridAlgoHostileVirusFoeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoHostileVirusFoeItem.swift; sourceTree = "<group>"; };
+		DA823A2C1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoHostileVirusFriendlyItem.swift; sourceTree = "<group>"; };
 		DA87C4701ED5ED4300501EDC /* MetalBufferableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalBufferableProtocol.swift; sourceTree = "<group>"; };
 		DA87C4711ED5ED4300501EDC /* MetalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalConstants.swift; sourceTree = "<group>"; };
 		DA87C4721ED5ED4300501EDC /* MetalRenderableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRenderableProtocol.swift; sourceTree = "<group>"; };
@@ -721,7 +722,6 @@
 		DAFDEF951EA509060016746F /* MGridItemMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridItemMap.swift; sourceTree = "<group>"; };
 		DAFDEF971EA5090D0016746F /* MGridItemVisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridItemVisor.swift; sourceTree = "<group>"; };
 		DAFE877B1EA51D4900350434 /* MGridAlgoItemHostileVirusFoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoItemHostileVirusFoe.swift; sourceTree = "<group>"; };
-		DAFE877D1EA51D5300350434 /* MGridAlgoItemHostileVirusFriendly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridAlgoItemHostileVirusFriendly.swift; sourceTree = "<group>"; };
 		DC82B0A4FEB21F6CA6DC8BF0 /* Pods-box.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-box.release.xcconfig"; path = "Pods/Target Support Files/Pods-box/Pods-box.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1177,7 +1177,7 @@
 				DA823A281ED74B0B00BF3B84 /* MGridAlgoHostileVirusItem.swift */,
 				DAFE877B1EA51D4900350434 /* MGridAlgoItemHostileVirusFoe.swift */,
 				DA823A2A1ED74B4400BF3B84 /* MGridAlgoHostileVirusFoeItem.swift */,
-				DAFE877D1EA51D5300350434 /* MGridAlgoItemHostileVirusFriendly.swift */,
+				DA823A2C1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift */,
 				DA59D77C1EB3D61C00EB2973 /* MGridAlgoFactory.swift */,
 				DA823A1C1ED73DCD00BF3B84 /* MGridAlgoItemMenuProtocol.swift */,
 			);
@@ -2133,6 +2133,7 @@
 				DA1D49AB1EAA47AD00C2392C /* VLandingBar.swift in Sources */,
 				DA87C48E1ED5ED4300501EDC /* MetalPosition.swift in Sources */,
 				DA31F6AD1EC2449A003978C7 /* MStorePurchaseNetwork.swift in Sources */,
+				DA823A2D1ED74B7200BF3B84 /* MGridAlgoHostileVirusFriendlyItem.swift in Sources */,
 				DA29FEF21EAAAA6400CD8FBC /* VStats.swift in Sources */,
 				DA06B02E1ED6619C001BCEF7 /* MGridVisorDetailItemActionsTake.swift in Sources */,
 				DA1403C01EB6652C006C9364 /* MGridVisorMatch.swift in Sources */,
@@ -2153,7 +2154,6 @@
 				DA8C06FD1EC65121000DF6D4 /* MHelpAidsIntro.swift in Sources */,
 				DA49A8251EBA614900C03ECD /* VGridVirusReleased.swift in Sources */,
 				DA29FEF41EAAB36D00CD8FBC /* VStatsBar.swift in Sources */,
-				DAFE877E1EA51D5300350434 /* MGridAlgoItemHostileVirusFriendly.swift in Sources */,
 				DA823A0B1ED722F900BF3B84 /* CAppDelegate.swift in Sources */,
 				DA06B02C1ED6617E001BCEF7 /* MGridVisorDetailItemActionsProtocol.swift in Sources */,
 				DA87C48C1ED5ED4300501EDC /* MetalShaderFragmentSimple.metal in Sources */,
