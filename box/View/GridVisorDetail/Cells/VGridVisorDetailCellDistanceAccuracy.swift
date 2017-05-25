@@ -2,18 +2,16 @@ import UIKit
 
 class VGridVisorDetailCellDistanceAccuracy:UIView
 {
-    private let initialRadius:CGFloat
-    private let endingRadius:CGFloat
-    private let kRadius:CGFloat = 12
-    private let kLineWidth:CGFloat = 9
+    private let endingX:CGFloat
+    private let kDotRadius:CGFloat = 4
+    private let kRadius:CGFloat = 80
+    private let kCircleLine:CGFloat = 2
+    private let kLineWidth:CGFloat = 8
     private let kBackgroundInitial:CGFloat = 0
     private let kBackgroundEnding:CGFloat = -0.0001
     
     init(distance:Double)
     {
-        initialRadius = CGFloat.pi / -2.0
-        
-        let pi2:CGFloat = CGFloat.pi + CGFloat.pi
         var maxDistance:Double = 1
         
         if let visorRange:Double = MSession.sharedInstance.settings?.visorRange()
@@ -28,9 +26,7 @@ class VGridVisorDetailCellDistanceAccuracy:UIView
             endingPercentage = 1
         }
         
-        let inversedPercentage:CGFloat = 1 - endingPercentage
-        let endingRadians:CGFloat = inversedPercentage * pi2
-        endingRadius = endingRadians + initialRadius
+        endingX = endingPercentage * kRadius
         
         super.init(frame:CGRect.zero)
         clipsToBounds = true
@@ -60,10 +56,11 @@ class VGridVisorDetailCellDistanceAccuracy:UIView
         let width_2:CGFloat = width / 2.0
         let height_2:CGFloat = height / 2.0
         let center:CGPoint = CGPoint(x:width_2, y:height_2)
+        let endingPoint:CGPoint = CGPoint(x:endingX, y:height_2)
         
         context.setLineCap(CGLineCap.round)
-        context.setLineWidth(kLineWidth)
-        context.setStrokeColor(UIColor(white:0, alpha:0.1).cgColor)
+        context.setLineWidth(kCircleLine)
+        context.setStrokeColor(UIColor.gridGreen.cgColor)
         
         context.addArc(
             center:center,
@@ -73,14 +70,21 @@ class VGridVisorDetailCellDistanceAccuracy:UIView
             clockwise:false)
         context.drawPath(using:CGPathDrawingMode.stroke)
         
+        context.setLineWidth(kLineWidth)
         context.setStrokeColor(UIColor.gridBlue.cgColor)
+        context.setFillColor(UIColor.gridBlue.cgColor)
+        
         context.addArc(
             center:center,
-            radius:kRadius,
-            startAngle:initialRadius,
-            endAngle:endingRadius,
+            radius:kDotRadius,
+            startAngle:kBackgroundInitial,
+            endAngle:kBackgroundEnding,
             clockwise:false)
         
+        context.drawPath(using:CGPathDrawingMode.fill)
+        
+        context.move(to:center)
+        context.addLine(to:endingPoint)
         context.drawPath(using:CGPathDrawingMode.stroke)
     }
 }

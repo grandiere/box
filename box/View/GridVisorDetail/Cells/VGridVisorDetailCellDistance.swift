@@ -7,11 +7,7 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
     private let numberFormatter:NumberFormatter
     private let kMaxDecimals:Int = 1
     private let kMinIntegers:Int = 1
-    private let kTitleLeft:CGFloat = 10
-    private let kTitleWidth:CGFloat = 240
-    private let kAccuracyWidth:CGFloat = 80
     private let kKmWidth:CGFloat = 160
-    private let kKmRight:CGFloat = 5
     
     override init(frame:CGRect)
     {
@@ -23,44 +19,23 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
         super.init(frame:frame)
         isUserInteractionEnabled = false
         
-        let labelTitle:UILabel = UILabel()
-        labelTitle.isUserInteractionEnabled = false
-        labelTitle.translatesAutoresizingMaskIntoConstraints = false
-        labelTitle.backgroundColor = UIColor.clear
-        labelTitle.textColor = UIColor.black
-        labelTitle.font = UIFont.bold(size:16)
-        labelTitle.text = NSLocalizedString("VGridVisorDetailCellDistance_labelTitle", comment:"")
-        
         let labelKm:UILabel = UILabel()
         labelKm.translatesAutoresizingMaskIntoConstraints = false
         labelKm.isUserInteractionEnabled = false
         labelKm.backgroundColor = UIColor.clear
-        labelKm.font = UIFont.numeric(size:16)
+        labelKm.font = UIFont.numeric(size:12)
         labelKm.textColor = UIColor.black
         labelKm.textAlignment = NSTextAlignment.right
         self.labelKm = labelKm
         
-        addSubview(labelTitle)
         addSubview(labelKm)
-        
-        NSLayoutConstraint.equalsVertical(
-            view:labelTitle,
-            toView:self)
-        NSLayoutConstraint.leftToLeft(
-            view:labelTitle,
-            toView:self,
-            constant:kTitleLeft)
-        NSLayoutConstraint.width(
-            view:labelTitle,
-            constant:kTitleWidth)
         
         NSLayoutConstraint.equalsVertical(
             view:labelKm,
             toView:self)
         NSLayoutConstraint.rightToRight(
             view:labelKm,
-            toView:self,
-            constant:-(kAccuracyWidth - kKmRight))
+            toView:self)
         NSLayoutConstraint.width(
             view:labelKm,
             constant:kKmWidth)
@@ -78,7 +53,7 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
         
         guard
         
-            let modelDistance:MGridVisorDetailItemDistance = model as? MGridVisorDetailItemDistance,
+            let modelDistance:MGridVisorDetailDistance = model as? MGridVisorDetailDistance,
             let distanceMetric:MDistanceProtocol = MSession.sharedInstance.settings?.currentDistance(),
             let distance:Double = modelDistance.distance
         
@@ -109,14 +84,8 @@ class VGridVisorDetailCellDistance:VGridVisorDetailCell
         
         addSubview(viewAccuracy)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.equals(
             view:viewAccuracy,
             toView:self)
-        NSLayoutConstraint.rightToRight(
-            view:viewAccuracy,
-            toView:self)
-        NSLayoutConstraint.width(
-            view:viewAccuracy,
-            constant:kAccuracyWidth)
     }
 }
