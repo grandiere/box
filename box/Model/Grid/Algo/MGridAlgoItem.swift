@@ -113,11 +113,11 @@ class MGridAlgoItem:MGridAlgoItemMenuProtocol
         return nil
     }
     
-    func detail() -> MGridVisorDetail
+    func detail() -> [MGridVisorDetailProtocol]
     {
-        let model:MGridVisorDetail = MGridVisorDetail()
+        let items:[MGridVisorDetailProtocol] = []
         
-        return model
+        return items
     }
     
     func titleAnnotation() -> String?
