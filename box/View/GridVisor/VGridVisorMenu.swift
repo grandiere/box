@@ -23,12 +23,24 @@ class VGridVisorMenu:UIView
         self.controller = controller
         
         let buttonMatch:VGridVisorMenuButton = VGridVisorMenuButton(image:#imageLiteral(resourceName: "assetGenericMatch"))
+        buttonMatch.addTarget(
+            self,
+            action:#selector(actionMatch(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.buttonMatch = buttonMatch
         
         let buttonDownload:VGridVisorMenuButton = VGridVisorMenuButton(image:#imageLiteral(resourceName: "assetGenericDownload"))
+        buttonDownload.addTarget(
+            self,
+            action:#selector(actionDownload(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.buttonDownload = buttonDownload
         
         let buttonDetail:VGridVisorMenuButton = VGridVisorMenuButton(image:#imageLiteral(resourceName: "assetGenericDetail"))
+        buttonDetail.addTarget(
+            self,
+            action:#selector(actionDetail(sender:)),
+            for:UIControlEvents.touchUpInside)
         self.buttonDetail = buttonDetail
         
         addSubview(buttonDownload)
@@ -83,6 +95,23 @@ class VGridVisorMenu:UIView
         layoutMatchLeft.constant = marginLeft
         
         super.layoutSubviews()
+    }
+    
+    //MARK: actions
+    
+    func actionMatch(sender button:VGridVirusOptionsButton)
+    {
+        
+    }
+    
+    func actionDetail(sender button:VGridVirusOptionsButton)
+    {
+        
+    }
+    
+    func actionDownload(sender button:VGridVirusOptionsButton)
+    {
+        
     }
     
     //MARK: private

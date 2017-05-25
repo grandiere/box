@@ -19,6 +19,7 @@ class VGridVisorMenuButton:UIButton
             for:UIControlState.highlighted)
         imageView!.clipsToBounds = true
         imageView!.contentMode = UIViewContentMode.center
+        alpha = 0
     }
     
     required init?(coder:NSCoder)

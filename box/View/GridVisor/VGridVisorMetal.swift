@@ -102,6 +102,8 @@ class VGridVisorMetal:MTKView
             return
         }
         
+        controller.viewGridVisor.viewMenu.updateMenu()
+        
         guard
         
             let drawable:CAMetalDrawable = currentDrawable,
