@@ -34,6 +34,15 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
         labelTitle.textAlignment = NSTextAlignment.center
         self.labelTitle = labelTitle
         
+        let buttonClose:UIButton = UIButton()
+        buttonClose.translatesAutoresizingMaskIntoConstraints = false
+        buttonClose.setImage(
+            #imageLiteral(resourceName: "assetGenericClose").withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            for:UIControlState.normal)
+        buttonClose.setImage(
+            #imageLiteral(resourceName: "assetGenericClose").withRenderingMode(UIImageRenderingMode.alwaysTemplate),
+            for:UIControlState.highlighted)
+        
         addSubview(finder)
         addSubview(imageView)
         addSubview(labelTitle)
