@@ -3,9 +3,9 @@ import UIKit
 class VGridVisorDetailCellLevel:VGridVisorDetailCell
 {
     private weak var labelLevel:UILabel!
-    private let kLevelHeight:CGFloat = 55
+    private let kLevelTop:CGFloat = -20
+    private let kLevelHeight:CGFloat = 65
     private let kTitleHeight:CGFloat = 30
-    private let kTitleTop:CGFloat = 20
     
     override init(frame:CGRect)
     {
@@ -18,6 +18,7 @@ class VGridVisorDetailCellLevel:VGridVisorDetailCell
         labelLevel.backgroundColor = UIColor.clear
         labelLevel.font = UIFont.numeric(size:40)
         labelLevel.textColor = UIColor.black
+        labelLevel.textAlignment = NSTextAlignment.center
         self.labelLevel = labelLevel
         
         let labelTitle:UILabel = UILabel()
@@ -25,8 +26,8 @@ class VGridVisorDetailCellLevel:VGridVisorDetailCell
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.backgroundColor = UIColor.clear
         labelTitle.textAlignment = NSTextAlignment.center
-        labelTitle.font = UIFont.bold(size:16)
-        labelTitle.textColor = UIColor.black
+        labelTitle.font = UIFont.bold(size:15)
+        labelTitle.textColor = UIColor.gridBlue
         labelTitle.text = NSLocalizedString("VGridVisorDetailCellLevel_labelTitle", comment:"")
         
         addSubview(labelTitle)
@@ -34,8 +35,7 @@ class VGridVisorDetailCellLevel:VGridVisorDetailCell
         
         NSLayoutConstraint.topToTop(
             view:labelTitle,
-            toView:self,
-            constant:kTitleTop)
+            toView:self)
         NSLayoutConstraint.height(
             view:labelTitle,
             constant:kTitleHeight)
@@ -45,7 +45,8 @@ class VGridVisorDetailCellLevel:VGridVisorDetailCell
 
         NSLayoutConstraint.topToBottom(
             view:labelLevel,
-            toView:labelTitle)
+            toView:labelTitle,
+            constant:kLevelTop)
         NSLayoutConstraint.height(
             view:labelLevel,
             constant:kLevelHeight)

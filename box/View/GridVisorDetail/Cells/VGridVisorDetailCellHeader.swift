@@ -5,7 +5,7 @@ class VGridVisorDetailCellHeader:VGridVisorDetailCell
     private weak var imageView:UIImageView!
     private weak var labelTitle:UILabel!
     private let kImageHeight:CGFloat = 180
-    private let kTitleHeight:CGFloat = 120
+    private let kTitleHeight:CGFloat = 48
     private let kCloseSize:CGFloat = 60
     
     override init(frame:CGRect)
