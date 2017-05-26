@@ -81,6 +81,45 @@ class VGridVisorDetailCellCreator:VGridVisorDetailCell
             return
         }
         
-        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.loadFirebaseHandler(userId:modelCreator.userId)
+        }
+    }
+    
+    //MARK: private
+    
+    private func loadFirebaseHandler(userId:String)
+    {
+        let path:String = "\(FDb.user)/\(userId)/\(FDbUserItem.handler)"
+        FMain.sharedInstance.db.listenOnce(
+            path:path,
+            nodeType:FDbUserItemHandler.self)
+        { [weak self] (data:FDbProtocol?) in
+            
+            guard
+            
+                let handler:FDbUserItemHandler = data as? FDbUserItemHandler
+            
+            else
+            {
+                let noHandler:String = NSLocalizedString("VGridVisorDetailCellCreator_noHandler", comment:"")
+                self?.handlerFound(handler:noHandler)
+                
+                return
+            }
+            
+            self?.handlerFound(handler:handler.handler)
+        }
+    }
+    
+    private func handlerFound(handler:String)
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.labelCreator.text = handler
+        }
     }
 }
