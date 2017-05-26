@@ -2,8 +2,8 @@ import UIKit
 
 class MGridVisorDetailKills:MGridVisorDetailProtocol
 {
-    let distance:Double?
-    private let kCellHeight:CGFloat = 80
+    let kills:Int
+    private let kCellHeight:CGFloat = 100
     
     var cellHeight:CGFloat
     {
@@ -21,8 +21,8 @@ class MGridVisorDetailKills:MGridVisorDetailProtocol
         }
     }
     
-    init(model:MGridAlgoItem)
+    init(model:MGridAlgoHostileItem)
     {
-        distance = model.distance
+        kills = model.defeated
     }
 }

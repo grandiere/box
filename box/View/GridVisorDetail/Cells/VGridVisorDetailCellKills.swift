@@ -4,9 +4,10 @@ class VGridVisorDetailCellKills:VGridVisorDetailCell
 {
     private weak var labelKills:UILabel!
     private weak var layoutIconLeft:NSLayoutConstraint!
-    private let kIconWidth:CGFloat = 60
-    private let kLabelWidth:CGFloat = 200
-    private let kTitleHeight:CGFloat = 40
+    private let kIconWidth:CGFloat = 36
+    private let kIconRight:CGFloat = 10
+    private let kLabelWidth:CGFloat = 160
+    private let kTitleHeight:CGFloat = 52
     
     override init(frame:CGRect)
     {
@@ -17,7 +18,7 @@ class VGridVisorDetailCellKills:VGridVisorDetailCell
         labelKills.translatesAutoresizingMaskIntoConstraints = false
         labelKills.isUserInteractionEnabled = false
         labelKills.backgroundColor = UIColor.clear
-        labelKills.font = UIFont.numeric(size:30)
+        labelKills.font = UIFont.numeric(size:24)
         labelKills.textColor = UIColor.black
         labelKills.textAlignment = NSTextAlignment.right
         self.labelKills = labelKills
@@ -26,8 +27,8 @@ class VGridVisorDetailCellKills:VGridVisorDetailCell
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.isUserInteractionEnabled = false
         labelTitle.backgroundColor = UIColor.clear
-        labelTitle.font = UIFont.regular(size:15)
-        labelTitle.textColor = UIColor.black
+        labelTitle.font = UIFont.regular(size:11)
+        labelTitle.textColor = UIColor(white:0.6, alpha:1)
         labelTitle.textAlignment = NSTextAlignment.center
         labelTitle.text = NSLocalizedString("VGridVisorDetailCellKills_labelTitle", comment:"")
         
@@ -83,7 +84,7 @@ class VGridVisorDetailCellKills:VGridVisorDetailCell
         let width:CGFloat = bounds.maxX
         let remainLeft:CGFloat = width - kIconWidth
         let marginLeft:CGFloat = remainLeft / 2.0
-        layoutIconLeft.constant = marginLeft
+        layoutIconLeft.constant = marginLeft + kIconRight
         
         super.layoutSubviews()
     }
@@ -91,5 +92,17 @@ class VGridVisorDetailCellKills:VGridVisorDetailCell
     override func config(controller:CGridVisorDetail, model:MGridVisorDetailProtocol)
     {
         super.config(controller:controller, model:model)
+        
+        guard
+        
+            let modelKills:MGridVisorDetailKills = model as? MGridVisorDetailKills
+        
+        else
+        {
+            return
+        }
+        
+        let kills:String = "\(modelKills.kills)"
+        labelKills.text = kills
     }
 }
