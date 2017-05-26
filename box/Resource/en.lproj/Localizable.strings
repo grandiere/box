@@ -30,6 +30,7 @@
 "VGridMapBar_labelCount"="%@ items";
 "VGridVisorDetailCellKills_labelTitle"="Players defeated";
 "VGridVisorDetailCellCreator_noHandler"="Unnamed player";
+"VGridVisorDetailCellLevel_labelTitle"="Level";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";
