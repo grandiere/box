@@ -6,7 +6,7 @@ class VGridVisorDetailCellCreator:VGridVisorDetailCell
     private weak var layoutIconLeft:NSLayoutConstraint!
     private let kIconWidth:CGFloat = 36
     private let kIconRight:CGFloat = 10
-    private let kLabelWidth:CGFloat = 160
+    private let kLabelWidth:CGFloat = 200
     
     override init(frame:CGRect)
     {
@@ -17,7 +17,7 @@ class VGridVisorDetailCellCreator:VGridVisorDetailCell
         labelCreator.translatesAutoresizingMaskIntoConstraints = false
         labelCreator.isUserInteractionEnabled = false
         labelCreator.backgroundColor = UIColor.clear
-        labelCreator.font = UIFont.regular(size:16)
+        labelCreator.font = UIFont.regular(size:15)
         labelCreator.textColor = UIColor.black
         labelCreator.textAlignment = NSTextAlignment.right
         self.labelCreator = labelCreator
