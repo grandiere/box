@@ -37,7 +37,18 @@ class MGridAlgoHostileVirusFriendlyItem:MGridAlgoHostileVirusItem
     
     override func detail() -> [MGridVisorDetailProtocol]
     {
-        let items:[MGridVisorDetailProtocol] = []
+        let itemHeader:MGridVisorDetailHeader = MGridVisorDetailHeader(model:self)
+        let itemLevel:MGridVisorDetailLevel = MGridVisorDetailLevel(model:self)
+        let itemDistance:MGridVisorDetailDistance = MGridVisorDetailDistance(model:self)
+        let itemKills:MGridVisorDetailKills = MGridVisorDetailKills(model:self)
+        let itemAge:MGridVisorDetailAge = MGridVisorDetailAge(model:self)
+        
+        let items:[MGridVisorDetailProtocol] = [
+            itemHeader,
+            itemLevel,
+            itemDistance,
+            itemKills,
+            itemAge]
         
         return items
     }
