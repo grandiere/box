@@ -1,10 +1,6 @@
 "VGridVisor_errorMetal"="Your device doesn't support Metal Graphics";
-"VGridVisorDetailCellLevel_labelTitle"="Level";
 "VGridVisorBarEnergy_percent"="%";
-"VGridVisorDetailCellMatch_energyTitle"="\nEnergy required   ";
 "VStatsBar_scoreTitle"="Score\n";
-"VGridVisorDetailCellTake_labelTitle"="Take";
-"VGridVisorDetailCellCreated_labelTitle"="Created";
 "VGridVisorTake_button"="Done";
 "VGridVirus_labelTitle"="Release a Virus\n";
 "VGridVirus_labelSubtitle"="  Energy required\nCurrent energy  ";

@@ -7,7 +7,7 @@ class VGridVisorDetailCellKills:VGridVisorDetailCell
     private let kIconWidth:CGFloat = 36
     private let kIconRight:CGFloat = 10
     private let kLabelWidth:CGFloat = 160
-    private let kTitleHeight:CGFloat = 52
+    private let kTitleHeight:CGFloat = 20
     
     override init(frame:CGRect)
     {

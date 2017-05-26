@@ -3,7 +3,7 @@ import UIKit
 class MGridVisorDetailCreator:MGridVisorDetailProtocol
 {
     let userId:String
-    private let kCellHeight:CGFloat = 100
+    private let kCellHeight:CGFloat = 50
     
     var cellHeight:CGFloat
     {

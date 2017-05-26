@@ -6,7 +6,7 @@ class VGridVisorDetailCellAge:VGridVisorDetailCell
     private weak var layoutIconLeft:NSLayoutConstraint!
     private let kIconWidth:CGFloat = 36
     private let kIconRight:CGFloat = 10
-    private let kLabelWidth:CGFloat = 200
+    private let kLabelWidth:CGFloat = 250
     
     override init(frame:CGRect)
     {
@@ -17,7 +17,7 @@ class VGridVisorDetailCellAge:VGridVisorDetailCell
         labelAge.translatesAutoresizingMaskIntoConstraints = false
         labelAge.isUserInteractionEnabled = false
         labelAge.backgroundColor = UIColor.clear
-        labelAge.font = UIFont.regular(size:15)
+        labelAge.font = UIFont.regular(size:14)
         labelAge.textColor = UIColor.black
         labelAge.textAlignment = NSTextAlignment.right
         self.labelAge = labelAge
@@ -27,7 +27,7 @@ class VGridVisorDetailCellAge:VGridVisorDetailCell
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.clipsToBounds = true
         icon.contentMode = UIViewContentMode.center
-        icon.image = #imageLiteral(resourceName: "assetGenericCreator")
+        icon.image = #imageLiteral(resourceName: "assetGenericAge")
         
         addSubview(labelAge)
         addSubview(icon)
