@@ -23,6 +23,6 @@ class MGridVisorDetailAge:MGridVisorDetailProtocol
     
     init(model:MGridAlgoItem)
     {
-        distance = model.distance
+        distance = model.age()
     }
 }

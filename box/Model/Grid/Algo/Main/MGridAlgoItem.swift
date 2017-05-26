@@ -15,6 +15,9 @@ class MGridAlgoItem:
     private(set) var heading:Float
     private let k180:Double = 180
     private let kHour:TimeInterval = 3600
+    private let k2Hours:TimeInterval = 7200
+    private let k24Hours:TimeInterval = 86400
+    private let k48Hours:TimeInterval = 172800
     private let kShowDetail:Bool = true
     private let kShowDownload:Bool = false
     private let kShowMatch:Bool = false
@@ -100,7 +103,7 @@ class MGridAlgoItem:
         {
             stringTime = NSLocalizedString("MGridAlgoItem_justNow", comment:"")
         }
-        else
+        else if deltaTime < k48Hours
         {
             let hoursSince:Int = Int(deltaTime / kHour)
             let hoursSinceNumber:NSNumber = hoursSince as NSNumber
@@ -108,6 +111,15 @@ class MGridAlgoItem:
             stringTime = String(
                 format:NSLocalizedString("MGridAlgoItem_hoursAgo", comment:""),
                 hoursSinceNumber)
+        }
+        else
+        {
+            let daysSince:Int = Int(deltaTime / k24Hours)
+            let daysSinceNumber:NSNumber = daysSince as NSNumber
+            
+            stringTime = String(
+                format:NSLocalizedString("MGridAlgoItem_daysAgo", comment:""),
+                daysSinceNumber)
         }
         
         return stringTime

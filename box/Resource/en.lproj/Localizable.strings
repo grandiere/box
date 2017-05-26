@@ -78,6 +78,7 @@
 "MGridMapDetailItemAge_stringTitle"="Created  ";
 "MGridAlgoItem_justNow"="Just now";
 "MGridAlgoItem_hoursAgo"="%@ hours ago";
+"MGridAlgoItem_daysAgo"="%@ days ago";
 "MGridMapDetailItemDistance_stringTitle"="Distance  ";
 "MGridAlgoItemAid_title"="Power Up";
 "MGridVisorTakeEnergy_stringValue"="+%@";
