@@ -32,6 +32,7 @@
 "VGridHarvestSubbar_labelKills"="Rounds";
 "VGridHarvestSubbar_labelAge"="Created";
 "VGridMapBar_labelCount"="%@ items";
+"VGridVisorDetailCellKills_labelTitle"="Players defeated";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";
