@@ -291,6 +291,7 @@
 		DA8852751EAEB068008CB62C /* ExtensionMKAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8852741EAEB068008CB62C /* ExtensionMKAnnotationView.swift */; };
 		DA8ADF691ED8794100E27BB1 /* MGridVisorDetailCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8ADF681ED8794100E27BB1 /* MGridVisorDetailCreator.swift */; };
 		DA8ADF6B1ED87ADE00E27BB1 /* VGridVisorDetailCellCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8ADF6A1ED87ADE00E27BB1 /* VGridVisorDetailCellCreator.swift */; };
+		DA8ADF6D1ED87C6600E27BB1 /* FDbUserItemHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8ADF6C1ED87C6600E27BB1 /* FDbUserItemHandler.swift */; };
 		DA8C06D61EC628BB000DF6D4 /* MHelpAntivirusStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06D51EC628BB000DF6D4 /* MHelpAntivirusStats.swift */; };
 		DA8C06D81EC628C4000DF6D4 /* MHelpAntivirusDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06D71EC628C4000DF6D4 /* MHelpAntivirusDistance.swift */; };
 		DA8C06DB1EC62AA1000DF6D4 /* MHelpRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C06DA1EC62AA1000DF6D4 /* MHelpRelease.swift */; };
@@ -654,6 +655,7 @@
 		DA8852741EAEB068008CB62C /* ExtensionMKAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionMKAnnotationView.swift; sourceTree = "<group>"; };
 		DA8ADF681ED8794100E27BB1 /* MGridVisorDetailCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorDetailCreator.swift; sourceTree = "<group>"; };
 		DA8ADF6A1ED87ADE00E27BB1 /* VGridVisorDetailCellCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDetailCellCreator.swift; sourceTree = "<group>"; };
+		DA8ADF6C1ED87C6600E27BB1 /* FDbUserItemHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDbUserItemHandler.swift; sourceTree = "<group>"; };
 		DA8C06D51EC628BB000DF6D4 /* MHelpAntivirusStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpAntivirusStats.swift; sourceTree = "<group>"; };
 		DA8C06D71EC628C4000DF6D4 /* MHelpAntivirusDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpAntivirusDistance.swift; sourceTree = "<group>"; };
 		DA8C06DA1EC62AA1000DF6D4 /* MHelpRelease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHelpRelease.swift; sourceTree = "<group>"; };
@@ -1311,6 +1313,7 @@
 			children = (
 				DA0960A01EC10CAD0005BE96 /* FDbUser.swift */,
 				DA59D7721EB3BC4900EB2973 /* FDbUserItem.swift */,
+				DA8ADF6C1ED87C6600E27BB1 /* FDbUserItemHandler.swift */,
 				DA59D7741EB3BC9700EB2973 /* FDbAlgoItem.swift */,
 				DA59D7761EB3BCAD00EB2973 /* FDbAlgoHostileItem.swift */,
 				DA59D77A1EB3D15500EB2973 /* FDbAlgoHostileBug.swift */,
@@ -2131,6 +2134,7 @@
 				DA8C06E51EC63A58000DF6D4 /* MHelpEnergy.swift in Sources */,
 				DA31F6971EC207CA003978C7 /* VStoreCell.swift in Sources */,
 				DA87C49A1ED5ED4300501EDC /* MetalVertexTextured.swift in Sources */,
+				DA8ADF6D1ED87C6600E27BB1 /* FDbUserItemHandler.swift in Sources */,
 				DAF15D6B1E9D32BB0000E6B9 /* VParent.swift in Sources */,
 				DA6D30FE1EC52C900018E0B1 /* MHelpAntivirusIntro.swift in Sources */,
 				DA823A051ED722F900BF3B84 /* CGridVisorTake.swift in Sources */,

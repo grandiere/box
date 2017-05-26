@@ -17,7 +17,7 @@ class MGridVisorDetailCreator:MGridVisorDetailProtocol
     {
         get
         {
-            return VGridVisorDetailCellKills.reusableIdentifier
+            return VGridVisorDetailCellCreator.reusableIdentifier
         }
     }
     

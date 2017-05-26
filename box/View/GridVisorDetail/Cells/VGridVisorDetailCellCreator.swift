@@ -74,11 +74,13 @@ class VGridVisorDetailCellCreator:VGridVisorDetailCell
         
         guard
             
-            let modelKills:MGridVisorDetailKills = model as? MGridVisorDetailKills
+            let modelCreator:MGridVisorDetailCreator = model as? MGridVisorDetailCreator
             
         else
         {
             return
         }
+        
+        
     }
 }
