@@ -17,7 +17,7 @@ class MGridVisorDetailAge:MGridVisorDetailProtocol
     {
         get
         {
-            return VGridVisorDetailCellDistance.reusableIdentifier
+            return VGridVisorDetailCellAge.reusableIdentifier
         }
     }
     

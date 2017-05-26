@@ -75,12 +75,14 @@ class MGridAlgoHostileVirusFoeItem:MGridAlgoHostileVirusItem
         let itemDistance:MGridVisorDetailDistance = MGridVisorDetailDistance(model:self)
         let itemKills:MGridVisorDetailKills = MGridVisorDetailKills(model:self)
         let itemCreator:MGridVisorDetailCreator = MGridVisorDetailCreator(model:self)
+        let itemAge:MGridVisorDetailAge = MGridVisorDetailAge(model:self)
         
         let items:[MGridVisorDetailProtocol] = [
             itemHeader,
             itemDistance,
             itemKills,
-            itemCreator]
+            itemCreator,
+            itemAge]
         
         return items
     }
