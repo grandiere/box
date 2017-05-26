@@ -52,10 +52,12 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
     {
         let itemHeader:MGridVisorDetailHeader = MGridVisorDetailHeader(model:self)
         let itemDistance:MGridVisorDetailDistance = MGridVisorDetailDistance(model:self)
+        let itemKills:MGridVisorDetailKills = MGridVisorDetailKills(model:self)
         
         let items:[MGridVisorDetailProtocol] = [
             itemHeader,
-            itemDistance]
+            itemDistance,
+            itemKills]
         
         return items
     }

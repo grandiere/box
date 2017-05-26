@@ -6,7 +6,7 @@ class VGridVisorDetailCellKills:VGridVisorDetailCell
     private weak var layoutIconLeft:NSLayoutConstraint!
     private let kIconWidth:CGFloat = 60
     private let kLabelWidth:CGFloat = 200
-    private let kTitleHeight:CGFloat = 50
+    private let kTitleHeight:CGFloat = 40
     
     override init(frame:CGRect)
     {
