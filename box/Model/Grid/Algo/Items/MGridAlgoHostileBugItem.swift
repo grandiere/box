@@ -51,12 +51,14 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
     override func detail() -> [MGridVisorDetailProtocol]
     {
         let itemHeader:MGridVisorDetailHeader = MGridVisorDetailHeader(model:self)
+        let itemLevel:MGridVisorDetailLevel = MGridVisorDetailLevel(model:self)
         let itemDistance:MGridVisorDetailDistance = MGridVisorDetailDistance(model:self)
         let itemKills:MGridVisorDetailKills = MGridVisorDetailKills(model:self)
         let itemAge:MGridVisorDetailAge = MGridVisorDetailAge(model:self)
         
         let items:[MGridVisorDetailProtocol] = [
             itemHeader,
+            itemLevel,
             itemDistance,
             itemKills,
             itemAge]

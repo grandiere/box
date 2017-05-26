@@ -3,7 +3,7 @@ import UIKit
 class MGridVisorDetailLevel:MGridVisorDetailProtocol
 {
     let level:Int
-    private let kCellHeight:CGFloat = 120
+    private let kCellHeight:CGFloat = 100
     
     var cellHeight:CGFloat
     {
@@ -17,7 +17,7 @@ class MGridVisorDetailLevel:MGridVisorDetailProtocol
     {
         get
         {
-            return VGridVisorDetailCellAge.reusableIdentifier
+            return VGridVisorDetailCellLevel.reusableIdentifier
         }
     }
     
