@@ -20,12 +20,6 @@ class VGridVisorDetail:VView, UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.registerCell(cell:VGridVisorDetailCellKills.self)
         collectionView.registerCell(cell:VGridVisorDetailCellCreator.self)
         collectionView.registerCell(cell:VGridVisorDetailCellAge.self)
-        
-        
-        collectionView.registerCell(cell:VGridVisorDetailCellLevel.self)
-        collectionView.registerCell(cell:VGridVisorDetailCellCreated.self)
-        collectionView.registerCell(cell:VGridVisorDetailCellMatch.self)
-        collectionView.registerCell(cell:VGridVisorDetailCellTake.self)
         self.collectionView = collectionView
         
         addSubview(collectionView)
