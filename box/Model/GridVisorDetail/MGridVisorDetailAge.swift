@@ -2,8 +2,8 @@ import UIKit
 
 class MGridVisorDetailAge:MGridVisorDetailProtocol
 {
-    let distance:Double?
-    private let kCellHeight:CGFloat = 130
+    let age:String
+    private let kCellHeight:CGFloat = 100
     
     var cellHeight:CGFloat
     {
@@ -23,6 +23,6 @@ class MGridVisorDetailAge:MGridVisorDetailProtocol
     
     init(model:MGridAlgoItem)
     {
-        distance = model.age()
+        age = model.age()
     }
 }
