@@ -14,7 +14,16 @@ class VGridVisorMatchBase:UIView
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = kCornerRadius
         layer.borderWidth = kBorderWidth
+        layer.borderColor = UIColor.black.cgColor
         self.controller = controller
+        
+        let blur:VBlur = VBlur.extraLight()
+        
+        addSubview(blur)
+        
+        NSLayoutConstraint.equals(
+            view:blur,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
