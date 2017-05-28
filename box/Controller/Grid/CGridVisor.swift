@@ -47,12 +47,19 @@ class CGridVisor:CController
         super.viewDidAppear(animated)
         parentController.viewParent.panRecognizer.isEnabled = false
         viewGridVisor.viewBar.viewEnergy.refresh()
+        viewGridVisor.viewMenu.isHidden = false
         
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
             self?.turnOnGPS()
         }
+    }
+    
+    override func viewWillDisappear(_ animated:Bool)
+    {
+        super.viewWillDisappear(animated)
+        viewGridVisor.viewMenu.isHidden = true
     }
     
     //MARK: private

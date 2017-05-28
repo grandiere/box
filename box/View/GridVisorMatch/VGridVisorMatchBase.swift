@@ -3,7 +3,7 @@ import UIKit
 class VGridVisorMatchBase:UIView
 {
     private weak var controller:CGridVisorMatch!
-    private let kCornerRadius:CGFloat = 10
+    private let kCornerRadius:CGFloat = 15
     private let kBorderWidth:CGFloat = 1
     
     init(controller:CGridVisorMatch)
