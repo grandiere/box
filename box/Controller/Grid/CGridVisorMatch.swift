@@ -27,7 +27,7 @@ class CGridVisorMatch:CController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        /*
         guard
             
             let model:MGridAlgoHostileItem = self.model
@@ -38,13 +38,13 @@ class CGridVisorMatch:CController
         }
         
         let energyCost:Int16 = Int16(model.credits)
-        MSession.sharedInstance.settings?.energy?.spendEnergy(energyCost:energyCost)
+        MSession.sharedInstance.settings?.energy?.spendEnergy(energyCost:energyCost)*/
     }
     
     override func viewDidAppear(_ animated:Bool)
     {
         super.viewDidAppear(animated)
-        
+        /*
         if modelMatch == nil
         {
             guard
@@ -75,7 +75,7 @@ class CGridVisorMatch:CController
                 selector:#selector(actionTimer(sender:)),
                 userInfo:nil,
                 repeats:true)
-        }
+        }*/
         
         parentController.viewParent.panRecognizer.isEnabled = false
     }
