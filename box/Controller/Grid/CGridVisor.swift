@@ -145,4 +145,10 @@ class CGridVisor:CController
             vertical:CParent.TransitionVertical.fromBottom,
             background:false)
     }
+    
+    func showAlgoMatch(item:MGridAlgoHostileItem)
+    {
+        let controllerMatch:CGridVisorMatch = CGridVisorMatch(model:item)
+        parentController.animateOver(controller:controllerMatch)
+    }
 }

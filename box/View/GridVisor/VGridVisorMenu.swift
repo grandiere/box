@@ -101,7 +101,19 @@ class VGridVisorMenu:UIView
     
     func actionMatch(sender button:VGridVirusOptionsButton)
     {
+        guard
+            
+            let algoHostileItem:MGridAlgoHostileItem = controller.targeting as? MGridAlgoHostileItem
+            
+        else
+        {
+            return
+        }
         
+        if algoHostileItem.showMatch
+        {
+            controller.showAlgoMatch(item:algoHostileItem)
+        }
     }
     
     func actionDetail(sender button:VGridVirusOptionsButton)
