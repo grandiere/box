@@ -171,6 +171,11 @@ class CGridVisorMatch:CController
     
     //MARK: public
     
+    func back()
+    {
+        parentController.dismissAnimateOver(completion:nil)
+    }
+    
     func failed()
     {
         timer?.invalidate()
