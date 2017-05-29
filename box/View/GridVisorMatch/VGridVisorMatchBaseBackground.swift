@@ -3,11 +3,9 @@ import UIKit
 class VGridVisorMatchBaseBackground:UIView
 {
     private weak var controller:CGridVisorMatch!
-    private weak var imageView:UIImageView!
     private let kCornerRadius:CGFloat = 15
     private let kBorderWidth:CGFloat = 1
-    private let kImageHeight:CGFloat = 45
-    private let kImageTop:CGFloat = 10
+    private let kAlgoHeight:CGFloat = 60
     
     init(controller:CGridVisorMatch)
     {
@@ -22,30 +20,24 @@ class VGridVisorMatchBaseBackground:UIView
         
         let blur:VBlur = VBlur.light()
         
-        let imageView:UIImageView = UIImageView()
-        imageView.isUserInteractionEnabled = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
-        imageView.clipsToBounds = true
-        imageView.image = controller.model?.icon
-        self.imageView = imageView
+        let viewAlgo:VGridVisorMatchBaseBackgroundAlgo = VGridVisorMatchBaseBackgroundAlgo(
+            controller:controller)
         
         addSubview(blur)
-        addSubview(imageView)
+        addSubview(viewAlgo)
         
         NSLayoutConstraint.equals(
             view:blur,
             toView:self)
         
         NSLayoutConstraint.topToTop(
-            view:imageView,
-            toView:self,
-            constant:kImageTop)
+            view:viewAlgo,
+            toView:self)
         NSLayoutConstraint.height(
-            view:imageView,
-            constant:kImageHeight)
+            view:viewAlgo,
+            constant:kAlgoHeight)
         NSLayoutConstraint.equalsHorizontal(
-            view:imageView,
+            view:viewAlgo,
             toView:self)
     }
     
