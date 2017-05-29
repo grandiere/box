@@ -2,10 +2,10 @@ import UIKit
 
 class VGridVisorMatchBase:UIView
 {
+    private(set) weak var viewBackground:VGridVisorMatchBaseBackground!
     private weak var controller:CGridVisorMatch!
     private weak var buttonCancel:VGridVisorMatchBaseButton!
     private weak var buttonPlay:VGridVisorMatchBaseButton!
-    private weak var viewBackground:VGridVisorMatchBaseBackground!
     private weak var layoutCancelTop:NSLayoutConstraint!
     private weak var layoutPlayTop:NSLayoutConstraint!
     private let algoHeight_2:CGFloat

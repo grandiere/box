@@ -2,8 +2,8 @@ import UIKit
 
 class VGridVisorMatchBaseBackground:UIView
 {
+    private(set) weak var animation:VGridVisorMatchBaseBackgroundAnimation!
     private weak var controller:CGridVisorMatch!
-    private weak var animation:VGridVisorMatchBaseBackgroundAnimation!
     private weak var labelTitle:UILabel!
     private weak var labelNumber:UILabel!
     private let kCornerRadius:CGFloat = 15
@@ -114,7 +114,7 @@ class VGridVisorMatchBaseBackground:UIView
     
     func animate()
     {
-        spinner.startAnimating()
+        animation.isHidden = false
         labelTitle.isHidden = true
         labelNumber.isHidden = true
     }
