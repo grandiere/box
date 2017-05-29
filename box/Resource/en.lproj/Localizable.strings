@@ -31,6 +31,7 @@
 "VGridVisorDetailCellKills_labelTitle"="Players defeated";
 "VGridVisorDetailCellCreator_noHandler"="Unnamed player";
 "VGridVisorDetailCellLevel_labelTitle"="Level";
+"VGridVisorMatchBaseBackground_labelTitle"="Energy required";
 "VStoreCellNew_buttonPurchase"="Purchase";
 "VStoreCellDeferred_label"="Purchase deferred";
 "VStoreCellPurchasing_label"="Purchasing";

@@ -104,7 +104,7 @@ class VGridVisorMatchBase:UIView
     
     override func layoutSubviews()
     {
-        let height:CGFloat = bounds.maxY - algoHeight_2
+        let height:CGFloat = bounds.maxY + algoHeight_2
         let remainHeight:CGFloat = height - kButtonSize
         let marginTop:CGFloat = remainHeight / 2.0
         layoutPlayTop.constant = marginTop
