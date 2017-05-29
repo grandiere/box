@@ -10,7 +10,7 @@ class VGridVisorMatchBase:UIView
     private weak var layoutPlayTop:NSLayoutConstraint!
     private let kCornerRadius:CGFloat = 15
     private let kBorderWidth:CGFloat = 1
-    private let kButtonSize:CGFloat = 50
+    private let kButtonSize:CGFloat = 70
     
     init(controller:CGridVisorMatch)
     {
@@ -18,12 +18,19 @@ class VGridVisorMatchBase:UIView
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = kCornerRadius
-        layer.borderWidth = kBorderWidth
-        layer.borderColor = UIColor.black.cgColor
         self.controller = controller
         
-        let blur:VBlur = VBlur.extraLight()
+        let buttonSize_2:CGFloat = kButtonSize / 2.0
+        
+        let viewBackground:UIView = UIView()
+        viewBackground.isUserInteractionEnabled = false
+        viewBackground.translatesAutoresizingMaskIntoConstraints = false
+        viewBackground.clipsToBounds = true
+        viewBackground.layer.borderWidth = kBorderWidth
+        viewBackground.layer.borderColor = UIColor(white:1, alpha:0.3).cgColor
+        viewBackground.layer.cornerRadius = kCornerRadius
+        
+        let blur:VBlur = VBlur.light()
         
         let buttonCancel:VGridVisorMatchBaseButton = VGridVisorMatchBaseButton(
             image:#imageLiteral(resourceName: "assetGenericCancel"),
@@ -49,7 +56,8 @@ class VGridVisorMatchBase:UIView
         imageView.image = controller.model?.icon
         self.imageView = imageView
         
-        addSubview(blur)
+        viewBackground.addSubview(blur)
+        addSubview(viewBackground)
         addSubview(imageView)
         addSubview(buttonCancel)
         addSubview(buttonPlay)
@@ -61,6 +69,18 @@ class VGridVisorMatchBase:UIView
         NSLayoutConstraint.equals(
             view:imageView,
             toView:self)
+        
+        NSLayoutConstraint.equalsVertical(
+            view:viewBackground,
+            toView:self)
+        NSLayoutConstraint.leftToLeft(
+            view:viewBackground,
+            toView:self,
+            constant:buttonSize_2)
+        NSLayoutConstraint.rightToRight(
+            view:viewBackground,
+            toView:self,
+            constant:-buttonSize_2)
         
         layoutPlayTop = NSLayoutConstraint.topToTop(
             view:buttonPlay,

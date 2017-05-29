@@ -2,13 +2,11 @@ import UIKit
 
 class VGridVisorMatchBaseButton:UIButton
 {
-    private let kBorderWidth:CGFloat = 2
-    
     init(image:UIImage, tintColor:UIColor)
     {
         super.init(frame:CGRect.zero)
         clipsToBounds = true
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor(white:1, alpha:0.2)
         translatesAutoresizingMaskIntoConstraints = false
         setImage(
             image.withRenderingMode(UIImageRenderingMode.alwaysOriginal),
@@ -19,8 +17,6 @@ class VGridVisorMatchBaseButton:UIButton
         imageView!.tintColor = tintColor
         imageView!.clipsToBounds = true
         imageView!.contentMode = UIViewContentMode.center
-        layer.borderWidth = kBorderWidth
-        layer.borderColor = UIColor(white:0, alpha:0.3).cgColor
     }
     
     required init?(coder:NSCoder)
