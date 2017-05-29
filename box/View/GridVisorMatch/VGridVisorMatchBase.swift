@@ -39,6 +39,7 @@ class VGridVisorMatchBase:UIView
             self,
             action:#selector(actionCancel(sender:)),
             for:UIControlEvents.touchUpInside)
+        self.buttonCancel = buttonCancel
         
         let buttonPlay:VGridVisorMatchBaseButton = VGridVisorMatchBaseButton(
             image:#imageLiteral(resourceName: "assetGenericPlay"),
@@ -47,6 +48,7 @@ class VGridVisorMatchBase:UIView
             self,
             action:#selector(actionPlay(sender:)),
             for:UIControlEvents.touchUpInside)
+        self.buttonPlay = buttonPlay
         
         addSubview(viewBackground)
         addSubview(viewAlgo)

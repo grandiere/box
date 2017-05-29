@@ -51,6 +51,7 @@ class VGridVisorMatchBaseBackground:UIView
         
         let spinner:VSpinner = VSpinner()
         spinner.stopAnimating()
+        self.spinner = spinner
         
         addSubview(blur)
         addSubview(labelTitle)
