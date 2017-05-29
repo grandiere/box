@@ -3,6 +3,9 @@ import UIKit
 class VGridVisorMatchBaseBackground:UIView
 {
     private weak var controller:CGridVisorMatch!
+    private weak var spinner:VSpinner!
+    private weak var labelTitle:UILabel!
+    private weak var labelNumber:UILabel!
     private let kCornerRadius:CGFloat = 15
     private let kBorderWidth:CGFloat = 1
     private let kTitleTop:CGFloat = 40
@@ -37,16 +40,26 @@ class VGridVisorMatchBaseBackground:UIView
         labelTitle.font = UIFont.bold(size:15)
         labelTitle.textColor = UIColor.black
         labelTitle.text = NSLocalizedString("VGridVisorMatchBaseBackground_labelTitle", comment:"")
+        self.labelTitle = labelTitle
         
         let labelNumber:UILabel = UILabel()
         labelNumber.translatesAutoresizingMaskIntoConstraints = false
         labelNumber.backgroundColor = UIColor.clear
         labelNumber.isUserInteractionEnabled = false
         labelNumber.textAlignment = NSTextAlignment.center
+        self.labelNumber = labelNumber
+        
+        let spinner:VSpinner = VSpinner()
+        spinner.stopAnimating()
         
         addSubview(blur)
         addSubview(labelTitle)
         addSubview(labelNumber)
+        addSubview(spinner)
+        
+        NSLayoutConstraint.equals(
+            view:spinner,
+            toView:self)
         
         NSLayoutConstraint.equals(
             view:blur,
@@ -94,5 +107,19 @@ class VGridVisorMatchBaseBackground:UIView
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    deinit
+    {
+        spinner.stopAnimating()
+    }
+    
+    //MARK: public
+    
+    func animate()
+    {
+        spinner.startAnimating()
+        labelTitle.isHidden = true
+        labelNumber.isHidden = true
     }
 }

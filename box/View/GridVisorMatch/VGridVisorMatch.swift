@@ -2,6 +2,7 @@ import UIKit
 
 class VGridVisorMatch:VView
 {
+    private(set) weak var buttonCancel:UIButton!
     private weak var controller:CGridVisorMatch!
     private weak var layoutBaseTop:NSLayoutConstraint!
     private let kBaseMarginHorizontal:CGFloat = 10
@@ -24,6 +25,7 @@ class VGridVisorMatch:VView
             self,
             action:#selector(actionCancel(sender:)),
             for:UIControlEvents.touchUpInside)
+        self.buttonCancel = buttonCancel
         
         addSubview(buttonCancel)
         addSubview(viewBase)

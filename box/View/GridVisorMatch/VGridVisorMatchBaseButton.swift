@@ -32,4 +32,18 @@ class VGridVisorMatchBaseButton:UIButton
         
         super.layoutSubviews()
     }
+    
+    //MARK: public
+    
+    func deactivate(image:UIImage)
+    {
+        isUserInteractionEnabled = false
+        backgroundColor = UIColor.gridOrange
+        setImage(
+            image.withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            for:UIControlState.normal)
+        setImage(
+            image.withRenderingMode(UIImageRenderingMode.alwaysOriginal),
+            for:UIControlState.highlighted)
+    }
 }

@@ -5,11 +5,13 @@ class VGridVisorMatchBase:UIView
     private weak var controller:CGridVisorMatch!
     private weak var buttonCancel:VGridVisorMatchBaseButton!
     private weak var buttonPlay:VGridVisorMatchBaseButton!
+    private weak var viewBackground:VGridVisorMatchBaseBackground!
     private weak var layoutCancelTop:NSLayoutConstraint!
     private weak var layoutPlayTop:NSLayoutConstraint!
     private let algoHeight_2:CGFloat
     private let kButtonSize:CGFloat = 70
     private let kAlgoHeight:CGFloat = 90
+    private let kAnimationDuration:TimeInterval = 0.3
     
     init(controller:CGridVisorMatch)
     {
@@ -25,6 +27,7 @@ class VGridVisorMatchBase:UIView
         
         let viewBackground:VGridVisorMatchBaseBackground = VGridVisorMatchBaseBackground(
             controller:controller)
+        self.viewBackground = viewBackground
         
         let viewAlgo:VGridVisorMatchBaseAlgo = VGridVisorMatchBaseAlgo(
             controller:controller)
@@ -95,6 +98,23 @@ class VGridVisorMatchBase:UIView
         NSLayoutConstraint.equalsHorizontal(
             view:viewAlgo,
             toView:self)
+        
+        if let credits:Int = controller.model?.credits
+        {
+            guard
+            
+                let energy:Int = MSession.sharedInstance.settings?.energy?.percentEnergy()
+            
+            else
+            {
+                return
+            }
+            
+            if credits > energy
+            {
+                buttonPlay.deactivate(image:#imageLiteral(resourceName: "assetGenericNoEnergy"))
+            }
+        }
     }
     
     required init?(coder:NSCoder)
@@ -117,11 +137,34 @@ class VGridVisorMatchBase:UIView
     
     func actionCancel(sender button:VGridVisorMatchBaseButton)
     {
-        
+        button.isUserInteractionEnabled = false
+        controller.back()
     }
     
     func actionPlay(sender button:VGridVisorMatchBaseButton)
     {
-        
+        button.isUserInteractionEnabled = false
+        buttonCancel.isUserInteractionEnabled = false
+        controller.viewMatch.buttonCancel.isUserInteractionEnabled = false
+        animateMatch()
+    }
+    
+    //MARK: private
+    
+    private func animateMatch()
+    {
+        UIView.animate(
+            withDuration:kAnimationDuration,
+        animations:
+        { [weak self] in
+            
+            self?.buttonCancel.alpha = 0
+            self?.buttonPlay.alpha = 0
+            
+        })
+        { [weak self] (done:Bool) in
+            
+            self?.viewBackground.animate()
+        }
     }
 }
