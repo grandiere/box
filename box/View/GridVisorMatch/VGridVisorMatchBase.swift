@@ -166,7 +166,7 @@ class VGridVisorMatchBase:UIView
         })
         { [weak self] (done:Bool) in
             
-            self?.viewBackground.animate()
+            self?.controller.play()
         }
     }
 }

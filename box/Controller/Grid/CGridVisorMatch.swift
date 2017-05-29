@@ -7,6 +7,7 @@ class CGridVisorMatch:CController
     private(set) weak var viewMatch:VGridVisorMatch!
     private weak var timer:Timer?
     private let kTimeInterval:TimeInterval = 1
+    private let kTickInterval:TimeInterval = 0.03
     
     init(model:MGridAlgoHostileItem)
     {
@@ -98,6 +99,11 @@ class CGridVisorMatch:CController
         }
     }
     
+    func actionTick(sener timer:Timer)
+    {
+        viewMatch.viewBase.viewBackground.animation.setNeedsDisplay()
+    }
+    
     //MARK: private
     
     private func finishMatch()
@@ -174,6 +180,19 @@ class CGridVisorMatch:CController
     func back()
     {
         parentController.dismissAnimateOver(completion:nil)
+    }
+    
+    func play()
+    {
+        timer?.invalidate()
+        viewMatch.viewBase.viewBackground.animate()
+        
+        timer = Timer.scheduledTimer(
+            timeInterval:kTickInterval,
+            target:self,
+            selector:#selector(actionTick(sener:)),
+            userInfo:nil,
+            repeats:true)
     }
     
     func failed()

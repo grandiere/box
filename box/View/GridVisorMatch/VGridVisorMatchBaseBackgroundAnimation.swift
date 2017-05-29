@@ -49,4 +49,23 @@ class VGridVisorMatchBaseBackgroundAnimation:UIView
     {
         return nil
     }
+    
+    override func draw(_ rect:CGRect)
+    {
+        if isHidden
+        {
+            return
+        }
+        
+        guard
+        
+            let context:CGContext = UIGraphicsGetCurrentContext()
+        
+        else
+        {
+            return
+        }
+        
+        model.tick(context:context)
+    }
 }

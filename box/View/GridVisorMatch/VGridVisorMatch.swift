@@ -3,6 +3,7 @@ import UIKit
 class VGridVisorMatch:VView
 {
     private(set) weak var buttonCancel:UIButton!
+    private(set) weak var viewBase:VGridVisorMatchBase!
     private weak var controller:CGridVisorMatch!
     private weak var layoutBaseTop:NSLayoutConstraint!
     private let kBaseMarginHorizontal:CGFloat = 10
@@ -16,6 +17,7 @@ class VGridVisorMatch:VView
         
         let viewBase:VGridVisorMatchBase = VGridVisorMatchBase(
             controller:self.controller)
+        self.viewBase = viewBase
         
         let buttonCancel:UIButton = UIButton()
         buttonCancel.backgroundColor = UIColor.clear

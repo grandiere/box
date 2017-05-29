@@ -16,7 +16,7 @@ class MGridVisorMatchAnimation
     private let kMinAlpha:UInt32 = 2
     private let kMaxSpeed:UInt32 = 5
     private let kMinSpeed:UInt32 = 1
-    private let kInitialItems:Int = 20
+    private let kInitialItems:Int = 30
     private let kFontSize:CGFloat = 18
     
     init()
