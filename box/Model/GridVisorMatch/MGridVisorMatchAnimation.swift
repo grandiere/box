@@ -5,6 +5,7 @@ class MGridVisorMatchAnimation
     var items:[MGridVisorMatchAnimationItem]
     private var maxX:CGFloat
     private var maxY:CGFloat
+    private var attributes:[String:AnyObject]
     private let minX:CGFloat
     private let minY:CGFloat
     private let countPossibleItems:UInt32
@@ -13,7 +14,10 @@ class MGridVisorMatchAnimation
     private let kCreateRatio:UInt32 = 10
     private let kMaxAlpha:UInt32 = 8
     private let kMinAlpha:UInt32 = 2
+    private let kMaxSpeed:UInt32 = 5
+    private let kMinSpeed:UInt32 = 1
     private let kInitialItems:Int = 20
+    private let kFontSize:CGFloat = 18
     
     init()
     {
@@ -23,6 +27,7 @@ class MGridVisorMatchAnimation
         minY = -kMargin
         maxX = 0
         maxY = 0
+        attributes = [NSFontAttributeName:UIFont.numeric(size:kFontSize)]
     }
     
     //MARK: private
@@ -49,10 +54,10 @@ class MGridVisorMatchAnimation
     
     private func randomAlpha() -> CGFloat
     {
-        let totalAlpha:UInt32 = kMinAlpha + kMaxAlpha
+        let totalAlpha:UInt32 = kMaxAlpha - kMinAlpha
         let random:UInt32 = arc4random_uniform(totalAlpha)
-        let realAlpha:UInt32 = random - kMinAlpha
-        let floatAlpha:CGFloat = CGFloat(realAlpha)
+        let realAlpha:UInt32 = random + kMinAlpha
+        let floatAlpha:CGFloat = CGFloat(realAlpha) / 10.0
         
         return floatAlpha
     }
@@ -66,21 +71,53 @@ class MGridVisorMatchAnimation
         return item
     }
     
+    private func randomSpeed() -> CGFloat
+    {
+        let totalSpeed:UInt32 = kMaxSpeed - kMinSpeed
+        let random:UInt32 = arc4random_uniform(totalSpeed)
+        let realSpeed:UInt32 = random + kMinAlpha
+        let floatSpeed:CGFloat = CGFloat(realSpeed) / 10.0
+        
+        return floatSpeed
+    }
+    
     private func createItem()
     {
         let positionX:CGFloat = randomX()
         let positionY:CGFloat = randomY()
         let direction:MGridVisorMatchAnimationItem.Direction = MGridVisorMatchAnimationItem.randomDirection()
         let alpha:CGFloat = randomAlpha()
+        let speed:CGFloat = randomSpeed()
         let itemString:String = randomItem()
+        
+        attributes[NSForegroundColorAttributeName] = UIColor(white:0, alpha:alpha)
+        let attributedString:NSAttributedString = NSAttributedString(
+            string:itemString,
+            attributes:attributes)
+        
         let item:MGridVisorMatchAnimationItem = MGridVisorMatchAnimationItem(
-            item:itemString,
-            alpha:alpha,
+            item:attributedString,
+            speed:speed,
             direction:direction,
             posX:positionX,
             posY:positionY)
         
         items.append(item)
+    }
+    
+    private func validItem(item:MGridVisorMatchAnimationItem) -> Bool
+    {
+        if item.posX < minX
+        {
+            return false
+        }
+        
+        if item.posX > maxX
+        {
+            return false
+        }
+        
+        return true
     }
     
     //MARK: public
@@ -96,7 +133,7 @@ class MGridVisorMatchAnimation
         }
     }
     
-    func tick()
+    func tick(context:CGContext)
     {
         let shouldCreate:UInt32 = arc4random_uniform(kCreateRatio)
         
@@ -104,5 +141,20 @@ class MGridVisorMatchAnimation
         {
             createItem()
         }
+        
+        var items:[MGridVisorMatchAnimationItem] = []
+        
+        for item:MGridVisorMatchAnimationItem in self.items
+        {
+            item.move()
+            
+            if validItem(item:item)
+            {
+                item.draw(context:context)
+                items.append(item)
+            }
+        }
+        
+        self.items = items
     }
 }

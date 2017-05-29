@@ -8,11 +8,12 @@ class MGridVisorMatchAnimationItem
         case right = 1
     }
     
-    let direction:Direction
-    let item:String
-    let alpha:CGFloat
     var posX:CGFloat
     var posY:CGFloat
+    private let item:NSAttributedString
+    private let deltaSpeed:CGFloat
+    private let kWidth:CGFloat = 30
+    private let kHeight:CGFloat = 20
     
     class func randomDirection() -> Direction
     {
@@ -27,16 +28,33 @@ class MGridVisorMatchAnimationItem
     }
     
     init(
-        item:String,
-        alpha:CGFloat,
+        item:NSAttributedString,
+        speed:CGFloat,
         direction:Direction,
         posX:CGFloat,
         posY:CGFloat)
     {
         self.item = item
-        self.alpha = alpha
-        self.direction = direction
         self.posX = posX
         self.posY = posY
+        deltaSpeed = speed * direction.rawValue
+    }
+    
+    //MARK: public
+    
+    func move()
+    {
+        posX += deltaSpeed
+    }
+    
+    func draw(context:CGContext)
+    {
+        let rect:CGRect = CGRect(
+            x:posX,
+            y:posY,
+            width:kWidth,
+            height:kHeight)
+        
+        item.draw(in:rect)
     }
 }
