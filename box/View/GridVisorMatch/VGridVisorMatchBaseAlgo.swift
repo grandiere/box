@@ -1,9 +1,9 @@
 import UIKit
 
-class VGridVisorMatchBaseBackgroundAlgo:UIView
+class VGridVisorMatchBaseAlgo:UIView
 {
     private weak var controller:CGridVisorMatch!
-    private let kImageMargin:CGFloat = 10
+    private let kImageMargin:CGFloat = 20
     
     init(controller:CGridVisorMatch)
     {

@@ -5,7 +5,6 @@ class VGridVisorMatchBaseBackground:UIView
     private weak var controller:CGridVisorMatch!
     private let kCornerRadius:CGFloat = 15
     private let kBorderWidth:CGFloat = 1
-    private let kAlgoHeight:CGFloat = 60
     
     init(controller:CGridVisorMatch)
     {
@@ -20,24 +19,10 @@ class VGridVisorMatchBaseBackground:UIView
         
         let blur:VBlur = VBlur.light()
         
-        let viewAlgo:VGridVisorMatchBaseBackgroundAlgo = VGridVisorMatchBaseBackgroundAlgo(
-            controller:controller)
-        
         addSubview(blur)
-        addSubview(viewAlgo)
         
         NSLayoutConstraint.equals(
             view:blur,
-            toView:self)
-        
-        NSLayoutConstraint.topToTop(
-            view:viewAlgo,
-            toView:self)
-        NSLayoutConstraint.height(
-            view:viewAlgo,
-            constant:kAlgoHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:viewAlgo,
             toView:self)
     }
     

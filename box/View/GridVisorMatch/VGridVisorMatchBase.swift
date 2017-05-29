@@ -8,6 +8,7 @@ class VGridVisorMatchBase:UIView
     private weak var layoutCancelTop:NSLayoutConstraint!
     private weak var layoutPlayTop:NSLayoutConstraint!
     private let kButtonSize:CGFloat = 70
+    private let kAlgoHeight:CGFloat = 90
     
     init(controller:CGridVisorMatch)
     {
@@ -18,8 +19,12 @@ class VGridVisorMatchBase:UIView
         self.controller = controller
         
         let buttonSize_2:CGFloat = kButtonSize / 2.0
+        let algoHeight_2:CGFloat = kAlgoHeight / 2.0
         
         let viewBackground:VGridVisorMatchBaseBackground = VGridVisorMatchBaseBackground(
+            controller:controller)
+        
+        let viewAlgo:VGridVisorMatchBaseAlgo = VGridVisorMatchBaseAlgo(
             controller:controller)
 
         let buttonCancel:VGridVisorMatchBaseButton = VGridVisorMatchBaseButton(
@@ -39,10 +44,15 @@ class VGridVisorMatchBase:UIView
             for:UIControlEvents.touchUpInside)
         
         addSubview(viewBackground)
+        addSubview(viewAlgo)
         addSubview(buttonCancel)
         addSubview(buttonPlay)
         
-        NSLayoutConstraint.equalsVertical(
+        NSLayoutConstraint.topToTop(
+            view:viewBackground,
+            toView:self,
+            constant:algoHeight_2)
+        NSLayoutConstraint.bottomToBottom(
             view:viewBackground,
             toView:self)
         NSLayoutConstraint.leftToLeft(
@@ -72,6 +82,16 @@ class VGridVisorMatchBase:UIView
             constant:kButtonSize)
         NSLayoutConstraint.leftToLeft(
             view:buttonCancel,
+            toView:self)
+        
+        NSLayoutConstraint.topToTop(
+            view:viewAlgo,
+            toView:self)
+        NSLayoutConstraint.height(
+            view:viewAlgo,
+            constant:kAlgoHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewAlgo,
             toView:self)
     }
     
