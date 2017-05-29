@@ -11,13 +11,13 @@ class MGridVisorMatchAnimation
     private let countPossibleItems:UInt32
     private let kMargin:CGFloat = 50
     private let kPossibleItems:[String] = ["0","1"]
-    private let kCreateRatio:UInt32 = 10
-    private let kMaxAlpha:UInt32 = 8
-    private let kMinAlpha:UInt32 = 2
-    private let kMaxSpeed:UInt32 = 5
+    private let kCreateRatio:UInt32 = 3
+    private let kMaxAlpha:UInt32 = 6
+    private let kMinAlpha:UInt32 = 1
+    private let kMaxSpeed:UInt32 = 20
     private let kMinSpeed:UInt32 = 1
-    private let kInitialItems:Int = 30
-    private let kFontSize:CGFloat = 18
+    private let kInitialItems:Int = 60
+    private let kFontSize:CGFloat = 30
     
     init()
     {
@@ -27,7 +27,7 @@ class MGridVisorMatchAnimation
         minY = -kMargin
         maxX = 0
         maxY = 0
-        attributes = [NSFontAttributeName:UIFont.numeric(size:kFontSize)]
+        attributes = [NSFontAttributeName:UIFont.bold(size:kFontSize)]
     }
     
     //MARK: private
@@ -37,7 +37,7 @@ class MGridVisorMatchAnimation
         let sumX:UInt32 = UInt32(maxX - minX)
         let randomX:UInt32 = arc4random_uniform(sumX)
         let floatX:CGFloat = CGFloat(randomX)
-        let realX:CGFloat = floatX - minX
+        let realX:CGFloat = floatX + minX
         
         return realX
     }
@@ -47,7 +47,7 @@ class MGridVisorMatchAnimation
         let sumY:UInt32 = UInt32(maxY - minY)
         let randomY:UInt32 = arc4random_uniform(sumY)
         let floatY:CGFloat = CGFloat(randomY)
-        let realY:CGFloat = floatY - minY
+        let realY:CGFloat = floatY + minY
         
         return realY
     }
@@ -75,7 +75,7 @@ class MGridVisorMatchAnimation
     {
         let totalSpeed:UInt32 = kMaxSpeed - kMinSpeed
         let random:UInt32 = arc4random_uniform(totalSpeed)
-        let realSpeed:UInt32 = random + kMinAlpha
+        let realSpeed:UInt32 = random + kMinSpeed
         let floatSpeed:CGFloat = CGFloat(realSpeed) / 10.0
         
         return floatSpeed
@@ -90,7 +90,7 @@ class MGridVisorMatchAnimation
         let speed:CGFloat = randomSpeed()
         let itemString:String = randomItem()
         
-        attributes[NSForegroundColorAttributeName] = UIColor(white:0, alpha:alpha)
+        attributes[NSForegroundColorAttributeName] = UIColor.gridBlue.withAlphaComponent(alpha)
         let attributedString:NSAttributedString = NSAttributedString(
             string:itemString,
             attributes:attributes)

@@ -12,8 +12,8 @@ class MGridVisorMatchAnimationItem
     var posY:CGFloat
     private let item:NSAttributedString
     private let deltaSpeed:CGFloat
-    private let kWidth:CGFloat = 30
-    private let kHeight:CGFloat = 20
+    private let kWidth:CGFloat = 40
+    private let kHeight:CGFloat = 35
     
     class func randomDirection() -> Direction
     {
