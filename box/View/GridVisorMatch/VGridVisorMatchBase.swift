@@ -3,8 +3,11 @@ import UIKit
 class VGridVisorMatchBase:UIView
 {
     private weak var controller:CGridVisorMatch!
+    private weak var buttonCancel:VGridVisorMatchBaseButton!
+    private weak var buttonPlay:VGridVisorMatchBaseButton!
     private let kCornerRadius:CGFloat = 15
     private let kBorderWidth:CGFloat = 1
+    private let kButtonSize:CGFloat = 50
     
     init(controller:CGridVisorMatch)
     {
