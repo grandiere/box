@@ -3,7 +3,7 @@ import UIKit
 class VGridVisorMatchBaseAlgo:UIView
 {
     private weak var controller:CGridVisorMatch!
-    private let kImageMargin:CGFloat = 20
+    private let kImageMargin:CGFloat = 22
     
     init(controller:CGridVisorMatch)
     {

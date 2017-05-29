@@ -7,11 +7,14 @@ class VGridVisorMatchBase:UIView
     private weak var buttonPlay:VGridVisorMatchBaseButton!
     private weak var layoutCancelTop:NSLayoutConstraint!
     private weak var layoutPlayTop:NSLayoutConstraint!
+    private let algoHeight_2:CGFloat
     private let kButtonSize:CGFloat = 70
     private let kAlgoHeight:CGFloat = 90
     
     init(controller:CGridVisorMatch)
     {
+        algoHeight_2 = kAlgoHeight / 2.0
+        
         super.init(frame:CGRect.zero)
         clipsToBounds = true
         backgroundColor = UIColor.clear
@@ -19,7 +22,6 @@ class VGridVisorMatchBase:UIView
         self.controller = controller
         
         let buttonSize_2:CGFloat = kButtonSize / 2.0
-        let algoHeight_2:CGFloat = kAlgoHeight / 2.0
         
         let viewBackground:VGridVisorMatchBaseBackground = VGridVisorMatchBaseBackground(
             controller:controller)
@@ -102,7 +104,7 @@ class VGridVisorMatchBase:UIView
     
     override func layoutSubviews()
     {
-        let height:CGFloat = bounds.maxY
+        let height:CGFloat = bounds.maxY - algoHeight_2
         let remainHeight:CGFloat = height - kButtonSize
         let marginTop:CGFloat = remainHeight / 2.0
         layoutPlayTop.constant = marginTop
