@@ -3,7 +3,7 @@ import UIKit
 class VGridVisorMatchBaseBackground:UIView
 {
     private weak var controller:CGridVisorMatch!
-    private weak var spinner:VSpinner!
+    private weak var animation:VGridVisorMatchBaseBackgroundAnimation!
     private weak var labelTitle:UILabel!
     private weak var labelNumber:UILabel!
     private let kCornerRadius:CGFloat = 15
@@ -49,17 +49,17 @@ class VGridVisorMatchBaseBackground:UIView
         labelNumber.textAlignment = NSTextAlignment.center
         self.labelNumber = labelNumber
         
-        let spinner:VSpinner = VSpinner()
-        spinner.stopAnimating()
-        self.spinner = spinner
+        let animation:VGridVisorMatchBaseBackgroundAnimation = VGridVisorMatchBaseBackgroundAnimation()
+        animation.isHidden = true
+        self.animation = animation
         
         addSubview(blur)
         addSubview(labelTitle)
         addSubview(labelNumber)
-        addSubview(spinner)
+        addSubview(animation)
         
         NSLayoutConstraint.equals(
-            view:spinner,
+            view:animation,
             toView:self)
         
         NSLayoutConstraint.equals(
@@ -108,11 +108,6 @@ class VGridVisorMatchBaseBackground:UIView
     required init?(coder:NSCoder)
     {
         return nil
-    }
-    
-    deinit
-    {
-        spinner.stopAnimating()
     }
     
     //MARK: public
