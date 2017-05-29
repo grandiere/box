@@ -49,6 +49,7 @@
 		DA1403C01EB6652C006C9364 /* MGridVisorMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403BF1EB6652C006C9364 /* MGridVisorMatch.swift */; };
 		DA1403C21EB66896006C9364 /* MGridVisorTake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403C11EB66896006C9364 /* MGridVisorTake.swift */; };
 		DA1403C51EB668B8006C9364 /* VGridVisorTake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1403C41EB668B8006C9364 /* VGridVisorTake.swift */; };
+		DA15659F1EDBBA8C004FB820 /* VGridVisorMatchBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA15659E1EDBBA8C004FB820 /* VGridVisorMatchBaseButton.swift */; };
 		DA158C591EC3422900E4848C /* MSettingsReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158C581EC3422900E4848C /* MSettingsReview.swift */; };
 		DA158C5B1EC3423500E4848C /* MSettingsShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158C5A1EC3423500E4848C /* MSettingsShare.swift */; };
 		DA158C5D1EC3438900E4848C /* VSettingsCellReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA158C5C1EC3438900E4848C /* VSettingsCellReview.swift */; };
@@ -395,6 +396,7 @@
 		DA1403BF1EB6652C006C9364 /* MGridVisorMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorMatch.swift; sourceTree = "<group>"; };
 		DA1403C11EB66896006C9364 /* MGridVisorTake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorTake.swift; sourceTree = "<group>"; };
 		DA1403C41EB668B8006C9364 /* VGridVisorTake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorTake.swift; sourceTree = "<group>"; };
+		DA15659E1EDBBA8C004FB820 /* VGridVisorMatchBaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorMatchBaseButton.swift; sourceTree = "<group>"; };
 		DA158C581EC3422900E4848C /* MSettingsReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsReview.swift; sourceTree = "<group>"; };
 		DA158C5A1EC3423500E4848C /* MSettingsShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSettingsShare.swift; sourceTree = "<group>"; };
 		DA158C5C1EC3438900E4848C /* VSettingsCellReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSettingsCellReview.swift; sourceTree = "<group>"; };
@@ -1460,6 +1462,7 @@
 			children = (
 				DA8852601EAE3E44008CB62C /* VGridVisorMatch.swift */,
 				DA7B3C8A1EDA554100675C60 /* VGridVisorMatchBase.swift */,
+				DA15659E1EDBBA8C004FB820 /* VGridVisorMatchBaseButton.swift */,
 			);
 			path = GridVisorMatch;
 			sourceTree = "<group>";
@@ -2205,6 +2208,7 @@
 				DA8C06F71EC64F56000DF6D4 /* MHelpSkillsAids.swift in Sources */,
 				DA823A061ED722F900BF3B84 /* CBoards.swift in Sources */,
 				DA098E6D1ECE3C9100FD500E /* MBoardsSortScore.swift in Sources */,
+				DA15659F1EDBBA8C004FB820 /* VGridVisorMatchBaseButton.swift in Sources */,
 				DA22F3D31EA2F30800F6ED91 /* VGrid.swift in Sources */,
 				DA31F6951EC207CA003978C7 /* VStore.swift in Sources */,
 			);
