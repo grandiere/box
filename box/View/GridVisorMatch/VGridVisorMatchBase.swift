@@ -24,7 +24,7 @@ class VGridVisorMatchBase:UIView
         let blur:VBlur = VBlur.extraLight()
         
         let buttonCancel:VGridVisorMatchBaseButton = VGridVisorMatchBaseButton(
-            image:#imageLiteral(resourceName: "assetGenericMap"),
+            image:as,
             tintColor:UIColor.gridOrange)
         buttonCancel.addTarget(
             self,
@@ -32,7 +32,7 @@ class VGridVisorMatchBase:UIView
             for:UIControlEvents.touchUpInside)
         
         let buttonPlay:VGridVisorMatchBaseButton = VGridVisorMatchBaseButton(
-            image:#imageLiteral(resourceName: "assetGenericAge"),
+            image:#imageLiteral(resourceName: "assetGenericPlay"),
             tintColor:UIColor.gridBlue)
         buttonPlay.addTarget(
             self,
