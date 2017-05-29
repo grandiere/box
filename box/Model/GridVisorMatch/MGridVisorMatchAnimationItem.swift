@@ -29,12 +29,14 @@ class MGridVisorMatchAnimationItem
     init(
         item:String,
         alpha:CGFloat,
-        direction:Direction)
+        direction:Direction,
+        posX:CGFloat,
+        posY:CGFloat)
     {
         self.item = item
         self.alpha = alpha
         self.direction = direction
-        posX = 0
-        posY = 0
+        self.posX = posX
+        self.posY = posY
     }
 }
