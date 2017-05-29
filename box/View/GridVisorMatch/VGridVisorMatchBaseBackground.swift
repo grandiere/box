@@ -7,10 +7,17 @@ class VGridVisorMatchBaseBackground:UIView
     private let kBorderWidth:CGFloat = 1
     private let kTitleTop:CGFloat = 40
     private let kTitleHeight:CGFloat = 30
-    private let kNumberHeight:CGFloat = 50
+    private let kNumberHeight:CGFloat = 55
     
     init(controller:CGridVisorMatch)
     {
+        let attributesNumber:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.numeric(size:48),
+            NSForegroundColorAttributeName:UIColor.black]
+        let attributesPercent:[String:AnyObject] = [
+            NSFontAttributeName:UIFont.regular(size:25),
+            NSForegroundColorAttributeName:UIColor.black]
+        
         super.init(frame:CGRect.zero)
         backgroundColor = UIColor.clear
         isUserInteractionEnabled = false
@@ -36,8 +43,6 @@ class VGridVisorMatchBaseBackground:UIView
         labelNumber.backgroundColor = UIColor.clear
         labelNumber.isUserInteractionEnabled = false
         labelNumber.textAlignment = NSTextAlignment.center
-        labelNumber.font = UIFont.numeric(size:40)
-        labelNumber.textColor = UIColor.black
         
         addSubview(blur)
         addSubview(labelTitle)
@@ -58,10 +63,31 @@ class VGridVisorMatchBaseBackground:UIView
             view:labelTitle,
             toView:self)
         
+        NSLayoutConstraint.topToBottom(
+            view:labelNumber,
+            toView:labelTitle)
+        NSLayoutConstraint.height(
+            view:labelNumber,
+            constant:kNumberHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:labelNumber,
+            toView:self)
+        
         if let credits:Int = controller.model?.credits
         {
             let creditsString:String = "\(credits)"
-            labelNumber.text = creditsString
+            
+            let stringNumber:NSAttributedString = NSAttributedString(
+                string:creditsString,
+                attributes:attributesNumber)
+            let stringPercent:NSAttributedString = NSAttributedString(
+                string:"%",
+                attributes:attributesPercent)
+            let mutableString:NSMutableAttributedString = NSMutableAttributedString()
+            mutableString.append(stringNumber)
+            mutableString.append(stringPercent)
+            
+            labelNumber.attributedText = mutableString
         }
     }
     
