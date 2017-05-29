@@ -5,6 +5,7 @@ class VGridVisorMatchBase:UIView
     private weak var controller:CGridVisorMatch!
     private weak var buttonCancel:VGridVisorMatchBaseButton!
     private weak var buttonPlay:VGridVisorMatchBaseButton!
+    private weak var imageView:UIImageView!
     private let kCornerRadius:CGFloat = 15
     private let kBorderWidth:CGFloat = 1
     private let kButtonSize:CGFloat = 50
@@ -38,12 +39,25 @@ class VGridVisorMatchBase:UIView
             action:#selector(actionPlay(sender:)),
             for:UIControlEvents.touchUpInside)
         
+        let imageView:UIImageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = UIViewContentMode.center
+        imageView.clipsToBounds = true
+        imageView.image = controller.model?.icon
+        self.imageView = imageView
+        
         addSubview(blur)
+        addSubview(imageView)
         addSubview(buttonCancel)
         addSubview(buttonPlay)
         
         NSLayoutConstraint.equals(
             view:blur,
+            toView:self)
+        
+        NSLayoutConstraint.equals(
+            view:imageView,
             toView:self)
     }
     
