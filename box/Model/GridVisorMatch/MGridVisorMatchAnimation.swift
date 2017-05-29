@@ -9,15 +9,16 @@ class MGridVisorMatchAnimation
     private let minX:CGFloat
     private let minY:CGFloat
     private let countPossibleItems:UInt32
-    private let kMargin:CGFloat = 50.0
-    private let kSpeedDivisor:CGFloat = 20.0
+    private let kMargin:CGFloat = 12.0
+    private let kSpeedDivisor:CGFloat = 60.0
+    private let kAlphaDivisor:CGFloat = 10.0
     private let kFontSize:CGFloat = 13.0
     private let kPossibleItems:[String] = ["0","1"]
     private let kMaxAlpha:UInt32 = 9
     private let kMinAlpha:UInt32 = 3
-    private let kMaxSpeed:UInt32 = 40
+    private let kMaxSpeed:UInt32 = 50
     private let kMinSpeed:UInt32 = 1
-    private let kInitialItems:Int = 80
+    private let kInitialItems:Int = 300
     
     init()
     {
@@ -57,7 +58,7 @@ class MGridVisorMatchAnimation
         let totalAlpha:UInt32 = kMaxAlpha - kMinAlpha
         let random:UInt32 = arc4random_uniform(totalAlpha)
         let realAlpha:UInt32 = random + kMinAlpha
-        let floatAlpha:CGFloat = CGFloat(realAlpha) / kSpeedDivisor
+        let floatAlpha:CGFloat = CGFloat(realAlpha) / kAlphaDivisor
         
         return floatAlpha
     }
@@ -76,7 +77,7 @@ class MGridVisorMatchAnimation
         let totalSpeed:UInt32 = kMaxSpeed - kMinSpeed
         let random:UInt32 = arc4random_uniform(totalSpeed)
         let realSpeed:UInt32 = random + kMinSpeed
-        let floatSpeed:CGFloat = CGFloat(realSpeed) / 10.0
+        let floatSpeed:CGFloat = CGFloat(realSpeed) / kSpeedDivisor
         
         return floatSpeed
     }
@@ -124,8 +125,8 @@ class MGridVisorMatchAnimation
     
     func initialElements(width:CGFloat, height:CGFloat)
     {
-        maxX = width + kMargin
-        maxY = height + kMargin
+        maxX = width
+        maxY = height
         
         for _:Int in 0 ..< kInitialItems
         {
