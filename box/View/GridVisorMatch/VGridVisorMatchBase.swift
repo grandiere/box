@@ -5,11 +5,8 @@ class VGridVisorMatchBase:UIView
     private weak var controller:CGridVisorMatch!
     private weak var buttonCancel:VGridVisorMatchBaseButton!
     private weak var buttonPlay:VGridVisorMatchBaseButton!
-    private weak var imageView:UIImageView!
     private weak var layoutCancelTop:NSLayoutConstraint!
     private weak var layoutPlayTop:NSLayoutConstraint!
-    private let kCornerRadius:CGFloat = 15
-    private let kBorderWidth:CGFloat = 1
     private let kButtonSize:CGFloat = 70
     
     init(controller:CGridVisorMatch)
@@ -22,16 +19,9 @@ class VGridVisorMatchBase:UIView
         
         let buttonSize_2:CGFloat = kButtonSize / 2.0
         
-        let viewBackground:UIView = UIView()
-        viewBackground.isUserInteractionEnabled = false
-        viewBackground.translatesAutoresizingMaskIntoConstraints = false
-        viewBackground.clipsToBounds = true
-        viewBackground.layer.borderWidth = kBorderWidth
-        viewBackground.layer.borderColor = UIColor(white:1, alpha:0.3).cgColor
-        viewBackground.layer.cornerRadius = kCornerRadius
-        
-        let blur:VBlur = VBlur.light()
-        
+        let viewBackground:VGridVisorMatchBaseBackground = VGridVisorMatchBaseBackground(
+            controller:controller)
+
         let buttonCancel:VGridVisorMatchBaseButton = VGridVisorMatchBaseButton(
             image:#imageLiteral(resourceName: "assetGenericCancel"),
             tintColor:UIColor.gridOrange)
@@ -48,27 +38,9 @@ class VGridVisorMatchBase:UIView
             action:#selector(actionPlay(sender:)),
             for:UIControlEvents.touchUpInside)
         
-        let imageView:UIImageView = UIImageView()
-        imageView.isUserInteractionEnabled = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = UIViewContentMode.center
-        imageView.clipsToBounds = true
-        imageView.image = controller.model?.icon
-        self.imageView = imageView
-        
-        viewBackground.addSubview(blur)
         addSubview(viewBackground)
-        addSubview(imageView)
         addSubview(buttonCancel)
         addSubview(buttonPlay)
-        
-        NSLayoutConstraint.equals(
-            view:blur,
-            toView:self)
-        
-        NSLayoutConstraint.equals(
-            view:imageView,
-            toView:self)
         
         NSLayoutConstraint.equalsVertical(
             view:viewBackground,
