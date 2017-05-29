@@ -22,7 +22,25 @@ class VGridVisorMatchBase:UIView
         
         let blur:VBlur = VBlur.extraLight()
         
+        let buttonCancel:VGridVisorMatchBaseButton = VGridVisorMatchBaseButton(
+            image:#imageLiteral(resourceName: "assetGenericMap"),
+            tintColor:UIColor.gridOrange)
+        buttonCancel.addTarget(
+            self,
+            action:#selector(actionCancel(sender:)),
+            for:UIControlEvents.touchUpInside)
+        
+        let buttonPlay:VGridVisorMatchBaseButton = VGridVisorMatchBaseButton(
+            image:#imageLiteral(resourceName: "assetGenericAge"),
+            tintColor:UIColor.gridBlue)
+        buttonPlay.addTarget(
+            self,
+            action:#selector(actionPlay(sender:)),
+            for:UIControlEvents.touchUpInside)
+        
         addSubview(blur)
+        addSubview(buttonCancel)
+        addSubview(buttonPlay)
         
         NSLayoutConstraint.equals(
             view:blur,
@@ -32,5 +50,17 @@ class VGridVisorMatchBase:UIView
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    //MARK: actions
+    
+    func actionCancel(sender button:VGridVisorMatchBaseButton)
+    {
+        
+    }
+    
+    func actionPlay(sender button:VGridVisorMatchBaseButton)
+    {
+        
     }
 }
