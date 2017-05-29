@@ -6,6 +6,8 @@ class VGridVisorMatchBase:UIView
     private weak var buttonCancel:VGridVisorMatchBaseButton!
     private weak var buttonPlay:VGridVisorMatchBaseButton!
     private weak var imageView:UIImageView!
+    private weak var layoutCancelTop:NSLayoutConstraint!
+    private weak var layoutPlayTop:NSLayoutConstraint!
     private let kCornerRadius:CGFloat = 15
     private let kBorderWidth:CGFloat = 1
     private let kButtonSize:CGFloat = 50
@@ -24,7 +26,7 @@ class VGridVisorMatchBase:UIView
         let blur:VBlur = VBlur.extraLight()
         
         let buttonCancel:VGridVisorMatchBaseButton = VGridVisorMatchBaseButton(
-            image:as,
+            image:#imageLiteral(resourceName: "assetGenericCancel"),
             tintColor:UIColor.gridOrange)
         buttonCancel.addTarget(
             self,
@@ -59,11 +61,42 @@ class VGridVisorMatchBase:UIView
         NSLayoutConstraint.equals(
             view:imageView,
             toView:self)
+        
+        layoutPlayTop = NSLayoutConstraint.topToTop(
+            view:buttonPlay,
+            toView:self)
+        NSLayoutConstraint.size(
+            view:buttonPlay,
+            constant:kButtonSize)
+        NSLayoutConstraint.rightToRight(
+            view:buttonPlay,
+            toView:self)
+        
+        layoutCancelTop = NSLayoutConstraint.topToTop(
+            view:buttonCancel,
+            toView:self)
+        NSLayoutConstraint.size(
+            view:buttonCancel,
+            constant:kButtonSize)
+        NSLayoutConstraint.leftToLeft(
+            view:buttonCancel,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
     {
         return nil
+    }
+    
+    override func layoutSubviews()
+    {
+        let height:CGFloat = bounds.maxY
+        let remainHeight:CGFloat = height - kButtonSize
+        let marginTop:CGFloat = remainHeight / 2.0
+        layoutPlayTop.constant = marginTop
+        layoutCancelTop.constant = marginTop
+        
+        super.layoutSubviews()
     }
     
     //MARK: actions

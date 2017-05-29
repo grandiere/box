@@ -5,7 +5,7 @@ class VGridVisorMatch:VView
     private weak var controller:CGridVisorMatch!
     private weak var layoutBaseTop:NSLayoutConstraint!
     private let kBaseMarginHorizontal:CGFloat = 10
-    private let kBaseHeight:CGFloat = 250
+    private let kBaseHeight:CGFloat = 180
     
     override init(controller:CController)
     {
