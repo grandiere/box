@@ -6,6 +6,8 @@ class VGridVisorMatchBaseBackground:UIView
     private weak var controller:CGridVisorMatch!
     private weak var labelTitle:UILabel!
     private weak var labelNumber:UILabel!
+    private weak var blurLight:VBlur!
+    private weak var blurDark:VBlur!
     private let kCornerRadius:CGFloat = 15
     private let kBorderWidth:CGFloat = 1
     private let kTitleTop:CGFloat = 40
@@ -30,7 +32,12 @@ class VGridVisorMatchBaseBackground:UIView
         layer.borderColor = UIColor(white:1, alpha:0.3).cgColor
         layer.cornerRadius = kCornerRadius
         
-        let blur:VBlur = VBlur.light()
+        let blurLight:VBlur = VBlur.light()
+        self.blurLight = blurLight
+        
+        let blurDark:VBlur = VBlur.dark()
+        blurDark.isHidden = true
+        self.blurDark = blurDark
         
         let labelTitle:UILabel = UILabel()
         labelTitle.isUserInteractionEnabled = false
@@ -53,7 +60,8 @@ class VGridVisorMatchBaseBackground:UIView
         animation.isHidden = true
         self.animation = animation
         
-        addSubview(blur)
+        addSubview(blurLight)
+        addSubview(blurDark)
         addSubview(labelTitle)
         addSubview(labelNumber)
         addSubview(animation)
@@ -63,7 +71,11 @@ class VGridVisorMatchBaseBackground:UIView
             toView:self)
         
         NSLayoutConstraint.equals(
-            view:blur,
+            view:blurLight,
+            toView:self)
+
+        NSLayoutConstraint.equals(
+            view:blurDark,
             toView:self)
         
         NSLayoutConstraint.topToTop(
@@ -117,5 +129,7 @@ class VGridVisorMatchBaseBackground:UIView
         animation.isHidden = false
         labelTitle.isHidden = true
         labelNumber.isHidden = true
+        blurLight.isHidden = true
+        blurDark.isHidden = false
     }
 }
