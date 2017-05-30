@@ -9,6 +9,14 @@ class VGridVisorDownloadBase:UIView
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
         isUserInteractionEnabled = false
+        
+        let blur:VBlur = VBlur.light()
+        
+        addSubview(blur)
+        
+        NSLayoutConstraint.equals(
+            view:blur,
+            toView:self)
     }
     
     required init?(coder:NSCoder)
