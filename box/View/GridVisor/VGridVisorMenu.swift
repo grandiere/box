@@ -135,7 +135,19 @@ class VGridVisorMenu:UIView
     
     func actionDownload(sender button:VGridVirusOptionsButton)
     {
+        guard
+            
+            let algoAidItem:MGridAlgoAidItem = controller.targeting as? MGridAlgoAidItem
+            
+        else
+        {
+            return
+        }
         
+        if algoAidItem.showDownload
+        {
+            controller.showAlgoDownload(item:algoAidItem)
+        }
     }
     
     //MARK: private

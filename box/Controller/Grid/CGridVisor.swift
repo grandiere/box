@@ -158,4 +158,10 @@ class CGridVisor:CController
         let controllerMatch:CGridVisorMatch = CGridVisorMatch(model:item)
         parentController.animateOver(controller:controllerMatch)
     }
+    
+    func showAlgoDownload(item:MGridAlgoAidItem)
+    {
+        let controllerDownload:CGridVisorDownload = CGridVisorDownload(model:item)
+        parentController.animateOver(controller:controllerDownload)
+    }
 }
