@@ -4,7 +4,7 @@ class CGridVisorDownload:CController
 {
     private var modelTake:MGridVisorTake?
     private weak var model:MGridAlgoAidItem?
-    private(set) weak var viewDownload:VGridVisorDownload!
+    private weak var viewDownload:VGridVisorDownload!
     
     init(model:MGridAlgoAidItem)
     {

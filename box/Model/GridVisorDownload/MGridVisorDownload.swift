@@ -6,6 +6,11 @@ class MGridVisorDownload
     private weak var model:MGridAlgoAidItem!
     private let kDifficultyStats:UInt32 = 80
     
+    class func strategyDownload(item:MGridAlgoAidItem) -> MGridVisorDownloadProtocol?
+    {
+        
+    }
+    
     init(controller:CGridVisorDownload, model:MGridAlgoAidItem)
     {
         self.controller = controller
