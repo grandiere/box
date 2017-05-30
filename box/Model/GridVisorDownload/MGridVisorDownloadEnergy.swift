@@ -4,8 +4,8 @@ class MGridVisorDownloadEnergy:MGridVisorDownloadProtocol
 {
     private let energyAmount:Int16
     private let attributedString:NSAttributedString
-    private let kValueFontSize:CGFloat = 34
-    private let kNameFontSize:CGFloat = 16
+    private let kValueFontSize:CGFloat = 20
+    private let kNameFontSize:CGFloat = 14
     private static let kResourceName:String = "ResourceDownloadEnergy"
     private static let kResourceExtension:String = "plist"
     
@@ -27,8 +27,9 @@ class MGridVisorDownloadEnergy:MGridVisorDownloadProtocol
         
         let countItems:UInt32 = UInt32(energyList.count)
         let randomItem:Int = Int(arc4random_uniform(countItems))
+        let energyItem:Int = energyList[randomItem]
         let energyLevel:MGridVisorDownloadEnergy = MGridVisorDownloadEnergy(
-            energyAmount:randomItem)
+            energyAmount:energyItem)
         
         return energyLevel
     }

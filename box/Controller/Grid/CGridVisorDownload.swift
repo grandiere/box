@@ -4,8 +4,8 @@ class CGridVisorDownload:CController
 {
     private weak var model:MGridAlgoAidItem?
     private weak var viewDownload:VGridVisorDownload!
-    private let kWaitTime:TimeInterval = 2
-    private let kMessageTime:TimeInterval = 2
+    private let kWaitTime:TimeInterval = 2.5
+    private let kMessageTime:TimeInterval = 3.5
     
     init(model:MGridAlgoAidItem)
     {
@@ -74,6 +74,13 @@ class CGridVisorDownload:CController
         { [weak self] in
             
             self?.viewDownload.downloaded(model:strategy)
+        }
+        
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kMessageTime)
+        { [weak self] in
+            
+            self?.done()
         }
     }
     

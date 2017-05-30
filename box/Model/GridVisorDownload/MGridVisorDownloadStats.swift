@@ -3,8 +3,8 @@ import UIKit
 class MGridVisorDownloadStats:MGridVisorDownloadProtocol
 {
     private let attributedString:NSAttributedString
-    private let kValueFontSize:CGFloat = 38
-    private let kNameFontSize:CGFloat = 22
+    private let kValueFontSize:CGFloat = 22
+    private let kNameFontSize:CGFloat = 13
     
     class func factory() -> MGridVisorDownloadStats
     {

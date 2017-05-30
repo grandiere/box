@@ -28,7 +28,7 @@ class VGridVisorDownloadBase:UIView
         let background:UIView = UIView()
         background.isUserInteractionEnabled = false
         background.translatesAutoresizingMaskIntoConstraints = false
-        background.backgroundColor = UIColor(white:1, alpha:0.8)
+        background.backgroundColor = UIColor(white:1, alpha:0.9)
         background.clipsToBounds = true
         background.layer.cornerRadius = kCornerRadius
         self.background = background
@@ -49,6 +49,7 @@ class VGridVisorDownloadBase:UIView
         label.backgroundColor = UIColor.clear
         label.isUserInteractionEnabled = false
         label.textAlignment = NSTextAlignment.center
+        label.numberOfLines = 0
         self.label = label
         
         addSubview(background)
@@ -92,7 +93,7 @@ class VGridVisorDownloadBase:UIView
     
     func downloadedAnimation()
     {
-        background.backgroundColor = UIColor(white:1, alpha:0.95)
+        background.backgroundColor = UIColor(white:1, alpha:0.98)
         label.alpha = 1
     }
 }

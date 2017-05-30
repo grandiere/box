@@ -7,7 +7,7 @@ class VGridVisorDownload:VView
     private weak var layoutBaseTop:NSLayoutConstraint!
     private weak var layoutBaseLeft:NSLayoutConstraint!
     private let kBaseSize:CGFloat = 160
-    private let kAnimationDuration:TimeInterval = 0.5
+    private let kAnimationDuration:TimeInterval = 1
     
     override init(controller:CController)
     {

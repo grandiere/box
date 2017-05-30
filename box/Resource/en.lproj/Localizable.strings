@@ -80,7 +80,7 @@
 "MGridMapDetailItemDistance_stringTitle"="Distance  ";
 "MGridAlgoItemAid_title"="Power Up";
 "MGridVisorDownloadEnergy_stringValue"="+%@";
-"MGridVisorDownloadEnergy_stringName"="  Energy";
+"MGridVisorDownloadEnergy_stringName"=" Energy";
 "MGridVirus_labelTitle"="Virus level\n";
 "MGridVirus_labelSubtitle"="\nReleased";
 "MGridVisorDownloadStats_stringValue"="+1 ";
