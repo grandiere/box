@@ -8,6 +8,7 @@ class VGridVisorDownload:VView
     {
         super.init(controller:controller)
         backgroundColor = UIColor.clear
+        isUserInteractionEnabled = false
         self.controller = controller as? CGridVisorDownload
     }
     
