@@ -2,11 +2,11 @@ import Foundation
 
 class MGridVisorDownload
 {
-    private weak var controller:CGridVisorTake?
+    private weak var controller:CGridVisorDownload?
     private weak var model:MGridAlgoAidItem!
     private let kDifficultyStats:UInt32 = 80
     
-    init(controller:CGridVisorTake, model:MGridAlgoAidItem)
+    init(controller:CGridVisorDownload, model:MGridAlgoAidItem)
     {
         self.controller = controller
         self.model = model
@@ -23,7 +23,7 @@ class MGridVisorDownload
     private func strategyDownload()
     {
         let random:UInt32 = arc4random_uniform(kDifficultyStats)
-        let strategy:MGridVisorDownloadProtocol?
+        let strategy:MGridVisorDownloadProtocol
         
         if random == 0
         {
@@ -45,7 +45,7 @@ class MGridVisorDownload
         
         guard
             
-            let controller:CGridVisorTake = self.controller
+            let controller:CGridVisorDownload = self.controller
             
         else
         {

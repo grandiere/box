@@ -1,6 +1,6 @@
 import Foundation
 
-class MGridVisorDownloadStatsProcessor:MGridVisorDowbloadStats
+class MGridVisorDownloadStatsProcessor:MGridVisorDownloadStats
 {
     init()
     {
