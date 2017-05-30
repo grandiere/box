@@ -299,6 +299,7 @@
 		DA8C07031EC652EA000DF6D4 /* MTutorialAids.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C07021EC652EA000DF6D4 /* MTutorialAids.swift */; };
 		DA8CF5701EDDBB670076163F /* CGridVisorDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF56F1EDDBB670076163F /* CGridVisorDownload.swift */; };
 		DA8CF5731EDDBF310076163F /* VGridVisorDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF5721EDDBF310076163F /* VGridVisorDownload.swift */; };
+		DA8CF5751EDDC9EA0076163F /* download.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8CF5741EDDC9EA0076163F /* download.xcassets */; };
 		DA8D05B81ED340A800098411 /* MGridHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D05B71ED340A800098411 /* MGridHarvest.swift */; };
 		DA8D05BA1ED3562000098411 /* VGridHarvestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D05B91ED3562000098411 /* VGridHarvestHeader.swift */; };
 		DA8D05BE1ED3719B00098411 /* VGridHarvestSubbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D05BD1ED3719B00098411 /* VGridHarvestSubbar.swift */; };
@@ -652,6 +653,7 @@
 		DA8C07021EC652EA000DF6D4 /* MTutorialAids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTutorialAids.swift; sourceTree = "<group>"; };
 		DA8CF56F1EDDBB670076163F /* CGridVisorDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGridVisorDownload.swift; sourceTree = "<group>"; };
 		DA8CF5721EDDBF310076163F /* VGridVisorDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridVisorDownload.swift; sourceTree = "<group>"; };
+		DA8CF5741EDDC9EA0076163F /* download.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = download.xcassets; sourceTree = "<group>"; };
 		DA8D05B71ED340A800098411 /* MGridHarvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridHarvest.swift; sourceTree = "<group>"; };
 		DA8D05B91ED3562000098411 /* VGridHarvestHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridHarvestHeader.swift; sourceTree = "<group>"; };
 		DA8D05BD1ED3719B00098411 /* VGridHarvestSubbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGridHarvestSubbar.swift; sourceTree = "<group>"; };
@@ -1602,6 +1604,7 @@
 				DA0BDA051EA414F900282D73 /* spinner.xcassets */,
 				DA0BDA091EA41F1200282D73 /* generic.xcassets */,
 				DA4E6A051EC3ABFB004B138B /* help.xcassets */,
+				DA8CF5741EDDC9EA0076163F /* download.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -1836,6 +1839,7 @@
 				DA07D5761EC3545A00AC73E1 /* ResourceURL.plist in Resources */,
 				DA59D75F1EB25F9000EB2973 /* GoogleService-Info.plist in Resources */,
 				DA4E6A061EC3ABFB004B138B /* help.xcassets in Resources */,
+				DA8CF5751EDDC9EA0076163F /* download.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
