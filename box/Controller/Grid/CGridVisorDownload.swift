@@ -65,7 +65,7 @@ class CGridVisorDownload:CController
             
             let model:MGridAlgoAidItem = self.model
             
-            else
+        else
         {
             return
         }
