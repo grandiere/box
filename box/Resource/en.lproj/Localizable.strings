@@ -169,6 +169,6 @@
 "MStorePurchaseSkill_descr"="Increase Skill and improve performance\nMax Skill level is 10";
 "MStorePurchaseSkill_buyingError"="Skill is at max";
 
-"CGridVisorMatch_titleSuccess"="%@ success!";
-"CGridVisorMatch_titleFail"="%@ failed!";
+"CGridVisorMatch_titleSuccess"="%@ Success";
+"CGridVisorMatch_titleFail"="%@ Failed";
 "CGrid_noLocationGranted"="We need access to your location";

@@ -6,6 +6,7 @@ class VGridVisorMatchBaseBackground:UIView
     private weak var controller:CGridVisorMatch!
     private weak var labelTitle:UILabel!
     private weak var labelNumber:UILabel!
+    private weak var labelFinish:UILabel!
     private weak var blurLight:VBlur!
     private weak var blurDark:VBlur!
     private let kCornerRadius:CGFloat = 15
@@ -56,6 +57,15 @@ class VGridVisorMatchBaseBackground:UIView
         labelNumber.textAlignment = NSTextAlignment.center
         self.labelNumber = labelNumber
         
+        let labelFinish:UILabel = UILabel()
+        labelFinish.translatesAutoresizingMaskIntoConstraints = false
+        labelFinish.isUserInteractionEnabled = false
+        labelFinish.backgroundColor = UIColor.clear
+        labelFinish.textAlignment = NSTextAlignment.center
+        labelFinish.font = UIFont.bold(size:18)
+        labelFinish.textColor = UIColor.black
+        self.labelFinish = labelFinish
+        
         let animation:VGridVisorMatchBaseBackgroundAnimation = VGridVisorMatchBaseBackgroundAnimation()
         animation.isHidden = true
         self.animation = animation
@@ -64,6 +74,7 @@ class VGridVisorMatchBaseBackground:UIView
         addSubview(blurDark)
         addSubview(labelTitle)
         addSubview(labelNumber)
+        addSubview(labelFinish)
         addSubview(animation)
         
         NSLayoutConstraint.equals(
@@ -99,6 +110,10 @@ class VGridVisorMatchBaseBackground:UIView
             view:labelNumber,
             toView:self)
         
+        NSLayoutConstraint.equals(
+            view:labelFinish,
+            toView:self)
+        
         if let credits:Int = controller.model?.credits
         {
             let creditsString:String = "\(credits)"
@@ -122,6 +137,16 @@ class VGridVisorMatchBaseBackground:UIView
         return nil
     }
     
+    //MARK: private
+    
+    private func matchFinished(message:String)
+    {
+        animation.isHidden = true
+        blurLight.isHidden = true
+        blurDark.isHidden = true
+        labelFinish.text = message
+    }
+    
     //MARK: public
     
     func animate()
@@ -131,5 +156,25 @@ class VGridVisorMatchBaseBackground:UIView
         labelNumber.isHidden = true
         blurLight.isHidden = true
         blurDark.isHidden = false
+    }
+    
+    func success(message:String)
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.backgroundColor = UIColor.gridBlue
+            self?.matchFinished(message:message)
+        }
+    }
+    
+    func fail(message:String)
+    {
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.backgroundColor = UIColor.gridOrange
+            self?.matchFinished(message:message)
+        }
     }
 }

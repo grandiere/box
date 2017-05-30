@@ -5,6 +5,8 @@ class MGridVisorMatch
     private weak var model:MGridAlgoHostileItem!
     private weak var controller:CGridVisorMatch?
     private var timesTried:Int
+    private var tickCounter:Int
+    private let kMaxTickCounts:Int = 100
     private let tryTimes:Int
     private let difficulty:UInt32
     private let minDice:UInt32
@@ -17,6 +19,7 @@ class MGridVisorMatch
         self.model = model
         self.controller = controller
         timesTried = 0
+        tickCounter = 0
         
         let userLevel:Int = MSession.sharedInstance.level
         var tryTimes:Int = model.level - userLevel
@@ -61,14 +64,21 @@ class MGridVisorMatch
     
     func timerTick()
     {
-        if timesTried < tryTimes
+        tickCounter += 1
+        
+        if tickCounter > kMaxTickCounts
         {
-            timesTried += 1
-            rollDices()
-        }
-        else
-        {
-            controller?.success()
+            tickCounter = 0
+            
+            if timesTried < tryTimes
+            {
+                timesTried += 1
+                rollDices()
+            }
+            else
+            {
+                controller?.success()
+            }
         }
     }
 }

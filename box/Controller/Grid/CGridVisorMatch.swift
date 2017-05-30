@@ -6,8 +6,8 @@ class CGridVisorMatch:CController
     private(set) weak var model:MGridAlgoHostileItem?
     private(set) weak var viewMatch:VGridVisorMatch!
     private weak var timer:Timer?
-    private let kTimeInterval:TimeInterval = 1
     private let kTickInterval:TimeInterval = 0.016
+    private let kFinishWait:TimeInterval = 5
     
     init(model:MGridAlgoHostileItem)
     {
@@ -25,59 +25,9 @@ class CGridVisorMatch:CController
         timer?.invalidate()
     }
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        /*
-        guard
-            
-            let model:MGridAlgoHostileItem = self.model
-        
-        else
-        {
-            return
-        }
-        
-        let energyCost:Int16 = Int16(model.credits)
-        MSession.sharedInstance.settings?.energy?.spendEnergy(energyCost:energyCost)*/
-    }
-    
     override func viewDidAppear(_ animated:Bool)
     {
         super.viewDidAppear(animated)
-        /*
-        if modelMatch == nil
-        {
-            guard
-                
-                let model:MGridAlgoHostileItem = self.model
-                
-            else
-            {
-                return
-            }
-            
-            let controllersCount:Int = parentController.childViewControllers.count
-            let prevController:Int = controllersCount - 2
-            
-            if prevController > 0
-            {
-                if let _:CGridVisorDetail = parentController.childViewControllers[prevController] as? CGridVisorDetail
-                {
-                    parentController.popSilent(removeIndex:prevController)
-                }
-            }
-            
-            modelMatch = MGridVisorMatch(model:model, controller:self)
-            
-            timer = Timer.scheduledTimer(
-                timeInterval:kTimeInterval,
-                target:self,
-                selector:#selector(actionTimer(sender:)),
-                userInfo:nil,
-                repeats:true)
-        }*/
-        
         parentController.viewParent.panRecognizer.isEnabled = false
     }
     
@@ -90,8 +40,10 @@ class CGridVisorMatch:CController
     
     //MARK: actions
     
-    func actionTimer(sender timer:Timer)
+    func actionTick(sener timer:Timer)
     {
+        viewMatch.viewBase.viewBackground.animation.setNeedsDisplay()
+        
         DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
         { [weak self] in
             
@@ -99,16 +51,29 @@ class CGridVisorMatch:CController
         }
     }
     
-    func actionTick(sener timer:Timer)
-    {
-        viewMatch.viewBase.viewBackground.animation.setNeedsDisplay()
-    }
-    
     //MARK: private
+    
+    private func startMatch()
+    {
+        guard
+            
+            let model:MGridAlgoHostileItem = self.model
+            
+        else
+        {
+            return
+        }
+        
+        let energyCost:Int16 = Int16(model.credits)
+        MSession.sharedInstance.settings?.energy?.spendEnergy(energyCost:energyCost)
+        
+        modelMatch = MGridVisorMatch(model:model, controller:self)
+    }
     
     private func finishMatch()
     {
-        DispatchQueue.main.async
+        DispatchQueue.main.asyncAfter(
+            deadline:DispatchTime.now() + kFinishWait)
         { [weak self] in
             
             self?.parentController.dismissAnimateOver(completion:nil)
@@ -193,12 +158,17 @@ class CGridVisorMatch:CController
             selector:#selector(actionTick(sener:)),
             userInfo:nil,
             repeats:true)
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.startMatch()
+        }
     }
     
     func failed()
     {
         timer?.invalidate()
-        finishMatch()
         addDefeated()
         
         guard
@@ -213,8 +183,9 @@ class CGridVisorMatch:CController
         let stringFail:String = String(
             format:NSLocalizedString("CGridVisorMatch_titleFail", comment:""),
             stringMatch)
+        viewMatch.viewBase.viewBackground.success(message:stringFail)
         
-        VAlert.messageOrange(message:stringFail)
+        finishMatch()
     }
     
     func success()
@@ -222,7 +193,6 @@ class CGridVisorMatch:CController
         timer?.invalidate()
         updateStats()
         destroyHostile()
-        finishMatch()
         
         guard
             
@@ -236,7 +206,8 @@ class CGridVisorMatch:CController
         let stringSuccess:String = String(
             format:NSLocalizedString("CGridVisorMatch_titleSuccess", comment:""),
             stringMatch)
-        
-        VAlert.messageBlue(message:stringSuccess)
+        viewMatch.viewBase.viewBackground.success(message:stringSuccess)
+    
+        finishMatch()
     }
 }
