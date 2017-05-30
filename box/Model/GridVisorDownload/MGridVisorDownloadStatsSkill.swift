@@ -9,10 +9,8 @@ class MGridVisorDownloadStatsSkill:MGridVisorDownloadStats
         super.init(name:name)
     }
     
-    override func apply(controller:CGridVisorDownload)
+    override func apply()
     {
-        super.apply(controller:controller)
-        
         MSession.sharedInstance.settings?.user?.addSkill()
     }
 }

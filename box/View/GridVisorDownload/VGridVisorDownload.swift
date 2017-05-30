@@ -7,7 +7,6 @@ class VGridVisorDownload:VView
     private weak var layoutBaseTop:NSLayoutConstraint!
     private weak var layoutBaseLeft:NSLayoutConstraint!
     private let kBaseSize:CGFloat = 160
-    private let kDownloadedRadius:CGFloat = 8
     private let kAnimationDuration:TimeInterval = 0.5
     
     override init(controller:CController)
@@ -56,17 +55,12 @@ class VGridVisorDownload:VView
     
     func downloaded(model:MGridVisorDownloadProtocol)
     {
-        let kDownloadedRadius:CGFloat = self.kDownloadedRadius
+        viewBase.downloadedReady(model:model)
         
-        UIView.animate(
-            withDuration:kAnimationDuration,
-        animations:
+        UIView.animate(withDuration:kAnimationDuration)
         { [weak self] in
             
-            self?.viewBase.layer.cornerRadius = kDownloadedRadius
-        })
-        { [weak self] (done:Bool) in
-            
+            self?.viewBase.downloadedAnimation()
         }
     }
 }

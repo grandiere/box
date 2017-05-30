@@ -4,6 +4,8 @@ class CGridVisorDownload:CController
 {
     private weak var model:MGridAlgoAidItem?
     private weak var viewDownload:VGridVisorDownload!
+    private let kWaitTime:TimeInterval = 2
+    private let kMessageTime:TimeInterval = 2
     
     init(model:MGridAlgoAidItem)
     {
@@ -16,36 +18,21 @@ class CGridVisorDownload:CController
         return nil
     }
     
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).asyncAfter(
+            deadline:DispatchTime.now() + kWaitTime)
+        { [weak self] in
+            
+            self?.strategyDownload()
+        }
+    }
+    
     override func viewDidAppear(_ animated:Bool)
     {
         super.viewDidAppear(animated)
-        
-        /*
-         if modelTake == nil
-         {
-         guard
-         
-         let model:MGridAlgoAidItem = self.model
-         
-         else
-         {
-         return
-         }
-         
-         let controllersCount:Int = parentController.childViewControllers.count
-         let prevController:Int = controllersCount - 2
-         
-         if prevController > 0
-         {
-         if let _:CGridVisorDetail = parentController.childViewControllers[prevController] as? CGridVisorDetail
-         {
-         parentController.popSilent(removeIndex:prevController)
-         }
-         }
-         
-         modelTake = MGridVisorTake(controller:self, model:model)
-         }*/
-        
         parentController.viewParent.panRecognizer.isEnabled = false
     }
     
@@ -58,7 +45,39 @@ class CGridVisorDownload:CController
     
     //MARK: private
     
-    private func destroyAid()
+    private func strategyDownload()
+    {
+        guard
+            
+            let model:MGridAlgoAidItem = self.model,
+            let strategy:MGridVisorDownloadProtocol = MGridVisorDownload.strategyDownload(
+                item:model)
+        
+        else
+        {
+            return
+        }
+        
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.background).async
+        { [weak self] in
+            
+            self?.strategyFound(strategy:strategy)
+        }
+    }
+    
+    private func strategyFound(strategy:MGridVisorDownloadProtocol)
+    {
+        strategy.apply()
+        destroyDownload()
+        
+        DispatchQueue.main.async
+        { [weak self] in
+            
+            self?.viewDownload.downloaded(model:strategy)
+        }
+    }
+    
+    private func destroyDownload()
     {
         guard
             

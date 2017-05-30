@@ -73,9 +73,8 @@ class MGridVisorDownloadEnergy:MGridVisorDownloadProtocol
         }
     }
     
-    func apply(controller:CGridVisorDownload)
+    func apply()
     {
         MSession.sharedInstance.settings?.energy?.addEnergy(energyAmount:energyAmount)
-        controller.destroyAid()
     }
 }

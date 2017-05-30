@@ -76,8 +76,7 @@ class MGridVisorDownloadStats:MGridVisorDownloadProtocol
         }
     }
     
-    func apply(controller:CGridVisorDownload)
+    func apply()
     {
-        controller.destroyAid()
     }
 }
