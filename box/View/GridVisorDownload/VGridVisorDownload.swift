@@ -5,13 +5,12 @@ class VGridVisorDownload:VView
     private weak var controller:CGridVisorDownload!
     private weak var layoutBaseTop:NSLayoutConstraint!
     private weak var layoutBaseLeft:NSLayoutConstraint!
-    private let kBaseSize:CGFloat = 200
+    private let kBaseSize:CGFloat = 160
     
     override init(controller:CController)
     {
         super.init(controller:controller)
         backgroundColor = UIColor.clear
-        isUserInteractionEnabled = false
         self.controller = controller as? CGridVisorDownload
         
         let viewBase:VGridVisorDownloadBase = VGridVisorDownloadBase()

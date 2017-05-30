@@ -4,7 +4,7 @@ class CGridVisorDownload:CController
 {
     private var modelTake:MGridVisorTake?
     private weak var model:MGridAlgoAidItem?
-    private(set) weak var viewTake:VGridVisorTake!
+    private(set) weak var viewDownload:VGridVisorDownload!
     
     init(model:MGridAlgoAidItem)
     {
@@ -52,9 +52,9 @@ class CGridVisorDownload:CController
     
     override func loadView()
     {
-        let viewTake:VGridVisorTake = VGridVisorTake(controller:self)
-        self.viewTake = viewTake
-        view = viewTake
+        let viewDownload:VGridVisorDownload = VGridVisorDownload(controller:self)
+        self.viewDownload = viewDownload
+        view = viewDownload
     }
     
     //MARK: public
