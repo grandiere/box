@@ -21,6 +21,7 @@ class CGridVisorTake:CController
     {
         super.viewDidAppear(animated)
         
+        /*
         if modelTake == nil
         {
             guard
@@ -44,7 +45,7 @@ class CGridVisorTake:CController
             }
             
             modelTake = MGridVisorTake(controller:self, model:model)
-        }
+        }*/
         
         parentController.viewParent.panRecognizer.isEnabled = false
     }
