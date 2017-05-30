@@ -23,22 +23,31 @@ class MGridVisorDownload
     private func strategyDownload()
     {
         let random:UInt32 = arc4random_uniform(kDifficultyStats)
-        let strategy:MGridVisorTakeProtocol
+        let strategy:MGridVisorDownloadProtocol?
         
         if random == 0
         {
-            strategy = MGridVisorTakeStats.factory()
+            strategy = MGridVisorDownloadStats.factory()
         }
         else
         {
-            strategy = MGridVisorTakeEnergy.factory()
+            guard
+            
+                let strategyEnergy:MGridVisorDownloadEnergy = MGridVisorDownloadEnergy.factory()
+            
+            else
+            {
+                return
+            }
+            
+            strategy = strategyEnergy
         }
         
         guard
             
             let controller:CGridVisorTake = self.controller
             
-            else
+        else
         {
             return
         }
@@ -46,9 +55,9 @@ class MGridVisorDownload
         strategy.apply(controller:controller)
         
         DispatchQueue.main.async
-            { [weak self] in
-                
-                self?.controller?.viewTake.aidDefined(model:strategy)
+        { [weak self] in
+            
+            self?.controller?.viewTake.aidDefined(model:strategy)
         }
     }
 }

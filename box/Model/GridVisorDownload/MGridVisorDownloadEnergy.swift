@@ -47,24 +47,23 @@ class MGridVisorDownloadEnergy:MGridVisorDownloadProtocol
         
         let amountAsNumber:NSNumber = energyAmount as NSNumber
         let amountString:String = String(
-            format:NSLocalizedString("MGridVisorTakeEnergy_stringValue", comment:""),
+            format:NSLocalizedString("MGridVisorDownloadEnergy_stringValue", comment:""),
             amountAsNumber)
         
         let stringValue:NSAttributedString = NSAttributedString(
             string:amountString,
             attributes:attributesValue)
         let stringName:NSAttributedString = NSAttributedString(
-            string:NSLocalizedString("MGridVisorTakeEnergy_stringName", comment:""),
+            string:NSLocalizedString("MGridVisorDownloadEnergy_stringName", comment:""),
             attributes:attributesName)
         
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         mutableString.append(stringValue)
         mutableString.append(stringName)
-        
         attributedString = mutableString
     }
     
-    //MARK: visorTake protocol
+    //MARK: download protocol
     
     var descr:NSAttributedString
     {
