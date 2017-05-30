@@ -2,7 +2,6 @@ import UIKit
 
 class CGridVisorDownload:CController
 {
-    private var modelTake:MGridVisorTake?
     private weak var model:MGridAlgoAidItem?
     private weak var viewDownload:VGridVisorDownload!
     
@@ -57,9 +56,9 @@ class CGridVisorDownload:CController
         view = viewDownload
     }
     
-    //MARK: public
+    //MARK: private
     
-    func destroyAid()
+    private func destroyAid()
     {
         guard
             
@@ -78,7 +77,7 @@ class CGridVisorDownload:CController
             object:model)
     }
     
-    func done()
+    private func done()
     {
         parentController.dismissAnimateOver(completion:nil)
     }

@@ -3,9 +3,12 @@ import UIKit
 class VGridVisorDownload:VView
 {
     private weak var controller:CGridVisorDownload!
+    private weak var viewBase:VGridVisorDownloadBase!
     private weak var layoutBaseTop:NSLayoutConstraint!
     private weak var layoutBaseLeft:NSLayoutConstraint!
     private let kBaseSize:CGFloat = 160
+    private let kDownloadedRadius:CGFloat = 8
+    private let kAnimationDuration:TimeInterval = 0.5
     
     override init(controller:CController)
     {
@@ -15,6 +18,7 @@ class VGridVisorDownload:VView
         
         let viewBase:VGridVisorDownloadBase = VGridVisorDownloadBase()
         viewBase.layer.cornerRadius = kBaseSize / 2.0
+        self.viewBase = viewBase
         
         addSubview(viewBase)
         
@@ -46,5 +50,23 @@ class VGridVisorDownload:VView
         layoutBaseLeft.constant = marginLeft
         
         super.layoutSubviews()
+    }
+    
+    //MARK: public
+    
+    func downloaded(model:MGridVisorDownloadProtocol)
+    {
+        let kDownloadedRadius:CGFloat = self.kDownloadedRadius
+        
+        UIView.animate(
+            withDuration:kAnimationDuration,
+        animations:
+        { [weak self] in
+            
+            self?.viewBase.layer.cornerRadius = kDownloadedRadius
+        })
+        { [weak self] (done:Bool) in
+            
+        }
     }
 }
