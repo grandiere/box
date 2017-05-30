@@ -6,46 +6,36 @@ class MGridVisorDownloadEnergy:MGridVisorDownloadProtocol
     private let attributedString:NSAttributedString
     private let kValueFontSize:CGFloat = 34
     private let kNameFontSize:CGFloat = 16
+    private static let kResourceName:String = "ResourceDownloadEnergy"
+    private static let kResourceExtension:String = "plist"
     
-    class func factory() -> MGridVisorDownloadEnergy
+    class func factory() -> MGridVisorDownloadEnergy?
     {
-        let energyLevel:MGridVisorDownloadEnergy
-        
-        let random:UInt32 = arc4random_uniform(11)
-        
-        switch random
+        guard
+            
+            let resourceEnergy:URL = Bundle.main.url(
+                forResource:kResourceName,
+                withExtension:kResourceExtension),
+            let energyArray:NSArray = NSArray(
+                contentsOf:resourceEnergy),
+            let energyList:[Int] = energyArray as? [Int]
+            
+        else
         {
-        case 1:
-            
-            energyLevel = MGridVisorTakeEnergy20()
-            
-            break
-            
-        case 2:
-            
-            energyLevel = MGridVisorTakeEnergy25()
-            
-            break
-            
-        case 3:
-            
-            energyLevel = MGridVisorTakeEnergy30()
-            
-            break
-            
-        default:
-            
-            energyLevel = MGridVisorTakeEnergy15()
-            
-            break
+            return nil
         }
+        
+        let countItems:UInt32 = UInt32(energyList.count)
+        let randomItem:Int = Int(arc4random_uniform(countItems))
+        let energyLevel:MGridVisorDownloadEnergy = MGridVisorDownloadEnergy(
+            energyAmount:randomItem)
         
         return energyLevel
     }
     
-    init(energyAmount:Int16)
+    private init(energyAmount:Int)
     {
-        self.energyAmount = energyAmount
+        self.energyAmount = Int16(energyAmount)
         
         let attributesValue:[String:AnyObject] = [
             NSFontAttributeName:UIFont.numeric(size:kValueFontSize),
