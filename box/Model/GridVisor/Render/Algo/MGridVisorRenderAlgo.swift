@@ -4,15 +4,12 @@ import MetalKit
 
 class MGridVisorRenderAlgo:MetalRenderableProtocol
 {
-    static let kMaxTarget:Float = 85
-    
     var userHeading:Float
     var moveVertical:Float
     weak var render:MGridVisorRender!
     private weak var textureLoader:MTKTextureLoader!
     private weak var device:MTLDevice!
-    private(set) var items:[MGridVisorRenderAlgoItem]
-    private var removeAlgoItems:[MGridAlgoItem]
+    private(set) var items:[MGridAlgoItem]
     private let textures:MGridVisorRenderTextures
     private let vertexes:MGridVisorRenderVertexes
     
@@ -62,7 +59,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     private func renderPositionedItem(
         manager:MetalRenderManager,
         rotationBuffer:MTLBuffer,
-        positioned:MGridVisorRenderAlgoItemPositioned)
+        positioned:MGridVisorRenderAlgoItem)
     {
         guard
             
@@ -84,55 +81,47 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             texture:texture)
     }
     
-    private func validate(item:MGridVisorRenderAlgoItem) -> MGridVisorRenderAlgoItem?
+    private func cleanRemoveitems()
     {
-        var validItem:MGridVisorRenderAlgoItem? = item
-        let algo:MGridAlgoItem = item.model
-        
-        let currentRemoveItems:[MGridAlgoItem] = self.removeAlgoItems
-        var removeAlgoItems:[MGridAlgoItem] = []
-        
-        for removeItem:MGridAlgoItem in currentRemoveItems
+        for removeItem:MGridAlgoItem in removeAlgoItems
         {
-            if removeItem === algo
+            let countItems:Int = items.count
+            
+            for indexItem:Int in 0 ..< countItems
             {
-                validItem = nil
-            }
-            else
-            {
-                removeAlgoItems.append(removeItem)
+                let item:MGridAlgoItem = items[indexItem]
+                
+                if item === removeItem
+                {
+                    items.remove(at:indexItem)
+                    
+                    break
+                }
             }
         }
         
-        self.removeAlgoItems = removeAlgoItems
-        
-        return validItem
+        removeAlgoItems = []
     }
     
     //MARK: public
     
     func renderAlgoList(nearItems:[MGridAlgoItem])
     {
-        var items:[MGridVisorRenderAlgoItem] = []
+        var items:[MGridAlgoItem] = []
         
         for nearItem:MGridAlgoItem in nearItems
         {
             guard
                 
                 let multipliedHeading:Float = render.controller.orientation?.normalHeading(
-                    rawHeading:nearItem.heading),
-                let item:MGridVisorRenderAlgoItem = MGridVisorRenderAlgoItem(
-                    device:device,
-                    textureLoader:textureLoader,
-                    model:nearItem)
-            
+                    rawHeading:nearItem.heading)
             else
             {
                 continue
             }
             
             nearItem.multipliedHeading = multipliedHeading
-            items.append(item)
+            items.append(nearItem)
         }
         
         self.items = items
@@ -160,14 +149,14 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             return
         }
         
-        var items:[MGridVisorRenderAlgoItem] = []
-        var targeted:MGridVisorRenderAlgoItemPositioned?
+        var items:[MGridAlgoItem] = []
+        var targeted:MGridVisorRenderAlgoItem?
         
-        for item:MGridVisorRenderAlgoItem in self.items
+        for item:MGridAlgoItem in self.items
         {
             guard
                 
-                let validItem:MGridVisorRenderAlgoItem = validate(item:item)
+                let validItem:MGridAlgoItem = validate(item:item)
             
             else
             {
@@ -175,7 +164,6 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             }
             
             items.append(validItem)
-            validItem.modeStandBy()
             
             guard
                 
