@@ -12,6 +12,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     private(set) var items:[String:MGridAlgoItem]
     private let textures:MGridVisorRenderTextures
     private let vertexes:MGridVisorRenderVertexes
+    private let kMaxTarget:Float = 85
     
     init(
         device:MTLDevice,
@@ -116,84 +117,47 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         {
             return
         }
-        
-        guard
-            
-            let orientation:MGridVisorOrientation = render.controller.orientation
-        
-        else
-        {
-            return
-        }
-        
+
+        let orientation:MGridVisorOrientationProtocol = render.controller.orientation
         var targeted:MGridVisorRenderAlgoItem?
         let items:[MGridAlgoItem] = Array(self.items.values)
         
         for item:MGridAlgoItem in items
-        {   
-            guard
-                
-                let positioned:MGridVisorRenderAlgoItem = MGridVisorRenderAlgoItem(
-                    orientation:orientation,
-                    model:item,
-                    userHeading:userHeading,
-                    moveVertical:moveVertical)
+        {
+            let position:MetalPosition = orientation.itemPosition(
+                userHeading:userHeading,
+                moveVertical:moveVertical,
+                itemHeading:item.multipliedHeading)
+            let positioned:MGridVisorRenderAlgoItem = MGridVisorRenderAlgoItem(
+                model:item,
+                position:position)
             
-            else
+            if let currentTargeted:MGridVisorRenderAlgoItem = targeted
             {
-                return
-            }
-            
-            if let deltaPosition:Float = positioned.deltaPosition
-            {
-                if let currentTargeted:MGridVisorRenderAlgoItem = targeted
+                if positioned.deltaPosition < currentTargeted.deltaPosition
                 {
-                    if let currentDelta:Float = currentTargeted.deltaPosition
-                    {
-                        if deltaPosition < currentDelta
-                        {
-                            renderPositionedItem(
-                                manager:manager,
-                                rotationBuffer:rotationBuffer,
-                                positioned:currentTargeted)
-                            
-                            targeted = positioned
-                        }
-                        else
-                        {
-                            renderPositionedItem(
-                                manager:manager,
-                                rotationBuffer:rotationBuffer,
-                                positioned:positioned)
-                        }
-                    }
-                }
-                else
-                {
+                    renderPositionedItem(
+                        manager:manager,
+                        rotationBuffer:rotationBuffer,
+                        positioned:currentTargeted)
+                    
                     targeted = positioned
                 }
             }
             else
             {
-                renderPositionedItem(
-                    manager:manager,
-                    rotationBuffer:rotationBuffer,
-                    positioned:positioned)
+                targeted = positioned
             }
         }
         
-        self.items = items
-        
-        if let targeted:MGridVisorRenderAlgoItemPositioned = targeted
+        if let currentTargeted:MGridVisorRenderAlgoItem = targeted
         {
-            targeted.item.modeTargeted()
-            
             renderPositionedItem(
                 manager:manager,
                 rotationBuffer:rotationBuffer,
-                positioned:targeted)
+                positioned:currentTargeted)
             
-            render.controller.targeting = targeted.item.model
+            render.controller.targeting = currentTargeted.model
         }
         else
         {
