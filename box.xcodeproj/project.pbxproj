@@ -319,8 +319,8 @@
 		DAA1131A1EDF0F8D006D8F63 /* MGridVisorRenderTexturesVirusFoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA113191EDF0F8D006D8F63 /* MGridVisorRenderTexturesVirusFoe.swift */; };
 		DAA1131C1EDF105A006D8F63 /* MGridVisorRenderTexturesVirusFriendly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA1131B1EDF105A006D8F63 /* MGridVisorRenderTexturesVirusFriendly.swift */; };
 		DAA1131E1EDF4C90006D8F63 /* MGridVisorOrientationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA1131D1EDF4C90006D8F63 /* MGridVisorOrientationProtocol.swift */; };
-		DAA113201EDF7C2E006D8F63 /* MetalTextureProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA1131F1EDF7C2E006D8F63 /* MetalTextureProtocol.swift */; };
 		DAA113221EDF7D1D006D8F63 /* MetalTextureRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA113211EDF7D1D006D8F63 /* MetalTextureRandom.swift */; };
+		DAA113241EDF8236006D8F63 /* MetalTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA113231EDF8236006D8F63 /* MetalTexture.swift */; };
 		DAAEA2D71EAC4CE300986612 /* MStatsItemVirusReleased.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAEA2D61EAC4CE300986612 /* MStatsItemVirusReleased.swift */; };
 		DACADD4D1ED4DCAB00ED2F94 /* VGridVisorBarBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACADD4C1ED4DCAB00ED2F94 /* VGridVisorBarBack.swift */; };
 		DAE2657C1ED016AE00E886F8 /* MGridItemHarvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE2657B1ED016AE00E886F8 /* MGridItemHarvest.swift */; };
@@ -677,8 +677,8 @@
 		DAA113191EDF0F8D006D8F63 /* MGridVisorRenderTexturesVirusFoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderTexturesVirusFoe.swift; sourceTree = "<group>"; };
 		DAA1131B1EDF105A006D8F63 /* MGridVisorRenderTexturesVirusFriendly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorRenderTexturesVirusFriendly.swift; sourceTree = "<group>"; };
 		DAA1131D1EDF4C90006D8F63 /* MGridVisorOrientationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGridVisorOrientationProtocol.swift; sourceTree = "<group>"; };
-		DAA1131F1EDF7C2E006D8F63 /* MetalTextureProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureProtocol.swift; sourceTree = "<group>"; };
 		DAA113211EDF7D1D006D8F63 /* MetalTextureRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTextureRandom.swift; sourceTree = "<group>"; };
+		DAA113231EDF8236006D8F63 /* MetalTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalTexture.swift; sourceTree = "<group>"; };
 		DAAEA2D61EAC4CE300986612 /* MStatsItemVirusReleased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MStatsItemVirusReleased.swift; sourceTree = "<group>"; };
 		DAC3362A1E9D20EE0022D7ED /* box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = box.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC336391E9D20EE0022D7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1390,7 +1390,7 @@
 				DA87C4721ED5ED4300501EDC /* MetalRenderableProtocol.swift */,
 				DA87C49B1ED5EDDC00501EDC /* MetalColour.swift */,
 				DA87C49D1ED5F7B200501EDC /* MetalRenderManager.swift */,
-				DAA1131F1EDF7C2E006D8F63 /* MetalTextureProtocol.swift */,
+				DAA113231EDF8236006D8F63 /* MetalTexture.swift */,
 				DA87C4A11ED60B1900501EDC /* MetalTextureSequence.swift */,
 				DAA113211EDF7D1D006D8F63 /* MetalTextureRandom.swift */,
 			);
@@ -2004,6 +2004,7 @@
 				DA906F5E1EDCB8CD0055AB86 /* MGridVisorMatchAnimation.swift in Sources */,
 				DA823A071ED722F900BF3B84 /* CHandler.swift in Sources */,
 				DA823A481ED750A000BF3B84 /* MGridAlgoHostileVirusFoeItem.swift in Sources */,
+				DAA113241EDF8236006D8F63 /* MetalTexture.swift in Sources */,
 				DA1D49B81EAA49C200C2392C /* MLandingItemBoards.swift in Sources */,
 				DA87C4911ED5ED4300501EDC /* MetalRotation.swift in Sources */,
 				DA49A8291EBAA7B500C03ECD /* FDbAlgoHostileVirusItem.swift in Sources */,
@@ -2262,7 +2263,6 @@
 				DA8C06F71EC64F56000DF6D4 /* MHelpSkillsAids.swift in Sources */,
 				DA823A061ED722F900BF3B84 /* CBoards.swift in Sources */,
 				DA098E6D1ECE3C9100FD500E /* MBoardsSortScore.swift in Sources */,
-				DAA113201EDF7C2E006D8F63 /* MetalTextureProtocol.swift in Sources */,
 				DAA113221EDF7D1D006D8F63 /* MetalTextureRandom.swift in Sources */,
 				DA15659F1EDBBA8C004FB820 /* VGridVisorMatchBaseButton.swift in Sources */,
 				DA22F3D31EA2F30800F6ED91 /* VGrid.swift in Sources */,

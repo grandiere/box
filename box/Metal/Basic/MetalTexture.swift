@@ -1,13 +1,13 @@
 import UIKit
 import MetalKit
 
-class MetalTextureSequence:MetalTextureProtocol
+class MetalTexture
 {
+    let totalFrames:Int
     private var currentFrame:Int
     private var frameTick:Int
     private let frames:[MTLTexture]
     private let ticksPerFrame:Int
-    private let totalFrames:Int
     
     init(
         ticksPerFrame:Int,
@@ -38,7 +38,21 @@ class MetalTextureSequence:MetalTextureProtocol
         totalFrames = frames.count
     }
     
-    func current() -> MTLTexture?
+    //MARK: public
+    
+    func changeFrame()
+    {
+        currentFrame += 1
+        
+        if currentFrame >= totalFrames
+        {
+            currentFrame = 0
+        }
+    }
+    
+    //MARK final
+    
+    final func current() -> MTLTexture?
     {
         if totalFrames < 1
         {
@@ -50,13 +64,7 @@ class MetalTextureSequence:MetalTextureProtocol
         if frameTick >= ticksPerFrame
         {
             frameTick = 0
-            
-            currentFrame += 1
-            
-            if currentFrame >= totalFrames
-            {
-                currentFrame = 0
-            }
+            changeFrame()
         }
         
         let texture:MTLTexture = frames[currentFrame]
@@ -64,7 +72,7 @@ class MetalTextureSequence:MetalTextureProtocol
         return texture
     }
     
-    func restart()
+    final func restart()
     {
         currentFrame = 0
         frameTick = 0
