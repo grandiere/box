@@ -3,7 +3,7 @@ import MetalKit
 
 class MGridVisorRenderTexturesBug:MetalTextureRandom
 {
-    private let kTicksPerFrame:Int = 5
+    private let kTicksPerFrame:Int = 60
     
     init(textureLoader:MTKTextureLoader)
     {

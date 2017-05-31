@@ -42,12 +42,6 @@ class MetalTexture
     
     func changeFrame()
     {
-        currentFrame += 1
-        
-        if currentFrame >= totalFrames
-        {
-            currentFrame = 0
-        }
     }
     
     //MARK final
