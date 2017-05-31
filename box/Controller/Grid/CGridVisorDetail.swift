@@ -38,34 +38,4 @@ class CGridVisorDetail:CController
     {
         parentController.pop(vertical:CParent.TransitionVertical.fromBottom)
     }
-    
-    func enterMach()
-    {
-        guard
-            
-            let model:MGridAlgoHostileItem = self.model as? MGridAlgoHostileItem
-        
-        else
-        {
-            return
-        }
-        
-        let controllerMatch:CGridVisorMatch = CGridVisorMatch(model:model)
-        parentController.animateOver(controller:controllerMatch)
-    }
-    
-    func enterTake()
-    {
-        guard
-            
-            let model:MGridAlgoAidItem = self.model as? MGridAlgoAidItem
-            
-        else
-        {
-            return
-        }
-        
-        let controllerTake:CGridVisorTake = CGridVisorTake(model:model)
-        parentController.animateOver(controller:controllerTake)
-    }
 }
