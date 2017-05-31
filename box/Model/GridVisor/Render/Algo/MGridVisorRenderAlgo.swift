@@ -56,21 +56,13 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     
     //MARK: private
     
-    private func renderPositionedItem(
+    private func renderItem(
         manager:MetalRenderManager,
+        texture:MTLTexture,
+        position:MetalPosition,
         rotationBuffer:MTLBuffer,
-        positioned:MGridVisorRenderAlgoItem)
-    {
-        guard
-            
-            let texture:MTLTexture = positioned.item.currentTexture,
-            let vertex:MTLBuffer = positioned.item.currentVertex?.vertexBuffer
-        
-        else
-        {
-            return
-        }
-        
+        vertex:MTLBuffer)
+    {   
         let positionBuffer:MTLBuffer = device.generateBuffer(
             bufferable:positioned.position)
         
