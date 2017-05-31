@@ -157,7 +157,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             
             if let currentTargeted:MGridVisorRenderAlgoItem = targeted
             {
-                if positioned.deltaPosition < currentTargeted.deltaPosition
+                if positioned.deltaHorizontal < currentTargeted.deltaHorizontal
                 {
                     renderStandby(
                         manager:manager,
@@ -182,7 +182,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         
         if let currentTargeted:MGridVisorRenderAlgoItem = targeted
         {
-            if currentTargeted.deltaPosition < kMaxTarget
+            if currentTargeted.deltaHorizontal < kMaxTarget && currentTargeted.deltaVertical < kMaxTarget
             {
                 renderTargeted(
                     manager:manager,

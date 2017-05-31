@@ -4,7 +4,8 @@ import MetalKit
 class MGridVisorRenderAlgoItem
 {
     let position:MetalPosition
-    let deltaPosition:Float
+    let deltaHorizontal:Float
+    let deltaVertical:Float
     let positionBuffer:MTLBuffer
     private(set) weak var model:MGridAlgoItem!
     
@@ -15,7 +16,9 @@ class MGridVisorRenderAlgoItem
     {
         self.model = model
         self.position = position
-        deltaPosition = abs(position.positionX)
+        deltaHorizontal = abs(position.positionX)
+        deltaVertical = abs(position.positionY)
+        
         positionBuffer = device.generateBuffer(
             bufferable:position)
     }
