@@ -1,9 +1,9 @@
 import UIKit
 import MetalKit
 
-class MGridVisorRenderTexturesBug:MetalTextureSequence
+class MGridVisorRenderTexturesBug:MetalTextureRandom
 {
-    private let kTicksPerFrame:Int = 50
+    private let kTicksPerFrame:Int = 5
     
     init(textureLoader:MTKTextureLoader)
     {

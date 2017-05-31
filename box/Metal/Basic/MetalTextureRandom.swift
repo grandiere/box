@@ -7,7 +7,7 @@ class MetalTextureRandom:MetalTextureProtocol
     private var frameTick:Int
     private let frames:[MTLTexture]
     private let ticksPerFrame:Int
-    private let totalFrames:Int
+    private let totalFrames:UInt32
     
     init(
         ticksPerFrame:Int,
@@ -26,7 +26,7 @@ class MetalTextureRandom:MetalTextureProtocol
                 
                 let texture:MTLTexture = textureLoader.loadImage(image:image)
                 
-                else
+            else
             {
                 continue
             }
@@ -35,7 +35,7 @@ class MetalTextureRandom:MetalTextureProtocol
         }
         
         self.frames = frames
-        totalFrames = frames.count
+        totalFrames = UInt32(frames.count)
     }
     
     func current() -> MTLTexture?
@@ -51,24 +51,12 @@ class MetalTextureRandom:MetalTextureProtocol
         {
             frameTick = 0
             
-            currentFrame += 1
-            
-            if currentFrame >= totalFrames
-            {
-                currentFrame = 0
-            }
+            let randomFrame:UInt32 = arc4random_uniform(totalFrames)
+            currentFrame = Int(randomFrame)
         }
         
         let texture:MTLTexture = frames[currentFrame]
         
         return texture
-    }
-    
-    //MARK: final
-    
-    final func restart()
-    {
-        currentFrame = 0
-        frameTick = 0
     }
 }
