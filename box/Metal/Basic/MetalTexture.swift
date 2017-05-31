@@ -4,7 +4,7 @@ import MetalKit
 class MetalTexture
 {
     let totalFrames:Int
-    private var currentFrame:Int
+    var currentFrame:Int
     private var frameTick:Int
     private let frames:[MTLTexture]
     private let ticksPerFrame:Int

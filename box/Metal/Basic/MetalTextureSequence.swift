@@ -1,72 +1,15 @@
 import UIKit
 import MetalKit
 
-class MetalTextureSequence:MetalTextureProtocol
+class MetalTextureSequence:MetalTexture
 {
-    private var currentFrame:Int
-    private var frameTick:Int
-    private let frames:[MTLTexture]
-    private let ticksPerFrame:Int
-    private let totalFrames:Int
-    
-    init(
-        ticksPerFrame:Int,
-        images:[UIImage],
-        textureLoader:MTKTextureLoader)
+    override func changeFrame()
     {
-        self.ticksPerFrame = ticksPerFrame
-        currentFrame = 0
-        frameTick = 0
+        currentFrame += 1
         
-        var frames:[MTLTexture] = []
-        
-        for image:UIImage in images
+        if currentFrame >= totalFrames
         {
-            guard
-                
-                let texture:MTLTexture = textureLoader.loadImage(image:image)
-                
-            else
-            {
-                continue
-            }
-            
-            frames.append(texture)
+            currentFrame = 0
         }
-        
-        self.frames = frames
-        totalFrames = frames.count
-    }
-    
-    func current() -> MTLTexture?
-    {
-        if totalFrames < 1
-        {
-            return nil
-        }
-        
-        frameTick += 1
-        
-        if frameTick >= ticksPerFrame
-        {
-            frameTick = 0
-            
-            currentFrame += 1
-            
-            if currentFrame >= totalFrames
-            {
-                currentFrame = 0
-            }
-        }
-        
-        let texture:MTLTexture = frames[currentFrame]
-        
-        return texture
-    }
-    
-    func restart()
-    {
-        currentFrame = 0
-        frameTick = 0
     }
 }
