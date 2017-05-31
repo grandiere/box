@@ -1,25 +1,25 @@
 import Foundation
 
-class MGridVisorOrientationLandscapeLeft:MGridVisorOrientation
+class MGridVisorOrientationLandscapeLeft:MGridVisorOrientationProtocol
 {
-    override func itemPosition(
+    func itemPosition(
         userHeading:Float,
         moveVertical:Float,
-        itemHeading:Float) -> MetalPosition?
+        itemHeading:Float) -> MetalPosition
     {
         let normalUserHeading:Float
         
-        if (itemHeading < kItemMaxThreshold) && (userHeading < 0 && userHeading > kMinThreshold)
+        if (itemHeading < MGridVisorOrientation.kItemMaxThreshold) && (userHeading < 0 && userHeading > MGridVisorOrientation.kMinThreshold)
         {
-            normalUserHeading = userHeading * kHorizontalMultiplier
+            normalUserHeading = userHeading * MGridVisorOrientation.kHorizontalMultiplier
         }
         else
         {
-            normalUserHeading = normalHeading(rawHeading:userHeading)
+            normalUserHeading = MGridVisorOrientation.normalHeading(rawHeading:userHeading)
         }
         
         let positionY:Float = normalUserHeading - itemHeading
-        let positionX:Float = moveVertical / kVerticalDivider
+        let positionX:Float = moveVertical / MGridVisorOrientation.kVerticalDivider
         
         let position:MetalPosition = MetalPosition(
             positionX:positionX,
