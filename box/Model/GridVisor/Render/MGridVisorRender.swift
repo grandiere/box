@@ -14,6 +14,8 @@ class MGridVisorRender:MetalRenderableProtocol
     private let cIContext:CIContext
     private let textureLoader:MTKTextureLoader
     private let projection:MetalProjection
+    private let textures:MGridVisorRenderTextures
+    private let vertexes:MGridVisorRenderVertexes
     
     init(
         controller:CGridVisor,
