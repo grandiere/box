@@ -69,20 +69,14 @@ class MGridAlgoAidItem:MGridAlgoItem
     
     //MARK: render protocol
     
-    override var textureStandby:UIImage?
+    override func textureStandby(textures:MGridVisorRenderTextures) -> MTLTexture?
     {
-        get
-        {
-            return #imageLiteral(resourceName: "assetTextureAidStandBy")
-        }
+        return textures.standbyAid
     }
     
-    override var textureTargeted:UIImage?
+    override func textureTargeted(textures:MGridVisorRenderTextures) -> MTLTexture?
     {
-        get
-        {
-            return #imageLiteral(resourceName: "assetTextureTarget00")
-        }
+        return textures.targetedAid.current()
     }
     
     override var overlayColour:UIColor

@@ -78,20 +78,14 @@ class MGridAlgoHostileBugItem:MGridAlgoHostileItem
     
     //MARK: render protocol
     
-    override var textureStandby:UIImage?
+    override func textureStandby(textures:MGridVisorRenderTextures) -> MTLTexture?
     {
-        get
-        {
-            return #imageLiteral(resourceName: "assetTextureBugStandBy")
-        }
+        return textures.standbyBug
     }
     
-    override var textureTargeted:UIImage?
+    override func textureTargeted(textures:MGridVisorRenderTextures) -> MTLTexture?
     {
-        get
-        {
-            return #imageLiteral(resourceName: "assetTextureBugTargeted")
-        }
+        return textures.targetedBug.current()
     }
     
     override var overlayColour:UIColor

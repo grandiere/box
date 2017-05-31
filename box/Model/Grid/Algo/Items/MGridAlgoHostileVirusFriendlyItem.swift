@@ -55,20 +55,14 @@ class MGridAlgoHostileVirusFriendlyItem:MGridAlgoHostileVirusItem
     
     //MARK: render protocol
     
-    override var textureStandby:UIImage?
+    override func textureStandby(textures:MGridVisorRenderTextures) -> MTLTexture?
     {
-        get
-        {
-            return #imageLiteral(resourceName: "assetTextureVirusFriendlyStandBy")
-        }
+        return textures.standbyVirusFriendly
     }
     
-    override var textureTargeted:UIImage?
+    override func textureTargeted(textures:MGridVisorRenderTextures) -> MTLTexture?
     {
-        get
-        {
-            return #imageLiteral(resourceName: "assetTextureVirusFriendlyTargeted")
-        }
+        return textures.targetedVirusFriendly.current()
     }
     
     override var overlayColour:UIColor

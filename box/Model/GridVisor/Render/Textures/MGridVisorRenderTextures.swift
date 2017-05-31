@@ -32,4 +32,14 @@ class MGridVisorRenderTextures
         targetedVirusFriendly = MGridVisorRenderTexturesVirusFriendly(
             textureLoader:textureLoader)
     }
+    
+    //MARK: public
+    
+    func restart()
+    {
+        targetedAid.restart()
+        targetedBug.restart()
+        targetedVirusFoe.restart()
+        targetedVirusFriendly.restart()
+    }
 }

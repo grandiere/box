@@ -5,7 +5,6 @@ protocol MGridAlgoItemRenderProtocol
 {
     var overlayColour:UIColor { get }
     
-    func textureStandby(textures:MGridVisorRenderTextures) -> MTLTexture
-    func textureTargeted(textures:MGridVisorRenderTextures) -> MTLTexture
-    func restartTargetedSequence(textures:MGridVisorRenderTextures)
+    func textureStandby(textures:MGridVisorRenderTextures) -> MTLTexture?
+    func textureTargeted(textures:MGridVisorRenderTextures) -> MTLTexture?
 }

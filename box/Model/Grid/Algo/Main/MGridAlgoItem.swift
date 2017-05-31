@@ -184,20 +184,14 @@ class MGridAlgoItem:
     
     //MARK: render protocol
     
-    var textureStandby:UIImage?
+    func textureStandby(textures:MGridVisorRenderTextures) -> MTLTexture?
     {
-        get
-        {
-            return nil
-        }
+        return nil
     }
     
-    var textureTargeted:UIImage?
+    func textureTargeted(textures:MGridVisorRenderTextures) -> MTLTexture?
     {
-        get
-        {
-            return nil
-        }
+        return nil
     }
     
     var overlayColour:UIColor

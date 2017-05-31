@@ -75,13 +75,20 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         item:MGridVisorRenderAlgoItem,
         rotation:MTLBuffer)
     {
+        guard
+            
+            let texture:MTLTexture = item.model.textureStandby(textures:textures)
+        
+        else
+        {
+            return
+        }
+        
         manager.renderSimple(
-            vertex:vertex,
-            position:positionBuffer,
-            rotation:rotationBuffer,
+            vertex:vertexes.vertexStandby,
+            position:item.positionBuffer,
+            rotation:rotation,
             texture:texture)
-        
-        
     }
     
     private func renderTargeted(
@@ -91,13 +98,22 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     {
         if render.controller.targeting !== item.model
         {
+            textures.restart()
+        }
+        
+        guard
             
+            let texture:MTLTexture = item.model.textureTargeted(textures:textures)
+            
+        else
+        {
+            return
         }
         
         manager.renderSimple(
-            vertex:vertex,
-            position:positionBuffer,
-            rotation:rotationBuffer,
+            vertex:vertexes.vertexTargeted,
+            position:item.positionBuffer,
+            rotation:rotation,
             texture:texture)
         
         render.controller.targeting = item.model
