@@ -3,8 +3,8 @@ import MetalKit
 
 class MGridVisorRenderVertexes
 {
-    let vertexStandby:MetalSpatialShapeSquare
-    let vertexTargeted:MetalSpatialShapeSquare
+    let vertexStandby:MTLBuffer
+    let vertexTargeted:MTLBuffer
     
     init(device:MTLDevice)
     {
@@ -15,13 +15,16 @@ class MGridVisorRenderVertexes
         let targetedWidth:Float = Float(imageTargeted.size.width)
         let targetedHeight:Float = Float(imageTargeted.size.height)
         
-        vertexStandby = MetalSpatialShapeSquarePositive(
+        let standBy:MetalSpatialShapeSquarePositive = MetalSpatialShapeSquarePositive(
             device:device,
             width:standbyWidth,
             height:standbyHeight)
-        vertexTargeted = MetalSpatialShapeSquarePositive(
+        let targeted:MetalSpatialShapeSquarePositive = MetalSpatialShapeSquarePositive(
             device:device,
             width:targetedWidth,
             height:targetedHeight)
+        
+        vertexStandby = standBy.vertexBuffer
+        vertexTargeted = targeted.vertexBuffer
     }
 }
