@@ -22,6 +22,8 @@ class MGridVisorRender:MetalRenderableProtocol
         device:MTLDevice)
     {
         textureLoader = MTKTextureLoader(device:device)
+        textures = MGridVisorRenderTextures(textureLoader:textureLoader)
+        vertexes = MGridVisorRenderVertexes(device:device)
         
         cIContext = CIContext(mtlDevice:device)
         background = MGridVisorRenderBackground(device:device)
