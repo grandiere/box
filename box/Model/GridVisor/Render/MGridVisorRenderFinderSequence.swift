@@ -20,8 +20,7 @@ class MGridVisorRenderFinderSequence:MetalTextureSequence
             #imageLiteral(resourceName: "assetTextureTarget09"),
             #imageLiteral(resourceName: "assetTextureTarget10"),
             #imageLiteral(resourceName: "assetTextureTarget11"),
-            #imageLiteral(resourceName: "assetTextureTarget12")
-        ]
+            #imageLiteral(resourceName: "assetTextureTarget12")]
         
         super.init(
             ticksPerFrame:kTicksPerFrame,

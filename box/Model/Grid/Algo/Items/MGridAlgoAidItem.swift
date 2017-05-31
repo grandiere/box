@@ -81,7 +81,7 @@ class MGridAlgoAidItem:MGridAlgoItem
     {
         get
         {
-            return #imageLiteral(resourceName: "assetTextureAidTargeted")
+            return #imageLiteral(resourceName: "assetTextureTarget00")
         }
     }
     
