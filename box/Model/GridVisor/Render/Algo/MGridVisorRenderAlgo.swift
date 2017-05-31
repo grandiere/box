@@ -56,16 +56,21 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     
     //MARK: private
     
-    private func renderItem(
+    private func renderStandby(
         manager:MetalRenderManager,
-        texture:MTLTexture,
-        position:MetalPosition,
-        rotationBuffer:MTLBuffer,
-        vertex:MTLBuffer)
-    {   
-        let positionBuffer:MTLBuffer = device.generateBuffer(
-            bufferable:positioned.position)
-        
+        item:MGridVisorRenderAlgoItem)
+    {
+        manager.renderSimple(
+            vertex:vertex,
+            position:positionBuffer,
+            rotation:rotationBuffer,
+            texture:texture)
+    }
+    
+    private func renderTargeted(
+        manager:MetalRenderManager,
+        item:MGridVisorRenderAlgoItem)
+    {
         manager.renderSimple(
             vertex:vertex,
             position:positionBuffer,
@@ -121,6 +126,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
                 moveVertical:moveVertical,
                 itemHeading:item.multipliedHeading)
             let positioned:MGridVisorRenderAlgoItem = MGridVisorRenderAlgoItem(
+                device:device,
                 model:item,
                 position:position)
             
