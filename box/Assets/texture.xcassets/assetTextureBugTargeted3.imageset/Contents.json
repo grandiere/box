@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "assetTextureBugTargeted.png",
+      "filename" : "assetTextureBugTargeted3.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "assetTextureBugTargeted@2x.png",
+      "filename" : "assetTextureBugTargeted3@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "assetTextureBugTargeted@3x.png",
+      "filename" : "assetTextureBugTargeted3@3x.png",
       "scale" : "3x"
     }
   ],
