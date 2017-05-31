@@ -1,7 +1,7 @@
 import UIKit
 import MetalKit
 
-class MetalTextureSequence:MetalTextureProtocol
+class MetalTextureRandom:MetalTextureProtocol
 {
     private var currentFrame:Int
     private var frameTick:Int
@@ -26,7 +26,7 @@ class MetalTextureSequence:MetalTextureProtocol
                 
                 let texture:MTLTexture = textureLoader.loadImage(image:image)
                 
-            else
+                else
             {
                 continue
             }
