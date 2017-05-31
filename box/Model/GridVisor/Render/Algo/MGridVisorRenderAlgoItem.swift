@@ -3,7 +3,7 @@ import Foundation
 class MGridVisorRenderAlgoItem
 {
     let position:MetalPosition
-    let deltaPosition:Float?
+    let deltaPosition:Float
     private(set) weak var model:MGridAlgoItem!
     private let kMaxTarget:Float = 85
     
@@ -22,24 +22,13 @@ class MGridVisorRenderAlgoItem
                 moveVertical:moveVertical,
                 itemHeading:itemHeading)
             
-            else
+        else
         {
             return nil
         }
         
         self.model = model
         self.position = position
-        
-        let absoluteX:Float = abs(position.positionX)
-        let absoluteY:Float = abs(position.positionY)
-        
-        if absoluteX < kMaxTarget && absoluteY < kMaxTarget
-        {
-            deltaPosition = absoluteX
-        }
-        else
-        {
-            deltaPosition = nil
-        }
+        deltaPosition = abs(position.positionX)
     }
 }

@@ -9,7 +9,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     weak var render:MGridVisorRender!
     private weak var textureLoader:MTKTextureLoader!
     private weak var device:MTLDevice!
-    private(set) var items:[MGridAlgoItem]
+    private(set) var items:[String:MGridAlgoItem]
     private let textures:MGridVisorRenderTextures
     private let vertexes:MGridVisorRenderVertexes
     
@@ -21,8 +21,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         self.textureLoader = textureLoader
         moveVertical = 0
         userHeading = 0
-        items = []
-        removeAlgoItems = []
+        items = [:]
         textures = MGridVisorRenderTextures(textureLoader:textureLoader)
         vertexes = MGridVisorRenderVertexes(device:device)
         
@@ -51,7 +50,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             return
         }
         
-        removeAlgoItems.append(algoItem)
+        items.removeValue(forKey:algoItem.firebaseId)
     }
     
     //MARK: private
@@ -81,33 +80,11 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             texture:texture)
     }
     
-    private func cleanRemoveitems()
-    {
-        for removeItem:MGridAlgoItem in removeAlgoItems
-        {
-            let countItems:Int = items.count
-            
-            for indexItem:Int in 0 ..< countItems
-            {
-                let item:MGridAlgoItem = items[indexItem]
-                
-                if item === removeItem
-                {
-                    items.remove(at:indexItem)
-                    
-                    break
-                }
-            }
-        }
-        
-        removeAlgoItems = []
-    }
-    
     //MARK: public
     
     func renderAlgoList(nearItems:[MGridAlgoItem])
     {
-        var items:[MGridAlgoItem] = []
+        var items:[String:MGridAlgoItem] = [:]
         
         for nearItem:MGridAlgoItem in nearItems
         {
@@ -121,7 +98,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             }
             
             nearItem.multipliedHeading = multipliedHeading
-            items.append(nearItem)
+            items[nearItem.firebaseId] = nearItem
         }
         
         self.items = items
@@ -149,27 +126,16 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             return
         }
         
-        var items:[MGridAlgoItem] = []
         var targeted:MGridVisorRenderAlgoItem?
+        let items:[MGridAlgoItem] = Array(self.items.values)
         
-        for item:MGridAlgoItem in self.items
-        {
+        for item:MGridAlgoItem in items
+        {   
             guard
                 
-                let validItem:MGridAlgoItem = validate(item:item)
-            
-            else
-            {
-                continue
-            }
-            
-            items.append(validItem)
-            
-            guard
-                
-                let positioned:MGridVisorRenderAlgoItemPositioned = MGridVisorRenderAlgoItemPositioned(
+                let positioned:MGridVisorRenderAlgoItem = MGridVisorRenderAlgoItem(
                     orientation:orientation,
-                    item:validItem,
+                    model:item,
                     userHeading:userHeading,
                     moveVertical:moveVertical)
             
@@ -180,7 +146,7 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
             
             if let deltaPosition:Float = positioned.deltaPosition
             {
-                if let currentTargeted:MGridVisorRenderAlgoItemPositioned = targeted
+                if let currentTargeted:MGridVisorRenderAlgoItem = targeted
                 {
                     if let currentDelta:Float = currentTargeted.deltaPosition
                     {
