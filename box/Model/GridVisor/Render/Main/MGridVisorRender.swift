@@ -14,16 +14,12 @@ class MGridVisorRender:MetalRenderableProtocol
     private let cIContext:CIContext
     private let textureLoader:MTKTextureLoader
     private let projection:MetalProjection
-    private let textures:MGridVisorRenderTextures
-    private let vertexes:MGridVisorRenderVertexes
     
     init(
         controller:CGridVisor,
         device:MTLDevice)
     {
         textureLoader = MTKTextureLoader(device:device)
-        textures = MGridVisorRenderTextures(textureLoader:textureLoader)
-        vertexes = MGridVisorRenderVertexes(device:device)
         
         cIContext = CIContext(mtlDevice:device)
         background = MGridVisorRenderBackground(device:device)

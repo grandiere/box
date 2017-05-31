@@ -13,6 +13,8 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     private weak var device:MTLDevice!
     private(set) var items:[MGridVisorRenderAlgoItem]
     private var removeAlgoItems:[MGridAlgoItem]
+    private let textures:MGridVisorRenderTextures
+    private let vertexes:MGridVisorRenderVertexes
     
     init(
         device:MTLDevice,
@@ -24,6 +26,8 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         userHeading = 0
         items = []
         removeAlgoItems = []
+        textures = MGridVisorRenderTextures(textureLoader:textureLoader)
+        vertexes = MGridVisorRenderVertexes(device:device)
         
         NotificationCenter.default.addObserver(
             self,
