@@ -1,68 +1,44 @@
-import UIKit
-import MetalKit
+import Foundation
 
 class MGridVisorRenderAlgoItem
 {
-    private let textureStandby:MTLTexture
-    private let textureTargeted:MTLTexture
-    private let vertexStandby:MetalSpatialShapeSquare
-    private let vertexTargeted:MetalSpatialShapeSquare
-    private(set) weak var currentTexture:MTLTexture?
-    private(set) weak var currentVertex:MetalSpatialBase?
     private(set) weak var model:MGridAlgoItem!
+    let position:MetalPosition
+    let deltaPosition:Float?
     
     init?(
-        device:MTLDevice,
-        textureLoader:MTKTextureLoader,
-        model:MGridAlgoItem)
+        orientation:MGridVisorOrientation,
+        model:MGridAlgoItem,
+        userHeading:Float,
+        moveVertical:Float)
     {
-        self.model = model
+        let itemHeading:Float = model.multipliedHeading
         
         guard
             
-            let imageStandby:UIImage = model.textureStandby,
-            let imageTargeted:UIImage = model.textureTargeted,
-            let textureStandby:MTLTexture = textureLoader.loadImage(
-                image:imageStandby),
-            let textureTargeted:MTLTexture = textureLoader.loadImage(
-                image:imageTargeted)
+            let position:MetalPosition = orientation.itemPosition(
+                userHeading:userHeading,
+                moveVertical:moveVertical,
+                itemHeading:itemHeading)
             
-        else
+            else
         {
             return nil
         }
         
-        self.textureStandby = textureStandby
-        self.textureTargeted = textureTargeted
+        self.model = model
+        self.position = position
         
-        let standbyWidth:Float = Float(imageStandby.size.width)
-        let standbyHeight:Float = Float(imageStandby.size.height)
-        let targetedWidth:Float = Float(imageTargeted.size.width)
-        let targetedHeight:Float = Float(imageTargeted.size.height)
+        let absoluteX:Float = abs(position.positionX)
+        let absoluteY:Float = abs(position.positionY)
         
-        vertexStandby = MetalSpatialShapeSquarePositive(
-            device:device,
-            width:standbyWidth,
-            height:standbyHeight)
-        vertexTargeted = MetalSpatialShapeSquarePositive(
-            device:device,
-            width:targetedWidth,
-            height:targetedHeight)
-        
-        modeStandBy()
-    }
-    
-    //MARK: public
-    
-    func modeStandBy()
-    {
-        currentTexture = textureStandby
-        currentVertex = vertexStandby
-    }
-    
-    func modeTargeted()
-    {
-        currentTexture = textureTargeted
-        currentVertex = vertexTargeted
+        if absoluteX < MGridVisorRenderAlgo.kMaxTarget && absoluteY < MGridVisorRenderAlgo.kMaxTarget
+        {
+            deltaPosition = absoluteX
+        }
+        else
+        {
+            deltaPosition = nil
+        }
     }
 }
