@@ -56,26 +56,51 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     
     //MARK: private
     
+    private func positionFor(item:MGridAlgoItem) -> MGridVisorRenderAlgoItem
+    {
+        let position:MetalPosition = render.controller.orientation.itemPosition(
+            userHeading:userHeading,
+            moveVertical:moveVertical,
+            itemHeading:item.multipliedHeading)
+        let positioned:MGridVisorRenderAlgoItem = MGridVisorRenderAlgoItem(
+            device:device,
+            model:item,
+            position:position)
+        
+        return positioned
+    }
+    
     private func renderStandby(
         manager:MetalRenderManager,
-        item:MGridVisorRenderAlgoItem)
+        item:MGridVisorRenderAlgoItem,
+        rotation:MTLBuffer)
     {
         manager.renderSimple(
             vertex:vertex,
             position:positionBuffer,
             rotation:rotationBuffer,
             texture:texture)
+        
+        
     }
     
     private func renderTargeted(
         manager:MetalRenderManager,
-        item:MGridVisorRenderAlgoItem)
+        item:MGridVisorRenderAlgoItem,
+        rotation:MTLBuffer)
     {
+        if render.controller.targeting !== item.model
+        {
+            
+        }
+        
         manager.renderSimple(
             vertex:vertex,
             position:positionBuffer,
             rotation:rotationBuffer,
             texture:texture)
+        
+        render.controller.targeting = item.model
     }
     
     //MARK: public
@@ -86,16 +111,8 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         
         for nearItem:MGridAlgoItem in nearItems
         {
-            guard
-                
-                let multipliedHeading:Float = render.controller.orientation?.normalHeading(
+            nearItem.multipliedHeading = MGridVisorOrientation.normalHeading(
                     rawHeading:nearItem.heading)
-            else
-            {
-                continue
-            }
-            
-            nearItem.multipliedHeading = multipliedHeading
             items[nearItem.firebaseId] = nearItem
         }
         
@@ -108,38 +125,37 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
     {
         guard
             
-            let rotationBuffer:MTLBuffer = render.rotationBuffer
+            let rotation:MTLBuffer = render.rotationBuffer
             
         else
         {
             return
         }
 
-        let orientation:MGridVisorOrientationProtocol = render.controller.orientation
         var targeted:MGridVisorRenderAlgoItem?
         let items:[MGridAlgoItem] = Array(self.items.values)
         
         for item:MGridAlgoItem in items
         {
-            let position:MetalPosition = orientation.itemPosition(
-                userHeading:userHeading,
-                moveVertical:moveVertical,
-                itemHeading:item.multipliedHeading)
-            let positioned:MGridVisorRenderAlgoItem = MGridVisorRenderAlgoItem(
-                device:device,
-                model:item,
-                position:position)
+            let positioned:MGridVisorRenderAlgoItem = positionFor(item:item)
             
             if let currentTargeted:MGridVisorRenderAlgoItem = targeted
             {
                 if positioned.deltaPosition < currentTargeted.deltaPosition
                 {
-                    renderPositionedItem(
+                    renderStandby(
                         manager:manager,
-                        rotationBuffer:rotationBuffer,
-                        positioned:currentTargeted)
+                        item:currentTargeted,
+                        rotation:rotation)
                     
                     targeted = positioned
+                }
+                else
+                {
+                    renderStandby(
+                        manager:manager,
+                        item:positioned,
+                        rotation:rotation)
                 }
             }
             else
@@ -150,12 +166,22 @@ class MGridVisorRenderAlgo:MetalRenderableProtocol
         
         if let currentTargeted:MGridVisorRenderAlgoItem = targeted
         {
-            renderPositionedItem(
-                manager:manager,
-                rotationBuffer:rotationBuffer,
-                positioned:currentTargeted)
-            
-            render.controller.targeting = currentTargeted.model
+            if currentTargeted.deltaPosition < kMaxTarget
+            {
+                renderTargeted(
+                    manager:manager,
+                    item:currentTargeted,
+                    rotation:rotation)
+            }
+            else
+            {
+                renderStandby(
+                    manager:manager,
+                    item:currentTargeted,
+                    rotation:rotation)
+                
+                render.controller.targeting = nil
+            }
         }
         else
         {
