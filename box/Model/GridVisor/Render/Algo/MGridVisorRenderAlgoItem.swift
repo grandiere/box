@@ -3,7 +3,6 @@ import MetalKit
 
 class MGridVisorRenderAlgoItem
 {
-    let position:MetalPosition
     let deltaHorizontal:Float
     let deltaVertical:Float
     let positionBuffer:MTLBuffer
@@ -15,7 +14,6 @@ class MGridVisorRenderAlgoItem
         position:MetalPosition)
     {
         self.model = model
-        self.position = position
         deltaHorizontal = abs(position.positionX)
         deltaVertical = abs(position.positionY)
         
