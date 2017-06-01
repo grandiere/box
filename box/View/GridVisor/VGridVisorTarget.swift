@@ -1,9 +1,8 @@
 import UIKit
 
-class VGridVisorTarget:UIView
+class VGridVisorTarget:UIButton
 {
     private weak var controller:CGridVisor!
-    private weak var viewFinder:VGridVisorTargetFinder!
     
     init(controller:CGridVisor)
     {
@@ -11,31 +10,11 @@ class VGridVisorTarget:UIView
         clipsToBounds = true
         backgroundColor = UIColor.clear
         translatesAutoresizingMaskIntoConstraints = false
-        self.controller = controller
-        
-        let button:UIButton = UIButton()
-        button.backgroundColor = UIColor.clear
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.clipsToBounds = true
-        button.addTarget(
+        addTarget(
             self,
             action:#selector(actionButton(sender:)),
             for:UIControlEvents.touchUpInside)
-        
-        let viewFinder:VGridVisorTargetFinder = VGridVisorTargetFinder(
-            controller:controller)
-        self.viewFinder = viewFinder
-        
-        addSubview(viewFinder)
-        addSubview(button)
-        
-        NSLayoutConstraint.equals(
-            view:button,
-            toView:self)
-        
-        NSLayoutConstraint.equals(
-            view:viewFinder,
-            toView:self)
+        self.controller = controller
     }
     
     required init?(coder:NSCoder)
@@ -57,16 +36,5 @@ class VGridVisorTarget:UIView
         }
         
         controller.showAlgoDetail(item:model)
-    }
-    
-    //MARK: public
-    
-    func update()
-    {
-        DispatchQueue.main.async
-        { [weak self] in
-            
-            self?.viewFinder.setNeedsDisplay()
-        }
     }
 }

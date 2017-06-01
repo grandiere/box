@@ -6,7 +6,8 @@ class VGridVisorMetal:MTKView
     private weak var controller:CGridVisor?
     private let samplerState:MTLSamplerState
     private let commandQueue:MTLCommandQueue
-    private let pipelineState:MTLRenderPipelineState
+    private let simplePipelineState:MTLRenderPipelineState
+    private let colourPipelineState:MTLRenderPipelineState
     
     init?(controller:CGridVisor)
     {
@@ -16,8 +17,10 @@ class VGridVisorMetal:MTKView
             let library:MTLLibrary = device.newDefaultLibrary(),
             let vertexFunction:MTLFunction = library.makeFunction(
                 name:MetalConstants.kVertexFunction),
-            let fragmentFunction:MTLFunction = library.makeFunction(
-                name:MetalConstants.kFragmentFunction)
+            let simpleFragmentFunction:MTLFunction = library.makeFunction(
+                name:MetalConstants.kFragmentFunctionSimple),
+            let colourFragmentFunction:MTLFunction = library.makeFunction(
+                name:MetalConstants.kFragmentFunctionColour)
             
         else
         {
@@ -39,24 +42,30 @@ class VGridVisorMetal:MTKView
         sampleDescriptor.normalizedCoordinates = MetalConstants.kSamplerNormalizedCoordinates
         samplerState = device.makeSamplerState(descriptor:sampleDescriptor)
         
-        let pipelineDescriptor:MTLRenderPipelineDescriptor = MTLRenderPipelineDescriptor()
-        pipelineDescriptor.vertexFunction = vertexFunction
-        pipelineDescriptor.fragmentFunction = fragmentFunction
+        let simplePipelineDescriptor:MTLRenderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        simplePipelineDescriptor.vertexFunction = vertexFunction
+        simplePipelineDescriptor.fragmentFunction = simpleFragmentFunction
+        MetalConstants.colorAttachmentConfig(pipelineDescriptor:simplePipelineDescriptor)
         
-        let colorAttachment:MTLRenderPipelineColorAttachmentDescriptor = pipelineDescriptor.colorAttachments[
-            MetalConstants.kColorAttachmentIndex]
-        colorAttachment.pixelFormat = MetalConstants.kPixelFormat
-        colorAttachment.isBlendingEnabled = MetalConstants.kBlendingEnabled
-        colorAttachment.rgbBlendOperation = MetalConstants.kRgbBlendOperation
-        colorAttachment.alphaBlendOperation = MetalConstants.kAlphaBlendOperation
-        colorAttachment.sourceRGBBlendFactor = MetalConstants.kSourceRgbBlendFactor
-        colorAttachment.sourceAlphaBlendFactor = MetalConstants.kSourceAlphaBlendFactor
-        colorAttachment.destinationRGBBlendFactor = MetalConstants.kDestinationRgbBlendFactor
-        colorAttachment.destinationAlphaBlendFactor = MetalConstants.kDestinationAlphaBlendFactor
+        let colourPipelineDescriptor:MTLRenderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        colourPipelineDescriptor.vertexFunction = vertexFunction
+        colourPipelineDescriptor.fragmentFunction = colourFragmentFunction
+        MetalConstants.colorAttachmentConfig(pipelineDescriptor:colourPipelineDescriptor)
         
         do
         {
-            try pipelineState = device.makeRenderPipelineState(descriptor:pipelineDescriptor)
+            try simplePipelineState = device.makeRenderPipelineState(
+                descriptor:simplePipelineDescriptor)
+        }
+        catch
+        {
+            return nil
+        }
+        
+        do
+        {
+            try colourPipelineState = device.makeRenderPipelineState(
+                descriptor:colourPipelineDescriptor)
         }
         catch
         {
@@ -65,7 +74,7 @@ class VGridVisorMetal:MTKView
         
         super.init(frame:CGRect.zero, device:device)
         backgroundColor = UIColor.clear
-        framebufferOnly = false
+        framebufferOnly = true
         clipsToBounds = true
         isUserInteractionEnabled = false
         translatesAutoresizingMaskIntoConstraints = false
@@ -83,10 +92,20 @@ class VGridVisorMetal:MTKView
     override func draw()
     {
         super.draw()
-        controller?.viewGridVisor.viewTarget.update()
         
         guard
             
+            let controller:CGridVisor = self.controller
+        
+        else
+        {
+            return
+        }
+        
+        controller.viewGridVisor.viewMenu.updateMenu()
+        
+        guard
+        
             let drawable:CAMetalDrawable = currentDrawable,
             let passDescriptor:MTLRenderPassDescriptor = currentRenderPassDescriptor
             
@@ -99,11 +118,16 @@ class VGridVisorMetal:MTKView
         let renderEncoder:MTLRenderCommandEncoder = commandBuffer.makeRenderCommandEncoder(
             descriptor:passDescriptor)
         renderEncoder.setCullMode(MTLCullMode.none)
-        renderEncoder.setRenderPipelineState(pipelineState)
         renderEncoder.setFragmentSamplerState(
             samplerState,
             at:MetalConstants.kFragmentSamplerIndex)
-        controller?.modelRender?.render(renderEncoder:renderEncoder)
+        
+        let renderManager:MetalRenderManager = MetalRenderManager(
+            renderEncoder:renderEncoder,
+            simplePipelineState:simplePipelineState,
+            colourPipelineState:colourPipelineState)
+        
+        controller.modelRender?.render(manager:renderManager)
         
         renderEncoder.endEncoding()
         commandBuffer.present(drawable)

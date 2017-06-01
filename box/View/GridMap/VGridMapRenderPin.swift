@@ -50,7 +50,7 @@ class VGridMapRenderPin:MKAnnotationView
         {
             guard
             
-                let image:UIImage = annotation.algo?.annotationImageOn()
+                let image:UIImage = annotation.algo?.annotationImageOn
             
             else
             {
@@ -63,7 +63,7 @@ class VGridMapRenderPin:MKAnnotationView
         {
             guard
             
-                let image:UIImage = annotation.algo?.annotationImageOff()
+                let image:UIImage = annotation.algo?.annotationImageOff
             
             else
             {

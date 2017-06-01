@@ -282,9 +282,12 @@ class MSession
     
     func updateHandler(handler:String)
     {
+        let firebaseHandler:FDbUserItemHandler = FDbUserItemHandler(handler:handler)
+        
         guard
             
-            let userPath:String = firebasePath()
+            let userPath:String = firebasePath(),
+            let handlerJson:Any = firebaseHandler.json()
             
         else
         {
@@ -296,7 +299,7 @@ class MSession
         let path:String = "\(userPath)/\(FDbUserItem.handler)"
         FMain.sharedInstance.db.updateChild(
             path:path,
-            json:handler)
+            json:handlerJson)
     }
     
     func releaseVirus(energyRequired:Int16)

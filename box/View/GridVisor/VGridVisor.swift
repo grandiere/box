@@ -4,14 +4,12 @@ class VGridVisor:VView
 {
     private(set) weak var viewMetal:VGridVisorMetal?
     private(set) weak var viewBar:VGridVisorBar!
-    private(set) weak var viewTarget:VGridVisorTarget!
-    private weak var layoutTargetTop:NSLayoutConstraint!
-    private weak var layoutTargetLeft:NSLayoutConstraint!
+    private(set) weak var viewMenu:VGridVisorMenu!
     private weak var spinner:VSpinner?
     private weak var controller:CGridVisor!
     private weak var previewLayer:CALayer?
-    private let kBarHeight:CGFloat = 50
-    private let kTargetSize:CGFloat = 220
+    private let kBarHeight:CGFloat = 70
+    private let kMenuHeight:CGFloat = 140
     
     override init(controller:CController)
     {
@@ -43,13 +41,13 @@ class VGridVisor:VView
             controller:self.controller)
         self.viewBar = viewBar
         
-        let viewTarget:VGridVisorTarget = VGridVisorTarget(
+        let viewMenu:VGridVisorMenu = VGridVisorMenu(
             controller:self.controller)
-        self.viewTarget = viewTarget
+        self.viewMenu = viewMenu
         
         addSubview(spinner)
         addSubview(viewBar)
-        addSubview(viewTarget)
+        addSubview(viewMenu)
         
         NSLayoutConstraint.topToBottom(
             view:spinner,
@@ -71,15 +69,15 @@ class VGridVisor:VView
             view:viewBar,
             toView:self)
         
-        layoutTargetTop = NSLayoutConstraint.topToTop(
-            view:viewTarget,
+        NSLayoutConstraint.bottomToBottom(
+            view:viewMenu,
             toView:self)
-        layoutTargetLeft = NSLayoutConstraint.leftToLeft(
-            view:viewTarget,
+        NSLayoutConstraint.height(
+            view:viewMenu,
+            constant:kMenuHeight)
+        NSLayoutConstraint.equalsHorizontal(
+            view:viewMenu,
             toView:self)
-        NSLayoutConstraint.size(
-            view:viewTarget,
-            constant:kTargetSize)
     }
     
     required init?(coder:NSCoder)
@@ -90,22 +88,6 @@ class VGridVisor:VView
     deinit
     {
         spinner?.stopAnimating()
-    }
-    
-    override func layoutSubviews()
-    {
-        previewLayer?.frame = bounds
-        
-        let width:CGFloat = bounds.maxX
-        let height:CGFloat = bounds.maxY
-        let remainWidth:CGFloat = width - kTargetSize
-        let remainHeight:CGFloat = height - kTargetSize
-        let marginLeft:CGFloat = remainWidth / 2.0
-        let marginTop:CGFloat = remainHeight / 2.0
-        layoutTargetTop.constant = marginTop
-        layoutTargetLeft.constant = marginLeft
-        
-        super.layoutSubviews()
     }
     
     //MARK: public

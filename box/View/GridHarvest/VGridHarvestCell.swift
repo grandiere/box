@@ -104,7 +104,7 @@ class VGridHarvestCell:UICollectionViewCell
     
     //MARK: public
     
-    func config(virus:MGridAlgoItemHostileVirusFriendly)
+    func config(virus:MGridAlgoHostileVirusFriendlyItem)
     {
         labelLevel.text = "\(virus.level)"
         labelKills.text = "\(virus.defeated)"

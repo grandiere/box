@@ -2,21 +2,21 @@ import UIKit
 
 class VGridCell:UICollectionViewCell
 {
+    private weak var model:MGridItem?
     private weak var imageView:UIImageView!
     private weak var label:UILabel!
     private let attributesTitle:[String:AnyObject]
     private let attributesSubtitle:[String:AnyObject]
     private let kImageWidth:CGFloat = 100
+    private let kLabelLeft:CGFloat = -9
     private let kLabelRight:CGFloat = 10
-    private let kAlphaNotSelected:CGFloat = 1
-    private let kAlphaSelected:CGFloat = 0.4
     
     override init(frame:CGRect)
     {
         attributesTitle = [
-            NSFontAttributeName:UIFont.bold(size:16)]
+            NSFontAttributeName:UIFont.bold(size:18)]
         attributesSubtitle = [
-            NSFontAttributeName:UIFont.regular(size:12)]
+            NSFontAttributeName:UIFont.regular(size:13)]
         
         super.init(frame:frame)
         clipsToBounds = true
@@ -27,6 +27,7 @@ class VGridCell:UICollectionViewCell
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         imageView.contentMode = UIViewContentMode.center
+        imageView.tintColor = UIColor.white
         self.imageView = imageView
         
         let label:UILabel = UILabel()
@@ -54,7 +55,8 @@ class VGridCell:UICollectionViewCell
             toView:self)
         NSLayoutConstraint.leftToRight(
             view:label,
-            toView:imageView)
+            toView:imageView,
+            constant:kLabelLeft)
         NSLayoutConstraint.rightToRight(
             view:label,
             toView:self,
@@ -88,13 +90,13 @@ class VGridCell:UICollectionViewCell
     {
         if isSelected || isHighlighted
         {
-            imageView.alpha = kAlphaSelected
-            label.textColor = UIColor.gridOrange
+            imageView.image = model?.image.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            label.textColor = UIColor.white
         }
         else
         {
-            imageView.alpha = kAlphaNotSelected
-            label.textColor = UIColor.white
+            imageView.image = model?.image.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+            label.textColor = UIColor.gridOrange
         }
     }
     
@@ -102,6 +104,7 @@ class VGridCell:UICollectionViewCell
     
     func config(model:MGridItem)
     {
+        self.model = model
         let mutableString:NSMutableAttributedString = NSMutableAttributedString()
         let stringTitle:NSAttributedString = NSAttributedString(
             string:model.title,
@@ -111,8 +114,6 @@ class VGridCell:UICollectionViewCell
             attributes:attributesSubtitle)
         mutableString.append(stringTitle)
         mutableString.append(stringSubtitle)
-        
-        imageView.image = model.image
         label.attributedText = mutableString
         
         hover()

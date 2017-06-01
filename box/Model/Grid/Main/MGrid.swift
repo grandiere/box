@@ -12,8 +12,8 @@ class MGrid
         let itemHarvest:MGridItemHarvest = MGridItemHarvest()
         
         items = [
-            itemMap,
             itemVisor,
+            itemMap,
             itemReleaseVirus,
             itemHarvest]
     }

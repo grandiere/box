@@ -151,7 +151,7 @@ class MGridVisorMotion
             }
         }
         
-        controller.modelRender?.algo.motionRotate(
+        controller.modelRender?.motionRotate(
             moveHorizontal:moveHorizontal,
             moveVertical:moveVertical)
         controller.modelGPS?.compensateHeading = compensateHeading

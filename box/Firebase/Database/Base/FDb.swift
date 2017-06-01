@@ -8,11 +8,11 @@ class FDb
     static let algoVirus:String = "algoVirus"
     static let algoAid:String = "algoAid"
     static let harvest:String = "harvest"
-    private let reference:FIRDatabaseReference
+    private let reference:DatabaseReference
     
     init()
     {
-        reference = FIRDatabase.database().reference()
+        reference = Database.database().reference()
     }
     
     //MARK: public
@@ -21,7 +21,7 @@ class FDb
         path:String,
         json:Any) -> String
     {
-        let childReference:FIRDatabaseReference = reference.child(path).childByAutoId()
+        let childReference:DatabaseReference = reference.child(path).childByAutoId()
         let childId:String = childReference.key
         childReference.setValue(json)
         
@@ -32,13 +32,13 @@ class FDb
         path:String,
         json:Any)
     {
-        let childReference:FIRDatabaseReference = reference.child(path)
+        let childReference:DatabaseReference = reference.child(path)
         childReference.setValue(json)
     }
     
     func removeChild(path:String)
     {
-        let childReference:FIRDatabaseReference = reference.child(path)
+        let childReference:DatabaseReference = reference.child(path)
         childReference.removeValue()
     }
     
@@ -47,9 +47,9 @@ class FDb
         nodeType:FDbProtocol.Type,
         completion:@escaping((FDbProtocol?) -> ()))
     {
-        let pathReference:FIRDatabaseReference = reference.child(path)
-        pathReference.observeSingleEvent(of:FIRDataEventType.value)
-        { (snapshot:FIRDataSnapshot) in
+        let pathReference:DatabaseReference = reference.child(path)
+        pathReference.observeSingleEvent(of:DataEventType.value)
+        { (snapshot:DataSnapshot) in
             
             var node:FDbProtocol?
             
@@ -77,14 +77,14 @@ class FDb
     }
     
     func listen(
-        eventType:FIRDataEventType,
+        eventType:DataEventType,
         path:String,
         nodeType:FDbProtocol.Type,
         completion:@escaping((FDbProtocol?) -> ())) -> UInt
     {
-        let pathReference:FIRDatabaseReference = reference.child(path)
+        let pathReference:DatabaseReference = reference.child(path)
         let handler:UInt = pathReference.observe(eventType)
-        { (snapshot:FIRDataSnapshot) in
+        { (snapshot:DataSnapshot) in
             
             var node:FDbProtocol?
             
@@ -117,15 +117,15 @@ class FDb
         path:String,
         handler:UInt)
     {
-        let pathReference:FIRDatabaseReference = reference.child(path)
+        let pathReference:DatabaseReference = reference.child(path)
         pathReference.removeObserver(withHandle:handler)
     }
     
     func transaction(
         path:String,
-        transactionBlock:@escaping((FIRMutableData) -> (FIRTransactionResult)))
+        transactionBlock:@escaping((MutableData) -> (TransactionResult)))
     {
-        let childReference:FIRDatabaseReference = reference.child(path)
+        let childReference:DatabaseReference = reference.child(path)
         childReference.runTransactionBlock(transactionBlock)
     }
 }

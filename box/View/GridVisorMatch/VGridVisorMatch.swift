@@ -2,80 +2,50 @@ import UIKit
 
 class VGridVisorMatch:VView
 {
+    private(set) weak var buttonCancel:UIButton!
+    private(set) weak var viewBase:VGridVisorMatchBase!
     private weak var controller:CGridVisorMatch!
-    private weak var spinner:VSpinner!
-    private let kLabelTop:CGFloat = 20
-    private let kLabelHeight:CGFloat = 22
-    private let kImageHeight:CGFloat = 90
-    private let kSpinnerHeight:CGFloat = 400
+    private weak var layoutBaseTop:NSLayoutConstraint!
+    private let kBaseMarginHorizontal:CGFloat = 10
+    private let kBaseHeight:CGFloat = 180
     
     override init(controller:CController)
     {
         super.init(controller:controller)
         backgroundColor = UIColor.clear
-        isUserInteractionEnabled = false
         self.controller = controller as? CGridVisorMatch
         
-        let blur:VBlur = VBlur.dark()
+        let viewBase:VGridVisorMatchBase = VGridVisorMatchBase(
+            controller:self.controller)
+        self.viewBase = viewBase
         
-        let spinner:VSpinner = VSpinner()
-        self.spinner = spinner
+        let buttonCancel:UIButton = UIButton()
+        buttonCancel.backgroundColor = UIColor.clear
+        buttonCancel.translatesAutoresizingMaskIntoConstraints = false
+        buttonCancel.clipsToBounds = true
+        buttonCancel.addTarget(
+            self,
+            action:#selector(actionCancel(sender:)),
+            for:UIControlEvents.touchUpInside)
+        self.buttonCancel = buttonCancel
         
-        let label:UILabel = UILabel()
-        label.font = UIFont.bold(size:17)
-        label.textAlignment = NSTextAlignment.center
-        label.isUserInteractionEnabled = false
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = UIColor.clear
-        label.textColor = UIColor.white
-        label.text = self.controller.model?.titleMatch()
-        
-        let imageView:UIImageView = UIImageView()
-        imageView.isUserInteractionEnabled = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.contentMode = UIViewContentMode.center
-        imageView.image = #imageLiteral(resourceName: "assetGenericMatch")
-        
-        addSubview(blur)
-        addSubview(spinner)
-        addSubview(label)
-        addSubview(imageView)
+        addSubview(buttonCancel)
+        addSubview(viewBase)
         
         NSLayoutConstraint.equals(
-            view:blur,
+            view:buttonCancel,
             toView:self)
         
-        NSLayoutConstraint.topToBottom(
-            view:imageView,
-            toView:label)
+        layoutBaseTop = NSLayoutConstraint.topToTop(
+            view:viewBase,
+            toView:self)
         NSLayoutConstraint.height(
-            view:imageView,
-            constant:kImageHeight)
+            view:viewBase,
+            constant:kBaseHeight)
         NSLayoutConstraint.equalsHorizontal(
-            view:imageView,
-            toView:self)
-        
-        NSLayoutConstraint.topToBottom(
-            view:spinner,
-            toView:imageView)
-        NSLayoutConstraint.height(
-            view:spinner,
-            constant:kSpinnerHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:spinner,
-            toView:self)
-        
-        NSLayoutConstraint.topToTop(
-            view:label,
+            view:viewBase,
             toView:self,
-            constant:kLabelTop)
-        NSLayoutConstraint.height(
-            view:label,
-            constant:kLabelHeight)
-        NSLayoutConstraint.equalsHorizontal(
-            view:label,
-            toView:self)
+            margin:kBaseMarginHorizontal)
     }
     
     required init?(coder:NSCoder)
@@ -83,8 +53,20 @@ class VGridVisorMatch:VView
         return nil
     }
     
-    deinit
+    override func layoutSubviews()
     {
-        spinner.stopAnimating()
+        let height:CGFloat = bounds.maxY
+        let remainHeight:CGFloat = height - kBaseHeight
+        let marginTop:CGFloat = remainHeight / 2.0
+        layoutBaseTop.constant = marginTop
+        
+        super.layoutSubviews()
+    }
+    
+    //MARK: actions
+    
+    func actionCancel(sender button:UIButton)
+    {
+        controller.back()
     }
 }

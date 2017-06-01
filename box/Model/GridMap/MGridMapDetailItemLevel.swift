@@ -6,7 +6,7 @@ class MGridMapDetailItemLevel:MGridMapDetailItem
     {
         guard
         
-            let algoHostile:MGridAlgoItemHostile = annotation.algo as? MGridAlgoItemHostile
+            let algoHostile:MGridAlgoHostileItem = annotation.algo as? MGridAlgoHostileItem
         
         else
         {
