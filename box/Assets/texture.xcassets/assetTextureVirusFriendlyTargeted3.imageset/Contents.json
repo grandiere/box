@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "assetTextureVirusFriendlyTargeted.png",
+      "filename" : "assetTextureVirusFriendlyTargeted3.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "assetTextureVirusFriendlyTargeted@2x.png",
+      "filename" : "assetTextureVirusFriendlyTargeted3@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "assetTextureVirusFriendlyTargeted@3x.png",
+      "filename" : "assetTextureVirusFriendlyTargeted3@3x.png",
       "scale" : "3x"
     }
   ],
