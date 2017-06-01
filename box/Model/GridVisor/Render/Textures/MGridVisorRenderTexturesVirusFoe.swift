@@ -8,7 +8,11 @@ class MGridVisorRenderTexturesVirusFoe:MetalTextureRandom
     init(textureLoader:MTKTextureLoader)
     {
         let images:[UIImage] = [
-            #imageLiteral(resourceName: "assetTextureVirusFoeTargeted")]
+            #imageLiteral(resourceName: "assetTextureVirusFoeTargeted0"),
+            #imageLiteral(resourceName: "assetTextureVirusFoeTargeted1"),
+            #imageLiteral(resourceName: "assetTextureVirusFoeTargeted2"),
+            #imageLiteral(resourceName: "assetTextureVirusFoeTargeted3"),
+            #imageLiteral(resourceName: "assetTextureVirusFoeTargeted4")]
         
         super.init(
             ticksPerFrame:kTicksPerFrame,
